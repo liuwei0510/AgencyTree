@@ -1,0 +1,60 @@
+id: remote.template.api_vidu_start_end_to_video
+kind: comfyui_template
+title: 'Vidu Q1: Start End to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q1: Start End to Video'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Create smooth video transitions between defined start and end frames
+    with natural motion interpolation and consistent visual quality.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_start_end_to_video.json
+  sha256: 1f815b24cfda40566073cad09af86272bd0bcc16a2684d7a824557231e6eadfb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_start_end_to_video
+  title: 'Vidu Q1: Start End to Video'
+  description: Create smooth video transitions between defined start and end frames
+    with natural motion interpolation and consistent visual quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - API
+  - FLF2V
+  models:
+  - Vidu Q1
+  - Vidu
+  date: '2025-08-23'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 2
+  io:
+    inputs:
+    - nodeId: 28
+      nodeType: LoadImage
+      file: api_vidu_start_end_to_video_start_frame.jpg
+      mediaType: image
+    - nodeId: 30
+      nodeType: LoadImage
+      file: api_vidu_start_end_to_video_last_frame.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.51

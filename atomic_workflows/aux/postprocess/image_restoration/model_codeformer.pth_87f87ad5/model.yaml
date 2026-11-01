@@ -1,0 +1,46 @@
+id: remote:model:87f87ad50940c4310447
+kind: comfyui_model
+title: codeformer.pth
+tree_branch:
+- aux
+- postprocess
+- image_restoration
+six_tuple:
+  name: codeformer.pth
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/image_restoration
+  parameters:
+  - name: filename
+    value: codeformer.pth
+  - name: base
+    value: CodeFormer
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: CodeFormer
+    save_path: facerestore_models
+    filename: codeformer.pth
+    download_locator: https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth
+code_usable: true
+status: available
+metadata:
+  name: codeformer.pth
+  type: CodeFormer
+  base: CodeFormer
+  save_path: facerestore_models
+  description: Face Restoration Models. Download the model required for using the
+    'Facerestore CF (Code Former)' custom node.
+  reference: https://github.com/sczhou/CodeFormer/releases
+  filename: codeformer.pth
+  url: https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth
+  size: 376.6MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/image_restoration/model_codeformer.pth_87f87ad5/model.yaml
+validation_errors: []

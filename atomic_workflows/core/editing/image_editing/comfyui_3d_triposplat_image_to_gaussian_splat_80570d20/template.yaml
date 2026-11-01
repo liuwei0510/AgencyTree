@@ -1,0 +1,79 @@
+id: remote:template:3d_triposplat_image_to_gaussian_splat
+kind: comfyui_template
+title: 'TripoSplat: Image to Gaussian Splat'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'TripoSplat: Image to Gaussian Splat'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+    mesh: mesh_path
+  capability: Upload a single 2D image. Generate a high-quality 3D Gaussian splat
+    representation with controllable density and budget for rendering.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_triposplat_image_to_gaussian_splat.json
+  sha256: b7da0250c882f31c0d58df7860d22ccb2f2b3cc4c15a4cf740571e646a869d28
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: 3d_triposplat_image_to_gaussian_splat
+  title: 'TripoSplat: Image to Gaussian Splat'
+  description: Upload a single 2D image. Generate a high-quality 3D Gaussian splat
+    representation with controllable density and budget for rendering.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - Image to 3D
+  models:
+  - TripoSplat
+  date: '2026-06-02'
+  openSource: true
+  size: 3972844749
+  usage: 296
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 99
+      nodeType: LoadImage
+      file: white-hotel-on-rocky-island.png
+      mediaType: image
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_triposplat_image_to_gaussian_splat.json
+  sha256: b7da0250c882f31c0d58df7860d22ccb2f2b3cc4c15a4cf740571e646a869d28
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '99'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: mesh
+  type: mesh_path
+planning_eligible: true

@@ -1,0 +1,89 @@
+id: remote:template:templates_purz_image_glitch
+kind: comfyui_template
+title: Apply Glitch And Distortion Effects
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Apply Glitch And Distortion Effects
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Adds customizable glitch and tearing effects to images. Control distortion
+    intensity, chromatic aberration, and pattern randomness. Outputs a stylistically
+    distorted image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_image_glitch.json
+  sha256: 570072e934b33763ed4e69a88a0d33a3328102407a30593d1672dc0d1dba2ee7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_purz_image_glitch
+  title: Apply Glitch And Distortion Effects
+  description: Adds customizable glitch and tearing effects to images. Control distortion
+    intensity, chromatic aberration, and pattern randomness. Outputs a stylistically
+    distorted image.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image
+  - Image Edit
+  models:
+  - None
+  date: '2026-03-19'
+  openSource: true
+  size: 0
+  usage: 2
+  searchRank: 0
+  username: PurzBeats
+  requiresCustomNodes:
+  - comfyui_fill-nodes
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: comfy_cat.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: templates_purz_image_glitch.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/templates_purz_image_glitch.mp4
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_image_glitch.json
+  sha256: 570072e934b33763ed4e69a88a0d33a3328102407a30593d1672dc0d1dba2ee7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates_purz_image_glitch_ed073d1d/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

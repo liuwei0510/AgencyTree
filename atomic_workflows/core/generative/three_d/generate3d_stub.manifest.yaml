@@ -1,0 +1,29 @@
+id: core.generative.three_d.generate3d_stub
+title: 3D Generation (stub)
+modality:
+- mesh
+- image
+description: Placeholder for TripoSR / Hunyuan3D / other 3D Comfy graphs.
+tags:
+- 3d
+- generative
+workflow_file: generate3d_stub.workflow.json
+inject:
+  prompt:
+    node_id: '1'
+    input_key: text
+  model_file:
+    node_id: '2'
+    input_key: ckpt_name
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: model_file
+  type: string
+  required: true
+  default: null
+outputs:
+- name: assets
+  type: generic

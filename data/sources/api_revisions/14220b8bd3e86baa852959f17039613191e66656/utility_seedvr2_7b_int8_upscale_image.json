@@ -1,0 +1,64 @@
+{
+  "1": {
+    "inputs": {
+      "image": "indoor_portrait.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.27.0"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "66",
+        0
+      ],
+      "filename_prefix": "seedvr2_after/image"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.27.0"
+    }
+  },
+  "65": {
+    "inputs": {
+      "image_a": [
+        "1",
+        0
+      ],
+      "image_b": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare",
+      "cnr_id": "comfy-core",
+      "ver": "0.27.0"
+    }
+  },
+  "66": {
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "alpha": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "1970dcb4-982a-4c01-a373-4d239a3041e4",
+    "_meta": {
+      "title": "1970dcb4-982a-4c01-a373-4d239a3041e4",
+      "cnr_id": "comfy-core",
+      "ver": "0.27.0"
+    }
+  }
+}

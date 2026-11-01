@@ -1,0 +1,57 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "62",
+        0
+      ],
+      "filename_prefix": "Flux2"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.71"
+    }
+  },
+  "46": {
+    "inputs": {
+      "image": "image_flux2_input_Illustration.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.71"
+    }
+  },
+  "42": {
+    "inputs": {
+      "image": "image_flux2_input_ref_image.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.71"
+    }
+  },
+  "62": {
+    "inputs": {
+      "image": [
+        "42",
+        0
+      ],
+      "image_1": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "406cf93b-f2d9-4ec9-a89b-45c1956ea70a",
+    "_meta": {
+      "title": "406cf93b-f2d9-4ec9-a89b-45c1956ea70a",
+      "cnr_id": "comfy-core",
+      "ver": "0.7.0"
+    }
+  }
+}

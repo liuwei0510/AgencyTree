@@ -1,0 +1,26 @@
+{
+  "observed_at": "2026-10-30T02:47:05.337810+00:00",
+  "version": "sources-22f684a47ed2b4b3",
+  "fresh": false,
+  "complete": true,
+  "provenance": {
+    "models": {
+      "repository": "Comfy-Org/ComfyUI-Manager",
+      "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+      "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200"
+    },
+    "templates": {
+      "repository": "Comfy-Org/workflow_templates",
+      "revision": "6cd9cff4ba0163c3021ce5b2c8727927bc8397d9",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/index.json",
+      "sha256": "117c4b276085b3296df81002e6854ed87030fb45709c28fa6a4ca92649d0a850"
+    },
+    "api_examples": {
+      "repository": "Comfy-Org/ComfyUI",
+      "revision": "fd7639f477050e5c25b68fc38a9c2a6b6d988211",
+      "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fd7639f477050e5c25b68fc38a9c2a6b6d988211/script_examples/basic_api_example.py",
+      "sha256": "e9b26587042d5920f8fb0cf48c631cfe3af18c180a8dcbca0e06e36abfd28d7f"
+    }
+  }
+}

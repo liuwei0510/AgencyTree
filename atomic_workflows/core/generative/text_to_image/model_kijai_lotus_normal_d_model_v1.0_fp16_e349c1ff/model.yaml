@@ -1,0 +1,44 @@
+id: remote.model.e349c1ffdc8caadb07c2
+kind: comfyui_model
+title: kijai/lotus normal d model v1.0 (fp16)
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: kijai/lotus normal d model v1.0 (fp16)
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: lotus-normal-d-v1-0-fp16.safetensors
+  - name: base
+    value: lotus
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models
+    filename: lotus-normal-d-v1-0-fp16.safetensors
+    download_locator: https://huggingface.co/Kijai/lotus-comfyui/resolve/main/lotus-normal-d-v1-0-fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: kijai/lotus normal d model v1.0 (fp16)
+  type: diffusion_model
+  base: lotus
+  save_path: diffusion_models
+  description: lotus normal d model v1.0 (fp16). This model can be used in ComfyUI-Lotus
+    custom nodes.
+  reference: https://huggingface.co/Kijai/lotus-comfyui
+  filename: lotus-normal-d-v1-0-fp16.safetensors
+  url: https://huggingface.co/Kijai/lotus-comfyui/resolve/main/lotus-normal-d-v1-0-fp16.safetensors
+  size: 1.74GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

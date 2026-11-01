@@ -1,0 +1,105 @@
+id: remote:api_example:basic_api_example
+kind: comfyui_template
+title: ComfyUI Basic API Example
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.api.json
+six_tuple:
+  name: ComfyUI Basic API Example
+  input_types:
+    seed: number
+    height: number
+    width: number
+    prompt: string
+    negative_prompt: string
+  output_types:
+    images: image_filenames
+  capability: core/generative/text_to_image
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 8566257
+  - name: height
+    type: number
+    required: false
+    default: 512
+  - name: width
+    type: number
+    required: false
+    default: 512
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: bad hands
+  invocation:
+    platform: ComfyUI
+    format: api
+    workflow_file: workflow.api.json
+format: api
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fd7639f477050e5c25b68fc38a9c2a6b6d988211/script_examples/basic_api_example.py
+  sha256: e9b26587042d5920f8fb0cf48c631cfe3af18c180a8dcbca0e06e36abfd28d7f
+metadata:
+  title: ComfyUI Basic API Example
+  description: Official API prompt graph published by ComfyUI.
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI/fd7639f477050e5c25b68fc38a9c2a6b6d988211/script_examples/basic_api_example.py
+  sha256: e9b26587042d5920f8fb0cf48c631cfe3af18c180a8dcbca0e06e36abfd28d7f
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_basic_api_example_0dea601b/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 8566257
+- name: height
+  type: number
+  required: false
+  default: 512
+- name: width
+  type: number
+  required: false
+  default: 512
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: bad hands
+inject:
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: null
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: null
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: null
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: null
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: null
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

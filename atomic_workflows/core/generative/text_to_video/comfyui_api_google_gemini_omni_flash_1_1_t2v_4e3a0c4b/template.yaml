@@ -1,0 +1,73 @@
+id: remote:template:api_google_gemini_omni_flash_1_1_t2v
+kind: comfyui_template
+title: 'Gemini Omni 1.1 Flash: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Gemini Omni 1.1 Flash: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate cinematic videos with audio from text prompts or reference
+    images using Gemini Omni 1.1 Flash, supporting aspect ratio, resolution, and keyframe
+    interpolation controls. Ideal for text-to-video storytelling, animating product
+    shots or illustrations, and iterative conversational video editing.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_t2v.json
+  sha256: cc6025472e4f1df387db5eb79169b44e363467b85ef5bd26f4ae40b0b143e75e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_gemini_omni_flash_1_1_t2v
+  title: 'Gemini Omni 1.1 Flash: Text to Video'
+  description: Generate cinematic videos with audio from text prompts or reference
+    images using Gemini Omni 1.1 Flash, supporting aspect ratio, resolution, and keyframe
+    interpolation controls. Ideal for text-to-video storytelling, animating product
+    shots or illustrations, and iterative conversational video editing.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - Gemini Omni 1.1 Flash
+  logos:
+  - provider: Google
+  minComfyUIVersion: 0.34.2
+  date: '2026-08-27'
+  openSource: false
+  size: 0
+  usage: 39
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 25
+      nodeType: SaveVideo
+      file: api_google_gemini_omni_flash_1_1_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_google_gemini_omni_flash_1_1_t2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_t2v.json
+  sha256: cc6025472e4f1df387db5eb79169b44e363467b85ef5bd26f4ae40b0b143e75e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_api_google_gemini_omni_flash_1_1_t2v_4e3a0c4b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

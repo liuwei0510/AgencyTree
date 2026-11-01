@@ -1,0 +1,44 @@
+id: remote.model.8a99170011b83af6a430
+kind: comfyui_model
+title: Deepbump
+tree_branch:
+- aux
+- postprocess
+- image_restoration
+six_tuple:
+  name: Deepbump
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/image_restoration
+  parameters:
+  - name: filename
+    value: deepbump256.onnx
+  - name: base
+    value: deepbump
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: deepbump
+    save_path: deepbump
+    filename: deepbump256.onnx
+    download_locator: https://github.com/HugoTini/DeepBump/raw/master/deepbump256.onnx
+code_usable: true
+status: available
+metadata:
+  name: Deepbump
+  type: deepbump
+  base: deepbump
+  save_path: deepbump
+  description: Checkpoint of the deepbump model to generate height and normal maps
+    textures from an image (requires comfy_mtb)
+  reference: https://github.com/HugoTini/DeepBump
+  filename: deepbump256.onnx
+  url: https://github.com/HugoTini/DeepBump/raw/master/deepbump256.onnx
+  size: 26.7MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

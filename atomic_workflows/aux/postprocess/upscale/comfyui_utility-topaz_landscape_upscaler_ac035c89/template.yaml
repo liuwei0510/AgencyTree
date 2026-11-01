@@ -1,0 +1,84 @@
+id: remote:template:utility-topaz_landscape_upscaler
+kind: comfyui_template
+title: 'Image Upscale: Topaz Reimagine Landscape'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Reimagine Landscape'
+  input_types:
+    source_image: image_filenames
+    scale_factor: number
+  output_types:
+    images: image_filenames
+  capability: Upload a landscape image to upscale and enhance details. Generate a
+    high-resolution output optimized for natural scenery using Topaz Reimagine.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: scale_factor
+    type: number
+    required: false
+    default: 4
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-topaz_landscape_upscaler.json
+  sha256: da68b23ab72bdec89dc4afa77efaa491ea21c285071041763624a5e4c33edf34
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-topaz_landscape_upscaler
+  title: 'Image Upscale: Topaz Reimagine Landscape'
+  description: Upload a landscape image to upscale and enhance details. Generate a
+    high-resolution output optimized for natural scenery using Topaz Reimagine.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Topaz
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 29
+  searchRank: 0
+  logos:
+  - provider: Topaz
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: moonlit_cliff_house.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-topaz_landscape_upscaler.json
+  sha256: da68b23ab72bdec89dc4afa77efaa491ea21c285071041763624a5e4c33edf34
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: *id001
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+  scale_factor:
+    node_id: '6'
+    input_key: scale_by
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

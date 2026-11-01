@@ -1,0 +1,45 @@
+id: remote:model:9a4160e5f1e29c2cd14c
+kind: comfyui_model
+title: Leoxing/pia.ckpt
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: Leoxing/pia.ckpt
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: pia.ckpt
+  - name: base
+    value: SD1.x
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: animatediff-pia
+    save_path: animatediff_models
+    filename: pia.ckpt
+    download_locator: https://huggingface.co/Leoxing/PIA/resolve/main/pia.ckpt
+code_usable: true
+status: available
+metadata:
+  name: Leoxing/pia.ckpt
+  type: animatediff-pia
+  base: SD1.x
+  save_path: animatediff_models
+  description: AnimateDiff-PIA Model
+  reference: https://huggingface.co/Leoxing/PIA/tree/main
+  filename: pia.ckpt
+  url: https://huggingface.co/Leoxing/PIA/resolve/main/pia.ckpt
+  size: 1.67GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/model_Leoxing_pia.ckpt_9a4160e5/model.yaml
+validation_errors: []

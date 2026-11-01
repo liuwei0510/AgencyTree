@@ -1,0 +1,80 @@
+id: remote.template.utility_seedvr2_image_upscale
+kind: comfyui_template
+title: 'Image Upscale: SeedVR2'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: SeedVR2'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image to upscale it with SeedVR2 and generate a high-definition
+    output.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_seedvr2_image_upscale.json
+  sha256: 335bee397e0c7f6b89fedb1d3fd8b9d72a11e65fa0318d9296b01a125661c7e3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_seedvr2_image_upscale
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/image-upscale
+  title: 'Image Upscale: SeedVR2'
+  description: Upload an image to upscale it with SeedVR2 and generate a high-definition
+    output.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  models:
+  - SeedVR2
+  requiresCustomNodes:
+  - comfyui_essentials
+  - seedvr2_videoupscaler
+  date: '2026-02-06'
+  openSource: true
+  size: 17716740096
+  usage: 834
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 24
+      nodeType: LoadImage
+      file: vr_ad.png
+      mediaType: image
+    outputs:
+    - nodeId: 45
+      nodeType: SaveImage
+      file: utility_seedvr2_image_upscale.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/vr_ad.png
+  - output/utility_seedvr2_image_upscale.png
+  minComfyUIVersion: 0.28.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '24'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

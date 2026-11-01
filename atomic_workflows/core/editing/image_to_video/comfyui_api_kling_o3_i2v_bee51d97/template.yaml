@@ -1,0 +1,88 @@
+id: remote:template:api_kling_o3_i2v
+kind: comfyui_template
+title: 'Kling O3: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling O3: Reference to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload a reference image and optional audio or text prompt. Generate
+    a character-consistent video with native audio output and precise storyboard control.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_o3_i2v.json
+  sha256: 20f513d083fdb3941c3b5504391b391465a5bb56f99287144ac020a2ad8c95b2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_o3_i2v
+  title: 'Kling O3: Reference to Video'
+  description: Upload a reference image and optional audio or text prompt. Generate
+    a character-consistent video with native audio output and precise storyboard control.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Character Reference
+  - Image to Video
+  models:
+  - Kling O3
+  logos:
+  - provider: Kling
+  date: '2026-02-10'
+  openSource: false
+  size: 0
+  usage: 132
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: chasing_the_light.png
+      mediaType: image
+    outputs:
+    - nodeId: 20
+      nodeType: SaveVideo
+      file: kling_o3_i2v.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/kling_o3_i2v.mp4
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_o3_i2v.json
+  sha256: 20f513d083fdb3941c3b5504391b391465a5bb56f99287144ac020a2ad8c95b2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_kling_o3_i2v_bee51d97/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

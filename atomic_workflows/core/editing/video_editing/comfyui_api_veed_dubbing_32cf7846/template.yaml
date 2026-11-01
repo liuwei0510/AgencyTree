@@ -1,0 +1,67 @@
+id: remote:template:api_veed_dubbing
+kind: comfyui_template
+title: 'VEED Dubbing: Video Translation'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'VEED Dubbing: Video Translation'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: 'Translate the speech in a video into another language with VEED Dubbing:
+    each speaker''s voice is cloned and their lips are re-synced to the translation.
+    Pick between the cheaper standard tier and pro, which adds regional accents and
+    stereo audio. Built for footage with a visible face and a talk track.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_dubbing.json
+  sha256: 103a267fbcf88b7197c6cb5f6e77c603a31d04be836f8900bff1fe62e624e8d7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_veed_dubbing
+  title: 'VEED Dubbing: Video Translation'
+  description: 'Translate the speech in a video into another language with VEED Dubbing:
+    each speaker''s voice is cloned and their lips are re-synced to the translation.
+    Pick between the cheaper standard tier and pro, which adds regional accents and
+    stereo audio. Built for footage with a visible face and a talk track.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Video
+  models:
+  - VEED
+  date: '2026-10-28'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadVideo
+      file: api_veed_dubbing_input_video.mp4
+      mediaType: video
+  minComfyUIVersion: 0.43.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_dubbing.json
+  sha256: 103a267fbcf88b7197c6cb5f6e77c603a31d04be836f8900bff1fe62e624e8d7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

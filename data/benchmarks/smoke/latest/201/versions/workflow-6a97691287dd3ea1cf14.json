@@ -1,0 +1,583 @@
+{
+  "version": "workflow-6a97691287dd3ea1cf14",
+  "schema_version": 2,
+  "parent": null,
+  "created_at": "2026-10-30T02:48:37.055361+00:00",
+  "intent": "Generate a night market scene in the Jiangnan water town during the Song Dynasty, showcasing the lively trading between vendors and customers, while also creating a scene of astronauts repairing equipment in a space station; enhance the resolution of the Song Dynasty night market image to ultra-clear, and replace the background of the space station scene with a Martian colony appearance; finally, convert the Martian colony scene into a 2-second high-definition video, with the astronauts' actions played at an accelerated speed.",
+  "act_version": "act-069d43ce89e2a1500d61",
+  "status": "failed",
+  "runtime_verified": false,
+  "generation_mode": "host_plan",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [
+      {
+        "task_id": "song",
+        "goal": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+        "capability_id": "core.generative.text_to_image",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": []
+      },
+      {
+        "task_id": "space",
+        "goal": "Generate a scene of astronauts repairing equipment in a space station.",
+        "capability_id": "core.generative.text_to_image",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": []
+      },
+      {
+        "task_id": "upscale_song",
+        "goal": "Enhance the Song Dynasty night market image to ultra-clear.",
+        "capability_id": "aux.postprocess.upscale",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {
+          "scale_factor": 2
+        },
+        "depends_on": [
+          "song"
+        ]
+      },
+      {
+        "task_id": "mars",
+        "goal": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+        "capability_id": "core.editing.image_editing",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": [
+          "space"
+        ]
+      },
+      {
+        "task_id": "animate",
+        "goal": "Animate the Martian colony scene with astronauts repairing equipment into a 2-second high-definition video. Preserve the characters and scene.",
+        "capability_id": "core.editing.image_to_video",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "video": "video"
+        },
+        "constraints": {
+          "duration": 2
+        },
+        "depends_on": [
+          "mars"
+        ]
+      },
+      {
+        "task_id": "accelerate",
+        "goal": "Accelerate the actions of the astronauts in the video. Preserve the image branch and the two-second final video duration.",
+        "capability_id": "core.editing.video_editing",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "video": "video"
+        },
+        "constraints": {
+          "playback_speed": 2,
+          "duration": 2
+        },
+        "depends_on": [
+          "animate"
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "song",
+        "upscale_song"
+      ],
+      [
+        "space",
+        "mars"
+      ],
+      [
+        "mars",
+        "animate"
+      ],
+      [
+        "animate",
+        "accelerate"
+      ]
+    ],
+    "diagnostics": [],
+    "assumptions": [
+      "The qualitative ultra-clear image requirement is instantiated with 2x upscaling.",
+      "The unspecified acceleration amount is instantiated as 2x; unavailable controls must fail rather than be omitted."
+    ]
+  },
+  "awg": {
+    "nodes": [
+      {
+        "node_id": "n1",
+        "task_id": "song",
+        "capability_id": "core.generative.text_to_image",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n2",
+        "task_id": "space",
+        "capability_id": "core.generative.text_to_image",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n3",
+        "task_id": "upscale_song",
+        "capability_id": "aux.postprocess.upscale",
+        "input_types": {
+          "source_image": "image"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Enhance the Song Dynasty night market image to ultra-clear."
+        },
+        "constraints": {
+          "scale_factor": 2
+        }
+      },
+      {
+        "node_id": "n4",
+        "task_id": "mars",
+        "capability_id": "core.editing.image_editing",
+        "input_types": {
+          "source_image": "image",
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n5",
+        "task_id": "animate",
+        "capability_id": "core.editing.image_to_video",
+        "input_types": {
+          "source_image": "image",
+          "prompt": "text"
+        },
+        "output_types": {
+          "video": "video"
+        },
+        "parameters": {
+          "prompt": "Animate the Martian colony scene with astronauts repairing equipment into a 2-second high-definition video. Preserve the characters and scene."
+        },
+        "constraints": {
+          "duration": 2
+        }
+      },
+      {
+        "node_id": "n6",
+        "task_id": "accelerate",
+        "capability_id": "core.editing.video_editing",
+        "input_types": {
+          "video_file": "video",
+          "prompt": "text"
+        },
+        "output_types": {
+          "video": "video"
+        },
+        "parameters": {
+          "prompt": "Accelerate the actions of the astronauts in the video. Preserve the image branch and the two-second final video duration."
+        },
+        "constraints": {
+          "playback_speed": 2,
+          "duration": 2
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from_node": "n1",
+        "output": "images",
+        "to_node": "n3",
+        "input": "source_image"
+      },
+      {
+        "from_node": "n2",
+        "output": "images",
+        "to_node": "n4",
+        "input": "source_image"
+      },
+      {
+        "from_node": "n4",
+        "output": "images",
+        "to_node": "n5",
+        "input": "source_image"
+      },
+      {
+        "from_node": "n5",
+        "output": "video",
+        "to_node": "n6",
+        "input": "video_file"
+      }
+    ],
+    "ordering": [
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n4",
+        "n5"
+      ],
+      [
+        "n5",
+        "n6"
+      ]
+    ],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "",
+    "nodes": [],
+    "global_inputs": {}
+  },
+  "ewc": null,
+  "workflow_formats": {},
+  "bindings": {},
+  "model_bindings": {},
+  "generation": {
+    "att": {
+      "tasks": [
+        {
+          "task_id": "song",
+          "goal": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+          "capability_id": "core.generative.text_to_image",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": []
+        },
+        {
+          "task_id": "space",
+          "goal": "Generate a scene of astronauts repairing equipment in a space station.",
+          "capability_id": "core.generative.text_to_image",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": []
+        },
+        {
+          "task_id": "upscale_song",
+          "goal": "Enhance the Song Dynasty night market image to ultra-clear.",
+          "capability_id": "aux.postprocess.upscale",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {
+            "scale_factor": 2
+          },
+          "depends_on": [
+            "song"
+          ]
+        },
+        {
+          "task_id": "mars",
+          "goal": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+          "capability_id": "core.editing.image_editing",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": [
+            "space"
+          ]
+        },
+        {
+          "task_id": "animate",
+          "goal": "Animate the Martian colony scene with astronauts repairing equipment into a 2-second high-definition video. Preserve the characters and scene.",
+          "capability_id": "core.editing.image_to_video",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "video": "video"
+          },
+          "constraints": {
+            "duration": 2
+          },
+          "depends_on": [
+            "mars"
+          ]
+        },
+        {
+          "task_id": "accelerate",
+          "goal": "Accelerate the actions of the astronauts in the video. Preserve the image branch and the two-second final video duration.",
+          "capability_id": "core.editing.video_editing",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "video": "video"
+          },
+          "constraints": {
+            "playback_speed": 2,
+            "duration": 2
+          },
+          "depends_on": [
+            "animate"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "song",
+          "upscale_song"
+        ],
+        [
+          "space",
+          "mars"
+        ],
+        [
+          "mars",
+          "animate"
+        ],
+        [
+          "animate",
+          "accelerate"
+        ]
+      ],
+      "diagnostics": [],
+      "assumptions": [
+        "The qualitative ultra-clear image requirement is instantiated with 2x upscaling.",
+        "The unspecified acceleration amount is instantiated as 2x; unavailable controls must fail rather than be omitted."
+      ]
+    },
+    "awg": {
+      "nodes": [
+        {
+          "node_id": "n1",
+          "task_id": "song",
+          "capability_id": "core.generative.text_to_image",
+          "input_types": {
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+          },
+          "constraints": {}
+        },
+        {
+          "node_id": "n2",
+          "task_id": "space",
+          "capability_id": "core.generative.text_to_image",
+          "input_types": {
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+          },
+          "constraints": {}
+        },
+        {
+          "node_id": "n3",
+          "task_id": "upscale_song",
+          "capability_id": "aux.postprocess.upscale",
+          "input_types": {
+            "source_image": "image"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Enhance the Song Dynasty night market image to ultra-clear."
+          },
+          "constraints": {
+            "scale_factor": 2
+          }
+        },
+        {
+          "node_id": "n4",
+          "task_id": "mars",
+          "capability_id": "core.editing.image_editing",
+          "input_types": {
+            "source_image": "image",
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+          },
+          "constraints": {}
+        },
+        {
+          "node_id": "n5",
+          "task_id": "animate",
+          "capability_id": "core.editing.image_to_video",
+          "input_types": {
+            "source_image": "image",
+            "prompt": "text"
+          },
+          "output_types": {
+            "video": "video"
+          },
+          "parameters": {
+            "prompt": "Animate the Martian colony scene with astronauts repairing equipment into a 2-second high-definition video. Preserve the characters and scene."
+          },
+          "constraints": {
+            "duration": 2
+          }
+        },
+        {
+          "node_id": "n6",
+          "task_id": "accelerate",
+          "capability_id": "core.editing.video_editing",
+          "input_types": {
+            "video_file": "video",
+            "prompt": "text"
+          },
+          "output_types": {
+            "video": "video"
+          },
+          "parameters": {
+            "prompt": "Accelerate the actions of the astronauts in the video. Preserve the image branch and the two-second final video duration."
+          },
+          "constraints": {
+            "playback_speed": 2,
+            "duration": 2
+          }
+        }
+      ],
+      "edges": [
+        {
+          "from_node": "n1",
+          "output": "images",
+          "to_node": "n3",
+          "input": "source_image"
+        },
+        {
+          "from_node": "n2",
+          "output": "images",
+          "to_node": "n4",
+          "input": "source_image"
+        },
+        {
+          "from_node": "n4",
+          "output": "images",
+          "to_node": "n5",
+          "input": "source_image"
+        },
+        {
+          "from_node": "n5",
+          "output": "video",
+          "to_node": "n6",
+          "input": "video_file"
+        }
+      ],
+      "ordering": [
+        [
+          "n1",
+          "n3"
+        ],
+        [
+          "n2",
+          "n4"
+        ],
+        [
+          "n4",
+          "n5"
+        ],
+        [
+          "n5",
+          "n6"
+        ]
+      ],
+      "constraints": {},
+      "unresolved": []
+    },
+    "execution_plan": {
+      "summary": "",
+      "nodes": [],
+      "global_inputs": {}
+    },
+    "ewc": null,
+    "converged": false,
+    "failure_reason": "n6: no matching callable implementation for core.editing.video_editing; core.editing.video_editing.video_wan2_2_14b_fun_camera: no control or fixed contract for playback_speed=2; core.editing.video_editing.video_humo: no control or fixed contract for playback_speed=2; core.editing.video_editing.video_wan2_2_14b_flf2v: no control or fixed contract for playback_speed=2; core.editing.video_editing.video_wan2_2_5b_fun_control_3: no control or fixed contract for playback_speed=2",
+    "validation_log": [
+      {
+        "stage": "ANALYSIS",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ARCHITECTURE",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ENGINEERING",
+        "iteration": 1,
+        "is_converged": false,
+        "issues": [
+          "n6: no matching callable implementation for core.editing.video_editing; core.editing.video_editing.video_wan2_2_14b_fun_camera: no control or fixed contract for playback_speed=2; core.editing.video_editing.video_humo: no control or fixed contract for playback_speed=2; core.editing.video_editing.video_wan2_2_14b_flf2v: no control or fixed contract for playback_speed=2; core.editing.video_editing.video_wan2_2_5b_fun_control_3: no control or fixed contract for playback_speed=2"
+        ]
+      }
+    ],
+    "generation_mode": "host_plan"
+  },
+  "capabilities": {}
+}

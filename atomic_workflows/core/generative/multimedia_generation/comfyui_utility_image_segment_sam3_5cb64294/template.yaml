@@ -1,0 +1,57 @@
+id: remote.template.utility_image_segment_sam3
+kind: comfyui_template
+title: 'Image Segmentation: SAM3'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Segmentation: SAM3'
+  input_types:
+  - image
+  output_types: []
+  capability: Use the SAM3 model to segment the main subject or content from a photo
+    or image, isolating specific objects or regions. Input an image and receive a
+    segmented mask output.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_image_segment_sam3.json
+  sha256: b025db3509151a3220b8414a79f7c0bcdd77a8584c9f356efddbdb6c7491e3cb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_image_segment_sam3
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/video-segment-sam3
+  title: 'Image Segmentation: SAM3'
+  description: Use the SAM3 model to segment the main subject or content from a photo
+    or image, isolating specific objects or regions. Input an image and receive a
+    segmented mask output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Element Segmentation
+  models:
+  - SAM3
+  date: '2026-04-26'
+  openSource: true
+  size: 1717986918
+  usage: 122
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 79
+      nodeType: LoadImage
+      file: neon_guitarist.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/utility_image_segment_sam3.mp4
+  minComfyUIVersion: 0.20.0

@@ -1,0 +1,72 @@
+id: remote:template:api_recraft_v4_1_flash_t2i
+kind: comfyui_template
+title: 'Recraft 4.1 flash: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Recraft 4.1 flash: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using Recraft V4.1 Flash, a fast,
+    low-cost model that produces one image output with no file inputs required. Ideal
+    for high-volume generation, rapid iteration, photography and portraits, atmospheric
+    scenes, and quick logo concept exploration.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_1_flash_t2i.json
+  sha256: 77677cfd049b5d1bddd9033ec6a1d6c8a178686c40974dd47a141e254372a16e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_v4_1_flash_t2i
+  title: 'Recraft 4.1 flash: Text to Image'
+  description: Generate images from text prompts using Recraft V4.1 Flash, a fast,
+    low-cost model that produces one image output with no file inputs required. Ideal
+    for high-volume generation, rapid iteration, photography and portraits, atmospheric
+    scenes, and quick logo concept exploration.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  minComfyUIVersion: 0.37.2
+  date: '2026-09-23'
+  openSource: false
+  size: 0
+  usage: 142
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: api_recraft_v4_1_flash_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_recraft_v4_1_flash_t2i.png
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_1_flash_t2i.json
+  sha256: 77677cfd049b5d1bddd9033ec6a1d6c8a178686c40974dd47a141e254372a16e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_recraft_v4_1_flash_t2i_af069d65/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,89 @@
+id: remote:template:api_ltx2_5_i2v
+kind: comfyui_template
+title: 'LTX-2.5 (Pro): Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2.5 (Pro): Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate video from a single image using LTX-2.5's fast distilled model,
+    delivering cinematic multi-shot sequences with consistent characters, lighting,
+    and style across cuts. The workflow outputs a video file with native multishot
+    support and automatic duration prediction. Ideal for rapid storyboarding, social
+    media content creation, and pre-visualization in commercial production pipelines.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ltx2_5_i2v.json
+  sha256: fd169670318ccdb0005aac3aa961227cb4d4d17f94ae9db631b0abc3b7de0580
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ltx2_5_i2v
+  title: 'LTX-2.5 (Pro): Image to Video'
+  description: Generate video from a single image using LTX-2.5's fast distilled model,
+    delivering cinematic multi-shot sequences with consistent characters, lighting,
+    and style across cuts. The workflow outputs a video file with native multishot
+    support and automatic duration prediction. Ideal for rapid storyboarding, social
+    media content creation, and pre-visualization in commercial production pipelines.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - LTX-2.5
+  logos:
+  - provider: Lightricks
+  date: '2026-08-11'
+  openSource: false
+  size: 0
+  usage: 40
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: space_battle.png
+      mediaType: image
+    outputs:
+    - nodeId: 2
+      nodeType: SaveVideo
+      file: api_ltx2_5_i2v.mp4
+      mediaType: video
+  minComfyUIVersion: 0.32.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ltx2_5_i2v.json
+  sha256: fd169670318ccdb0005aac3aa961227cb4d4d17f94ae9db631b0abc3b7de0580
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '4'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

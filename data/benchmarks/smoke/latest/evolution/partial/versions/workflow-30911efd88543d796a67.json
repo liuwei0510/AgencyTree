@@ -1,0 +1,748 @@
+{
+  "version": "workflow-30911efd88543d796a67",
+  "schema_version": 2,
+  "parent": "workflow-cf99e4bb2aba7d79ba50",
+  "created_at": "2026-10-30T04:50:28.031207+00:00",
+  "intent": "First generate an image of a cat in a snowy forest. Then upscale it by 2x. The result should be a high-resolution image of a cat",
+  "act_version": "smoke-act-6b07adc45cda53bd",
+  "status": "validated_offline",
+  "runtime_verified": false,
+  "generation_mode": "host_plan",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [
+      {
+        "task_id": "draw",
+        "goal": "Generate a high-quality image of a cat in a snowy forest.",
+        "capability_id": "core.generative.text_to_image",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": []
+      },
+      {
+        "task_id": "upscale",
+        "goal": "Upscale the generated image by 2x.",
+        "capability_id": "aux.postprocess.upscale",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {
+          "scale_factor": 2
+        },
+        "depends_on": [
+          "draw"
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "draw",
+        "upscale"
+      ]
+    ],
+    "diagnostics": [],
+    "assumptions": []
+  },
+  "awg": {
+    "nodes": [
+      {
+        "node_id": "n1",
+        "task_id": "draw",
+        "capability_id": "core.generative.text_to_image",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Generate a high-quality image of a cat in a snowy forest."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n2",
+        "task_id": "upscale",
+        "capability_id": "aux.postprocess.upscale",
+        "input_types": {
+          "source_image": "image"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Upscale the generated image by 2x."
+        },
+        "constraints": {
+          "scale_factor": 2
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from_node": "n1",
+        "output": "images",
+        "to_node": "n2",
+        "input": "source_image"
+      }
+    ],
+    "ordering": [
+      [
+        "n1",
+        "n2"
+      ]
+    ],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "ACT implementation bindings",
+    "nodes": [
+      {
+        "dag_id": "n1",
+        "atomic_id": "core.generative.text_to_image.default",
+        "depends_on": [],
+        "inputs": {
+          "prompt": "Generate a high-quality image of a cat in a snowy forest."
+        },
+        "bindings": {},
+        "notes": null
+      },
+      {
+        "dag_id": "n2",
+        "atomic_id": "aux.postprocess.upscale.upscale2x",
+        "depends_on": [
+          "n1"
+        ],
+        "inputs": {},
+        "bindings": {
+          "source_image": {
+            "from_node": "n1",
+            "output": "images",
+            "index": 0
+          }
+        },
+        "notes": null
+      }
+    ],
+    "global_inputs": {}
+  },
+  "ewc": {
+    "n1": {
+      "3": {
+        "inputs": {
+          "seed": 685468484323813,
+          "steps": 20,
+          "cfg": 8,
+          "sampler_name": "euler",
+          "scheduler": "normal",
+          "denoise": 1,
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "4": {
+        "inputs": {
+          "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "Checkpoint加载器（简易）"
+        }
+      },
+      "5": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "空Latent图像"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "Generate a high-quality image of a cat in a snowy forest.",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename_prefix": "SD1.5",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      }
+    },
+    "n2": {
+      "1": {
+        "inputs": {
+          "upscale_model": [
+            "3",
+            0
+          ],
+          "image": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "ImageUpscaleWithModel",
+        "_meta": {
+          "title": "使用模型放大图像"
+        }
+      },
+      "2": {
+        "inputs": {
+          "image": "__PLACEHOLDER_n1_images_0.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "加载图像"
+        }
+      },
+      "3": {
+        "inputs": {
+          "model_name": "RealESRGAN_x2.pth"
+        },
+        "class_type": "UpscaleModelLoader",
+        "_meta": {
+          "title": "加载放大模型"
+        }
+      },
+      "4": {
+        "inputs": {
+          "filename_prefix": "ComfyUI_smoke",
+          "images": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      }
+    }
+  },
+  "workflow_formats": {
+    "n1": "api",
+    "n2": "api"
+  },
+  "bindings": {
+    "n1": {
+      "task_id": "draw",
+      "awg_node_id": "n1",
+      "capability_id": "core.generative.text_to_image",
+      "implementation_id": "core.generative.text_to_image.default",
+      "model_ids": []
+    },
+    "n2": {
+      "task_id": "upscale",
+      "awg_node_id": "n2",
+      "capability_id": "aux.postprocess.upscale",
+      "implementation_id": "aux.postprocess.upscale.upscale2x",
+      "model_ids": [
+        "remote:model:37b566d018b9ddc9e8d0"
+      ]
+    }
+  },
+  "model_bindings": {
+    "n1": [
+      {
+        "node_id": "4",
+        "input_key": "ckpt_name",
+        "widget_index": null,
+        "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+        "loader_class": "CheckpointLoaderSimple",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ],
+    "n2": [
+      {
+        "node_id": "3",
+        "input_key": "model_name",
+        "widget_index": null,
+        "filename": "RealESRGAN_x2.pth",
+        "loader_class": "UpscaleModelLoader",
+        "graph_path": [],
+        "model_id": "remote:model:37b566d018b9ddc9e8d0",
+        "candidate_model_ids": [
+          "remote:model:37b566d018b9ddc9e8d0"
+        ]
+      }
+    ]
+  },
+  "capabilities": {
+    "core.generative.text_to_image.default": {
+      "id": "core.generative.text_to_image.default",
+      "title": "default",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/default.json).",
+      "tags": [
+        "text-to-image",
+        "t2i",
+        "generative"
+      ],
+      "workflow_file": "default.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "6",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "negative_prompt": {
+          "node_id": "7",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "seed": {
+          "node_id": "3",
+          "input_key": "seed",
+          "widget_index": null
+        },
+        "width": {
+          "node_id": "5",
+          "input_key": "width",
+          "widget_index": null
+        },
+        "height": {
+          "node_id": "5",
+          "input_key": "height",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "",
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "int",
+          "required": false,
+          "default": 1024,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "int",
+          "required": false,
+          "default": 1024,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "int",
+          "required": false,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "generative",
+        "text_to_image"
+      ],
+      "six_tuple": {
+        "name": "default",
+        "input_types": {
+          "prompt": "string",
+          "negative_prompt": "string",
+          "width": "int",
+          "height": "int",
+          "seed": "int"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/default.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "negative_prompt",
+            "type": "string",
+            "required": false,
+            "default": ""
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "required": false,
+            "default": 1024
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "required": false,
+            "default": 1024
+          },
+          {
+            "name": "seed",
+            "type": "int",
+            "required": false,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "default.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "510c7daadfd14efcb5f2a1185e109bbc74d2231cd2bbee12e1a2874605b60474",
+      "graph": {
+        "3": {
+          "inputs": {
+            "seed": 685468484323813,
+            "steps": 20,
+            "cfg": 8,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "4": {
+          "inputs": {
+            "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple",
+          "_meta": {
+            "title": "Checkpoint加载器（简易）"
+          }
+        },
+        "5": {
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage",
+          "_meta": {
+            "title": "空Latent图像"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "beautiful scenery nature glass bottle landscape, purple galaxy bottle,",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "text, watermark",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "4",
+              2
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "9": {
+          "inputs": {
+            "filename_prefix": "SD1.5",
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/default/default.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/default/default.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "4",
+          "input_key": "ckpt_name",
+          "widget_index": null,
+          "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+          "loader_class": "CheckpointLoaderSimple",
+          "graph_path": []
+        }
+      ]
+    },
+    "aux.postprocess.upscale.upscale2x": {
+      "id": "aux.postprocess.upscale.upscale2x",
+      "title": "upscale2x",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/upscale2x.json).",
+      "tags": [
+        "upscale",
+        "upscale",
+        "postprocess"
+      ],
+      "workflow_file": "upscale2x.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "source_image": {
+          "node_id": "2",
+          "input_key": "image",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "source_image",
+          "type": "image_filenames",
+          "required": true,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {
+        "scale_factor": 2
+      },
+      "tree_branch": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "six_tuple": {
+        "name": "upscale2x",
+        "input_types": {
+          "source_image": "image_filenames"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/upscale2x.json).",
+        "parameters": [
+          {
+            "name": "source_image",
+            "type": "image_filenames",
+            "required": true,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "upscale2x.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "6b07adc45cda53bdace389a1146c70f07ff838501ad62ff642fb759f574b445f",
+      "graph": {
+        "1": {
+          "inputs": {
+            "upscale_model": [
+              "3",
+              0
+            ],
+            "image": [
+              "2",
+              0
+            ]
+          },
+          "class_type": "ImageUpscaleWithModel",
+          "_meta": {
+            "title": "使用模型放大图像"
+          }
+        },
+        "2": {
+          "inputs": {
+            "image": "example.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "3": {
+          "inputs": {
+            "model_name": "RealESRGAN_x2.pth"
+          },
+          "class_type": "UpscaleModelLoader",
+          "_meta": {
+            "title": "加载放大模型"
+          }
+        },
+        "4": {
+          "inputs": {
+            "filename_prefix": "ComfyUI_smoke",
+            "images": [
+              "1",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/upscale2x/upscale2x.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/upscale2x/upscale2x.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "3",
+          "input_key": "model_name",
+          "widget_index": null,
+          "filename": "RealESRGAN_x2.pth",
+          "loader_class": "UpscaleModelLoader",
+          "graph_path": []
+        }
+      ]
+    }
+  }
+}

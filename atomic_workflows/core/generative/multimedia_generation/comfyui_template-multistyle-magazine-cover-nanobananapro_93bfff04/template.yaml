@@ -1,0 +1,59 @@
+id: remote.template.template-multistyle-magazine-cover-nanobananapro
+kind: comfyui_template
+title: Magazine Cover & Package Design
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Magazine Cover & Package Design
+  input_types:
+  - image
+  output_types: []
+  capability: Design the text layout for your magazine cover photo, and explore packaging
+    options for it.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template-multistyle-magazine-cover-nanobananapro.json
+  sha256: 3c561026ca6293e072141eaabb867622887c6cde5a2614b8898f304830b0295e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template-multistyle-magazine-cover-nanobananapro
+  title: Magazine Cover & Package Design
+  mediaType: image
+  mediaSubtype: webp
+  description: Design the text layout for your magazine cover photo, and explore packaging
+    options for it.
+  tags:
+  - API
+  - Image Edit
+  - Brand Design
+  models:
+  - Nano Banana Pro
+  - Google
+  date: '2025-12-06'
+  searchRank: 8
+  openSource: false
+  size: 0
+  usage: 2
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: template-Magazine_Cover_&_Package_Design.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/template-multistyle-magazine-cover-nanobananapro.png
+  minComfyUIVersion: 0.3.71

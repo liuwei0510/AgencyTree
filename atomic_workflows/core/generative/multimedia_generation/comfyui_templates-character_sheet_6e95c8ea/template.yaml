@@ -1,0 +1,83 @@
+id: remote:template:templates-character_sheet
+kind: comfyui_template
+title: 360 Full-body Turnaround
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 360 Full-body Turnaround
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your character and generate 360 turnaround views for full body
+    and close ups.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-character_sheet.json
+  sha256: 0fb960426432f4e285a986bbf3f85f1628fd195f117b5c24867502de66ca5d99
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-character_sheet
+  title: 360 Full-body Turnaround
+  description: Upload your character and generate 360 turnaround views for full body
+    and close ups.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Character Reference
+  models:
+  - Gemini3 Pro Image Preview
+  - Google
+  - Nano Banana Pro
+  date: '2026-01-13'
+  openSource: false
+  usage: 122
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: templates-character_sheet_pink_silver_outfit.jpg
+      mediaType: image
+  size: 0
+  searchRank: 0
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-character_sheet.mp4
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-character_sheet.json
+  sha256: 0fb960426432f4e285a986bbf3f85f1628fd195f117b5c24867502de66ca5d99
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-character_sheet_6e95c8ea/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

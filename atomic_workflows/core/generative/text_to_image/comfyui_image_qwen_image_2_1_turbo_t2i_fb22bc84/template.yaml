@@ -1,0 +1,66 @@
+id: remote.template.image_qwen_image_2_1_turbo_t2i
+kind: comfyui_template
+title: 'Qwen Image 2.1 Turbo: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image 2.1 Turbo: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts with Qwen Image 2.1 Turbo, the 8-step
+    accelerated checkpoint, producing a single 1024×1024 image in 8 sampling steps.
+    Same model family with native 2K output, professional typography, and alpha-channel
+    support, plus an optional Qwen 3.5 prompt enhancer. Ideal for poster and layout
+    design, transparent asset creation, and rapid concept visualization.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_2_1_turbo_t2i.json
+  sha256: 2bf5a81735ae90c73b9dd5a06630e197512075ff3fe17cf4c50eddef00d12e79
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_2_1_turbo_t2i
+  title: 'Qwen Image 2.1 Turbo: Text to Image'
+  description: Generate images from text prompts with Qwen Image 2.1 Turbo, the 8-step
+    accelerated checkpoint, producing a single 1024×1024 image in 8 sampling steps.
+    Same model family with native 2K output, professional typography, and alpha-channel
+    support, plus an optional Qwen 3.5 prompt enhancer. Ideal for poster and layout
+    design, transparent asset creation, and rapid concept visualization.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Int8
+  - Text to Image
+  - Turbo
+  models:
+  - Qwen Image 2.1
+  minComfyUIVersion: 0.39.0
+  date: '2026-10-13'
+  openSource: true
+  size: 40984448745
+  usage: 1259
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 461
+      nodeType: SaveImageAdvanced
+      file: image_qwen_image_2_1_turbo_t2i.png
+      mediaType: image
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,44 @@
+id: remote:model:13146ada705f9cd5c388
+kind: comfyui_model
+title: Comfy-Org/Wan2.1 t2v 14B (bf16)
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: Comfy-Org/Wan2.1 t2v 14B (bf16)
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: wan2.1_t2v_14B_bf16.safetensors
+  - name: base
+    value: Wan2.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/Wan2.1
+    filename: wan2.1_t2v_14B_bf16.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_14B_bf16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy-Org/Wan2.1 t2v 14B (bf16)
+  type: diffusion_model
+  base: Wan2.1
+  save_path: diffusion_models/Wan2.1
+  description: Wan2.1 difussion model for t2v 14B (bf16)
+  reference: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged
+  filename: wan2.1_t2v_14B_bf16.safetensors
+  url: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_14B_bf16.safetensors
+  size: 28.6GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

@@ -1,0 +1,58 @@
+id: remote:template:api_recraft_image_gen_with_color_control
+kind: comfyui_template
+title: 'Recraft: Color Control Image Generation'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Recraft: Color Control Image Generation'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images with custom color palettes and brand-specific visuals
+    using Recraft.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_image_gen_with_color_control.json
+  sha256: fab25ba404fb15120f51cfed5db832844a9b865dee9c0e70dc5dc504aeb7f4d4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_image_gen_with_color_control
+  title: 'Recraft: Color Control Image Generation'
+  description: Generate images with custom color palettes and brand-specific visuals
+    using Recraft.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Image
+  - API
+  models:
+  - Recraft
+  date: '2025-03-01'
+  openSource: false
+  size: 0
+  usage: 15
+  username: ComfyUI
+  minComfyUIVersion: 0.3.34
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_image_gen_with_color_control.json
+  sha256: fab25ba404fb15120f51cfed5db832844a9b865dee9c0e70dc5dc504aeb7f4d4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_recraft_image_gen_with_color_control_3700610d/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

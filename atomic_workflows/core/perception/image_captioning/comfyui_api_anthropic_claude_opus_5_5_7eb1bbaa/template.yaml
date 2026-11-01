@@ -1,0 +1,81 @@
+id: remote:template:api_anthropic_claude_opus_5_5
+kind: comfyui_template
+title: 'Claude: Opus 5.5'
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Claude: Opus 5.5'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    transcript: text
+  capability: This workflow pairs a single uploaded image with a text prompt, sending
+    both to Claude Opus 5.5 for multimodal reasoning and response generation. Ideal
+    for image captioning, visual question answering, and prompt-driven image analysis.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_opus_5_5.json
+  sha256: bd6c4508e5bf9c23c7ddb5a0c5664633d0aea90a4899f6b382378c04b201d230
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_anthropic_claude_opus_5_5
+  title: 'Claude: Opus 5.5'
+  description: This workflow pairs a single uploaded image with a text prompt, sending
+    both to Claude Opus 5.5 for multimodal reasoning and response generation. Ideal
+    for image captioning, visual question answering, and prompt-driven image analysis.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - LLM
+  models:
+  - Claude
+  logos:
+  - provider: Anthropic
+  minComfyUIVersion: 0.37.2
+  date: '2026-09-23'
+  openSource: false
+  size: 0
+  usage: 97
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_opus_5_5.json
+  sha256: bd6c4508e5bf9c23c7ddb5a0c5664633d0aea90a4899f6b382378c04b201d230
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_anthropic_claude_opus_5_5_7eb1bbaa/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: transcript
+  type: text
+planning_eligible: true

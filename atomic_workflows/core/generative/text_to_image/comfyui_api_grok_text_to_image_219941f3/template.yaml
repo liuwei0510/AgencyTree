@@ -1,0 +1,67 @@
+id: remote:template:api_grok_text_to_image
+kind: comfyui_template
+title: 'Grok: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input text prompts to generate high-quality images quickly using the
+    Grok model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_text_to_image.json
+  sha256: 5b9a99ea12e3057ecfd8447d31d4051eed32156b212bc1c3b4bd165b2e4c9eef
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_text_to_image
+  title: 'Grok: Text to Image'
+  description: Input text prompts to generate high-quality images quickly using the
+    Grok model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Grok
+  date: '2026-01-28'
+  openSource: false
+  usage: 225
+  size: 0
+  searchRank: 0
+  logos:
+  - provider: Grok
+  io:
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: api_grok_text_to_image.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/api_grok_text_to_image.png
+  minComfyUIVersion: 0.11.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_text_to_image.json
+  sha256: 5b9a99ea12e3057ecfd8447d31d4051eed32156b212bc1c3b4bd165b2e4c9eef
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

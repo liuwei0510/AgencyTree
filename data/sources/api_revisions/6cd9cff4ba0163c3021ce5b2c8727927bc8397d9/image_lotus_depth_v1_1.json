@@ -1,0 +1,42 @@
+{
+  "12": {
+    "inputs": {
+      "image": "image_lotus_depth_v1_1_input_image.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "input",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.34"
+    }
+  },
+  "74": {
+    "inputs": {
+      "pixels": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "c7d32155-757f-4e5d-a139-7e438da96f2f",
+    "_meta": {
+      "title": "c7d32155-757f-4e5d-a139-7e438da96f2f",
+      "cnr_id": "comfy-core",
+      "ver": "0.4.0"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "74",
+        0
+      ],
+      "filename_prefix": "Lotus_depth"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "output",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.34"
+    }
+  }
+}

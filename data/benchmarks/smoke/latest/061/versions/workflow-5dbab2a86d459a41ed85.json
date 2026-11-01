@@ -1,0 +1,1217 @@
+{
+  "version": "workflow-5dbab2a86d459a41ed85",
+  "schema_version": 2,
+  "parent": null,
+  "created_at": "2026-10-30T05:23:57.896154+00:00",
+  "intent": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+  "act_version": "act-069d43ce89e2a1500d61",
+  "status": "validated_offline",
+  "runtime_verified": false,
+  "generation_mode": "host_plan",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [
+      {
+        "task_id": "edit",
+        "goal": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+        "capability_id": "core.editing.image_editing",
+        "inputs": {
+          "source_image": "dish_table.png"
+        },
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": []
+      }
+    ],
+    "edges": [],
+    "diagnostics": [],
+    "assumptions": []
+  },
+  "awg": {
+    "nodes": [
+      {
+        "node_id": "n1",
+        "task_id": "edit",
+        "capability_id": "core.editing.image_editing",
+        "input_types": {
+          "source_image": "image",
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+          "source_image": "dish_table.png"
+        },
+        "constraints": {}
+      }
+    ],
+    "edges": [],
+    "ordering": [],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "ACT implementation bindings",
+    "nodes": [
+      {
+        "dag_id": "n1",
+        "atomic_id": "core.editing.image_editing.flux_kontext_dev_basic_5",
+        "depends_on": [],
+        "inputs": {
+          "prompt": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+          "source_image": "dish_table.png"
+        },
+        "bindings": {},
+        "notes": null
+      }
+    ],
+    "global_inputs": {}
+  },
+  "ewc": {
+    "n1": {
+      "136": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "192:8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      },
+      "190": {
+        "inputs": {
+          "image": "dish_table.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "加载图像"
+        }
+      },
+      "192:39": {
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "加载VAE"
+        }
+      },
+      "192:38": {
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+          "type": "flux",
+          "device": "default"
+        },
+        "class_type": "DualCLIPLoader",
+        "_meta": {
+          "title": "双CLIP加载器"
+        }
+      },
+      "192:135": {
+        "inputs": {
+          "conditioning": [
+            "192:6",
+            0
+          ]
+        },
+        "class_type": "ConditioningZeroOut",
+        "_meta": {
+          "title": "条件零化"
+        }
+      },
+      "192:8": {
+        "inputs": {
+          "samples": [
+            "192:31",
+            0
+          ],
+          "vae": [
+            "192:39",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "192:124": {
+        "inputs": {
+          "pixels": [
+            "192:42",
+            0
+          ],
+          "vae": [
+            "192:39",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAE编码"
+        }
+      },
+      "192:35": {
+        "inputs": {
+          "guidance": 2.5,
+          "conditioning": [
+            "192:177",
+            0
+          ]
+        },
+        "class_type": "FluxGuidance",
+        "_meta": {
+          "title": "Flux引导"
+        }
+      },
+      "192:37": {
+        "inputs": {
+          "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+          "weight_dtype": "default"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNet加载器"
+        }
+      },
+      "192:177": {
+        "inputs": {
+          "conditioning": [
+            "192:6",
+            0
+          ],
+          "latent": [
+            "192:124",
+            0
+          ]
+        },
+        "class_type": "ReferenceLatent",
+        "_meta": {
+          "title": "参考Latent"
+        }
+      },
+      "192:146": {
+        "inputs": {
+          "direction": "right",
+          "match_image_size": true,
+          "spacing_width": 0,
+          "spacing_color": "white",
+          "image1": [
+            "190",
+            0
+          ],
+          "image2": [
+            "190",
+            0
+          ]
+        },
+        "class_type": "ImageStitch",
+        "_meta": {
+          "title": "图像拼接"
+        }
+      },
+      "192:42": {
+        "inputs": {
+          "image": [
+            "192:146",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "图像缩放为FluxKontext"
+        }
+      },
+      "192:31": {
+        "inputs": {
+          "seed": 784381637916598,
+          "steps": 20,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "192:37",
+            0
+          ],
+          "positive": [
+            "192:35",
+            0
+          ],
+          "negative": [
+            "192:135",
+            0
+          ],
+          "latent_image": [
+            "192:124",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "192:6": {
+        "inputs": {
+          "text": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+          "clip": [
+            "192:38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      }
+    }
+  },
+  "workflow_formats": {
+    "n1": "api"
+  },
+  "bindings": {
+    "n1": {
+      "task_id": "edit",
+      "awg_node_id": "n1",
+      "capability_id": "core.editing.image_editing",
+      "implementation_id": "core.editing.image_editing.flux_kontext_dev_basic_5",
+      "model_ids": [
+        "remote:model:2b361623f3b4b617a039",
+        "remote:model:e74e0973d994f19c0f6c",
+        "remote:model:ffdaa19c0da074a30e1b"
+      ]
+    }
+  },
+  "model_bindings": {
+    "n1": [
+      {
+        "node_id": "192:39",
+        "input_key": "vae_name",
+        "widget_index": null,
+        "filename": "ae.safetensors",
+        "loader_class": "VAELoader",
+        "graph_path": [],
+        "model_id": "remote:model:ffdaa19c0da074a30e1b",
+        "candidate_model_ids": [
+          "remote:model:ffdaa19c0da074a30e1b"
+        ]
+      },
+      {
+        "node_id": "192:38",
+        "input_key": "clip_name1",
+        "widget_index": null,
+        "filename": "clip_l.safetensors",
+        "loader_class": "DualCLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:2b361623f3b4b617a039",
+        "candidate_model_ids": [
+          "remote:model:2b361623f3b4b617a039"
+        ]
+      },
+      {
+        "node_id": "192:38",
+        "input_key": "clip_name2",
+        "widget_index": null,
+        "filename": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+        "loader_class": "DualCLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:e74e0973d994f19c0f6c",
+        "candidate_model_ids": [
+          "remote:model:e74e0973d994f19c0f6c"
+        ]
+      },
+      {
+        "node_id": "192:37",
+        "input_key": "unet_name",
+        "widget_index": null,
+        "filename": "flux1-dev-kontext_fp8_scaled.safetensors",
+        "loader_class": "UNETLoader",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ]
+  },
+  "generation": {
+    "att": {
+      "tasks": [
+        {
+          "task_id": "edit",
+          "goal": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+          "capability_id": "core.editing.image_editing",
+          "inputs": {
+            "source_image": "dish_table.png"
+          },
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": []
+        }
+      ],
+      "edges": [],
+      "diagnostics": [],
+      "assumptions": []
+    },
+    "awg": {
+      "nodes": [
+        {
+          "node_id": "n1",
+          "task_id": "edit",
+          "capability_id": "core.editing.image_editing",
+          "input_types": {
+            "source_image": "image",
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+            "source_image": "dish_table.png"
+          },
+          "constraints": {}
+        }
+      ],
+      "edges": [],
+      "ordering": [],
+      "constraints": {},
+      "unresolved": []
+    },
+    "execution_plan": {
+      "summary": "ACT implementation bindings",
+      "nodes": [
+        {
+          "dag_id": "n1",
+          "atomic_id": "core.editing.image_editing.flux_kontext_dev_basic_5",
+          "depends_on": [],
+          "inputs": {
+            "prompt": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+            "source_image": "dish_table.png"
+          },
+          "bindings": {},
+          "notes": null
+        }
+      ],
+      "global_inputs": {}
+    },
+    "ewc": {
+      "n1": {
+        "136": {
+          "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+              "192:8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        },
+        "190": {
+          "inputs": {
+            "image": "dish_table.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "192:39": {
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "192:38": {
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "class_type": "DualCLIPLoader",
+          "_meta": {
+            "title": "双CLIP加载器"
+          }
+        },
+        "192:135": {
+          "inputs": {
+            "conditioning": [
+              "192:6",
+              0
+            ]
+          },
+          "class_type": "ConditioningZeroOut",
+          "_meta": {
+            "title": "条件零化"
+          }
+        },
+        "192:8": {
+          "inputs": {
+            "samples": [
+              "192:31",
+              0
+            ],
+            "vae": [
+              "192:39",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "192:124": {
+          "inputs": {
+            "pixels": [
+              "192:42",
+              0
+            ],
+            "vae": [
+              "192:39",
+              0
+            ]
+          },
+          "class_type": "VAEEncode",
+          "_meta": {
+            "title": "VAE编码"
+          }
+        },
+        "192:35": {
+          "inputs": {
+            "guidance": 2.5,
+            "conditioning": [
+              "192:177",
+              0
+            ]
+          },
+          "class_type": "FluxGuidance",
+          "_meta": {
+            "title": "Flux引导"
+          }
+        },
+        "192:37": {
+          "inputs": {
+            "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "192:177": {
+          "inputs": {
+            "conditioning": [
+              "192:6",
+              0
+            ],
+            "latent": [
+              "192:124",
+              0
+            ]
+          },
+          "class_type": "ReferenceLatent",
+          "_meta": {
+            "title": "参考Latent"
+          }
+        },
+        "192:146": {
+          "inputs": {
+            "direction": "right",
+            "match_image_size": true,
+            "spacing_width": 0,
+            "spacing_color": "white",
+            "image1": [
+              "190",
+              0
+            ],
+            "image2": [
+              "190",
+              0
+            ]
+          },
+          "class_type": "ImageStitch",
+          "_meta": {
+            "title": "图像拼接"
+          }
+        },
+        "192:42": {
+          "inputs": {
+            "image": [
+              "192:146",
+              0
+            ]
+          },
+          "class_type": "FluxKontextImageScale",
+          "_meta": {
+            "title": "图像缩放为FluxKontext"
+          }
+        },
+        "192:31": {
+          "inputs": {
+            "seed": 784381637916598,
+            "steps": 20,
+            "cfg": 1,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1,
+            "model": [
+              "192:37",
+              0
+            ],
+            "positive": [
+              "192:35",
+              0
+            ],
+            "negative": [
+              "192:135",
+              0
+            ],
+            "latent_image": [
+              "192:124",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "192:6": {
+          "inputs": {
+            "text": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+            "clip": [
+              "192:38",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        }
+      }
+    },
+    "converged": true,
+    "failure_reason": null,
+    "validation_log": [
+      {
+        "stage": "ANALYSIS",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ARCHITECTURE",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ENGINEERING",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      }
+    ],
+    "generation_mode": "host_plan"
+  },
+  "capabilities": {
+    "core.editing.image_editing.flux_kontext_dev_basic_5": {
+      "id": "core.editing.image_editing.flux_kontext_dev_basic_5",
+      "title": "flux_kontext_dev_basic-5",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/flux_kontext_dev_basic-5.json).",
+      "tags": [
+        "image-editing",
+        "edit",
+        "inpaint"
+      ],
+      "workflow_file": "flux_kontext_dev_basic-5.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "192:6",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "seed": {
+          "node_id": "192:31",
+          "input_key": "seed",
+          "widget_index": null
+        },
+        "source_image": {
+          "node_id": "190",
+          "input_key": "image",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "int",
+          "required": false,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "source_image",
+          "type": "image_filenames",
+          "required": true,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "editing",
+        "image_editing"
+      ],
+      "six_tuple": {
+        "name": "flux_kontext_dev_basic-5",
+        "input_types": {
+          "prompt": "string",
+          "seed": "int",
+          "source_image": "image_filenames"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/flux_kontext_dev_basic-5.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "seed",
+            "type": "int",
+            "required": false,
+            "default": null
+          },
+          {
+            "name": "source_image",
+            "type": "image_filenames",
+            "required": true,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "flux_kontext_dev_basic-5.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "1a8e624fbea5da8162e88bf8d3f505adc704a6d3003acbf36fe3dd0dec30a4ec",
+      "graph": {
+        "136": {
+          "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+              "192:8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        },
+        "190": {
+          "inputs": {
+            "image": "flux_kontext_dev_basic_input_image.jpg"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "192:39": {
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "192:38": {
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "class_type": "DualCLIPLoader",
+          "_meta": {
+            "title": "双CLIP加载器"
+          }
+        },
+        "192:135": {
+          "inputs": {
+            "conditioning": [
+              "192:6",
+              0
+            ]
+          },
+          "class_type": "ConditioningZeroOut",
+          "_meta": {
+            "title": "条件零化"
+          }
+        },
+        "192:8": {
+          "inputs": {
+            "samples": [
+              "192:31",
+              0
+            ],
+            "vae": [
+              "192:39",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "192:124": {
+          "inputs": {
+            "pixels": [
+              "192:42",
+              0
+            ],
+            "vae": [
+              "192:39",
+              0
+            ]
+          },
+          "class_type": "VAEEncode",
+          "_meta": {
+            "title": "VAE编码"
+          }
+        },
+        "192:35": {
+          "inputs": {
+            "guidance": 2.5,
+            "conditioning": [
+              "192:177",
+              0
+            ]
+          },
+          "class_type": "FluxGuidance",
+          "_meta": {
+            "title": "Flux引导"
+          }
+        },
+        "192:37": {
+          "inputs": {
+            "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "192:177": {
+          "inputs": {
+            "conditioning": [
+              "192:6",
+              0
+            ],
+            "latent": [
+              "192:124",
+              0
+            ]
+          },
+          "class_type": "ReferenceLatent",
+          "_meta": {
+            "title": "参考Latent"
+          }
+        },
+        "192:146": {
+          "inputs": {
+            "direction": "right",
+            "match_image_size": true,
+            "spacing_width": 0,
+            "spacing_color": "white",
+            "image1": [
+              "190",
+              0
+            ],
+            "image2": [
+              "190",
+              0
+            ]
+          },
+          "class_type": "ImageStitch",
+          "_meta": {
+            "title": "图像拼接"
+          }
+        },
+        "192:42": {
+          "inputs": {
+            "image": [
+              "192:146",
+              0
+            ]
+          },
+          "class_type": "FluxKontextImageScale",
+          "_meta": {
+            "title": "图像缩放为FluxKontext"
+          }
+        },
+        "192:31": {
+          "inputs": {
+            "seed": 784381637916598,
+            "steps": 20,
+            "cfg": 1,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1,
+            "model": [
+              "192:37",
+              0
+            ],
+            "positive": [
+              "192:35",
+              0
+            ],
+            "negative": [
+              "192:135",
+              0
+            ],
+            "latent_image": [
+              "192:124",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "192:6": {
+          "inputs": {
+            "text": "Using this elegant style, create a portrait of a swan wearing a pearl tiara and lace collar, maintaining the same refined quality and soft color tones.",
+            "clip": [
+              "192:38",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/flux_kontext_dev_basic-5/flux_kontext_dev_basic-5.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/flux_kontext_dev_basic-5/flux_kontext_dev_basic-5.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "192:39",
+          "input_key": "vae_name",
+          "widget_index": null,
+          "filename": "ae.safetensors",
+          "loader_class": "VAELoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "192:38",
+          "input_key": "clip_name1",
+          "widget_index": null,
+          "filename": "clip_l.safetensors",
+          "loader_class": "DualCLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "192:38",
+          "input_key": "clip_name2",
+          "widget_index": null,
+          "filename": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+          "loader_class": "DualCLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "192:37",
+          "input_key": "unet_name",
+          "widget_index": null,
+          "filename": "flux1-dev-kontext_fp8_scaled.safetensors",
+          "loader_class": "UNETLoader",
+          "graph_path": []
+        }
+      ]
+    }
+  },
+  "comfy_workflow": {
+    "n1::136": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "n1::192:8",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "保存图像"
+      }
+    },
+    "n1::190": {
+      "inputs": {
+        "image": "dish_table.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "加载图像"
+      }
+    },
+    "n1::192:39": {
+      "inputs": {
+        "vae_name": "ae.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "加载VAE"
+      }
+    },
+    "n1::192:38": {
+      "inputs": {
+        "clip_name1": "clip_l.safetensors",
+        "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+        "type": "flux",
+        "device": "default"
+      },
+      "class_type": "DualCLIPLoader",
+      "_meta": {
+        "title": "双CLIP加载器"
+      }
+    },
+    "n1::192:135": {
+      "inputs": {
+        "conditioning": [
+          "n1::192:6",
+          0
+        ]
+      },
+      "class_type": "ConditioningZeroOut",
+      "_meta": {
+        "title": "条件零化"
+      }
+    },
+    "n1::192:8": {
+      "inputs": {
+        "samples": [
+          "n1::192:31",
+          0
+        ],
+        "vae": [
+          "n1::192:39",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE解码"
+      }
+    },
+    "n1::192:124": {
+      "inputs": {
+        "pixels": [
+          "n1::192:42",
+          0
+        ],
+        "vae": [
+          "n1::192:39",
+          0
+        ]
+      },
+      "class_type": "VAEEncode",
+      "_meta": {
+        "title": "VAE编码"
+      }
+    },
+    "n1::192:35": {
+      "inputs": {
+        "guidance": 2.5,
+        "conditioning": [
+          "n1::192:177",
+          0
+        ]
+      },
+      "class_type": "FluxGuidance",
+      "_meta": {
+        "title": "Flux引导"
+      }
+    },
+    "n1::192:37": {
+      "inputs": {
+        "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+        "weight_dtype": "default"
+      },
+      "class_type": "UNETLoader",
+      "_meta": {
+        "title": "UNet加载器"
+      }
+    },
+    "n1::192:177": {
+      "inputs": {
+        "conditioning": [
+          "n1::192:6",
+          0
+        ],
+        "latent": [
+          "n1::192:124",
+          0
+        ]
+      },
+      "class_type": "ReferenceLatent",
+      "_meta": {
+        "title": "参考Latent"
+      }
+    },
+    "n1::192:146": {
+      "inputs": {
+        "direction": "right",
+        "match_image_size": true,
+        "spacing_width": 0,
+        "spacing_color": "white",
+        "image1": [
+          "n1::190",
+          0
+        ],
+        "image2": [
+          "n1::190",
+          0
+        ]
+      },
+      "class_type": "ImageStitch",
+      "_meta": {
+        "title": "图像拼接"
+      }
+    },
+    "n1::192:42": {
+      "inputs": {
+        "image": [
+          "n1::192:146",
+          0
+        ]
+      },
+      "class_type": "FluxKontextImageScale",
+      "_meta": {
+        "title": "图像缩放为FluxKontext"
+      }
+    },
+    "n1::192:31": {
+      "inputs": {
+        "seed": 784381637916598,
+        "steps": 20,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1,
+        "model": [
+          "n1::192:37",
+          0
+        ],
+        "positive": [
+          "n1::192:35",
+          0
+        ],
+        "negative": [
+          "n1::192:135",
+          0
+        ],
+        "latent_image": [
+          "n1::192:124",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "K采样器"
+      }
+    },
+    "n1::192:6": {
+      "inputs": {
+        "text": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+        "clip": [
+          "n1::192:38",
+          0
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP Text Encode (Positive Prompt)"
+      }
+    }
+  },
+  "export_info": {
+    "complete": true,
+    "format": "api",
+    "issues": [],
+    "cross_component_edges": [],
+    "components": {
+      "n1": [
+        "n1::136",
+        "n1::190",
+        "n1::192:39",
+        "n1::192:38",
+        "n1::192:135",
+        "n1::192:8",
+        "n1::192:124",
+        "n1::192:35",
+        "n1::192:37",
+        "n1::192:177",
+        "n1::192:146",
+        "n1::192:42",
+        "n1::192:31",
+        "n1::192:6"
+      ]
+    }
+  }
+}

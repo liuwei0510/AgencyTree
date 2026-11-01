@@ -1,0 +1,45 @@
+id: remote:model:ff57f0cc6e5c438bdded
+kind: comfyui_model
+title: Comfy-Org/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: Comfy-Org/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: umt5_xxl_fp8_e4m3fn_scaled.safetensors
+  - name: base
+    value: umt5_xxl
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders
+    filename: umt5_xxl_fp8_e4m3fn_scaled.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Comfy-Org/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+  type: clip
+  base: umt5_xxl
+  save_path: text_encoders
+  description: umt5_xxl_fp8_e4m3fn_scaled text encoder for Wan2.1
+  reference: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged
+  filename: umt5_xxl_fp8_e4m3fn_scaled.safetensors
+  url: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors
+  size: 6.74GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/text_encoding/model_Comfy-Org_umt5_xxl_fp8_e4m3fn_scaled.safetensors_ff57f0cc/model.yaml
+validation_errors: []

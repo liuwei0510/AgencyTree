@@ -1,0 +1,64 @@
+id: remote.template.image_anima_preview
+kind: comfyui_template
+title: Anima Anime Text-to-Image Generation
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Anima Anime Text-to-Image Generation
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt to generate an anime-style image using the Anima
+    model. Configure settings like steps and CFG scale to control the output. The
+    workflow produces a non-photorealistic illustration based on your description.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_anima_preview.json
+  sha256: dae3b6bd064b9c731059065ea23a93fe5cca17c85ef0dc4ea177e3a5569b110a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_anima_preview
+  tutorialUrl: https://docs.comfy.org/tutorials/image/anima/anima
+  title: Anima Anime Text-to-Image Generation
+  description: Input a text prompt to generate an anime-style image using the Anima
+    model. Configure settings like steps and CFG scale to control the output. The
+    workflow produces a non-photorealistic illustration based on your description.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Anime
+  - Text to Image
+  models:
+  - Anima
+  date: '2025-05-07'
+  openSource: true
+  usage: 202
+  size: 5583457485
+  searchRank: 0
+  io:
+    outputs:
+    - nodeId: 46
+      nodeType: SaveImage
+      file: image_anima_preview.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_anima_preview.png
+  minComfyUIVersion: 0.11.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,85 @@
+id: remote:template:api_seedance2_0_r2v_real_human
+kind: comfyui_template
+title: 'Seedance2.0 Real Human: Reference to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance2.0 Real Human: Reference to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+    transcript: text
+  capability: Upload a reference video of a real person for identity verification.
+    Use your own photo to validate and generate a personalized video output.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_0_r2v_real_human.json
+  sha256: 7aecaf482c644ad9b7609d02531a16fa379bc1bc33aeba7e81879ec0d26ce422
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_0_r2v_real_human
+  title: 'Seedance2.0 Real Human: Reference to Video'
+  description: Upload a reference video of a real person for identity verification.
+    Use your own photo to validate and generate a personalized video output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Video
+  - Reference to Video
+  models:
+  - Seedance 2.0
+  logos:
+  - provider: ByteDance
+  date: '2026-04-23'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: real_human_demo.png
+      mediaType: image
+  thumbnail:
+  - output/real_human_demo.mp4
+  minComfyUIVersion: 0.26.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_0_r2v_real_human.json
+  sha256: 7aecaf482c644ad9b7609d02531a16fa379bc1bc33aeba7e81879ec0d26ce422
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_seedance2_0_r2v_real_human_3ac742e7/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text
+planning_eligible: true

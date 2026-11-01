@@ -1,0 +1,72 @@
+id: remote:template:template_ltx2_3_lora_video_outpainting
+kind: comfyui_template
+title: 'LTX2.3 LoRA: Video Outpainting'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX2.3 LoRA: Video Outpainting'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Video Outpainting using the LTX 2.3 Video Outpainting IC LoRA. Expand
+    your video in any direction!
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_lora_video_outpainting.json
+  sha256: 9bb48e5ce5f39f496403fa057b5acc4a8ec9d24c82a871ff440dbc30568a4428
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_ltx2_3_lora_video_outpainting
+  title: 'LTX2.3 LoRA: Video Outpainting'
+  description: Video Outpainting using the LTX 2.3 Video Outpainting IC LoRA. Expand
+    your video in any direction!
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Outpainting
+  - LoRA
+  models:
+  - LTX-2.3
+  requiresCustomNodes:
+  - ComfyMath
+  - ComfyUI-LTXVideo
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  date: '2026-05-21'
+  openSource: true
+  includeOnDistributions:
+  - cloud
+  size: 62491774157
+  usage: 82
+  searchRank: 0
+  username: PurzBeats
+  io:
+    inputs:
+    - nodeId: 5060
+      nodeType: VHS_LoadVideo
+      file: ltx2.3_video_outpainting_input.mp4
+      mediaType: video
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_lora_video_outpainting.json
+  sha256: 9bb48e5ce5f39f496403fa057b5acc4a8ec9d24c82a871ff440dbc30568a4428
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_template_ltx2_3_lora_video_outpainting_9b5e0c3c/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

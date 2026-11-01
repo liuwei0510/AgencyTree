@@ -1,0 +1,84 @@
+id: remote.template.api_bytedance_seedream_5_0_lite_image_edit
+kind: comfyui_template
+title: 'Seedream 5.0 Lite: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedream 5.0 Lite: Image Edit'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types: {}
+  capability: Upload an image and a text prompt to edit it. Generate a modified image
+    where the details align with your instructions.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_lite_image_edit.json
+  sha256: 228ce4df858dda4611dafe97808dcdd66619322852ae4ba8a7d6db6efaf7aba1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedream_5_0_lite_image_edit
+  title: 'Seedream 5.0 Lite: Image Edit'
+  description: Upload an image and a text prompt to edit it. Generate a modified image
+    where the details align with your instructions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Seedream 5.0
+  logos:
+  - provider: ByteDance
+  date: '2026-02-24'
+  openSource: false
+  size: 0
+  usage: 1363
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 29
+      nodeType: LoadImage
+      file: man_with_old_computers.png
+      mediaType: image
+    - nodeId: 32
+      nodeType: LoadImage
+      file: inflated_character.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/man_with_old_computers.png
+  - output/api_bytedance_seedream_5_0_lite_image_edit.png
+  minComfyUIVersion: 0.31.0
+validation_errors: []
+planning_eligible: false
+inputs: *id001
+inject:
+  source_image:
+    node_id: '29'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '32'
+    input_key: image
+    widget_index: 0
+outputs: []

@@ -1,0 +1,26 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "56",
+        0
+      ],
+      "filename_prefix": "Flux.1_Dev"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.4.0"
+    }
+  },
+  "56": {
+    "inputs": {},
+    "class_type": "e2a55522-bf16-4d9f-a222-5b8788ef2982",
+    "_meta": {
+      "title": "e2a55522-bf16-4d9f-a222-5b8788ef2982",
+      "cnr_id": "comfy-core",
+      "ver": "0.18.1"
+    }
+  }
+}

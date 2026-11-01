@@ -1,0 +1,62 @@
+id: remote.template.video_ltx2_depth_to_video
+kind: comfyui_template
+title: LTX-2 Depth to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LTX-2 Depth to Video
+  input_types:
+  - image
+  - video
+  output_types: []
+  capability: Generate high-quality videos from depth maps with synchronized audio-video
+    generation using LTX-2. Features precise depth control, spatial awareness, and
+    efficient performance.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_depth_to_video.json
+  sha256: 46de71f715c2ce14173945febd46bd53c733908c04a5276ebd34367f4f9631a4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_depth_to_video
+  title: LTX-2 Depth to Video
+  description: Generate high-quality videos from depth maps with synchronized audio-video
+    generation using LTX-2. Features precise depth control, spatial awareness, and
+    efficient performance.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - ControlNet
+  - Video
+  thumbnailVariant: hoverDissolve
+  models:
+  - LTX-2
+  - Lightricks
+  date: '2026-01-06'
+  size: 38010460570
+  usage: 11
+  searchRank: 0
+  openSource: true
+  io:
+    inputs:
+    - nodeId: 160
+      nodeType: LoadImage
+      file: minimalist_sky_view_lounge.png
+      mediaType: image
+    - nodeId: 183
+      nodeType: LoadVideo
+      file: minimalist_sky_view_lounge.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0

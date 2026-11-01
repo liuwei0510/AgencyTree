@@ -1,0 +1,52 @@
+id: remote.template.api_tripo_image_to_model
+kind: comfyui_template
+title: 'Tripo: Image to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo: Image to Model'
+  input_types:
+  - image
+  output_types: []
+  capability: Generate professional 3D assets from 2D images using Tripo engine.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_image_to_model.json
+  sha256: a4b9cfb1fcce0fe448173f9ba480fdcff7a7f6a447d2015ead85289a40c9808a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_image_to_model
+  title: 'Tripo: Image to Model'
+  description: Generate professional 3D assets from 2D images using Tripo engine.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - Image to 3D
+  - API
+  models:
+  - Tripo
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 10
+  io:
+    inputs:
+    - nodeId: 36
+      nodeType: LoadImage
+      file: api_tripo_image_to_model_input_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.35.1

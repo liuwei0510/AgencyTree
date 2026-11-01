@@ -1,0 +1,77 @@
+id: remote.template.image_qwen_Image_2512_controlnet
+kind: comfyui_template
+title: 'Qwen-Image 2512: Fun Union ControlNet'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen-Image 2512: Fun Union ControlNet'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and select a control type from Canny, HED, Depth, Pose,
+    MLSD, Scribble, or Grayscale. Generate a new image guided by the chosen structural
+    condition.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_Image_2512_controlnet.json
+  sha256: a947f8f89adbb0119116cbbff9a577e04b29ff537417f6359260d88830e4cd5f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_Image_2512_controlnet
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image-2512
+  title: 'Qwen-Image 2512: Fun Union ControlNet'
+  description: Upload an image and select a control type from Canny, HED, Depth, Pose,
+    MLSD, Scribble, or Grayscale. Generate a new image guided by the chosen structural
+    condition.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  - Image
+  models:
+  - Qwen-Image 2512
+  date: '2026-02-16'
+  openSource: true
+  size: 35326106010
+  usage: 53
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 121
+      nodeType: LoadImage
+      file: low_angle_shot.png
+      mediaType: image
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: image_qwen_Image_2512_controlnet.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '121'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

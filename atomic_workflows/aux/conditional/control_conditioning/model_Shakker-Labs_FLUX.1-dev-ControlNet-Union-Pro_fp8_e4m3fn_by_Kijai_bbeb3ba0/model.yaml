@@ -1,0 +1,48 @@
+id: remote:model:bbeb3ba0f892a978aabd
+kind: comfyui_model
+title: Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro (fp8_e4m3fn) by Kijai
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro (fp8_e4m3fn) by Kijai
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/canny_conditioning
+  parameters:
+  - name: filename
+    value: flux_shakker_labs_union_pro-fp8_e4m3fn.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/FLUX.1
+    filename: flux_shakker_labs_union_pro-fp8_e4m3fn.safetensors
+    download_locator: https://huggingface.co/Kijai/flux-fp8/resolve/main/flux_shakker_labs_union_pro-fp8_e4m3fn.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro (fp8_e4m3fn) by Kijai
+  type: controlnet
+  base: FLUX.1
+  save_path: controlnet/FLUX.1
+  description: 'FLUX.1 [Dev] Union Controlnet. Supports Canny, Tile, Depth, Blur,
+    Pose, Gray, Low Quality
+
+    Version quantized to fp8_e4m3fn by Kijai'
+  reference: https://huggingface.co/Kijai/flux-fp8
+  filename: flux_shakker_labs_union_pro-fp8_e4m3fn.safetensors
+  url: https://huggingface.co/Kijai/flux-fp8/resolve/main/flux_shakker_labs_union_pro-fp8_e4m3fn.safetensors
+  size: 3.3GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/canny_conditioning/model_Shakker-Labs_FLUX.1-dev-ControlNet-Union-Pro_fp8_e4m3fn_by_Kijai_bbeb3ba0/model.yaml
+validation_errors: []

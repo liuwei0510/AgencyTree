@@ -1,0 +1,91 @@
+id: remote:template:api_minimax_h3_max_i2v
+kind: comfyui_template
+title: 'MiniMax H3 Max: Image to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3 Max: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+    transcript: text
+  capability: Generate video from a source image using MiniMax H3 Max, animating your
+    still frame while preserving its composition, visual identity, and aspect ratio.
+    The model delivers faster-than-real-time generation with strong prompt adherence
+    and polished cinematic aesthetics. Ideal for bringing character art to life, animating
+    product shots, and creating motion from concept images.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_max_i2v.json
+  sha256: e1a21ac693c51ebe12a36d269c0a9b145248eadcacdf9dc8c706ce18e42a343b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_minimax_h3_max_i2v
+  title: 'MiniMax H3 Max: Image to Video'
+  description: Generate video from a source image using MiniMax H3 Max, animating
+    your still frame while preserving its composition, visual identity, and aspect
+    ratio. The model delivers faster-than-real-time generation with strong prompt
+    adherence and polished cinematic aesthetics. Ideal for bringing character art
+    to life, animating product shots, and creating motion from concept images.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - MiniMax H3
+  logos:
+  - provider: MiniMax
+  date: '2026-09-01'
+  openSource: false
+  size: 0
+  usage: 188
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 25
+      nodeType: LoadImage
+      file: sneaker_black.png
+      mediaType: image
+  thumbnail:
+  - output/api_minimax_h3_max_i2v.mp4
+  minComfyUIVersion: 0.34.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_max_i2v.json
+  sha256: e1a21ac693c51ebe12a36d269c0a9b145248eadcacdf9dc8c706ce18e42a343b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_minimax_h3_max_i2v_c512fe8c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '25'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,798 @@
+{
+  "version": "workflow-8e8ea9fdde8ea6a56cac",
+  "schema_version": 2,
+  "parent": null,
+  "created_at": "2026-10-30T05:23:57.771405+00:00",
+  "intent": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+  "act_version": "act-069d43ce89e2a1500d61",
+  "status": "validated_offline",
+  "runtime_verified": false,
+  "generation_mode": "tools_first",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [
+      {
+        "task_id": "t1",
+        "goal": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+        "capability_id": "core.generative.text_to_image",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {
+          "requirement": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+        },
+        "depends_on": []
+      }
+    ],
+    "edges": [],
+    "diagnostics": [],
+    "assumptions": []
+  },
+  "awg": {
+    "nodes": [
+      {
+        "node_id": "n1",
+        "task_id": "t1",
+        "capability_id": "core.generative.text_to_image",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+        },
+        "constraints": {
+          "requirement": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+        }
+      }
+    ],
+    "edges": [],
+    "ordering": [],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "ACT implementation bindings",
+    "nodes": [
+      {
+        "dag_id": "n1",
+        "atomic_id": "core.generative.text_to_image.default",
+        "depends_on": [],
+        "inputs": {
+          "prompt": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+        },
+        "bindings": {},
+        "notes": null
+      }
+    ],
+    "global_inputs": {}
+  },
+  "ewc": {
+    "n1": {
+      "3": {
+        "inputs": {
+          "seed": 685468484323813,
+          "steps": 20,
+          "cfg": 8,
+          "sampler_name": "euler",
+          "scheduler": "normal",
+          "denoise": 1,
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "4": {
+        "inputs": {
+          "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "Checkpoint加载器（简易）"
+        }
+      },
+      "5": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "空Latent图像"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename_prefix": "SD1.5",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      }
+    }
+  },
+  "workflow_formats": {
+    "n1": "api"
+  },
+  "bindings": {
+    "n1": {
+      "task_id": "t1",
+      "awg_node_id": "n1",
+      "capability_id": "core.generative.text_to_image",
+      "implementation_id": "core.generative.text_to_image.default",
+      "model_ids": []
+    }
+  },
+  "model_bindings": {
+    "n1": [
+      {
+        "node_id": "4",
+        "input_key": "ckpt_name",
+        "widget_index": null,
+        "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+        "loader_class": "CheckpointLoaderSimple",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ]
+  },
+  "generation": {
+    "att": {
+      "tasks": [
+        {
+          "task_id": "t1",
+          "goal": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+          "capability_id": "core.generative.text_to_image",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {
+            "requirement": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+          },
+          "depends_on": []
+        }
+      ],
+      "edges": [],
+      "diagnostics": [],
+      "assumptions": []
+    },
+    "awg": {
+      "nodes": [
+        {
+          "node_id": "n1",
+          "task_id": "t1",
+          "capability_id": "core.generative.text_to_image",
+          "input_types": {
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+          },
+          "constraints": {
+            "requirement": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+          }
+        }
+      ],
+      "edges": [],
+      "ordering": [],
+      "constraints": {},
+      "unresolved": []
+    },
+    "execution_plan": {
+      "summary": "ACT implementation bindings",
+      "nodes": [
+        {
+          "dag_id": "n1",
+          "atomic_id": "core.generative.text_to_image.default",
+          "depends_on": [],
+          "inputs": {
+            "prompt": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+          },
+          "bindings": {},
+          "notes": null
+        }
+      ],
+      "global_inputs": {}
+    },
+    "ewc": {
+      "n1": {
+        "3": {
+          "inputs": {
+            "seed": 685468484323813,
+            "steps": 20,
+            "cfg": 8,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "4": {
+          "inputs": {
+            "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple",
+          "_meta": {
+            "title": "Checkpoint加载器（简易）"
+          }
+        },
+        "5": {
+          "inputs": {
+            "width": 1024,
+            "height": 1024,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage",
+          "_meta": {
+            "title": "空Latent图像"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "4",
+              2
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "9": {
+          "inputs": {
+            "filename_prefix": "SD1.5",
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      }
+    },
+    "converged": true,
+    "failure_reason": null,
+    "validation_log": [
+      {
+        "stage": "ANALYSIS",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ARCHITECTURE",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ENGINEERING",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      }
+    ],
+    "generation_mode": "tools_first"
+  },
+  "capabilities": {
+    "core.generative.text_to_image.default": {
+      "id": "core.generative.text_to_image.default",
+      "title": "default",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/default.json).",
+      "tags": [
+        "text-to-image",
+        "t2i",
+        "generative"
+      ],
+      "workflow_file": "default.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "6",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "negative_prompt": {
+          "node_id": "7",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "seed": {
+          "node_id": "3",
+          "input_key": "seed",
+          "widget_index": null
+        },
+        "width": {
+          "node_id": "5",
+          "input_key": "width",
+          "widget_index": null
+        },
+        "height": {
+          "node_id": "5",
+          "input_key": "height",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "",
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "int",
+          "required": false,
+          "default": 1024,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "int",
+          "required": false,
+          "default": 1024,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "int",
+          "required": false,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "generative",
+        "text_to_image"
+      ],
+      "six_tuple": {
+        "name": "default",
+        "input_types": {
+          "prompt": "string",
+          "negative_prompt": "string",
+          "width": "int",
+          "height": "int",
+          "seed": "int"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/default.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "negative_prompt",
+            "type": "string",
+            "required": false,
+            "default": ""
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "required": false,
+            "default": 1024
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "required": false,
+            "default": 1024
+          },
+          {
+            "name": "seed",
+            "type": "int",
+            "required": false,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "default.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "510c7daadfd14efcb5f2a1185e109bbc74d2231cd2bbee12e1a2874605b60474",
+      "graph": {
+        "3": {
+          "inputs": {
+            "seed": 685468484323813,
+            "steps": 20,
+            "cfg": 8,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "4": {
+          "inputs": {
+            "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple",
+          "_meta": {
+            "title": "Checkpoint加载器（简易）"
+          }
+        },
+        "5": {
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage",
+          "_meta": {
+            "title": "空Latent图像"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "beautiful scenery nature glass bottle landscape, purple galaxy bottle,",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "text, watermark",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "4",
+              2
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "9": {
+          "inputs": {
+            "filename_prefix": "SD1.5",
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/default/default.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/default/default.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "4",
+          "input_key": "ckpt_name",
+          "widget_index": null,
+          "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+          "loader_class": "CheckpointLoaderSimple",
+          "graph_path": []
+        }
+      ]
+    }
+  },
+  "comfy_workflow": {
+    "n1::3": {
+      "inputs": {
+        "seed": 685468484323813,
+        "steps": 20,
+        "cfg": 8,
+        "sampler_name": "euler",
+        "scheduler": "normal",
+        "denoise": 1,
+        "model": [
+          "n1::4",
+          0
+        ],
+        "positive": [
+          "n1::6",
+          0
+        ],
+        "negative": [
+          "n1::7",
+          0
+        ],
+        "latent_image": [
+          "n1::5",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "K采样器"
+      }
+    },
+    "n1::4": {
+      "inputs": {
+        "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Checkpoint加载器（简易）"
+      }
+    },
+    "n1::5": {
+      "inputs": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "空Latent图像"
+      }
+    },
+    "n1::6": {
+      "inputs": {
+        "text": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+        "clip": [
+          "n1::4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "n1::7": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "n1::4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "n1::8": {
+      "inputs": {
+        "samples": [
+          "n1::3",
+          0
+        ],
+        "vae": [
+          "n1::4",
+          2
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE解码"
+      }
+    },
+    "n1::9": {
+      "inputs": {
+        "filename_prefix": "SD1.5",
+        "images": [
+          "n1::8",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "保存图像"
+      }
+    }
+  },
+  "export_info": {
+    "complete": true,
+    "format": "api",
+    "issues": [],
+    "cross_component_edges": [],
+    "components": {
+      "n1": [
+        "n1::3",
+        "n1::4",
+        "n1::5",
+        "n1::6",
+        "n1::7",
+        "n1::8",
+        "n1::9"
+      ]
+    }
+  }
+}

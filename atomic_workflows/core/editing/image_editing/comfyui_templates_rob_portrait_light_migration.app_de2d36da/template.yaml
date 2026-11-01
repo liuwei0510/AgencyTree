@@ -1,0 +1,92 @@
+id: remote.template.templates_rob_portrait_light_migration.app
+kind: comfyui_template
+title: Portrait Relight
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Portrait Relight
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your target image and a reference lighting image. Relights your
+    target image.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_rob_portrait_light_migration.app.json
+  sha256: ae8d8e986ed65499dbb6b782c90dc27d7397a4a54ff122b2b817da1accb31386
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_rob_portrait_light_migration.app
+  title: Portrait Relight
+  description: Upload your target image and a reference lighting image. Relights your
+    target image.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - LoRA
+  - Relight
+  models:
+  - Qwen-Image-Edit
+  date: '2026-03-09'
+  openSource: true
+  size: 31138512896
+  usage: 61
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadImage
+      file: input_2-relight.png
+      mediaType: image
+    - nodeId: 7
+      nodeType: LoadImage
+      file: input_1-relight.png
+      mediaType: image
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: templates_rob_portrait_light_migration_app.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/input_1-relight.png
+  - output/templates_rob_portrait_light_migration_app.png
+  isApp: true
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '6'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '7'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,26 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "48",
+        0
+      ],
+      "filename_prefix": "NetaYume_Lumina_3.5"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.64"
+    }
+  },
+  "48": {
+    "inputs": {},
+    "class_type": "3649d32d-3c81-4249-9e89-a1fe12609f65",
+    "_meta": {
+      "title": "3649d32d-3c81-4249-9e89-a1fe12609f65",
+      "cnr_id": "comfy-core",
+      "ver": "0.18.1"
+    }
+  }
+}

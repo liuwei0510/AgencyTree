@@ -1,0 +1,104 @@
+id: remote:template:api_seedance2_5_draft_r2v
+kind: comfyui_template
+title: 'Seedance2.5 Draft: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance2.5 Draft: Reference to Video'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    video: video_path
+    transcript: text
+  capability: 'Generate draft preview videos from reference images using Seedance
+    2.5''s two-phase draft mode: stage one turns your references and prompt into a
+    fast, low-cost 480p preview plus a reusable draft task ID, and stage two renders
+    the 1080p final from that ID. Ideal for locking in a character or storyboard reference
+    before committing to a full-quality render.'
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_draft_r2v.json
+  sha256: f229f2ff56f1f1aa38a0a1ee7ae0587302a9f79f77050d1ef1bfaaa0efafc04c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_5_draft_r2v
+  title: 'Seedance2.5 Draft: Reference to Video'
+  description: 'Generate draft preview videos from reference images using Seedance
+    2.5''s two-phase draft mode: stage one turns your references and prompt into a
+    fast, low-cost 480p preview plus a reusable draft task ID, and stage two renders
+    the 1080p final from that ID. Ideal for locking in a character or storyboard reference
+    before committing to a full-quality render.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Reference to Video
+  models:
+  - Seedance 2.5
+  logos:
+  - provider: ByteDance
+  minComfyUIVersion: 0.37.3
+  date: '2026-09-25'
+  openSource: false
+  size: 0
+  usage: 822
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 788
+      nodeType: LoadImage
+      file: mech_comic_storyboard.png
+      mediaType: image
+    - nodeId: 795
+      nodeType: LoadImage
+      file: yellow_mech_character_sheet.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_draft_r2v.json
+  sha256: f229f2ff56f1f1aa38a0a1ee7ae0587302a9f79f77050d1ef1bfaaa0efafc04c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '788'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '795'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text
+planning_eligible: true

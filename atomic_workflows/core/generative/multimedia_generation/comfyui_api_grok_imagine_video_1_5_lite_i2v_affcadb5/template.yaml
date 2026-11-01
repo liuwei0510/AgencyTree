@@ -1,0 +1,61 @@
+id: remote.template.api_grok_imagine_video_1_5_lite_i2v
+kind: comfyui_template
+title: 'Grok Imagine Video 1.5 Lite: Image to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok Imagine Video 1.5 Lite: Image to Video'
+  input_types:
+  - image
+  output_types: []
+  capability: Generate short videos from a single still image using Grok Imagine Video
+    1.5 Lite, a faster, lower-cost model that turns one image into a video clip up
+    to 15 seconds at resolutions up to 1080p. Ideal for rapid social content, storyboard
+    previews, and high-volume creative iteration where speed and cost matter more
+    than maximum fidelity.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_imagine_video_1_5_lite_i2v.json
+  sha256: eb123acf77847cd2e27b6c5c062fe65000f0a7845581287efb4ba9e05a73ab58
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_imagine_video_1_5_lite_i2v
+  title: 'Grok Imagine Video 1.5 Lite: Image to Video'
+  description: Generate short videos from a single still image using Grok Imagine
+    Video 1.5 Lite, a faster, lower-cost model that turns one image into a video clip
+    up to 15 seconds at resolutions up to 1080p. Ideal for rapid social content, storyboard
+    previews, and high-volume creative iteration where speed and cost matter more
+    than maximum fidelity.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - API
+  models:
+  - Grok Imagine Video
+  logos:
+  - provider: Grok
+  minComfyUIVersion: 0.38.2
+  date: '2026-10-01'
+  openSource: false
+  size: 0
+  usage: 348
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 7
+      nodeType: LoadImage
+      file: fur_hat_blue_sunglasses_pink_bg.png
+      mediaType: image

@@ -1,0 +1,45 @@
+id: remote:model:6d226032b99fb4acd5b4
+kind: comfyui_model
+title: RealESRGAN x4
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: RealESRGAN x4
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: RealESRGAN_x4.pth
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: RealESRGAN_x4.pth
+    download_locator: https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth
+code_usable: true
+status: available
+metadata:
+  name: RealESRGAN x4
+  type: upscale
+  base: upscale
+  save_path: default
+  description: RealESRGAN x4 upscaler model
+  reference: https://huggingface.co/ai-forever/Real-ESRGAN
+  filename: RealESRGAN_x4.pth
+  url: https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth
+  size: 67.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x4_6d226032/model.yaml
+validation_errors: []

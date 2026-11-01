@@ -1,0 +1,78 @@
+id: remote:template:api_patina_material_t2m
+kind: comfyui_template
+title: 'Patina: Text to Material'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Patina: Text to Material'
+  input_types: {}
+  output_types:
+    images: image_filenames
+    transcript: text
+  capability: Generate a complete, seamlessly tiling PBR material from a text prompt
+    with Patina. One run returns a base texture plus basecolor, normal, roughness,
+    metalness and height maps that line up pixel for pixel, so the whole set drops
+    straight into a 3D material. Works best on structured surfaces such as wood, stone,
+    metal, fabric and ceramic tile; connect an image, optionally with a mask, to repaint
+    an existing surface instead of inventing one.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_patina_material_t2m.json
+  sha256: c713b1ffa070e1b24f22d87deafa58044859d94b385f5d12c61eb04b9ee86e5c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_patina_material_t2m
+  title: 'Patina: Text to Material'
+  description: Generate a complete, seamlessly tiling PBR material from a text prompt
+    with Patina. One run returns a base texture plus basecolor, normal, roughness,
+    metalness and height maps that line up pixel for pixel, so the whole set drops
+    straight into a 3D material. Works best on structured surfaces such as wood, stone,
+    metal, fabric and ceramic tile; connect an image, optionally with a mask, to repaint
+    an existing surface instead of inventing one.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - API
+  models:
+  - Patina
+  date: '2026-10-27'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 23
+      nodeType: SaveImage
+      file: api_patina_material_t2m.png
+      mediaType: image
+  thumbnail:
+  - output/api_patina_material_t2m.png
+  minComfyUIVersion: 0.43.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_patina_material_t2m.json
+  sha256: c713b1ffa070e1b24f22d87deafa58044859d94b385f5d12c61eb04b9ee86e5c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_patina_material_t2m_f540ef2a/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+- name: transcript
+  type: text
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,65 @@
+id: remote:template:api_tripo_p2_text_to_model
+kind: comfyui_template
+title: 'Tripo P2: Text to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo P2: Text to Model'
+  input_types: {}
+  output_types: {}
+  capability: Generate production-ready 3D meshes from text prompts with Tripo P2,
+    featuring native quad topology and mesh budgets up to 50,000 triangles or 25,000
+    quads. Ideal for game characters and props, hard-surface assets, and high-volume
+    pipelines needing clean, rig-ready geometry.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_p2_text_to_model.json
+  sha256: 36f8b59df4d7758654752268ea0d7ff0aedc7fef1160823a22fc138220f4330e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_p2_text_to_model
+  title: 'Tripo P2: Text to Model'
+  description: Generate production-ready 3D meshes from text prompts with Tripo P2,
+    featuring native quad topology and mesh budgets up to 50,000 triangles or 25,000
+    quads. Ideal for game characters and props, hard-surface assets, and high-volume
+    pipelines needing clean, rig-ready geometry.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to 3D
+  models:
+  - Tripo
+  - Tripo P2
+  logos:
+  - provider: Tripo
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-16'
+  openSource: false
+  size: 0
+  usage: 21
+  searchRank: 0
+  username: ComfyUI
+  thumbnailVariant: compareSlider
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_p2_text_to_model.json
+  sha256: 36f8b59df4d7758654752268ea0d7ff0aedc7fef1160823a22fc138220f4330e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/three_d/comfyui_api_tripo_p2_text_to_model_e4c61199/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

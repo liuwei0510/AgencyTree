@@ -1,0 +1,46 @@
+id: remote.model.7dc1fc6221dbef370feb
+kind: comfyui_model
+title: Deep Negative V1.75
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: Deep Negative V1.75
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ng_deepnegative_v1_75t.pt
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: embedding
+    save_path: embeddings/SD1.5
+    filename: ng_deepnegative_v1_75t.pt
+    download_locator: https://civitai.com/api/download/models/5637
+code_usable: true
+status: deprecated
+metadata:
+  name: Deep Negative V1.75
+  type: embedding
+  base: SD1.5
+  save_path: embeddings/SD1.5
+  description: These embedding learn what disgusting compositions and color patterns
+    are, including faulty human anatomy, offensive color schemes, upside-down spatial
+    structures, and more. Placing it in the negative can go a long way to avoiding
+    these things.
+  reference: https://civitai.com/models/4629/deep-negative-v1x
+  filename: ng_deepnegative_v1_75t.pt
+  url: https://civitai.com/api/download/models/5637
+  size: 226KB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

@@ -1,0 +1,42 @@
+{
+  "1": {
+    "inputs": {
+      "image": "saintly_rose_portrait.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": [
+        "1",
+        0
+      ],
+      "prompt": ""
+    },
+    "class_type": "4d2ab4f5-8f54-4b5b-a4e2-49b35a60ad9d",
+    "_meta": {
+      "title": "4d2ab4f5-8f54-4b5b-a4e2-49b35a60ad9d",
+      "cnr_id": "comfy-core",
+      "ver": "0.33.0"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ],
+      "filename_prefix": "api_google_nano_banana2_image_edit_continuation"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.20.1"
+    }
+  }
+}

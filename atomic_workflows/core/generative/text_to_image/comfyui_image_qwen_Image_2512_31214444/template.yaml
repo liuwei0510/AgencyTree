@@ -1,0 +1,71 @@
+id: remote:template:image_qwen_Image_2512
+kind: comfyui_template
+title: Qwen Image 2512
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen Image 2512
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Text-to-image model with enhanced human realism, finer natural details
+    for landscapes and animal fur, and improved text rendering with accurate layout
+    and multimodal composition.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_Image_2512.json
+  sha256: 0e934c5b213693ae15229de1eb77516c2f760e645c5f1b45c851cf517ff5497e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_Image_2512
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image-2512
+  title: Qwen Image 2512
+  mediaType: image
+  mediaSubtype: webp
+  description: Text-to-image model with enhanced human realism, finer natural details
+    for landscapes and animal fur, and improved text rendering with accurate layout
+    and multimodal composition.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - Qwen
+  - Qwen-Image
+  date: '2025-12-31'
+  size: 31782757990
+  usage: 363
+  searchRank: 0
+  openSource: true
+  io:
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: image_qwen_Image_2512.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_qwen_Image_2512.png
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_Image_2512.json
+  sha256: 0e934c5b213693ae15229de1eb77516c2f760e645c5f1b45c851cf517ff5497e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_image_qwen_Image_2512_31214444/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

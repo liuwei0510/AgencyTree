@@ -1,0 +1,60 @@
+id: core.generative.text_to_image.flux_t2i
+title: Text to Image (FLUX-style graph slot)
+modality:
+- image
+description: 'High-quality text-to-image generation slot. Replace workflow JSON with
+  your ComfyUI API export; injection targets are documented in inject map.
+
+  '
+tags:
+- t2i
+- flux
+- generative
+workflow_file: flux_t2i.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+  width:
+    node_id: '5'
+    input_key: width
+  height:
+    node_id: '5'
+    input_key: height
+  seed:
+    node_id: '10'
+    input_key: seed
+  model_file:
+    node_id: '4'
+    input_key: ckpt_name
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: seed
+  type: int
+  required: false
+- name: model_file
+  type: string
+  required: true
+  default: null
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI SaveImage outputs (resolved from history)

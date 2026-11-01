@@ -1,0 +1,45 @@
+id: remote:model:c30c8f97af858187e495
+kind: comfyui_model
+title: LTX-2.3 22B IC-LoRA Decompression
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-2.3 22B IC-LoRA Decompression
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltx-2.3-22b-ic-lora-decompression-0.9.safetensors
+  - name: base
+    value: LTX-2.3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/ltxv/ltx2
+    filename: ltx-2.3-22b-ic-lora-decompression-0.9.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Decompression/resolve/main/ltx-2.3-22b-ic-lora-decompression-0.9.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2.3 22B IC-LoRA Decompression
+  type: lora
+  base: LTX-2.3
+  save_path: loras/ltxv/ltx2
+  description: In-Context LoRA (IC LoRA) for decompression / artifact cleanup of videos.
+  reference: https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Decompression
+  filename: ltx-2.3-22b-ic-lora-decompression-0.9.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Decompression/resolve/main/ltx-2.3-22b-ic-lora-decompression-0.9.safetensors
+  size: 0.91GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/control_conditioning/model_LTX-2.3_22B_IC-LoRA_Decompression_c30c8f97/model.yaml
+validation_errors: []

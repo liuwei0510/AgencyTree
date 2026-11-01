@@ -1,0 +1,45 @@
+id: remote:model:394b45b9e32198c8f746
+kind: comfyui_model
+title: LTX-2.5 Audio VAE BF16
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: LTX-2.5 Audio VAE BF16
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: ltx-2.5-audio-vae-bf16.safetensors
+  - name: base
+    value: LTX-2.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae
+    filename: ltx-2.5-audio-vae-bf16.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: LTX-2.5 Audio VAE BF16
+  type: VAE
+  base: LTX-2.5
+  save_path: vae
+  description: LTX-2.5 audio VAE and vocoder (bf16).
+  reference: https://huggingface.co/Lightricks/LTX-2.5
+  filename: ltx-2.5-audio-vae-bf16.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2.5/resolve/main/vae/ltx-2.5-audio-vae-bf16.safetensors
+  size: 0.36GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/latent_process/encode_decode/model_LTX-2.5_Audio_VAE_BF16_394b45b9/model.yaml
+validation_errors: []

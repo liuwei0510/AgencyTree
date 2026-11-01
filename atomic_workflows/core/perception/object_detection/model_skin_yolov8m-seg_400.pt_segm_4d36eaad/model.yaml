@@ -1,0 +1,46 @@
+id: remote:model:4d36eaade984f48145db
+kind: comfyui_model
+title: skin_yolov8m-seg_400.pt (segm)
+tree_branch:
+- core
+- perception
+- object_detection
+six_tuple:
+  name: skin_yolov8m-seg_400.pt (segm)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/object_detection
+  parameters:
+  - name: filename
+    value: skin_yolov8m-seg_400.pt
+  - name: base
+    value: Ultralytics
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: Ultralytics
+    save_path: ultralytics/segm
+    filename: skin_yolov8m-seg_400.pt
+    download_locator: https://github.com/hben35096/assets/releases/download/yolo8/skin_yolov8m-seg_400.pt
+code_usable: true
+status: available
+metadata:
+  name: skin_yolov8m-seg_400.pt (segm)
+  type: Ultralytics
+  base: Ultralytics
+  save_path: ultralytics/segm
+  description: These are the available models in the UltralyticsDetectorProvider of
+    Impact Pack.
+  reference: https://github.com/hben35096/assets/releases/tag/yolo8
+  filename: skin_yolov8m-seg_400.pt
+  url: https://github.com/hben35096/assets/releases/download/yolo8/skin_yolov8m-seg_400.pt
+  size: 54.9MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/object_detection/model_skin_yolov8m-seg_400.pt_segm_4d36eaad/model.yaml
+validation_errors: []

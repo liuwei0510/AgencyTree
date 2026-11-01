@@ -1,0 +1,36 @@
+id: aux.preprocess.text_encoding.dual_text_encode
+title: Dual CLIP Text Encode (aux)
+modality:
+- conditioning
+description: Encode prompt + negative once for reuse by multiple samplers.
+tags:
+- preprocess
+- clip
+- conditioning
+workflow_file: dual_text_encode.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+  model_file:
+    node_id: '4'
+    input_key: ckpt_name
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: model_file
+  type: string
+  required: true
+  default: null
+outputs:
+- name: conditioning_bundle
+  type: generic

@@ -1,0 +1,47 @@
+id: remote:model:ffdaa19c0da074a30e1b
+kind: comfyui_model
+title: FLUX.1 VAE model
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: FLUX.1 VAE model
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: ae.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae/FLUX1
+    filename: ae.safetensors
+    download_locator: https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: FLUX.1 VAE model
+  type: VAE
+  base: FLUX.1
+  save_path: vae/FLUX1
+  description: 'FLUX.1 VAE model
+
+    NOTE: This VAE model can also be used for image generation with OmniGen2.'
+  reference: https://huggingface.co/black-forest-labs/FLUX.1-schnell
+  filename: ae.safetensors
+  url: https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors
+  size: 335MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/latent_process/encode_decode/model_FLUX.1_VAE_model_ffdaa19c/model.yaml
+validation_errors: []

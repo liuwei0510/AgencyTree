@@ -1,0 +1,68 @@
+id: remote:template:audio-chatterbox_tts_multilingual
+kind: comfyui_template
+title: 'Chatter Box: Multilingual Text-to-Speech with Voice Cloning'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Chatter Box: Multilingual Text-to-Speech with Voice Cloning'
+  input_types: {}
+  output_types:
+    audio: audio_path
+  capability: Upload a short voice sample and input your text prompt. Select a target
+    language to generate spoken audio in multiple languages using the cloned reference
+    voice.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio-chatterbox_tts_multilingual.json
+  sha256: 8b9b9d4e2580a1fc8104b2fafff6741acf859742d6be80dc803321556505dc15
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio-chatterbox_tts_multilingual
+  title: 'Chatter Box: Multilingual Text-to-Speech with Voice Cloning'
+  description: Upload a short voice sample and input your text prompt. Select a target
+    language to generate spoken audio in multiple languages using the cloned reference
+    voice.
+  mediaType: audio
+  mediaSubtype: mp3
+  tags:
+  - Audio
+  - Text to Audio
+  - Voice Cloning
+  models:
+  - Chatter Box
+  requiresCustomNodes:
+  - comfyui_fill-chatterbox
+  date: '2026-01-22'
+  openSource: true
+  usage: 77
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadAudio
+      file: chatterbox_input_target_voice.mp3
+      mediaType: audio
+  username: PurzBeats
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio-chatterbox_tts_multilingual.json
+  sha256: 8b9b9d4e2580a1fc8104b2fafff6741acf859742d6be80dc803321556505dc15
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_audio-chatterbox_tts_multilingual_fda7de38/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: audio
+  type: audio_path
+contract_errors: []
+planning_eligible: true

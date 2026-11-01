@@ -1,0 +1,43 @@
+id: remote.model.5b09969c1293a6d23852
+kind: comfyui_model
+title: T2I-Style model
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: T2I-Style model
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: t2iadapter_style_sd14v1.pth
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: T2I-Style
+    save_path: controlnet/SD1.5
+    filename: t2iadapter_style_sd14v1.pth
+    download_locator: https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_style_sd14v1.pth
+code_usable: true
+status: available
+metadata:
+  name: T2I-Style model
+  type: T2I-Style
+  base: SD1.5
+  save_path: controlnet/SD1.5
+  description: ControlNet T2I-Adapter style model. Need to download CLIPVision model.
+  reference: https://huggingface.co/TencentARC/T2I-Adapter
+  filename: t2iadapter_style_sd14v1.pth
+  url: https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_style_sd14v1.pth
+  size: 154.4MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

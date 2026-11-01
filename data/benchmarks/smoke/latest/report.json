@@ -1,0 +1,212 @@
+{
+  "created_at": "2026-10-30T05:23:58.944215+00:00",
+  "dataset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/requirements_220.json",
+  "dataset_count": 220,
+  "act_version": "act-069d43ce89e2a1500d61",
+  "cases": [
+    {
+      "id": "001",
+      "name": "baseketball_player",
+      "category": "vanilla",
+      "modality": "t2i",
+      "instruction": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+      "status": "passed",
+      "mode": "tools_first",
+      "task_count": 1,
+      "nodes": 1,
+      "errors": [],
+      "implementations": [
+        "core.generative.text_to_image.default"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/001/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/001/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": []
+    },
+    {
+      "id": "041",
+      "name": "playing_dog",
+      "category": "vanilla",
+      "modality": "t2v",
+      "instruction": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+      "status": "passed",
+      "mode": "tools_first",
+      "task_count": 1,
+      "nodes": 1,
+      "errors": [],
+      "implementations": [
+        "core.generative.text_to_video.hunyuan_video_text_to_video"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/041/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/041/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": [
+        {
+          "node_id": "n1::79",
+          "generator": "n1::45",
+          "generator_class": "EmptyHunyuanLatentVideo",
+          "generated_frames": 49,
+          "output_frames": 48,
+          "fps": 24,
+          "duration": 2.0,
+          "width": 848,
+          "height": 480
+        }
+      ]
+    },
+    {
+      "id": "061",
+      "name": "table_fork_removal",
+      "category": "vanilla",
+      "modality": "i2i",
+      "instruction": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+      "status": "passed",
+      "mode": "host_plan",
+      "task_count": 1,
+      "nodes": 1,
+      "errors": [],
+      "implementations": [
+        "core.editing.image_editing.flux_kontext_dev_basic_5"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/061/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/061/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": []
+    },
+    {
+      "id": "101",
+      "name": "cat_generation_and_upscaling",
+      "category": "complex",
+      "modality": "t2i",
+      "instruction": "First generate an image of a cat in a snowy forest. Then upscale it by 2x. The result should be a high-resolution image of a cat",
+      "status": "passed",
+      "mode": "host_plan",
+      "task_count": 2,
+      "nodes": 2,
+      "errors": [],
+      "implementations": [
+        "core.generative.text_to_image.default",
+        "aux.postprocess.upscale.upscale2x"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/101/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/101/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": []
+    },
+    {
+      "id": "121",
+      "name": "table_fork_removal_and_repaint",
+      "category": "complex",
+      "modality": "i2i",
+      "instruction": "You are given an image `dish_table.png` of a table filled with dishes. First remove the fork on the table. Then convert the image into a painting with watercolor style. The result should be an image of the table without a fork as a watercolor painting.",
+      "status": "passed",
+      "mode": "host_plan",
+      "task_count": 2,
+      "nodes": 2,
+      "errors": [],
+      "implementations": [
+        "core.editing.image_editing.flux_kontext_dev_basic_5",
+        "core.editing.image_editing.flux_kontext_dev_basic_5"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/121/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/121/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": []
+    },
+    {
+      "id": "161",
+      "name": "hand_defect_refinement",
+      "category": "creative",
+      "modality": "i2i",
+      "instruction": "You are given an image `abnormal_hands.png` generated by an AI model, containing a young girl raising her hands. However, there are obvious defects with the hands. Try to refine the image to make the hands look realistic. The result should be an image maintaining most of the original content, but with improved hands.",
+      "status": "passed",
+      "mode": "host_plan",
+      "task_count": 1,
+      "nodes": 1,
+      "errors": [],
+      "implementations": [
+        "core.editing.image_editing.flux_kontext_dev_basic_5"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/161/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/161/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": []
+    },
+    {
+      "id": "201",
+      "name": "compositional_01",
+      "category": "compositional",
+      "modality": "multimodal",
+      "instruction": "Generate a night market scene in the Jiangnan water town during the Song Dynasty, showcasing the lively trading between vendors and customers, while also creating a scene of astronauts repairing equipment in a space station; enhance the resolution of the Song Dynasty night market image to ultra-clear, and replace the background of the space station scene with a Martian colony appearance; finally, convert the Martian colony scene into a 2-second high-definition video, with the astronauts' actions played at an accelerated speed.",
+      "status": "passed",
+      "mode": "host_plan",
+      "task_count": 5,
+      "nodes": 5,
+      "errors": [],
+      "implementations": [
+        "core.generative.text_to_image.default",
+        "core.generative.text_to_image.default",
+        "aux.postprocess.upscale.upscale2x",
+        "core.editing.image_editing.flux_kontext_dev_basic_5",
+        "core.editing.image_to_video.video_wan2_2_14b_i2v"
+      ],
+      "asset": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/201/asset.json",
+      "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/data/benchmarks/smoke/latest/201/workflow_api.json",
+      "complete_export": true,
+      "video_outputs": [
+        {
+          "node_id": "n5::94",
+          "generator": "n5::98",
+          "generator_class": "WanImageToVideo",
+          "generated_frames": 33,
+          "output_frames": 32,
+          "fps": 16,
+          "duration": 2.0,
+          "width": 1280,
+          "height": 720
+        }
+      ]
+    }
+  ],
+  "passed": 7,
+  "failed": 0,
+  "evolution": {
+    "requirement_id": "101",
+    "reuse": true,
+    "partial": true,
+    "abstract_assets_preserved": true,
+    "unaffected_graph_preserved": true,
+    "real_catalog_model_replaced": true,
+    "model_changes": [
+      {
+        "action": "rebind_model",
+        "node": "n2",
+        "old_model_id": "remote:model:37b566d018b9ddc9e8d0",
+        "new_model_id": "remote:model:d68772e280856aee1dde",
+        "loader": {
+          "node_id": "3",
+          "input_key": "model_name",
+          "widget_index": null,
+          "filename": "RealESRGAN_x2.pth",
+          "loader_class": "UpscaleModelLoader",
+          "graph_path": [],
+          "model_id": "remote:model:37b566d018b9ddc9e8d0",
+          "candidate_model_ids": [
+            "remote:model:37b566d018b9ddc9e8d0"
+          ]
+        },
+        "filename": "RGT_x2.pth",
+        "events": [
+          "change-f2dce5ae36a9b02388bb"
+        ]
+      }
+    ],
+    "reusable_after_model_change": true,
+    "rollback_without_compatible_model": true,
+    "scenario": "Simulate deprecation of the actual bound 2x model in a copy of the real ACT; live catalog remains intact.",
+    "diagnostics": []
+  },
+  "model_api_called": false,
+  "comfyui_executed": false,
+  "scope": "Offline contracts, quantitative parameter injection, graph structure and versioned evolution; media quality is not executed/evaluated."
+}

@@ -1,0 +1,147 @@
+{
+  "25": {
+    "inputs": {
+      "image": "character_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Character Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.50"
+    }
+  },
+  "373": {
+    "inputs": {
+      "images": [
+        "427",
+        0
+      ],
+      "filename_prefix": "ComfyUI-close_up"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "374": {
+    "inputs": {
+      "images": [
+        "427",
+        1
+      ],
+      "filename_prefix": "ComfyUI-wide_shot"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "376": {
+    "inputs": {
+      "images": [
+        "427",
+        2
+      ],
+      "filename_prefix": "ComfyUI-aerial_view"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "377": {
+    "inputs": {
+      "images": [
+        "427",
+        5
+      ],
+      "filename_prefix": "ComfyUI-low_angle"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "379": {
+    "inputs": {
+      "images": [
+        "427",
+        3
+      ],
+      "filename_prefix": "ComfyUI-wide_shot"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "380": {
+    "inputs": {
+      "images": [
+        "427",
+        4
+      ],
+      "filename_prefix": "ComfyUI-aerial_view"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "381": {
+    "inputs": {
+      "images": [
+        "427",
+        6
+      ],
+      "filename_prefix": "ComfyUI-90_left"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "424": {
+    "inputs": {
+      "images": [
+        "427",
+        7
+      ],
+      "filename_prefix": "ComfyUI-45_left"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "427": {
+    "inputs": {
+      "image": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "6b6e4ec3-3bd2-476c-8132-55d562d3b89d",
+    "_meta": {
+      "title": "6b6e4ec3-3bd2-476c-8132-55d562d3b89d",
+      "cnr_id": "comfy-core",
+      "ver": "0.20.1"
+    }
+  }
+}

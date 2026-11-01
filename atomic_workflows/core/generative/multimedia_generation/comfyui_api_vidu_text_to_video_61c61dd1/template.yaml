@@ -1,0 +1,48 @@
+id: remote.template.api_vidu_text_to_video
+kind: comfyui_template
+title: 'Vidu Q1: Text to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q1: Text to Video'
+  input_types: []
+  output_types: []
+  capability: Generate high-quality 1080p videos from text prompts with adjustable
+    movement amplitude and duration control using Vidu's advanced AI model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_text_to_video.json
+  sha256: 0483a1722cacc055458d953686591e794ca2201fb7bb3a00512d874738d10be8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_text_to_video
+  title: 'Vidu Q1: Text to Video'
+  description: Generate high-quality 1080p videos from text prompts with adjustable
+    movement amplitude and duration control using Vidu's advanced AI model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - Video
+  - API
+  models:
+  - Vidu Q1
+  - Vidu
+  date: '2025-08-23'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 19
+  username: ComfyUI
+  minComfyUIVersion: 0.3.51

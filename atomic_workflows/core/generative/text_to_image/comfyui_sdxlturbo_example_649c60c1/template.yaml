@@ -1,0 +1,109 @@
+id: remote:template:sdxlturbo_example
+kind: comfyui_template
+title: SDXL Turbo
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SDXL Turbo
+  input_types:
+    negative_prompt: string
+    width: number
+    height: number
+    prompt: string
+  output_types:
+    images: image_filenames
+  capability: Generate images in a single step using SDXL Turbo.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: text, watermark
+  - name: width
+    type: number
+    required: false
+    default: 512
+  - name: height
+    type: number
+    required: false
+    default: 512
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sdxlturbo_example.json
+  sha256: 0cf10d007c1346d487b2e8bab4e3824144770310521e454595e578ab47a84e9c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: sdxlturbo_example
+  title: SDXL Turbo
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images in a single step using SDXL Turbo.
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/sdturbo/
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - SDXL
+  - Stability
+  date: '2025-03-01'
+  size: 6936372183
+  usage: 198
+  username: ComfyUI
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sdxlturbo_example.json
+  sha256: 0cf10d007c1346d487b2e8bab4e3824144770310521e454595e578ab47a84e9c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_sdxlturbo_example_649c60c1/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: text, watermark
+- name: width
+  type: number
+  required: false
+  default: 512
+- name: height
+  type: number
+  required: false
+  default: 512
+- name: prompt
+  type: string
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: 1
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

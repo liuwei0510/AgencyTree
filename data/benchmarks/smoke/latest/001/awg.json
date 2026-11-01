@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "node_id": "n1",
+      "task_id": "t1",
+      "capability_id": "core.generative.text_to_image",
+      "input_types": {
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+      },
+      "constraints": {
+        "requirement": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+      }
+    }
+  ],
+  "edges": [],
+  "ordering": [],
+  "constraints": {},
+  "unresolved": []
+}

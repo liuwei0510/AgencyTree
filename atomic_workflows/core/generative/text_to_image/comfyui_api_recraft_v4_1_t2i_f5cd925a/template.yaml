@@ -1,0 +1,70 @@
+id: remote.template.api_recraft_v4_1_t2i
+kind: comfyui_template
+title: 'Recraft 4.1: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Recraft 4.1: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate photorealistic and illustrative images from text prompts using
+    Recraft V4.1, producing one high-quality image per generation. This model excels
+    at interpreting short prompts with creative flair, delivering natural photorealism,
+    expressive vectors, and clean illustrations. Ideal for concept art, logo and typography
+    design, and lifestyle product mockups.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_1_t2i.json
+  sha256: ca7cf361dcc3802ded2a920b3992345cc40d83b866eea97db1339a961bc5ca96
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_v4_1_t2i
+  title: 'Recraft 4.1: Text to Image'
+  description: Generate photorealistic and illustrative images from text prompts using
+    Recraft V4.1, producing one high-quality image per generation. This model excels
+    at interpreting short prompts with creative flair, delivering natural photorealism,
+    expressive vectors, and clean illustrations. Ideal for concept art, logo and typography
+    design, and lifestyle product mockups.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Text to Image
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  date: '2026-07-28'
+  openSource: false
+  size: 0
+  usage: 30
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: api_recraft_v4_1_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_recraft_v4_1_t2i.png
+  minComfyUIVersion: 0.29.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

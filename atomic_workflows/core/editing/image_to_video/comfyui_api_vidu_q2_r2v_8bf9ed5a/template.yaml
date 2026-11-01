@@ -1,0 +1,97 @@
+id: remote:template:api_vidu_q2_r2v
+kind: comfyui_template
+title: 'Vidu Q2: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q2: Reference to Video'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate videos with reference-based consistency for up to 3 subjects,
+    maintaining character and style continuity across the video sequence with cinematic
+    camera movements.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_r2v.json
+  sha256: a7371fac2198c8351831147d7a7b29c586d2b3a2c3588b16d0cd8b8b501906ab
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_q2_r2v
+  title: 'Vidu Q2: Reference to Video'
+  description: Generate videos with reference-based consistency for up to 3 subjects,
+    maintaining character and style continuity across the video sequence with cinematic
+    camera movements.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Character Reference
+  - Image to Video
+  - API
+  models:
+  - Vidu Q2
+  - Vidu
+  date: '2026-01-12'
+  openSource: false
+  usage: 24
+  io:
+    inputs:
+    - nodeId: 40
+      nodeType: LoadImage
+      file: api_vidu_q2_r2v_red_haired_girl.jpg
+      mediaType: image
+    - nodeId: 42
+      nodeType: LoadImage
+      file: vintage_robot.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.9.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_r2v.json
+  sha256: a7371fac2198c8351831147d7a7b29c586d2b3a2c3588b16d0cd8b8b501906ab
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_vidu_q2_r2v_8bf9ed5a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '40'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '42'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

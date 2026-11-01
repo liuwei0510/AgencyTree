@@ -1,0 +1,67 @@
+id: remote.template.api_bytedance_vcube_video_enhance
+kind: comfyui_template
+title: 'Video Upscale: ByteDance vCube'
+tree_branch:
+- aux
+- postprocess
+- video_upscaling
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: ByteDance vCube'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Enhance video quality with ByteDance vCube, an AI-driven tool that upscales
+    and restores footage through shot-adaptive processing, fixing compression artifacts
+    and color distortion while preserving original texture. Ideal for improving UGC
+    clips, refining AIGC content, and restoring classic films with vibrant, clear
+    results.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_vcube_video_enhance.json
+  sha256: 56c2268ca09196386c3cdad108e601a9bb152d87e6e66c7e0e295455b151b16c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_vcube_video_enhance
+  title: 'Video Upscale: ByteDance vCube'
+  description: Enhance video quality with ByteDance vCube, an AI-driven tool that
+    upscales and restores footage through shot-adaptive processing, fixing compression
+    artifacts and color distortion while preserving original texture. Ideal for improving
+    UGC clips, refining AIGC content, and restoring classic films with vibrant, clear
+    results.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Video Upscale
+  models:
+  - ByteDance
+  logos:
+  - provider: ByteDance
+  date: '2026-08-24'
+  openSource: false
+  size: 0
+  usage: 113
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadVideo
+      file: chill_capybara_dance_pose.mp4
+      mediaType: video
+  minComfyUIVersion: 0.33.4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

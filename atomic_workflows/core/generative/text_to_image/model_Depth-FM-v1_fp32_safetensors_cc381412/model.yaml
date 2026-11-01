@@ -1,0 +1,43 @@
+id: remote.model.cc381412c22c0527782e
+kind: comfyui_model
+title: Depth-FM-v1 fp32 safetensors
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: Depth-FM-v1 fp32 safetensors
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: depthfm-v1_fp32.safetensors
+  - name: base
+    value: Depth-FM
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/depthfm
+    filename: depthfm-v1_fp32.safetensors
+    download_locator: https://huggingface.co/Kijai/depth-fm-pruned/resolve/main/depthfm-v1_fp32.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Depth-FM-v1 fp32 safetensors
+  type: checkpoint
+  base: Depth-FM
+  save_path: checkpoints/depthfm
+  description: Depth-FM monocular depth estimation model
+  reference: https://huggingface.co/Kijai/depth-fm-pruned
+  filename: depthfm-v1_fp32.safetensors
+  url: https://huggingface.co/Kijai/depth-fm-pruned/resolve/main/depthfm-v1_fp32.safetensors
+  size: 3.46GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

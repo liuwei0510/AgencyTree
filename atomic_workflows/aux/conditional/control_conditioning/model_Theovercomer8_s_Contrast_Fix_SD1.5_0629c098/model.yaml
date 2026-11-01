@@ -1,0 +1,43 @@
+id: remote.model.0629c098f78ad23fc05f
+kind: comfyui_model
+title: Theovercomer8's Contrast Fix (SD1.5)
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: Theovercomer8's Contrast Fix (SD1.5)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: theovercomer8sContrastFix_sd15.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/SD1.5
+    filename: theovercomer8sContrastFix_sd15.safetensors
+    download_locator: https://civitai.com/api/download/models/10638
+code_usable: true
+status: available
+metadata:
+  name: Theovercomer8's Contrast Fix (SD1.5)
+  type: lora
+  base: SD1.5
+  save_path: loras/SD1.5
+  description: 'LORA: Theovercomer8''s Contrast Fix (SD1.5)'
+  reference: https://civitai.com/models/8765/theovercomer8s-contrast-fix-sd15sd21-768
+  filename: theovercomer8sContrastFix_sd15.safetensors
+  url: https://civitai.com/api/download/models/10638
+  size: 113MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

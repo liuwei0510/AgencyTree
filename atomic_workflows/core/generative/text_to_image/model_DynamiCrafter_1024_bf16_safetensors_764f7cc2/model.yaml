@@ -1,0 +1,45 @@
+id: remote:model:764f7cc2ebfa985d6b3c
+kind: comfyui_model
+title: DynamiCrafter 1024 bf16 safetensors
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: DynamiCrafter 1024 bf16 safetensors
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: dynamicrafter_1024_v1_bf16.safetensors
+  - name: base
+    value: DynamiCrafter
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/dynamicrafter
+    filename: dynamicrafter_1024_v1_bf16.safetensors
+    download_locator: https://huggingface.co/Kijai/DynamiCrafter_pruned/resolve/main/dynamicrafter_1024_v1_bf16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: DynamiCrafter 1024 bf16 safetensors
+  type: checkpoint
+  base: DynamiCrafter
+  save_path: checkpoints/dynamicrafter
+  description: DynamiCrafter image2video model 1024x575
+  reference: https://huggingface.co/Kijai/DynamiCrafter_pruned/
+  filename: dynamicrafter_1024_v1_bf16.safetensors
+  url: https://huggingface.co/Kijai/DynamiCrafter_pruned/resolve/main/dynamicrafter_1024_v1_bf16.safetensors
+  size: 5.22GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_DynamiCrafter_1024_bf16_safetensors_764f7cc2/model.yaml
+validation_errors: []

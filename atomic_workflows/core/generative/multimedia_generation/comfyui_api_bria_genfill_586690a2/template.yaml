@@ -1,0 +1,67 @@
+id: remote.template.api_bria_genfill
+kind: comfyui_template
+title: 'Inpainting: Bria Generative Fill'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Inpainting: Bria Generative Fill'
+  input_types:
+  - image
+  output_types: []
+  capability: Use Bria's Generative Fill API to regenerate a specific region of an
+    image while keeping everything outside the mask pixel-perfect unchanged. Paint
+    a mask over the target area, write a detailed prompt for the replacement content,
+    and compare the before/after side-by-side before exporting. Ideal for product
+    photography corrections, object removal or replacement, and creative compositing
+    where precise control over the edited region matters.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_genfill.json
+  sha256: bcaedc303fe4129fecb017a2eaf36c522249e0a94f7f6c7b358c9a35136b3e70
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_genfill
+  title: 'Inpainting: Bria Generative Fill'
+  description: Use Bria's Generative Fill API to regenerate a specific region of an
+    image while keeping everything outside the mask pixel-perfect unchanged. Paint
+    a mask over the target area, write a detailed prompt for the replacement content,
+    and compare the before/after side-by-side before exporting. Ideal for product
+    photography corrections, object removal or replacement, and creative compositing
+    where precise control over the edited region matters.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tags:
+  - API
+  - Inpainting
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-08-16'
+  openSource: false
+  size: 0
+  usage: 42
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: retro_girl_cinnamon_bun.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_bria_genfill.png
+  - output/Bria_GenFill.png
+  minComfyUIVersion: 0.33.0

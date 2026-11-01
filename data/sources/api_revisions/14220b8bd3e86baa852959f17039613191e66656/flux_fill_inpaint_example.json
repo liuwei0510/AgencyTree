@@ -1,0 +1,44 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "47",
+        0
+      ],
+      "filename_prefix": "ComfyUI"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.64"
+    }
+  },
+  "17": {
+    "inputs": {
+      "image": "flux_fill_inpaint_example_input_image.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.64"
+    }
+  },
+  "47": {
+    "inputs": {
+      "pixels": [
+        "17",
+        0
+      ],
+      "mask": [
+        "17",
+        1
+      ]
+    },
+    "class_type": "42bcb419-1e9f-48eb-a6d6-c22e0625db3a",
+    "_meta": {
+      "title": "42bcb419-1e9f-48eb-a6d6-c22e0625db3a"
+    }
+  }
+}

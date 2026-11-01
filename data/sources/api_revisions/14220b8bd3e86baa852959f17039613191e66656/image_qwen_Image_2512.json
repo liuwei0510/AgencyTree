@@ -1,0 +1,26 @@
+{
+  "60": {
+    "inputs": {
+      "images": [
+        "238",
+        0
+      ],
+      "filename_prefix": "Qwen-Image-2512"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.48"
+    }
+  },
+  "238": {
+    "inputs": {},
+    "class_type": "c3c58f7e-2004-43ae-8b06-a956294bf7f4",
+    "_meta": {
+      "title": "c3c58f7e-2004-43ae-8b06-a956294bf7f4",
+      "cnr_id": "comfy-core",
+      "ver": "0.16.4"
+    }
+  }
+}

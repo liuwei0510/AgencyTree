@@ -1,0 +1,73 @@
+{
+  "version": "workflow-a59156e8bf4592b9ec8b",
+  "schema_version": 2,
+  "parent": "workflow-b7b7039e857b512f4766",
+  "created_at": "2026-10-30T05:22:33.932720+00:00",
+  "intent": "First generate an image of a cat in a snowy forest. Then upscale it by 2x. The result should be a high-resolution image of a cat",
+  "act_version": "smoke-act-no-compatible-1ff9a878d49afd54",
+  "status": "failed",
+  "runtime_verified": false,
+  "generation_mode": "tools_first",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [],
+    "edges": [],
+    "diagnostics": [
+      "Compound temporal requirement needs a structured ATT or a semantic agent"
+    ],
+    "assumptions": []
+  },
+  "awg": {
+    "nodes": [],
+    "edges": [],
+    "ordering": [],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "",
+    "nodes": [],
+    "global_inputs": {}
+  },
+  "ewc": null,
+  "workflow_formats": {},
+  "bindings": {},
+  "model_bindings": {},
+  "generation": {
+    "att": {
+      "tasks": [],
+      "edges": [],
+      "diagnostics": [
+        "Compound temporal requirement needs a structured ATT or a semantic agent"
+      ],
+      "assumptions": []
+    },
+    "awg": {
+      "nodes": [],
+      "edges": [],
+      "ordering": [],
+      "constraints": {},
+      "unresolved": []
+    },
+    "execution_plan": {
+      "summary": "",
+      "nodes": [],
+      "global_inputs": {}
+    },
+    "ewc": null,
+    "converged": false,
+    "failure_reason": "Compound temporal requirement needs a structured ATT or a semantic agent",
+    "validation_log": [
+      {
+        "stage": "ANALYSIS",
+        "iteration": 1,
+        "is_converged": false,
+        "issues": [
+          "Compound temporal requirement needs a structured ATT or a semantic agent"
+        ]
+      }
+    ],
+    "generation_mode": "tools_first"
+  },
+  "capabilities": {}
+}

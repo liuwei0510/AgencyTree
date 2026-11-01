@@ -1,0 +1,43 @@
+id: remote.model.6f10d8d921138436d736
+kind: comfyui_model
+title: sam2.1_hiera_small.pt
+tree_branch:
+- core
+- perception
+- image_segmentation
+six_tuple:
+  name: sam2.1_hiera_small.pt
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/image_segmentation
+  parameters:
+  - name: filename
+    value: sam2.1_hiera_small.pt
+  - name: base
+    value: SAM
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: sam2.1
+    save_path: sams
+    filename: sam2.1_hiera_small.pt
+    download_locator: https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_small.pt
+code_usable: true
+status: available
+metadata:
+  name: sam2.1_hiera_small.pt
+  type: sam2.1
+  base: SAM
+  save_path: sams
+  description: Segmenty Anything SAM 2.1 hiera model (small)
+  reference: https://github.com/facebookresearch/sam2#model-description
+  filename: sam2.1_hiera_small.pt
+  url: https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_small.pt
+  size: 176.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

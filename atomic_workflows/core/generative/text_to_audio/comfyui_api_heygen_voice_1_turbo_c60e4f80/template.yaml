@@ -1,0 +1,70 @@
+id: remote.template.api_heygen_voice_1_turbo
+kind: comfyui_template
+title: 'HeyGen Voice 1.0 Turbo: Voice Clone to Speech'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HeyGen Voice 1.0 Turbo: Voice Clone to Speech'
+  input_types: {}
+  output_types:
+    transcript: text
+  capability: Clone a voice from a short recording with HeyGen Voice 1.0 Turbo, then
+    speak any script in that voice. It is the same instant clone as Voice 1.0, run
+    through the turbo model, which renders faster for quick drafts and iteration.
+    Connect one audio clip to Instant Clone and the resulting voice_id feeds straight
+    into text to speech, while SaveText keeps the ID on disk for the next session.
+    Ideal for narration in your own voice, character dialogue, and multilingual voiceover.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_voice_1_turbo.json
+  sha256: a46c6b9220ec0f1cfeb5c3dc80e412ddb607584d8abe6dda70bec084ff958d1d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_heygen_voice_1_turbo
+  title: 'HeyGen Voice 1.0 Turbo: Voice Clone to Speech'
+  description: Clone a voice from a short recording with HeyGen Voice 1.0 Turbo, then
+    speak any script in that voice. It is the same instant clone as Voice 1.0, run
+    through the turbo model, which renders faster for quick drafts and iteration.
+    Connect one audio clip to Instant Clone and the resulting voice_id feeds straight
+    into text to speech, while SaveText keeps the ID on disk for the next session.
+    Ideal for narration in your own voice, character dialogue, and multilingual voiceover.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Speech
+  - Voice Cloning
+  models:
+  - HeyGen
+  logos:
+  - provider: HeyGen
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 33
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+  minComfyUIVersion: 0.40.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: transcript
+  type: text

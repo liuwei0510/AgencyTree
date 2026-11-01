@@ -1,0 +1,81 @@
+id: remote.template.utility_seedvr2_3b_int8_upscale_image
+kind: comfyui_template
+title: 'Image Upscale: SeedVR2 3B Int8'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: SeedVR2 3B Int8'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upscale images using SeedVR2 3B Int8, a one-step diffusion-based video
+    restoration model that produces high-quality results with improved temporal consistency.
+    Ideal for restoring degraded footage, upscaling low-resolution videos, and enhancing
+    archival media.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_seedvr2_3b_int8_upscale_image.json
+  sha256: 7dff37d0a16e0d03bb8d856e112c01d1f353cb63b469ed25158ae17e794c3df1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_seedvr2_3b_int8_upscale_image
+  title: 'Image Upscale: SeedVR2 3B Int8'
+  description: Upscale images using SeedVR2 3B Int8, a one-step diffusion-based video
+    restoration model that produces high-quality results with improved temporal consistency.
+    Ideal for restoring degraded footage, upscaling low-resolution videos, and enhancing
+    archival media.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  - Int8
+  models:
+  - SeedVR2
+  date: '2026-07-13'
+  openSource: true
+  size: 3972844749
+  usage: 161
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: watch_macro_shot.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: utility_seedvr2_3b_int8_upscale_image.png
+      mediaType: image
+  thumbnail:
+  - input/watch_macro_shot.png
+  - output/utility_seedvr2_3b_int8_upscale_image.png
+  minComfyUIVersion: 0.28.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

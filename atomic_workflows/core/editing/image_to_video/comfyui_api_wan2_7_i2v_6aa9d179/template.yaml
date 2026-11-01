@@ -1,0 +1,76 @@
+id: remote.template.api_wan2_7_i2v
+kind: comfyui_template
+title: 'Wan2.7: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan2.7: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload an image and audio file to generate a video with synchronized
+    sound, using the first and last frames for control.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan2_7_i2v.json
+  sha256: 4a8871317b10391e73d3de0e892df28c8541b1fdaf726fc36df28ba9d63dd38c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan2_7_i2v
+  title: 'Wan2.7: Image to Video'
+  description: Upload an image and audio file to generate a video with synchronized
+    sound, using the first and last frames for control.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  - Video
+  models:
+  - Wan2.7
+  logos:
+  - provider: WAN
+  date: '2026-04-02'
+  openSource: false
+  size: 0
+  usage: 64
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 24
+      nodeType: LoadImage
+      file: tv_head.png
+      mediaType: image
+    outputs:
+    - nodeId: 32
+      nodeType: SaveVideo
+      file: api_wan2_7_i2v.mp4
+      mediaType: video
+  minComfyUIVersion: 0.18.4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '24'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

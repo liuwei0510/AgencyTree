@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "task_id": "song",
+      "goal": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+      "capability_id": "core.generative.text_to_image",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": []
+    },
+    {
+      "task_id": "space",
+      "goal": "Generate a scene of astronauts repairing equipment in a space station.",
+      "capability_id": "core.generative.text_to_image",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": []
+    },
+    {
+      "task_id": "upscale_song",
+      "goal": "Enhance the Song Dynasty night market image to ultra-clear.",
+      "capability_id": "aux.postprocess.upscale",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {
+        "scale_factor": 2
+      },
+      "depends_on": [
+        "song"
+      ]
+    },
+    {
+      "task_id": "mars",
+      "goal": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+      "capability_id": "core.editing.image_editing",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": [
+        "space"
+      ]
+    },
+    {
+      "task_id": "animate",
+      "goal": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+      "capability_id": "core.editing.image_to_video",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "video": "video"
+      },
+      "constraints": {
+        "duration": 2,
+        "width": 1280,
+        "height": 720
+      },
+      "depends_on": [
+        "mars"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "song",
+      "upscale_song"
+    ],
+    [
+      "space",
+      "mars"
+    ],
+    [
+      "mars",
+      "animate"
+    ]
+  ],
+  "diagnostics": [],
+  "assumptions": [
+    "The qualitative ultra-clear image requirement is instantiated with the available 2x upscaler. Fast astronaut actions are preserved in the animation prompt; the source specifies no numeric playback multiplier."
+  ]
+}

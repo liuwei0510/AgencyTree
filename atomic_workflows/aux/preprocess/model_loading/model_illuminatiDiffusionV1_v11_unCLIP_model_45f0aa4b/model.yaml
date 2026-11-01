@@ -1,0 +1,43 @@
+id: remote.model.45f0aa4b372e48cd0e3c
+kind: comfyui_model
+title: illuminatiDiffusionV1_v11 unCLIP model
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: illuminatiDiffusionV1_v11 unCLIP model
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/preprocess/model_loading
+  parameters:
+  - name: filename
+    value: illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+  - name: base
+    value: SD2.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: unclip
+    save_path: checkpoints/SD2.1
+    filename: illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+    download_locator: https://huggingface.co/comfyanonymous/illuminatiDiffusionV1_v11_unCLIP/resolve/main/illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: illuminatiDiffusionV1_v11 unCLIP model
+  type: unclip
+  base: SD2.1
+  save_path: checkpoints/SD2.1
+  description: Mix model (SD2.1 unCLIP + illuminatiDiffusionV1_v11)
+  reference: https://huggingface.co/comfyanonymous/illuminatiDiffusionV1_v11_unCLIP
+  filename: illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+  url: https://huggingface.co/comfyanonymous/illuminatiDiffusionV1_v11_unCLIP/resolve/main/illuminatiDiffusionV1_v11-unclip-h-fp16.safetensors
+  size: 3.98GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

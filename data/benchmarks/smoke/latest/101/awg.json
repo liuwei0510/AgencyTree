@@ -1,0 +1,52 @@
+{
+  "nodes": [
+    {
+      "node_id": "n1",
+      "task_id": "draw",
+      "capability_id": "core.generative.text_to_image",
+      "input_types": {
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Generate a high-quality image of a cat in a snowy forest."
+      },
+      "constraints": {}
+    },
+    {
+      "node_id": "n2",
+      "task_id": "upscale",
+      "capability_id": "aux.postprocess.upscale",
+      "input_types": {
+        "source_image": "image"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Upscale the generated image by 2x."
+      },
+      "constraints": {
+        "scale_factor": 2
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "n1",
+      "output": "images",
+      "to_node": "n2",
+      "input": "source_image"
+    }
+  ],
+  "ordering": [
+    [
+      "n1",
+      "n2"
+    ]
+  ],
+  "constraints": {},
+  "unresolved": []
+}

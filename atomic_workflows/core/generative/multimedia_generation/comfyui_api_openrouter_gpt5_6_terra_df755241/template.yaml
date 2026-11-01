@@ -1,0 +1,59 @@
+id: remote.template.api_openrouter_gpt5_6_terra
+kind: comfyui_template
+title: GPT-5.6 Terra
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: GPT-5.6 Terra
+  input_types:
+  - image
+  output_types: []
+  capability: Describe a scene or world using GPT-5.6 Terra, a balanced multimodal
+    model that interprets one uploaded image to guide visual storytelling and style
+    consistency. Ideal for worldbuilding, mood board creation, and maintaining cohesive
+    aesthetics across a series of works.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_gpt5_6_terra.json
+  sha256: 82ee7e24bfbdc19b645ced31c24c1f48ce7b90c77cce858404a93fdaa720af10
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_gpt5_6_terra
+  title: GPT-5.6 Terra
+  description: Describe a scene or world using GPT-5.6 Terra, a balanced multimodal
+    model that interprets one uploaded image to guide visual storytelling and style
+    consistency. Ideal for worldbuilding, mood board creation, and maintaining cohesive
+    aesthetics across a series of works.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - ChatGPT
+  logos:
+  - provider: OpenRouter
+  date: '2026-07-22'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  minComfyUIVersion: 0.28.0

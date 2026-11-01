@@ -1,0 +1,42 @@
+{
+  "52": {
+    "inputs": {
+      "image": "image_chrono_edit_input_image.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.67"
+    }
+  },
+  "60": {
+    "inputs": {
+      "images": [
+        "97",
+        0
+      ],
+      "filename_prefix": "Chrono_Edit_14B"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.67"
+    }
+  },
+  "97": {
+    "inputs": {
+      "image": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "2b61e18f-9327-49e6-98af-da8e557c2336",
+    "_meta": {
+      "title": "2b61e18f-9327-49e6-98af-da8e557c2336",
+      "cnr_id": "comfy-core",
+      "ver": "0.4.0"
+    }
+  }
+}

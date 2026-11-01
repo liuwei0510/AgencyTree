@@ -1,0 +1,19 @@
+{
+  "__comment": "Replace with ComfyUI API JSON from your audio generation graph.",
+  "1": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": [
+        "2",
+        0
+      ]
+    }
+  },
+  "2": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "REPLACE_AUDIO_MODEL_OR_CUSTOM_NODES.safetensors"
+    }
+  }
+}

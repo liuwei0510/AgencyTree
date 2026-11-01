@@ -1,0 +1,45 @@
+id: remote:model:f2084e4dada75542d796
+kind: comfyui_model
+title: Waifu Diffusion 1.5 unCLIP model
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: Waifu Diffusion 1.5 unCLIP model
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+  - name: base
+    value: SD2.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: unclip
+    save_path: checkpoints/SD2.1
+    filename: wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+    download_locator: https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Waifu Diffusion 1.5 unCLIP model
+  type: unclip
+  base: SD2.1
+  save_path: checkpoints/SD2.1
+  description: Mix model (SD2.1 unCLIP + Waifu Diffusion 1.5)
+  reference: https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP
+  filename: wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+  url: https://huggingface.co/comfyanonymous/wd-1.5-beta2_unCLIP/resolve/main/wd-1-5-beta2-aesthetic-unclip-h-fp16.safetensors
+  size: 3.98GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_Waifu_Diffusion_1.5_unCLIP_model_f2084e4d/model.yaml
+validation_errors: []

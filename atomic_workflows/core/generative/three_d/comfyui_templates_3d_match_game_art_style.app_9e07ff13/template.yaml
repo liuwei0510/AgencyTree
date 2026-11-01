@@ -1,0 +1,77 @@
+id: remote.template.templates_3d_match_game_art_style.app
+kind: comfyui_template
+title: Game Asset Style Transfer Sprite Generator
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Game Asset Style Transfer Sprite Generator
+  input_types:
+  - image
+  - image
+  output_types:
+  - image
+  - image
+  capability: Use an outline reference, and a style reference as input to generate
+    2D sprite as model textures. Useful for background set dressing in 2D/2.5D game.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_3d_match_game_art_style.app.json
+  sha256: a03c6591db4e6f3dd2e2d2293ac292a38ab09d417e4d034374522dcd13d3885d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_3d_match_game_art_style.app
+  title: Game Asset Style Transfer Sprite Generator
+  description: Use an outline reference, and a style reference as input to generate
+    2D sprite as model textures. Useful for background set dressing in 2D/2.5D game.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Game
+  - Style Reference
+  models:
+  - Nano Banana Pro
+  logos:
+  - provider: Google
+  date: '2026-03-06'
+  openSource: false
+  size: 0
+  usage: 14
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: game_style.png
+      mediaType: image
+    - nodeId: 2
+      nodeType: LoadImage
+      file: gas_lamp.png
+      mediaType: image
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: templates_3d_match_game_art_style-1.png
+      mediaType: image
+    - nodeId: 3
+      nodeType: SaveImage
+      file: templates_3d_match_game_art_style-2.png
+      mediaType: image
+  username: shane
+  thumbnail:
+  - input/gas_lamp.png
+  - output/templates_3d_match_game_art_style-1.png
+  isApp: true
+  minComfyUIVersion: 0.9.0

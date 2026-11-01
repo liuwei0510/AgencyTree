@@ -1,0 +1,83 @@
+id: remote.template.api_heygen_video_1_i2v
+kind: comfyui_template
+title: 'HeyGen Video 1.0: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HeyGen Video 1.0: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate a 5-15 second clip with synchronized dialogue and sound from
+    a single image using HeyGen Video 1.0, which starts on that exact frame and keeps
+    the image's aspect ratio, at 480p or 768p. The prompt drives both the action and
+    the spoken line, and one video is output. Ideal for giving a portrait or product
+    photo a voice, producing talking-head clips without a shoot, and bringing stills
+    to life.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_video_1_i2v.json
+  sha256: a1c1bd46f4ceb82a00afbdde69f4c7e9e77bbe5c0a6f6be4eb93e7c7eff64316
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_heygen_video_1_i2v
+  title: 'HeyGen Video 1.0: Image to Video'
+  description: Generate a 5-15 second clip with synchronized dialogue and sound from
+    a single image using HeyGen Video 1.0, which starts on that exact frame and keeps
+    the image's aspect ratio, at 480p or 768p. The prompt drives both the action and
+    the spoken line, and one video is output. Ideal for giving a portrait or product
+    photo a voice, producing talking-head clips without a shoot, and bringing stills
+    to life.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - HeyGen
+  logos:
+  - provider: HeyGen
+  minComfyUIVersion: 0.38.1
+  date: '2026-09-30'
+  openSource: false
+  size: 0
+  usage: 670
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: model_red_curls_ring.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_heygen_video_1_i2v.mp4
+      mediaType: video
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '5'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

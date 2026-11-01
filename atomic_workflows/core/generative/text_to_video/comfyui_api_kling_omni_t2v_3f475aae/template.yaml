@@ -1,0 +1,58 @@
+id: remote:template:api_kling_omni_t2v
+kind: comfyui_template
+title: 'Kling O1: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling O1: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate videos from text descriptions using Kling O1. Create dynamic
+    video content with natural language prompts.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_omni_t2v.json
+  sha256: 3dec3506c8350ab2aaddadd9a9e3aa20da62e1d08358d797174b43957c01f402
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_omni_t2v
+  title: 'Kling O1: Text to Video'
+  description: Generate videos from text descriptions using Kling O1. Create dynamic
+    video content with natural language prompts.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  - Video
+  models:
+  - Kling O1
+  date: '2026-01-12'
+  openSource: false
+  usage: 6
+  username: ComfyUI
+  minComfyUIVersion: 0.3.76
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_omni_t2v.json
+  sha256: 3dec3506c8350ab2aaddadd9a9e3aa20da62e1d08358d797174b43957c01f402
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_api_kling_omni_t2v_3f475aae/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,44 @@
+id: remote.model.de680c27212beb4c9d14
+kind: comfyui_model
+title: TencentARC/motionctrl.pth
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: TencentARC/motionctrl.pth
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: motionctrl.pth
+  - name: base
+    value: MotionCtrl
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/motionctrl
+    filename: motionctrl.pth
+    download_locator: https://huggingface.co/TencentARC/MotionCtrl/resolve/main/motionctrl.pth
+code_usable: true
+status: available
+metadata:
+  name: TencentARC/motionctrl.pth
+  type: checkpoint
+  base: MotionCtrl
+  save_path: checkpoints/motionctrl
+  description: To use the ComfyUI-MotionCtrl extension, downloading this model is
+    required.
+  reference: https://huggingface.co/TencentARC/MotionCtrl
+  filename: motionctrl.pth
+  url: https://huggingface.co/TencentARC/MotionCtrl/resolve/main/motionctrl.pth
+  size: 4.02GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

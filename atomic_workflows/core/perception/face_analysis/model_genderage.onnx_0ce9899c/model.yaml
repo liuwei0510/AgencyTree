@@ -1,0 +1,45 @@
+id: remote:model:0ce9899cddabda7bd615
+kind: comfyui_model
+title: genderage.onnx
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: genderage.onnx
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: genderage.onnx
+  - name: base
+    value: inswapper
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models/buffalo_l
+    filename: genderage.onnx
+    download_locator: https://huggingface.co/public-data/insightface/resolve/main/models/buffalo_l/genderage.onnx
+code_usable: true
+status: available
+metadata:
+  name: genderage.onnx
+  type: insightface
+  base: inswapper
+  save_path: insightface/models/buffalo_l
+  description: Buffalo_l genderage.onnx model for IpAdapterPlus
+  reference: https://github.com/cubiq/ComfyUI_IPAdapter_plus?tab=readme-ov-file#faceid
+  filename: genderage.onnx
+  url: https://huggingface.co/public-data/insightface/resolve/main/models/buffalo_l/genderage.onnx
+  size: 1.32MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/face_analysis/model_genderage.onnx_0ce9899c/model.yaml
+validation_errors: []

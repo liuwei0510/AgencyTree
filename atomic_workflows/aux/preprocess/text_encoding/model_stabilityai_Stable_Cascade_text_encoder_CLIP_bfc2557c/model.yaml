@@ -1,0 +1,45 @@
+id: remote:model:bfc2557c3aed17fd9551
+kind: comfyui_model
+title: 'stabilityai/Stable Cascade: text_encoder (CLIP)'
+tree_branch:
+- aux
+- preprocess
+- text_encoding
+six_tuple:
+  name: 'stabilityai/Stable Cascade: text_encoder (CLIP)'
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: model.safetensors
+  - name: base
+    value: Stable Cascade
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders/Stable-Cascade
+    filename: model.safetensors
+    download_locator: https://huggingface.co/stabilityai/stable-cascade/resolve/main/text_encoder/model.safetensors
+code_usable: true
+status: available
+metadata:
+  name: 'stabilityai/Stable Cascade: text_encoder (CLIP)'
+  type: clip
+  base: Stable Cascade
+  save_path: text_encoders/Stable-Cascade
+  description: 'Stable Cascade: text_encoder'
+  reference: https://huggingface.co/stabilityai/stable-cascade
+  filename: model.safetensors
+  url: https://huggingface.co/stabilityai/stable-cascade/resolve/main/text_encoder/model.safetensors
+  size: 1.39GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/text_encoding/model_stabilityai_Stable_Cascade_text_encoder_CLIP_bfc2557c/model.yaml
+validation_errors: []

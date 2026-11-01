@@ -1,0 +1,65 @@
+id: remote.template.image_newbieimage_exp0_1-t2i
+kind: comfyui_template
+title: 'NewBie Exp0.1: Anime Generation'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'NewBie Exp0.1: Anime Generation'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate detailed anime-style images with NewBie Exp0.1's Next-DiT architecture.
+    Supports XML structured prompts for better multi-character scenes and attribute
+    control.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_newbieimage_exp0_1-t2i.json
+  sha256: ea6b948e024a6a517d5c11ecf0c021f90ff6bc127d846ae87a8a54579333caf0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_newbieimage_exp0_1-t2i
+  tutorialUrl: https://docs.comfy.org/tutorials/image/newbie-image/newbie-image-exp-0-1
+  title: 'NewBie Exp0.1: Anime Generation'
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate detailed anime-style images with NewBie Exp0.1's Next-DiT
+    architecture. Supports XML structured prompts for better multi-character scenes
+    and attribute control.
+  tags:
+  - Anime
+  - Image
+  - Text to Image
+  models:
+  - NewBie
+  date: '2025-12-19'
+  size: 16213501542
+  usage: 44
+  openSource: true
+  searchRank: 0
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_newbieimage_exp0_1-t2i.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_newbieimage_exp0_1-t2i.png
+  minComfyUIVersion: 0.3.42
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

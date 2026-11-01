@@ -1,0 +1,117 @@
+id: remote:template:template_ltx2_3_ic_lora_ingredients
+kind: comfyui_template
+title: 'LTX-2.3 IC-LoRA: Reference Sheet Control'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2.3 IC-LoRA: Reference Sheet Control'
+  input_types:
+    width: number
+    height: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate short video clips that stay visually consistent with a reference
+    sheet inventorying characters, props, and locations. Input a composite reference
+    image and a split prompt describing the action, outputting a single video clip.
+    Ideal for character-driven animation, consistent prop visualization, and location-specific
+    scene generation.
+  parameters:
+  - name: width
+    type: number
+    required: false
+    default: 512
+  - name: height
+    type: number
+    required: false
+    default: 512
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_ic_lora_ingredients.json
+  sha256: a11fbce038fe5604fb4a3b10ddf9aafdd145c728ec2eb4919b0ae3ef85a618bd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_ltx2_3_ic_lora_ingredients
+  title: 'LTX-2.3 IC-LoRA: Reference Sheet Control'
+  description: Generate short video clips that stay visually consistent with a reference
+    sheet inventorying characters, props, and locations. Input a composite reference
+    image and a split prompt describing the action, outputting a single video clip.
+    Ideal for character-driven animation, consistent prop visualization, and location-specific
+    scene generation.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Reference to Video
+  models:
+  - LTX-2.3
+  date: '2026-07-13'
+  openSource: true
+  size: 39621073306
+  usage: 88
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 724
+      nodeType: LoadImage
+      file: german_shepherd_news_anchor_ref.png
+      mediaType: image
+    outputs:
+    - nodeId: 68
+      nodeType: SaveVideo
+      file: template_ltx2_3_ic_lora_ingredients.mp4
+      mediaType: video
+  minComfyUIVersion: 0.22.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_ic_lora_ingredients.json
+  sha256: a11fbce038fe5604fb4a3b10ddf9aafdd145c728ec2eb4919b0ae3ef85a618bd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_template_ltx2_3_ic_lora_ingredients_f7fa434a/template.yaml
+validation_errors: []
+inputs:
+- name: width
+  type: number
+  required: false
+  default: 512
+- name: height
+  type: number
+  required: false
+  default: 512
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  width:
+    node_id: '712'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '712'
+    input_key: height
+    widget_index: 1
+  source_image:
+    node_id: '724'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

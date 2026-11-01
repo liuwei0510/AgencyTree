@@ -1,0 +1,76 @@
+id: remote:template:utility_nvidia_rtx_video_enhance
+kind: comfyui_template
+title: 'RTX Video Enhance: HDR'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'RTX Video Enhance: HDR'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: 'Upload a video and chain Nvidia''s three RTX video nodes in one pass:
+    super resolution upscale, frame generation and SDR-to-HDR conversion, running
+    locally on your Nvidia RTX GPU. Built for VFX artists and professional video creators.
+
+
+    '
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_nvidia_rtx_video_enhance.json
+  sha256: d029ed1267c9ff858f459fff6aa80b9246e78d4c6bcd9b6986792497ea4ae9f4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_nvidia_rtx_video_enhance
+  title: 'RTX Video Enhance: HDR'
+  description: 'Upload a video and chain Nvidia''s three RTX video nodes in one pass:
+    super resolution upscale, frame generation and SDR-to-HDR conversion, running
+    locally on your Nvidia RTX GPU. Built for VFX artists and professional video creators.
+
+
+    '
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Upscale
+  models:
+  - None
+  requiresCustomNodes:
+  - comfyui_nvidia_rtx_nodes
+  minComfyUIVersion: 0.40.0
+  date: '2026-10-13'
+  openSource: true
+  includeOnDistributions:
+  - cloud
+  size: 0
+  usage: 1096
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadVideo
+      file: RTX5090_graphics_card.mp4
+      mediaType: video
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_nvidia_rtx_video_enhance.json
+  sha256: d029ed1267c9ff858f459fff6aa80b9246e78d4c6bcd9b6986792497ea4ae9f4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/video_upscaling/comfyui_utility_nvidia_rtx_video_enhance_134642d2/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

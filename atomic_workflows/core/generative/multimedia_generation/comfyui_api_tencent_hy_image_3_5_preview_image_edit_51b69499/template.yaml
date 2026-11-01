@@ -1,0 +1,80 @@
+id: remote:template:api_tencent_hy_image_3_5_preview_image_edit
+kind: comfyui_template
+title: 'HY Image 3.5 Preview: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HY Image 3.5 Preview: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit images with the HY Image 3.5 Preview model, which deeply understands
+    user intent through optimized text-and-image organization to deliver high-quality
+    results. Takes 1 image input and produces 1 image output. Ideal for portrait editing,
+    commercial posters, and film/TV marketing materials.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tencent_hy_image_3_5_preview_image_edit.json
+  sha256: 91b2867bd9c9277fce25e522b75dda43e617a4116af1eb7bc1aba9ce0061e7b1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tencent_hy_image_3_5_preview_image_edit
+  title: 'HY Image 3.5 Preview: Image Edit'
+  description: Edit images with the HY Image 3.5 Preview model, which deeply understands
+    user intent through optimized text-and-image organization to deliver high-quality
+    results. Takes 1 image input and produces 1 image output. Ideal for portrait editing,
+    commercial posters, and film/TV marketing materials.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - HY Image 3.5
+  minComfyUIVersion: 0.37.1
+  date: '2026-09-21'
+  openSource: false
+  size: 0
+  usage: 140
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: futuristic_brutalist_motorcycle.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tencent_hy_image_3_5_preview_image_edit.json
+  sha256: 91b2867bd9c9277fce25e522b75dda43e617a4116af1eb7bc1aba9ce0061e7b1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_tencent_hy_image_3_5_preview_image_edit_51b69499/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '5'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

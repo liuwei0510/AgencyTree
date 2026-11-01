@@ -1,0 +1,85 @@
+id: remote.template.utility_sirolim_image_controlled_upscale
+kind: comfyui_template
+title: 'Image Upscale: Wan 2.2 Two-Stage'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Wan 2.2 Two-Stage'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and set a resize factor. Generate an AI prompt from
+    your image and upscale it in two controlled stages to enhance detail and fidelity.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sirolim_image_controlled_upscale.json
+  sha256: 4c8121d8137ebbe9bc84b2b523667da21ab23fd707373078d3e449accf683804
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_sirolim_image_controlled_upscale
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/video-upscale
+  title: 'Image Upscale: Wan 2.2 Two-Stage'
+  description: Upload an image and set a resize factor. Generate an AI prompt from
+    your image and upscale it in two controlled stages to enhance detail and fidelity.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Wan2.2
+  requiresCustomNodes:
+  - ComfyUI-WanVideoWrapper
+  - comfyui-wanvideowrapper
+  date: '2026-03-12'
+  openSource: false
+  size: 21474836480
+  usage: 28
+  searchRank: 0
+  username: sirolim
+  io:
+    inputs:
+    - nodeId: 664
+      nodeType: LoadImage
+      file: playful_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 733
+      nodeType: SaveImage
+      file: utility_sirolim_image_controlled_upscale-1.png
+      mediaType: image
+    - nodeId: 670
+      nodeType: SaveImage
+      file: utility_sirolim_image_controlled_upscale-2.png
+      mediaType: image
+  thumbnail:
+  - input/playful_portrait.png
+  - output/utility_sirolim_image_controlled_upscale-2.png
+  minComfyUIVersion: 0.9.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '664'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

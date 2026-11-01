@@ -1,0 +1,62 @@
+id: remote.template.image_kandinsky5_t2i
+kind: comfyui_template
+title: 'Kandinsky 5.0 Image Lite: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kandinsky 5.0 Image Lite: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: A lightweight 2B model that generates images from English and Russian
+    prompts with high visual quality.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_kandinsky5_t2i.json
+  sha256: fcaca3388a8fdde4e06b4c81adfaf89935ee555ee6e512ea953c4fe9c3fd4a6f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_kandinsky5_t2i
+  title: 'Kandinsky 5.0 Image Lite: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - Kandinsky
+  thumbnailVariant: hoverZoom
+  description: A lightweight 2B model that generates images from English and Russian
+    prompts with high visual quality.
+  date: '2026-02-03'
+  usage: 14
+  size: 21689584845
+  searchRank: 0
+  openSource: true
+  io:
+    outputs:
+    - nodeId: 16
+      nodeType: SaveImage
+      file: kandinsky5-t2i.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/kandinsky5-t2i.png
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

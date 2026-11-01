@@ -1,0 +1,45 @@
+id: remote:model:d66acbdc3b83188ea87c
+kind: comfyui_model
+title: SUPIR-v0Q.ckpt
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: SUPIR-v0Q.ckpt
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: SUPIR-v0Q.ckpt
+  - name: base
+    value: SUPIR
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/SUPIR
+    filename: SUPIR-v0Q.ckpt
+    download_locator: https://huggingface.co/camenduru/SUPIR/resolve/main/SUPIR-v0Q.ckpt
+code_usable: true
+status: available
+metadata:
+  name: SUPIR-v0Q.ckpt
+  type: checkpoint
+  base: SUPIR
+  save_path: checkpoints/SUPIR
+  description: SUPIR checkpoint model
+  reference: https://huggingface.co/camenduru/SUPIR/tree/main
+  filename: SUPIR-v0Q.ckpt
+  url: https://huggingface.co/camenduru/SUPIR/resolve/main/SUPIR-v0Q.ckpt
+  size: 5.33GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_SUPIR-v0Q.ckpt_d66acbdc/model.yaml
+validation_errors: []

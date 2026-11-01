@@ -1,0 +1,135 @@
+id: remote:template:sdxl_refiner_prompt_example
+kind: comfyui_template
+title: SDXL Refiner Prompt
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SDXL Refiner Prompt
+  input_types:
+    negative_prompt: string
+    prompt: string
+    prompt_2: string
+    negative_prompt_2: string
+    width: number
+    height: number
+  output_types:
+    images: image_filenames
+  capability: Enhance SDXL images using refiner models.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: text, watermark
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: prompt_2
+    type: string
+    required: true
+    default: null
+  - name: negative_prompt_2
+    type: string
+    required: false
+    default: text, watermark
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sdxl_refiner_prompt_example.json
+  sha256: b27ba6aa85a0df5b0786b491645468522e0de95ba4c67a6ed748b7794657a2f4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: sdxl_refiner_prompt_example
+  title: SDXL Refiner Prompt
+  mediaType: image
+  mediaSubtype: webp
+  description: Enhance SDXL images using refiner models.
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/sdxl/
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - SDXL
+  - Stability
+  date: '2025-03-01'
+  size: 13013750907
+  usage: 49
+  username: ComfyUI
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sdxl_refiner_prompt_example.json
+  sha256: b27ba6aa85a0df5b0786b491645468522e0de95ba4c67a6ed748b7794657a2f4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_sdxl_refiner_prompt_example_8e1430e2/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: text, watermark
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: prompt_2
+  type: string
+  required: true
+  default: null
+- name: negative_prompt_2
+  type: string
+  required: false
+  default: text, watermark
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+inject:
+  negative_prompt:
+    node_id: '16'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '15'
+    input_key: text
+    widget_index: 0
+  prompt_2:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  negative_prompt_2:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

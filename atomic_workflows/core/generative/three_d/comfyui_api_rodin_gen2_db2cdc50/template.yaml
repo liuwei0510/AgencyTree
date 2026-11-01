@@ -1,0 +1,55 @@
+id: remote.template.api_rodin_gen2
+kind: comfyui_template
+title: 'Rodin: Gen-2 Image to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Rodin: Gen-2 Image to Model'
+  input_types:
+  - image
+  output_types: []
+  capability: Generate detailed 4X mesh quality 3D models from photos using Rodin
+    Gen2
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_rodin_gen2.json
+  sha256: 5274c6aba3f78a5254fc1d2426e7eeb571b5f566c3c30e8195c8766573bb20e8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_rodin_gen2
+  title: 'Rodin: Gen-2 Image to Model'
+  description: Generate detailed 4X mesh quality 3D models from photos using Rodin
+    Gen2
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - API
+  - Image to 3D
+  models:
+  - Rodin
+  date: '2025-09-27'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 12
+  io:
+    inputs:
+    - nodeId: 82
+      nodeType: LoadImage
+      file: api_rodin_gen2_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.23.0
+  searchRank: 0

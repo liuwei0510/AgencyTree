@@ -1,0 +1,69 @@
+id: core.generative.text_to_video.video_hunyuan_video_1.5_720p_t2v
+title: video_hunyuan_video_1.5_720p_t2v
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/video_hunyuan_video_1.5_720p_t2v.json).
+tags:
+- text-to-video
+- t2v
+- generative
+workflow_file: video_hunyuan_video_1.5_720p_t2v.workflow.json
+inject:
+  prompt:
+    node_id: '44'
+    input_key: text
+  negative_prompt:
+    node_id: '93'
+    input_key: text
+  fps:
+    node_id: '101'
+    input_key: fps
+    widget_index: null
+  width:
+    node_id: '124'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '124'
+    input_key: height
+    widget_index: null
+  length:
+    node_id: '124'
+    input_key: length
+    widget_index: null
+  noise_seed:
+    node_id: '129'
+    input_key: noise_seed
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: fps
+  type: number
+  required: false
+  default: 24
+- name: width
+  type: number
+  required: false
+  default: 1280
+- name: height
+  type: number
+  required: false
+  default: 720
+- name: length
+  type: number
+  required: false
+  default: 121
+- name: noise_seed
+  type: number
+  required: false
+  default: 887963123424675
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

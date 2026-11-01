@@ -1,0 +1,45 @@
+id: remote:model:330f86389622b262bc41
+kind: comfyui_model
+title: Comfy-Org/omnigen2_fp16.safetensors
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: Comfy-Org/omnigen2_fp16.safetensors
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: omnigen2_fp16.safetensors
+  - name: base
+    value: OmniGen2
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: default
+    filename: omnigen2_fp16.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/omnigen2_fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy-Org/omnigen2_fp16.safetensors
+  type: diffusion_model
+  base: OmniGen2
+  save_path: default
+  description: OmniGen2 diffusion model. This is required for using OmniGen2.
+  reference: https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged
+  filename: omnigen2_fp16.safetensors
+  url: https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/omnigen2_fp16.safetensors
+  size: 7.93GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_Comfy-Org_omnigen2_fp16.safetensors_330f8638/model.yaml
+validation_errors: []

@@ -1,0 +1,61 @@
+id: remote:template:utility-normal_crafter-video
+kind: comfyui_template
+title: 'Normal Map: NormalCrafter'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Normal Map: NormalCrafter'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Convert a Video to a temporally stable Normal Map
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-normal_crafter-video.json
+  sha256: 472bcad2128bcbe9558728549b05411a8aaec274ba049533b0c006dbfa1c00ea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-normal_crafter-video
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/preprocessors
+  title: 'Normal Map: NormalCrafter'
+  description: Convert a Video to a temporally stable Normal Map
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  date: '2026-01-12'
+  openSource: true
+  requiresCustomNodes:
+  - comfyui-videohelpersuite
+  - comfyui_controlnet_aux
+  usage: 15
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: VHS_LoadVideo
+      file: normals_input.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-normal_crafter-video.json
+  sha256: 472bcad2128bcbe9558728549b05411a8aaec274ba049533b0c006dbfa1c00ea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

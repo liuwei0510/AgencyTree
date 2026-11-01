@@ -1,0 +1,36 @@
+id: core.editing.image_editing.flux_fill_outpaint_example
+title: flux_fill_outpaint_example
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/flux_fill_outpaint_example.json).
+tags:
+- image-editing
+- edit
+- inpaint
+workflow_file: flux_fill_outpaint_example.workflow.json
+inject:
+  prompt:
+    node_id: '23'
+    input_key: text
+  seed:
+    node_id: '3'
+    input_key: seed
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

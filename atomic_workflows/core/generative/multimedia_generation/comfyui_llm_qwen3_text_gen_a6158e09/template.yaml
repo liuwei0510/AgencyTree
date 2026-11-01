@@ -1,0 +1,59 @@
+id: remote:template:llm_qwen3_text_gen
+kind: comfyui_template
+title: 'Qwen3.0: Text Generation'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen3.0: Text Generation'
+  input_types: {}
+  output_types: {}
+  capability: Input a text prompt to generate detailed, reasoned responses using the
+    Qwen3-4B-Thinking model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/llm_qwen3_text_gen.json
+  sha256: 6188aad47a107c031d825116cc61d2884488e44f9457491cef7aa2e96748d9e1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: llm_qwen3_text_gen
+  tutorialUrl: https://docs.comfy.org/tutorials/llm/qwen/qwen3
+  title: 'Qwen3.0: Text Generation'
+  description: Input a text prompt to generate detailed, reasoned responses using
+    the Qwen3-4B-Thinking model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text Generation
+  models:
+  - Qwen 3.0
+  date: '2026-02-23'
+  openSource: true
+  size: 8053063680
+  usage: 32
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/llm_qwen3_text_gen.png
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/llm_qwen3_text_gen.json
+  sha256: 6188aad47a107c031d825116cc61d2884488e44f9457491cef7aa2e96748d9e1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/media_understanding/comfyui_llm_qwen3_text_gen_a6158e09/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

@@ -1,0 +1,45 @@
+id: remote.model.046bfc815778e31913b4
+kind: comfyui_model
+title: bad_prompt Negative Embedding
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: bad_prompt Negative Embedding
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: bad_prompt_version2-neg.pt
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: embedding
+    save_path: embeddings/SD1.5
+    filename: bad_prompt_version2-neg.pt
+    download_locator: https://civitai.com/api/download/models/60095
+code_usable: true
+status: deprecated
+metadata:
+  name: bad_prompt Negative Embedding
+  type: embedding
+  base: SD1.5
+  save_path: embeddings/SD1.5
+  description: The idea behind this embedding was to somehow train the negative prompt
+    as an embedding, thus unifying the basis of the negative prompt into one word
+    or embedding.
+  reference: https://civitai.com/models/55700/badprompt-negative-embedding
+  filename: bad_prompt_version2-neg.pt
+  url: https://civitai.com/api/download/models/60095
+  size: 25KB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

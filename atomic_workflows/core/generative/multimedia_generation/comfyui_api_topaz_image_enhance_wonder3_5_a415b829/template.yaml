@@ -1,0 +1,69 @@
+id: remote.template.api_topaz_image_enhance_wonder3_5
+kind: comfyui_template
+title: 'Image Upscale: Topaz Wonder 3.5'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Wonder 3.5'
+  input_types:
+  - image
+  output_types: []
+  capability: Upscale and enhance a single image using Topaz's Wonder 3.5 generative
+    model, which adds fine detail, reduces noise, and sharpens text and structured
+    graphics while offering Low, Medium, and High enhancement strengths. The workflow
+    takes 1 input image and produces 1 enhanced output alongside a side-by-side comparison
+    view. Ideal for restoring old or compressed photos, improving product shots and
+    marketing visuals, and preparing low-resolution images for print or large-format
+    display.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_image_enhance_wonder3_5.json
+  sha256: 6baf9b8f0e642a3af742382ab08402795957e7341c87166b9b6b5947dfa04fe5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_topaz_image_enhance_wonder3_5
+  title: 'Image Upscale: Topaz Wonder 3.5'
+  description: Upscale and enhance a single image using Topaz's Wonder 3.5 generative
+    model, which adds fine detail, reduces noise, and sharpens text and structured
+    graphics while offering Low, Medium, and High enhancement strengths. The workflow
+    takes 1 input image and produces 1 enhanced output alongside a side-by-side comparison
+    view. Ideal for restoring old or compressed photos, improving product shots and
+    marketing visuals, and preparing low-resolution images for print or large-format
+    display.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Topaz
+  logos:
+  - provider: Topaz
+  date: '2026-08-04'
+  openSource: false
+  size: 0
+  usage: 238
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: wild_run.png
+      mediaType: image
+  thumbnail:
+  - input/wild_run.png
+  - output/api_topaz_image_enhance_wonder3_5.png
+  minComfyUIVersion: 0.30.2

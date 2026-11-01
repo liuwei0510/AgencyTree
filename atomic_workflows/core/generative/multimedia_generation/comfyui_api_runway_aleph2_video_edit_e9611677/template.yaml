@@ -1,0 +1,63 @@
+id: remote.template.api_runway_aleph2_video_edit
+kind: comfyui_template
+title: 'Runway Aleph2: Video Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Runway Aleph2: Video Edit'
+  input_types:
+  - image
+  - video
+  output_types: []
+  capability: Generate a single edited video that preserves original motion and timing
+    while applying your chosen changes. Ideal for portrait and product relighting,
+    consistent lighting across photo sets, and e-commerce apparel presentation.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_runway_aleph2_video_edit.json
+  sha256: d9ba9687ef8c18c50d2e955c7af533855762c05c4deedb51168412fb64cda87a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_runway_aleph2_video_edit
+  title: 'Runway Aleph2: Video Edit'
+  description: Generate a single edited video that preserves original motion and timing
+    while applying your chosen changes. Ideal for portrait and product relighting,
+    consistent lighting across photo sets, and e-commerce apparel presentation.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - Runway
+  date: '2026-06-15'
+  openSource: false
+  size: 0
+  usage: 38
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: example.png
+      mediaType: image
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: sunset_city_skateboarder.mp4
+      mediaType: video
+  logos:
+  - provider: Runway
+  minComfyUIVersion: 0.25.0

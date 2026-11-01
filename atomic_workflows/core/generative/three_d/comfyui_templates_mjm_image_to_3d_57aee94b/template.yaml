@@ -1,0 +1,91 @@
+id: remote:template:templates_mjm_image_to_3d
+kind: comfyui_template
+title: Generate 3D Model From Single Image
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Generate 3D Model From Single Image
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    mesh: mesh_path
+  capability: Input a single image to automatically generate three orthographic views.
+    Use these multiviews with Meshy to create a textured 3D model.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_mjm_image_to_3d.json
+  sha256: 2dc4d5b8f6489313933c64bc3073a43bd27afd8bf6c211184a155b8f1b002f2d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_mjm_image_to_3d
+  title: Generate 3D Model From Single Image
+  description: Input a single image to automatically generate three orthographic views.
+    Use these multiviews with Meshy to create a textured 3D model.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - 3D
+  - Image to 3D
+  models:
+  - Meshy
+  - Nano Banana 2
+  logos:
+  - provider:
+    - Google
+    - Meshy
+  date: '2026-03-19'
+  openSource: false
+  size: 0
+  usage: 24
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: templates_mjm_image_to_3d.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/templates_mjm_image_to_3d-1.png
+  - thumbnail/templates_mjm_image_to_3d-2.png
+  username: Julien | MJM
+  minComfyUIVersion: 0.35.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_mjm_image_to_3d.json
+  sha256: 2dc4d5b8f6489313933c64bc3073a43bd27afd8bf6c211184a155b8f1b002f2d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/three_d/comfyui_templates_mjm_image_to_3d_57aee94b/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: mesh
+  type: mesh_path
+planning_eligible: true
+contract_errors: []

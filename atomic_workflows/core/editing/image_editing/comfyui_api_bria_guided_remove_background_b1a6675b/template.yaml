@@ -1,0 +1,93 @@
+id: remote:template:api_bria_guided_remove_background
+kind: comfyui_template
+title: 'Bria: Guided Background Removal'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Bria: Guided Background Removal'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Remove the background from an image with Bria while keeping whatever
+    a text prompt describes, so one subject can be cut out of a busy scene instead
+    of losing everything that is not background. The original pixels come back at
+    full resolution with a new alpha channel. Ideal for product cutouts, portrait
+    isolation and compositing prep.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_guided_remove_background.json
+  sha256: f3ac4eb457efffc50ea2df5c9a3dd46aebae33544f553964f10e75ebf62e165d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_guided_remove_background
+  title: 'Bria: Guided Background Removal'
+  description: Remove the background from an image with Bria while keeping whatever
+    a text prompt describes, so one subject can be cut out of a busy scene instead
+    of losing everything that is not background. The original pixels come back at
+    full resolution with a new alpha channel. Ideal for product cutouts, portrait
+    isolation and compositing prep.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Remove Background
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  minComfyUIVersion: 0.42.5
+  date: '2026-10-23'
+  openSource: false
+  size: 0
+  usage: 27
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: bria_guided_person.png
+      mediaType: image
+    outputs:
+    - nodeId: 4
+      nodeType: SaveImage
+      file: api_bria_guided_remove_background.png
+      mediaType: image
+  thumbnailVariant: compareSlider
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_guided_remove_background.json
+  sha256: f3ac4eb457efffc50ea2df5c9a3dd46aebae33544f553964f10e75ebf62e165d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_bria_guided_remove_background_b1a6675b/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

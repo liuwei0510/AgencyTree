@@ -1,0 +1,67 @@
+id: remote.template.image_minimax_h3_t2i
+kind: comfyui_template
+title: 'MiniMax H3: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: 'Generate a single still image from a text prompt with MiniMax H3, an
+    omni-modal video model used here for its first-frame decode. No file inputs required:
+    the graph samples an empty latent and decodes it through the H3 video VAE. Best
+    suited to a single subject with a defined light source and a simple or blurred
+    background.'
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_minimax_h3_t2i.json
+  sha256: 63fd00f7167b1f4217439966b352c29abc5567e728f1c1fbb2756e8dfeb5a49b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_minimax_h3_t2i
+  title: 'MiniMax H3: Text to Image'
+  description: 'Generate a single still image from a text prompt with MiniMax H3,
+    an omni-modal video model used here for its first-frame decode. No file inputs
+    required: the graph samples an empty latent and decodes it through the H3 video
+    VAE. Best suited to a single subject with a defined light source and a simple
+    or blurred background.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - MiniMax H3
+  date: '2026-10-27'
+  openSource: true
+  size: 41865330663
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 48
+      nodeType: SaveImage
+      file: image_minimax_h3_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/image_minimax_h3_t2i.png
+  minComfyUIVersion: 0.30.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

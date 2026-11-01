@@ -1,0 +1,76 @@
+id: remote:template:image_qwen_image_layered_control
+kind: comfyui_template
+title: 'Layer Decomposition: Qwen-Image-Layered Control'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Layer Decomposition: Qwen-Image-Layered Control'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Describe the elements you want in the image and decompose it precisely
+    from the image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_layered_control.json
+  sha256: 6a65e7d97caa2966bc8a5e7fd514853e5d6852fe2c912a973cfcf024a48451d3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_layered_control
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image-layered
+  title: 'Layer Decomposition: Qwen-Image-Layered Control'
+  description: Describe the elements you want in the image and decompose it precisely
+    from the image.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Layer Decompose
+  models:
+  - Qwen-Image-Layered
+  date: '2026-01-15'
+  openSource: true
+  usage: 25
+  io:
+    inputs:
+    - nodeId: 74
+      nodeType: LoadImage
+      file: raccoon_rocker.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.6.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_layered_control.json
+  sha256: 6a65e7d97caa2966bc8a5e7fd514853e5d6852fe2c912a973cfcf024a48451d3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_qwen_image_layered_control_d8ca67d5/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '74'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

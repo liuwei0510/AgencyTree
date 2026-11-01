@@ -1,0 +1,71 @@
+id: remote.template.api_ideogram_v4_5_t2i
+kind: comfyui_template
+title: 'Ideogram 4.5: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram 4.5: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: 'Generate images from text prompts using Ideogram 4.5, with controls
+    for canvas size, quality level, automatic prompt rewriting, and seed. No file
+    inputs are required and one image is output. Ideal for typography-led posters,
+    layout-driven design work, marketing visuals, and fast exploration of visual concepts.
+
+    '
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_v4_5_t2i.json
+  sha256: 2e015aa77a63774d31b42ac738748ea98ee3d87d093467c7ab046660d688617d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ideogram_v4_5_t2i
+  title: 'Ideogram 4.5: Text to Image'
+  description: 'Generate images from text prompts using Ideogram 4.5, with controls
+    for canvas size, quality level, automatic prompt rewriting, and seed. No file
+    inputs are required and one image is output. Ideal for typography-led posters,
+    layout-driven design work, marketing visuals, and fast exploration of visual concepts.
+
+    '
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - API
+  models:
+  - Ideogram
+  logos:
+  - provider: Ideogram
+  minComfyUIVersion: 0.38.1
+  date: '2026-09-30'
+  openSource: false
+  size: 0
+  usage: 92
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImageAdvanced
+      file: api_ideogram_v4_5_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_ideogram_v4_5_t2i.png
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

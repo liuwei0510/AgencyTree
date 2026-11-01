@@ -1,0 +1,80 @@
+id: remote:template:utility_depth_anything3_image_depth_estimation
+kind: comfyui_template
+title: 'Depth Estimation: Depth Anything 3'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Depth Estimation: Depth Anything 3'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload 1 image. Generate a depth map using Depth Anything 3 and view
+    a side-by-side comparison of the original and depth output. Ideal for 3D scene
+    reconstruction, AR/VR asset preparation, and visual effects depth passes.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_depth_anything3_image_depth_estimation.json
+  sha256: 45e4e2d164cada0e3f3bfa9068e27d6d1d8dd936ff03fa8c42d2dbb2fb9a8213
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_depth_anything3_image_depth_estimation
+  title: 'Depth Estimation: Depth Anything 3'
+  description: Upload 1 image. Generate a depth map using Depth Anything 3 and view
+    a side-by-side comparison of the original and depth output. Ideal for 3D scene
+    reconstruction, AR/VR asset preparation, and visual effects depth passes.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  models:
+  - Depth Anything v3
+  date: '2026-06-12'
+  openSource: true
+  size: 1288490189
+  usage: 42
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 85
+      nodeType: LoadImage
+      file: retro_futuristic_home.png
+      mediaType: image
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_depth_anything3_image_depth_estimation.json
+  sha256: 45e4e2d164cada0e3f3bfa9068e27d6d1d8dd936ff03fa8c42d2dbb2fb9a8213
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/depth_estimation/comfyui_utility_depth_anything3_image_depth_estimation_1c525d4f/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '85'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

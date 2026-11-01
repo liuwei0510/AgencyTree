@@ -1,0 +1,90 @@
+id: remote:template:image_flux2
+kind: comfyui_template
+title: FLUX.2 Dev
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: FLUX.2 Dev
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Generate photorealistic images with multi-reference consistency and
+    professional text rendering.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2.json
+  sha256: 402821331c756963c2e6b749efd197cd0eac5dbe4895076b88d50e8b026b11bb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux2
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-2-dev
+  title: FLUX.2 Dev
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Generate photorealistic images with multi-reference consistency and
+    professional text rendering.
+  tags:
+  - Image
+  - Image Edit
+  - Text to Image
+  models:
+  - FLUX
+  - FLUX.2 Dev
+  date: '2025-11-26'
+  size: 74088185856
+  usage: 1756
+  io:
+    inputs:
+    - nodeId: 46
+      nodeType: LoadImage
+      file: image_flux2_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_flux2.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - input/image_flux2_input_image.png
+  - output/image_flux2.png
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2.json
+  sha256: 402821331c756963c2e6b749efd197cd0eac5dbe4895076b88d50e8b026b11bb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_flux2_8bb3bf7a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '46'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,44 @@
+id: remote:model:701cec6c9060519e8964
+kind: comfyui_model
+title: Qwen-Image VAE
+tree_branch:
+- aux
+- latent_process
+- encode_decode
+six_tuple:
+  name: Qwen-Image VAE
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: qwen_image_vae.safetensors
+  - name: base
+    value: Qwen-Image
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae/qwen-image
+    filename: qwen_image_vae.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Qwen-Image VAE
+  type: VAE
+  base: Qwen-Image
+  save_path: vae/qwen-image
+  description: VAE model for Qwen-Image
+  reference: https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI
+  filename: qwen_image_vae.safetensors
+  url: https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors
+  size: 335MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

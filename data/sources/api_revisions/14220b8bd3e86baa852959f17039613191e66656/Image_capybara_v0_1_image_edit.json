@@ -1,0 +1,42 @@
+{
+  "80": {
+    "inputs": {
+      "image": "wind_woman.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.14.1"
+    }
+  },
+  "102": {
+    "inputs": {
+      "images": [
+        "103",
+        0
+      ],
+      "filename_prefix": "Capybara_v0.1"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.14.1"
+    }
+  },
+  "103": {
+    "inputs": {
+      "start_image": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "4f4ddf39-1508-4d34-a35c-ff10e6ce995b",
+    "_meta": {
+      "title": "Image Edit (Capybara v0.1)",
+      "cnr_id": "comfy-core",
+      "ver": "0.28.0"
+    }
+  }
+}

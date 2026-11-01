@@ -1,0 +1,56 @@
+id: remote.template.utility_seedvr2_video_upscale
+kind: comfyui_template
+title: 'Video Upscale: SeedVR2'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: SeedVR2'
+  input_types:
+  - video
+  output_types: []
+  capability: Upload a video to upscale and enhance its resolution using the SeedVR2
+    model for high-definition output.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_seedvr2_video_upscale.json
+  sha256: 312bea1b9ddaf380695c071874b6b0ba61b7b76436028c4c3c4ca10d2769de23
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_seedvr2_video_upscale
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/video-upscale
+  title: 'Video Upscale: SeedVR2'
+  description: Upload a video to upscale and enhance its resolution using the SeedVR2
+    model for high-definition output.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Upscale
+  models:
+  - SeedVR2
+  requiresCustomNodes:
+  - seedvr2_videoupscaler
+  date: '2026-02-06'
+  openSource: true
+  size: 0
+  usage: 236
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 18
+      nodeType: LoadVideo
+      file: input_3d.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.28.0

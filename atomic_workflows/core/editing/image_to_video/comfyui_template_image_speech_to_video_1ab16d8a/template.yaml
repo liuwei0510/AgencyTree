@@ -1,0 +1,97 @@
+id: remote:template:template_image_speech_to_video
+kind: comfyui_template
+title: Generate UGC Video With Voice Clone
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Generate UGC Video With Voice Clone
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+    audio: audio_path
+  capability: Upload an image to generate AI prompts and synthesize speech. Create
+    a final video with accurate lip sync using ElevenLabs and LTX Video.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_image_speech_to_video.json
+  sha256: 18c94ea8ac46ff8e78e999b042a27d5aed425123bf8b5316b8c7eeede27891a9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_image_speech_to_video
+  title: Generate UGC Video With Voice Clone
+  description: Upload an image to generate AI prompts and synthesize speech. Create
+    a final video with accurate lip sync using ElevenLabs and LTX Video.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Lip Sync
+  models:
+  - ElevenLabs
+  - LTX-2.3
+  logos:
+  - provider:
+    - ElevenLabs
+    - Google
+    - Lightricks
+    label: Multiple Providers
+  date: '2026-04-06'
+  openSource: false
+  size: 48962627174
+  usage: 19
+  searchRank: 0
+  username: sirolim
+  io:
+    inputs:
+    - nodeId: 440
+      nodeType: LoadImage
+      file: template_image_speech_to_video_woman_holding_face_oil.png
+      mediaType: image
+    - nodeId: 611
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+    outputs:
+    - nodeId: 479
+      nodeType: SaveVideo
+      file: template_image_speech_to_video.mp4
+      mediaType: video
+  minComfyUIVersion: 0.35.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_image_speech_to_video.json
+  sha256: 18c94ea8ac46ff8e78e999b042a27d5aed425123bf8b5316b8c7eeede27891a9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_template_image_speech_to_video_1ab16d8a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '440'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: audio
+  type: audio_path
+contract_errors: []
+planning_eligible: true

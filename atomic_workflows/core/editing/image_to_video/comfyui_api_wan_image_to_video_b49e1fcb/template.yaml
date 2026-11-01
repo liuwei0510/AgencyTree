@@ -1,0 +1,74 @@
+id: remote.template.api_wan_image_to_video
+kind: comfyui_template
+title: 'Wan2.5: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan2.5: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform images into videos with synchronized audio, enhanced motion,
+    and superior quality.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan_image_to_video.json
+  sha256: be76f842399e48896adb6a030ee23d75b1eab3248a56907314525ae310a70900
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan_image_to_video
+  title: 'Wan2.5: Image to Video'
+  description: Transform images into videos with synchronized audio, enhanced motion,
+    and superior quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  - API
+  models:
+  - Wan2.5
+  - Wan
+  date: '2025-09-27'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 32
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadAudio
+      file: audio_ace_step_1_m2m_editing_input_audio.mp3
+      mediaType: audio
+    - nodeId: 11
+      nodeType: LoadImage
+      file: api_wan_image_to_video_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.60
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

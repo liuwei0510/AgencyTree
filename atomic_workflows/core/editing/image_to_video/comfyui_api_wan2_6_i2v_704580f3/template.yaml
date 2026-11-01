@@ -1,0 +1,72 @@
+id: remote.template.api_wan2_6_i2v
+kind: comfyui_template
+title: 'Wan2.6: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan2.6: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform images into high-quality videos with enhanced image quality,
+    smoother motion, 1080P resolution support, and natural movement generation for
+    professional results.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan2_6_i2v.json
+  sha256: 9f5cf3c898a54f12f808386616a0be651b7e0b1b6dcc48724c8366f39dc3527f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan2_6_i2v
+  title: 'Wan2.6: Image to Video'
+  description: Transform images into high-quality videos with enhanced image quality,
+    smoother motion, 1080P resolution support, and natural movement generation for
+    professional results.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  - API
+  models:
+  - Wan2.6
+  - Wan
+  date: '2025-12-20'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 22
+  io:
+    inputs:
+    - nodeId: 42
+      nodeType: LoadImage
+      file: red_car.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.60
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '42'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

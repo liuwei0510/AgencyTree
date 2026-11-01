@@ -1,0 +1,43 @@
+id: remote.model.c0e076b9411d8d23ccf1
+kind: comfyui_model
+title: XLabs-AI/flux-hed-controlnet-v3.safetensors
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: XLabs-AI/flux-hed-controlnet-v3.safetensors
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: flux-hed-controlnet-v3.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: xlabs/controlnets
+    filename: flux-hed-controlnet-v3.safetensors
+    download_locator: https://huggingface.co/XLabs-AI/flux-controlnet-collections/resolve/main/flux-hed-controlnet-v3.safetensors
+code_usable: true
+status: available
+metadata:
+  name: XLabs-AI/flux-hed-controlnet-v3.safetensors
+  type: controlnet
+  base: FLUX.1
+  save_path: xlabs/controlnets
+  description: ControlNet checkpoints for FLUX.1-dev model by Black Forest Labs.
+  reference: https://huggingface.co/XLabs-AI/flux-controlnet-collections
+  filename: flux-hed-controlnet-v3.safetensors
+  url: https://huggingface.co/XLabs-AI/flux-controlnet-collections/resolve/main/flux-hed-controlnet-v3.safetensors
+  size: 1.49GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

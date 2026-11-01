@@ -1,0 +1,223 @@
+{
+  "n1::10": {
+    "inputs": {
+      "vae_name": "hunyuan_video_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "n1::11": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "llava_llama3_fp8_scaled.safetensors",
+      "type": "hunyuan_video",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "双CLIP加载器"
+    }
+  },
+  "n1::12": {
+    "inputs": {
+      "unet_name": "hunyuan_video_t2v_720p_bf16.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "n1::13": {
+    "inputs": {
+      "noise": [
+        "n1::25",
+        0
+      ],
+      "guider": [
+        "n1::22",
+        0
+      ],
+      "sampler": [
+        "n1::16",
+        0
+      ],
+      "sigmas": [
+        "n1::17",
+        0
+      ],
+      "latent_image": [
+        "n1::45",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "自定义采样器（高级）"
+    }
+  },
+  "n1::16": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "K采样器选择"
+    }
+  },
+  "n1::17": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 20,
+      "denoise": 1,
+      "model": [
+        "n1::12",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "基本调度器"
+    }
+  },
+  "n1::22": {
+    "inputs": {
+      "model": [
+        "n1::67",
+        0
+      ],
+      "conditioning": [
+        "n1::26",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "基本引导器"
+    }
+  },
+  "n1::25": {
+    "inputs": {
+      "noise_seed": 1
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "随机噪波"
+    }
+  },
+  "n1::26": {
+    "inputs": {
+      "guidance": 6,
+      "conditioning": [
+        "n1::44",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "Flux引导"
+    }
+  },
+  "n1::44": {
+    "inputs": {
+      "text": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+      "clip": [
+        "n1::11",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "n1::45": {
+    "inputs": {
+      "width": 848,
+      "height": 480,
+      "length": 49,
+      "batch_size": 1
+    },
+    "class_type": "EmptyHunyuanLatentVideo",
+    "_meta": {
+      "title": "空Latent视频（Hunyuan）"
+    }
+  },
+  "n1::67": {
+    "inputs": {
+      "shift": 7,
+      "model": [
+        "n1::12",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "采样算法（SD3）"
+    }
+  },
+  "n1::73": {
+    "inputs": {
+      "tile_size": 256,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "n1::13",
+        0
+      ],
+      "vae": [
+        "n1::10",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE解码（分块）"
+    }
+  },
+  "n1::79": {
+    "inputs": {
+      "fps": 24,
+      "images": [
+        "n1::79__trim_frames",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "创建视频"
+    }
+  },
+  "n1::80": {
+    "inputs": {
+      "filename_prefix": "video/ComfyUI",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "n1::79",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "保存视频"
+    }
+  },
+  "n1::79__trim_frames": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "image": [
+        "n1::73",
+        0
+      ],
+      "batch_index": 0,
+      "length": 48
+    },
+    "_meta": {
+      "title": "Trim generated video to 48 output frames"
+    }
+  }
+}

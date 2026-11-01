@@ -1,0 +1,62 @@
+id: core.generative.text_to_video.hunyuan_video_text_to_video
+title: hunyuan_video_text_to_video
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/hunyuan_video_text_to_video.json).
+tags:
+- text-to-video
+- t2v
+- generative
+workflow_file: hunyuan_video_text_to_video.workflow.json
+inject:
+  prompt:
+    node_id: '44'
+    input_key: text
+  noise_seed:
+    node_id: '25'
+    input_key: noise_seed
+    widget_index: null
+  width:
+    node_id: '45'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '45'
+    input_key: height
+    widget_index: null
+  length:
+    node_id: '45'
+    input_key: length
+    widget_index: null
+  fps:
+    node_id: '79'
+    input_key: fps
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: noise_seed
+  type: number
+  required: false
+  default: 1
+- name: width
+  type: number
+  required: false
+  default: 848
+- name: height
+  type: number
+  required: false
+  default: 480
+- name: length
+  type: number
+  required: false
+  default: 73
+- name: fps
+  type: number
+  required: false
+  default: 24
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

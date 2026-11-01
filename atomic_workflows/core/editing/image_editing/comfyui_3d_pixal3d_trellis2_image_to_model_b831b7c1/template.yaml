@@ -1,0 +1,85 @@
+id: remote.template.3d_pixal3d_trellis2_image_to_model
+kind: comfyui_template
+title: 'Pixal3D & TRELLIS.2: Image to Model'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Pixal3D & TRELLIS.2: Image to Model'
+  input_types:
+    seed: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: 'Upload a single image. Generate a high-fidelity 3D model with PBR textures
+    using either Pixal3D or TRELLIS.2, toggled by a single switch. Both pipelines
+    share the same DINOv3 encoder and shape/texture VAEs; Pixal3D adds MoGe camera
+    estimation for pixel-aligned geometry. Includes background removal and a complete
+    mesh post-processing pipeline: remesh, decimate, UV unwrap, and texture baking.'
+  parameters: &id001
+  - name: seed
+    type: number
+    required: false
+    default: 56
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_pixal3d_trellis2_image_to_model.json
+  sha256: 8be50e780b796f5672b2008bbcf4cbd0bc63f3c8cbbc7c0e4d5c0284e474ce38
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: 3d_pixal3d_trellis2_image_to_model
+  title: 'Pixal3D & TRELLIS.2: Image to Model'
+  description: 'Upload a single image. Generate a high-fidelity 3D model with PBR
+    textures using either Pixal3D or TRELLIS.2, toggled by a single switch. Both pipelines
+    share the same DINOv3 encoder and shape/texture VAEs; Pixal3D adds MoGe camera
+    estimation for pixel-aligned geometry. Includes background removal and a complete
+    mesh post-processing pipeline: remesh, decimate, UV unwrap, and texture baking.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - Image to 3D
+  - Int8
+  models:
+  - Pixal3D
+  - TRELLIS.2
+  date: '2026-08-25'
+  openSource: true
+  size: 15354508083
+  usage: 777
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 122
+      nodeType: LoadImage
+      file: viking_wolf_rune_axe.png
+      mediaType: image
+  minComfyUIVersion: 0.34.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+  source_image:
+    node_id: '122'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

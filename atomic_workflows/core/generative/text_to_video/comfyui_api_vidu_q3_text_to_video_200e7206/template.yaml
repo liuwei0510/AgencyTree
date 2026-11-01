@@ -1,0 +1,55 @@
+id: remote.template.api_vidu_q3_text_to_video
+kind: comfyui_template
+title: Vidu Q3 Audio-Visual Video Generation
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Vidu Q3 Audio-Visual Video Generation
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Input a text prompt or upload an image to generate a 1-16 second video
+    with synchronized audio and automatic scene transitions.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q3_text_to_video.json
+  sha256: 66802cb2c678c0a5153c269012c86662341135b347616a1655ea360659d61cbb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_q3_text_to_video
+  title: Vidu Q3 Audio-Visual Video Generation
+  description: Input a text prompt or upload an image to generate a 1-16 second video
+    with synchronized audio and automatic scene transitions.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  - Video
+  models:
+  - Vidu
+  - Vidu Q3
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 22
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.12.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

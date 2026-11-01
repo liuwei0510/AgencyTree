@@ -1,0 +1,60 @@
+{
+  "85": {
+    "inputs": {
+      "input": [
+        "92",
+        0
+      ]
+    },
+    "class_type": "87b54408-f2d8-4783-bad3-67bd0641ad66",
+    "_meta": {
+      "title": "87b54408-f2d8-4783-bad3-67bd0641ad66",
+      "cnr_id": "comfy-core",
+      "ver": "0.19.3"
+    }
+  },
+  "92": {
+    "inputs": {
+      "image": "blurry_city_horses.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.19.3"
+    }
+  },
+  "96": {
+    "inputs": {
+      "image_a": [
+        "92",
+        0
+      ],
+      "image_b": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare",
+      "cnr_id": "comfy-core",
+      "ver": "0.19.3"
+    }
+  },
+  "97": {
+    "inputs": {
+      "images": [
+        "85",
+        0
+      ],
+      "filename_prefix": "upscaled_by_supir"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.19.3"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+id: remote.template.template_contact_sheet-step_2.app
+kind: comfyui_template
+title: 'Step 2: Contact Sheet Workflow'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Step 2: Contact Sheet Workflow'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload the fashion editorial and product image. Generate 8 distinct
+    angle variations with product consistency from only 2 Nano Banana generations.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_contact_sheet-step_2.app.json
+  sha256: 55722ad58acc6862fb73b62be9b7fa31082b416d3482fd7784c36d4d3d261ef9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_contact_sheet-step_2.app
+  title: 'Step 2: Contact Sheet Workflow'
+  description: Upload the fashion editorial and product image. Generate 8 distinct
+    angle variations with product consistency from only 2 Nano Banana generations.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Video
+  - Image Edit
+  models:
+  - Nano Banana Pro
+  logos:
+  - provider: Google
+  requiresCustomNodes:
+  - comfyui_essentials
+  date: '2026-03-30'
+  openSource: false
+  size: 0
+  usage: 8
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 16
+      nodeType: LoadImage
+      file: contact_sheet_app_input_1.png
+      mediaType: image
+    - nodeId: 26
+      nodeType: LoadImage
+      file: brown_moisturizer_bottle.jpg
+      mediaType: image
+  thumbnail:
+  - thumbnail/template_contact_sheet-step_2.png
+  isApp: true
+  minComfyUIVersion: 0.8.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '16'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '26'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

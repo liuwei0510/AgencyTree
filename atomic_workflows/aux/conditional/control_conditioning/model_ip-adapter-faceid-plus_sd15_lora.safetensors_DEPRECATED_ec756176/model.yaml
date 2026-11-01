@@ -1,0 +1,45 @@
+id: remote:model:ec756176f7440c9ec699
+kind: comfyui_model
+title: ip-adapter-faceid-plus_sd15_lora.safetensors [DEPRECATED]
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: ip-adapter-faceid-plus_sd15_lora.safetensors [DEPRECATED]
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ip-adapter-faceid-plus_sd15_lora.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/ipadapter
+    filename: ip-adapter-faceid-plus_sd15_lora.safetensors
+    download_locator: https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plus_sd15_lora.safetensors
+code_usable: true
+status: available
+metadata:
+  name: ip-adapter-faceid-plus_sd15_lora.safetensors [DEPRECATED]
+  type: lora
+  base: SD1.5
+  save_path: loras/ipadapter
+  description: IP-Adapter-FaceID Plus LoRA Model (SD1.5) [ipadapter]
+  reference: https://huggingface.co/h94/IP-Adapter-FaceID
+  filename: ip-adapter-faceid-plus_sd15_lora.safetensors
+  url: https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plus_sd15_lora.safetensors
+  size: 51.1MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/control_conditioning/model_ip-adapter-faceid-plus_sd15_lora.safetensors_DEPRECATED_ec756176/model.yaml
+validation_errors: []

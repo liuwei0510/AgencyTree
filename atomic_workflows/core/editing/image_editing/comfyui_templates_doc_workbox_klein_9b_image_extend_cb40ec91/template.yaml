@@ -1,0 +1,105 @@
+id: remote:template:templates_doc_workbox_klein_9b_image_extend
+kind: comfyui_template
+title: 'Image Outpainting: FLUX.2 Klein 9B'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Outpainting: FLUX.2 Klein 9B'
+  input_types:
+    source_image: image_filenames
+    negative_prompt: string
+  output_types:
+    images: image_filenames
+  capability: Use the FLUX.2 Klein 9B model to intelligently extend and expand image
+    content. Input an image to generate seamless outpainting and extended compositions.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: remove the green part
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_doc_workbox_klein_9b_image_extend.json
+  sha256: 085b076931ce752146425c8b4d2c1d27acf3c7bd75b08ce415723f184c9b9383
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_doc_workbox_klein_9b_image_extend
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-2-klein
+  title: 'Image Outpainting: FLUX.2 Klein 9B'
+  description: Use the FLUX.2 Klein 9B model to intelligently extend and expand image
+    content. Input an image to generate seamless outpainting and extended compositions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Outpainting
+  models:
+  - FLUX.2 Klein
+  requiresCustomNodes:
+  - ComfyUI-Color-Matcher
+  - ComfyUI_Swwan
+  - comfyui-kjnodes
+  date: '2026-03-19'
+  openSource: true
+  size: 16750372454
+  usage: 215
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 159
+      nodeType: LoadImage
+      file: red_panda.png
+      mediaType: image
+    outputs:
+    - nodeId: 142
+      nodeType: SaveImage
+      file: templates_doc_workbox_klein_9b_image_extend.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/templates_doc_workbox_klein_9b_image_extend-1.png
+  - thumbnail/templates_doc_workbox_klein_9b_image_extend-2.png
+  username: Doc_workBox
+  minComfyUIVersion: 0.9.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_doc_workbox_klein_9b_image_extend.json
+  sha256: 085b076931ce752146425c8b4d2c1d27acf3c7bd75b08ce415723f184c9b9383
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates_doc_workbox_klein_9b_image_extend_cb40ec91/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: remove the green part
+inject:
+  source_image:
+    node_id: '159'
+    input_key: image
+    widget_index: 0
+  negative_prompt:
+    node_id: '157'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,929 @@
+{
+  "version": "evolution-82f255ac100a075f406b",
+  "parent": "workflow-675f8de4ff3d2bc60cb1",
+  "created_at": "2026-10-30T05:19:11.957929+00:00",
+  "old_act": "act-069d43ce89e2a1500d61",
+  "new_act": "smoke-act-no-compatible-1ff9a878d49afd54",
+  "classification": "total",
+  "affected_nodes": [
+    "n2"
+  ],
+  "changes": [
+    {
+      "id": "remote:model:37b566d018b9ddc9e8d0",
+      "type": "deprecated",
+      "scope": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "before": {
+        "id": "remote:model:37b566d018b9ddc9e8d0",
+        "kind": "comfyui_model",
+        "title": "RealESRGAN x2",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "RealESRGAN x2",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RealESRGAN_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "upscale"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "upscale",
+            "save_path": "default",
+            "filename": "RealESRGAN_x2.pth",
+            "download_locator": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "available",
+        "metadata": {
+          "name": "RealESRGAN x2",
+          "type": "upscale",
+          "base": "upscale",
+          "save_path": "default",
+          "description": "RealESRGAN x2 upscaler model",
+          "reference": "https://huggingface.co/ai-forever/Real-ESRGAN",
+          "filename": "RealESRGAN_x2.pth",
+          "url": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth",
+          "size": "67.1MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml"
+        },
+        "validation_errors": [],
+        "atomic_workflow_path": "aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0",
+        "implemented_by": [
+          {
+            "implementation_id": "aux.postprocess.upscale.upscale2x",
+            "node_id": "3",
+            "input_key": "model_name",
+            "widget_index": null,
+            "filename": "RealESRGAN_x2.pth",
+            "loader_class": "UpscaleModelLoader",
+            "graph_path": []
+          }
+        ]
+      },
+      "after": {
+        "id": "remote:model:37b566d018b9ddc9e8d0",
+        "kind": "comfyui_model",
+        "title": "RealESRGAN x2",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "RealESRGAN x2",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RealESRGAN_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "upscale"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "upscale",
+            "save_path": "default",
+            "filename": "RealESRGAN_x2.pth",
+            "download_locator": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "deprecated",
+        "metadata": {
+          "name": "RealESRGAN x2",
+          "type": "upscale",
+          "base": "upscale",
+          "save_path": "default",
+          "description": "RealESRGAN x2 upscaler model",
+          "reference": "https://huggingface.co/ai-forever/Real-ESRGAN",
+          "filename": "RealESRGAN_x2.pth",
+          "url": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth",
+          "size": "67.1MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml"
+        },
+        "validation_errors": [],
+        "atomic_workflow_path": "aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0",
+        "implemented_by": [
+          {
+            "implementation_id": "aux.postprocess.upscale.upscale2x",
+            "node_id": "3",
+            "input_key": "model_name",
+            "widget_index": null,
+            "filename": "RealESRGAN_x2.pth",
+            "loader_class": "UpscaleModelLoader",
+            "graph_path": []
+          }
+        ]
+      },
+      "evidence": {
+        "repository": "Comfy-Org/ComfyUI-Manager",
+        "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+        "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml"
+      },
+      "change_id": "change-f2dce5ae36a9b02388bb"
+    },
+    {
+      "id": "remote:model:d68772e280856aee1dde",
+      "type": "deprecated",
+      "scope": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "before": {
+        "id": "remote:model:d68772e280856aee1dde",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT",
+            "filename": "RGT_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "available",
+        "metadata": {
+          "name": "ViperYX/RGT_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT",
+          "description": "RGT x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth",
+          "size": "179.8MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "after": {
+        "id": "remote:model:d68772e280856aee1dde",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT",
+            "filename": "RGT_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "deprecated",
+        "metadata": {
+          "name": "ViperYX/RGT_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT",
+          "description": "RGT x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth",
+          "size": "179.8MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "evidence": {
+        "repository": "Comfy-Org/ComfyUI-Manager",
+        "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+        "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2/model.yaml"
+      },
+      "change_id": "change-5c97781539b2982c14f5"
+    },
+    {
+      "id": "remote:model:d81b37ffaf6de74f12ba",
+      "type": "deprecated",
+      "scope": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "before": {
+        "id": "remote:model:d81b37ffaf6de74f12ba",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_S_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_S_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT_S",
+            "filename": "RGT_S_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "available",
+        "metadata": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT_S",
+          "description": "RGT_S x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_S_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth",
+          "size": "135.4MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "after": {
+        "id": "remote:model:d81b37ffaf6de74f12ba",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_S_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_S_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT_S",
+            "filename": "RGT_S_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "deprecated",
+        "metadata": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT_S",
+          "description": "RGT_S x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_S_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth",
+          "size": "135.4MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "evidence": {
+        "repository": "Comfy-Org/ComfyUI-Manager",
+        "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+        "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff/model.yaml"
+      },
+      "change_id": "change-b1d6832d24b3783c4467"
+    }
+  ],
+  "model_changes": [
+    {
+      "id": "remote:model:37b566d018b9ddc9e8d0",
+      "type": "deprecated",
+      "scope": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "before": {
+        "id": "remote:model:37b566d018b9ddc9e8d0",
+        "kind": "comfyui_model",
+        "title": "RealESRGAN x2",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "RealESRGAN x2",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RealESRGAN_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "upscale"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "upscale",
+            "save_path": "default",
+            "filename": "RealESRGAN_x2.pth",
+            "download_locator": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "available",
+        "metadata": {
+          "name": "RealESRGAN x2",
+          "type": "upscale",
+          "base": "upscale",
+          "save_path": "default",
+          "description": "RealESRGAN x2 upscaler model",
+          "reference": "https://huggingface.co/ai-forever/Real-ESRGAN",
+          "filename": "RealESRGAN_x2.pth",
+          "url": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth",
+          "size": "67.1MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml"
+        },
+        "validation_errors": [],
+        "atomic_workflow_path": "aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0",
+        "implemented_by": [
+          {
+            "implementation_id": "aux.postprocess.upscale.upscale2x",
+            "node_id": "3",
+            "input_key": "model_name",
+            "widget_index": null,
+            "filename": "RealESRGAN_x2.pth",
+            "loader_class": "UpscaleModelLoader",
+            "graph_path": []
+          }
+        ]
+      },
+      "after": {
+        "id": "remote:model:37b566d018b9ddc9e8d0",
+        "kind": "comfyui_model",
+        "title": "RealESRGAN x2",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "RealESRGAN x2",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RealESRGAN_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "upscale"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "upscale",
+            "save_path": "default",
+            "filename": "RealESRGAN_x2.pth",
+            "download_locator": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "deprecated",
+        "metadata": {
+          "name": "RealESRGAN x2",
+          "type": "upscale",
+          "base": "upscale",
+          "save_path": "default",
+          "description": "RealESRGAN x2 upscaler model",
+          "reference": "https://huggingface.co/ai-forever/Real-ESRGAN",
+          "filename": "RealESRGAN_x2.pth",
+          "url": "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth",
+          "size": "67.1MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml"
+        },
+        "validation_errors": [],
+        "atomic_workflow_path": "aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0",
+        "implemented_by": [
+          {
+            "implementation_id": "aux.postprocess.upscale.upscale2x",
+            "node_id": "3",
+            "input_key": "model_name",
+            "widget_index": null,
+            "filename": "RealESRGAN_x2.pth",
+            "loader_class": "UpscaleModelLoader",
+            "graph_path": []
+          }
+        ]
+      },
+      "evidence": {
+        "repository": "Comfy-Org/ComfyUI-Manager",
+        "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+        "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml"
+      },
+      "change_id": "change-f2dce5ae36a9b02388bb"
+    },
+    {
+      "id": "remote:model:d68772e280856aee1dde",
+      "type": "deprecated",
+      "scope": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "before": {
+        "id": "remote:model:d68772e280856aee1dde",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT",
+            "filename": "RGT_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "available",
+        "metadata": {
+          "name": "ViperYX/RGT_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT",
+          "description": "RGT x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth",
+          "size": "179.8MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "after": {
+        "id": "remote:model:d68772e280856aee1dde",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT",
+            "filename": "RGT_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "deprecated",
+        "metadata": {
+          "name": "ViperYX/RGT_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT",
+          "description": "RGT x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT/RGT_x2.pth",
+          "size": "179.8MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "evidence": {
+        "repository": "Comfy-Org/ComfyUI-Manager",
+        "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+        "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_x2.pth_d68772e2/model.yaml"
+      },
+      "change_id": "change-5c97781539b2982c14f5"
+    },
+    {
+      "id": "remote:model:d81b37ffaf6de74f12ba",
+      "type": "deprecated",
+      "scope": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "before": {
+        "id": "remote:model:d81b37ffaf6de74f12ba",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_S_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_S_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT_S",
+            "filename": "RGT_S_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "available",
+        "metadata": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT_S",
+          "description": "RGT_S x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_S_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth",
+          "size": "135.4MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "after": {
+        "id": "remote:model:d81b37ffaf6de74f12ba",
+        "kind": "comfyui_model",
+        "title": "ViperYX/RGT_S_x2.pth",
+        "tree_branch": [
+          "aux",
+          "postprocess",
+          "upscale"
+        ],
+        "six_tuple": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "input_types": [
+            "image"
+          ],
+          "output_types": [
+            "image"
+          ],
+          "capability": "aux/postprocess/upscale",
+          "parameters": [
+            {
+              "name": "filename",
+              "value": "RGT_S_x2.pth"
+            },
+            {
+              "name": "base",
+              "value": "RGT"
+            }
+          ],
+          "invocation": {
+            "platform": "ComfyUI",
+            "interface": "load from model catalog using a compatible ComfyUI node",
+            "model_type": "RGT",
+            "save_path": "RGT/RGT_S",
+            "filename": "RGT_S_x2.pth",
+            "download_locator": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth"
+          }
+        },
+        "code_usable": true,
+        "status": "deprecated",
+        "metadata": {
+          "name": "ViperYX/RGT_S_x2.pth",
+          "type": "RGT",
+          "base": "RGT",
+          "save_path": "RGT/RGT_S",
+          "description": "RGT_S x2 upscale model for ComfyUI-RGT",
+          "reference": "https://huggingface.co/ViperYX/RGT/tree/main",
+          "filename": "RGT_S_x2.pth",
+          "url": "https://huggingface.co/ViperYX/RGT/resolve/main/RGT_S/RGT_S_x2.pth",
+          "size": "135.4MB"
+        },
+        "evidence": {
+          "repository": "Comfy-Org/ComfyUI-Manager",
+          "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+          "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+          "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+          "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff/model.yaml"
+        },
+        "atomic_workflow_path": "aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff",
+        "validation_errors": [],
+        "implemented_by": []
+      },
+      "evidence": {
+        "repository": "Comfy-Org/ComfyUI-Manager",
+        "revision": "8afdee041650a18e7b66b88a06668c7b684d7c6f",
+        "url": "https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json",
+        "sha256": "acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200",
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_ViperYX_RGT_S_x2.pth_d81b37ff/model.yaml"
+      },
+      "change_id": "change-b1d6832d24b3783c4467"
+    }
+  ],
+  "abstract_change_plan": {
+    "class": "total",
+    "minimal_subgraph": {
+      "nodes": [
+        "n2"
+      ],
+      "edges": [
+        {
+          "from_node": "n1",
+          "to_node": "n2",
+          "input": "source_image"
+        }
+      ]
+    },
+    "reuse": [
+      "n1"
+    ],
+    "events": {
+      "n2": [
+        "change-f2dce5ae36a9b02388bb"
+      ]
+    },
+    "rebuild": [
+      "ATT",
+      "AWG",
+      "EWC"
+    ],
+    "rollback": "workflow-675f8de4ff3d2bc60cb1"
+  },
+  "executable_change_plan": [],
+  "actions": [],
+  "attempts": [],
+  "diagnostics": [
+    "Compound temporal requirement needs a structured ATT or a semantic agent"
+  ],
+  "committed": false,
+  "candidate": null,
+  "rollback_target": "workflow-675f8de4ff3d2bc60cb1",
+  "runtime_verified": false,
+  "intent_validation": "task_contract_and_binding_coverage"
+}

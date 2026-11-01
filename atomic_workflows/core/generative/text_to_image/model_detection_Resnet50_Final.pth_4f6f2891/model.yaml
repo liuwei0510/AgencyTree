@@ -1,0 +1,46 @@
+id: remote:model:4f6f289154a30eebb79e
+kind: comfyui_model
+title: detection_Resnet50_Final.pth
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: detection_Resnet50_Final.pth
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: detection_Resnet50_Final.pth
+  - name: base
+    value: facexlib
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: facexlib
+    save_path: facerestore_models
+    filename: detection_Resnet50_Final.pth
+    download_locator: https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth
+code_usable: true
+status: available
+metadata:
+  name: detection_Resnet50_Final.pth
+  type: facexlib
+  base: facexlib
+  save_path: facerestore_models
+  description: Face Detection Models. Download the model required for using the 'Facerestore
+    CF (Code Former)' custom node.
+  reference: https://github.com/xinntao/facexlib
+  filename: detection_Resnet50_Final.pth
+  url: https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth
+  size: 109.5MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_detection_Resnet50_Final.pth_4f6f2891/model.yaml
+validation_errors: []

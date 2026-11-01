@@ -1,0 +1,83 @@
+id: remote:template:video_minimax_h3_i2v_continuation
+kind: comfyui_template
+title: Image to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Image to Video
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Start with an image and an empty prompt, then describe the motion, shots,
+    and audio you want MiniMax H3 to generate. The workflow produces one video with
+    synchronized audio and remains fully editable before execution.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_i2v_continuation.json
+  sha256: 0aa59cb831e80c746ca0407782d2766c8b9074631d6494582858ceb660311da3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_minimax_h3_i2v_continuation
+  title: Image to Video
+  description: Start with an image and an empty prompt, then describe the motion,
+    shots, and audio you want MiniMax H3 to generate. The workflow produces one video
+    with synchronized audio and remains fully editable before execution.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Int8
+  - Video
+  models:
+  - MiniMax H3
+  date: '2026-08-24'
+  openSource: true
+  size: 44452911514
+  usage: 485
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 114
+      nodeType: LoadImage
+      file: transparent_rgb_gaming_mouse.png
+      mediaType: image
+  thumbnail:
+  - input/transparent_rgb_gaming_mouse.png
+  minComfyUIVersion: 0.30.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_i2v_continuation.json
+  sha256: 0aa59cb831e80c746ca0407782d2766c8b9074631d6494582858ceb660311da3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_minimax_h3_i2v_continuation_b43bf187/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '114'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

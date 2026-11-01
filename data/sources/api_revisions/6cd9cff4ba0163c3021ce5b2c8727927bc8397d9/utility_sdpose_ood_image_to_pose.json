@@ -1,0 +1,42 @@
+{
+  "667": {
+    "inputs": {
+      "image": "dancer.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.15.1"
+    }
+  },
+  "669": {
+    "inputs": {
+      "images": [
+        "675",
+        0
+      ],
+      "filename_prefix": "ComfyUI"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.15.1"
+    }
+  },
+  "675": {
+    "inputs": {
+      "input": [
+        "667",
+        0
+      ]
+    },
+    "class_type": "01b6a731-fb78-4070-9a38-c87146da9604",
+    "_meta": {
+      "title": "01b6a731-fb78-4070-9a38-c87146da9604",
+      "cnr_id": "comfy-core",
+      "ver": "0.15.1"
+    }
+  }
+}

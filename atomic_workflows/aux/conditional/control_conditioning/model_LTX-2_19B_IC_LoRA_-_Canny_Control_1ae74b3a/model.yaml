@@ -1,0 +1,46 @@
+id: remote:model:1ae74b3aab959bfb3ecf
+kind: comfyui_model
+title: LTX-2 19B IC LoRA - Canny Control
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-2 19B IC LoRA - Canny Control
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltx-2-19b-ic-lora-canny-control.safetensors
+  - name: base
+    value: LTX-2
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/LTX-2
+    filename: ltx-2-19b-ic-lora-canny-control.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Canny-Control/resolve/main/ltx-2-19b-ic-lora-canny-control.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2 19B IC LoRA - Canny Control
+  type: lora
+  base: LTX-2
+  save_path: loras/LTX-2
+  description: LoRA for canny control on LTX-2 19B IC model. Intended for advanced
+    edge control and guided generation.
+  reference: https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Canny-Control
+  filename: ltx-2-19b-ic-lora-canny-control.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Canny-Control/resolve/main/ltx-2-19b-ic-lora-canny-control.safetensors
+  size: 654MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/control_conditioning/model_LTX-2_19B_IC_LoRA_-_Canny_Control_1ae74b3a/model.yaml
+validation_errors: []

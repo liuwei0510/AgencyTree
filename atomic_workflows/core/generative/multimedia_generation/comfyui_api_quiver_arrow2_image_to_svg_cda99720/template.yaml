@@ -1,0 +1,83 @@
+id: remote:template:api_quiver_arrow2_image_to_svg
+kind: comfyui_template
+title: 'Arrow2: Image to SVG'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Arrow2: Image to SVG'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Convert a raster image into a clean, editable SVG vector using Arrow
+    2, taking one image and returning one vector output. The model produces cleaner
+    geometry and stronger composition with fewer control points. Ideal for vectorizing
+    sketches, logos, and line art, or preparing scalable brand and product assets.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_quiver_arrow2_image_to_svg.json
+  sha256: 9f31a51d1145bf13e029c023a05ce9cfa776854c2d5bad58607e5b9f03bd0ff8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_quiver_arrow2_image_to_svg
+  title: 'Arrow2: Image to SVG'
+  description: Convert a raster image into a clean, editable SVG vector using Arrow
+    2, taking one image and returning one vector output. The model produces cleaner
+    geometry and stronger composition with fewer control points. Ideal for vectorizing
+    sketches, logos, and line art, or preparing scalable brand and product assets.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Vector
+  models:
+  - Quiver
+  logos:
+  - provider: Quiver
+  minComfyUIVersion: 0.39.2
+  date: '2026-09-23'
+  openSource: false
+  size: 0
+  usage: 87
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 22
+      nodeType: LoadImage
+      file: retro_office_car_scene.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_quiver_arrow2_image_to_svg.json
+  sha256: 9f31a51d1145bf13e029c023a05ce9cfa776854c2d5bad58607e5b9f03bd0ff8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_quiver_arrow2_image_to_svg_cda99720/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '22'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

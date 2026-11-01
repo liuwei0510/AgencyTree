@@ -1,0 +1,60 @@
+{
+  "3": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ],
+      "filename_prefix": "ComfyUI"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.11.1"
+    }
+  },
+  "4": {
+    "inputs": {
+      "image_a": [
+        "2",
+        0
+      ],
+      "image_b": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare",
+      "cnr_id": "comfy-core",
+      "ver": "0.11.1"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "butterfly_girl.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.11.1"
+    }
+  },
+  "8": {
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "RecraftCreativeUpscaleNode",
+    "_meta": {
+      "title": "RecraftCreativeUpscaleNode",
+      "cnr_id": "comfy-core",
+      "ver": "0.16.1"
+    }
+  }
+}

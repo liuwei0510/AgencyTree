@@ -1,0 +1,64 @@
+id: remote.template.api_bytedance_seedream_5_0_lite_image_edit
+kind: comfyui_template
+title: 'Seedream 5.0 Lite: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedream 5.0 Lite: Image Edit'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Upload an image and a text prompt to edit it. Generate a modified image
+    where the details align with your instructions.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_lite_image_edit.json
+  sha256: 228ce4df858dda4611dafe97808dcdd66619322852ae4ba8a7d6db6efaf7aba1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedream_5_0_lite_image_edit
+  title: 'Seedream 5.0 Lite: Image Edit'
+  description: Upload an image and a text prompt to edit it. Generate a modified image
+    where the details align with your instructions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Seedream 5.0
+  logos:
+  - provider: ByteDance
+  date: '2026-02-24'
+  openSource: false
+  size: 0
+  usage: 1363
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 29
+      nodeType: LoadImage
+      file: man_with_old_computers.png
+      mediaType: image
+    - nodeId: 32
+      nodeType: LoadImage
+      file: inflated_character.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/man_with_old_computers.png
+  - output/api_bytedance_seedream_5_0_lite_image_edit.png
+  minComfyUIVersion: 0.31.0

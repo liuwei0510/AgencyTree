@@ -1,0 +1,80 @@
+id: remote.template.image_anima_lllite_image_inpainting
+kind: comfyui_template
+title: 'Anima Lllite: Image Inpainting'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Anima Lllite: Image Inpainting'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Inpaint anime images with Anima LLLite, a lightweight ControlNet variant
+    that applies low-rank corrections for precise mask-based editing. Input 1 image
+    and receive 1 inpainted output plus a comparison view. Ideal for fixing character
+    details, removing unwanted objects from anime scenes, and seamless background
+    restoration.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_anima_lllite_image_inpainting.json
+  sha256: b1fa36fdc11307dede947f22e2bd67fea6f5852132a279a4189ca338196b73ec
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_anima_lllite_image_inpainting
+  title: 'Anima Lllite: Image Inpainting'
+  description: Inpaint anime images with Anima LLLite, a lightweight ControlNet variant
+    that applies low-rank corrections for precise mask-based editing. Input 1 image
+    and receive 1 inpainted output plus a comparison view. Ideal for fixing character
+    details, removing unwanted objects from anime scenes, and seamless background
+    restoration.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Anime
+  - Inpainting
+  models:
+  - Anima
+  date: '2026-07-21'
+  openSource: true
+  size: 5798205850
+  usage: 47
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 91
+      nodeType: LoadImage
+      file: goat_horned_spirit_girl.png
+      mediaType: image
+    outputs:
+    - nodeId: 46
+      nodeType: SaveImage
+      file: image_anima_lllite_image_inpainting.png
+      mediaType: image
+  minComfyUIVersion: 0.29.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '91'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

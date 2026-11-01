@@ -1,0 +1,68 @@
+id: remote.template.template_sirolim_seamless_loop
+kind: comfyui_template
+title: Video to Seamless Loop Converter
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Video to Seamless Loop Converter
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video clip to generate a seamless, looping video output.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_sirolim_seamless_loop.json
+  sha256: fa61ec6bc2204ad03bf7043bb4a63b26fcb69ccb53d2ea1abfcde9a6d5ddde86
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_sirolim_seamless_loop
+  title: Video to Seamless Loop Converter
+  description: Upload a video clip to generate a seamless, looping video output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Video Edit
+  models:
+  - Wan2.1 VACE
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  - comfyui_essentials
+  date: '2026-03-08'
+  openSource: false
+  size: 41983305318
+  usage: 14
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 158
+      nodeType: VHS_LoadVideo
+      file: seamless_loop_input.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 251
+      nodeType: SaveVideo
+      file: template_sirolim_seamless_loop.mp4
+      mediaType: video
+  username: sirolim
+  thumbnail:
+  - output/template_sirolim_seamless_loop.mp4
+  minComfyUIVersion: 0.8.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

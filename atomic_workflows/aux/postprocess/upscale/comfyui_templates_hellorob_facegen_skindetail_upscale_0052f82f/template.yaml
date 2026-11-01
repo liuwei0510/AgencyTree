@@ -1,0 +1,87 @@
+id: remote.template.templates_hellorob_facegen_skindetail_upscale
+kind: comfyui_template
+title: Skin Enhancer + Upscaler
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Skin Enhancer + Upscaler
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: One click workflow to generate a character portrait, refine/add skin
+    details, and upscale to 4k. All done in less than 60 seconds.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_hellorob_facegen_skindetail_upscale.json
+  sha256: 083e83ef9c06f8eeed0337bdb00864f57f1664e12b526cd27aceccd618d011d1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_hellorob_facegen_skindetail_upscale
+  title: Skin Enhancer + Upscaler
+  description: One click workflow to generate a character portrait, refine/add skin
+    details, and upscale to 4k. All done in less than 60 seconds.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  models:
+  - Z-Image-Turbo
+  - SDXL
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  - comfyui_face_parsing
+  - comfyui_ultimatesdupscale
+  - seedvr2_videoupscaler
+  date: '2026-03-09'
+  openSource: true
+  size: 27809913242
+  usage: 280
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: input_face-1.png
+      mediaType: image
+    outputs:
+    - nodeId: 282
+      nodeType: SaveImage
+      file: templates_hellorob_facegen_skindetail_upscale-1.png
+      mediaType: image
+    - nodeId: 286
+      nodeType: SaveImage
+      file: templates_hellorob_facegen_skindetail_upscale-2.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - output/templates_hellorob_facegen_skindetail_upscale-1.png
+  - output/templates_hellorob_facegen_skindetail_upscale-2.png
+  minComfyUIVersion: 0.9.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

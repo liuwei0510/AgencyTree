@@ -1,0 +1,45 @@
+id: remote:model:55f2621293abf21da634
+kind: comfyui_model
+title: RestoreFormer
+tree_branch:
+- aux
+- postprocess
+- image_restoration
+six_tuple:
+  name: RestoreFormer
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/image_restoration
+  parameters:
+  - name: filename
+    value: RestoreFormer.pth
+  - name: base
+    value: face_restore
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: face_restore
+    save_path: face_restore
+    filename: RestoreFormer.pth
+    download_locator: https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/RestoreFormer.pth
+code_usable: true
+status: available
+metadata:
+  name: RestoreFormer
+  type: face_restore
+  base: face_restore
+  save_path: face_restore
+  description: Face restoration
+  reference: https://github.com/TencentARC/GFPGAN
+  filename: RestoreFormer.pth
+  url: https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/RestoreFormer.pth
+  size: 290.8MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/image_restoration/model_RestoreFormer_55f26212/model.yaml
+validation_errors: []

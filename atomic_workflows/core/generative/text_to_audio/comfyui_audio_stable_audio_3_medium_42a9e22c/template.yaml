@@ -1,0 +1,84 @@
+id: remote:template:audio_stable_audio_3_medium
+kind: comfyui_template
+title: Stable Audio 3.0 Medium
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Stable Audio 3.0 Medium
+  input_types:
+    duration: number
+    seed: number
+  output_types: {}
+  capability: Input a short text idea, optional duration, seed, and category. Generate
+    stereo audio (music, SFX, or instruments) using Stable Audio 3 with optional AI-driven
+    text expansion.
+  parameters:
+  - name: duration
+    type: number
+    required: false
+    default: 150
+  - name: seed
+    type: number
+    required: false
+    default: 1038503484137406
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_stable_audio_3_medium.json
+  sha256: 0acac99bec457fa769fbb54681c83b0b0a4e08f99cb03646d0ed07f9c2ac2b22
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_stable_audio_3_medium
+  title: Stable Audio 3.0 Medium
+  description: Input a short text idea, optional duration, seed, and category. Generate
+    stereo audio (music, SFX, or instruments) using Stable Audio 3 with optional AI-driven
+    text expansion.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Audio
+  models:
+  - Stable Audio
+  date: '2026-05-20'
+  openSource: true
+  size: 15676630630
+  usage: 390
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.19.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_stable_audio_3_medium.json
+  sha256: 0acac99bec457fa769fbb54681c83b0b0a4e08f99cb03646d0ed07f9c2ac2b22
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_audio_stable_audio_3_medium_42a9e22c/template.yaml
+validation_errors: []
+inputs:
+- name: duration
+  type: number
+  required: false
+  default: 150
+- name: seed
+  type: number
+  required: false
+  default: 1038503484137406
+inject:
+  duration:
+    node_id: '52'
+    input_key: duration
+    widget_index: 1
+  seed:
+    node_id: '52'
+    input_key: seed
+    widget_index: 2
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

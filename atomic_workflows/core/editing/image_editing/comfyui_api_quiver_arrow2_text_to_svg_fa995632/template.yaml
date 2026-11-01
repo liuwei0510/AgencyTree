@@ -1,0 +1,73 @@
+id: remote:template:api_quiver_arrow2_text_to_svg
+kind: comfyui_template
+title: 'Arrow2: Text to SVG'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Arrow2: Text to SVG'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate editable SVG vector graphics directly from text prompts using
+    Arrow 2, producing one image output with no file inputs required. Ideal for illustrations,
+    technical diagrams, logo design, and turning written briefs into clean, scalable
+    vector assets.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_quiver_arrow2_text_to_svg.json
+  sha256: b40d4a9f9e54a6b093a31f7e7e297934ad58ba91ca420137fae1d8d3ce82bb62
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_quiver_arrow2_text_to_svg
+  title: 'Arrow2: Text to SVG'
+  description: Generate editable SVG vector graphics directly from text prompts using
+    Arrow 2, producing one image output with no file inputs required. Ideal for illustrations,
+    technical diagrams, logo design, and turning written briefs into clean, scalable
+    vector assets.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Vector
+  models:
+  - Quiver
+  logos:
+  - provider: Quiver
+  minComfyUIVersion: 0.39.2
+  date: '2026-09-23'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 5
+      nodeType: SaveSVGNode
+      file: api_quiver_arrow2_text_to_svg.svg
+      mediaType: image
+  thumbnail:
+  - output/api_quiver_arrow2_text_to_svg.svg
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_quiver_arrow2_text_to_svg.json
+  sha256: b40d4a9f9e54a6b093a31f7e7e297934ad58ba91ca420137fae1d8d3ce82bb62
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_quiver_arrow2_text_to_svg_fa995632/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

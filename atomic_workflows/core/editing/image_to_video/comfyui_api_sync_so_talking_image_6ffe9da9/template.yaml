@@ -1,0 +1,97 @@
+id: remote:template:api_sync_so_talking_image
+kind: comfyui_template
+title: 'Sync 3: Talking Image'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Sync 3: Talking Image'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate a talking-head video from a single face photo and an audio
+    clip, with lips and lower-face motion precisely synchronized to the speech. This
+    process outputs one video from one image and one audio input, keeping hands, products,
+    and background completely unchanged. Ideal for product demos, e-commerce introductions,
+    and marketing videos where a static product-holding photo is paired with a voiceover.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_sync_so_talking_image.json
+  sha256: 3601819130216b518f566a6e65aeb2f8d74f8f242db5ada6f066098bd62d692a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_sync_so_talking_image
+  title: 'Sync 3: Talking Image'
+  description: Generate a talking-head video from a single face photo and an audio
+    clip, with lips and lower-face motion precisely synchronized to the speech. This
+    process outputs one video from one image and one audio input, keeping hands, products,
+    and background completely unchanged. Ideal for product demos, e-commerce introductions,
+    and marketing videos where a static product-holding photo is paired with a voiceover.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Lip Sync
+  models:
+  - Sync 3
+  logos:
+  - provider: Sync.so
+  date: '2026-07-15'
+  openSource: false
+  size: 0
+  usage: 19
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadAudio
+      file: gel_cream_ad_voice.mp3
+      mediaType: audio
+    - nodeId: 15
+      nodeType: LoadImage
+      file: girl_holding_gel_cream.png
+      mediaType: image
+    outputs:
+    - nodeId: 13
+      nodeType: SaveVideo
+      file: api_sync_so_talking_image.mp4
+      mediaType: video
+  thumbnail:
+  - thumbnail/api_sync_so_talking_image_thumbnail.mp4
+  minComfyUIVersion: 0.28.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_sync_so_talking_image.json
+  sha256: 3601819130216b518f566a6e65aeb2f8d74f8f242db5ada6f066098bd62d692a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_sync_so_talking_image_6ffe9da9/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '15'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

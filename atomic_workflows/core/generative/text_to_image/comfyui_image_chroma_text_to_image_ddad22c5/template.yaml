@@ -1,0 +1,124 @@
+id: remote:template:image_chroma_text_to_image
+kind: comfyui_template
+title: 'Chroma: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Chroma: Text to Image'
+  input_types:
+    width: number
+    height: number
+    negative_prompt: string
+    prompt: string
+  output_types:
+    images: image_filenames
+  capability: Chroma - enhanced Flux model with improved image quality and better
+    prompt understanding for stunning text-to-image generation.
+  parameters:
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  - name: negative_prompt
+    type: string
+    required: false
+    default: 'This low quality greyscale unfinished sketch is inaccurate and flawed.
+      The image is very blurred and lacks detail with excessive chromatic aberrations
+      and artifacts. The image is overly saturated with excessive bloom. It has a
+      toony aesthetic with bold outlines and flat colors. '
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_chroma_text_to_image.json
+  sha256: 36a338014d5a16ae41d5d018ce4fe4d8614701ae892b5216e9fe3cfe8afb40b9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_chroma_text_to_image
+  title: 'Chroma: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: Chroma - enhanced Flux model with improved image quality and better
+    prompt understanding for stunning text-to-image generation.
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - Chroma
+  - FLUX
+  date: '2025-06-04'
+  size: 23300197581
+  usage: 86
+  io:
+    outputs:
+    - nodeId: 740
+      nodeType: SaveImage
+      file: image_chroma_text_to_image.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/image_chroma_text_to_image.png
+  minComfyUIVersion: 0.3.31
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_chroma_text_to_image.json
+  sha256: 36a338014d5a16ae41d5d018ce4fe4d8614701ae892b5216e9fe3cfe8afb40b9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+- name: negative_prompt
+  type: string
+  required: false
+  default: 'This low quality greyscale unfinished sketch is inaccurate and flawed.
+    The image is very blurred and lacks detail with excessive chromatic aberrations
+    and artifacts. The image is overly saturated with excessive bloom. It has a toony
+    aesthetic with bold outlines and flat colors. '
+- name: prompt
+  type: string
+  required: true
+  default: null
+inject:
+  width:
+    node_id: '737'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '737'
+    input_key: height
+    widget_index: 1
+  negative_prompt:
+    node_id: '749'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '748'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

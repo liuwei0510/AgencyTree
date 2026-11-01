@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "task_id": "t1",
+      "goal": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image.",
+      "capability_id": "core.generative.text_to_image",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {
+        "requirement": "Generate an image of a male basketball player shooting in a gym. The result should be a high-quality image."
+      },
+      "depends_on": []
+    }
+  ],
+  "edges": [],
+  "diagnostics": [],
+  "assumptions": []
+}

@@ -1,0 +1,89 @@
+id: remote:template:video_fastvideo_fasth3_i2v
+kind: comfyui_template
+title: 'FastVideo FastH3: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FastVideo FastH3: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate video with synchronized native audio from a single still image
+    using MiniMax H3 and the FastH3 8-step checkpoint. One image produces one video
+    output with matching voice, sound effects, and music in a single pass. Ideal for
+    animating portraits, bringing product shots to life, and quick social media clips.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_fastvideo_fasth3_i2v.json
+  sha256: ca79cdfc54b3229aaf8b18f418587e4aaaead7d29990fcfaf3ddb7a8008df333
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_fastvideo_fasth3_i2v
+  title: 'FastVideo FastH3: Image to Video'
+  description: Generate video with synchronized native audio from a single still image
+    using MiniMax H3 and the FastH3 8-step checkpoint. One image produces one video
+    output with matching voice, sound effects, and music in a single pass. Ideal for
+    animating portraits, bringing product shots to life, and quick social media clips.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Int8
+  models:
+  - MiniMax H3
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-15'
+  openSource: true
+  size: 45097156608
+  usage: 2470
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 136
+      nodeType: LoadImage
+      file: red_line_barrier.png
+      mediaType: image
+    outputs:
+    - nodeId: 92
+      nodeType: SaveVideo
+      file: video_fastvideo_fasth3_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/video_fastvideo_fasth3_i2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_fastvideo_fasth3_i2v.json
+  sha256: ca79cdfc54b3229aaf8b18f418587e4aaaead7d29990fcfaf3ddb7a8008df333
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_fastvideo_fasth3_i2v_3342ba1c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '136'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

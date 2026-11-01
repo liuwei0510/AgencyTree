@@ -1,0 +1,62 @@
+id: remote.template.api_grok_imagine_image_quality_image_generation
+kind: comfyui_template
+title: 'Grok Imagine Image Quality: Generation'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok Imagine Image Quality: Generation'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate enhanced images with improved details, text rendering, and
+    creative control using the advanced quality mode in Grok Imagine.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_imagine_image_quality_image_generation.json
+  sha256: c87e24fc8e12bac96f8f5508efa37a2d333d8b5f9590f6beb46626ceac8ee2f1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_imagine_image_quality_image_generation
+  title: 'Grok Imagine Image Quality: Generation'
+  description: Generate enhanced images with improved details, text rendering, and
+    creative control using the advanced quality mode in Grok Imagine.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Text to Image
+  models:
+  - Grok
+  logos:
+  - provider: Grok
+  date: '2026-05-06'
+  openSource: false
+  size: 0
+  usage: 32
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: api_grok_imagine_image_quality_image_generation.png
+      mediaType: image
+  minComfyUIVersion: 0.11.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

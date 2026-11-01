@@ -1,0 +1,103 @@
+id: remote:template:ltxv_image_to_video
+kind: comfyui_template
+title: LTXV Image to Video
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LTXV Image to Video
+  input_types:
+    negative_prompt: string
+    prompt: string
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate videos from still images.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: low quality, worst quality, deformed, distorted, disfigured, motion smear,
+      motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/ltxv_image_to_video.json
+  sha256: bcefd77303e00100ddbf9c55cd41e1fe49f7716a2cfc0110c97c4ca12dc2a895
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: ltxv_image_to_video
+  title: LTXV Image to Video
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate videos from still images.
+  tutorialUrl: https://docs.comfy.org/tutorials/video/ltxv
+  tags:
+  - Image to Video
+  - Video
+  models:
+  - LTX-0.9.5
+  date: '2025-03-01'
+  size: 19155554140
+  usage: 19
+  io:
+    inputs:
+    - nodeId: 78
+      nodeType: LoadImage
+      file: ltxv_image_to_video_input_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.31
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/ltxv_image_to_video.json
+  sha256: bcefd77303e00100ddbf9c55cd41e1fe49f7716a2cfc0110c97c4ca12dc2a895
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_ltxv_image_to_video_b0fa44f9/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: low quality, worst quality, deformed, distorted, disfigured, motion smear,
+    motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '78'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

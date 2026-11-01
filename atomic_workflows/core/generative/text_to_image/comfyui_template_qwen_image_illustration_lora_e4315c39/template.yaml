@@ -1,0 +1,58 @@
+id: remote.template.template_qwen_image_illustration_lora
+kind: comfyui_template
+title: 'Qwen Image: Illustration LoRA'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image: Illustration LoRA'
+  input_types: []
+  output_types:
+  - image
+  capability: A t2v workflows for a style LoRA built on Qwen-Image. Produces images
+    spanning cute anime character design, European bande dessinee, indie risograph
+    prints, storybook watercolor, retro shoujo manga, and graphic novel illustration.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_qwen_image_illustration_lora.json
+  sha256: d0fec94bc2425060e3ebcdb760bd5023bd992536f66debc56fb326f2398391c0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_qwen_image_illustration_lora
+  title: 'Qwen Image: Illustration LoRA'
+  description: A t2v workflows for a style LoRA built on Qwen-Image. Produces images
+    spanning cute anime character design, European bande dessinee, indie risograph
+    prints, storybook watercolor, retro shoujo manga, and graphic novel illustration.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - LoRA
+  models:
+  - Qwen-Image
+  date: '2026-03-30'
+  openSource: true
+  size: 30816390349
+  usage: 106
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: template_qwen_image_illustration_lora.png
+      mediaType: image
+  thumbnail:
+  - output/template_qwen_image_illustration_lora.png
+  isApp: true
+  minComfyUIVersion: 0.3.49

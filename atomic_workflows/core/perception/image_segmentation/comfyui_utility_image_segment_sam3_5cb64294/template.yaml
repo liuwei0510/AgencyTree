@@ -1,0 +1,82 @@
+id: remote:template:utility_image_segment_sam3
+kind: comfyui_template
+title: 'Image Segmentation: SAM3'
+tree_branch:
+- core
+- perception
+- image_segmentation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Segmentation: SAM3'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Use the SAM3 model to segment the main subject or content from a photo
+    or image, isolating specific objects or regions. Input an image and receive a
+    segmented mask output.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_image_segment_sam3.json
+  sha256: b025db3509151a3220b8414a79f7c0bcdd77a8584c9f356efddbdb6c7491e3cb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_image_segment_sam3
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/video-segment-sam3
+  title: 'Image Segmentation: SAM3'
+  description: Use the SAM3 model to segment the main subject or content from a photo
+    or image, isolating specific objects or regions. Input an image and receive a
+    segmented mask output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Element Segmentation
+  models:
+  - SAM3
+  date: '2026-04-26'
+  openSource: true
+  size: 1717986918
+  usage: 122
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 79
+      nodeType: LoadImage
+      file: neon_guitarist.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/utility_image_segment_sam3.mp4
+  minComfyUIVersion: 0.20.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_image_segment_sam3.json
+  sha256: b025db3509151a3220b8414a79f7c0bcdd77a8584c9f356efddbdb6c7491e3cb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/image_segmentation/comfyui_utility_image_segment_sam3_5cb64294/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '79'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

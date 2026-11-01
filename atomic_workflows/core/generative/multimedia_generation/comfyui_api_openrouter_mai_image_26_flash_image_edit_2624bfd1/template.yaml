@@ -1,0 +1,59 @@
+id: remote.template.api_openrouter_mai_image_26_flash_image_edit
+kind: comfyui_template
+title: 'MAI Image 2.6 Flash: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MAI Image 2.6 Flash: Image Edit'
+  input_types:
+  - image
+  output_types: []
+  capability: Edit images with MAI Image 2.6 Flash, Microsoft's fast image-to-image
+    model that transforms a single input image into a refined output. Ideal for quick
+    retouching, style adjustments, and rapid concept iteration.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_mai_image_26_flash_image_edit.json
+  sha256: c562613fa17bfab2dd613fc267875ae9c7f106885a3ec2999203c401b96d81a2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_mai_image_26_flash_image_edit
+  title: 'MAI Image 2.6 Flash: Image Edit'
+  description: Edit images with MAI Image 2.6 Flash, Microsoft's fast image-to-image
+    model that transforms a single input image into a refined output. Ideal for quick
+    retouching, style adjustments, and rapid concept iteration.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Mai Image 2.6
+  logos:
+  - provider: OpenRouter
+  minComfyUIVersion: 0.35.1
+  date: '2026-09-10'
+  openSource: false
+  size: 0
+  usage: 10
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadImage
+      file: clothing_shirt_flat.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_openrouter_mai_image_26_flash_image_edit.png

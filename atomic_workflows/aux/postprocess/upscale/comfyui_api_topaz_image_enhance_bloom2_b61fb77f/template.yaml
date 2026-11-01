@@ -1,0 +1,81 @@
+id: remote.template.api_topaz_image_enhance_bloom2
+kind: comfyui_template
+title: 'Image Upscale: Topaz Bloom 2'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Bloom 2'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Enhance AI-generated images with Bloom 2, a creative upscaling model
+    that adds new detail, texture, and visual elements while offering a Creativity
+    control from 1–9 for subtle refinement or bold reinterpretation. It accepts 1
+    input image and produces 1 enhanced output, with optional Face Recovery, Color
+    Preservation, and grain settings for fine-tuned results. Ideal for improving AI
+    artwork and illustrations, adding realism to CG renders, and refining facial detail
+    in generated portraits.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_image_enhance_bloom2.json
+  sha256: 1009517664425c1d5bd01e9ceea8d4194b9b2bcbe904b1545f888c76aa41b0d6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_topaz_image_enhance_bloom2
+  title: 'Image Upscale: Topaz Bloom 2'
+  description: Enhance AI-generated images with Bloom 2, a creative upscaling model
+    that adds new detail, texture, and visual elements while offering a Creativity
+    control from 1–9 for subtle refinement or bold reinterpretation. It accepts 1
+    input image and produces 1 enhanced output, with optional Face Recovery, Color
+    Preservation, and grain settings for fine-tuned results. Ideal for improving AI
+    artwork and illustrations, adding realism to CG renders, and refining facial detail
+    in generated portraits.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Topaz
+  logos:
+  - provider: Topaz
+  date: '2026-08-04'
+  openSource: false
+  size: 0
+  usage: 57
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: digital_bloom.png
+      mediaType: image
+  thumbnail:
+  - input/digital_bloom.png
+  - output/Upscaled_topaz_bloom2.png
+  minComfyUIVersion: 0.30.2
+validation_errors: []
+planning_eligible: false
+inputs: *id001
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs: []

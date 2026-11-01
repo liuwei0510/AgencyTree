@@ -1,0 +1,46 @@
+id: remote:model:90bb529011039c6e14b8
+kind: comfyui_model
+title: Comfy-Org/llava_llama3_vision.safetensors
+tree_branch:
+- aux
+- preprocess
+- image_encoding
+six_tuple:
+  name: Comfy-Org/llava_llama3_vision.safetensors
+  input_types:
+  - image
+  output_types:
+  - image embedding
+  capability: aux/preprocess/image_encoding
+  parameters:
+  - name: filename
+    value: llava_llama3_vision.safetensors
+  - name: base
+    value: LLaVA-Llama-3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip_vision
+    save_path: text_encoders
+    filename: llava_llama3_vision.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/clip_vision/llava_llama3_vision.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy-Org/llava_llama3_vision.safetensors
+  type: clip_vision
+  base: LLaVA-Llama-3
+  save_path: text_encoders
+  description: llava_llama3_vision clip vison model. This is required for using Hunyuan
+    Video Image2Video.
+  reference: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged
+  filename: llava_llama3_vision.safetensors
+  url: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/clip_vision/llava_llama3_vision.safetensors
+  size: 649MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/image_encoding/model_Comfy-Org_llava_llama3_vision.safetensors_90bb5290/model.yaml
+validation_errors: []

@@ -1,0 +1,84 @@
+id: remote:template:image_boogu_image_0_1_edit_int8
+kind: comfyui_template
+title: Boogu image 0.1 Edit Int8
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Boogu image 0.1 Edit Int8
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit images with the Boogu Image Edit model, now optimized with convrot
+    int8 quantization for faster inference and better quality than fp8. This workflow
+    takes 1 input image and produces 1 edited image output. Ideal for quick image
+    edits, batch processing with improved performance, and users wanting to leverage
+    the convrot int8 format's speed and quality advantages.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_boogu_image_0_1_edit_int8.json
+  sha256: cccedc9dbf4ef3886cdf52689e0d5d8817b43c64cdd264789b5815d5a4d67b49
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_boogu_image_0_1_edit_int8
+  title: Boogu image 0.1 Edit Int8
+  description: Edit images with the Boogu Image Edit model, now optimized with convrot
+    int8 quantization for faster inference and better quality than fp8. This workflow
+    takes 1 input image and produces 1 edited image output. Ideal for quick image
+    edits, batch processing with improved performance, and users wanting to leverage
+    the convrot int8 format's speed and quality advantages.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Int8
+  models:
+  - Boogu
+  date: '2026-07-10'
+  openSource: true
+  size: 22333829939
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 32
+      nodeType: LoadImage
+      file: giant_tulip_wanderer.png
+      mediaType: image
+  thumbnail:
+  - input/giant_tulip_wanderer.png
+  - output/image_boogu_image_0_1_edit_int8.png
+  minComfyUIVersion: 0.26.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_boogu_image_0_1_edit_int8.json
+  sha256: cccedc9dbf4ef3886cdf52689e0d5d8817b43c64cdd264789b5815d5a4d67b49
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_boogu_image_0_1_edit_int8_b22dfa20/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '32'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

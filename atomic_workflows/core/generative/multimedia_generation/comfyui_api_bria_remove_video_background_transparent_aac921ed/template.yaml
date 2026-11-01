@@ -1,0 +1,68 @@
+id: remote:template:api_bria_remove_video_background_transparent
+kind: comfyui_template
+title: 'Remove Background: Bria Transparent'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Remove Background: Bria Transparent'
+  input_types: {}
+  output_types: {}
+  capability: Upload a video and generate its frames with a transparent background,
+    outputting image and mask sequences along with a WebM video supporting an alpha
+    channel.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_remove_video_background_transparent.json
+  sha256: d2064a9710a44cae8d9b99e149a95c8e0f5ac7c359f4d7854d7b8521834fa07a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_remove_video_background_transparent
+  title: 'Remove Background: Bria Transparent'
+  description: Upload a video and generate its frames with a transparent background,
+    outputting image and mask sequences along with a WebM video supporting an alpha
+    channel.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Remove Background
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-06-04'
+  openSource: false
+  size: 0
+  usage: 70
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadVideo
+      file: ad_video_demo.mp4
+      mediaType: video
+  minComfyUIVersion: 0.24.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_remove_video_background_transparent.json
+  sha256: d2064a9710a44cae8d9b99e149a95c8e0f5ac7c359f4d7854d7b8521834fa07a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_api_bria_remove_video_background_transparent_aac921ed/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

@@ -1,0 +1,53 @@
+id: remote.template.video_wan2.1_fun_camera_v1.1_1.3B
+kind: comfyui_template
+title: Wan 2.1 Fun Camera 1.3B
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan 2.1 Fun Camera 1.3B
+  input_types:
+  - image
+  output_types: []
+  capability: Generate dynamic videos with cinematic camera movements using Wan 2.1
+    Fun Camera 1.3B model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2.1_fun_camera_v1.1_1.3B.json
+  sha256: ab5c09d7858b3f0280db5cbca95789daad09395454cfb1796b661a1cdb2dda1e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2.1_fun_camera_v1.1_1.3B
+  title: Wan 2.1 Fun Camera 1.3B
+  description: Generate dynamic videos with cinematic camera movements using Wan 2.1
+    Fun Camera 1.3B model.
+  mediaType: image
+  mediaSubtype: webp
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/fun-control
+  tags:
+  - Video
+  - Image to Video
+  models:
+  - Wan2.1
+  - Wan
+  date: '2025-04-15'
+  size: 11489037517
+  usage: 10
+  io:
+    inputs:
+    - nodeId: 52
+      nodeType: LoadImage
+      file: video_wan2.1_fun_camera_v1.1_1.3B_start_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.35

@@ -1,0 +1,103 @@
+id: remote:template:api_grok_reference_to_video
+kind: comfyui_template
+title: 'Grok: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok: Reference to Video'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload a reference image and generate a video using the Grok API, supporting
+    up to 6 reference images for enhanced consistency.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_reference_to_video.json
+  sha256: e7ca7469226514363ab41c7a1a15cd9ade0ad23b95034603ec9086960f9b3088
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_reference_to_video
+  title: 'Grok: Reference to Video'
+  description: Upload a reference image and generate a video using the Grok API, supporting
+    up to 6 reference images for enhanced consistency.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Character Reference
+  - Video
+  models:
+  - Grok
+  logos:
+  - provider: Grok
+  date: '2026-03-24'
+  openSource: false
+  size: 0
+  usage: 33
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: quiet_girl.png
+      mediaType: image
+    - nodeId: 6
+      nodeType: LoadImage
+      file: phone.png
+      mediaType: image
+    outputs:
+    - nodeId: 4
+      nodeType: SaveVideo
+      file: api_grok_reference_to_video.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_grok_reference_to_video.mp4
+  minComfyUIVersion: 0.18.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_reference_to_video.json
+  sha256: e7ca7469226514363ab41c7a1a15cd9ade0ad23b95034603ec9086960f9b3088
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '6'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '5'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

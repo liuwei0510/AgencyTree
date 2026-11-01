@@ -1,0 +1,90 @@
+id: remote:template:api_bria_eraser
+kind: comfyui_template
+title: 'Object Removal: Bria Eraser'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Object Removal: Bria Eraser'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Remove unwanted objects or regions from images with Bria's Eraser, which
+    fills the masked area with surrounding context while leaving the rest of the image
+    pixel-perfect. Upload 1 image, paint over the target object with a brush mask,
+    and receive 1 cleaned output alongside a before-and-after comparison. Ideal for
+    cleaning up photobombs, removing watermarks or text, and decluttering product
+    or real-estate photos.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_eraser.json
+  sha256: 86a49f3a52b0e866d1a0dc7b1bc37ddaffe217d20e951c35480555e0995eef64
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_eraser
+  title: 'Object Removal: Bria Eraser'
+  description: Remove unwanted objects or regions from images with Bria's Eraser,
+    which fills the masked area with surrounding context while leaving the rest of
+    the image pixel-perfect. Upload 1 image, paint over the target object with a brush
+    mask, and receive 1 cleaned output alongside a before-and-after comparison. Ideal
+    for cleaning up photobombs, removing watermarks or text, and decluttering product
+    or real-estate photos.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tags:
+  - API
+  - Inpainting
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-08-16'
+  openSource: false
+  size: 0
+  usage: 26
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: vintage_girl_yellow_apple.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_bria_eraser-1.png
+  - output/Bria_Eraser.png
+  minComfyUIVersion: 0.33.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_eraser.json
+  sha256: 86a49f3a52b0e866d1a0dc7b1bc37ddaffe217d20e951c35480555e0995eef64
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_bria_eraser_0fddba5d/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

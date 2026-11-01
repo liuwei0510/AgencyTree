@@ -1,0 +1,58 @@
+id: core.editing.image_editing.seededit_inpaint
+title: Image Editing / Inpaint (slot)
+modality:
+- image
+description: Inpainting or instruction-based edit; bind source image from upstream.
+tags:
+- edit
+- inpaint
+- image
+workflow_file: seededit_inpaint.workflow.json
+inject:
+  edit_prompt:
+    node_id: '6'
+    input_key: text
+  seed:
+    node_id: '10'
+    input_key: seed
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: null
+  model_file:
+    node_id: '4'
+    input_key: ckpt_name
+    widget_index: null
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: null
+inputs:
+- name: source_image
+  type: image_path
+  required: false
+- name: edit_prompt
+  type: string
+  required: true
+- name: seed
+  type: int
+  required: false
+- name: model_file
+  type: string
+  required: true
+  default: null
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+outputs:
+- name: images
+  type: image_filenames

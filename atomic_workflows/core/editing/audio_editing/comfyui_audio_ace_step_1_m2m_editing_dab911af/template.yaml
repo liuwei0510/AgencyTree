@@ -1,0 +1,73 @@
+id: remote:template:audio_ace_step_1_m2m_editing
+kind: comfyui_template
+title: ACE Step v1 M2M Editing
+tree_branch:
+- core
+- editing
+- audio_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: ACE Step v1 M2M Editing
+  input_types:
+    seed: number
+  output_types: {}
+  capability: Edit existing songs to change style and lyrics using ACE-Step v1 M2M.
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 378808614834773
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_m2m_editing.json
+  sha256: dfab2777af8d8216370f46d9ed0b43e38fff18b7de87f16a84289e70c5bf3372
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_ace_step_1_m2m_editing
+  title: ACE Step v1 M2M Editing
+  mediaType: audio
+  mediaSubtype: mp3
+  description: Edit existing songs to change style and lyrics using ACE-Step v1 M2M.
+  tags:
+  - Audio Editing
+  - Audio
+  models:
+  - ACE-Step
+  date: '2025-03-01'
+  tutorialUrl: https://docs.comfy.org/tutorials/audio/ace-step/ace-step-v1
+  size: 7698728878
+  usage: 43
+  io:
+    inputs:
+    - nodeId: 64
+      nodeType: LoadAudio
+      file: audio_ace_step_1_m2m_editing_input_audio.mp3
+      mediaType: audio
+  username: ComfyUI
+  minComfyUIVersion: 0.3.35
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_m2m_editing.json
+  sha256: dfab2777af8d8216370f46d9ed0b43e38fff18b7de87f16a84289e70c5bf3372
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/audio_editing/comfyui_audio_ace_step_1_m2m_editing_dab911af/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 378808614834773
+inject:
+  seed:
+    node_id: '52'
+    input_key: seed
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

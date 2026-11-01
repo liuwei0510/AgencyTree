@@ -1,0 +1,71 @@
+id: remote:template:template_sugar_coated_gummy_style_qwen
+kind: comfyui_template
+title: 'Qwen Image: Gummy Animals LoRA'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image: Gummy Animals LoRA'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Apply a Qwen Image LoRA to transform any subject into a sour gummy candy-style
+    character. Enter an animal name in the prompt to generate a stylized, edible-looking
+    creature.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_sugar_coated_gummy_style_qwen.json
+  sha256: a0e73613601dd4c4d2f1300e0f23caa1aa69c8efb89c87c6ceaf1a06e96196e5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_sugar_coated_gummy_style_qwen
+  title: 'Qwen Image: Gummy Animals LoRA'
+  description: Apply a Qwen Image LoRA to transform any subject into a sour gummy
+    candy-style character. Enter an animal name in the prompt to generate a stylized,
+    edible-looking creature.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Image
+  - LoRA
+  models:
+  - Qwen-Image
+  date: '2026-03-30'
+  openSource: true
+  size: 30709016166
+  usage: 18
+  searchRank: 0
+  username: enigmatic_e
+  io:
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: template_sugar_coated_gummy_style_qwen.png
+      mediaType: image
+  thumbnail:
+  - output/template_sugar_coated_gummy_style_qwen.png
+  isApp: true
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_sugar_coated_gummy_style_qwen.json
+  sha256: a0e73613601dd4c4d2f1300e0f23caa1aa69c8efb89c87c6ceaf1a06e96196e5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_template_sugar_coated_gummy_style_qwen_08b00522/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,45 @@
+id: remote:model:e68bc995d4d8a58fd6e5
+kind: comfyui_model
+title: InstanceDiffusion/scaleu
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: InstanceDiffusion/scaleu
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: scaleu.ckpt
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: InstanceDiffusion
+    save_path: instance_models/scaleu_models
+    filename: scaleu.ckpt
+    download_locator: https://huggingface.co/logtd/instance_diffusion/resolve/main/scaleu.ckpt
+code_usable: true
+status: available
+metadata:
+  name: InstanceDiffusion/scaleu
+  type: InstanceDiffusion
+  base: SD1.5
+  save_path: instance_models/scaleu_models
+  description: ScaleU checkpoints for multi-object prompting with InstanceDiffusion.
+  reference: https://huggingface.co/logtd/instance_diffusion
+  filename: scaleu.ckpt
+  url: https://huggingface.co/logtd/instance_diffusion/resolve/main/scaleu.ckpt
+  size: 53.1KB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_InstanceDiffusion_scaleu_e68bc995/model.yaml
+validation_errors: []

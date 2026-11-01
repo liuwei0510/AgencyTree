@@ -1,0 +1,73 @@
+id: remote:template:utility_sdpose_ood_video_to_pose_map
+kind: comfyui_template
+title: 'Pose Map: SDPose-OOD'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Pose Map: SDPose-OOD'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video to extract pose keypoints and generate a pose map. The
+    workflow supports multiple person detection and uses an enhanced SDPose model
+    for accurate whole-body feature extraction.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sdpose_ood_video_to_pose_map.json
+  sha256: 66ae7c01801e8e31a937947a9687a8a44de0460f44d1a3a16d0ab755956e6d43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_sdpose_ood_video_to_pose_map
+  title: 'Pose Map: SDPose-OOD'
+  description: Upload a video to extract pose keypoints and generate a pose map. The
+    workflow supports multiple person detection and uses an enhanced SDPose model
+    for accurate whole-body feature extraction.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Pose Map
+  models:
+  - SDPose-OOD
+  date: '2026-03-02'
+  openSource: true
+  size: 1932735283
+  usage: 9
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 679
+      nodeType: LoadVideo
+      file: man_in_the_rain.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 680
+      nodeType: SaveVideo
+      file: utility_sdpose_ood_video_to_pose_map.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - input/man_in_the_rain.mp4
+  - output/utility_sdpose_ood_video_to_pose_map.mp4
+  minComfyUIVersion: 0.16.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sdpose_ood_video_to_pose_map.json
+  sha256: 66ae7c01801e8e31a937947a9687a8a44de0460f44d1a3a16d0ab755956e6d43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

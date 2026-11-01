@@ -1,0 +1,78 @@
+id: remote:template:image_qwen_image_layered
+kind: comfyui_template
+title: 'Layer Decomposition: Qwen-Image-Layered'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Layer Decomposition: Qwen-Image-Layered'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Decompose an image into editable RGBA layers for high-fidelity recolor,
+    replace, resize, and reposition workflows using Qwen-Image-Layered.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_layered.json
+  sha256: 3b1e2caee3e0d17f1ea0ab090007cb9942c857664968dd99c9a63ec5e6933aba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_layered
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image-layered
+  title: 'Layer Decomposition: Qwen-Image-Layered'
+  mediaType: image
+  mediaSubtype: webp
+  description: Decompose an image into editable RGBA layers for high-fidelity recolor,
+    replace, resize, and reposition workflows using Qwen-Image-Layered.
+  tags:
+  - Layer Decompose
+  models:
+  - Qwen-Image-Layered
+  date: '2025-12-22'
+  size: 50465865728
+  usage: 83
+  openSource: true
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 74
+      nodeType: LoadImage
+      file: coastal_smiling_woman.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.6.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_layered.json
+  sha256: 3b1e2caee3e0d17f1ea0ab090007cb9942c857664968dd99c9a63ec5e6933aba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_qwen_image_layered_97377bd4/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '74'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

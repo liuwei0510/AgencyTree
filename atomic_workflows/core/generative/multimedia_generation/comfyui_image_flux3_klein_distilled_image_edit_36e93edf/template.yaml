@@ -1,0 +1,95 @@
+id: remote:template:image_flux3_klein_distilled_image_edit
+kind: comfyui_template
+title: 'FLUX 3 Image Klein Distilled: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX 3 Image Klein Distilled: Image Edit'
+  input_types:
+    seed: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit an existing image with FLUX 3 Image Klein by pairing one input
+    image with one text prompt, producing a single edited result and a side-by-side
+    comparison view. Ideal for targeted retouching, restyling a photo, or swapping
+    details while keeping the rest of the scene intact.
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 563228241303057
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux3_klein_distilled_image_edit.json
+  sha256: 6a17605ce6731b7efeab737c6af5091daf3dd7620e804618b03a3b0ab0bb1475
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux3_klein_distilled_image_edit
+  title: 'FLUX 3 Image Klein Distilled: Image Edit'
+  description: Edit an existing image with FLUX 3 Image Klein by pairing one input
+    image with one text prompt, producing a single edited result and a side-by-side
+    comparison view. Ideal for targeted retouching, restyling a photo, or swapping
+    details while keeping the rest of the scene intact.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  models:
+  - FLUX 3 Image
+  minComfyUIVersion: 0.41.0
+  date: '2026-10-15'
+  openSource: true
+  size: 21474836480
+  usage: 942
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: woman_gold_earring_teal_top_portrait.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux3_klein_distilled_image_edit.json
+  sha256: 6a17605ce6731b7efeab737c6af5091daf3dd7620e804618b03a3b0ab0bb1475
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_flux3_klein_distilled_image_edit_36e93edf/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 563228241303057
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  seed:
+    node_id: '7'
+    input_key: seed
+    widget_index: 0
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,95 @@
+id: remote:template:templates_shane_change_any_objects
+kind: comfyui_template
+title: Change Any Objects
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Change Any Objects
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: 'Use simple prompt to mask out certain objects within a video, and replace
+    the object using prompt, or optional reference image. Model used: SAM3 + WAN 2.1
+    VACE inpainting'
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_shane_change_any_objects.json
+  sha256: 4ecbda2b8a63559ee54b216f12824713cfe222d46b08cb5eeccabaf16c954d1c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_shane_change_any_objects
+  title: Change Any Objects
+  description: 'Use simple prompt to mask out certain objects within a video, and
+    replace the object using prompt, or optional reference image. Model used: SAM3
+    + WAN 2.1 VACE inpainting'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Inpainting
+  - Video
+  models:
+  - SAM3
+  - Wan2.1 VACE
+  requiresCustomNodes:
+  - ComfyUI-WanVideoWrapper
+  - RES4LYF
+  - comfyui-kjnodes
+  - comfyui-sam3
+  - comfyui-videohelpersuite
+  - comfyui_essentials
+  date: '2026-03-04'
+  openSource: true
+  includeOnDistributions:
+  - cloud
+  size: 10737418240
+  usage: 39
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 187
+      nodeType: VHS_LoadVideo
+      file: woman_holding_the_pineapple.mp4
+      mediaType: video
+    - nodeId: 204
+      nodeType: LoadImage
+      file: dragon_fruit.png
+      mediaType: image
+  username: shane
+  thumbnail:
+  - thumbnail/templates_shane_change_any_objects.mp4
+  minComfyUIVersion: 0.20.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_shane_change_any_objects.json
+  sha256: 4ecbda2b8a63559ee54b216f12824713cfe222d46b08cb5eeccabaf16c954d1c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_templates_shane_change_any_objects_1bc3e4e7/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '204'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

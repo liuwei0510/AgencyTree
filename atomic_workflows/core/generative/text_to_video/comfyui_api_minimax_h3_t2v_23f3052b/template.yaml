@@ -1,0 +1,68 @@
+id: remote.template.api_minimax_h3_t2v
+kind: comfyui_template
+title: 'MiniMax H3: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate video directly from text using the MiniMax H3 model, producing
+    a 5-15 second clip with native stereo audio. Ideal for rapid concept visualization,
+    short-form social media content, and pre-visualization for film or advertising
+    projects.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_t2v.json
+  sha256: 59828c2f9c65dbe60e4fb0011225549d8a3669ed218af07740c2c3689053b36a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_minimax_h3_t2v
+  title: 'MiniMax H3: Text to Video'
+  description: Generate video directly from text using the MiniMax H3 model, producing
+    a 5-15 second clip with native stereo audio. Ideal for rapid concept visualization,
+    short-form social media content, and pre-visualization for film or advertising
+    projects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - API
+  - Video
+  models:
+  - MiniMax H3
+  logos:
+  - provider: MiniMax
+  date: '2026-07-30'
+  openSource: false
+  size: 0
+  usage: 10
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 8
+      nodeType: SaveVideo
+      file: api_minimax_h3_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_minimax_h3_t2v.mp4
+  minComfyUIVersion: 0.30.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

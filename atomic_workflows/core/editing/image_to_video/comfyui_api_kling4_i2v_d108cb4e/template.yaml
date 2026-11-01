@@ -1,0 +1,93 @@
+id: remote:template:api_kling4_i2v
+kind: comfyui_template
+title: 'Kling 4.0: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling 4.0: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Animate a single still into a five-second clip with Kling 4.0, cutting
+    three times inside one generation. The source image locks the subject and styling
+    while the default prompt drives the camera moves and a beat-timed edit, and the
+    model also produces stereo audio. Ideal for fashion, editorial, and product motion
+    where the input frame defines the look.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling4_i2v.json
+  sha256: a1f00c9e74d02ae752fda485e85d04454262be5b85acea6f183de8c78225153e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling4_i2v
+  title: 'Kling 4.0: Image to Video'
+  description: Animate a single still into a five-second clip with Kling 4.0, cutting
+    three times inside one generation. The source image locks the subject and styling
+    while the default prompt drives the camera moves and a beat-timed edit, and the
+    model also produces stereo audio. Ideal for fashion, editorial, and product motion
+    where the input frame defines the look.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - Kling 4.0
+  logos:
+  - provider: Kling
+  date: '2026-10-27'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: kling4_editorial_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_kling4_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_kling4_i2v.mp4
+  minComfyUIVersion: 0.42.6
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling4_i2v.json
+  sha256: a1f00c9e74d02ae752fda485e85d04454262be5b85acea6f183de8c78225153e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_kling4_i2v_d108cb4e/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

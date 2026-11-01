@@ -1,0 +1,80 @@
+id: remote:template:image_marigold_v2_albedo_estimation
+kind: comfyui_template
+title: 'Albedo Estimation: Marigold V2'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Albedo Estimation: Marigold V2'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Estimate albedo from an input image using Marigold V2. The workflow
+    separates surface color from lighting and shading, producing an albedo map useful
+    for relighting, material analysis, and 3D asset creation.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_marigold_v2_albedo_estimation.json
+  sha256: 763208a97b68d88afc1836e0405105b805cc6bdf389552648f45bea2dbaf1a33
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_marigold_v2_albedo_estimation
+  title: 'Albedo Estimation: Marigold V2'
+  description: Estimate albedo from an input image using Marigold V2. The workflow
+    separates surface color from lighting and shading, producing an albedo map useful
+    for relighting, material analysis, and 3D asset creation.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Albedo Estimation
+  - Int8
+  models:
+  - Marigold v2
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-14'
+  openSource: true
+  size: 22441204122
+  usage: 15
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: flower_with_texture.png
+      mediaType: image
+  thumbnail:
+  - input/flower_with_texture.png
+  - output/image_marigold_v2_albedo_estimation.png
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_marigold_v2_albedo_estimation.json
+  sha256: 763208a97b68d88afc1836e0405105b805cc6bdf389552648f45bea2dbaf1a33
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_marigold_v2_albedo_estimation_aa90bd7d/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

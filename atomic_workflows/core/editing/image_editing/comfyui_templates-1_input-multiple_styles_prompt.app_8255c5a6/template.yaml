@@ -1,0 +1,81 @@
+id: remote:template:templates-1_input-multiple_styles_prompt.app
+kind: comfyui_template
+title: 1 input multiple styles from prompt
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 1 input multiple styles from prompt
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and generate 12 stylized variations in under 15 seconds.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-1_input-multiple_styles_prompt.app.json
+  sha256: d70d9cfbbb68708953d04740f55dc57e50bb911f0dbfd83a80d80aae40d57702
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-1_input-multiple_styles_prompt.app
+  title: 1 input multiple styles from prompt
+  description: Upload an image and generate 12 stylized variations in under 15 seconds.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Grok
+  logos:
+  - provider: Grok
+  date: '2026-02-19'
+  openSource: false
+  size: 0
+  usage: 4
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: lightning_man.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-1_input-multiple_styles_prompt_app.mp4
+  isApp: true
+  minComfyUIVersion: 0.11.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-1_input-multiple_styles_prompt.app.json
+  sha256: d70d9cfbbb68708953d04740f55dc57e50bb911f0dbfd83a80d80aae40d57702
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-1_input-multiple_styles_prompt.app_8255c5a6/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

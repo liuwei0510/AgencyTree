@@ -1,0 +1,45 @@
+id: remote:model:290b1e68a6a0da9bfd6d
+kind: comfyui_model
+title: mcmonkey/Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: mcmonkey/Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+  - name: base
+    value: Cosmos-1.0
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/cosmos-1.0
+    filename: Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+    download_locator: https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+code_usable: true
+status: available
+metadata:
+  name: mcmonkey/Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+  type: diffusion_model
+  base: Cosmos-1.0
+  save_path: diffusion_models/cosmos-1.0
+  description: Cosmos 1.0 Video2World Diffusion Model (14B)
+  reference: https://huggingface.co/mcmonkey/cosmos-1.0
+  filename: Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+  url: https://huggingface.co/mcmonkey/cosmos-1.0/resolve/main/Cosmos-1_0-Diffusion-14B-Video2World.safetensors
+  size: 28.5GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/model_mcmonkey_Cosmos-1_0-Diffusion-14B-Video2World.safetensors_290b1e68/model.yaml
+validation_errors: []

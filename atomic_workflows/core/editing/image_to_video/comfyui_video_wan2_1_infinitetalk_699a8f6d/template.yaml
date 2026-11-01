@@ -1,0 +1,86 @@
+id: remote.template.video_wan2_1_infinitetalk
+kind: comfyui_template
+title: 'InfiniteTalk: Audio-Driven Full-Body Video Dubbing'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'InfiniteTalk: Audio-Driven Full-Body Video Dubbing'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload a source Image and target audio. Generate a full-body dubbed
+    video with synchronized motion while preserving the original identity, background,
+    and camera movement.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_1_infinitetalk.json
+  sha256: 389d8acd0b73ae6bba0e61284675ccb91789310b0b0df1cbaf385669effa90af
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2_1_infinitetalk
+  title: 'InfiniteTalk: Audio-Driven Full-Body Video Dubbing'
+  description: Upload a source Image and target audio. Generate a full-body dubbed
+    video with synchronized motion while preserving the original identity, background,
+    and camera movement.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Audio to Video
+  - Lip Sync
+  - Video
+  models:
+  - Wan2.1 InfiniteTalk
+  date: '2026-01-26'
+  openSource: true
+  size: 29635274342
+  usage: 59
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 24
+      nodeType: LoadAudio
+      file: audio_speaker1_woman.mp3
+      mediaType: audio
+    - nodeId: 32
+      nodeType: LoadImage
+      file: two_character_talking.png
+      mediaType: image
+    - nodeId: 90
+      nodeType: LoadAudio
+      file: audio_speaker2_man.mp3
+      mediaType: audio
+    outputs:
+    - nodeId: 141
+      nodeType: SaveVideo
+      file: video_wan2_1_infinitetalk.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/video_wan2_1_infinitetalk.mp4
+  minComfyUIVersion: 0.17.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '32'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

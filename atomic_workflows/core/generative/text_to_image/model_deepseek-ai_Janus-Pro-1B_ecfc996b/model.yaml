@@ -1,0 +1,46 @@
+id: remote:model:ecfc996b081dacc7676b
+kind: comfyui_model
+title: deepseek-ai/Janus-Pro-1B
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: deepseek-ai/Janus-Pro-1B
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: <huggingface>
+  - name: base
+    value: Janus-Pro
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: Janus-Pro
+    save_path: Janus-Pro
+    filename: <huggingface>
+    download_locator: deepseek-ai/Janus-Pro-1B
+code_usable: true
+status: available
+metadata:
+  name: deepseek-ai/Janus-Pro-1B
+  type: Janus-Pro
+  base: Janus-Pro
+  save_path: Janus-Pro
+  description: '[SNAPSHOT] Janus-Pro-1B model.[w/You cannot download this item on
+    ComfyUI-Manager versions below V3.18]'
+  reference: https://huggingface.co/deepseek-ai/Janus-Pro-1B
+  filename: <huggingface>
+  url: deepseek-ai/Janus-Pro-1B
+  size: 7.8GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_deepseek-ai_Janus-Pro-1B_ecfc996b/model.yaml
+validation_errors: []

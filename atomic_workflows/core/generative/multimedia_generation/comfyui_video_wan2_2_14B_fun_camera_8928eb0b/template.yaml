@@ -1,0 +1,53 @@
+id: remote.template.video_wan2_2_14B_fun_camera
+kind: comfyui_template
+title: Wan 2.2 14B Fun Camera Control
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan 2.2 14B Fun Camera Control
+  input_types:
+  - image
+  output_types: []
+  capability: Generate videos with camera motion controls including pan, zoom, and
+    rotation using Wan 2.2 Fun Camera Control.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_2_14B_fun_camera.json
+  sha256: 70bdd7a1ae4e867348f076674715a704c92d860bdbe3c9e98a555f3c9cf7f645
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2_2_14B_fun_camera
+  title: Wan 2.2 14B Fun Camera Control
+  description: Generate videos with camera motion controls including pan, zoom, and
+    rotation using Wan 2.2 Fun Camera Control.
+  mediaType: image
+  mediaSubtype: webp
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/wan2-2-fun-camera
+  tags:
+  - Video to Video
+  - Video
+  models:
+  - Wan2.2
+  - Wan
+  date: '2025-08-17'
+  size: 40050570035
+  usage: 14
+  io:
+    inputs:
+    - nodeId: 79
+      nodeType: LoadImage
+      file: video_wan2_2_14B_fun_camera_start_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.35

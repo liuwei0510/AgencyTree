@@ -1,0 +1,73 @@
+id: remote:template:image_ideogram4_t2i_int8
+kind: comfyui_template
+title: 'Ideogram v4 Int8: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram v4 Int8: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using the Ideogram v4 model, a state-of-the-art
+    open-weight text-to-image system with exceptional text rendering and layout control.
+    No file inputs are required, producing 1 image output. Ideal for creating marketing
+    visuals, generating design mockups with precise typography, and producing high-resolution
+    artwork with controlled compositions.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_ideogram4_t2i_int8.json
+  sha256: 03ad2606f77584fed486bd968c58c5cede137b187fc339565209f6f9b8899ebb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_ideogram4_t2i_int8
+  title: 'Ideogram v4 Int8: Text to Image'
+  description: Generate images from text prompts using the Ideogram v4 model, a state-of-the-art
+    open-weight text-to-image system with exceptional text rendering and layout control.
+    No file inputs are required, producing 1 image output. Ideal for creating marketing
+    visuals, generating design mockups with precise typography, and producing high-resolution
+    artwork with controlled compositions.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - Ideogram
+  date: '2026-07-13'
+  openSource: true
+  size: 30064771072
+  usage: 24
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 158
+      nodeType: SaveImage
+      file: image_ideogram4_t2i_int8.png
+      mediaType: image
+  thumbnail:
+  - output/image_ideogram4_t2i_int8.png
+  minComfyUIVersion: 0.24.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_ideogram4_t2i_int8.json
+  sha256: 03ad2606f77584fed486bd968c58c5cede137b187fc339565209f6f9b8899ebb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_image_ideogram4_t2i_int8_a776c3a3/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

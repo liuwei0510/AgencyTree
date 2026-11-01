@@ -1,0 +1,65 @@
+id: remote:template:api_luma_ray3_3_t2v
+kind: comfyui_template
+title: 'Luma Ray 3.2: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma Ray 3.2: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate cinematic-quality videos from text prompts using Luma Ray 3.2,
+    with optional video extension by providing a generation ID from a previous run.
+    Ideal for creating short film sequences, marketing content, and iterative video
+    refinement.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_ray3_3_t2v.json
+  sha256: 42b20dc8d5d7f7165cfe9cd0ff03b530eb1af2b184aee2cde15b4fc330b71dd5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_ray3_3_t2v
+  title: 'Luma Ray 3.2: Text to Video'
+  description: Generate cinematic-quality videos from text prompts using Luma Ray
+    3.2, with optional video extension by providing a generation ID from a previous
+    run. Ideal for creating short film sequences, marketing content, and iterative
+    video refinement.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - Luma
+  logos:
+  - provider: Luma
+  date: '2026-06-18'
+  openSource: false
+  size: 0
+  usage: 5
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.26.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_ray3_3_t2v.json
+  sha256: 42b20dc8d5d7f7165cfe9cd0ff03b530eb1af2b184aee2cde15b4fc330b71dd5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_api_luma_ray3_3_t2v_91021a77/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

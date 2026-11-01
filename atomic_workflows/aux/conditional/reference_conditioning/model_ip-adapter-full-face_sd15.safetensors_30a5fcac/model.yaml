@@ -1,0 +1,46 @@
+id: remote:model:30a5fcacfc15c40e344f
+kind: comfyui_model
+title: ip-adapter-full-face_sd15.safetensors
+tree_branch:
+- aux
+- conditional
+- reference_conditioning
+six_tuple:
+  name: ip-adapter-full-face_sd15.safetensors
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/reference_conditioning
+  parameters:
+  - name: filename
+    value: ip-adapter-full-face_sd15.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: IP-Adapter
+    save_path: ipadapter
+    filename: ip-adapter-full-face_sd15.safetensors
+    download_locator: https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-full-face_sd15.safetensors
+code_usable: true
+status: available
+metadata:
+  name: ip-adapter-full-face_sd15.safetensors
+  type: IP-Adapter
+  base: SD1.5
+  save_path: ipadapter
+  description: You can use this model in the [a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)
+    extension.
+  reference: https://huggingface.co/h94/IP-Adapter
+  filename: ip-adapter-full-face_sd15.safetensors
+  url: https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-full-face_sd15.safetensors
+  size: 43.6MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/reference_conditioning/model_ip-adapter-full-face_sd15.safetensors_30a5fcac/model.yaml
+validation_errors: []

@@ -1,0 +1,46 @@
+id: remote:model:4187869a46227d4dce97
+kind: comfyui_model
+title: LTX-Video Temporal Upscaler v0.9.7
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: LTX-Video Temporal Upscaler v0.9.7
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: ltxv-temporal-upscaler-0.9.7.safetensors
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: ltxv-temporal-upscaler-0.9.7.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltxv-temporal-upscaler-0.9.7.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-Video Temporal Upscaler v0.9.7
+  type: upscale
+  base: upscale
+  save_path: default
+  description: Temporal upscaler model for LTX-Video. This model enhances the temporal
+    resolution and smoothness of generated videos.
+  reference: https://huggingface.co/Lightricks/LTX-Video
+  filename: ltxv-temporal-upscaler-0.9.7.safetensors
+  url: https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltxv-temporal-upscaler-0.9.7.safetensors
+  size: 524MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_LTX-Video_Temporal_Upscaler_v0.9.7_4187869a/model.yaml
+validation_errors: []

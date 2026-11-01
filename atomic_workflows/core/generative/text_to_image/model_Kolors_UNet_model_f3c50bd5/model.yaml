@@ -1,0 +1,43 @@
+id: remote.model.f3c50bd5e484a9b3b077
+kind: comfyui_model
+title: Kolors UNet model
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: Kolors UNet model
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: diffusion_pytorch_model.safetensors
+  - name: base
+    value: Kolors
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/kolors
+    filename: diffusion_pytorch_model.safetensors
+    download_locator: https://huggingface.co/Kwai-Kolors/Kolors/resolve/main/unet/diffusion_pytorch_model.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Kolors UNet model
+  type: diffusion_model
+  base: Kolors
+  save_path: diffusion_models/kolors
+  description: Kolors UNet model
+  reference: https://huggingface.co/Kwai-Kolors/Kolors
+  filename: diffusion_pytorch_model.safetensors
+  url: https://huggingface.co/Kwai-Kolors/Kolors/resolve/main/unet/diffusion_pytorch_model.safetensors
+  size: 10.3GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

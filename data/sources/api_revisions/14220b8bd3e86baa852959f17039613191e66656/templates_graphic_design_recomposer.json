@@ -1,0 +1,36 @@
+{
+  "125": {
+    "inputs": {
+      "image": "latent_space_clud.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage"
+    }
+  },
+  "131": {
+    "inputs": {
+      "images": [
+        "143",
+        0
+      ],
+      "filename_prefix": "graphic_design_recompose"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage"
+    }
+  },
+  "143": {
+    "inputs": {
+      "images": [
+        "125",
+        0
+      ]
+    },
+    "class_type": "172f1008-9337-4d2f-9212-ee081cb4faf5",
+    "_meta": {
+      "title": "172f1008-9337-4d2f-9212-ee081cb4faf5"
+    }
+  }
+}

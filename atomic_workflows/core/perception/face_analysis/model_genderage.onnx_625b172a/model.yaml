@@ -1,0 +1,44 @@
+id: remote.model.625b172ad6e41d1d1042
+kind: comfyui_model
+title: genderage.onnx
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: genderage.onnx
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: genderage.onnx
+  - name: base
+    value: inswapper
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models/antelopev2
+    filename: genderage.onnx
+    download_locator: https://huggingface.co/MonsterMMORPG/tools/resolve/main/genderage.onnx
+code_usable: true
+status: available
+metadata:
+  name: genderage.onnx
+  type: insightface
+  base: inswapper
+  save_path: insightface/models/antelopev2
+  description: Antelopev2 genderage.onnx model for InstantId. (InstantId needs all
+    Antelopev2 models)
+  reference: https://github.com/cubiq/ComfyUI_InstantID#installation
+  filename: genderage.onnx
+  url: https://huggingface.co/MonsterMMORPG/tools/resolve/main/genderage.onnx
+  size: 1.32MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

@@ -1,0 +1,44 @@
+id: remote.model.f2d2b3c19897a35474a2
+kind: comfyui_model
+title: Segmind-VegaRT - Latent Consistency Model (LCM) LoRA of Segmind-Vega
+tree_branch:
+- aux
+- latent_process
+- sampling_acceleration
+six_tuple:
+  name: Segmind-VegaRT - Latent Consistency Model (LCM) LoRA of Segmind-Vega
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: pytorch_lora_weights.safetensors
+  - name: base
+    value: segmind-vega
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/segmind-vega
+    filename: pytorch_lora_weights.safetensors
+    download_locator: https://huggingface.co/segmind/Segmind-VegaRT/resolve/main/pytorch_lora_weights.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Segmind-VegaRT - Latent Consistency Model (LCM) LoRA of Segmind-Vega
+  type: lora
+  base: segmind-vega
+  save_path: loras/segmind-vega
+  description: Segmind-VegaRT a distilled consistency adapter for Segmind-Vega that
+    allows to reduce the number of inference steps to only between 2 - 8 steps.
+  reference: https://huggingface.co/segmind/Segmind-VegaRT
+  filename: pytorch_lora_weights.safetensors
+  url: https://huggingface.co/segmind/Segmind-VegaRT/resolve/main/pytorch_lora_weights.safetensors
+  size: 239.2MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

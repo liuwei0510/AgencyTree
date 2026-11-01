@@ -1,0 +1,53 @@
+{
+  "nodes": [
+    {
+      "node_id": "n1",
+      "task_id": "remove_fork",
+      "capability_id": "core.editing.image_editing",
+      "input_types": {
+        "source_image": "image",
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Remove the fork from the table while preserving the dishes and other original content.",
+        "source_image": "dish_table.png"
+      },
+      "constraints": {}
+    },
+    {
+      "node_id": "n2",
+      "task_id": "watercolor",
+      "capability_id": "core.editing.image_editing",
+      "input_types": {
+        "source_image": "image",
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Convert the table image without a fork into a watercolor painting."
+      },
+      "constraints": {}
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "n1",
+      "output": "images",
+      "to_node": "n2",
+      "input": "source_image"
+    }
+  ],
+  "ordering": [
+    [
+      "n1",
+      "n2"
+    ]
+  ],
+  "constraints": {},
+  "unresolved": []
+}

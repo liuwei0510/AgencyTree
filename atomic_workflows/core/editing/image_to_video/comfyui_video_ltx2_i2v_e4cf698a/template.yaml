@@ -1,0 +1,88 @@
+id: remote:template:video_ltx2_i2v
+kind: comfyui_template
+title: 'LTX-2: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform static images into dynamic videos with synchronized audio-video
+    generation using LTX-2. Features expressive lip sync, natural motion, and efficient
+    performance.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_i2v.json
+  sha256: 52c9f7b21a87febc6e2f79100c6aa68695ea8f04617bd5333f5a62c83d4603e8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_i2v
+  title: 'LTX-2: Image to Video'
+  description: Transform static images into dynamic videos with synchronized audio-video
+    generation using LTX-2. Features expressive lip sync, natural motion, and efficient
+    performance.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  models:
+  - LTX-2
+  - Lightricks
+  date: '2026-01-06'
+  size: 38010460570
+  usage: 86
+  searchRank: 0
+  openSource: true
+  io:
+    inputs:
+    - nodeId: 98
+      nodeType: LoadImage
+      file: freckled_curly_girl.png
+      mediaType: image
+    outputs:
+    - nodeId: 75
+      nodeType: SaveVideo
+      file: video_ltx2_i2v.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/video_ltx2_i2v.mp4
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_i2v.json
+  sha256: 52c9f7b21a87febc6e2f79100c6aa68695ea8f04617bd5333f5a62c83d4603e8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_ltx2_i2v_e4cf698a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '98'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

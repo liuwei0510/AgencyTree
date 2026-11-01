@@ -1,0 +1,82 @@
+id: remote.template.api_pixverse6_i2v
+kind: comfyui_template
+title: 'PixVerse 6.0: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'PixVerse 6.0: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Turn a still image into a moving video clip with PixVerse V6, generating
+    up to 15 seconds of footage at resolutions from 360p to 1080p. Supports multiple
+    aspect ratios, integrated audio generation, and multi-shot direction for cohesive
+    narrative flow. Ideal for social media ads, product demonstrations, and short-form
+    storytelling.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pixverse6_i2v.json
+  sha256: 6fb82c1a0505c17090efb9104266d36438b2596b87f27ebc029c3b0f6e640a4d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_pixverse6_i2v
+  title: 'PixVerse 6.0: Image to Video'
+  description: Turn a still image into a moving video clip with PixVerse V6, generating
+    up to 15 seconds of footage at resolutions from 360p to 1080p. Supports multiple
+    aspect ratios, integrated audio generation, and multi-shot direction for cohesive
+    narrative flow. Ideal for social media ads, product demonstrations, and short-form
+    storytelling.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - PixVerse
+  logos:
+  - provider: Pixverse
+  date: '2026-08-30'
+  openSource: false
+  size: 0
+  usage: 19
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 19
+      nodeType: LoadImage
+      file: sunny_pink_high_tops.png
+      mediaType: image
+    outputs:
+    - nodeId: 14
+      nodeType: SaveVideo
+      file: api_pixverse6_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_pixverse6_i2v.mp4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '19'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

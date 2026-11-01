@@ -1,0 +1,8 @@
+{
+  "1": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "REPLACE_VAE.safetensors"
+    }
+  }
+}

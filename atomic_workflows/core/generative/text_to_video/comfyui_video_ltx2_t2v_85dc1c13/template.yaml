@@ -1,0 +1,70 @@
+id: remote:template:video_ltx2_t2v
+kind: comfyui_template
+title: LTX-2 Text to Video
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LTX-2 Text to Video
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate high-quality videos from text prompts with synchronized audio-video
+    generation using LTX-2. Features expressive lip sync, dynamic motion generation,
+    and efficient performance.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_t2v.json
+  sha256: ee0041eeccd6cb907488b7a5b0b501a654970a5005d2d766362e0b699ac4de91
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_t2v
+  title: LTX-2 Text to Video
+  description: Generate high-quality videos from text prompts with synchronized audio-video
+    generation using LTX-2. Features expressive lip sync, dynamic motion generation,
+    and efficient performance.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - Video
+  models:
+  - LTX-2
+  - Lightricks
+  date: '2026-01-06'
+  size: 45526653338
+  usage: 19
+  searchRank: 0
+  openSource: true
+  io:
+    outputs:
+    - nodeId: 75
+      nodeType: SaveVideo
+      file: video_ltx2_t2v.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/video_ltx2_t2v.mp4
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_t2v.json
+  sha256: ee0041eeccd6cb907488b7a5b0b501a654970a5005d2d766362e0b699ac4de91
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_video_ltx2_t2v_85dc1c13/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

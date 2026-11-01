@@ -1,0 +1,45 @@
+id: remote:model:ae1dba6f97d0c170b539
+kind: comfyui_model
+title: Comfy-Org/Wan2.1 VAE
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: Comfy-Org/Wan2.1 VAE
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: wan_2.1_vae.safetensors
+  - name: base
+    value: Wan2.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: vae
+    save_path: vae
+    filename: wan_2.1_vae.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Comfy-Org/Wan2.1 VAE
+  type: vae
+  base: Wan2.1
+  save_path: vae
+  description: Wan2.1 VAE model
+  reference: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged
+  filename: wan_2.1_vae.safetensors
+  url: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors
+  size: 254MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/latent_process/encode_decode/model_Comfy-Org_Wan2.1_VAE_ae1dba6f/model.yaml
+validation_errors: []

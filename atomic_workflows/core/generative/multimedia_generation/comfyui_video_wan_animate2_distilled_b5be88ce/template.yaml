@@ -1,0 +1,91 @@
+id: remote:template:video_wan_animate2_distilled
+kind: comfyui_template
+title: 'Wan Animate 2 Distilled: Motion Transfer'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan Animate 2 Distilled: Motion Transfer'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Animate a still character using a driving video with Wan Animate 2,
+    transferring motion directly from video frames without any pose extraction or
+    skeleton preprocessing. The output preserves the reference character's identity
+    while generating a fresh background and camera movement from your text prompt.
+    This distilled version delivers efficient, high-fidelity motion generation with
+    strong identity preservation, ideal for motion transfer, action mimicry, and character
+    animation replacement projects.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_animate2_distilled.json
+  sha256: 6f995a687f790d0fa41d37c22a8da181991b562aa0eb6f64e917f5b1457a3ed2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan_animate2_distilled
+  title: 'Wan Animate 2 Distilled: Motion Transfer'
+  description: Animate a still character using a driving video with Wan Animate 2,
+    transferring motion directly from video frames without any pose extraction or
+    skeleton preprocessing. The output preserves the reference character's identity
+    while generating a fresh background and camera movement from your text prompt.
+    This distilled version delivers efficient, high-fidelity motion generation with
+    strong identity preservation, ideal for motion transfer, action mimicry, and character
+    animation replacement projects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Motion Control
+  - Int8
+  models:
+  - Wan Animate
+  date: '2026-08-07'
+  openSource: true
+  size: 24910810317
+  usage: 213
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 189
+      nodeType: LoadImage
+      file: ref_doll_realistic.png
+      mediaType: image
+    - nodeId: 240
+      nodeType: LoadVideo
+      file: drive_doll_street_dance.mp4
+      mediaType: video
+  minComfyUIVersion: 0.31.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_animate2_distilled.json
+  sha256: 6f995a687f790d0fa41d37c22a8da181991b562aa0eb6f64e917f5b1457a3ed2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_video_wan_animate2_distilled_b5be88ce/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '189'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

@@ -1,0 +1,75 @@
+id: core.editing.image_editing.image_chrono_edit_14b
+title: image_chrono_edit_14B
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_chrono_edit_14B.json).
+tags:
+- image-editing
+- edit
+- inpaint
+workflow_file: image_chrono_edit_14b.workflow.json
+inject:
+  prompt:
+    node_id: '97:6'
+    input_key: text
+  negative_prompt:
+    node_id: '97:7'
+    input_key: text
+  seed:
+    node_id: '97:3'
+    input_key: seed
+  source_image:
+    node_id: '52'
+    input_key: image
+    widget_index: null
+  length:
+    node_id: '97:59'
+    input_key: length
+    widget_index: null
+  width:
+    node_id: '97:50'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '97:50'
+    input_key: height
+    widget_index: null
+  length_2:
+    node_id: '97:50'
+    input_key: length
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: length
+  type: number
+  required: false
+  default: 1
+- name: width
+  type: number
+  required: false
+  default: 720
+- name: height
+  type: number
+  required: false
+  default: 720
+- name: length_2
+  type: number
+  required: false
+  default: 5
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

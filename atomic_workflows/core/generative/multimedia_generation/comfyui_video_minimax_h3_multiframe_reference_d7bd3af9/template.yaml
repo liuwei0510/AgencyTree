@@ -1,0 +1,135 @@
+id: remote:template:video_minimax_h3_multiframe_reference
+kind: comfyui_template
+title: 'MiniMax H3: Multiframe Reference'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3: Multiframe Reference'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+    source_image_3: image_filenames
+    source_image_4: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate video from multiple still images with MiniMax H3, anchoring
+    up to four reference frames anywhere along the timeline to control motion and
+    composition. Ideal for creating video continuations from existing clips, forcing
+    narrative beats at specific moments, and producing footage with synchronized native
+    audio for cinematic or social media content.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_3
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_4
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_multiframe_reference.json
+  sha256: 7d4b3a3c16ec3700b6fb77db22ffb8ebb697bee13b784203811ab3617d6d257a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_minimax_h3_multiframe_reference
+  title: 'MiniMax H3: Multiframe Reference'
+  description: Generate video from multiple still images with MiniMax H3, anchoring
+    up to four reference frames anywhere along the timeline to control motion and
+    composition. Ideal for creating video continuations from existing clips, forcing
+    narrative beats at specific moments, and producing footage with synchronized native
+    audio for cinematic or social media content.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Reference to Video
+  - Int8
+  models:
+  - MiniMax H3
+  date: '2026-09-04'
+  openSource: true
+  size: 44452911514
+  usage: 354
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 157
+      nodeType: LoadImage
+      file: h3_frame_ref_2.png
+      mediaType: image
+    - nodeId: 159
+      nodeType: LoadImage
+      file: h3_frame_ref_3.png
+      mediaType: image
+    - nodeId: 164
+      nodeType: LoadImage
+      file: h3_frame_ref_1.png
+      mediaType: image
+    - nodeId: 167
+      nodeType: LoadImage
+      file: h3_frame_ref_4.png
+      mediaType: image
+  minComfyUIVersion: 0.34.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_multiframe_reference.json
+  sha256: 7d4b3a3c16ec3700b6fb77db22ffb8ebb697bee13b784203811ab3617d6d257a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_minimax_h3_multiframe_reference_d7bd3af9/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_3
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_4
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '157'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '159'
+    input_key: image
+    widget_index: 0
+  source_image_3:
+    node_id: '164'
+    input_key: image
+    widget_index: 0
+  source_image_4:
+    node_id: '167'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

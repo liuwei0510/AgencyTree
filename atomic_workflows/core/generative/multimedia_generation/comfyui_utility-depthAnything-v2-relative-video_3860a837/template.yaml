@@ -1,0 +1,55 @@
+id: remote.template.utility-depthAnything-v2-relative-video
+kind: comfyui_template
+title: 'Depth Map: Depth Anything v2'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Depth Map: Depth Anything v2'
+  input_types:
+  - video
+  output_types: []
+  capability: Convert a Video to a temporally stable Depth Map
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-depthAnything-v2-relative-video.json
+  sha256: a8803689744734cb09f646cf7174aa671eea14db162dfc1af2470857d40ee98c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-depthAnything-v2-relative-video
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/preprocessors
+  title: 'Depth Map: Depth Anything v2'
+  description: Convert a Video to a temporally stable Depth Map
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  models:
+  - Depth Anything v2
+  date: '2026-01-12'
+  openSource: true
+  requiresCustomNodes:
+  - comfyui-videohelpersuite
+  - comfyui_controlnet_aux
+  usage: 26
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: VHS_LoadVideo
+      file: roller_coaster.mp4
+      mediaType: video
+  size: 1073741824
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.0.1

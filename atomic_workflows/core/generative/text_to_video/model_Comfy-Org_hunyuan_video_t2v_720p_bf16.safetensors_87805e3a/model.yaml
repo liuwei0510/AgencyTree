@@ -1,0 +1,45 @@
+id: remote:model:87805e3a3cb78781b98c
+kind: comfyui_model
+title: Comfy-Org/hunyuan_video_t2v_720p_bf16.safetensors
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: Comfy-Org/hunyuan_video_t2v_720p_bf16.safetensors
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: hunyuan_video_t2v_720p_bf16.safetensors
+  - name: base
+    value: Hunyuan Video
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/hunyuan_video
+    filename: hunyuan_video_t2v_720p_bf16.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy-Org/hunyuan_video_t2v_720p_bf16.safetensors
+  type: diffusion_model
+  base: Hunyuan Video
+  save_path: diffusion_models/hunyuan_video
+  description: Huyuan Video diffusion model. repackaged version.
+  reference: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged
+  filename: hunyuan_video_t2v_720p_bf16.safetensors
+  url: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors
+  size: 25.6GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/model_Comfy-Org_hunyuan_video_t2v_720p_bf16.safetensors_87805e3a/model.yaml
+validation_errors: []

@@ -1,0 +1,26 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "57",
+        0
+      ],
+      "filename_prefix": "z-image-turbo"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.64"
+    }
+  },
+  "57": {
+    "inputs": {},
+    "class_type": "f2fdebf6-dfaf-43b6-9eb2-7f70613cfdc1",
+    "_meta": {
+      "title": "f2fdebf6-dfaf-43b6-9eb2-7f70613cfdc1",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.73"
+    }
+  }
+}

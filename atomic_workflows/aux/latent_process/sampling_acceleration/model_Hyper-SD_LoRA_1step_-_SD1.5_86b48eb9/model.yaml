@@ -1,0 +1,45 @@
+id: remote:model:86b48eb96f11c10755fb
+kind: comfyui_model
+title: Hyper-SD LoRA (1step) - SD1.5
+tree_branch:
+- aux
+- latent_process
+- sampling_acceleration
+six_tuple:
+  name: Hyper-SD LoRA (1step) - SD1.5
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: Hyper-SD15-1step-lora.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/HyperSD/SD15
+    filename: Hyper-SD15-1step-lora.safetensors
+    download_locator: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SD15-1step-lora.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Hyper-SD LoRA (1step) - SD1.5
+  type: lora
+  base: SD1.5
+  save_path: loras/HyperSD/SD15
+  description: Hyper-SD LoRA (1step) - SD1.5
+  reference: https://huggingface.co/ByteDance/Hyper-SD
+  filename: Hyper-SD15-1step-lora.safetensors
+  url: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SD15-1step-lora.safetensors
+  size: 269MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/latent_process/sampling_acceleration/model_Hyper-SD_LoRA_1step_-_SD1.5_86b48eb9/model.yaml
+validation_errors: []

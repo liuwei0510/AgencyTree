@@ -1,0 +1,56 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "22",
+        0
+      ],
+      "filename_prefix": "LongCat-Image-Edit"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.73"
+    }
+  },
+  "13": {
+    "inputs": {
+      "image": "steel_in_the_mist.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.73"
+    }
+  },
+  "17": {
+    "inputs": {
+      "image_a": [
+        "13",
+        0
+      ],
+      "image_b": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare"
+    }
+  },
+  "22": {
+    "inputs": {
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "338a94d3-1c81-48c8-9edd-9907114ba7e7",
+    "_meta": {
+      "title": "338a94d3-1c81-48c8-9edd-9907114ba7e7"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+id: remote.template.api_topaz_astra2
+kind: comfyui_template
+title: 'Video Upscale: Topaz Astra 2 Creative'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: Topaz Astra 2 Creative'
+  input_types:
+  - video
+  output_types: []
+  capability: Upscale GenAI video footage with Astra 2's creative diffusion, adding
+    dynamic detail and texture. Adjust creativity, sharpness, and prompt-based guidance
+    for precise stylization of AI-generated content.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_astra2.json
+  sha256: fac6f4291d9c37a1cf065e79f93bf52473a6ae622104f22355c387e0195a24e5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_topaz_astra2
+  title: 'Video Upscale: Topaz Astra 2 Creative'
+  description: Upscale GenAI video footage with Astra 2's creative diffusion, adding
+    dynamic detail and texture. Adjust creativity, sharpness, and prompt-based guidance
+    for precise stylization of AI-generated content.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Upscale
+  models:
+  - Topaz
+  logos:
+  - provider: Topaz
+  date: '2026-05-03'
+  openSource: false
+  size: 0
+  usage: 73
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadVideo
+      file: cyber_fight.mp4
+      mediaType: video
+  minComfyUIVersion: 0.20.2

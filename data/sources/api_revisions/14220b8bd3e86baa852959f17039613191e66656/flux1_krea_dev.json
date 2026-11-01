@@ -1,0 +1,26 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "200",
+        0
+      ],
+      "filename_prefix": "flux_krea"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.40"
+    }
+  },
+  "200": {
+    "inputs": {},
+    "class_type": "1135e349-dce8-45e8-8905-aaa86675429b",
+    "_meta": {
+      "title": "1135e349-dce8-45e8-8905-aaa86675429b",
+      "cnr_id": "comfy-core",
+      "ver": "0.18.1"
+    }
+  }
+}

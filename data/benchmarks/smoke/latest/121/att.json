@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "task_id": "remove_fork",
+      "goal": "Remove the fork from the table while preserving the dishes and other original content.",
+      "capability_id": "core.editing.image_editing",
+      "inputs": {
+        "source_image": "dish_table.png"
+      },
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": []
+    },
+    {
+      "task_id": "watercolor",
+      "goal": "Convert the table image without a fork into a watercolor painting.",
+      "capability_id": "core.editing.image_editing",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": [
+        "remove_fork"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "remove_fork",
+      "watercolor"
+    ]
+  ],
+  "diagnostics": [],
+  "assumptions": []
+}

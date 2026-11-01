@@ -1,0 +1,67 @@
+id: remote:template:audio_yue2_music_cover
+kind: comfyui_template
+title: 'YuE2: Music Cover'
+tree_branch:
+- core
+- editing
+- audio_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'YuE2: Music Cover'
+  input_types: {}
+  output_types: {}
+  capability: Create a new version of a song from reference audio with YuE2. Preserve
+    the original melody while changing the musical style, vocals, lyrics, and arrangement.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_yue2_music_cover.json
+  sha256: 867de6f08cfab4dfe700b2a86117e0e4fd9286c781011ac88eadcefacc957547
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_yue2_music_cover
+  title: 'YuE2: Music Cover'
+  description: Create a new version of a song from reference audio with YuE2. Preserve
+    the original melody while changing the musical style, vocals, lyrics, and arrangement.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Music Cover
+  - Int8
+  models:
+  - YuE2
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-14'
+  openSource: true
+  size: 5368709120
+  usage: 22
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 45
+      nodeType: LoadAudio
+      file: yue2_reference_song.flac
+      mediaType: audio
+  thumbnail:
+  - thumbnail/audio_yue2_music_cover.png
+  includeOnDistributions:
+  - local
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_yue2_music_cover.json
+  sha256: 867de6f08cfab4dfe700b2a86117e0e4fd9286c781011ac88eadcefacc957547
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/audio_editing/comfyui_audio_yue2_music_cover_ce06a953/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

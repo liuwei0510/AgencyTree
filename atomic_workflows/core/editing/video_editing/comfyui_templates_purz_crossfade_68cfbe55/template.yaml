@@ -1,0 +1,76 @@
+id: remote:template:templates_purz_crossfade
+kind: comfyui_template
+title: 'Video Edit: Crossfade Merge'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Edit: Crossfade Merge'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Smoothly blend two video sequences using a crossfade effect. Input two
+    image sequences and define the transition length and blend mode. Outputs a single,
+    merged video sequence.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_crossfade.json
+  sha256: 15052c2be37f92b5a9a0da030127e5573c02bac5d6721e1703895fac929f1c14
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_purz_crossfade
+  title: 'Video Edit: Crossfade Merge'
+  description: Smoothly blend two video sequences using a crossfade effect. Input
+    two image sequences and define the transition length and blend mode. Outputs a
+    single, merged video sequence.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Video Edit
+  models:
+  - None
+  date: '2026-03-19'
+  openSource: true
+  size: 0
+  usage: 6
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: VHS_LoadVideo
+      file: crossfade_clip_1.mp4
+      mediaType: video
+    - nodeId: 4
+      nodeType: VHS_LoadVideo
+      file: crossfade_clip_2.mp4
+      mediaType: video
+  username: PurzBeats
+  thumbnail:
+  - output/templates_purz_crossfade.mp4
+  requiresCustomNodes:
+  - comfyui-videohelpersuite
+  - comfyui_fill-nodes
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_crossfade.json
+  sha256: 15052c2be37f92b5a9a0da030127e5573c02bac5d6721e1703895fac929f1c14
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_templates_purz_crossfade_68cfbe55/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

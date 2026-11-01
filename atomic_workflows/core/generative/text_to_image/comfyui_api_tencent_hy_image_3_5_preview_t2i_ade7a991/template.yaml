@@ -1,0 +1,77 @@
+id: remote:template:api_tencent_hy_image_3_5_preview_t2i
+kind: comfyui_template
+title: 'HY Image 3.5 Preview: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HY Image 3.5 Preview: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: 'Tencent Hunyuan''s preview image model, strengthening three areas over
+    previous versions: multilingual text rendering and typesetting for advertising,
+    infographics and UI design; photorealism and stylistic range covering cinematic,
+    comic, commercial photography and illustration; and editing consistency that preserves
+    key traits of people and products across background, outfit and style changes.
+    Outputs up to 4K resolution.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tencent_hy_image_3_5_preview_t2i.json
+  sha256: 87c98fdbedd2c06fbbac136e1badcb056a0b48db2a01209659b7a9fca0a3e320
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tencent_hy_image_3_5_preview_t2i
+  title: 'HY Image 3.5 Preview: Text to Image'
+  description: 'Tencent Hunyuan''s preview image model, strengthening three areas
+    over previous versions: multilingual text rendering and typesetting for advertising,
+    infographics and UI design; photorealism and stylistic range covering cinematic,
+    comic, commercial photography and illustration; and editing consistency that preserves
+    key traits of people and products across background, outfit and style changes.
+    Outputs up to 4K resolution.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - HY Image 3.5
+  logos:
+  - provider: Hunyuan
+  minComfyUIVersion: 0.37.1
+  date: '2026-09-21'
+  openSource: false
+  size: 0
+  usage: 119
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 2
+      nodeType: SaveImageAdvanced
+      file: api_tencent_hy_image_3_5_preview_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_tencent_hy_image_3_5_preview_t2i.png
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tencent_hy_image_3_5_preview_t2i.json
+  sha256: 87c98fdbedd2c06fbbac136e1badcb056a0b48db2a01209659b7a9fca0a3e320
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_tencent_hy_image_3_5_preview_t2i_ade7a991/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

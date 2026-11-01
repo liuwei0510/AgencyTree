@@ -1,0 +1,45 @@
+id: remote:model:0efb12c79a7e72d7d65c
+kind: comfyui_model
+title: SDXL Lightning LoRA (8steps)
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: SDXL Lightning LoRA (8steps)
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: sdxl_lightning_8step_lora.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/SDXL-Lightning
+    filename: sdxl_lightning_8step_lora.safetensors
+    download_locator: https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_8step_lora.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: SDXL Lightning LoRA (8steps)
+  type: lora
+  base: SDXL
+  save_path: loras/SDXL-Lightning
+  description: SDXL Lightning LoRA (8steps)
+  reference: https://huggingface.co/ByteDance/SDXL-Lightning
+  filename: sdxl_lightning_8step_lora.safetensors
+  url: https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_8step_lora.safetensors
+  size: 393.9MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/latent_process/sampling_acceleration/model_SDXL_Lightning_LoRA_8steps_0efb12c7/model.yaml
+validation_errors: []

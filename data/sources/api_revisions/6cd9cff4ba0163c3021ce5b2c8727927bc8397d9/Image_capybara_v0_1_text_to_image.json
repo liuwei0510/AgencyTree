@@ -1,0 +1,26 @@
+{
+  "102": {
+    "inputs": {
+      "images": [
+        "103",
+        0
+      ],
+      "filename_prefix": "Capybara_v0.1"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.14.1"
+    }
+  },
+  "103": {
+    "inputs": {},
+    "class_type": "4f4ddf39-1508-4d34-a35c-ff10e6ce995b",
+    "_meta": {
+      "title": "4f4ddf39-1508-4d34-a35c-ff10e6ce995b",
+      "cnr_id": "comfy-core",
+      "ver": "0.28.0"
+    }
+  }
+}

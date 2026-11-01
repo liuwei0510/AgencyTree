@@ -1,0 +1,84 @@
+id: remote:template:video_fasth3_ominiref_r2v
+kind: comfyui_template
+title: 'FastH3 OmniRef: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FastH3 OmniRef: Reference to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate synchronized video with matching audio from a text prompt plus
+    a reference image using the FastH3 OmniRef eight-step distilled model, which renders
+    both streams in just eight sampling steps. Takes 1 input image and produces 1
+    video output. Ideal for animating reference characters, creating talking avatars,
+    and rapid social media video prototyping.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_fasth3_ominiref_r2v.json
+  sha256: b4e81ee73794b01b6367d5408b54a4cff0e1f1a9c17e305ee63525d175ccadc8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_fasth3_ominiref_r2v
+  title: 'FastH3 OmniRef: Reference to Video'
+  description: Generate synchronized video with matching audio from a text prompt
+    plus a reference image using the FastH3 OmniRef eight-step distilled model, which
+    renders both streams in just eight sampling steps. Takes 1 input image and produces
+    1 video output. Ideal for animating reference characters, creating talking avatars,
+    and rapid social media video prototyping.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Reference to Video
+  - Video
+  models:
+  - MiniMax H3
+  minComfyUIVersion: 0.43.0
+  date: '2026-10-20'
+  openSource: true
+  size: 42949672960
+  usage: 1053
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 137
+      nodeType: LoadImage
+      file: yellow_plane_ref.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_fasth3_ominiref_r2v.json
+  sha256: b4e81ee73794b01b6367d5408b54a4cff0e1f1a9c17e305ee63525d175ccadc8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_fasth3_ominiref_r2v_8d4d2cc0/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '137'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

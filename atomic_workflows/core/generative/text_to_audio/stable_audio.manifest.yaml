@@ -1,0 +1,30 @@
+id: core.generative.text_to_audio.stable_audio
+title: Text to Audio (stub graph)
+modality:
+- audio
+description: Placeholder atomic workflow; replace with your Stable Audio (or similar)
+  API export.
+tags:
+- tta
+- audio
+- generative
+workflow_file: stable_audio.workflow.json
+inject:
+  prompt:
+    node_id: '1'
+    input_key: text
+  model_file:
+    node_id: '2'
+    input_key: ckpt_name
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: model_file
+  type: string
+  required: true
+  default: null
+outputs:
+- name: audio
+  type: audio_filenames

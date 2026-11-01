@@ -1,0 +1,45 @@
+id: remote:model:278a23cda861d2ee34db
+kind: comfyui_model
+title: kijai/MoGe_ViT_L_fp16.safetensors
+tree_branch:
+- core
+- perception
+- depth_estimation
+six_tuple:
+  name: kijai/MoGe_ViT_L_fp16.safetensors
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/depth_estimation
+  parameters:
+  - name: filename
+    value: MoGe_ViT_L_fp16.safetensors
+  - name: base
+    value: MoGe
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: MoGe
+    save_path: MoGe
+    filename: MoGe_ViT_L_fp16.safetensors
+    download_locator: https://huggingface.co/Kijai/MoGe_safetensors/resolve/main/MoGe_ViT_L_fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: kijai/MoGe_ViT_L_fp16.safetensors
+  type: MoGe
+  base: MoGe
+  save_path: MoGe
+  description: Safetensors versions of [a/https://github.com/microsoft/MoGe](https://github.com/microsoft/MoGe)
+  reference: https://huggingface.co/Kijai/MoGe_safetensors
+  filename: MoGe_ViT_L_fp16.safetensors
+  url: https://huggingface.co/Kijai/MoGe_safetensors/resolve/main/MoGe_ViT_L_fp16.safetensors
+  size: 1.26GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/depth_estimation/model_kijai_MoGe_ViT_L_fp16.safetensors_278a23cd/model.yaml
+validation_errors: []

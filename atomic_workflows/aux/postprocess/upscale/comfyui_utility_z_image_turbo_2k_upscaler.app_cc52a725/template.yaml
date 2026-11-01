@@ -1,0 +1,78 @@
+id: remote.template.utility_z_image_turbo_2k_upscaler.app
+kind: comfyui_template
+title: 'Image Upscale: Z-Image-Turbo 2K'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Z-Image-Turbo 2K'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image to upscale it to 2K resolution using the Z-Image-Turbo
+    model.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_z_image_turbo_2k_upscaler.app.json
+  sha256: 4c79afd810da66c6f2373108d73ad6790f2841fa3b58df9ece821d3465a31a86
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_z_image_turbo_2k_upscaler.app
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/image-upscale
+  title: 'Image Upscale: Z-Image-Turbo 2K'
+  description: Upload an image to upscale it to 2K resolution using the Z-Image-Turbo
+    model.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  models:
+  - Z-Image-Turbo
+  date: '2026-02-19'
+  openSource: true
+  size: 20723217203
+  usage: 300
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 77
+      nodeType: LoadImage
+      file: fighter_jet.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: utility_z_image_turbo_2k_upscaler.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/fighter_jet.png
+  - output/utility_z_image_turbo_2k_upscaler.png
+  isApp: true
+  minComfyUIVersion: 0.9.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '77'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

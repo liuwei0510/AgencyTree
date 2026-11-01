@@ -1,0 +1,44 @@
+id: remote:model:505f6181ba6133759e47
+kind: comfyui_model
+title: Qwen-Image-Lightning 8steps V1.0
+tree_branch:
+- aux
+- latent_process
+- sampling_acceleration
+six_tuple:
+  name: Qwen-Image-Lightning 8steps V1.0
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: Qwen-Image-Lightning-8steps-V1.0.safetensors
+  - name: base
+    value: Qwen-Image
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/qwen-image-lightning
+    filename: Qwen-Image-Lightning-8steps-V1.0.safetensors
+    download_locator: https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Qwen-Image-Lightning 8steps V1.0
+  type: lora
+  base: Qwen-Image
+  save_path: loras/qwen-image-lightning
+  description: Qwen-Image-Lightning 8-step LoRA model V1.0
+  reference: https://huggingface.co/lightx2v/Qwen-Image-Lightning
+  filename: Qwen-Image-Lightning-8steps-V1.0.safetensors
+  url: https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V1.0.safetensors
+  size: 9.78GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

@@ -1,0 +1,55 @@
+id: remote.template.api_mirelo_text_to_sfx
+kind: comfyui_template
+title: 'Mirelo SFX 2.0: Text to SFX'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mirelo SFX 2.0: Text to SFX'
+  input_types: {}
+  output_types: {}
+  capability: 'Generate sound effects from a text prompt with Mirelo sfx-2.0: name
+    the sound, its material, space and intensity in one line and get a 48 kHz mono
+    audio file, up to 10 minutes.'
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_mirelo_text_to_sfx.json
+  sha256: 8db3a061b900c1fddd899deaf6d3cd487c0db4b1f2cf3e45caca6bec7a040ccd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_mirelo_text_to_sfx
+  title: 'Mirelo SFX 2.0: Text to SFX'
+  description: 'Generate sound effects from a text prompt with Mirelo sfx-2.0: name
+    the sound, its material, space and intensity in one line and get a 48 kHz mono
+    audio file, up to 10 minutes.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Audio
+  - Audio
+  - API
+  models:
+  - Mirelo
+  logos:
+  - provider: Mirelo
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 15
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.43.0
+validation_errors: []
+planning_eligible: false
+inputs: *id001
+inject: {}
+outputs: []

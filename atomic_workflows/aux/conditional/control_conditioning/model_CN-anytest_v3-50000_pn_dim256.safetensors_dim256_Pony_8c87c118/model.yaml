@@ -1,0 +1,43 @@
+id: remote.model.8c87c11862d7b06cd4db
+kind: comfyui_model
+title: CN-anytest_v3-50000_pn_dim256.safetensors (dim256/Pony)
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: CN-anytest_v3-50000_pn_dim256.safetensors (dim256/Pony)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: CN-anytest_v3-50000_pn_dim256.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL
+    filename: CN-anytest_v3-50000_pn_dim256.safetensors
+    download_locator: https://huggingface.co/2vXpSwA7/iroiro-lora/resolve/main/test_controlnet2/CN-anytest_v3-50000_pn_dim256.safetensors
+code_usable: true
+status: available
+metadata:
+  name: CN-anytest_v3-50000_pn_dim256.safetensors (dim256/Pony)
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL
+  description: AnyTest Controlnet Lora (dim256) for Pony. A strict control model.
+  reference: https://huggingface.co/2vXpSwA7/iroiro-lora/tree/main
+  filename: CN-anytest_v3-50000_pn_dim256.safetensors
+  url: https://huggingface.co/2vXpSwA7/iroiro-lora/resolve/main/test_controlnet2/CN-anytest_v3-50000_pn_dim256.safetensors
+  size: 774.4MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

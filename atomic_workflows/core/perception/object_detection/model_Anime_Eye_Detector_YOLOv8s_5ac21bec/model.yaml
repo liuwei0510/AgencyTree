@@ -1,0 +1,46 @@
+id: remote:model:5ac21bec05e163a56ac0
+kind: comfyui_model
+title: Anime Eye Detector (YOLOv8s)
+tree_branch:
+- core
+- perception
+- object_detection
+six_tuple:
+  name: Anime Eye Detector (YOLOv8s)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/object_detection
+  parameters:
+  - name: filename
+    value: eye_yolov8s.pt
+  - name: base
+    value: yolov8
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: Ultralytics
+    save_path: ultralytics/bbox
+    filename: eye_yolov8s.pt
+    download_locator: https://huggingface.co/killjoyelite/anime-eye-yolov8/resolve/6bceece59aa38f7fe9d3867f3e2931b11c7ff9a1/eye_yolov8s.pt
+code_usable: true
+status: available
+metadata:
+  name: Anime Eye Detector (YOLOv8s)
+  type: Ultralytics
+  base: yolov8
+  save_path: ultralytics/bbox
+  description: Anime eye detector (YOLOv8s). Detects eyes in anime-style character
+    art for use with BboxDetectorSEGS/Detailer workflows.
+  reference: https://huggingface.co/killjoyelite/anime-eye-yolov8
+  filename: eye_yolov8s.pt
+  url: https://huggingface.co/killjoyelite/anime-eye-yolov8/resolve/6bceece59aa38f7fe9d3867f3e2931b11c7ff9a1/eye_yolov8s.pt
+  size: 22.5MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/object_detection/model_Anime_Eye_Detector_YOLOv8s_5ac21bec/model.yaml
+validation_errors: []

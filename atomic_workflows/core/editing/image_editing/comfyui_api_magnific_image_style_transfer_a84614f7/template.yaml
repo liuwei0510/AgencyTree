@@ -1,0 +1,92 @@
+id: remote.template.api_magnific_image_style_transfer
+kind: comfyui_template
+title: 'Magnific: Style Reference'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Magnific: Style Reference'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a target image and a style reference image. Generate a new image
+    that merges the artistic style of the reference with the structure of your target.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_magnific_image_style_transfer.json
+  sha256: 9a0332f30210ee203705bdbc6dfae8b5d9c71b317655857aa7985a80b6b8e1fc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_magnific_image_style_transfer
+  title: 'Magnific: Style Reference'
+  description: Upload a target image and a style reference image. Generate a new image
+    that merges the artistic style of the reference with the structure of your target.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Style Reference
+  models:
+  - Magnific
+  date: '2026-01-26'
+  openSource: false
+  usage: 23
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: girl_riding_unicorn.png
+      mediaType: image
+    - nodeId: 13
+      nodeType: LoadImage
+      file: magnific_style_reference.png
+      mediaType: image
+    outputs:
+    - nodeId: 14
+      nodeType: SaveImage
+      file: api_magnific_image_style_transfer.png
+      mediaType: image
+  username: ComfyUI
+  size: 0
+  searchRank: 0
+  logos:
+  - provider: Magnific
+  thumbnail:
+  - input/girl_riding_unicorn.png
+  - output/api_magnific_image_style_transfer.png
+  minComfyUIVersion: 0.11.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '13'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

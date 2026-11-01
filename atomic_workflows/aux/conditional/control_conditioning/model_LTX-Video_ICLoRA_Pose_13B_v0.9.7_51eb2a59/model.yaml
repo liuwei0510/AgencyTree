@@ -1,0 +1,46 @@
+id: remote:model:51eb2a59ab557095a11b
+kind: comfyui_model
+title: LTX-Video ICLoRA Pose 13B v0.9.7
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-Video ICLoRA Pose 13B v0.9.7
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltxv-097-ic-lora-pose-control-comfyui.safetensors
+  - name: base
+    value: LTX-Video
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras
+    filename: ltxv-097-ic-lora-pose-control-comfyui.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-Video-ICLoRA-pose-13b-0.9.7/resolve/main/ltxv-097-ic-lora-pose-control-comfyui.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-Video ICLoRA Pose 13B v0.9.7
+  type: lora
+  base: LTX-Video
+  save_path: loras
+  description: In-Context LoRA (IC LoRA) for pose-controlled video-to-video generation
+    with precise pose conditioning.
+  reference: https://huggingface.co/Lightricks/LTX-Video-ICLoRA-pose-13b-0.9.7
+  filename: ltxv-097-ic-lora-pose-control-comfyui.safetensors
+  url: https://huggingface.co/Lightricks/LTX-Video-ICLoRA-pose-13b-0.9.7/resolve/main/ltxv-097-ic-lora-pose-control-comfyui.safetensors
+  size: 151MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/control_conditioning/model_LTX-Video_ICLoRA_Pose_13B_v0.9.7_51eb2a59/model.yaml
+validation_errors: []

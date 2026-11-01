@@ -1,0 +1,26 @@
+{
+  "46": {
+    "inputs": {
+      "images": [
+        "60",
+        0
+      ],
+      "filename_prefix": "Anima"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.11.1"
+    }
+  },
+  "60": {
+    "inputs": {},
+    "class_type": "a3c0dab6-b250-4585-a0f9-8fb8b074fb2f",
+    "_meta": {
+      "title": "Text to Image (Anima)",
+      "cnr_id": "comfy-core",
+      "ver": "0.18.1"
+    }
+  }
+}

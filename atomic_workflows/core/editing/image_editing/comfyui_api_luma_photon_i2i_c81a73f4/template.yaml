@@ -1,0 +1,77 @@
+id: remote:template:api_luma_photon_i2i
+kind: comfyui_template
+title: 'Luma Photon: Image to Image'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma Photon: Image to Image'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Guide image generation using a combination of images and prompt.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_photon_i2i.json
+  sha256: cf004eb5674d5b0fd0bf0393697aa65dfd3a6a3ba783ad9be37035eb85c9bf6c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_photon_i2i
+  title: 'Luma Photon: Image to Image'
+  description: Guide image generation using a combination of images and prompt.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - API
+  - Image Edit
+  models:
+  - Luma
+  date: '2025-03-01'
+  openSource: false
+  size: 0
+  usage: 14
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: api_luma_photon_i2i_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.32
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_photon_i2i.json
+  sha256: cf004eb5674d5b0fd0bf0393697aa65dfd3a6a3ba783ad9be37035eb85c9bf6c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_luma_photon_i2i_c81a73f4/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

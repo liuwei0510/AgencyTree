@@ -1,0 +1,21 @@
+{
+  "tasks": [
+    {
+      "task_id": "edit",
+      "goal": "You are given an image `dish_table.png` of a table filled with dishes. Remove the fork on the table. The result should be a high-quality image without visible artifacts.",
+      "capability_id": "core.editing.image_editing",
+      "inputs": {
+        "source_image": "dish_table.png"
+      },
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": []
+    }
+  ],
+  "edges": [],
+  "diagnostics": [],
+  "assumptions": []
+}

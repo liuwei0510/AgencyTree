@@ -1,0 +1,26 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "194",
+        0
+      ],
+      "filename_prefix": "ComfyUI"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.40"
+    }
+  },
+  "194": {
+    "inputs": {},
+    "class_type": "2523c08d-4c99-4b73-910c-62c873f124db",
+    "_meta": {
+      "title": "2523c08d-4c99-4b73-910c-62c873f124db",
+      "cnr_id": "comfy-core",
+      "ver": "0.18.1"
+    }
+  }
+}

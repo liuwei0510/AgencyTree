@@ -1,0 +1,45 @@
+id: remote:model:8a5e3b563c0f48962a90
+kind: comfyui_model
+title: T2I-Adapter (canny)
+tree_branch:
+- aux
+- conditional
+- canny_conditioning
+six_tuple:
+  name: T2I-Adapter (canny)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/canny_conditioning
+  parameters:
+  - name: filename
+    value: t2iadapter_canny_sd14v1.pth
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: T2I-Adapter
+    save_path: controlnet/SD1.5
+    filename: t2iadapter_canny_sd14v1.pth
+    download_locator: https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_canny_sd14v1.pth
+code_usable: true
+status: available
+metadata:
+  name: T2I-Adapter (canny)
+  type: T2I-Adapter
+  base: SD1.5
+  save_path: controlnet/SD1.5
+  description: ControlNet T2I-Adapter for canny
+  reference: https://huggingface.co/TencentARC/T2I-Adapter
+  filename: t2iadapter_canny_sd14v1.pth
+  url: https://huggingface.co/TencentARC/T2I-Adapter/resolve/main/models/t2iadapter_canny_sd14v1.pth
+  size: 308.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/canny_conditioning/model_T2I-Adapter_canny_8a5e3b56/model.yaml
+validation_errors: []

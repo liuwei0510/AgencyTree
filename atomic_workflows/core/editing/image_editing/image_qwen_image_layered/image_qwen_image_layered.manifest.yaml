@@ -1,0 +1,43 @@
+id: core.editing.image_editing.image_qwen_image_layered
+title: image_qwen_image_layered
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_qwen_image_layered.json).
+tags:
+- image-editing
+- edit
+- inpaint
+workflow_file: image_qwen_image_layered.workflow.json
+inject:
+  prompt:
+    node_id: '83:6'
+    input_key: text
+  negative_prompt:
+    node_id: '83:7'
+    input_key: text
+  seed:
+    node_id: '83:3'
+    input_key: seed
+  source_image:
+    node_id: '74'
+    input_key: image
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

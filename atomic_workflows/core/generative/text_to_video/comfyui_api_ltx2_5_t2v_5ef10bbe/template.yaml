@@ -1,0 +1,71 @@
+id: remote:template:api_ltx2_5_t2v
+kind: comfyui_template
+title: 'LTX-2.5 (Pro): Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2.5 (Pro): Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate video from text with LTX 2.5, a video model built for fast,
+    high-quality production work. Type a prompt and get a cinematic clip with sharp
+    detail, accurate motion, and support for native multishot scenes that hold character
+    and style across cuts.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ltx2_5_t2v.json
+  sha256: 69a1500bebf645664e754e4052b44bc217c1c34230b5f499eac2534e7e1123c5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ltx2_5_t2v
+  title: 'LTX-2.5 (Pro): Text to Video'
+  description: Generate video from text with LTX 2.5, a video model built for fast,
+    high-quality production work. Type a prompt and get a cinematic clip with sharp
+    detail, accurate motion, and support for native multishot scenes that hold character
+    and style across cuts.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - LTX-2.5
+  date: '2026-08-11'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 2
+      nodeType: SaveVideo
+      file: api_ltx2_5_t2v.mp4
+      mediaType: video
+  logos:
+  - provider: Lightricks
+  minComfyUIVersion: 0.32.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ltx2_5_t2v.json
+  sha256: 69a1500bebf645664e754e4052b44bc217c1c34230b5f499eac2534e7e1123c5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_api_ltx2_5_t2v_5ef10bbe/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

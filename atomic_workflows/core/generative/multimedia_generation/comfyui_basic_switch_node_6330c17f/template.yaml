@@ -1,0 +1,56 @@
+id: remote:template:basic_switch_node
+kind: comfyui_template
+title: Switch Node
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Switch Node
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Guide on how Switch Nodes work, simple Text Switch and LoRA Switch
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/basic_switch_node.json
+  sha256: 7534b34ef98d86bbaec498c70b546d6f5523656c4633e969cebfe9b90aa90408
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: basic_switch_node
+  title: Switch Node
+  description: Guide on how Switch Nodes work, simple Text Switch and LoRA Switch
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Node Basics
+  models:
+  - Z-Image-Turbo
+  date: '2026-03-30'
+  openSource: true
+  size: 20723217203
+  usage: 2
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/basic_switch_node.json
+  sha256: 7534b34ef98d86bbaec498c70b546d6f5523656c4633e969cebfe9b90aa90408
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/data_conversion/comfyui_basic_switch_node_6330c17f/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

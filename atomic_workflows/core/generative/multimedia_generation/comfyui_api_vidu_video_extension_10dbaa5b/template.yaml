@@ -1,0 +1,66 @@
+id: remote:template:api_vidu_video_extension
+kind: comfyui_template
+title: 'Video Extend: Vidu Q2'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Extend: Vidu Q2'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video and use the Vidu Q2 model to extend it up to 7 seconds
+    and enhance the resolution to 1080p.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_video_extension.json
+  sha256: ecb4e8aab35d37f113c2861b71f2620d4f1441b66d03d1b9d461cd5640ae01c5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_video_extension
+  title: 'Video Extend: Vidu Q2'
+  description: Upload a video and use the Vidu Q2 model to extend it up to 7 seconds
+    and enhance the resolution to 1080p.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Video Extend
+  - API
+  models:
+  - Vidu Q2
+  - Vidu
+  date: '2026-02-01'
+  openSource: false
+  logos:
+  - provider: Vidu
+  usage: 21
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadVideo
+      file: lawyer.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.12.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_video_extension.json
+  sha256: ecb4e8aab35d37f113c2861b71f2620d4f1441b66d03d1b9d461cd5640ae01c5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_api_vidu_video_extension_10dbaa5b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

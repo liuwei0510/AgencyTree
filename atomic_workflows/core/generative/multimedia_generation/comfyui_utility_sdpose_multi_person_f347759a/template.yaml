@@ -1,0 +1,78 @@
+id: remote:template:utility_sdpose_multi_person
+kind: comfyui_template
+title: 'Pose Detection: SDPose Multi-Person'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Pose Detection: SDPose Multi-Person'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image to detect human poses. Supports detection for both single
+    individuals and multiple people within the same scene.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sdpose_multi_person.json
+  sha256: cb41ada3a04555d1412334ebe336ec5b0dbd6c180d1f938c6227c03c94657fea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_sdpose_multi_person
+  title: 'Pose Detection: SDPose Multi-Person'
+  description: Upload an image to detect human poses. Supports detection for both
+    single individuals and multiple people within the same scene.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Pose Map
+  models:
+  - SDPose-OOD
+  date: '2026-03-31'
+  openSource: true
+  size: 2040109466
+  usage: 15
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/utility_sdpose_multi_person.mp4
+  io:
+    inputs:
+    - nodeId: 679
+      nodeType: LoadImage
+      file: group_photo.png
+      mediaType: image
+  minComfyUIVersion: 0.19.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sdpose_multi_person.json
+  sha256: cb41ada3a04555d1412334ebe336ec5b0dbd6c180d1f938c6227c03c94657fea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/object_detection/comfyui_utility_sdpose_multi_person_f347759a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '679'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

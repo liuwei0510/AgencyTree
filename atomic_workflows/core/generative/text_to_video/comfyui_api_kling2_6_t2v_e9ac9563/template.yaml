@@ -1,0 +1,56 @@
+id: remote.template.api_kling2_6_t2v
+kind: comfyui_template
+title: 'Kling2.6: Storytelling Videos with Audio'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling2.6: Storytelling Videos with Audio'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Bring your stories to life with videos featuring synchronized dialogue,
+    music, sound effects, and ambient audio from text prompts.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling2_6_t2v.json
+  sha256: 2f5b7fd7da8156b0815c16103d1ec8e4bfe20225de9240930314a8b8809e48a2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling2_6_t2v
+  title: 'Kling2.6: Storytelling Videos with Audio'
+  description: Bring your stories to life with videos featuring synchronized dialogue,
+    music, sound effects, and ambient audio from text prompts.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Audio
+  - Text to Video
+  - Video
+  models:
+  - Kling
+  - Kling 2.6
+  date: '2025-12-22'
+  openSource: false
+  size: 0
+  usage: 27
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.5.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

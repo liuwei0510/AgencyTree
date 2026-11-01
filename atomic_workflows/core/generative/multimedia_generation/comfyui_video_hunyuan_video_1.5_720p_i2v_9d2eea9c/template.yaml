@@ -1,0 +1,104 @@
+id: remote:template:video_hunyuan_video_1.5_720p_i2v
+kind: comfyui_template
+title: Hunyuan Video 1.5 Image to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Hunyuan Video 1.5 Image to Video
+  input_types:
+    negative_prompt: string
+    prompt: string
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Animate still images into dynamic videos with precise motion and camera
+    control. Maintains visual consistency while bringing photos and illustrations
+    to life with smooth, natural movements.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: ''
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_hunyuan_video_1.5_720p_i2v.json
+  sha256: 05a63f5a242293114ba8c4af4b03934fa1e605bbca9672cf8508bfb06636d255
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_hunyuan_video_1.5_720p_i2v
+  title: Hunyuan Video 1.5 Image to Video
+  description: Animate still images into dynamic videos with precise motion and camera
+    control. Maintains visual consistency while bringing photos and illustrations
+    to life with smooth, natural movements.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  models:
+  - Hunyuan Video
+  date: '2025-11-21'
+  size: 45384919416
+  usage: 90
+  io:
+    inputs:
+    - nodeId: 80
+      nodeType: LoadImage
+      file: video_hunyuan_video_1.5_720p_i2v_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_hunyuan_video_1.5_720p_i2v.json
+  sha256: 05a63f5a242293114ba8c4af4b03934fa1e605bbca9672cf8508bfb06636d255
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_hunyuan_video_1.5_720p_i2v_9d2eea9c/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '93'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '44'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '80'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

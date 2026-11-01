@@ -1,0 +1,57 @@
+{
+  "5": {
+    "inputs": {
+      "images": [
+        "469",
+        0
+      ],
+      "filename_prefix": "ComfyUI-light_migration"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.8.2"
+    }
+  },
+  "6": {
+    "inputs": {
+      "image": "input_2-relight.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Lighting Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image": "input_1-relight.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Subject Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "469": {
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "image2": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "d878efb6-f575-4da6-bf2d-d9f32b55643c",
+    "_meta": {
+      "title": "Image Edit (Qwen 2509 with LoRA)",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.62"
+    }
+  }
+}

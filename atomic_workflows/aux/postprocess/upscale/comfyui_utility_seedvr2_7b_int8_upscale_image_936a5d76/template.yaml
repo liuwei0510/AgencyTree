@@ -1,0 +1,83 @@
+id: remote.template.utility_seedvr2_7b_int8_upscale_image
+kind: comfyui_template
+title: 'Image Upscale: SeedVR2 7B Int8'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: SeedVR2 7B Int8'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upscale images using SeedVR2 7B Int8, a one-step diffusion model that
+    enhances resolution through adversarial training and adaptive window attention.
+    Input 1 image and receive 1 upscaled output with improved detail and clarity.
+    Ideal for restoring low-resolution photos, preparing assets for print, or sharpening
+    lightly degraded digital images.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_seedvr2_7b_int8_upscale_image.json
+  sha256: 2b04204b9134ef3a82d4917b3f3f4f04a1771a75f223c3e71c5963a7b5a0d4b0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_seedvr2_7b_int8_upscale_image
+  title: 'Image Upscale: SeedVR2 7B Int8'
+  description: Upscale images using SeedVR2 7B Int8, a one-step diffusion model that
+    enhances resolution through adversarial training and adaptive window attention.
+    Input 1 image and receive 1 upscaled output with improved detail and clarity.
+    Ideal for restoring low-resolution photos, preparing assets for print, or sharpening
+    lightly degraded digital images.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  - Int8
+  models:
+  - SeedVR2
+  date: '2026-07-13'
+  openSource: true
+  size: 8804682957
+  usage: 555
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: indoor_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: utility_seedvr2_7b_int8_upscale_image.png
+      mediaType: image
+  thumbnail:
+  - input/indoor_portrait.png
+  - output/utility_seedvr2_7b_int8_upscale_image.png
+  minComfyUIVersion: 0.28.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

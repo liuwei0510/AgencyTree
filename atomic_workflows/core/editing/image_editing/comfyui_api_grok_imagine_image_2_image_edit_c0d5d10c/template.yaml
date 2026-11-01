@@ -1,0 +1,96 @@
+id: remote.template.api_grok_imagine_image_2_image_edit
+kind: comfyui_template
+title: 'Grok Imagine Image 2.0: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok Imagine Image 2.0: Image Edit'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Grok Imagine Image 2.0 performs precise image editing and text rendering
+    using xAI's Aurora engine, letting you modify specific elements, swap backgrounds,
+    or restyle scenes through natural language with crisp short-text output. It takes
+    up to 3 reference images and generates at 1K or 2K resolution across 14 aspect
+    ratios, with strong character consistency across scenes. Ideal for poster and
+    cover design, product and brand visuals, or multi-scene character workflows.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_imagine_image_2_image_edit.json
+  sha256: 831442029e41969fdf4e0223bd9523f1c900b6c993a5100bcf522a822d3b1e33
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_imagine_image_2_image_edit
+  title: 'Grok Imagine Image 2.0: Image Edit'
+  description: Grok Imagine Image 2.0 performs precise image editing and text rendering
+    using xAI's Aurora engine, letting you modify specific elements, swap backgrounds,
+    or restyle scenes through natural language with crisp short-text output. It takes
+    up to 3 reference images and generates at 1K or 2K resolution across 14 aspect
+    ratios, with strong character consistency across scenes. Ideal for poster and
+    cover design, product and brand visuals, or multi-scene character workflows.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Grok Imagine Image 2.0
+  logos:
+  - provider: Grok
+  date: '2026-08-13'
+  openSource: false
+  size: 0
+  usage: 814
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: model_blue_outfit.png
+      mediaType: image
+    - nodeId: 13
+      nodeType: LoadImage
+      file: pink_lipstick.png
+      mediaType: image
+    outputs:
+    - nodeId: 12
+      nodeType: SaveImage
+      file: api_grok_imagine_image_2_image_edit.png
+      mediaType: image
+  minComfyUIVersion: 0.32.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '13'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

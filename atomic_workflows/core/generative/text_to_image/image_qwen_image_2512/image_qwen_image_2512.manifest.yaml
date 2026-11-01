@@ -1,0 +1,49 @@
+id: core.generative.text_to_image.image_qwen_image_2512
+title: image_qwen_Image_2512
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_qwen_Image_2512.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: image_qwen_image_2512.workflow.json
+inject:
+  prompt:
+    node_id: '86:7'
+    input_key: text
+  negative_prompt:
+    node_id: 86:81
+    input_key: text
+  seed:
+    node_id: '86:3'
+    input_key: seed
+  width:
+    node_id: '86:58'
+    input_key: width
+  height:
+    node_id: '86:58'
+    input_key: height
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: seed
+  type: int
+  required: false
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

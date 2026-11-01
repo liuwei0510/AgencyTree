@@ -1,0 +1,133 @@
+id: remote:template:basic_mask_operations_and_compositing
+kind: comfyui_template
+title: Mask Operations, Combining & Compositing
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Mask Operations, Combining & Compositing
+  input_types:
+    width: number
+    height: number
+    source_image: image_filenames
+    width_2: number
+    height_2: number
+  output_types:
+    images: image_filenames
+  capability: Interactive walkthrough of core image and mask nodes — create and refine
+    masks, combine overlapping masks with different operations, and composite images
+    using feathered masks. No models required.
+  parameters:
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: width_2
+    type: number
+    required: false
+    default: 1024
+  - name: height_2
+    type: number
+    required: false
+    default: 1024
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/basic_mask_operations_and_compositing.json
+  sha256: 42d79fdbcf545bc5752fc0b150e26a7c6ed1c633a4c9278f8d5308ebb629fe1e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: basic_mask_operations_and_compositing
+  title: Mask Operations, Combining & Compositing
+  description: Interactive walkthrough of core image and mask nodes — create and refine
+    masks, combine overlapping masks with different operations, and composite images
+    using feathered masks. No models required.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Node Basics
+  models:
+  - None
+  date: '2026-03-24'
+  openSource: true
+  size: 0
+  usage: 26
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 374
+      nodeType: LoadImage
+      file: example.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/basic_mask_operations_and_compositing.png
+  minComfyUIVersion: 0.3.30
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/basic_mask_operations_and_compositing.json
+  sha256: 42d79fdbcf545bc5752fc0b150e26a7c6ed1c633a4c9278f8d5308ebb629fe1e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_basic_mask_operations_and_compositing_06fdceaa/template.yaml
+validation_errors: []
+inputs:
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: width_2
+  type: number
+  required: false
+  default: 1024
+- name: height_2
+  type: number
+  required: false
+  default: 1024
+inject:
+  width:
+    node_id: '1'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '1'
+    input_key: height
+    widget_index: 1
+  source_image:
+    node_id: '374'
+    input_key: image
+    widget_index: 0
+  width_2:
+    node_id: '360'
+    input_key: width
+    widget_index: 0
+  height_2:
+    node_id: '360'
+    input_key: height
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

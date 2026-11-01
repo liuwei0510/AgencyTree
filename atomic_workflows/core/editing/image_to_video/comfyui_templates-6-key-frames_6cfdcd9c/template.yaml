@@ -1,0 +1,165 @@
+id: remote:template:templates-6-key-frames
+kind: comfyui_template
+title: Multi-Keyframe Video Stitching
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Multi-Keyframe Video Stitching
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+    source_image_3: image_filenames
+    source_image_4: image_filenames
+    source_image_5: image_filenames
+    source_image_6: image_filenames
+  output_types:
+    video: video_path
+  capability: Creates a smooth video using 6 key frames.It auto fills in the motion
+    between frames and stitches the segments together seamlessly.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_3
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_4
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_5
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_6
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-6-key-frames.json
+  sha256: 6eb0aa0a5b1748db27e166c723055685799d858ce1bc008ec85962c6240ec376
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-6-key-frames
+  title: Multi-Keyframe Video Stitching
+  mediaType: image
+  mediaSubtype: webp
+  description: Creates a smooth video using 6 key frames.It auto fills in the motion
+    between frames and stitches the segments together seamlessly.
+  tags:
+  - FLF2V
+  - Image to Video
+  models:
+  - Wan2.2
+  date: '2025-12-03'
+  searchRank: 8
+  size: 0
+  usage: 57
+  io:
+    inputs:
+    - nodeId: 62
+      nodeType: LoadImage
+      file: 6-key-frames-1.jpg
+      mediaType: image
+    - nodeId: 122
+      nodeType: LoadImage
+      file: 6-key-frames-2.png
+      mediaType: image
+    - nodeId: 124
+      nodeType: LoadImage
+      file: 6-key-frames-3.png
+      mediaType: image
+    - nodeId: 126
+      nodeType: LoadImage
+      file: 6-key-frames-4.png
+      mediaType: image
+    - nodeId: 128
+      nodeType: LoadImage
+      file: 6-key-frames-5.png
+      mediaType: image
+    - nodeId: 130
+      nodeType: LoadImage
+      file: 6-key-frames-6.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/templates-6-key-frames.mp4
+  openSource: true
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-6-key-frames.json
+  sha256: 6eb0aa0a5b1748db27e166c723055685799d858ce1bc008ec85962c6240ec376
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_templates-6-key-frames_6cfdcd9c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_3
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_4
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_5
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_6
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '62'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '122'
+    input_key: image
+    widget_index: 0
+  source_image_3:
+    node_id: '124'
+    input_key: image
+    widget_index: 0
+  source_image_4:
+    node_id: '126'
+    input_key: image
+    widget_index: 0
+  source_image_5:
+    node_id: '130'
+    input_key: image
+    widget_index: 0
+  source_image_6:
+    node_id: '128'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

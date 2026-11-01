@@ -1,0 +1,56 @@
+id: remote.template.api_heygen_text_to_speech
+kind: comfyui_template
+title: 'HeyGen: Text to Speech'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HeyGen: Text to Speech'
+  input_types: []
+  output_types: []
+  capability: Generate natural-sounding speech from text using HeyGen's advanced TTS
+    engine, supporting a wide range of languages and accents with customizable voices.
+    Input your text and select from numerous preset voices or clone a custom voice
+    from a short audio sample. Ideal for creating voiceovers for videos, generating
+    multilingual narration, and producing personalized audio content.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_text_to_speech.json
+  sha256: f265fff9e0053e3be0664a6efac7c3f82255f18f294c370e758e35cf634cdf46
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_heygen_text_to_speech
+  title: 'HeyGen: Text to Speech'
+  description: Generate natural-sounding speech from text using HeyGen's advanced
+    TTS engine, supporting a wide range of languages and accents with customizable
+    voices. Input your text and select from numerous preset voices or clone a custom
+    voice from a short audio sample. Ideal for creating voiceovers for videos, generating
+    multilingual narration, and producing personalized audio content.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Speech
+  models:
+  - HeyGen
+  logos:
+  - provider: HeyGen
+  date: '2026-07-21'
+  openSource: false
+  size: 0
+  usage: 33
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/api_heygen_text_to_speech.png
+  minComfyUIVersion: 0.28.1

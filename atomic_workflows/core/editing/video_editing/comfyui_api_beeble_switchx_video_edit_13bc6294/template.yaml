@@ -1,0 +1,89 @@
+id: remote:template:api_beeble_switchx_video_edit
+kind: comfyui_template
+title: 'Video Edit: Beeble SwitchX'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Edit: Beeble SwitchX'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload a source video and a reference image, then provide a prompt describing
+    the desired environment and lighting. Generate an edited video where masked regions
+    follow your prompt and reference, while unmasked regions preserve the original
+    pixels and motion, plus an alpha matte for compositing.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_beeble_switchx_video_edit.json
+  sha256: 66bb0aec08f9e74e7bd87397b0e169eb75fe19d25ba2169dd134b781c54af878
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_beeble_switchx_video_edit
+  title: 'Video Edit: Beeble SwitchX'
+  description: Upload a source video and a reference image, then provide a prompt
+    describing the desired environment and lighting. Generate an edited video where
+    masked regions follow your prompt and reference, while unmasked regions preserve
+    the original pixels and motion, plus an alpha matte for compositing.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - SwitchX
+  logos:
+  - provider: Beeble
+  date: '2026-05-29'
+  openSource: false
+  size: 0
+  usage: 82
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+    - nodeId: 21
+      nodeType: LoadVideo
+      file: woman_in_wheat_field.mp4
+      mediaType: video
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_beeble_switchx_video_edit.json
+  sha256: 66bb0aec08f9e74e7bd87397b0e169eb75fe19d25ba2169dd134b781c54af878
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_api_beeble_switchx_video_edit_13bc6294/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

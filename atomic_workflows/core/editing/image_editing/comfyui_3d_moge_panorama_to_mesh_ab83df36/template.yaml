@@ -1,0 +1,78 @@
+id: remote:template:3d_moge_panorama_to_mesh
+kind: comfyui_template
+title: 'MoGe: Panorama to Mesh'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MoGe: Panorama to Mesh'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    mesh: mesh_path
+  capability: Upload an equirectangular 360° panorama image and generate a textured
+    GLB mesh with vertex colors.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_moge_panorama_to_mesh.json
+  sha256: 2bfb9ba8cda75cb1fccb095bcf5f90a6a9fb5e5dfb417eb3f5c63aebada3af03
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: 3d_moge_panorama_to_mesh
+  title: 'MoGe: Panorama to Mesh'
+  description: Upload an equirectangular 360° panorama image and generate a textured
+    GLB mesh with vertex colors.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - Image to 3D
+  models:
+  - MoGe
+  date: '2026-05-19'
+  openSource: true
+  size: 644245094
+  usage: 22
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 28
+      nodeType: LoadImage
+      file: lego_street_panorama.png
+      mediaType: image
+  minComfyUIVersion: 0.22.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_moge_panorama_to_mesh.json
+  sha256: 2bfb9ba8cda75cb1fccb095bcf5f90a6a9fb5e5dfb417eb3f5c63aebada3af03
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_3d_moge_panorama_to_mesh_ab83df36/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '28'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

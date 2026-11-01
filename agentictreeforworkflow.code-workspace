@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "agentictreeforworkflow",
+			"path": "."
+		},
+		{
+			"name": "model_apis",
+			"path": "../AIGC模型调用集/model_apis"
+		}
+	],
+	"settings": {}
+}

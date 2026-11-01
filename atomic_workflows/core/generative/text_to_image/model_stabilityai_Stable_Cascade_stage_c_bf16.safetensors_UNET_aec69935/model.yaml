@@ -1,0 +1,45 @@
+id: remote:model:aec69935d69ee84e4194
+kind: comfyui_model
+title: 'stabilityai/Stable Cascade: stage_c_bf16.safetensors (UNET)'
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: 'stabilityai/Stable Cascade: stage_c_bf16.safetensors (UNET)'
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: stage_c_bf16.safetensors
+  - name: base
+    value: Stable Cascade
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/Stable-Cascade
+    filename: stage_c_bf16.safetensors
+    download_locator: https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_c_bf16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: 'stabilityai/Stable Cascade: stage_c_bf16.safetensors (UNET)'
+  type: diffusion_model
+  base: Stable Cascade
+  save_path: diffusion_models/Stable-Cascade
+  description: 'Stable Cascade: stage_c/bf16'
+  reference: https://huggingface.co/stabilityai/stable-cascade
+  filename: stage_c_bf16.safetensors
+  url: https://huggingface.co/stabilityai/stable-cascade/resolve/main/stage_c_bf16.safetensors
+  size: 7.18GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_stabilityai_Stable_Cascade_stage_c_bf16.safetensors_UNET_aec69935/model.yaml
+validation_errors: []

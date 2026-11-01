@@ -1,0 +1,92 @@
+id: remote:template:templates_shane_single_image_to_3d_model
+kind: comfyui_template
+title: Single Image to 3D model
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Single Image to 3D model
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: 'Use one frontal image to generate a consistent and highly detailed
+    3D model. Model used: Multiangle QWEN Edit + Hunyuan 3D'
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_shane_single_image_to_3d_model.json
+  sha256: 7349c22da24025e592dd9b1bda0c3534246e2e435a2053ebd1da0b3aefffdb2e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_shane_single_image_to_3d_model
+  title: Single Image to 3D model
+  description: 'Use one frontal image to generate a consistent and highly detailed
+    3D model. Model used: Multiangle QWEN Edit + Hunyuan 3D'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - 3D
+  - Image to 3D
+  models:
+  - Hunyuan3D
+  - Qwen-Image-Edit
+  logos:
+  - provider:
+    - Hunyuan
+    - WAN
+    label: Hunyuan & Qwen
+  requiresCustomNodes:
+  - comfyui-qwenmultiangle
+  date: '2026-03-04'
+  openSource: false
+  size: 58841051955
+  usage: 15
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 119
+      nodeType: LoadImage
+      file: lucky_cat_sculpture_front.png
+      mediaType: image
+    outputs:
+    - nodeId: 118
+      nodeType: SaveImage
+      file: lucky_cat_sculpture_back.png
+      mediaType: image
+  username: shane
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_shane_single_image_to_3d_model.json
+  sha256: 7349c22da24025e592dd9b1bda0c3534246e2e435a2053ebd1da0b3aefffdb2e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/three_d/comfyui_templates_shane_single_image_to_3d_model_444bddaf/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '119'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

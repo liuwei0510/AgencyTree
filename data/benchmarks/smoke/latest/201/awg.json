@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "node_id": "n1",
+      "task_id": "song",
+      "capability_id": "core.generative.text_to_image",
+      "input_types": {
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+      },
+      "constraints": {}
+    },
+    {
+      "node_id": "n2",
+      "task_id": "space",
+      "capability_id": "core.generative.text_to_image",
+      "input_types": {
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+      },
+      "constraints": {}
+    },
+    {
+      "node_id": "n3",
+      "task_id": "upscale_song",
+      "capability_id": "aux.postprocess.upscale",
+      "input_types": {
+        "source_image": "image"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Enhance the Song Dynasty night market image to ultra-clear."
+      },
+      "constraints": {
+        "scale_factor": 2
+      }
+    },
+    {
+      "node_id": "n4",
+      "task_id": "mars",
+      "capability_id": "core.editing.image_editing",
+      "input_types": {
+        "source_image": "image",
+        "prompt": "text"
+      },
+      "output_types": {
+        "images": "image"
+      },
+      "parameters": {
+        "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+      },
+      "constraints": {}
+    },
+    {
+      "node_id": "n5",
+      "task_id": "animate",
+      "capability_id": "core.editing.image_to_video",
+      "input_types": {
+        "source_image": "image",
+        "prompt": "text"
+      },
+      "output_types": {
+        "video": "video"
+      },
+      "parameters": {
+        "prompt": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background."
+      },
+      "constraints": {
+        "duration": 2,
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "n1",
+      "output": "images",
+      "to_node": "n3",
+      "input": "source_image"
+    },
+    {
+      "from_node": "n2",
+      "output": "images",
+      "to_node": "n4",
+      "input": "source_image"
+    },
+    {
+      "from_node": "n4",
+      "output": "images",
+      "to_node": "n5",
+      "input": "source_image"
+    }
+  ],
+  "ordering": [
+    [
+      "n1",
+      "n3"
+    ],
+    [
+      "n2",
+      "n4"
+    ],
+    [
+      "n4",
+      "n5"
+    ]
+  ],
+  "constraints": {},
+  "unresolved": []
+}

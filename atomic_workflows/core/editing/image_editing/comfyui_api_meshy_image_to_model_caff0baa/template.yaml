@@ -1,0 +1,77 @@
+id: remote:template:api_meshy_image_to_model
+kind: comfyui_template
+title: 'Meshy 6: Image to Model'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Meshy 6: Image to Model'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    mesh: mesh_path
+  capability: Upload an image and generate a 3D model with Meshy 6. Create characters,
+    objects, or mechanical parts with production-quality geometry and clean topology.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy_image_to_model.json
+  sha256: 55739f1b4a3a7e027687b8c4093838ff7d1f81a7f54904b3b8f86f23557ad257
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meshy_image_to_model
+  title: 'Meshy 6: Image to Model'
+  description: Upload an image and generate a 3D model with Meshy 6. Create characters,
+    objects, or mechanical parts with production-quality geometry and clean topology.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - Image to 3D
+  - API
+  models:
+  - Meshy
+  date: '2026-01-19'
+  openSource: false
+  usage: 16
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadImage
+      file: robot-warrior.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.9.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy_image_to_model.json
+  sha256: 55739f1b4a3a7e027687b8c4093838ff7d1f81a7f54904b3b8f86f23557ad257
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_meshy_image_to_model_caff0baa/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

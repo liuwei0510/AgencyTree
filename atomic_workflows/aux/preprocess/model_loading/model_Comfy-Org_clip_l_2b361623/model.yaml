@@ -1,0 +1,46 @@
+id: remote:model:2b361623f3b4b617a039
+kind: comfyui_model
+title: Comfy-Org/clip_l
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: Comfy-Org/clip_l
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: clip_l.safetensors
+  - name: base
+    value: clip
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: default
+    filename: clip_l.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Comfy-Org/clip_l
+  type: clip
+  base: clip
+  save_path: default
+  description: 'clip_l model (for SD1.x, SD2.x, SDXL, SD3.5, FLUX.1, HunyuanVideo,
+    ...) '
+  reference: https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8
+  filename: clip_l.safetensors
+  url: https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8/resolve/main/text_encoders/clip_l.safetensors
+  size: 246MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/text_encoding/model_Comfy-Org_clip_l_2b361623/model.yaml
+validation_errors: []

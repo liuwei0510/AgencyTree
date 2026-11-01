@@ -1,0 +1,57 @@
+{
+  "5": {
+    "inputs": {
+      "images": [
+        "471",
+        0
+      ],
+      "filename_prefix": "ComfyUI-light_migration"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.8.2"
+    }
+  },
+  "6": {
+    "inputs": {
+      "image": "woman_with_sunbeam.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Lighting Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image": "women_with_blue_orb.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Subject Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "471": {
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ],
+      "image3": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "9e3c3756-d15f-4361-8e99-c35673036e68",
+    "_meta": {
+      "title": "9e3c3756-d15f-4361-8e99-c35673036e68",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.62"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+id: remote.template.sd3.5_simple_example
+kind: comfyui_template
+title: SD3.5 Simple
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SD3.5 Simple
+  input_types: []
+  output_types: []
+  capability: Generate images using SD 3.5.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sd3.5_simple_example.json
+  sha256: 89e1aa96d68487c111b38f313a33a66357ad4571d26c628e6b04ad67fc798dbc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: sd3.5_simple_example
+  title: SD3.5 Simple
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images using SD 3.5.
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/sd3/#sd35
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - SD3.5
+  - Stability
+  date: '2025-03-01'
+  size: 14935748772
+  usage: 118
+  username: ComfyUI
+  minComfyUIVersion: 0.3.5

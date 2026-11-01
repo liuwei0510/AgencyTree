@@ -1,0 +1,117 @@
+id: remote:template:templates_text_prompt_to_360hdr.app
+kind: comfyui_template
+title: Equirectangular HDR Skybox Generator
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Equirectangular HDR Skybox Generator
+  input_types:
+    negative_prompt: string
+    seed: number
+    width: number
+    height: number
+  output_types:
+    images: image_filenames
+  capability: Prompt an environment and generate a equirectangular hdr image to use
+    as skybox or lookdev in game development.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: ''
+  - name: seed
+    type: number
+    required: false
+    default: 364767852585212
+  - name: width
+    type: number
+    required: false
+    default: 2048
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_text_prompt_to_360hdr.app.json
+  sha256: 5704a3e16df182ce38f79fb8cefaaaa27f9b913d91dfdd429823cba35cad2d1d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_text_prompt_to_360hdr.app
+  title: Equirectangular HDR Skybox Generator
+  description: Prompt an environment and generate a equirectangular hdr image to use
+    as skybox or lookdev in game development.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Game
+  - LoRA
+  - 3D
+  models:
+  - Qwen-Image
+  - SeedVR2
+  requiresCustomNodes:
+  - comfyui_essentials
+  - seedvr2_videoupscaler
+  date: '2026-03-06'
+  openSource: true
+  size: 31782757990
+  usage: 24
+  searchRank: 0
+  username: shane
+  isApp: true
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_text_prompt_to_360hdr.app.json
+  sha256: 5704a3e16df182ce38f79fb8cefaaaa27f9b913d91dfdd429823cba35cad2d1d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_templates_text_prompt_to_360hdr.app_1287a679/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: number
+  required: false
+  default: 364767852585212
+- name: width
+  type: number
+  required: false
+  default: 2048
+- name: height
+  type: number
+  required: false
+  default: 1024
+inject:
+  negative_prompt:
+    node_id: '2'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '14'
+    input_key: seed
+    widget_index: 0
+  width:
+    node_id: '6'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '6'
+    input_key: height
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

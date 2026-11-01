@@ -1,0 +1,78 @@
+id: remote:template:utility_seedvr2_3b_int8_upscale_video
+kind: comfyui_template
+title: 'Video Upscale: SeedVR2 3B Int8'
+tree_branch:
+- aux
+- postprocess
+- video_upscaling
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: SeedVR2 3B Int8'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upscale and restore video footage using SeedVR2 3B Int8, a one-step
+    diffusion model that enhances resolution while maintaining temporal consistency
+    across frames. This workflow takes one degraded video as input and outputs a single
+    high-resolution, restored video. Ideal for restoring old or degraded footage,
+    upscaling low-resolution videos, and enhancing archival media.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_seedvr2_3b_int8_upscale_video.json
+  sha256: 02f56abb2d0d1736ed717194a48f8658213f0837c0b5ef516b8e8b8326d06ed5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_seedvr2_3b_int8_upscale_video
+  title: 'Video Upscale: SeedVR2 3B Int8'
+  description: Upscale and restore video footage using SeedVR2 3B Int8, a one-step
+    diffusion model that enhances resolution while maintaining temporal consistency
+    across frames. This workflow takes one degraded video as input and outputs a single
+    high-resolution, restored video. Ideal for restoring old or degraded footage,
+    upscaling low-resolution videos, and enhancing archival media.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Upscale
+  - Int8
+  models:
+  - SeedVR2
+  date: '2026-07-14'
+  openSource: true
+  size: 3972844749
+  usage: 507
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 73
+      nodeType: LoadVideo
+      file: grainy_perfume_shot_crf32.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 76
+      nodeType: SaveVideo
+      file: utility_seedvr2_3b_int8_upscale_video.mp4
+      mediaType: video
+  thumbnail:
+  - input/grainy_perfume_shot_crf32.mp4
+  - output/utility_seedvr2_3b_int8_upscale_video.mp4
+  minComfyUIVersion: 0.28.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_seedvr2_3b_int8_upscale_video.json
+  sha256: 02f56abb2d0d1736ed717194a48f8658213f0837c0b5ef516b8e8b8326d06ed5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

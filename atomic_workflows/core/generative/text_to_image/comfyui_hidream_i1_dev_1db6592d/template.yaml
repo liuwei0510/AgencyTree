@@ -1,0 +1,107 @@
+id: remote.template.hidream_i1_dev
+kind: comfyui_template
+title: HiDream I1 Dev
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: HiDream I1 Dev
+  input_types:
+    width: number
+    height: number
+    prompt: string
+    seed: number
+    negative_prompt: string
+  output_types:
+    images: image_filenames
+  capability: Generate images with HiDream I1 Dev - Balanced version with 28 inference
+    steps, suitable for medium-range hardware.
+  parameters: &id001
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: seed
+    type: number
+    required: false
+    default: 426270906276990
+  - name: negative_prompt
+    type: string
+    required: false
+    default: bad ugly jpeg artifacts
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/hidream_i1_dev.json
+  sha256: 1549acdee49b693c1fcfaffafea5d706688ce7581714fb12f14269638ec9d278
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: hidream_i1_dev
+  title: HiDream I1 Dev
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images with HiDream I1 Dev - Balanced version with 28 inference
+    steps, suitable for medium-range hardware.
+  tutorialUrl: https://docs.comfy.org/tutorials/image/hidream/hidream-i1
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - HiDream
+  date: '2025-04-17'
+  size: 33285996544
+  usage: 17
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: hidream_i1_dev.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/hidream_i1_dev.png
+  minComfyUIVersion: 0.3.29
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  width:
+    node_id: '53'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '53'
+    input_key: height
+    widget_index: 1
+  prompt:
+    node_id: '16'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+  negative_prompt:
+    node_id: '40'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

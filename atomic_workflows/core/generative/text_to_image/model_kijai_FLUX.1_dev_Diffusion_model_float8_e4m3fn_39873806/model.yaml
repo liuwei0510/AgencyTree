@@ -1,0 +1,45 @@
+id: remote:model:39873806c5dd22b9019e
+kind: comfyui_model
+title: kijai/FLUX.1 [dev] Diffusion model (float8_e4m3fn)
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: kijai/FLUX.1 [dev] Diffusion model (float8_e4m3fn)
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: flux1-dev-fp8.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/FLUX1
+    filename: flux1-dev-fp8.safetensors
+    download_locator: https://huggingface.co/Kijai/flux-fp8/resolve/main/flux1-dev-fp8.safetensors
+code_usable: true
+status: available
+metadata:
+  name: kijai/FLUX.1 [dev] Diffusion model (float8_e4m3fn)
+  type: diffusion_model
+  base: FLUX.1
+  save_path: diffusion_models/FLUX1
+  description: FLUX.1 [dev] Diffusion model (float8_e4m3fn)
+  reference: https://huggingface.co/Kijai/flux-fp8
+  filename: flux1-dev-fp8.safetensors
+  url: https://huggingface.co/Kijai/flux-fp8/resolve/main/flux1-dev-fp8.safetensors
+  size: 11.9GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_kijai_FLUX.1_dev_Diffusion_model_float8_e4m3fn_39873806/model.yaml
+validation_errors: []

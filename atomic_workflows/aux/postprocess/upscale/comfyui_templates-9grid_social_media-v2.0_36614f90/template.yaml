@@ -1,0 +1,87 @@
+id: remote:template:templates-9grid_social_media-v2.0
+kind: comfyui_template
+title: 3x3 Grid For Product Ads
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 3x3 Grid For Product Ads
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your product and enter a brief prompt for each grid position
+    in a 3x3 grid. Generates 9 distinct images. Select the images you like and upscale
+    to 4k using your product as reference.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-9grid_social_media-v2.0.json
+  sha256: 838b1c3f2b2b734c62ae13b2ff7268664a213eb7d0220776f522f3f2b10faca0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-9grid_social_media-v2.0
+  title: 3x3 Grid For Product Ads
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload your product and enter a brief prompt for each grid position
+    in a 3x3 grid. Generates 9 distinct images. Select the images you like and upscale
+    to 4k using your product as reference.
+  tags:
+  - API
+  - Image Edit
+  - Image
+  models:
+  - Nano Banana Pro
+  - Google
+  date: '2025-12-06'
+  openSource: false
+  searchRank: 8
+  size: 0
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 26
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: template-3x3_Grid_For_Product_Ads Assets.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-9grid_social_media-v2_0.png
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-9grid_social_media-v2.0.json
+  sha256: 838b1c3f2b2b734c62ae13b2ff7268664a213eb7d0220776f522f3f2b10faca0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/comfyui_templates-9grid_social_media-v2.0_36614f90/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

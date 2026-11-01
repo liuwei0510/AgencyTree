@@ -1,0 +1,72 @@
+id: remote:template:api_fishaudio_text_to_speech
+kind: comfyui_template
+title: 'Fish Audio: Text to Speech'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Fish Audio: Text to Speech'
+  input_types: {}
+  output_types: {}
+  capability: Generate natural, expressive speech from text with Fish Audio S2 Pro,
+    a text-to-speech model supporting 80+ languages and fine-grained control over
+    emotion, tone, and pacing using inline tags like [whisper] or [excited]. Input
+    your text and receive one high-quality audio output, with optional style tags
+    woven directly into the script. Ideal for voiceover production, multilingual content
+    creation, and character dialogue in games or animations.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_text_to_speech.json
+  sha256: 21e63a0e39e215e497ffc2372f5ed83ab12e5c09a1c00f71a04959112d1621f6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_fishaudio_text_to_speech
+  title: 'Fish Audio: Text to Speech'
+  description: Generate natural, expressive speech from text with Fish Audio S2 Pro,
+    a text-to-speech model supporting 80+ languages and fine-grained control over
+    emotion, tone, and pacing using inline tags like [whisper] or [excited]. Input
+    your text and receive one high-quality audio output, with optional style tags
+    woven directly into the script. Ideal for voiceover production, multilingual content
+    creation, and character dialogue in games or animations.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - TTS
+  models:
+  - Fish Audio
+  logos:
+  - provider: Fish Audio
+  date: '2026-08-31'
+  openSource: false
+  size: 0
+  usage: 106
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadAudio
+      file: fish_audio_example.mp3
+      mediaType: audio
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_text_to_speech.json
+  sha256: 21e63a0e39e215e497ffc2372f5ed83ab12e5c09a1c00f71a04959112d1621f6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_api_fishaudio_text_to_speech_dae756f9/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

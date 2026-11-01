@@ -1,0 +1,77 @@
+id: remote.template.api_seedance2_5_video_editing
+kind: comfyui_template
+title: 'Seedance2.5: Video Editing'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance2.5: Video Editing'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Edit existing video clips with Seedance 2.5 by describing changes in
+    natural language, enabling local object removal, background swaps, scene replacements,
+    and style transfers while preserving the original composition and motion. Feed
+    in 1 video and receive 1 edited video output with temporally consistent results
+    across frames. Ideal for e-commerce background replacement, stylized remakes of
+    footage, and ad re-editing with targeted retouching.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_video_editing.json
+  sha256: 86f4ea10cc3cb9ddcb21f0c630bec6e084020f1e31e5eed18e00218bcc3ae7ea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_5_video_editing
+  title: 'Seedance2.5: Video Editing'
+  description: Edit existing video clips with Seedance 2.5 by describing changes in
+    natural language, enabling local object removal, background swaps, scene replacements,
+    and style transfers while preserving the original composition and motion. Feed
+    in 1 video and receive 1 edited video output with temporally consistent results
+    across frames. Ideal for e-commerce background replacement, stylized remakes of
+    footage, and ad re-editing with targeted retouching.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - Seedance 2.5
+  logos:
+  - provider: ByteDance
+  date: '2026-08-07'
+  openSource: false
+  size: 0
+  usage: 603
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 35
+      nodeType: LoadVideo
+      file: kitten_cop.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 16
+      nodeType: SaveVideo
+      file: api_seedance2_5_video_editing.json
+      mediaType: video
+  thumbnail:
+  - input/kitten_cop.mp4
+  minComfyUIVersion: 0.33.2
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

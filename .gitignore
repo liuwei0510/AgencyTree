@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.pytest_cache/
+
+# Runtime caches; retain ACT snapshots, the physical tree, and benchmark evidence.
+data/materialized/
+data/workflows/
+data/benchmarks/smoke/**/materialized/

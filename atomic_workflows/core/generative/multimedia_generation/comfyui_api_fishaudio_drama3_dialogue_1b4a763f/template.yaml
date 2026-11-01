@@ -1,0 +1,67 @@
+id: remote:template:api_fishaudio_drama3_dialogue
+kind: comfyui_template
+title: 'Fish Audio Drama 3: Two-Speaker Dialogue'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Fish Audio Drama 3: Two-Speaker Dialogue'
+  input_types: {}
+  output_types: {}
+  capability: 'Generate a multi-speaker scene in one pass with Fish Audio Drama 3:
+    connect one Voice Selector per speaker, mark speaker changes with @Voice1 / @Voice2,
+    and direct the delivery with plain-language [directions] and <whisper> word tags.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_drama3_dialogue.json
+  sha256: 81f34466b38dd9b887f0d354ccd5479749997ea2c05f0f9ce0e30113698e6933
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_fishaudio_drama3_dialogue
+  title: 'Fish Audio Drama 3: Two-Speaker Dialogue'
+  description: 'Generate a multi-speaker scene in one pass with Fish Audio Drama 3:
+    connect one Voice Selector per speaker, mark speaker changes with @Voice1 / @Voice2,
+    and direct the delivery with plain-language [directions] and <whisper> word tags.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - TTS
+  models:
+  - Fish Audio
+  logos:
+  - provider: Fish Audio
+  date: '2026-10-13'
+  openSource: false
+  size: 0
+  usage: 35
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadAudio
+      file: fish_audio_example.mp3
+      mediaType: audio
+  minComfyUIVersion: 0.39.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_drama3_dialogue.json
+  sha256: 81f34466b38dd9b887f0d354ccd5479749997ea2c05f0f9ce0e30113698e6933
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_api_fishaudio_drama3_dialogue_1b4a763f/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

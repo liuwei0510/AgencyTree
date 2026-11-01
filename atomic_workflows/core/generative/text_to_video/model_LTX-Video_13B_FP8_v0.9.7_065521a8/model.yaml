@@ -1,0 +1,45 @@
+id: remote:model:065521a870848653605b
+kind: comfyui_model
+title: LTX-Video 13B FP8 v0.9.7
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: LTX-Video 13B FP8 v0.9.7
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: ltxv-13b-0.9.7-dev-fp8.safetensors
+  - name: base
+    value: LTX-Video
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/LTXV
+    filename: ltxv-13b-0.9.7-dev-fp8.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltxv-13b-0.9.7-dev-fp8.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-Video 13B FP8 v0.9.7
+  type: checkpoint
+  base: LTX-Video
+  save_path: checkpoints/LTXV
+  description: Quantized version of the LTX-Video 13B model, optimized for lower VRAM
+    usage while maintaining high quality.
+  reference: https://huggingface.co/Lightricks/LTX-Video
+  filename: ltxv-13b-0.9.7-dev-fp8.safetensors
+  url: https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltxv-13b-0.9.7-dev-fp8.safetensors
+  size: 15.7GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

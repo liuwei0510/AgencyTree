@@ -1,0 +1,66 @@
+id: remote.template.api_tripo3_1_multiview_to_model
+kind: comfyui_template
+title: 'Tripo H3.1: Multiview to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo H3.1: Multiview to Model'
+  input_types:
+  - image
+  - image
+  - image
+  output_types: []
+  capability: Upload multiview images of your object. Generate a high-detail 3D model
+    with dense geometry and PBR-ready materials.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo3_1_multiview_to_model.json
+  sha256: 538e74a354a5baa8a41258512a0314c4c18c3cd190ceb93c7d65782a04a8972b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo3_1_multiview_to_model
+  title: 'Tripo H3.1: Multiview to Model'
+  description: Upload multiview images of your object. Generate a high-detail 3D model
+    with dense geometry and PBR-ready materials.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - 3D
+  - Image to 3D
+  models:
+  - Tripo
+  logos:
+  - provider: Tripo
+  date: '2026-05-09'
+  openSource: false
+  size: 0
+  usage: 40
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 44
+      nodeType: LoadImage
+      file: castle_front_view.png
+      mediaType: image
+    - nodeId: 45
+      nodeType: LoadImage
+      file: castle_side_view.png
+      mediaType: image
+    - nodeId: 46
+      nodeType: LoadImage
+      file: castle_back_view.png
+      mediaType: image
+  minComfyUIVersion: 0.34.0

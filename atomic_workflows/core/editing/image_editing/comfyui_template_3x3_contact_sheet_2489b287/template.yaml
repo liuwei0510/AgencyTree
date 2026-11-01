@@ -1,0 +1,108 @@
+id: remote:template:template_3x3_contact_sheet
+kind: comfyui_template
+title: 3x3 Contact Sheet
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 3x3 Contact Sheet
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: "Generate a 3x3 grid of image variations from a simple prompt and reference\
+    \ image using Nano Banana. \n\nPick your favorite frame from the grid, then recreate\
+    \ it as a standalone high-quality image while maintaining character and outfit\
+    \ consistency.\n\nGreat for concept exploration, pose variations, camera angles,\
+    \ outfit ideas, and fast visual inspiration without generating each image individually."
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_3x3_contact_sheet.json
+  sha256: 4229ddf5de7a8b4c1a3956cfd9a4e8006155bb5708fb842b2cf5b68ddf1bac14
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_3x3_contact_sheet
+  title: 3x3 Contact Sheet
+  description: "Generate a 3x3 grid of image variations from a simple prompt and reference\
+    \ image using Nano Banana. \n\nPick your favorite frame from the grid, then recreate\
+    \ it as a standalone high-quality image while maintaining character and outfit\
+    \ consistency.\n\nGreat for concept exploration, pose variations, camera angles,\
+    \ outfit ideas, and fast visual inspiration without generating each image individually."
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Image Edit
+  models:
+  - Nano Banana 2
+  date: '2026-05-21'
+  openSource: false
+  includeOnDistributions:
+  - cloud
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: enigmatic_e
+  io:
+    inputs:
+    - nodeId: 86
+      nodeType: LoadImage
+      file: man_3x3_contact_sheet.png
+      mediaType: image
+    - nodeId: 88
+      nodeType: LoadImage
+      file: input_3x3_contact_sheet.png
+      mediaType: image
+    - nodeId: 89
+      nodeType: LoadImage
+      file: suit_3x3_contact_sheet.png
+      mediaType: image
+  minComfyUIVersion: 0.20.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_3x3_contact_sheet.json
+  sha256: 4229ddf5de7a8b4c1a3956cfd9a4e8006155bb5708fb842b2cf5b68ddf1bac14
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_template_3x3_contact_sheet_2489b287/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '86'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '89'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

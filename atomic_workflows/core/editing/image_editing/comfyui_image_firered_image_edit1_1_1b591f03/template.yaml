@@ -1,0 +1,88 @@
+id: remote:template:image_firered_image_edit1_1
+kind: comfyui_template
+title: 'FireRed Image Edit 1.1: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FireRed Image Edit 1.1: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and a text prompt to edit it. Generate a modified image
+    with enhanced identity consistency, multi-element fusion, or professional photo
+    restoration.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_firered_image_edit1_1.json
+  sha256: 8a28dbb1ce8a9aab0592df362126df5f52a73c2d5959ed4387918f566789353b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_firered_image_edit1_1
+  title: 'FireRed Image Edit 1.1: Image Edit'
+  description: Upload an image and a text prompt to edit it. Generate a modified image
+    with enhanced identity consistency, multi-element fusion, or professional photo
+    restoration.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  models:
+  - FireRed Image Edit 1.1
+  date: '2026-03-06'
+  openSource: true
+  size: 51324859187
+  usage: 900
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 143
+      nodeType: LoadImage
+      file: future_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_firered_image_edit1_1.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/future_portrait.png
+  - output/image_firered_image_edit1_1.png
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_firered_image_edit1_1.json
+  sha256: 8a28dbb1ce8a9aab0592df362126df5f52a73c2d5959ed4387918f566789353b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_image_firered_image_edit1_1_1b591f03/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '143'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

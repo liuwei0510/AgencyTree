@@ -1,0 +1,49 @@
+id: core.generative.text_to_image.image_z_image
+title: image_z_image
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_z_image.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: image_z_image.workflow.json
+inject:
+  prompt:
+    node_id: '67'
+    input_key: text
+  negative_prompt:
+    node_id: '71'
+    input_key: text
+  seed:
+    node_id: '69'
+    input_key: seed
+  width:
+    node_id: '68'
+    input_key: width
+  height:
+    node_id: '68'
+    input_key: height
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: seed
+  type: int
+  required: false
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

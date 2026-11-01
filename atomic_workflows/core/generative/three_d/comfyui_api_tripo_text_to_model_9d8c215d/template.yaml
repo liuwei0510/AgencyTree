@@ -1,0 +1,58 @@
+id: remote:template:api_tripo_text_to_model
+kind: comfyui_template
+title: 'Tripo: Text to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo: Text to Model'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Craft 3D objects from descriptions with Tripo's text-driven modeling.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_text_to_model.json
+  sha256: e281d747390362ef73766605a857a366e3274d2c2af3925d5b5cb601e9b95c9f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_text_to_model
+  title: 'Tripo: Text to Model'
+  description: Craft 3D objects from descriptions with Tripo's text-driven modeling.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to 3D
+  - 3D
+  - API
+  models:
+  - Tripo
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 8
+  username: ComfyUI
+  minComfyUIVersion: 0.35.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_text_to_model.json
+  sha256: e281d747390362ef73766605a857a366e3274d2c2af3925d5b5cb601e9b95c9f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/three_d/comfyui_api_tripo_text_to_model_9d8c215d/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

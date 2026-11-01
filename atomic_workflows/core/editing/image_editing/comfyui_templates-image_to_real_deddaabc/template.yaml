@@ -1,0 +1,86 @@
+id: remote:template:templates-image_to_real
+kind: comfyui_template
+title: Illustration to Realism
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Illustration to Realism
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Input an illustration and generate a hyper realistic version using Qwen
+    Image Edit 2509.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-image_to_real.json
+  sha256: fbfd26f6c2ba4244d68ba3733abf14f412e7a68a357d1e1fb8a04baf68bfc707
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-image_to_real
+  title: Illustration to Realism
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Input an illustration and generate a hyper realistic version using
+    Qwen Image Edit 2509.
+  tags:
+  - Style Transfer
+  models:
+  - Qwen-Image-Edit
+  date: '2025-12-20'
+  size: 0
+  usage: 80
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: robot_office_worker_in_space.png
+      mediaType: image
+    outputs:
+    - nodeId: 18
+      nodeType: SaveImage
+      file: templates-image_to_real.png
+      mediaType: image
+  username: hellorob
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - input/robot_office_worker_in_space.png
+  - output/templates-image_to_real.png
+  minComfyUIVersion: 0.3.60
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-image_to_real.json
+  sha256: fbfd26f6c2ba4244d68ba3733abf14f412e7a68a357d1e1fb8a04baf68bfc707
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-image_to_real_deddaabc/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

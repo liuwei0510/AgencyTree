@@ -1,0 +1,45 @@
+id: remote:model:b46dab9f56a058b5fb59
+kind: comfyui_model
+title: w600k_r50.onnx
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: w600k_r50.onnx
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: w600k_r50.onnx
+  - name: base
+    value: inswapper
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models/buffalo_l
+    filename: w600k_r50.onnx
+    download_locator: https://huggingface.co/public-data/insightface/resolve/main/models/buffalo_l/w600k_r50.onnx
+code_usable: true
+status: available
+metadata:
+  name: w600k_r50.onnx
+  type: insightface
+  base: inswapper
+  save_path: insightface/models/buffalo_l
+  description: Buffalo_l w600k_r50.onnx model for IpAdapterPlus
+  reference: https://github.com/cubiq/ComfyUI_IPAdapter_plus?tab=readme-ov-file#faceid
+  filename: w600k_r50.onnx
+  url: https://huggingface.co/public-data/insightface/resolve/main/models/buffalo_l/w600k_r50.onnx
+  size: 174.4MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/face_analysis/model_w600k_r50.onnx_b46dab9f/model.yaml
+validation_errors: []

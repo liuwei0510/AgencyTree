@@ -1,0 +1,59 @@
+id: core.editing.image_to_video.video_wan2_2_5b_i2v_copy
+title: video_wan2_2_5B_i2v copy
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/video_wan2_2_5B_i2v copy.json).
+tags:
+- image-to-video
+- i2v
+- editing
+workflow_file: video_wan2_2_5b_i2v_copy.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+  seed:
+    node_id: '3'
+    input_key: seed
+  length:
+    node_id: '55'
+    input_key: length
+    widget_index: null
+  fps:
+    node_id: '57'
+    input_key: fps
+    widget_index: null
+  source_image:
+    node_id: '60'
+    input_key: image
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: int
+  required: false
+- name: length
+  type: number
+  required: false
+  default: 48
+- name: fps
+  type: number
+  required: false
+  default: 24
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

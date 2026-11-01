@@ -1,0 +1,46 @@
+id: remote:model:5d787c27c3bc6b4d6428
+kind: comfyui_model
+title: LTX-2.5 22B Distilled Transformer BF16
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: LTX-2.5 22B Distilled Transformer BF16
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: ltx-2.5-22b-distilled-transformer-bf16.safetensors
+  - name: base
+    value: LTX-2.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models
+    filename: ltx-2.5-22b-distilled-transformer-bf16.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-bf16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2.5 22B Distilled Transformer BF16
+  type: diffusion_model
+  base: LTX-2.5
+  save_path: diffusion_models
+  description: LTX-2.5 22B distilled DiT transformer (bf16). Fixed 8-step schedule,
+    CFG=1.
+  reference: https://huggingface.co/Lightricks/LTX-2.5
+  filename: ltx-2.5-22b-distilled-transformer-bf16.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2.5/resolve/main/diffusion_models/ltx-2.5-22b-distilled-transformer-bf16.safetensors
+  size: 42.02GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/model_LTX-2.5_22B_Distilled_Transformer_BF16_5d787c27/model.yaml
+validation_errors: []

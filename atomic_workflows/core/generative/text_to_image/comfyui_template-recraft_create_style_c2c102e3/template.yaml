@@ -1,0 +1,129 @@
+id: remote.template.template-recraft_create_style
+kind: comfyui_template
+title: Style Transfer - Recraft Text-to-Image
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Style Transfer - Recraft Text-to-Image
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+    source_image_3: image_filenames
+    source_image_4: image_filenames
+    source_image_5: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload 1-5 style references and create a style ID to generate consistent,
+    on brand images.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_3
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_4
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_5
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template-recraft_create_style.json
+  sha256: 883c764d2ea63fd85570722b1f53b0490f66dc6ff40cffac6a6ec222d59b317e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template-recraft_create_style
+  title: Style Transfer - Recraft Text-to-Image
+  description: Upload 1-5 style references and create a style ID to generate consistent,
+    on brand images.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Style Transfer
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  date: '2026-02-11'
+  openSource: false
+  size: 0
+  usage: 23
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: input_style_1.png
+      mediaType: image
+    - nodeId: 23
+      nodeType: LoadImage
+      file: input_style_2.png
+      mediaType: image
+    - nodeId: 24
+      nodeType: LoadImage
+      file: input_style_3.png
+      mediaType: image
+    - nodeId: 25
+      nodeType: LoadImage
+      file: input_style_4.png
+      mediaType: image
+    - nodeId: 26
+      nodeType: LoadImage
+      file: input_style_5.png
+      mediaType: image
+    outputs:
+    - nodeId: 37
+      nodeType: SaveImage
+      file: template-recraft_create_style.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/template-recraft_create_style.mp4
+  minComfyUIVersion: 0.12.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '23'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+  source_image_3:
+    node_id: '26'
+    input_key: image
+    widget_index: 0
+  source_image_4:
+    node_id: '24'
+    input_key: image
+    widget_index: 0
+  source_image_5:
+    node_id: '25'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

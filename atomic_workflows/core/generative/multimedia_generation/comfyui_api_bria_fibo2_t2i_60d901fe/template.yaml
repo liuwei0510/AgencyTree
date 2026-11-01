@@ -1,0 +1,54 @@
+id: remote.template.api_bria_fibo2_t2i
+kind: comfyui_template
+title: 'Bria: FIBO 2.0 Text to Image'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Bria: FIBO 2.0 Text to Image'
+  input_types: []
+  output_types: []
+  capability: Generate an image from a text prompt with Bria FIBO 2.0, one model for
+    both generation and editing. It is trained on structured VGL captions, so a detailed
+    poster-style brief is followed closely, exact wording is rendered literally, and
+    the node also returns that structured prompt so the same image can be rebuilt
+    or refined from JSON. Ideal for editorial covers, posters and typography-led layouts.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_fibo2_t2i.json
+  sha256: 0258be228abe75b25400d7e1cd5e31fa8b0ea72df75c0f1db897f6dee1ec1916
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_fibo2_t2i
+  title: 'Bria: FIBO 2.0 Text to Image'
+  description: Generate an image from a text prompt with Bria FIBO 2.0, one model
+    for both generation and editing. It is trained on structured VGL captions, so
+    a detailed poster-style brief is followed closely, exact wording is rendered literally,
+    and the node also returns that structured prompt so the same image can be rebuilt
+    or refined from JSON. Ideal for editorial covers, posters and typography-led layouts.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  minComfyUIVersion: 0.42.3
+  date: '2026-10-21'
+  openSource: false
+  size: 0
+  usage: 169
+  searchRank: 0
+  username: ComfyUI

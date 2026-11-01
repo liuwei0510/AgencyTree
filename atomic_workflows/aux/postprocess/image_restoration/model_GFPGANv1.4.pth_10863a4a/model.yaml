@@ -1,0 +1,46 @@
+id: remote:model:10863a4afcfc76d3cacb
+kind: comfyui_model
+title: GFPGANv1.4.pth
+tree_branch:
+- aux
+- postprocess
+- image_restoration
+six_tuple:
+  name: GFPGANv1.4.pth
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/image_restoration
+  parameters:
+  - name: filename
+    value: GFPGANv1.4.pth
+  - name: base
+    value: GFPGAN
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: GFPGAN
+    save_path: facerestore_models
+    filename: GFPGANv1.4.pth
+    download_locator: https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth
+code_usable: true
+status: available
+metadata:
+  name: GFPGANv1.4.pth
+  type: GFPGAN
+  base: GFPGAN
+  save_path: facerestore_models
+  description: Face Restoration Models. Download the model required for using the
+    'Facerestore CF (Code Former)' custom node.
+  reference: https://github.com/TencentARC/GFPGAN/releases
+  filename: GFPGANv1.4.pth
+  url: https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth
+  size: 348.6MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/image_restoration/model_GFPGANv1.4.pth_10863a4a/model.yaml
+validation_errors: []

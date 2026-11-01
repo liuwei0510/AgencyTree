@@ -1,0 +1,56 @@
+id: remote.template.api_rodin3d_gen2_5_image_to_3d
+kind: comfyui_template
+title: 'Rodin Gen2.5: Image to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Rodin Gen2.5: Image to Model'
+  input_types:
+  - image
+  output_types: []
+  capability: Upload single or multi-view images to create a 3D model with adjustable
+    quality and enhanced texture
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_rodin3d_gen2_5_image_to_3d.json
+  sha256: 8812cd6333be185cc2fa1fe23ab3d118f11e140bb2b1835de69343e7b5b429e5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_rodin3d_gen2_5_image_to_3d
+  title: 'Rodin Gen2.5: Image to Model'
+  description: Upload single or multi-view images to create a 3D model with adjustable
+    quality and enhanced texture
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - API
+  - Image to 3D
+  models:
+  - Rodin
+  logos:
+  - provider: Rodin
+  date: '2026-05-23'
+  openSource: false
+  size: 0
+  usage: 32
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: bull_robot.png
+      mediaType: image
+  minComfyUIVersion: 0.22.2

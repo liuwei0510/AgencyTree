@@ -1,0 +1,102 @@
+id: remote:template:templates-subject_product_swap.app
+kind: comfyui_template
+title: Swap Product in Character’s Hand, UGC Style
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Swap Product in Character’s Hand, UGC Style
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a photo of a character holding a product and your brands product.
+    Generate an image with the products swapped.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-subject_product_swap.app.json
+  sha256: f2f4c2eafe72ac757cc9c135edd4a1fed4d7009be1eed4f8c3a7fd62cefcbe4f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-subject_product_swap.app
+  title: Swap Product in Character’s Hand, UGC Style
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload a photo of a character holding a product and your brands product.
+    Generate an image with the products swapped.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Gemini3 Pro Image Preview
+  - Google
+  - Nano Banana Pro
+  openSource: false
+  date: '2025-12-18'
+  searchRank: 8
+  size: 0
+  usage: 13
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: subject-girl-holding-skincare-bottle.png
+      mediaType: image
+    - nodeId: 11
+      nodeType: LoadImage
+      file: product-cleanser.jpeg
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-subject_product_swap_app.png
+  isApp: true
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-subject_product_swap.app.json
+  sha256: f2f4c2eafe72ac757cc9c135edd4a1fed4d7009be1eed4f8c3a7fd62cefcbe4f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-subject_product_swap.app_a235f511/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

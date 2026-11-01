@@ -1,0 +1,86 @@
+id: remote:template:api_google_gemini_omni_flash_1_1_edit
+kind: comfyui_template
+title: 'Gemini Omni 1.1 Flash: Video Edit'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Gemini Omni 1.1 Flash: Video Edit'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: 'Edit videos through natural language conversation with Gemini Omni
+    1.1 Flash. Upload a clip (10 seconds or less) and describe the change: swap backgrounds,
+    restyle scenes, add or remove elements, and the model applies the edit while preserving
+    everything you did not mention. Add \"Keep everything else the same\" for maximum
+    consistency; simple prompts work best. Outputs video with native audio at 16:9
+    or 9:16, with 1080p/4K output available. Ideal for remixes, style changes, and
+    iterative refinement without re-generating from scratch.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_edit.json
+  sha256: e2799f479efb03206218e873dde79a765a1d2062c5097826cf6dc66733de2501
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_gemini_omni_flash_1_1_edit
+  title: 'Gemini Omni 1.1 Flash: Video Edit'
+  description: 'Edit videos through natural language conversation with Gemini Omni
+    1.1 Flash. Upload a clip (10 seconds or less) and describe the change: swap backgrounds,
+    restyle scenes, add or remove elements, and the model applies the edit while preserving
+    everything you did not mention. Add \"Keep everything else the same\" for maximum
+    consistency; simple prompts work best. Outputs video with native audio at 16:9
+    or 9:16, with 1080p/4K output available. Ideal for remixes, style changes, and
+    iterative refinement without re-generating from scratch.'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - Gemini Omni 1.1 Flash
+  logos:
+  - provider: Google
+  minComfyUIVersion: 0.34.2
+  date: '2026-08-27'
+  openSource: false
+  size: 0
+  usage: 206
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadVideo
+      file: hooded_wanderer_planet_bridge.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 8
+      nodeType: SaveVideo
+      file: api_google_gemini_omni_flash_1_1_edit.mp4
+      mediaType: video
+  thumbnail:
+  - input/hooded_wanderer_planet_bridge.mp4
+  - output/api_google_gemini_omni_flash_1_1_edit.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_edit.json
+  sha256: e2799f479efb03206218e873dde79a765a1d2062c5097826cf6dc66733de2501
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_api_google_gemini_omni_flash_1_1_edit_cab5aaa4/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

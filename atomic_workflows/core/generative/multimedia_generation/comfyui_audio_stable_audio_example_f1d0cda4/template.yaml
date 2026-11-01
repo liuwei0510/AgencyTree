@@ -1,0 +1,96 @@
+id: remote:template:audio_stable_audio_example
+kind: comfyui_template
+title: 'Stable Audio 1.0: Text to Audio'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Stable Audio 1.0: Text to Audio'
+  input_types:
+    prompt: string
+    negative_prompt: string
+    seed: number
+  output_types: {}
+  capability: Generate audio from text prompts using Stable Audio.
+  parameters:
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: ''
+  - name: seed
+    type: number
+    required: false
+    default: 840755638734093
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_stable_audio_example.json
+  sha256: dd769db3bf3da7326471a536ebd073a81fa250f1806555673d0e9f377ed810a1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_stable_audio_example
+  title: 'Stable Audio 1.0: Text to Audio'
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate audio from text prompts using Stable Audio.
+  tags:
+  - Audio
+  - Text to Audio
+  models:
+  - Stability
+  - Stable Audio
+  date: '2025-03-01'
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/audio/
+  size: 5690831667
+  usage: 17
+  openSource: true
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.3.35
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_stable_audio_example.json
+  sha256: dd769db3bf3da7326471a536ebd073a81fa250f1806555673d0e9f377ed810a1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_audio_stable_audio_example_f1d0cda4/template.yaml
+validation_errors: []
+inputs:
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: number
+  required: false
+  default: 840755638734093
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

@@ -1,0 +1,83 @@
+id: remote.template.templates_purz_pixel_sort_image
+kind: comfyui_template
+title: Pixel Sort Glitch Effect Image Transformation
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Pixel Sort Glitch Effect Image Transformation
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Apply a pixel sorting algorithm to create glitch art. Control the effect
+    direction, threshold, and blending with the original image. Outputs a stylized,
+    smeared version of the input.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_pixel_sort_image.json
+  sha256: cf0bce93acce8267c5c355e9826141c0e0fc1c2ff9e22409f6b3e8685b20834c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_purz_pixel_sort_image
+  title: Pixel Sort Glitch Effect Image Transformation
+  description: Apply a pixel sorting algorithm to create glitch art. Control the effect
+    direction, threshold, and blending with the original image. Outputs a stylized,
+    smeared version of the input.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Style Transfer
+  models:
+  - None
+  date: '2026-03-21'
+  openSource: true
+  size: 0
+  usage: 9
+  searchRank: 0
+  username: PurzBeats
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: wireframe_dancer.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: templates_purz_pixel_sort_image.png
+      mediaType: image
+  thumbnail:
+  - input/wireframe_dancer.png
+  - output/templates_purz_pixel_sort_image.png
+  requiresCustomNodes:
+  - comfyui_fill-nodes
+  includeOnDistributions:
+  - cloud
+  minComfyUIVersion: 0.0.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,24 @@
+{
+  "76": {
+    "inputs": {},
+    "class_type": "e5cfe5ba-2ae0-4bc4-869f-ab2228cb44d3",
+    "_meta": {
+      "title": "e5cfe5ba-2ae0-4bc4-869f-ab2228cb44d3"
+    }
+  },
+  "60": {
+    "inputs": {
+      "images": [
+        "76",
+        0
+      ],
+      "filename_prefix": "Qwen-Image"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.48"
+    }
+  }
+}

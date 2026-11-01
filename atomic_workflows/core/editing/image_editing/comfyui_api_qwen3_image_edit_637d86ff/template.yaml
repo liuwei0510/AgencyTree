@@ -1,0 +1,97 @@
+id: remote:template:api_qwen3_image_edit
+kind: comfyui_template
+title: 'Qwen Image 3.0 Pro: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image 3.0 Pro: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Qwen Image 3.0 Pro performs advanced image editing with rich multi-image
+    input, generating complex layouts like newspapers, storyboards, menus, and exam
+    papers in a single pass while preserving fine details down to 10px text, micro-expressions,
+    and individual hairs. Supports native rendering across 12 languages with realistic
+    simulation of web pages, games, and live streams. Ideal for professional content
+    production, interface mockups, and high-fidelity commercial imagery requiring
+    authentic detail.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_qwen3_image_edit.json
+  sha256: 2db71f98af49de2d038a63897ad66ca15a54fd69ff5eb87e1b7b60224ead55ec
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_qwen3_image_edit
+  title: 'Qwen Image 3.0 Pro: Image Edit'
+  description: Qwen Image 3.0 Pro performs advanced image editing with rich multi-image
+    input, generating complex layouts like newspapers, storyboards, menus, and exam
+    papers in a single pass while preserving fine details down to 10px text, micro-expressions,
+    and individual hairs. Supports native rendering across 12 languages with realistic
+    simulation of web pages, games, and live streams. Ideal for professional content
+    production, interface mockups, and high-fidelity commercial imagery requiring
+    authentic detail.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Qwen Image 3.0 Pro
+  logos:
+  - provider: WAN
+  date: '2026-08-06'
+  openSource: false
+  size: 0
+  usage: 139
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: wasteland_merchant.png
+      mediaType: image
+    outputs:
+    - nodeId: 2
+      nodeType: SaveImage
+      file: api_qwen3_image_edit.png
+      mediaType: image
+  thumbnail:
+  - output/api_qwen3_image_edit.png
+  minComfyUIVersion: 0.32.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_qwen3_image_edit.json
+  sha256: 2db71f98af49de2d038a63897ad66ca15a54fd69ff5eb87e1b7b60224ead55ec
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_qwen3_image_edit_637d86ff/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

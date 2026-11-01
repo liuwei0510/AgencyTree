@@ -1,0 +1,45 @@
+id: remote:model:fe7f9336c7eef61d2ab3
+kind: comfyui_model
+title: TencentARC/CustomNet Inpaint V1
+tree_branch:
+- core
+- editing
+- image_editing
+six_tuple:
+  name: TencentARC/CustomNet Inpaint V1
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: core/editing/image_editing
+  parameters:
+  - name: filename
+    value: customnet_inpaint_v1.pt
+  - name: base
+    value: CustomNet
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: CustomNet
+    save_path: checkpoints/customnet
+    filename: customnet_inpaint_v1.pt
+    download_locator: https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_inpaint_v1.pt
+code_usable: true
+status: available
+metadata:
+  name: TencentARC/CustomNet Inpaint V1
+  type: CustomNet
+  base: CustomNet
+  save_path: checkpoints/customnet
+  description: CustomNet Inpaint pretrained model for ComfyUI_CustomNet
+  reference: https://huggingface.co/TencentARC/CustomNet/tree/main
+  filename: customnet_inpaint_v1.pt
+  url: https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_inpaint_v1.pt
+  size: 5.71GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/model_TencentARC_CustomNet_Inpaint_V1_fe7f9336/model.yaml
+validation_errors: []

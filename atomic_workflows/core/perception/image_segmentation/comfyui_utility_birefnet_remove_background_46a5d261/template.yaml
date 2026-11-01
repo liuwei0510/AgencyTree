@@ -1,0 +1,77 @@
+id: remote:template:utility_birefnet_remove_background
+kind: comfyui_template
+title: 'Remove Background: BiRefNet'
+tree_branch:
+- core
+- perception
+- image_segmentation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Remove Background: BiRefNet'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image with any background. Generate a version with the background
+    removed and a precision segmentation mask.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_birefnet_remove_background.json
+  sha256: c2c88f58d4f48b2d7df453bb17e64dabe6f2aed7e5b4417ee145fac66fd7031b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_birefnet_remove_background
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/remove-background-birefnet
+  title: 'Remove Background: BiRefNet'
+  description: Upload an image with any background. Generate a version with the background
+    removed and a precision segmentation mask.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Remove Background
+  models:
+  - BiRefNet
+  date: '2026-05-10'
+  openSource: true
+  size: 429496730
+  usage: 77
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: the_lily_veil.png
+      mediaType: image
+  minComfyUIVersion: 0.21.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_birefnet_remove_background.json
+  sha256: c2c88f58d4f48b2d7df453bb17e64dabe6f2aed7e5b4417ee145fac66fd7031b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

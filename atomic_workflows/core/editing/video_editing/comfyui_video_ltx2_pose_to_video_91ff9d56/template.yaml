@@ -1,0 +1,91 @@
+id: remote:template:video_ltx2_pose_to_video
+kind: comfyui_template
+title: LTX-2 Pose to Video
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LTX-2 Pose to Video
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate high-quality videos from pose guidance with synchronized audio-video
+    generation using LTX-2. Features precise pose control, expressive motion, and
+    efficient performance.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_pose_to_video.json
+  sha256: 318a282fb934981480b892253071f11e75a816f5cbc18b9b07a3645fe73e9ec3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_pose_to_video
+  title: LTX-2 Pose to Video
+  description: Generate high-quality videos from pose guidance with synchronized audio-video
+    generation using LTX-2. Features precise pose control, expressive motion, and
+    efficient performance.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tags:
+  - ControlNet
+  - Video
+  models:
+  - LTX-2
+  - Lightricks
+  date: '2026-01-06'
+  size: 38010460570
+  requiresCustomNodes:
+  - comfyui_controlnet_aux
+  usage: 18
+  searchRank: 0
+  openSource: true
+  io:
+    inputs:
+    - nodeId: 160
+      nodeType: LoadImage
+      file: women_with_paper.png
+      mediaType: image
+    - nodeId: 185
+      nodeType: LoadVideo
+      file: woman_with_paper.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_pose_to_video.json
+  sha256: 318a282fb934981480b892253071f11e75a816f5cbc18b9b07a3645fe73e9ec3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_video_ltx2_pose_to_video_91ff9d56/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '160'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

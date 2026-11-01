@@ -1,0 +1,87 @@
+id: remote:template:api_meshy_t2_5_smart_topology_i2m
+kind: comfyui_template
+title: 'Meshy T2.5: Image to Model (Smart Topology)'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Meshy T2.5: Image to Model (Smart Topology)'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    mesh: mesh_path
+  capability: Generate a game-ready 3D model from a single image with Meshy T2.5.
+    Meshy T2.5 builds the mesh at the triangle budget you set instead of generating
+    a dense mesh and retopologizing it afterwards, so the result drops straight into
+    a game engine. Texturing with PBR maps is optional and runs at 2k, 4k or 8k. Ideal
+    for turning concept art, product photos and sculpts into engine-ready props.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy_t2_5_smart_topology_i2m.json
+  sha256: a66dd8df398ccc400bfa704f72e0aa103d60c88d6b04a97a5e264c21d0c39996
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meshy_t2_5_smart_topology_i2m
+  title: 'Meshy T2.5: Image to Model (Smart Topology)'
+  description: Generate a game-ready 3D model from a single image with Meshy T2.5.
+    Meshy T2.5 builds the mesh at the triangle budget you set instead of generating
+    a dense mesh and retopologizing it afterwards, so the result drops straight into
+    a game engine. Texturing with PBR maps is optional and runs at 2k, 4k or 8k. Ideal
+    for turning concept art, product photos and sculpts into engine-ready props.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to 3D
+  models:
+  - Meshy
+  logos:
+  - provider: Meshy
+  minComfyUIVersion: 0.42.5
+  date: '2026-10-23'
+  openSource: false
+  size: 0
+  usage: 31
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: abstract_3d_toy_van_game_asset.png
+      mediaType: image
+  thumbnailVariant: compareSlider
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy_t2_5_smart_topology_i2m.json
+  sha256: a66dd8df398ccc400bfa704f72e0aa103d60c88d6b04a97a5e264c21d0c39996
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_meshy_t2_5_smart_topology_i2m_9638d3e0/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

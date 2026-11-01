@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "task_id": "t1",
+      "goal": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+      "capability_id": "core.generative.text_to_video",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "video": "video"
+      },
+      "constraints": {
+        "requirement": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+        "duration": 2.0
+      },
+      "depends_on": []
+    }
+  ],
+  "edges": [],
+  "diagnostics": [],
+  "assumptions": []
+}

@@ -1,0 +1,62 @@
+id: remote:template:api_rodin3d_gen2_5_text_to_3d
+kind: comfyui_template
+title: 'Rodin Gen2.5: Text to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Rodin Gen2.5: Text to Model'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Input a text description or upload reference images. Generate a detailed
+    3D model with textures, exportable in multiple formats.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_rodin3d_gen2_5_text_to_3d.json
+  sha256: 4c69b6a5545c81725db85d3011da1d7db9b8dd07eabb9cff587f6dbae9e9cf4f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_rodin3d_gen2_5_text_to_3d
+  title: 'Rodin Gen2.5: Text to Model'
+  description: Input a text description or upload reference images. Generate a detailed
+    3D model with textures, exportable in multiple formats.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - API
+  - Text to 3D
+  models:
+  - Rodin
+  logos:
+  - provider: Rodin
+  date: '2026-05-23'
+  openSource: false
+  size: 0
+  usage: 1
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.22.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_rodin3d_gen2_5_text_to_3d.json
+  sha256: 4c69b6a5545c81725db85d3011da1d7db9b8dd07eabb9cff587f6dbae9e9cf4f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/three_d/comfyui_api_rodin3d_gen2_5_text_to_3d_b46e7998/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path
+planning_eligible: true
+contract_errors: []

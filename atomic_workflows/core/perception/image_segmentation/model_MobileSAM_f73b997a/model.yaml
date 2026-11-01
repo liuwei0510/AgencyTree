@@ -1,0 +1,45 @@
+id: remote:model:f73b997a8f3396b781e5
+kind: comfyui_model
+title: MobileSAM
+tree_branch:
+- core
+- perception
+- image_segmentation
+six_tuple:
+  name: MobileSAM
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/image_segmentation
+  parameters:
+  - name: filename
+    value: mobile_sam.pt
+  - name: base
+    value: SAM
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: sam
+    save_path: sams
+    filename: mobile_sam.pt
+    download_locator: https://github.com/ChaoningZhang/MobileSAM/blob/master/weights/mobile_sam.pt
+code_usable: true
+status: available
+metadata:
+  name: MobileSAM
+  type: sam
+  base: SAM
+  save_path: sams
+  description: MobileSAM
+  reference: https://github.com/ChaoningZhang/MobileSAM/
+  filename: mobile_sam.pt
+  url: https://github.com/ChaoningZhang/MobileSAM/blob/master/weights/mobile_sam.pt
+  size: 38.8MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/image_segmentation/model_MobileSAM_f73b997a/model.yaml
+validation_errors: []

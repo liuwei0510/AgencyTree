@@ -1,0 +1,89 @@
+id: remote.template.image_hidream_o1_dev
+kind: comfyui_template
+title: HiDream O1 Dev
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: HiDream O1 Dev
+  input_types:
+    negative_prompt: string
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt and optional reference images. Generate a high-resolution
+    image (up to 2048x2048) with support for text-to-image, image editing, and subject-driven
+    personalization.
+  parameters: &id001
+  - name: negative_prompt
+    type: string
+    required: false
+    default: ''
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_hidream_o1_dev.json
+  sha256: e8cb88da273aeab5a586661eca5ba3507c49392f9b3a71e9c67f6da81d0f09a0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_hidream_o1_dev
+  tutorialUrl: https://docs.comfy.org/tutorials/image/hidream/hidream-o1
+  title: HiDream O1 Dev
+  description: Input a text prompt and optional reference images. Generate a high-resolution
+    image (up to 2048x2048) with support for text-to-image, image editing, and subject-driven
+    personalization.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Text to Image
+  models:
+  - HiDream
+  date: '2026-05-14'
+  openSource: true
+  size: 17072495002
+  usage: 24
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 213
+      nodeType: LoadImage
+      file: noir_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 227
+      nodeType: SaveImage
+      file: image_hidream_o1_dev.png
+      mediaType: image
+  thumbnail:
+  - input/noir_portrait.png
+  - output/image_hidream_o1_dev.png
+  minComfyUIVersion: 0.21.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  negative_prompt:
+    node_id: '188'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '213'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

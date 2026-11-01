@@ -1,0 +1,10 @@
+atomic_workflows_root: ./atomic_workflows
+state_root: ./data
+agents:
+  provider: command
+  # An argv array that starts your existing agent harness or a small bridge to
+  # its native agent API. The harness receives JSON on stdin and returns one
+  # JSON object on stdout; its own login/session supplies model access.
+  command: [python3, /absolute/path/to/agent_harness_bridge.py]
+  timeout_sec: 240
+  max_iterations: 5

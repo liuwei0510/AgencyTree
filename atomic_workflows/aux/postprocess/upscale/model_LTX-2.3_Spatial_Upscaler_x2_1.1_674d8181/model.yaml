@@ -1,0 +1,46 @@
+id: remote:model:674d818112ece9afad60
+kind: comfyui_model
+title: LTX-2.3 Spatial Upscaler x2 1.1
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: LTX-2.3 Spatial Upscaler x2 1.1
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: latent_upscale_models
+    filename: ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2.3 Spatial Upscaler x2 1.1
+  type: upscale
+  base: upscale
+  save_path: latent_upscale_models
+  description: Spatial upscaler model for LTX-2.3. This model enhances the spatial
+    resolution of generated videos by 2x.
+  reference: https://huggingface.co/Lightricks/LTX-2.3
+  filename: ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2.3/resolve/main/ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+  size: 0.93GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/model_LTX-2.3_Spatial_Upscaler_x2_1.1_674d8181/model.yaml
+validation_errors: []

@@ -1,0 +1,66 @@
+id: remote.template.api_happyhorse1_1_r2v
+kind: comfyui_template
+title: 'HappyHorse 1.1: Reference to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HappyHorse 1.1: Reference to Video'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Generate video from reference images using HappyHorse 1.1, locking character
+    and scene appearance while following a text prompt for motion. This workflow takes
+    2 input images (character reference and scene reference) and produces 1 video
+    output. Ideal for short films, advertising, and game cutscenes requiring consistent
+    character design and controllable narrative.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_happyhorse1_1_r2v.json
+  sha256: 6fdba3f1cfcf960cdf716eb7b75f9ec02c5fd49826359600ae2c168d1d74c029
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_happyhorse1_1_r2v
+  title: 'HappyHorse 1.1: Reference to Video'
+  description: Generate video from reference images using HappyHorse 1.1, locking
+    character and scene appearance while following a text prompt for motion. This
+    workflow takes 2 input images (character reference and scene reference) and produces
+    1 video output. Ideal for short films, advertising, and game cutscenes requiring
+    consistent character design and controllable narrative.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Reference to Video
+  models:
+  - HappyHorse 1.1
+  logos:
+  - provider: HappyHorse
+  date: '2026-06-23'
+  openSource: false
+  size: 0
+  usage: 9
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: wooden_doll_2_views.png
+      mediaType: image
+    - nodeId: 3
+      nodeType: LoadImage
+      file: cave_ocean_living_room.png
+      mediaType: image
+  minComfyUIVersion: 0.26.1

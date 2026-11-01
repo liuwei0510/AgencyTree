@@ -1,0 +1,75 @@
+id: core.generative.text_to_image.sdxl_simple_example
+title: sdxl_simple_example
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/sdxl_simple_example.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: sdxl_simple_example.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+  width:
+    node_id: '5'
+    input_key: width
+  height:
+    node_id: '5'
+    input_key: height
+  noise_seed:
+    node_id: '10'
+    input_key: noise_seed
+    widget_index: null
+  noise_seed_2:
+    node_id: '11'
+    input_key: noise_seed
+    widget_index: null
+  prompt_2:
+    node_id: '15'
+    input_key: text
+    widget_index: null
+  negative_prompt_2:
+    node_id: '16'
+    input_key: text
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: noise_seed
+  type: number
+  required: false
+  default: 721897303308196
+- name: noise_seed_2
+  type: number
+  required: false
+  default: 0
+- name: prompt_2
+  type: string
+  required: true
+  default: null
+- name: negative_prompt_2
+  type: string
+  required: false
+  default: text, watermark
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

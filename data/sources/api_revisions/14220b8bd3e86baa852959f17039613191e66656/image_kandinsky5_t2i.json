@@ -1,0 +1,26 @@
+{
+  "16": {
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "filename_prefix": "Kandinsky5"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.12.1"
+    }
+  },
+  "12": {
+    "inputs": {},
+    "class_type": "7aad998c-49e7-433f-bfb9-b1ac2680aa9e",
+    "_meta": {
+      "title": "7aad998c-49e7-433f-bfb9-b1ac2680aa9e",
+      "cnr_id": "comfy-core",
+      "ver": "0.12.1"
+    }
+  }
+}

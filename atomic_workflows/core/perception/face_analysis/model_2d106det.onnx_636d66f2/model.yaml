@@ -1,0 +1,46 @@
+id: remote:model:636d66f2587b437cbc52
+kind: comfyui_model
+title: 2d106det.onnx
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: 2d106det.onnx
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: 2d106det.onnx
+  - name: base
+    value: inswapper
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models/antelopev2
+    filename: 2d106det.onnx
+    download_locator: https://huggingface.co/MonsterMMORPG/tools/resolve/main/2d106det.onnx
+code_usable: true
+status: available
+metadata:
+  name: 2d106det.onnx
+  type: insightface
+  base: inswapper
+  save_path: insightface/models/antelopev2
+  description: Antelopev2 2d106det.onnx model for InstantId. (InstantId needs all
+    Antelopev2 models)
+  reference: https://github.com/cubiq/ComfyUI_InstantID#installation
+  filename: 2d106det.onnx
+  url: https://huggingface.co/MonsterMMORPG/tools/resolve/main/2d106det.onnx
+  size: 5.03MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/face_analysis/model_2d106det.onnx_636d66f2/model.yaml
+validation_errors: []

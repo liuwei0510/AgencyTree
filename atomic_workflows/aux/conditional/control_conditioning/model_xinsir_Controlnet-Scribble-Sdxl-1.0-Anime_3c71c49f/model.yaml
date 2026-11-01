@@ -1,0 +1,45 @@
+id: remote:model:3c71c49f93e451fbd5bd
+kind: comfyui_model
+title: xinsir/Controlnet-Scribble-Sdxl-1.0-Anime
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: xinsir/Controlnet-Scribble-Sdxl-1.0-Anime
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/scribble_conditioning
+  parameters:
+  - name: filename
+    value: diffusion_pytorch_model.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL/controlnet-scribble-sdxl-1.0-anime
+    filename: diffusion_pytorch_model.safetensors
+    download_locator: https://huggingface.co/xinsir/anime-painter/resolve/main/diffusion_pytorch_model.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: xinsir/Controlnet-Scribble-Sdxl-1.0-Anime
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL/controlnet-scribble-sdxl-1.0-anime
+  description: Controlnet SDXL Scribble model. (Ver. anime)
+  reference: https://huggingface.co/xinsir/anime-painter
+  filename: diffusion_pytorch_model.safetensors
+  url: https://huggingface.co/xinsir/anime-painter/resolve/main/diffusion_pytorch_model.safetensors
+  size: 2.50GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/scribble_conditioning/model_xinsir_Controlnet-Scribble-Sdxl-1.0-Anime_3c71c49f/model.yaml
+validation_errors: []

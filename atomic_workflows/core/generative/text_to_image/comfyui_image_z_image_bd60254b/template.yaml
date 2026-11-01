@@ -1,0 +1,70 @@
+id: remote:template:image_z_image
+kind: comfyui_template
+title: 'Z-Image: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Z-Image: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Foundation for creative freedom. Diverse aesthetics with exceptional
+    photorealistic quality; ideal for fine-tuning; responsive to negative prompts;
+    high generation diversity.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image.json
+  sha256: 0e8ad851cd4caf29d570ca7196038b785040624ee81ce1a4f59f5ed710cc65d7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_z_image
+  title: 'Z-Image: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: Foundation for creative freedom. Diverse aesthetics with exceptional
+    photorealistic quality; ideal for fine-tuning; responsive to negative prompts;
+    high generation diversity.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - Z-Image
+  date: '2026-01-27'
+  size: 20830591386
+  usage: 149
+  tutorialUrl: https://docs.comfy.org/tutorials/image/z-image/z-image
+  searchRank: 0
+  openSource: true
+  io:
+    outputs:
+    - nodeId: 95
+      nodeType: SaveImageAdvanced
+      file: image_z_image.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_z_image.png
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image.json
+  sha256: 0e8ad851cd4caf29d570ca7196038b785040624ee81ce1a4f59f5ed710cc65d7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_image_z_image_bd60254b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

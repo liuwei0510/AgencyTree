@@ -1,0 +1,108 @@
+id: remote.template.image_qwen_image_2512_with_2steps_lora
+kind: comfyui_template
+title: Qwen-Image 2512 Turbo
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen-Image 2512 Turbo
+  input_types:
+    width: number
+    height: number
+    seed: number
+    negative_prompt: string
+  output_types:
+    images: image_filenames
+  capability: Qwen-Image 2512 Image generation with 2-steps Turbo LoRA. Input your
+    text prompt to quickly produce a result, though some quality is sacrificed for
+    speed.
+  parameters: &id001
+  - name: width
+    type: number
+    required: false
+    default: 1328
+  - name: height
+    type: number
+    required: false
+    default: 1328
+  - name: seed
+    type: number
+    required: false
+    default: 318036859179089
+  - name: negative_prompt
+    type: string
+    required: false
+    default: 'High-contrast black and white fashion photography, extreme side profile
+      of a rugged European male model with tousled wet-look hair and stubble, wearing
+      an unbuttoned textured black leather jacket over a fitted white crewneck shirt.
+      Low-angle composition, dramatic side lighting carving sharp, sculpted shadows
+      across his angular jawline and neck, minimalist stark white background, edgy
+      tough masculine aesthetic, hyper-realistic studio quality.
+
+      '
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_2512_with_2steps_lora.json
+  sha256: 9af943c219b16cccea719bf37c72c7da23f71178af35d097dc1b91dac072359a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_2512_with_2steps_lora
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image-2512
+  title: Qwen-Image 2512 Turbo
+  description: Qwen-Image 2512 Image generation with 2-steps Turbo LoRA. Input your
+    text prompt to quickly produce a result, though some quality is sacrificed for
+    speed.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image
+  - Text to Image
+  - Turbo
+  models:
+  - Qwen-Image 2512
+  date: '2026-01-30'
+  openSource: true
+  usage: 33
+  username: ComfyUI
+  size: 32427003085
+  searchRank: 0
+  io:
+    outputs:
+    - nodeId: 123
+      nodeType: SaveImage
+      file: image_qwen_image_2512_with_2steps_lora.png
+      mediaType: image
+  thumbnail:
+  - output/image_qwen_image_2512_with_2steps_lora.png
+  minComfyUIVersion: 0.3.49
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  width:
+    node_id: '107'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '107'
+    input_key: height
+    widget_index: 1
+  seed:
+    node_id: '106'
+    input_key: seed
+    widget_index: 0
+  negative_prompt:
+    node_id: '108'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

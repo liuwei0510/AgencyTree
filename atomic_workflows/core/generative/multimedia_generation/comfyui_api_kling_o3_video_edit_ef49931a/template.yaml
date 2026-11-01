@@ -1,0 +1,64 @@
+id: remote.template.api_kling_o3_video_edit
+kind: comfyui_template
+title: 'Kling O3: Video Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling O3: Video Edit'
+  input_types:
+  - image
+  - video
+  output_types: []
+  capability: Upload a video and a reference image to edit with Kling O3. Generate
+    a professionally edited video with precise subject editing, scene composition,
+    and native audio-visual synchronization.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_o3_video_edit.json
+  sha256: 3e40e5e70a02c6f31f824eac75db77be2494cc54bcedfabef93e32eb8272a18a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_o3_video_edit
+  title: 'Kling O3: Video Edit'
+  description: Upload a video and a reference image to edit with Kling O3. Generate
+    a professionally edited video with precise subject editing, scene composition,
+    and native audio-visual synchronization.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Edit
+  - API
+  - Video
+  models:
+  - Kling O3
+  logos:
+  - provider: Kling
+  date: '2026-02-10'
+  openSource: false
+  size: 0
+  usage: 213
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: giant_trees_sky_pyramid.png
+      mediaType: image
+    - nodeId: 25
+      nodeType: LoadVideo
+      file: kling_o3_video_input.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0

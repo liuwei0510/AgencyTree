@@ -1,0 +1,46 @@
+id: remote:model:b77268fd520944a11c19
+kind: comfyui_model
+title: LTX-2 19B LoRA - Camera Control Dolly Right
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-2 19B LoRA - Camera Control Dolly Right
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltx-2-19b-lora-camera-control-dolly-right.safetensors
+  - name: base
+    value: LTX-2
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/LTX-2
+    filename: ltx-2-19b-lora-camera-control-dolly-right.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2-19b-LoRA-Camera-Control-Dolly-Right/resolve/main/ltx-2-19b-lora-camera-control-dolly-right.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2 19B LoRA - Camera Control Dolly Right
+  type: lora
+  base: LTX-2
+  save_path: loras/LTX-2
+  description: LoRA for dolly-right camera control with LTX-2 19B. Simulates camera
+    moving right.
+  reference: https://huggingface.co/Lightricks/LTX-2-19b-LoRA-Camera-Control-Dolly-Right
+  filename: ltx-2-19b-lora-camera-control-dolly-right.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2-19b-LoRA-Camera-Control-Dolly-Right/resolve/main/ltx-2-19b-lora-camera-control-dolly-right.safetensors
+  size: 327MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/control_conditioning/model_LTX-2_19B_LoRA_-_Camera_Control_Dolly_Right_b77268fd/model.yaml
+validation_errors: []

@@ -1,0 +1,59 @@
+id: core.editing.image_editing.image_flux2_klein_image_edit_4b
+title: image_flux2_klein_image_edit_4b
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_flux2_klein_image_edit_4b.json).
+tags:
+- image-editing
+- edit
+- inpaint
+workflow_file: image_flux2_klein_image_edit_4b.workflow.json
+inject:
+  prompt:
+    node_id: 92:74
+    input_key: text
+  negative_prompt:
+    node_id: 92:87
+    input_key: text
+  width:
+    node_id: 92:66
+    input_key: width
+  height:
+    node_id: 92:66
+    input_key: height
+  source_image:
+    node_id: '76'
+    input_key: image
+    widget_index: null
+  noise_seed:
+    node_id: 92:73
+    input_key: noise_seed
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: noise_seed
+  type: number
+  required: false
+  default: 3035651991391
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

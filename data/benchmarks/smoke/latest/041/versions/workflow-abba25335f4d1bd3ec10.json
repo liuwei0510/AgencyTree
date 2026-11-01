@@ -1,0 +1,1074 @@
+{
+  "version": "workflow-abba25335f4d1bd3ec10",
+  "schema_version": 2,
+  "parent": null,
+  "created_at": "2026-10-30T04:50:05.165145+00:00",
+  "intent": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+  "act_version": "act-069d43ce89e2a1500d61",
+  "status": "validated_offline",
+  "runtime_verified": false,
+  "generation_mode": "tools_first",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [
+      {
+        "task_id": "t1",
+        "goal": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+        "capability_id": "core.generative.text_to_video",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "video": "video"
+        },
+        "constraints": {
+          "requirement": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+          "duration": 2.0
+        },
+        "depends_on": []
+      }
+    ],
+    "edges": [],
+    "diagnostics": [],
+    "assumptions": []
+  },
+  "awg": {
+    "nodes": [
+      {
+        "node_id": "n1",
+        "task_id": "t1",
+        "capability_id": "core.generative.text_to_video",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "video": "video"
+        },
+        "parameters": {
+          "prompt": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video."
+        },
+        "constraints": {
+          "requirement": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+          "duration": 2.0
+        }
+      }
+    ],
+    "edges": [],
+    "ordering": [],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "ACT implementation bindings",
+    "nodes": [
+      {
+        "dag_id": "n1",
+        "atomic_id": "core.generative.text_to_video.hunyuan_video_text_to_video",
+        "depends_on": [],
+        "inputs": {
+          "prompt": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+          "length": 48,
+          "fps": 24
+        },
+        "bindings": {},
+        "notes": null
+      }
+    ],
+    "global_inputs": {}
+  },
+  "ewc": {
+    "n1": {
+      "10": {
+        "inputs": {
+          "vae_name": "hunyuan_video_vae_bf16.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "加载VAE"
+        }
+      },
+      "11": {
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "llava_llama3_fp8_scaled.safetensors",
+          "type": "hunyuan_video",
+          "device": "default"
+        },
+        "class_type": "DualCLIPLoader",
+        "_meta": {
+          "title": "双CLIP加载器"
+        }
+      },
+      "12": {
+        "inputs": {
+          "unet_name": "hunyuan_video_t2v_720p_bf16.safetensors",
+          "weight_dtype": "default"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNet加载器"
+        }
+      },
+      "13": {
+        "inputs": {
+          "noise": [
+            "25",
+            0
+          ],
+          "guider": [
+            "22",
+            0
+          ],
+          "sampler": [
+            "16",
+            0
+          ],
+          "sigmas": [
+            "17",
+            0
+          ],
+          "latent_image": [
+            "45",
+            0
+          ]
+        },
+        "class_type": "SamplerCustomAdvanced",
+        "_meta": {
+          "title": "自定义采样器（高级）"
+        }
+      },
+      "16": {
+        "inputs": {
+          "sampler_name": "euler"
+        },
+        "class_type": "KSamplerSelect",
+        "_meta": {
+          "title": "K采样器选择"
+        }
+      },
+      "17": {
+        "inputs": {
+          "scheduler": "simple",
+          "steps": 20,
+          "denoise": 1,
+          "model": [
+            "12",
+            0
+          ]
+        },
+        "class_type": "BasicScheduler",
+        "_meta": {
+          "title": "基本调度器"
+        }
+      },
+      "22": {
+        "inputs": {
+          "model": [
+            "67",
+            0
+          ],
+          "conditioning": [
+            "26",
+            0
+          ]
+        },
+        "class_type": "BasicGuider",
+        "_meta": {
+          "title": "基本引导器"
+        }
+      },
+      "25": {
+        "inputs": {
+          "noise_seed": 1
+        },
+        "class_type": "RandomNoise",
+        "_meta": {
+          "title": "随机噪波"
+        }
+      },
+      "26": {
+        "inputs": {
+          "guidance": 6,
+          "conditioning": [
+            "44",
+            0
+          ]
+        },
+        "class_type": "FluxGuidance",
+        "_meta": {
+          "title": "Flux引导"
+        }
+      },
+      "44": {
+        "inputs": {
+          "text": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+          "clip": [
+            "11",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "45": {
+        "inputs": {
+          "width": 848,
+          "height": 480,
+          "length": 48,
+          "batch_size": 1
+        },
+        "class_type": "EmptyHunyuanLatentVideo",
+        "_meta": {
+          "title": "空Latent视频（Hunyuan）"
+        }
+      },
+      "67": {
+        "inputs": {
+          "shift": 7,
+          "model": [
+            "12",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingSD3",
+        "_meta": {
+          "title": "采样算法（SD3）"
+        }
+      },
+      "73": {
+        "inputs": {
+          "tile_size": 256,
+          "overlap": 64,
+          "temporal_size": 64,
+          "temporal_overlap": 8,
+          "samples": [
+            "13",
+            0
+          ],
+          "vae": [
+            "10",
+            0
+          ]
+        },
+        "class_type": "VAEDecodeTiled",
+        "_meta": {
+          "title": "VAE解码（分块）"
+        }
+      },
+      "79": {
+        "inputs": {
+          "fps": 24,
+          "images": [
+            "73",
+            0
+          ]
+        },
+        "class_type": "CreateVideo",
+        "_meta": {
+          "title": "创建视频"
+        }
+      },
+      "80": {
+        "inputs": {
+          "filename_prefix": "video/ComfyUI",
+          "format": "auto",
+          "codec": "auto",
+          "video": [
+            "79",
+            0
+          ]
+        },
+        "class_type": "SaveVideo",
+        "_meta": {
+          "title": "保存视频"
+        }
+      }
+    }
+  },
+  "workflow_formats": {
+    "n1": "api"
+  },
+  "bindings": {
+    "n1": {
+      "task_id": "t1",
+      "awg_node_id": "n1",
+      "capability_id": "core.generative.text_to_video",
+      "implementation_id": "core.generative.text_to_video.hunyuan_video_text_to_video",
+      "model_ids": [
+        "remote:model:07eba5c4a353a7a333d4",
+        "remote:model:2b361623f3b4b617a039",
+        "remote:model:4d5c90e73f638dfc90a3",
+        "remote:model:87805e3a3cb78781b98c"
+      ]
+    }
+  },
+  "model_bindings": {
+    "n1": [
+      {
+        "node_id": "10",
+        "input_key": "vae_name",
+        "widget_index": null,
+        "filename": "hunyuan_video_vae_bf16.safetensors",
+        "loader_class": "VAELoader",
+        "graph_path": [],
+        "model_id": "remote:model:4d5c90e73f638dfc90a3",
+        "candidate_model_ids": [
+          "remote:model:4d5c90e73f638dfc90a3"
+        ]
+      },
+      {
+        "node_id": "11",
+        "input_key": "clip_name1",
+        "widget_index": null,
+        "filename": "clip_l.safetensors",
+        "loader_class": "DualCLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:2b361623f3b4b617a039",
+        "candidate_model_ids": [
+          "remote:model:2b361623f3b4b617a039"
+        ]
+      },
+      {
+        "node_id": "11",
+        "input_key": "clip_name2",
+        "widget_index": null,
+        "filename": "llava_llama3_fp8_scaled.safetensors",
+        "loader_class": "DualCLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:07eba5c4a353a7a333d4",
+        "candidate_model_ids": [
+          "remote:model:07eba5c4a353a7a333d4"
+        ]
+      },
+      {
+        "node_id": "12",
+        "input_key": "unet_name",
+        "widget_index": null,
+        "filename": "hunyuan_video_t2v_720p_bf16.safetensors",
+        "loader_class": "UNETLoader",
+        "graph_path": [],
+        "model_id": "remote:model:87805e3a3cb78781b98c",
+        "candidate_model_ids": [
+          "remote:model:87805e3a3cb78781b98c"
+        ]
+      }
+    ]
+  },
+  "generation": {
+    "att": {
+      "tasks": [
+        {
+          "task_id": "t1",
+          "goal": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+          "capability_id": "core.generative.text_to_video",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "video": "video"
+          },
+          "constraints": {
+            "requirement": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+            "duration": 2.0
+          },
+          "depends_on": []
+        }
+      ],
+      "edges": [],
+      "diagnostics": [],
+      "assumptions": []
+    },
+    "awg": {
+      "nodes": [
+        {
+          "node_id": "n1",
+          "task_id": "t1",
+          "capability_id": "core.generative.text_to_video",
+          "input_types": {
+            "prompt": "text"
+          },
+          "output_types": {
+            "video": "video"
+          },
+          "parameters": {
+            "prompt": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video."
+          },
+          "constraints": {
+            "requirement": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+            "duration": 2.0
+          }
+        }
+      ],
+      "edges": [],
+      "ordering": [],
+      "constraints": {},
+      "unresolved": []
+    },
+    "execution_plan": {
+      "summary": "ACT implementation bindings",
+      "nodes": [
+        {
+          "dag_id": "n1",
+          "atomic_id": "core.generative.text_to_video.hunyuan_video_text_to_video",
+          "depends_on": [],
+          "inputs": {
+            "prompt": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+            "length": 48,
+            "fps": 24
+          },
+          "bindings": {},
+          "notes": null
+        }
+      ],
+      "global_inputs": {}
+    },
+    "ewc": {
+      "n1": {
+        "10": {
+          "inputs": {
+            "vae_name": "hunyuan_video_vae_bf16.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "11": {
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "llava_llama3_fp8_scaled.safetensors",
+            "type": "hunyuan_video",
+            "device": "default"
+          },
+          "class_type": "DualCLIPLoader",
+          "_meta": {
+            "title": "双CLIP加载器"
+          }
+        },
+        "12": {
+          "inputs": {
+            "unet_name": "hunyuan_video_t2v_720p_bf16.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "13": {
+          "inputs": {
+            "noise": [
+              "25",
+              0
+            ],
+            "guider": [
+              "22",
+              0
+            ],
+            "sampler": [
+              "16",
+              0
+            ],
+            "sigmas": [
+              "17",
+              0
+            ],
+            "latent_image": [
+              "45",
+              0
+            ]
+          },
+          "class_type": "SamplerCustomAdvanced",
+          "_meta": {
+            "title": "自定义采样器（高级）"
+          }
+        },
+        "16": {
+          "inputs": {
+            "sampler_name": "euler"
+          },
+          "class_type": "KSamplerSelect",
+          "_meta": {
+            "title": "K采样器选择"
+          }
+        },
+        "17": {
+          "inputs": {
+            "scheduler": "simple",
+            "steps": 20,
+            "denoise": 1,
+            "model": [
+              "12",
+              0
+            ]
+          },
+          "class_type": "BasicScheduler",
+          "_meta": {
+            "title": "基本调度器"
+          }
+        },
+        "22": {
+          "inputs": {
+            "model": [
+              "67",
+              0
+            ],
+            "conditioning": [
+              "26",
+              0
+            ]
+          },
+          "class_type": "BasicGuider",
+          "_meta": {
+            "title": "基本引导器"
+          }
+        },
+        "25": {
+          "inputs": {
+            "noise_seed": 1
+          },
+          "class_type": "RandomNoise",
+          "_meta": {
+            "title": "随机噪波"
+          }
+        },
+        "26": {
+          "inputs": {
+            "guidance": 6,
+            "conditioning": [
+              "44",
+              0
+            ]
+          },
+          "class_type": "FluxGuidance",
+          "_meta": {
+            "title": "Flux引导"
+          }
+        },
+        "44": {
+          "inputs": {
+            "text": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+            "clip": [
+              "11",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        },
+        "45": {
+          "inputs": {
+            "width": 848,
+            "height": 480,
+            "length": 48,
+            "batch_size": 1
+          },
+          "class_type": "EmptyHunyuanLatentVideo",
+          "_meta": {
+            "title": "空Latent视频（Hunyuan）"
+          }
+        },
+        "67": {
+          "inputs": {
+            "shift": 7,
+            "model": [
+              "12",
+              0
+            ]
+          },
+          "class_type": "ModelSamplingSD3",
+          "_meta": {
+            "title": "采样算法（SD3）"
+          }
+        },
+        "73": {
+          "inputs": {
+            "tile_size": 256,
+            "overlap": 64,
+            "temporal_size": 64,
+            "temporal_overlap": 8,
+            "samples": [
+              "13",
+              0
+            ],
+            "vae": [
+              "10",
+              0
+            ]
+          },
+          "class_type": "VAEDecodeTiled",
+          "_meta": {
+            "title": "VAE解码（分块）"
+          }
+        },
+        "79": {
+          "inputs": {
+            "fps": 24,
+            "images": [
+              "73",
+              0
+            ]
+          },
+          "class_type": "CreateVideo",
+          "_meta": {
+            "title": "创建视频"
+          }
+        },
+        "80": {
+          "inputs": {
+            "filename_prefix": "video/ComfyUI",
+            "format": "auto",
+            "codec": "auto",
+            "video": [
+              "79",
+              0
+            ]
+          },
+          "class_type": "SaveVideo",
+          "_meta": {
+            "title": "保存视频"
+          }
+        }
+      }
+    },
+    "converged": true,
+    "failure_reason": null,
+    "validation_log": [
+      {
+        "stage": "ANALYSIS",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ARCHITECTURE",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ENGINEERING",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      }
+    ],
+    "generation_mode": "tools_first"
+  },
+  "capabilities": {
+    "core.generative.text_to_video.hunyuan_video_text_to_video": {
+      "id": "core.generative.text_to_video.hunyuan_video_text_to_video",
+      "title": "hunyuan_video_text_to_video",
+      "modality": [
+        "video"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/hunyuan_video_text_to_video.json).",
+      "tags": [
+        "text-to-video",
+        "t2v",
+        "generative"
+      ],
+      "workflow_file": "hunyuan_video_text_to_video.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "44",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "noise_seed": {
+          "node_id": "25",
+          "input_key": "noise_seed",
+          "widget_index": null
+        },
+        "width": {
+          "node_id": "45",
+          "input_key": "width",
+          "widget_index": null
+        },
+        "height": {
+          "node_id": "45",
+          "input_key": "height",
+          "widget_index": null
+        },
+        "length": {
+          "node_id": "45",
+          "input_key": "length",
+          "widget_index": null
+        },
+        "fps": {
+          "node_id": "79",
+          "input_key": "fps",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "noise_seed",
+          "type": "number",
+          "required": false,
+          "default": 1,
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "default": 848,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": false,
+          "default": 480,
+          "description": null
+        },
+        {
+          "name": "length",
+          "type": "number",
+          "required": false,
+          "default": 73,
+          "description": null
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "default": 24,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "video_path",
+          "description": "ComfyUI SaveVideo outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "generative",
+        "text_to_video"
+      ],
+      "six_tuple": {
+        "name": "hunyuan_video_text_to_video",
+        "input_types": {
+          "prompt": "string",
+          "noise_seed": "number",
+          "width": "number",
+          "height": "number",
+          "length": "number",
+          "fps": "number"
+        },
+        "output_types": {
+          "video": "video_path"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/hunyuan_video_text_to_video.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "noise_seed",
+            "type": "number",
+            "required": false,
+            "default": 1
+          },
+          {
+            "name": "width",
+            "type": "number",
+            "required": false,
+            "default": 848
+          },
+          {
+            "name": "height",
+            "type": "number",
+            "required": false,
+            "default": 480
+          },
+          {
+            "name": "length",
+            "type": "number",
+            "required": false,
+            "default": 73
+          },
+          {
+            "name": "fps",
+            "type": "number",
+            "required": false,
+            "default": 24
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "hunyuan_video_text_to_video.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "cf09fb2d820c0a37841571f6104c296510d9540579ec9a08e94d5d930110bc68",
+      "graph": {
+        "10": {
+          "inputs": {
+            "vae_name": "hunyuan_video_vae_bf16.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "11": {
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "llava_llama3_fp8_scaled.safetensors",
+            "type": "hunyuan_video",
+            "device": "default"
+          },
+          "class_type": "DualCLIPLoader",
+          "_meta": {
+            "title": "双CLIP加载器"
+          }
+        },
+        "12": {
+          "inputs": {
+            "unet_name": "hunyuan_video_t2v_720p_bf16.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "13": {
+          "inputs": {
+            "noise": [
+              "25",
+              0
+            ],
+            "guider": [
+              "22",
+              0
+            ],
+            "sampler": [
+              "16",
+              0
+            ],
+            "sigmas": [
+              "17",
+              0
+            ],
+            "latent_image": [
+              "45",
+              0
+            ]
+          },
+          "class_type": "SamplerCustomAdvanced",
+          "_meta": {
+            "title": "自定义采样器（高级）"
+          }
+        },
+        "16": {
+          "inputs": {
+            "sampler_name": "euler"
+          },
+          "class_type": "KSamplerSelect",
+          "_meta": {
+            "title": "K采样器选择"
+          }
+        },
+        "17": {
+          "inputs": {
+            "scheduler": "simple",
+            "steps": 20,
+            "denoise": 1,
+            "model": [
+              "12",
+              0
+            ]
+          },
+          "class_type": "BasicScheduler",
+          "_meta": {
+            "title": "基本调度器"
+          }
+        },
+        "22": {
+          "inputs": {
+            "model": [
+              "67",
+              0
+            ],
+            "conditioning": [
+              "26",
+              0
+            ]
+          },
+          "class_type": "BasicGuider",
+          "_meta": {
+            "title": "基本引导器"
+          }
+        },
+        "25": {
+          "inputs": {
+            "noise_seed": 1
+          },
+          "class_type": "RandomNoise",
+          "_meta": {
+            "title": "随机噪波"
+          }
+        },
+        "26": {
+          "inputs": {
+            "guidance": 6,
+            "conditioning": [
+              "44",
+              0
+            ]
+          },
+          "class_type": "FluxGuidance",
+          "_meta": {
+            "title": "Flux引导"
+          }
+        },
+        "44": {
+          "inputs": {
+            "text": "anime style anime girl with massive fennec ears and one big fluffy tail, she has blonde hair long hair blue eyes wearing a pink sweater and a long blue skirt walking in a beautiful outdoor scenery with snow mountains in the background",
+            "clip": [
+              "11",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        },
+        "45": {
+          "inputs": {
+            "width": 848,
+            "height": 480,
+            "length": 73,
+            "batch_size": 1
+          },
+          "class_type": "EmptyHunyuanLatentVideo",
+          "_meta": {
+            "title": "空Latent视频（Hunyuan）"
+          }
+        },
+        "67": {
+          "inputs": {
+            "shift": 7,
+            "model": [
+              "12",
+              0
+            ]
+          },
+          "class_type": "ModelSamplingSD3",
+          "_meta": {
+            "title": "采样算法（SD3）"
+          }
+        },
+        "73": {
+          "inputs": {
+            "tile_size": 256,
+            "overlap": 64,
+            "temporal_size": 64,
+            "temporal_overlap": 8,
+            "samples": [
+              "13",
+              0
+            ],
+            "vae": [
+              "10",
+              0
+            ]
+          },
+          "class_type": "VAEDecodeTiled",
+          "_meta": {
+            "title": "VAE解码（分块）"
+          }
+        },
+        "79": {
+          "inputs": {
+            "fps": 24,
+            "images": [
+              "73",
+              0
+            ]
+          },
+          "class_type": "CreateVideo",
+          "_meta": {
+            "title": "创建视频"
+          }
+        },
+        "80": {
+          "inputs": {
+            "filename_prefix": "video/ComfyUI",
+            "format": "auto",
+            "codec": "auto",
+            "video": [
+              "79",
+              0
+            ]
+          },
+          "class_type": "SaveVideo",
+          "_meta": {
+            "title": "保存视频"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/hunyuan_video_text_to_video/hunyuan_video_text_to_video.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/hunyuan_video_text_to_video/hunyuan_video_text_to_video.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "10",
+          "input_key": "vae_name",
+          "widget_index": null,
+          "filename": "hunyuan_video_vae_bf16.safetensors",
+          "loader_class": "VAELoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "11",
+          "input_key": "clip_name1",
+          "widget_index": null,
+          "filename": "clip_l.safetensors",
+          "loader_class": "DualCLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "11",
+          "input_key": "clip_name2",
+          "widget_index": null,
+          "filename": "llava_llama3_fp8_scaled.safetensors",
+          "loader_class": "DualCLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "12",
+          "input_key": "unet_name",
+          "widget_index": null,
+          "filename": "hunyuan_video_t2v_720p_bf16.safetensors",
+          "loader_class": "UNETLoader",
+          "graph_path": []
+        }
+      ]
+    }
+  }
+}

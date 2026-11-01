@@ -1,0 +1,56 @@
+id: remote.template.api_hunyuan3d_smart_topology
+kind: comfyui_template
+title: 'HY 3D: Smart Topology'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HY 3D: Smart Topology'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Upload a high-poly 3D model file. Generate a lower-polygon, topologically
+    optimized 3D model with a specified reduction level.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_hunyuan3d_smart_topology.json
+  sha256: 822bb950c8e42f14caceb59d24d8bcf23889c04293c62071ec3d284a399a7aab
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_hunyuan3d_smart_topology
+  title: 'HY 3D: Smart Topology'
+  description: Upload a high-poly 3D model file. Generate a lower-polygon, topologically
+    optimized 3D model with a specified reduction level.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - 3D
+  models:
+  - Hunyuan3D
+  logos:
+  - provider: Hunyuan
+  date: '2026-03-07'
+  openSource: false
+  size: 0
+  usage: 21
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.16.4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path

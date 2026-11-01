@@ -1,0 +1,89 @@
+id: remote.template.templates-product_ad-v2.0
+kind: comfyui_template
+title: Swap Product Into a Reference AD
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Swap Product Into a Reference AD
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Create static ads for your product in the style of a reference advertisement
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-product_ad-v2.0.json
+  sha256: 2d05ad89fce3b906e4f43ed6447a6905485cf5b61dd667f1e060a889621ddab8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-product_ad-v2.0
+  title: Swap Product Into a Reference AD
+  mediaType: image
+  mediaSubtype: webp
+  description: Create static ads for your product in the style of a reference advertisement
+  tags:
+  - API
+  - Style Reference
+  models:
+  - Gemini3 Pro Image Preview
+  - Nano Banana Pro
+  - Google
+  - ByteDance
+  - Seedance
+  date: '2025-12-03'
+  openSource: false
+  searchRank: 8
+  size: 0
+  usage: 20
+  logos:
+  - provider:
+    - ByteDance
+    - Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: reference_ad.png
+      mediaType: image
+    - nodeId: 2
+      nodeType: LoadImage
+      file: comfy_gpu.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-product_ad-v2_0.png
+  minComfyUIVersion: 0.8.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

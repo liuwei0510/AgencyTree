@@ -1,0 +1,105 @@
+id: remote:template:api_meta_muse_image_image_edit
+kind: comfyui_template
+title: 'Muse Image 1.0: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Muse Image 1.0: Image Edit'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types: {}
+  capability: Edit an image with precision using Muse Image 1.0, following natural
+    language instructions to alter specific elements while preserving the rest of
+    the scene. Takes 2 input images and produces 1 edited output image. Ideal for
+    product photography touch-ups, creative style transfers, and iterative visual
+    refinement.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meta_muse_image_image_edit.json
+  sha256: 64fcd30c73e613eb9ae811b4eb27a9abae70f61431f0c0a4acb0354c3b9eba59
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meta_muse_image_image_edit
+  title: 'Muse Image 1.0: Image Edit'
+  description: Edit an image with precision using Muse Image 1.0, following natural
+    language instructions to alter specific elements while preserving the rest of
+    the scene. Takes 2 input images and produces 1 edited output image. Ideal for
+    product photography touch-ups, creative style transfers, and iterative visual
+    refinement.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Muse Image
+  logos:
+  - provider: meta
+  date: '2026-09-04'
+  openSource: false
+  size: 0
+  usage: 43
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: deep_blue_whale_swim_scene.png
+      mediaType: image
+    - nodeId: 5
+      nodeType: LoadImage
+      file: desert_red_modern_house.png
+      mediaType: image
+  thumbnail:
+  - input/desert_red_modern_house.png
+  - output/api_meta_muse_image_image_edit.png
+  minComfyUIVersion: 0.34.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meta_muse_image_image_edit.json
+  sha256: 64fcd30c73e613eb9ae811b4eb27a9abae70f61431f0c0a4acb0354c3b9eba59
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_meta_muse_image_image_edit_8319ebc7/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '4'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '5'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

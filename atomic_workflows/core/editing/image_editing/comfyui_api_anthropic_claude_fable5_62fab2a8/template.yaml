@@ -1,0 +1,90 @@
+id: remote:template:api_anthropic_claude_fable5
+kind: comfyui_template
+title: 'Claude: Fable 5'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Claude: Fable 5'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    transcript: text
+  capability: Claude Fable 5, Anthropic's first public Mythos-class frontier model,
+    powers end-to-end creative workflows in ComfyUI. It takes 1 text prompt and generates
+    1 structured output including storyboard breakdowns, precise prompts for SD models
+    and ControlNet, and custom node scripts. Ideal for concept artists refining visual
+    narratives, AI filmmakers maintaining style consistency across series, and digital
+    creators automating their entire rendering pipeline.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_fable5.json
+  sha256: 9ee4e2251d36273bd09ae445e32fd5ccb42a05e93ecd6e2ed015c5e5a0feb566
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_anthropic_claude_fable5
+  title: 'Claude: Fable 5'
+  description: Claude Fable 5, Anthropic's first public Mythos-class frontier model,
+    powers end-to-end creative workflows in ComfyUI. It takes 1 text prompt and generates
+    1 structured output including storyboard breakdowns, precise prompts for SD models
+    and ControlNet, and custom node scripts. Ideal for concept artists refining visual
+    narratives, AI filmmakers maintaining style consistency across series, and digital
+    creators automating their entire rendering pipeline.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Claude
+  logos:
+  - provider: Anthropic
+  date: '2026-07-22'
+  openSource: false
+  size: 0
+  usage: 8
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_anthropic_claude_fable5.webp
+  minComfyUIVersion: 0.28.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_fable5.json
+  sha256: 9ee4e2251d36273bd09ae445e32fd5ccb42a05e93ecd6e2ed015c5e5a0feb566
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_anthropic_claude_fable5_62fab2a8/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: transcript
+  type: text
+contract_errors: []
+planning_eligible: true

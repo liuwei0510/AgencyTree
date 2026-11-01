@@ -1,0 +1,84 @@
+id: remote:template:ltxv_text_to_video
+kind: comfyui_template
+title: LTXV Text to Video
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LTXV Text to Video
+  input_types:
+    negative_prompt: string
+    prompt: string
+  output_types:
+    video: video_path
+  capability: Generate videos from text prompts.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: low quality, worst quality, deformed, distorted, disfigured, motion smear,
+      motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/ltxv_text_to_video.json
+  sha256: 5b9f8183a30262617d4f74df02f1b107be95a21988bd42b785ce4a76439aee26
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: ltxv_text_to_video
+  title: LTXV Text to Video
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate videos from text prompts.
+  tutorialUrl: https://docs.comfy.org/tutorials/video/ltxv
+  tags:
+  - Text to Video
+  - Video
+  models:
+  - LTX-0.9.5
+  date: '2025-03-01'
+  size: 19155554140
+  usage: 16
+  username: ComfyUI
+  minComfyUIVersion: 0.3.31
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/ltxv_text_to_video.json
+  sha256: 5b9f8183a30262617d4f74df02f1b107be95a21988bd42b785ce4a76439aee26
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_ltxv_text_to_video_64900daf/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: low quality, worst quality, deformed, distorted, disfigured, motion smear,
+    motion artifacts, fused fingers, bad anatomy, weird hand, ugly
+- name: prompt
+  type: string
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,72 @@
+id: remote:template:api_elevenlabs_v4_text_to_speech
+kind: comfyui_template
+title: 'Eleven v4: Text to Speech'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Eleven v4: Text to Speech'
+  input_types: {}
+  output_types: {}
+  capability: Generate expressive speech from text with Eleven v4, the quality-focused
+    ElevenLabs model. Direct the performance with audio tags such as [whispers] or
+    [excited] written into the script, or upload a voice sample to clone a voice and
+    narrate the script in it. One audio file is output. Ideal for audiobooks, narration,
+    and character voiceovers.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_elevenlabs_v4_text_to_speech.json
+  sha256: 8d20e524ed31cb4c8711d9cfe5acc2272c0dd06f820d87143e1c5fd5d8078861
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_elevenlabs_v4_text_to_speech
+  title: 'Eleven v4: Text to Speech'
+  description: Generate expressive speech from text with Eleven v4, the quality-focused
+    ElevenLabs model. Direct the performance with audio tags such as [whispers] or
+    [excited] written into the script, or upload a voice sample to clone a voice and
+    narrate the script in it. One audio file is output. Ideal for audiobooks, narration,
+    and character voiceovers.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Speech
+  - Audio
+  - API
+  models:
+  - ElevenLabs
+  logos:
+  - provider: ElevenLabs
+  minComfyUIVersion: 0.38.3
+  date: '2026-10-02'
+  openSource: false
+  size: 0
+  usage: 543
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 210
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_elevenlabs_v4_text_to_speech.json
+  sha256: 8d20e524ed31cb4c8711d9cfe5acc2272c0dd06f820d87143e1c5fd5d8078861
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_api_elevenlabs_v4_text_to_speech_142279fa/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

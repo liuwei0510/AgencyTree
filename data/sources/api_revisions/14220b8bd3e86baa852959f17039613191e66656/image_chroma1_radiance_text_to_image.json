@@ -1,0 +1,26 @@
+{
+  "740": {
+    "inputs": {
+      "images": [
+        "762",
+        0
+      ],
+      "filename_prefix": "Chroma-Radiance"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.59"
+    }
+  },
+  "762": {
+    "inputs": {},
+    "class_type": "107cc5d5-a32e-4420-96ef-83996f29ac4c",
+    "_meta": {
+      "title": "107cc5d5-a32e-4420-96ef-83996f29ac4c",
+      "cnr_id": "comfy-core",
+      "ver": "0.4.0"
+    }
+  }
+}

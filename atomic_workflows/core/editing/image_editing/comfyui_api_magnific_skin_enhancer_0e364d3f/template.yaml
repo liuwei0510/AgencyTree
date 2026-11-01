@@ -1,0 +1,79 @@
+id: remote.template.api_magnific_skin_enhancer
+kind: comfyui_template
+title: 'Portrait Enhancement: Magnific'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Portrait Enhancement: Magnific'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Enhance skin and overall image quality by uploading your image and selecting
+    a preset to adjust lighting, color grading, and realism.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_magnific_skin_enhancer.json
+  sha256: d735ee14cae41fd55dc21f962d7de11d6561536ee2f65ce93ac52cee9ee138b5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_magnific_skin_enhancer
+  title: 'Portrait Enhancement: Magnific'
+  description: Enhance skin and overall image quality by uploading your image and
+    selecting a preset to adjust lighting, color grading, and realism.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Portrait
+  models:
+  - Magnific
+  date: '2026-01-26'
+  openSource: false
+  usage: 130
+  size: 0
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: close_up_girl_skin.png
+      mediaType: image
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: api_magnific_skin_enhancer.png
+      mediaType: image
+  username: ComfyUI
+  logos:
+  - provider: Magnific
+  thumbnail:
+  - input/close_up_girl_skin.png
+  - output/api_magnific_skin_enhancer.png
+  minComfyUIVersion: 0.11.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '4'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

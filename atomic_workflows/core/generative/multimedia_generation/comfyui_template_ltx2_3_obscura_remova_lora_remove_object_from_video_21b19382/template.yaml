@@ -1,0 +1,70 @@
+id: remote:template:template_ltx2_3_obscura_remova_lora_remove_object_from_video
+kind: comfyui_template
+title: Remove Object from Video - LTX 2.3 Obscura Remova LoRA
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Remove Object from Video - LTX 2.3 Obscura Remova LoRA
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload an input video and prompt for the object to get removed from
+    the video's foreground.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_obscura_remova_lora_remove_object_from_video.json
+  sha256: c1fa4dc81a99764a5db52cbcd31d8168b78cdd93834b4edd7214f373a763712e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_ltx2_3_obscura_remova_lora_remove_object_from_video
+  title: Remove Object from Video - LTX 2.3 Obscura Remova LoRA
+  description: Upload an input video and prompt for the object to get removed from
+    the video's foreground.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Edit
+  - LoRA
+  models:
+  - LTX-2.3
+  requiresCustomNodes:
+  - ComfyUI-LTXVideo
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  date: '2026-05-21'
+  openSource: true
+  includeOnDistributions:
+  - cloud
+  size: 61418032333
+  usage: 85
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 39
+      nodeType: LoadVideo
+      file: input_playing_the_piano.mp4
+      mediaType: video
+  minComfyUIVersion: 0.19.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_obscura_remova_lora_remove_object_from_video.json
+  sha256: c1fa4dc81a99764a5db52cbcd31d8168b78cdd93834b4edd7214f373a763712e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_template_ltx2_3_obscura_remova_lora_remove_object_from_video_21b19382/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

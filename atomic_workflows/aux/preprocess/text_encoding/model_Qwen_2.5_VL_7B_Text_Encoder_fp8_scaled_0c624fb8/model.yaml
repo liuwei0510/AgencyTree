@@ -1,0 +1,43 @@
+id: remote.model.0c624fb876d482178216
+kind: comfyui_model
+title: Qwen 2.5 VL 7B Text Encoder (fp8_scaled)
+tree_branch:
+- aux
+- preprocess
+- text_encoding
+six_tuple:
+  name: Qwen 2.5 VL 7B Text Encoder (fp8_scaled)
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: qwen_2.5_vl_7b_fp8_scaled.safetensors
+  - name: base
+    value: Qwen-2.5-VL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders/qwen
+    filename: qwen_2.5_vl_7b_fp8_scaled.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Qwen 2.5 VL 7B Text Encoder (fp8_scaled)
+  type: clip
+  base: Qwen-2.5-VL
+  save_path: text_encoders/qwen
+  description: Qwen 2.5 VL 7B text encoder model (fp8_scaled)
+  reference: https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI
+  filename: qwen_2.5_vl_7b_fp8_scaled.safetensors
+  url: https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors
+  size: 3.75GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

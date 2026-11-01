@@ -1,0 +1,68 @@
+id: remote:template:audio_ace_step_1_5_split_llm
+kind: comfyui_template
+title: ACE-Step 1.5 AI Lyric Song Generation
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: ACE-Step 1.5 AI Lyric Song Generation
+  input_types: {}
+  output_types:
+    audio: audio_path
+  capability: Input a music style and optional lyrics. Generate a full song with AI-created
+    lyrics and audio.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_5_split_llm.json
+  sha256: cf07783d202b1880092e53154627c47fc01792b0c8cd5dddcdc593c40233635d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_ace_step_1_5_split_llm
+  title: ACE-Step 1.5 AI Lyric Song Generation
+  description: Input a music style and optional lyrics. Generate a full song with
+    AI-created lyrics and audio.
+  mediaType: audio
+  mediaSubtype: mp3
+  tags:
+  - API
+  - Text to Audio
+  models:
+  - ACE-Step
+  - Google Gemini
+  logos:
+  - provider: Google
+  date: '2026-02-09'
+  openSource: false
+  size: 9985798963
+  usage: 57
+  searchRank: 0
+  io:
+    outputs:
+    - nodeId: 111
+      nodeType: SaveAudioAdvanced
+      file: audio_ace_step_1_5_split_llm.flac
+      mediaType: audio
+  username: ComfyUI
+  minComfyUIVersion: 0.35.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_5_split_llm.json
+  sha256: cf07783d202b1880092e53154627c47fc01792b0c8cd5dddcdc593c40233635d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_audio_ace_step_1_5_split_llm_875b8b64/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: audio
+  type: audio_path
+planning_eligible: true
+contract_errors: []

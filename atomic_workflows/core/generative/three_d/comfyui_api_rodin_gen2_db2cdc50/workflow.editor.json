@@ -1,0 +1,272 @@
+{
+  "id": "242a6140-7341-49ca-876b-c01366b39b84",
+  "revision": 0,
+  "last_node_id": 89,
+  "last_link_id": 84,
+  "nodes": [
+    {
+      "id": 82,
+      "type": "LoadImage",
+      "pos": [
+        -830,
+        -430
+      ],
+      "size": [
+        260,
+        330
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            80
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59"
+      },
+      "widgets_values": [
+        "api_rodin_gen2_input_image.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "api_rodin_gen2_input_image.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 85,
+      "type": "Rodin3D_Gen2",
+      "pos": [
+        -150,
+        -430
+      ],
+      "size": [
+        340,
+        150
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "showAdvanced": false,
+      "inputs": [
+        {
+          "name": "Images",
+          "type": "IMAGE",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "3D Model Path",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "GLB",
+          "type": "FILE_3D_GLB",
+          "links": [
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Rodin3D_Gen2",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3"
+      },
+      "widgets_values": [
+        false,
+        0,
+        "PBR",
+        "500K-Triangle"
+      ],
+      "widgets_values_named": {
+        "TAPose": false,
+        "Seed": 0,
+        "Material_Type": "PBR",
+        "Polygon_count": "500K-Triangle"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 87,
+      "type": "SaveGLB",
+      "pos": [
+        240,
+        -440
+      ],
+      "size": [
+        610,
+        650
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh",
+          "type": "MESH,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_OBJ,FILE_3D_FBX,FILE_3D_STL,FILE_3D_USDZ,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_SPZ,FILE_3D_KSPLAT,FILE_3D_SPLAT_ANY,FILE_3D_POINT_CLOUD_ANY,FILE_3D",
+          "link": 81
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Last Time Model File": "3d/e1342eb40dc4f3739f56562b61a5eb54a3cfaf7cf45e97288e5d13f330f0cc36.glb",
+        "Last Time Model Folder": "output",
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "hasCustomUp": false
+        },
+        "Light Config": {
+          "intensity": 3,
+          "hdri": {
+            "enabled": false,
+            "hdriPath": "",
+            "showAsBackground": false,
+            "intensity": 1
+          }
+        }
+      },
+      "widgets_values": [
+        "3d/ComfyUI",
+        ""
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "3d/ComfyUI",
+        "image": ""
+      }
+    },
+    {
+      "id": 86,
+      "type": "BatchImagesNode",
+      "pos": [
+        -480,
+        -430
+      ],
+      "size": [
+        200,
+        70
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image0",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 80
+        },
+        {
+          "label": "image1",
+          "name": "images.image1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BatchImagesNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3"
+      }
+    },
+    {
+      "id": 89,
+      "type": "MarkdownNote",
+      "pos": [
+        -1250,
+        -420
+      ],
+      "size": [
+        380,
+        371.29689095419087
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Try to provide the following types of images:\n- Provide images from multiple angles.\n- Images with a solid color background.\n\nThis helps to generate a model that better meets the requirements. Of course, thanks to Rodin's excellent product capabilities, the subject in the unprocessed image can also achieve a good model output.  \n\n## Input Asset\n\n- [api_rodin_gen2_input_image.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/api_rodin_gen2_input_image.png)\n\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "Try to provide the following types of images:\n- Provide images from multiple angles.\n- Images with a solid color background.\n\nThis helps to generate a model that better meets the requirements. Of course, thanks to Rodin's excellent product capabilities, the subject in the unprocessed image can also achieve a good model output.  \n\n## Input Asset\n\n- [api_rodin_gen2_input_image.png](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/input/api_rodin_gen2_input_image.png)\n\n\n## Report Issue\n\nNote: Please update ComfyUI first ([guide](https://docs.comfy.org/installation/update_comfyui)) and prepare required models. Desktop/Cloud updates follow stable releases, so some nightly-supported models may not be available yet.\n\n- Cannot run / runtime errors: [ComfyUI/issues](https://github.com/comfyanonymous/ComfyUI/issues)\n- UI / frontend issues: [ComfyUI_frontend/issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)\n- Workflow issues: [workflow_templates/issues](https://github.com/Comfy-Org/workflow_templates/issues)\n\n"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      79,
+      86,
+      0,
+      85,
+      0,
+      "IMAGE"
+    ],
+    [
+      81,
+      85,
+      1,
+      87,
+      0,
+      "FILE_3D_GLB"
+    ],
+    [
+      80,
+      82,
+      0,
+      86,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.48358208955223925,
+      "offset": [
+        2302.6058259101305,
+        1178.7611621165127
+      ]
+    },
+    "frontendVersion": "1.56.3",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

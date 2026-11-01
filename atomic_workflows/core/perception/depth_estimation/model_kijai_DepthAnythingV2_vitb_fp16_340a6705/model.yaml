@@ -1,0 +1,43 @@
+id: remote.model.340a670532271dad94d4
+kind: comfyui_model
+title: kijai/DepthAnythingV2 (vitb/fp16)
+tree_branch:
+- core
+- perception
+- depth_estimation
+six_tuple:
+  name: kijai/DepthAnythingV2 (vitb/fp16)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/depth_estimation
+  parameters:
+  - name: filename
+    value: depth_anything_v2_vitb_fp16.safetensors
+  - name: base
+    value: depthanything
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: depthanything
+    save_path: depthanything
+    filename: depth_anything_v2_vitb_fp16.safetensors
+    download_locator: https://huggingface.co/Kijai/DepthAnythingV2-safetensors/resolve/main/depth_anything_v2_vitb_fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: kijai/DepthAnythingV2 (vitb/fp16)
+  type: depthanything
+  base: depthanything
+  save_path: depthanything
+  description: DepthAnythingV2 model
+  reference: https://huggingface.co/Kijai/DepthAnythingV2-safetensors/tree/main
+  filename: depth_anything_v2_vitb_fp16.safetensors
+  url: https://huggingface.co/Kijai/DepthAnythingV2-safetensors/resolve/main/depth_anything_v2_vitb_fp16.safetensors
+  size: 195.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

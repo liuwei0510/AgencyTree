@@ -1,0 +1,70 @@
+id: remote.template.image_qwen_image_edit_2509
+kind: comfyui_template
+title: Qwen Image Edit 2509
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen Image Edit 2509
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Advanced image editing with multi-image support, improved consistency,
+    and ControlNet integration.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_edit_2509.json
+  sha256: 140bc765b0eaa4e2ef290249be323bbcf68987ad89c3b5eaa5c768309c8d6ab7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_edit_2509
+  title: Qwen Image Edit 2509
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Advanced image editing with multi-image support, improved consistency,
+    and ControlNet integration.
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit
+  tags:
+  - ControlNet
+  - Image Edit
+  models:
+  - Qwen-Image
+  date: '2025-09-25'
+  size: 31782757990
+  usage: 3688
+  io:
+    inputs:
+    - nodeId: 78
+      nodeType: LoadImage
+      file: image_qwen_image_edit_2509_input_image.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/image_qwen_image_edit_2509_input_image.png
+  - output/image_qwen_image_edit_2509.png
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.23.0
+validation_errors: []
+planning_eligible: false
+inputs: *id001
+inject:
+  source_image:
+    node_id: '78'
+    input_key: image
+    widget_index: 0
+outputs: []

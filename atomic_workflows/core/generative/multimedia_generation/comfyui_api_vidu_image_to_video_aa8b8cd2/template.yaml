@@ -1,0 +1,79 @@
+id: remote:template:api_vidu_image_to_video
+kind: comfyui_template
+title: 'Vidu Q1: Image to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q1: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform static images into dynamic 1080p videos with precise motion
+    control and customizable movement amplitude using Vidu.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_image_to_video.json
+  sha256: 67df9f196cb6a44469d7be894ff3341e141b938703dedaaad450820fd4e91bca
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_image_to_video
+  title: 'Vidu Q1: Image to Video'
+  description: Transform static images into dynamic 1080p videos with precise motion
+    control and customizable movement amplitude using Vidu.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  - API
+  models:
+  - Vidu Q1
+  - Vidu
+  date: '2025-08-23'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 14
+  io:
+    inputs:
+    - nodeId: 22
+      nodeType: LoadImage
+      file: api_vidu_image_to_video_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.51
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_image_to_video.json
+  sha256: 67df9f196cb6a44469d7be894ff3341e141b938703dedaaad450820fd4e91bca
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_api_vidu_image_to_video_aa8b8cd2/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '22'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

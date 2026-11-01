@@ -1,0 +1,42 @@
+{
+  "17": {
+    "inputs": {
+      "image": "flux_depth_lora_example_input_image.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.63"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "150",
+        0
+      ],
+      "filename_prefix": "Flux.1_dev"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.63"
+    }
+  },
+  "150": {
+    "inputs": {
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "93bb962d-07fe-4a22-88e4-2df05e9caf80",
+    "_meta": {
+      "title": "93bb962d-07fe-4a22-88e4-2df05e9caf80",
+      "cnr_id": "comfy-core",
+      "ver": "0.18.1"
+    }
+  }
+}

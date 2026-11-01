@@ -1,0 +1,42 @@
+{
+  "143": {
+    "inputs": {
+      "image": "future_portrait.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.5.1"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "192",
+        0
+      ],
+      "filename_prefix": "Firered_image_edit_1.1"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.5.1"
+    }
+  },
+  "192": {
+    "inputs": {
+      "image": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "1db9ada8-0f48-4990-95fc-9df56969dd2d",
+    "_meta": {
+      "title": "1db9ada8-0f48-4990-95fc-9df56969dd2d",
+      "cnr_id": "comfy-core",
+      "ver": "0.15.1"
+    }
+  }
+}

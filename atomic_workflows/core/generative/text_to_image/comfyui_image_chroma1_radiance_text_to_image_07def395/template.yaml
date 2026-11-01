@@ -1,0 +1,65 @@
+id: remote:template:image_chroma1_radiance_text_to_image
+kind: comfyui_template
+title: Chroma1 Radiance Text to Image
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Chroma1 Radiance Text to Image
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Chroma1-Radiance works directly with image pixels instead of compressed
+    latents, delivering higher quality images with reduced artifacts and distortion.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_chroma1_radiance_text_to_image.json
+  sha256: 7f2d3d9f7289405807343a5cfc1442dd7990f0b8fff70efa08f029ef61f6551e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_chroma1_radiance_text_to_image
+  title: Chroma1 Radiance Text to Image
+  mediaType: image
+  mediaSubtype: webp
+  description: Chroma1-Radiance works directly with image pixels instead of compressed
+    latents, delivering higher quality images with reduced artifacts and distortion.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - Chroma
+  date: '2025-09-18'
+  size: 24159191040
+  usage: 19
+  io:
+    outputs:
+    - nodeId: 740
+      nodeType: SaveImage
+      file: image_chroma1_radiance_text_to_image.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/image_chroma1_radiance_text_to_image.png
+  minComfyUIVersion: 0.3.60
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_chroma1_radiance_text_to_image.json
+  sha256: 7f2d3d9f7289405807343a5cfc1442dd7990f0b8fff70efa08f029ef61f6551e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

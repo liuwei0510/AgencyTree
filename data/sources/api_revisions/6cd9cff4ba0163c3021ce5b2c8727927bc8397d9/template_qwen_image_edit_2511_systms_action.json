@@ -1,0 +1,40 @@
+{
+  "170": {
+    "inputs": {
+      "image": [
+        "223",
+        0
+      ]
+    },
+    "class_type": "cdb2cf24-c432-439b-b5c8-5f69838580c9",
+    "_meta": {
+      "title": "cdb2cf24-c432-439b-b5c8-5f69838580c9",
+      "cnr_id": "comfy-core",
+      "ver": "0.16.4"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "170",
+        0
+      ],
+      "filename_prefix": "Qwen_Edit_2511_systms_action"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.5.1"
+    }
+  },
+  "223": {
+    "inputs": {
+      "image": "western_rider.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage"
+    }
+  }
+}

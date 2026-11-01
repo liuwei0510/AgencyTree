@@ -1,0 +1,92 @@
+id: remote:template:templates_shane_video_restyle
+kind: comfyui_template
+title: Video Restyle
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Video Restyle
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Use a base video + a stylized reference image to create the stylized
+    video using WAN 2.1 VACE
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_shane_video_restyle.json
+  sha256: 99299924fe555765c5520362f761c7214071c66cbd068f85d32c95f6faf0b536
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_shane_video_restyle
+  title: Video Restyle
+  description: Use a base video + a stylized reference image to create the stylized
+    video using WAN 2.1 VACE
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video
+  - Video to Video
+  models:
+  - Wan2.1 VACE
+  requiresCustomNodes:
+  - ComfyUI-WanVideoWrapper
+  - comfyui-depthanythingv2
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  - comfyui_controlnet_aux
+  date: '2026-03-03'
+  openSource: true
+  size: 21474836480
+  usage: 22
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 134
+      nodeType: LoadImage
+      file: shane_video_restyle_ref_frame.png
+      mediaType: image
+    - nodeId: 154
+      nodeType: VHS_LoadVideo
+      file: flower.mp4
+      mediaType: video
+  username: shane
+  thumbnail:
+  - input/flower.mp4
+  - output/templates_shane_video_restyle.mp4
+  minComfyUIVersion: 0.3.16
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_shane_video_restyle.json
+  sha256: 99299924fe555765c5520362f761c7214071c66cbd068f85d32c95f6faf0b536
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_templates_shane_video_restyle_7f12a2a7/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '134'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,79 @@
+id: remote:template:video_ltx2_3_i2v
+kind: comfyui_template
+title: 'LTX-2.3: Image to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2.3: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload an image to generate a video with improved motion consistency
+    and fine details, including enhanced support for portrait formats and audio quality.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_3_i2v.json
+  sha256: b9f483ab0abd3a74551d5e63d9b54ea8c92c953274920a1112430c5eb4e29841
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_3_i2v
+  title: 'LTX-2.3: Image to Video'
+  description: Upload an image to generate a video with improved motion consistency
+    and fine details, including enhanced support for portrait formats and audio quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  models:
+  - LTX-2.3
+  - Lightricks
+  date: '2026-03-05'
+  openSource: true
+  size: 47244640256
+  usage: 19017
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 269
+      nodeType: LoadImage
+      file: egyptian_queen.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_3_i2v.json
+  sha256: b9f483ab0abd3a74551d5e63d9b54ea8c92c953274920a1112430c5eb4e29841
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_ltx2_3_i2v_5111cfda/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '269'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

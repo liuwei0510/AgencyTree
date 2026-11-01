@@ -1,0 +1,59 @@
+{
+  "6": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Depth Preview (one frame per view)",
+      "cnr_id": "comfy-core",
+      "ver": "0.19.0"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "605cfcbf-c05b-4cd4-8b8f-9d7d989ab5d3",
+    "_meta": {
+      "title": "605cfcbf-c05b-4cd4-8b8f-9d7d989ab5d3",
+      "cnr_id": "comfy-core",
+      "ver": "0.24.0"
+    }
+  },
+  "80": {
+    "inputs": {
+      "image_a": [
+        "85",
+        0
+      ],
+      "image_b": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare",
+      "cnr_id": "comfy-core",
+      "ver": "0.24.0"
+    }
+  },
+  "85": {
+    "inputs": {
+      "image": "retro_futuristic_home.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.24.0"
+    }
+  }
+}

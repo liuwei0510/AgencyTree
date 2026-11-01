@@ -1,0 +1,3313 @@
+{
+  "version": "workflow-3bc803cfd3af113f7555",
+  "schema_version": 2,
+  "parent": null,
+  "created_at": "2026-10-30T04:50:27.093541+00:00",
+  "intent": "Generate a night market scene in the Jiangnan water town during the Song Dynasty, showcasing the lively trading between vendors and customers, while also creating a scene of astronauts repairing equipment in a space station; enhance the resolution of the Song Dynasty night market image to ultra-clear, and replace the background of the space station scene with a Martian colony appearance; finally, convert the Martian colony scene into a 2-second high-definition video, with the astronauts' actions played at an accelerated speed.",
+  "act_version": "act-069d43ce89e2a1500d61",
+  "status": "validated_offline",
+  "runtime_verified": false,
+  "generation_mode": "host_plan",
+  "intent_validation": "abstract_task_coverage_and_explicit_contracts",
+  "att": {
+    "tasks": [
+      {
+        "task_id": "song",
+        "goal": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+        "capability_id": "core.generative.text_to_image",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": []
+      },
+      {
+        "task_id": "space",
+        "goal": "Generate a scene of astronauts repairing equipment in a space station.",
+        "capability_id": "core.generative.text_to_image",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": []
+      },
+      {
+        "task_id": "upscale_song",
+        "goal": "Enhance the Song Dynasty night market image to ultra-clear.",
+        "capability_id": "aux.postprocess.upscale",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {
+          "scale_factor": 2
+        },
+        "depends_on": [
+          "song"
+        ]
+      },
+      {
+        "task_id": "mars",
+        "goal": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+        "capability_id": "core.editing.image_editing",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "images": "image"
+        },
+        "constraints": {},
+        "depends_on": [
+          "space"
+        ]
+      },
+      {
+        "task_id": "animate",
+        "goal": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+        "capability_id": "core.editing.image_to_video",
+        "inputs": {},
+        "input_types": {},
+        "outputs": {
+          "video": "video"
+        },
+        "constraints": {
+          "duration": 2
+        },
+        "depends_on": [
+          "mars"
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "song",
+        "upscale_song"
+      ],
+      [
+        "space",
+        "mars"
+      ],
+      [
+        "mars",
+        "animate"
+      ]
+    ],
+    "diagnostics": [],
+    "assumptions": [
+      "The qualitative ultra-clear image requirement is instantiated with the available 2x upscaler. Fast astronaut actions are preserved in the animation prompt; the source specifies no numeric playback multiplier."
+    ]
+  },
+  "awg": {
+    "nodes": [
+      {
+        "node_id": "n1",
+        "task_id": "song",
+        "capability_id": "core.generative.text_to_image",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n2",
+        "task_id": "space",
+        "capability_id": "core.generative.text_to_image",
+        "input_types": {
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n3",
+        "task_id": "upscale_song",
+        "capability_id": "aux.postprocess.upscale",
+        "input_types": {
+          "source_image": "image"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Enhance the Song Dynasty night market image to ultra-clear."
+        },
+        "constraints": {
+          "scale_factor": 2
+        }
+      },
+      {
+        "node_id": "n4",
+        "task_id": "mars",
+        "capability_id": "core.editing.image_editing",
+        "input_types": {
+          "source_image": "image",
+          "prompt": "text"
+        },
+        "output_types": {
+          "images": "image"
+        },
+        "parameters": {
+          "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+        },
+        "constraints": {}
+      },
+      {
+        "node_id": "n5",
+        "task_id": "animate",
+        "capability_id": "core.editing.image_to_video",
+        "input_types": {
+          "source_image": "image",
+          "prompt": "text"
+        },
+        "output_types": {
+          "video": "video"
+        },
+        "parameters": {
+          "prompt": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background."
+        },
+        "constraints": {
+          "duration": 2
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from_node": "n1",
+        "output": "images",
+        "to_node": "n3",
+        "input": "source_image"
+      },
+      {
+        "from_node": "n2",
+        "output": "images",
+        "to_node": "n4",
+        "input": "source_image"
+      },
+      {
+        "from_node": "n4",
+        "output": "images",
+        "to_node": "n5",
+        "input": "source_image"
+      }
+    ],
+    "ordering": [
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n4",
+        "n5"
+      ]
+    ],
+    "constraints": {},
+    "unresolved": []
+  },
+  "execution_plan": {
+    "summary": "ACT implementation bindings",
+    "nodes": [
+      {
+        "dag_id": "n1",
+        "atomic_id": "core.generative.text_to_image.default",
+        "depends_on": [],
+        "inputs": {
+          "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+        },
+        "bindings": {},
+        "notes": null
+      },
+      {
+        "dag_id": "n2",
+        "atomic_id": "core.generative.text_to_image.default",
+        "depends_on": [],
+        "inputs": {
+          "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+        },
+        "bindings": {},
+        "notes": null
+      },
+      {
+        "dag_id": "n3",
+        "atomic_id": "aux.postprocess.upscale.upscale2x",
+        "depends_on": [
+          "n1"
+        ],
+        "inputs": {},
+        "bindings": {
+          "source_image": {
+            "from_node": "n1",
+            "output": "images",
+            "index": 0
+          }
+        },
+        "notes": null
+      },
+      {
+        "dag_id": "n4",
+        "atomic_id": "core.editing.image_editing.flux_fill_inpaint_example",
+        "depends_on": [
+          "n2"
+        ],
+        "inputs": {
+          "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+        },
+        "bindings": {
+          "source_image": {
+            "from_node": "n2",
+            "output": "images",
+            "index": 0
+          }
+        },
+        "notes": null
+      },
+      {
+        "dag_id": "n5",
+        "atomic_id": "core.editing.image_to_video.image_to_video_wan_2",
+        "depends_on": [
+          "n4"
+        ],
+        "inputs": {
+          "prompt": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+          "length": 32,
+          "fps": 16
+        },
+        "bindings": {
+          "source_image": {
+            "from_node": "n4",
+            "output": "images",
+            "index": 0
+          }
+        },
+        "notes": null
+      }
+    ],
+    "global_inputs": {}
+  },
+  "ewc": {
+    "n1": {
+      "3": {
+        "inputs": {
+          "seed": 685468484323813,
+          "steps": 20,
+          "cfg": 8,
+          "sampler_name": "euler",
+          "scheduler": "normal",
+          "denoise": 1,
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "4": {
+        "inputs": {
+          "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "Checkpoint加载器（简易）"
+        }
+      },
+      "5": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "空Latent图像"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename_prefix": "SD1.5",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      }
+    },
+    "n2": {
+      "3": {
+        "inputs": {
+          "seed": 685468484323813,
+          "steps": 20,
+          "cfg": 8,
+          "sampler_name": "euler",
+          "scheduler": "normal",
+          "denoise": 1,
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "4": {
+        "inputs": {
+          "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "Checkpoint加载器（简易）"
+        }
+      },
+      "5": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "空Latent图像"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "Generate a scene of astronauts repairing equipment in a space station.",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP文本编码"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename_prefix": "SD1.5",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      }
+    },
+    "n3": {
+      "1": {
+        "inputs": {
+          "upscale_model": [
+            "3",
+            0
+          ],
+          "image": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "ImageUpscaleWithModel",
+        "_meta": {
+          "title": "使用模型放大图像"
+        }
+      },
+      "2": {
+        "inputs": {
+          "image": "__PLACEHOLDER_n1_images_0.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "加载图像"
+        }
+      },
+      "3": {
+        "inputs": {
+          "model_name": "RealESRGAN_x2.pth"
+        },
+        "class_type": "UpscaleModelLoader",
+        "_meta": {
+          "title": "加载放大模型"
+        }
+      },
+      "4": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "1",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      }
+    },
+    "n4": {
+      "9": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "47:8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "保存图像"
+        }
+      },
+      "17": {
+        "inputs": {
+          "image": "__PLACEHOLDER_n2_images_0.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "加载图像"
+        }
+      },
+      "47:34": {
+        "inputs": {
+          "clip_name1": "clip_l.safetensors",
+          "clip_name2": "t5xxl_fp16.safetensors",
+          "type": "flux",
+          "device": "default"
+        },
+        "class_type": "DualCLIPLoader",
+        "_meta": {
+          "title": "双CLIP加载器"
+        }
+      },
+      "47:26": {
+        "inputs": {
+          "guidance": 30,
+          "conditioning": [
+            "47:23",
+            0
+          ]
+        },
+        "class_type": "FluxGuidance",
+        "_meta": {
+          "title": "Flux引导"
+        }
+      },
+      "47:32": {
+        "inputs": {
+          "vae_name": "ae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "加载VAE"
+        }
+      },
+      "47:31": {
+        "inputs": {
+          "unet_name": "flux1-fill-dev.safetensors",
+          "weight_dtype": "default"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNet加载器"
+        }
+      },
+      "47:46": {
+        "inputs": {
+          "conditioning": [
+            "47:23",
+            0
+          ]
+        },
+        "class_type": "ConditioningZeroOut",
+        "_meta": {
+          "title": "条件零化"
+        }
+      },
+      "47:23": {
+        "inputs": {
+          "text": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+          "clip": [
+            "47:34",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "47:39": {
+        "inputs": {
+          "strength": 1,
+          "model": [
+            "47:31",
+            0
+          ]
+        },
+        "class_type": "DifferentialDiffusion",
+        "_meta": {
+          "title": "差异扩散DifferentialDiffusion"
+        }
+      },
+      "47:8": {
+        "inputs": {
+          "samples": [
+            "47:3",
+            0
+          ],
+          "vae": [
+            "47:32",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "47:38": {
+        "inputs": {
+          "noise_mask": true,
+          "positive": [
+            "47:26",
+            0
+          ],
+          "negative": [
+            "47:46",
+            0
+          ],
+          "vae": [
+            "47:32",
+            0
+          ],
+          "pixels": [
+            "17",
+            0
+          ],
+          "mask": [
+            "17",
+            1
+          ]
+        },
+        "class_type": "InpaintModelConditioning",
+        "_meta": {
+          "title": "内补模型条件"
+        }
+      },
+      "47:3": {
+        "inputs": {
+          "seed": 656821733471329,
+          "steps": 20,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "normal",
+          "denoise": 1,
+          "model": [
+            "47:39",
+            0
+          ],
+          "positive": [
+            "47:38",
+            0
+          ],
+          "negative": [
+            "47:38",
+            1
+          ],
+          "latent_image": [
+            "47:38",
+            2
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      }
+    },
+    "n5": {
+      "3": {
+        "inputs": {
+          "seed": 987948718394761,
+          "steps": 20,
+          "cfg": 6,
+          "sampler_name": "uni_pc",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "54",
+            0
+          ],
+          "positive": [
+            "50",
+            0
+          ],
+          "negative": [
+            "50",
+            1
+          ],
+          "latent_image": [
+            "50",
+            2
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "K采样器"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Positive Prompt)"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIP Text Encode (Negative Prompt)"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAE解码"
+        }
+      },
+      "37": {
+        "inputs": {
+          "unet_name": "wan2.1_i2v_480p_14B_fp16.safetensors",
+          "weight_dtype": "default"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNet加载器"
+        }
+      },
+      "38": {
+        "inputs": {
+          "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "type": "wan",
+          "device": "default"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "加载CLIP"
+        }
+      },
+      "39": {
+        "inputs": {
+          "vae_name": "wan_2.1_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "加载VAE"
+        }
+      },
+      "49": {
+        "inputs": {
+          "clip_name": "clip_vision_h.safetensors"
+        },
+        "class_type": "CLIPVisionLoader",
+        "_meta": {
+          "title": "加载CLIP视觉"
+        }
+      },
+      "50": {
+        "inputs": {
+          "width": 512,
+          "height": 512,
+          "length": 32,
+          "batch_size": 1,
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "vae": [
+            "39",
+            0
+          ],
+          "clip_vision_output": [
+            "51",
+            0
+          ],
+          "start_image": [
+            "52",
+            0
+          ]
+        },
+        "class_type": "WanImageToVideo",
+        "_meta": {
+          "title": "图像到视频（Wan）"
+        }
+      },
+      "51": {
+        "inputs": {
+          "crop": "none",
+          "clip_vision": [
+            "49",
+            0
+          ],
+          "image": [
+            "52",
+            0
+          ]
+        },
+        "class_type": "CLIPVisionEncode",
+        "_meta": {
+          "title": "CLIP视觉编码"
+        }
+      },
+      "52": {
+        "inputs": {
+          "image": "__PLACEHOLDER_n4_images_0.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "加载图像"
+        }
+      },
+      "54": {
+        "inputs": {
+          "shift": 8,
+          "model": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "ModelSamplingSD3",
+        "_meta": {
+          "title": "采样算法（SD3）"
+        }
+      },
+      "55": {
+        "inputs": {
+          "fps": 16,
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "CreateVideo",
+        "_meta": {
+          "title": "创建视频"
+        }
+      },
+      "56": {
+        "inputs": {
+          "filename_prefix": "video/ComfyUI",
+          "format": "auto",
+          "codec": "auto",
+          "video": [
+            "55",
+            0
+          ]
+        },
+        "class_type": "SaveVideo",
+        "_meta": {
+          "title": "保存视频"
+        }
+      }
+    }
+  },
+  "workflow_formats": {
+    "n1": "api",
+    "n2": "api",
+    "n3": "api",
+    "n4": "api",
+    "n5": "api"
+  },
+  "bindings": {
+    "n1": {
+      "task_id": "song",
+      "awg_node_id": "n1",
+      "capability_id": "core.generative.text_to_image",
+      "implementation_id": "core.generative.text_to_image.default",
+      "model_ids": []
+    },
+    "n2": {
+      "task_id": "space",
+      "awg_node_id": "n2",
+      "capability_id": "core.generative.text_to_image",
+      "implementation_id": "core.generative.text_to_image.default",
+      "model_ids": []
+    },
+    "n3": {
+      "task_id": "upscale_song",
+      "awg_node_id": "n3",
+      "capability_id": "aux.postprocess.upscale",
+      "implementation_id": "aux.postprocess.upscale.upscale2x",
+      "model_ids": [
+        "remote:model:37b566d018b9ddc9e8d0"
+      ]
+    },
+    "n4": {
+      "task_id": "mars",
+      "awg_node_id": "n4",
+      "capability_id": "core.editing.image_editing",
+      "implementation_id": "core.editing.image_editing.flux_fill_inpaint_example",
+      "model_ids": [
+        "remote:model:2b361623f3b4b617a039",
+        "remote:model:949fbbd59ebe32762b17",
+        "remote:model:ffdaa19c0da074a30e1b"
+      ]
+    },
+    "n5": {
+      "task_id": "animate",
+      "awg_node_id": "n5",
+      "capability_id": "core.editing.image_to_video",
+      "implementation_id": "core.editing.image_to_video.image_to_video_wan_2",
+      "model_ids": [
+        "remote:model:9835ca72333b16e8cc7c",
+        "remote:model:ae1dba6f97d0c170b539",
+        "remote:model:ff57f0cc6e5c438bdded"
+      ]
+    }
+  },
+  "model_bindings": {
+    "n1": [
+      {
+        "node_id": "4",
+        "input_key": "ckpt_name",
+        "widget_index": null,
+        "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+        "loader_class": "CheckpointLoaderSimple",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ],
+    "n2": [
+      {
+        "node_id": "4",
+        "input_key": "ckpt_name",
+        "widget_index": null,
+        "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+        "loader_class": "CheckpointLoaderSimple",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ],
+    "n3": [
+      {
+        "node_id": "3",
+        "input_key": "model_name",
+        "widget_index": null,
+        "filename": "RealESRGAN_x2.pth",
+        "loader_class": "UpscaleModelLoader",
+        "graph_path": [],
+        "model_id": "remote:model:37b566d018b9ddc9e8d0",
+        "candidate_model_ids": [
+          "remote:model:37b566d018b9ddc9e8d0"
+        ]
+      }
+    ],
+    "n4": [
+      {
+        "node_id": "47:34",
+        "input_key": "clip_name1",
+        "widget_index": null,
+        "filename": "clip_l.safetensors",
+        "loader_class": "DualCLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:2b361623f3b4b617a039",
+        "candidate_model_ids": [
+          "remote:model:2b361623f3b4b617a039"
+        ]
+      },
+      {
+        "node_id": "47:34",
+        "input_key": "clip_name2",
+        "widget_index": null,
+        "filename": "t5xxl_fp16.safetensors",
+        "loader_class": "DualCLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:949fbbd59ebe32762b17",
+        "candidate_model_ids": [
+          "remote:model:949fbbd59ebe32762b17"
+        ]
+      },
+      {
+        "node_id": "47:32",
+        "input_key": "vae_name",
+        "widget_index": null,
+        "filename": "ae.safetensors",
+        "loader_class": "VAELoader",
+        "graph_path": [],
+        "model_id": "remote:model:ffdaa19c0da074a30e1b",
+        "candidate_model_ids": [
+          "remote:model:ffdaa19c0da074a30e1b"
+        ]
+      },
+      {
+        "node_id": "47:31",
+        "input_key": "unet_name",
+        "widget_index": null,
+        "filename": "flux1-fill-dev.safetensors",
+        "loader_class": "UNETLoader",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ],
+    "n5": [
+      {
+        "node_id": "37",
+        "input_key": "unet_name",
+        "widget_index": null,
+        "filename": "wan2.1_i2v_480p_14B_fp16.safetensors",
+        "loader_class": "UNETLoader",
+        "graph_path": [],
+        "model_id": "remote:model:9835ca72333b16e8cc7c",
+        "candidate_model_ids": [
+          "remote:model:9835ca72333b16e8cc7c"
+        ]
+      },
+      {
+        "node_id": "38",
+        "input_key": "clip_name",
+        "widget_index": null,
+        "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "loader_class": "CLIPLoader",
+        "graph_path": [],
+        "model_id": "remote:model:ff57f0cc6e5c438bdded",
+        "candidate_model_ids": [
+          "remote:model:ff57f0cc6e5c438bdded"
+        ]
+      },
+      {
+        "node_id": "39",
+        "input_key": "vae_name",
+        "widget_index": null,
+        "filename": "wan_2.1_vae.safetensors",
+        "loader_class": "VAELoader",
+        "graph_path": [],
+        "model_id": "remote:model:ae1dba6f97d0c170b539",
+        "candidate_model_ids": [
+          "remote:model:ae1dba6f97d0c170b539"
+        ]
+      },
+      {
+        "node_id": "49",
+        "input_key": "clip_name",
+        "widget_index": null,
+        "filename": "clip_vision_h.safetensors",
+        "loader_class": "CLIPVisionLoader",
+        "graph_path": [],
+        "model_id": null,
+        "candidate_model_ids": []
+      }
+    ]
+  },
+  "generation": {
+    "att": {
+      "tasks": [
+        {
+          "task_id": "song",
+          "goal": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+          "capability_id": "core.generative.text_to_image",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": []
+        },
+        {
+          "task_id": "space",
+          "goal": "Generate a scene of astronauts repairing equipment in a space station.",
+          "capability_id": "core.generative.text_to_image",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": []
+        },
+        {
+          "task_id": "upscale_song",
+          "goal": "Enhance the Song Dynasty night market image to ultra-clear.",
+          "capability_id": "aux.postprocess.upscale",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {
+            "scale_factor": 2
+          },
+          "depends_on": [
+            "song"
+          ]
+        },
+        {
+          "task_id": "mars",
+          "goal": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+          "capability_id": "core.editing.image_editing",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "images": "image"
+          },
+          "constraints": {},
+          "depends_on": [
+            "space"
+          ]
+        },
+        {
+          "task_id": "animate",
+          "goal": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+          "capability_id": "core.editing.image_to_video",
+          "inputs": {},
+          "input_types": {},
+          "outputs": {
+            "video": "video"
+          },
+          "constraints": {
+            "duration": 2
+          },
+          "depends_on": [
+            "mars"
+          ]
+        }
+      ],
+      "edges": [
+        [
+          "song",
+          "upscale_song"
+        ],
+        [
+          "space",
+          "mars"
+        ],
+        [
+          "mars",
+          "animate"
+        ]
+      ],
+      "diagnostics": [],
+      "assumptions": [
+        "The qualitative ultra-clear image requirement is instantiated with the available 2x upscaler. Fast astronaut actions are preserved in the animation prompt; the source specifies no numeric playback multiplier."
+      ]
+    },
+    "awg": {
+      "nodes": [
+        {
+          "node_id": "n1",
+          "task_id": "song",
+          "capability_id": "core.generative.text_to_image",
+          "input_types": {
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+          },
+          "constraints": {}
+        },
+        {
+          "node_id": "n2",
+          "task_id": "space",
+          "capability_id": "core.generative.text_to_image",
+          "input_types": {
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+          },
+          "constraints": {}
+        },
+        {
+          "node_id": "n3",
+          "task_id": "upscale_song",
+          "capability_id": "aux.postprocess.upscale",
+          "input_types": {
+            "source_image": "image"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Enhance the Song Dynasty night market image to ultra-clear."
+          },
+          "constraints": {
+            "scale_factor": 2
+          }
+        },
+        {
+          "node_id": "n4",
+          "task_id": "mars",
+          "capability_id": "core.editing.image_editing",
+          "input_types": {
+            "source_image": "image",
+            "prompt": "text"
+          },
+          "output_types": {
+            "images": "image"
+          },
+          "parameters": {
+            "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+          },
+          "constraints": {}
+        },
+        {
+          "node_id": "n5",
+          "task_id": "animate",
+          "capability_id": "core.editing.image_to_video",
+          "input_types": {
+            "source_image": "image",
+            "prompt": "text"
+          },
+          "output_types": {
+            "video": "video"
+          },
+          "parameters": {
+            "prompt": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background."
+          },
+          "constraints": {
+            "duration": 2
+          }
+        }
+      ],
+      "edges": [
+        {
+          "from_node": "n1",
+          "output": "images",
+          "to_node": "n3",
+          "input": "source_image"
+        },
+        {
+          "from_node": "n2",
+          "output": "images",
+          "to_node": "n4",
+          "input": "source_image"
+        },
+        {
+          "from_node": "n4",
+          "output": "images",
+          "to_node": "n5",
+          "input": "source_image"
+        }
+      ],
+      "ordering": [
+        [
+          "n1",
+          "n3"
+        ],
+        [
+          "n2",
+          "n4"
+        ],
+        [
+          "n4",
+          "n5"
+        ]
+      ],
+      "constraints": {},
+      "unresolved": []
+    },
+    "execution_plan": {
+      "summary": "ACT implementation bindings",
+      "nodes": [
+        {
+          "dag_id": "n1",
+          "atomic_id": "core.generative.text_to_image.default",
+          "depends_on": [],
+          "inputs": {
+            "prompt": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers."
+          },
+          "bindings": {},
+          "notes": null
+        },
+        {
+          "dag_id": "n2",
+          "atomic_id": "core.generative.text_to_image.default",
+          "depends_on": [],
+          "inputs": {
+            "prompt": "Generate a scene of astronauts repairing equipment in a space station."
+          },
+          "bindings": {},
+          "notes": null
+        },
+        {
+          "dag_id": "n3",
+          "atomic_id": "aux.postprocess.upscale.upscale2x",
+          "depends_on": [
+            "n1"
+          ],
+          "inputs": {},
+          "bindings": {
+            "source_image": {
+              "from_node": "n1",
+              "output": "images",
+              "index": 0
+            }
+          },
+          "notes": null
+        },
+        {
+          "dag_id": "n4",
+          "atomic_id": "core.editing.image_editing.flux_fill_inpaint_example",
+          "depends_on": [
+            "n2"
+          ],
+          "inputs": {
+            "prompt": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment."
+          },
+          "bindings": {
+            "source_image": {
+              "from_node": "n2",
+              "output": "images",
+              "index": 0
+            }
+          },
+          "notes": null
+        },
+        {
+          "dag_id": "n5",
+          "atomic_id": "core.editing.image_to_video.image_to_video_wan_2",
+          "depends_on": [
+            "n4"
+          ],
+          "inputs": {
+            "prompt": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+            "length": 32,
+            "fps": 16
+          },
+          "bindings": {
+            "source_image": {
+              "from_node": "n4",
+              "output": "images",
+              "index": 0
+            }
+          },
+          "notes": null
+        }
+      ],
+      "global_inputs": {}
+    },
+    "ewc": {
+      "n1": {
+        "3": {
+          "inputs": {
+            "seed": 685468484323813,
+            "steps": 20,
+            "cfg": 8,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "4": {
+          "inputs": {
+            "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple",
+          "_meta": {
+            "title": "Checkpoint加载器（简易）"
+          }
+        },
+        "5": {
+          "inputs": {
+            "width": 1024,
+            "height": 1024,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage",
+          "_meta": {
+            "title": "空Latent图像"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "4",
+              2
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "9": {
+          "inputs": {
+            "filename_prefix": "SD1.5",
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "n2": {
+        "3": {
+          "inputs": {
+            "seed": 685468484323813,
+            "steps": 20,
+            "cfg": 8,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "4": {
+          "inputs": {
+            "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple",
+          "_meta": {
+            "title": "Checkpoint加载器（简易）"
+          }
+        },
+        "5": {
+          "inputs": {
+            "width": 1024,
+            "height": 1024,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage",
+          "_meta": {
+            "title": "空Latent图像"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "Generate a scene of astronauts repairing equipment in a space station.",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "4",
+              2
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "9": {
+          "inputs": {
+            "filename_prefix": "SD1.5",
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "n3": {
+        "1": {
+          "inputs": {
+            "upscale_model": [
+              "3",
+              0
+            ],
+            "image": [
+              "2",
+              0
+            ]
+          },
+          "class_type": "ImageUpscaleWithModel",
+          "_meta": {
+            "title": "使用模型放大图像"
+          }
+        },
+        "2": {
+          "inputs": {
+            "image": "__PLACEHOLDER_n1_images_0.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "3": {
+          "inputs": {
+            "model_name": "RealESRGAN_x2.pth"
+          },
+          "class_type": "UpscaleModelLoader",
+          "_meta": {
+            "title": "加载放大模型"
+          }
+        },
+        "4": {
+          "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+              "1",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "n4": {
+        "9": {
+          "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+              "47:8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        },
+        "17": {
+          "inputs": {
+            "image": "__PLACEHOLDER_n2_images_0.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "47:34": {
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp16.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "class_type": "DualCLIPLoader",
+          "_meta": {
+            "title": "双CLIP加载器"
+          }
+        },
+        "47:26": {
+          "inputs": {
+            "guidance": 30,
+            "conditioning": [
+              "47:23",
+              0
+            ]
+          },
+          "class_type": "FluxGuidance",
+          "_meta": {
+            "title": "Flux引导"
+          }
+        },
+        "47:32": {
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "47:31": {
+          "inputs": {
+            "unet_name": "flux1-fill-dev.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "47:46": {
+          "inputs": {
+            "conditioning": [
+              "47:23",
+              0
+            ]
+          },
+          "class_type": "ConditioningZeroOut",
+          "_meta": {
+            "title": "条件零化"
+          }
+        },
+        "47:23": {
+          "inputs": {
+            "text": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+            "clip": [
+              "47:34",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        },
+        "47:39": {
+          "inputs": {
+            "strength": 1,
+            "model": [
+              "47:31",
+              0
+            ]
+          },
+          "class_type": "DifferentialDiffusion",
+          "_meta": {
+            "title": "差异扩散DifferentialDiffusion"
+          }
+        },
+        "47:8": {
+          "inputs": {
+            "samples": [
+              "47:3",
+              0
+            ],
+            "vae": [
+              "47:32",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "47:38": {
+          "inputs": {
+            "noise_mask": true,
+            "positive": [
+              "47:26",
+              0
+            ],
+            "negative": [
+              "47:46",
+              0
+            ],
+            "vae": [
+              "47:32",
+              0
+            ],
+            "pixels": [
+              "17",
+              0
+            ],
+            "mask": [
+              "17",
+              1
+            ]
+          },
+          "class_type": "InpaintModelConditioning",
+          "_meta": {
+            "title": "内补模型条件"
+          }
+        },
+        "47:3": {
+          "inputs": {
+            "seed": 656821733471329,
+            "steps": 20,
+            "cfg": 1,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "47:39",
+              0
+            ],
+            "positive": [
+              "47:38",
+              0
+            ],
+            "negative": [
+              "47:38",
+              1
+            ],
+            "latent_image": [
+              "47:38",
+              2
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        }
+      },
+      "n5": {
+        "3": {
+          "inputs": {
+            "seed": 987948718394761,
+            "steps": 20,
+            "cfg": 6,
+            "sampler_name": "uni_pc",
+            "scheduler": "simple",
+            "denoise": 1,
+            "model": [
+              "54",
+              0
+            ],
+            "positive": [
+              "50",
+              0
+            ],
+            "negative": [
+              "50",
+              1
+            ],
+            "latent_image": [
+              "50",
+              2
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+            "clip": [
+              "38",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "",
+            "clip": [
+              "38",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Negative Prompt)"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "39",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "37": {
+          "inputs": {
+            "unet_name": "wan2.1_i2v_480p_14B_fp16.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "38": {
+          "inputs": {
+            "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "wan",
+            "device": "default"
+          },
+          "class_type": "CLIPLoader",
+          "_meta": {
+            "title": "加载CLIP"
+          }
+        },
+        "39": {
+          "inputs": {
+            "vae_name": "wan_2.1_vae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "49": {
+          "inputs": {
+            "clip_name": "clip_vision_h.safetensors"
+          },
+          "class_type": "CLIPVisionLoader",
+          "_meta": {
+            "title": "加载CLIP视觉"
+          }
+        },
+        "50": {
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "length": 32,
+            "batch_size": 1,
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "vae": [
+              "39",
+              0
+            ],
+            "clip_vision_output": [
+              "51",
+              0
+            ],
+            "start_image": [
+              "52",
+              0
+            ]
+          },
+          "class_type": "WanImageToVideo",
+          "_meta": {
+            "title": "图像到视频（Wan）"
+          }
+        },
+        "51": {
+          "inputs": {
+            "crop": "none",
+            "clip_vision": [
+              "49",
+              0
+            ],
+            "image": [
+              "52",
+              0
+            ]
+          },
+          "class_type": "CLIPVisionEncode",
+          "_meta": {
+            "title": "CLIP视觉编码"
+          }
+        },
+        "52": {
+          "inputs": {
+            "image": "__PLACEHOLDER_n4_images_0.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "54": {
+          "inputs": {
+            "shift": 8,
+            "model": [
+              "37",
+              0
+            ]
+          },
+          "class_type": "ModelSamplingSD3",
+          "_meta": {
+            "title": "采样算法（SD3）"
+          }
+        },
+        "55": {
+          "inputs": {
+            "fps": 16,
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "CreateVideo",
+          "_meta": {
+            "title": "创建视频"
+          }
+        },
+        "56": {
+          "inputs": {
+            "filename_prefix": "video/ComfyUI",
+            "format": "auto",
+            "codec": "auto",
+            "video": [
+              "55",
+              0
+            ]
+          },
+          "class_type": "SaveVideo",
+          "_meta": {
+            "title": "保存视频"
+          }
+        }
+      }
+    },
+    "converged": true,
+    "failure_reason": null,
+    "validation_log": [
+      {
+        "stage": "ANALYSIS",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ARCHITECTURE",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      },
+      {
+        "stage": "ENGINEERING",
+        "iteration": 1,
+        "is_converged": true,
+        "issues": []
+      }
+    ],
+    "generation_mode": "host_plan"
+  },
+  "capabilities": {
+    "core.generative.text_to_image.default": {
+      "id": "core.generative.text_to_image.default",
+      "title": "default",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/default.json).",
+      "tags": [
+        "text-to-image",
+        "t2i",
+        "generative"
+      ],
+      "workflow_file": "default.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "6",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "negative_prompt": {
+          "node_id": "7",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "seed": {
+          "node_id": "3",
+          "input_key": "seed",
+          "widget_index": null
+        },
+        "width": {
+          "node_id": "5",
+          "input_key": "width",
+          "widget_index": null
+        },
+        "height": {
+          "node_id": "5",
+          "input_key": "height",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "",
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "int",
+          "required": false,
+          "default": 1024,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "int",
+          "required": false,
+          "default": 1024,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "int",
+          "required": false,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "generative",
+        "text_to_image"
+      ],
+      "six_tuple": {
+        "name": "default",
+        "input_types": {
+          "prompt": "string",
+          "negative_prompt": "string",
+          "width": "int",
+          "height": "int",
+          "seed": "int"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/default.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "negative_prompt",
+            "type": "string",
+            "required": false,
+            "default": ""
+          },
+          {
+            "name": "width",
+            "type": "int",
+            "required": false,
+            "default": 1024
+          },
+          {
+            "name": "height",
+            "type": "int",
+            "required": false,
+            "default": 1024
+          },
+          {
+            "name": "seed",
+            "type": "int",
+            "required": false,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "default.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "510c7daadfd14efcb5f2a1185e109bbc74d2231cd2bbee12e1a2874605b60474",
+      "graph": {
+        "3": {
+          "inputs": {
+            "seed": 685468484323813,
+            "steps": 20,
+            "cfg": 8,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "4",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "5",
+              0
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "4": {
+          "inputs": {
+            "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+          },
+          "class_type": "CheckpointLoaderSimple",
+          "_meta": {
+            "title": "Checkpoint加载器（简易）"
+          }
+        },
+        "5": {
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "batch_size": 1
+          },
+          "class_type": "EmptyLatentImage",
+          "_meta": {
+            "title": "空Latent图像"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "beautiful scenery nature glass bottle landscape, purple galaxy bottle,",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "text, watermark",
+            "clip": [
+              "4",
+              1
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP文本编码"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "4",
+              2
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "9": {
+          "inputs": {
+            "filename_prefix": "SD1.5",
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/default/default.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/default/default.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "4",
+          "input_key": "ckpt_name",
+          "widget_index": null,
+          "filename": "v1-5-pruned-emaonly-fp16.safetensors",
+          "loader_class": "CheckpointLoaderSimple",
+          "graph_path": []
+        }
+      ]
+    },
+    "aux.postprocess.upscale.upscale2x": {
+      "id": "aux.postprocess.upscale.upscale2x",
+      "title": "upscale2x",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/upscale2x.json).",
+      "tags": [
+        "upscale",
+        "upscale",
+        "postprocess"
+      ],
+      "workflow_file": "upscale2x.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "source_image": {
+          "node_id": "2",
+          "input_key": "image",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "source_image",
+          "type": "image_filenames",
+          "required": true,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {
+        "scale_factor": 2
+      },
+      "tree_branch": [
+        "aux",
+        "postprocess",
+        "upscale"
+      ],
+      "six_tuple": {
+        "name": "upscale2x",
+        "input_types": {
+          "source_image": "image_filenames"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/upscale2x.json).",
+        "parameters": [
+          {
+            "name": "source_image",
+            "type": "image_filenames",
+            "required": true,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "upscale2x.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "b6ec1b31fc859f4ed59ebcff395f776294eb187972bf3dd05608c9fc5495329b",
+      "graph": {
+        "1": {
+          "inputs": {
+            "upscale_model": [
+              "3",
+              0
+            ],
+            "image": [
+              "2",
+              0
+            ]
+          },
+          "class_type": "ImageUpscaleWithModel",
+          "_meta": {
+            "title": "使用模型放大图像"
+          }
+        },
+        "2": {
+          "inputs": {
+            "image": "example.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "3": {
+          "inputs": {
+            "model_name": "RealESRGAN_x2.pth"
+          },
+          "class_type": "UpscaleModelLoader",
+          "_meta": {
+            "title": "加载放大模型"
+          }
+        },
+        "4": {
+          "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+              "1",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/upscale2x/upscale2x.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/upscale2x/upscale2x.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "3",
+          "input_key": "model_name",
+          "widget_index": null,
+          "filename": "RealESRGAN_x2.pth",
+          "loader_class": "UpscaleModelLoader",
+          "graph_path": []
+        }
+      ]
+    },
+    "core.editing.image_editing.flux_fill_inpaint_example": {
+      "id": "core.editing.image_editing.flux_fill_inpaint_example",
+      "title": "flux_fill_inpaint_example",
+      "modality": [
+        "image"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/flux_fill_inpaint_example.json).",
+      "tags": [
+        "image-editing",
+        "edit",
+        "inpaint"
+      ],
+      "workflow_file": "flux_fill_inpaint_example.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "47:23",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "seed": {
+          "node_id": "47:3",
+          "input_key": "seed",
+          "widget_index": null
+        },
+        "source_image": {
+          "node_id": "17",
+          "input_key": "image",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "int",
+          "required": false,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "source_image",
+          "type": "image_filenames",
+          "required": true,
+          "default": null,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "image_filenames",
+          "description": "ComfyUI media outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "editing",
+        "image_editing"
+      ],
+      "six_tuple": {
+        "name": "flux_fill_inpaint_example",
+        "input_types": {
+          "prompt": "string",
+          "seed": "int",
+          "source_image": "image_filenames"
+        },
+        "output_types": {
+          "images": "image_filenames"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/flux_fill_inpaint_example.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "seed",
+            "type": "int",
+            "required": false,
+            "default": null
+          },
+          {
+            "name": "source_image",
+            "type": "image_filenames",
+            "required": true,
+            "default": null
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "flux_fill_inpaint_example.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "02d8300977ff2b4cf8a6fa962dac6f826e4b789f9f3cb9cd83260c33670bb55c",
+      "graph": {
+        "9": {
+          "inputs": {
+            "filename_prefix": "ComfyUI",
+            "images": [
+              "47:8",
+              0
+            ]
+          },
+          "class_type": "SaveImage",
+          "_meta": {
+            "title": "保存图像"
+          }
+        },
+        "17": {
+          "inputs": {
+            "image": "flux_fill_inpaint_example_input_image.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "47:34": {
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp16.safetensors",
+            "type": "flux",
+            "device": "default"
+          },
+          "class_type": "DualCLIPLoader",
+          "_meta": {
+            "title": "双CLIP加载器"
+          }
+        },
+        "47:26": {
+          "inputs": {
+            "guidance": 30,
+            "conditioning": [
+              "47:23",
+              0
+            ]
+          },
+          "class_type": "FluxGuidance",
+          "_meta": {
+            "title": "Flux引导"
+          }
+        },
+        "47:32": {
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "47:31": {
+          "inputs": {
+            "unet_name": "flux1-fill-dev.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "47:46": {
+          "inputs": {
+            "conditioning": [
+              "47:23",
+              0
+            ]
+          },
+          "class_type": "ConditioningZeroOut",
+          "_meta": {
+            "title": "条件零化"
+          }
+        },
+        "47:23": {
+          "inputs": {
+            "text": "anime girl with massive fennec ears blonde hair blue eyes wearing a pink shirt",
+            "clip": [
+              "47:34",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        },
+        "47:39": {
+          "inputs": {
+            "strength": 1,
+            "model": [
+              "47:31",
+              0
+            ]
+          },
+          "class_type": "DifferentialDiffusion",
+          "_meta": {
+            "title": "差异扩散DifferentialDiffusion"
+          }
+        },
+        "47:8": {
+          "inputs": {
+            "samples": [
+              "47:3",
+              0
+            ],
+            "vae": [
+              "47:32",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "47:38": {
+          "inputs": {
+            "noise_mask": true,
+            "positive": [
+              "47:26",
+              0
+            ],
+            "negative": [
+              "47:46",
+              0
+            ],
+            "vae": [
+              "47:32",
+              0
+            ],
+            "pixels": [
+              "17",
+              0
+            ],
+            "mask": [
+              "17",
+              1
+            ]
+          },
+          "class_type": "InpaintModelConditioning",
+          "_meta": {
+            "title": "内补模型条件"
+          }
+        },
+        "47:3": {
+          "inputs": {
+            "seed": 656821733471329,
+            "steps": 20,
+            "cfg": 1,
+            "sampler_name": "euler",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+              "47:39",
+              0
+            ],
+            "positive": [
+              "47:38",
+              0
+            ],
+            "negative": [
+              "47:38",
+              1
+            ],
+            "latent_image": [
+              "47:38",
+              2
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/flux_fill_inpaint_example/flux_fill_inpaint_example.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/flux_fill_inpaint_example/flux_fill_inpaint_example.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "47:34",
+          "input_key": "clip_name1",
+          "widget_index": null,
+          "filename": "clip_l.safetensors",
+          "loader_class": "DualCLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "47:34",
+          "input_key": "clip_name2",
+          "widget_index": null,
+          "filename": "t5xxl_fp16.safetensors",
+          "loader_class": "DualCLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "47:32",
+          "input_key": "vae_name",
+          "widget_index": null,
+          "filename": "ae.safetensors",
+          "loader_class": "VAELoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "47:31",
+          "input_key": "unet_name",
+          "widget_index": null,
+          "filename": "flux1-fill-dev.safetensors",
+          "loader_class": "UNETLoader",
+          "graph_path": []
+        }
+      ]
+    },
+    "core.editing.image_to_video.image_to_video_wan_2": {
+      "id": "core.editing.image_to_video.image_to_video_wan_2",
+      "title": "image_to_video_wan-2",
+      "modality": [
+        "video"
+      ],
+      "description": "ComfyUI API workflow (imported from model_apis/image_to_video_wan-2.json).",
+      "tags": [
+        "image-to-video",
+        "i2v",
+        "editing"
+      ],
+      "workflow_file": "image_to_video_wan-2.workflow.json",
+      "workflow_format": "api",
+      "inject": {
+        "prompt": {
+          "node_id": "6",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "negative_prompt": {
+          "node_id": "7",
+          "input_key": "text",
+          "widget_index": null
+        },
+        "seed": {
+          "node_id": "3",
+          "input_key": "seed",
+          "widget_index": null
+        },
+        "width": {
+          "node_id": "50",
+          "input_key": "width",
+          "widget_index": null
+        },
+        "height": {
+          "node_id": "50",
+          "input_key": "height",
+          "widget_index": null
+        },
+        "length": {
+          "node_id": "50",
+          "input_key": "length",
+          "widget_index": null
+        },
+        "source_image": {
+          "node_id": "52",
+          "input_key": "image",
+          "widget_index": null
+        },
+        "fps": {
+          "node_id": "55",
+          "input_key": "fps",
+          "widget_index": null
+        }
+      },
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "negative_prompt",
+          "type": "string",
+          "required": false,
+          "default": "",
+          "description": null
+        },
+        {
+          "name": "seed",
+          "type": "int",
+          "required": false,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false,
+          "default": 512,
+          "description": null
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": false,
+          "default": 512,
+          "description": null
+        },
+        {
+          "name": "length",
+          "type": "number",
+          "required": false,
+          "default": 33,
+          "description": null
+        },
+        {
+          "name": "source_image",
+          "type": "image_filenames",
+          "required": true,
+          "default": null,
+          "description": null
+        },
+        {
+          "name": "fps",
+          "type": "number",
+          "required": false,
+          "default": 16,
+          "description": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "video_path",
+          "description": "ComfyUI SaveVideo outputs"
+        }
+      ],
+      "fixed_constraints": {},
+      "tree_branch": [
+        "core",
+        "editing",
+        "image_to_video"
+      ],
+      "six_tuple": {
+        "name": "image_to_video_wan-2",
+        "input_types": {
+          "prompt": "string",
+          "negative_prompt": "string",
+          "seed": "int",
+          "width": "number",
+          "height": "number",
+          "length": "number",
+          "source_image": "image_filenames",
+          "fps": "number"
+        },
+        "output_types": {
+          "video": "video_path"
+        },
+        "capability": "ComfyUI API workflow (imported from model_apis/image_to_video_wan-2.json).",
+        "parameters": [
+          {
+            "name": "prompt",
+            "type": "string",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "negative_prompt",
+            "type": "string",
+            "required": false,
+            "default": ""
+          },
+          {
+            "name": "seed",
+            "type": "int",
+            "required": false,
+            "default": null
+          },
+          {
+            "name": "width",
+            "type": "number",
+            "required": false,
+            "default": 512
+          },
+          {
+            "name": "height",
+            "type": "number",
+            "required": false,
+            "default": 512
+          },
+          {
+            "name": "length",
+            "type": "number",
+            "required": false,
+            "default": 33
+          },
+          {
+            "name": "source_image",
+            "type": "image_filenames",
+            "required": true,
+            "default": null
+          },
+          {
+            "name": "fps",
+            "type": "number",
+            "required": false,
+            "default": 16
+          }
+        ],
+        "invocation": {
+          "platform": "ComfyUI",
+          "workflow_file": "image_to_video_wan-2.workflow.json",
+          "binding": "ComfyUI API prompt graph"
+        }
+      },
+      "workflow_sha256": "6be9258da2eaad420556da4be7b1f0b42c3d3a8ac1237c12e6c0648503004ac7",
+      "graph": {
+        "3": {
+          "inputs": {
+            "seed": 987948718394761,
+            "steps": 20,
+            "cfg": 6,
+            "sampler_name": "uni_pc",
+            "scheduler": "simple",
+            "denoise": 1,
+            "model": [
+              "54",
+              0
+            ],
+            "positive": [
+              "50",
+              0
+            ],
+            "negative": [
+              "50",
+              1
+            ],
+            "latent_image": [
+              "50",
+              2
+            ]
+          },
+          "class_type": "KSampler",
+          "_meta": {
+            "title": "K采样器"
+          }
+        },
+        "6": {
+          "inputs": {
+            "text": "a cute anime girl with massive fennec ears and a big fluffy tail wearing a maid outfit turning around",
+            "clip": [
+              "38",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Positive Prompt)"
+          }
+        },
+        "7": {
+          "inputs": {
+            "text": "色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+            "clip": [
+              "38",
+              0
+            ]
+          },
+          "class_type": "CLIPTextEncode",
+          "_meta": {
+            "title": "CLIP Text Encode (Negative Prompt)"
+          }
+        },
+        "8": {
+          "inputs": {
+            "samples": [
+              "3",
+              0
+            ],
+            "vae": [
+              "39",
+              0
+            ]
+          },
+          "class_type": "VAEDecode",
+          "_meta": {
+            "title": "VAE解码"
+          }
+        },
+        "37": {
+          "inputs": {
+            "unet_name": "wan2.1_i2v_480p_14B_fp16.safetensors",
+            "weight_dtype": "default"
+          },
+          "class_type": "UNETLoader",
+          "_meta": {
+            "title": "UNet加载器"
+          }
+        },
+        "38": {
+          "inputs": {
+            "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+            "type": "wan",
+            "device": "default"
+          },
+          "class_type": "CLIPLoader",
+          "_meta": {
+            "title": "加载CLIP"
+          }
+        },
+        "39": {
+          "inputs": {
+            "vae_name": "wan_2.1_vae.safetensors"
+          },
+          "class_type": "VAELoader",
+          "_meta": {
+            "title": "加载VAE"
+          }
+        },
+        "49": {
+          "inputs": {
+            "clip_name": "clip_vision_h.safetensors"
+          },
+          "class_type": "CLIPVisionLoader",
+          "_meta": {
+            "title": "加载CLIP视觉"
+          }
+        },
+        "50": {
+          "inputs": {
+            "width": 512,
+            "height": 512,
+            "length": 33,
+            "batch_size": 1,
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "vae": [
+              "39",
+              0
+            ],
+            "clip_vision_output": [
+              "51",
+              0
+            ],
+            "start_image": [
+              "52",
+              0
+            ]
+          },
+          "class_type": "WanImageToVideo",
+          "_meta": {
+            "title": "图像到视频（Wan）"
+          }
+        },
+        "51": {
+          "inputs": {
+            "crop": "none",
+            "clip_vision": [
+              "49",
+              0
+            ],
+            "image": [
+              "52",
+              0
+            ]
+          },
+          "class_type": "CLIPVisionEncode",
+          "_meta": {
+            "title": "CLIP视觉编码"
+          }
+        },
+        "52": {
+          "inputs": {
+            "image": "image_to_video_wan_start_image.png"
+          },
+          "class_type": "LoadImage",
+          "_meta": {
+            "title": "加载图像"
+          }
+        },
+        "54": {
+          "inputs": {
+            "shift": 8,
+            "model": [
+              "37",
+              0
+            ]
+          },
+          "class_type": "ModelSamplingSD3",
+          "_meta": {
+            "title": "采样算法（SD3）"
+          }
+        },
+        "55": {
+          "inputs": {
+            "fps": 16,
+            "images": [
+              "8",
+              0
+            ]
+          },
+          "class_type": "CreateVideo",
+          "_meta": {
+            "title": "创建视频"
+          }
+        },
+        "56": {
+          "inputs": {
+            "filename_prefix": "video/ComfyUI",
+            "format": "auto",
+            "codec": "auto",
+            "video": [
+              "55",
+              0
+            ]
+          },
+          "class_type": "SaveVideo",
+          "_meta": {
+            "title": "保存视频"
+          }
+        }
+      },
+      "status": "active",
+      "errors": [],
+      "evidence": {
+        "manifest": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/image_to_video_wan-2/image_to_video_wan-2.manifest.yaml",
+        "workflow": "/Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/image_to_video_wan-2/image_to_video_wan-2.workflow.json"
+      },
+      "model_references": [
+        {
+          "node_id": "37",
+          "input_key": "unet_name",
+          "widget_index": null,
+          "filename": "wan2.1_i2v_480p_14B_fp16.safetensors",
+          "loader_class": "UNETLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "38",
+          "input_key": "clip_name",
+          "widget_index": null,
+          "filename": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+          "loader_class": "CLIPLoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "39",
+          "input_key": "vae_name",
+          "widget_index": null,
+          "filename": "wan_2.1_vae.safetensors",
+          "loader_class": "VAELoader",
+          "graph_path": []
+        },
+        {
+          "node_id": "49",
+          "input_key": "clip_name",
+          "widget_index": null,
+          "filename": "clip_vision_h.safetensors",
+          "loader_class": "CLIPVisionLoader",
+          "graph_path": []
+        }
+      ]
+    }
+  }
+}

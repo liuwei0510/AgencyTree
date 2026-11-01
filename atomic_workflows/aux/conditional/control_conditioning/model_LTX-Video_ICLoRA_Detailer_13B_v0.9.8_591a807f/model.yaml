@@ -1,0 +1,46 @@
+id: remote:model:591a807fbf80b133b77c
+kind: comfyui_model
+title: LTX-Video ICLoRA Detailer 13B v0.9.8
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-Video ICLoRA Detailer 13B v0.9.8
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltxv-098-ic-lora-detailer-comfyui.safetensors
+  - name: base
+    value: LTX-Video
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras
+    filename: ltxv-098-ic-lora-detailer-comfyui.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-Video-ICLoRA-detailer-13b-0.9.8/resolve/main/ltxv-098-ic-lora-detailer-comfyui.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-Video ICLoRA Detailer 13B v0.9.8
+  type: lora
+  base: LTX-Video
+  save_path: loras
+  description: A video detailer model on top of LTXV_13B_098_DEV trained on custom
+    data using In-Context LoRA (IC LoRA) method.
+  reference: https://huggingface.co/Lightricks/LTX-Video-ICLoRA-detailer-13b-0.9.8
+  filename: ltxv-098-ic-lora-detailer-comfyui.safetensors
+  url: https://huggingface.co/Lightricks/LTX-Video-ICLoRA-detailer-13b-0.9.8/resolve/main/ltxv-098-ic-lora-detailer-comfyui.safetensors
+  size: 1.31GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/control_conditioning/model_LTX-Video_ICLoRA_Detailer_13B_v0.9.8_591a807f/model.yaml
+validation_errors: []

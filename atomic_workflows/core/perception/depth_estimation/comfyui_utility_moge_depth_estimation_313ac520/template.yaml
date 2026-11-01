@@ -1,0 +1,79 @@
+id: remote:template:utility_moge_depth_estimation
+kind: comfyui_template
+title: 'Depth Estimation: MoGe'
+tree_branch:
+- core
+- perception
+- depth_estimation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Depth Estimation: MoGe'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a single RGB image and adjust inference resolution and batch
+    size. Generate a colored depth preview and raw depth map,
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_moge_depth_estimation.json
+  sha256: 2b9e34cdff52e6bc8cc960113cb47b55d519bff56293aeee010a836fd6c10460
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_moge_depth_estimation
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/moge
+  title: 'Depth Estimation: MoGe'
+  description: Upload a single RGB image and adjust inference resolution and batch
+    size. Generate a colored depth preview and raw depth map,
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  models:
+  - MoGe
+  date: '2026-05-20'
+  openSource: true
+  size: 644245094
+  usage: 13
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 9
+      nodeType: LoadImage
+      file: alien_world.png
+      mediaType: image
+  minComfyUIVersion: 0.22.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_moge_depth_estimation.json
+  sha256: 2b9e34cdff52e6bc8cc960113cb47b55d519bff56293aeee010a836fd6c10460
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/depth_estimation/comfyui_utility_moge_depth_estimation_313ac520/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '9'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,75 @@
+id: remote:template:video_minimax_h3_fun_controlnet_union
+kind: comfyui_template
+title: MiniMax H3 Fun ControlNet Union
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: MiniMax H3 Fun ControlNet Union
+  input_types: {}
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate videos from a pose reference video using MiniMax-H3 with a
+    ControlNet-Union checkpoint, preserving the input's motion and structure while
+    applying your prompt. Ideal for character animation, motion transfer, and choreography
+    visualization projects. This workflow is for pose control only
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_fun_controlnet_union.json
+  sha256: 7d3f77f6cc0a232d9575198b290576761d4c68208fc5dce2fe784ef796fc3042
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_minimax_h3_fun_controlnet_union
+  title: MiniMax H3 Fun ControlNet Union
+  description: Generate videos from a pose reference video using MiniMax-H3 with a
+    ControlNet-Union checkpoint, preserving the input's motion and structure while
+    applying your prompt. Ideal for character animation, motion transfer, and choreography
+    visualization projects. This workflow is for pose control only
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  - Int8
+  models:
+  - MiniMax H3
+  minComfyUIVersion: 0.35.0
+  date: '2026-09-07'
+  openSource: true
+  size: 48747878810
+  usage: 193
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 174
+      nodeType: LoadVideo
+      file: dancer_field_pose.mp4
+      mediaType: video
+  thumbnail:
+  - input/dancer_field_pose.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_fun_controlnet_union.json
+  sha256: 7d3f77f6cc0a232d9575198b290576761d4c68208fc5dce2fe784ef796fc3042
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_video_minimax_h3_fun_controlnet_union_18dcc40b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

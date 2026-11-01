@@ -1,0 +1,78 @@
+id: remote:template:api_quiver_image_to_svg
+kind: comfyui_template
+title: 'Arrow 2: Image to SVG'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Arrow 2: Image to SVG'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Converts an image input into an SVG output.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_quiver_image_to_svg.json
+  sha256: 8dcf0c3330cf436cddc25e6dec1839ed8c2d282556da01697a024dc67a429290
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_quiver_image_to_svg
+  title: 'Arrow 2: Image to SVG'
+  description: Converts an image input into an SVG output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Vector
+  models:
+  - Quiver
+  logos:
+  - provider: Quiver
+  date: '2026-03-23'
+  openSource: false
+  size: 0
+  usage: 26
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: abstract_horse.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_quiver_image_to_svg.png
+  minComfyUIVersion: 0.39.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_quiver_image_to_svg.json
+  sha256: 8dcf0c3330cf436cddc25e6dec1839ed8c2d282556da01697a024dc67a429290
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_quiver_image_to_svg_d5a99722/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

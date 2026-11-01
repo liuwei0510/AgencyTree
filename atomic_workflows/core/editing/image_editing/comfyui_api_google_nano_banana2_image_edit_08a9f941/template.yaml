@@ -1,0 +1,88 @@
+id: remote:template:api_google_nano_banana2_image_edit
+kind: comfyui_template
+title: 'Nano Banana 2: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Nano Banana 2: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and a text prompt to edit it. Generate a new image that
+    modifies the original based on your instructions, maintaining subject consistency
+    and high visual fidelity.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_nano_banana2_image_edit.json
+  sha256: f59e9c9cf90283668c5b68af0497743f19ac3648f1afe85ac7c06e05520fdde9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_nano_banana2_image_edit
+  title: 'Nano Banana 2: Image Edit'
+  description: Upload an image and a text prompt to edit it. Generate a new image
+    that modifies the original based on your instructions, maintaining subject consistency
+    and high visual fidelity.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Google
+  - Nano Banana 2
+  logos:
+  - provider: Google
+  date: '2026-02-26'
+  openSource: false
+  size: 0
+  usage: 3017
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 16
+      nodeType: LoadImage
+      file: man_with_dog.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: api_google_nano_banana2_image_edit.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.20.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_nano_banana2_image_edit.json
+  sha256: f59e9c9cf90283668c5b68af0497743f19ac3648f1afe85ac7c06e05520fdde9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_google_nano_banana2_image_edit_08a9f941/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '16'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

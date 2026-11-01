@@ -1,0 +1,99 @@
+id: remote:template:templates-poster_product_integration
+kind: comfyui_template
+title: Generate Poster/Ad Asset with your Product
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Generate Poster/Ad Asset with your Product
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your product and a simple text prompt for the poster or ad design.
+    Iterate on the look before swapping the product into the generated layout.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-poster_product_integration.json
+  sha256: ea94ff96d56278b0752f6cd3687d9dabe98d2762d2b3b23d765b388e1b2cdab7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-poster_product_integration
+  title: Generate Poster/Ad Asset with your Product
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Upload your product and a simple text prompt for the poster or ad design.
+    Iterate on the look before swapping the product into the generated layout.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - ByteDance
+  - Google Gemini
+  - Seedream
+  openSource: false
+  date: '2025-12-15'
+  searchRank: 8
+  size: 0
+  requiresCustomNodes:
+  - comfyui_essentials
+  usage: 11
+  logos:
+  - provider:
+    - ByteDance
+    - Google
+  io:
+    inputs:
+    - nodeId: 15
+      nodeType: LoadImage
+      file: comfy_cloud_water_can.jpg
+      mediaType: image
+    outputs:
+    - nodeId: 10
+      nodeType: SaveImage
+      file: templates-poster_product_integration-1.png
+      mediaType: image
+    - nodeId: 13
+      nodeType: SaveImage
+      file: templates-poster_product_integration-2.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/comfy_cloud_water_can.jpg
+  - output/templates-poster_product_integration-2.png
+  minComfyUIVersion: 0.35.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-poster_product_integration.json
+  sha256: ea94ff96d56278b0752f6cd3687d9dabe98d2762d2b3b23d765b388e1b2cdab7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-poster_product_integration_a2aebe9a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '15'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,14 @@
+id: aux.evaluate.quality_gate.quality_check_stub
+title: Quality / Safety Gate (stub)
+modality: [score]
+description: Placeholder for aesthetic predictor, NSFW gate, or CLIP score nodes.
+tags: [evaluate, qa]
+workflow_file: quality_check_stub.workflow.json
+inject: {}
+inputs:
+  - name: candidate_image
+    type: image_path
+    required: false
+outputs:
+  - name: score
+    type: generic

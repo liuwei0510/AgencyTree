@@ -1,0 +1,88 @@
+id: remote:template:image_chrono_edit_14B
+kind: comfyui_template
+title: 'ChronoEdit 14B: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'ChronoEdit 14B: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Image editing powered by video models' dynamic understanding, creating
+    physically plausible results while preserving character and style consistency.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_chrono_edit_14B.json
+  sha256: a5f1d54e05110a09513e098c865ab8ae6e8a123df3a7a02ee165adadd38f7f11
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_chrono_edit_14B
+  title: 'ChronoEdit 14B: Image Edit'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Image editing powered by video models' dynamic understanding, creating
+    physically plausible results while preserving character and style consistency.
+  tags:
+  - Image Edit
+  models:
+  - Wan2.1
+  - ChronoEdit
+  - Nvidia
+  date: '2025-11-03'
+  size: 41446434406
+  usage: 15
+  io:
+    inputs:
+    - nodeId: 52
+      nodeType: LoadImage
+      file: image_chrono_edit_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: image_chrono_edit_14B.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - input/image_chrono_edit_input_image.png
+  - output/image_chrono_edit_14B.png
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_chrono_edit_14B.json
+  sha256: a5f1d54e05110a09513e098c865ab8ae6e8a123df3a7a02ee165adadd38f7f11
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_image_chrono_edit_14B_702405af/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '52'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

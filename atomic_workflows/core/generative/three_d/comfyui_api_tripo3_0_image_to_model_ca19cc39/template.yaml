@@ -1,0 +1,63 @@
+id: remote.template.api_tripo3_0_image_to_model
+kind: comfyui_template
+title: 'Tripo3.0: Image to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo3.0: Image to Model'
+  input_types:
+  - image
+  - image
+  - image
+  output_types: []
+  capability: Transform images or sketches into 3D models with Tripo 3.0's sharp geometry
+    and production-ready PBR textures.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo3_0_image_to_model.json
+  sha256: 9777a5105bdbdc700793f0ffc477bc32e0e9f1221c49b44057e20c64b81d4a6f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo3_0_image_to_model
+  title: 'Tripo3.0: Image to Model'
+  description: Transform images or sketches into 3D models with Tripo 3.0's sharp
+    geometry and production-ready PBR textures.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to 3D
+  - 3D
+  - API
+  models:
+  - Tripo
+  date: '2025-12-23'
+  openSource: false
+  size: 0
+  usage: 24
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: 3d_character_front_view.png
+      mediaType: image
+    - nodeId: 3
+      nodeType: LoadImage
+      file: 3d_character_back_view.png
+      mediaType: image
+    - nodeId: 4
+      nodeType: LoadImage
+      file: 3d_character_left_view.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.35.1

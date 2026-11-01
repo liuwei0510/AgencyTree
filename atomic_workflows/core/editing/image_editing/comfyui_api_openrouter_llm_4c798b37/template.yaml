@@ -1,0 +1,80 @@
+id: remote:template:api_openrouter_llm
+kind: comfyui_template
+title: OpenRouter LLM
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: OpenRouter LLM
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Select a model from OpenRouter’s curated list (Claude, GPT, Gemini,
+    etc.). Generate a text response with optional media uploads for vision-capable
+    models.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_llm.json
+  sha256: 72aea7c82c26dc3450e603813510c3bfd06c4daad90e6da7b4f98af09963b3ae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_llm
+  title: OpenRouter LLM
+  description: Select a model from OpenRouter’s curated list (Claude, GPT, Gemini,
+    etc.). Generate a text response with optional media uploads for vision-capable
+    models.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text Generation
+  - API
+  models:
+  - OpenRouter
+  logos:
+  - provider: OpenRouter
+  date: '2026-05-21'
+  openSource: false
+  size: 0
+  usage: 15
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: contact_sheet_app_input_1.png
+      mediaType: image
+  minComfyUIVersion: 0.22.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_llm.json
+  sha256: 72aea7c82c26dc3450e603813510c3bfd06c4daad90e6da7b4f98af09963b3ae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_openrouter_llm_4c798b37/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

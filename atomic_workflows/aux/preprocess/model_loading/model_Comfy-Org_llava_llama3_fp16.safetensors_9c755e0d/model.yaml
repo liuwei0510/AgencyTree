@@ -1,0 +1,46 @@
+id: remote:model:9c755e0d4c2e44f679ed
+kind: comfyui_model
+title: Comfy-Org/llava_llama3_fp16.safetensors
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: Comfy-Org/llava_llama3_fp16.safetensors
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: llava_llama3_fp16.safetensors
+  - name: base
+    value: LLaVA-Llama-3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders
+    filename: llava_llama3_fp16.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Comfy-Org/llava_llama3_fp16.safetensors
+  type: clip
+  base: LLaVA-Llama-3
+  save_path: text_encoders
+  description: llava_llama3_fp16 text encoder model. This is required for using Hunyuan
+    Video.
+  reference: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged
+  filename: llava_llama3_fp16.safetensors
+  url: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors
+  size: 16.1GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/text_encoding/model_Comfy-Org_llava_llama3_fp16.safetensors_9c755e0d/model.yaml
+validation_errors: []

@@ -1,0 +1,14 @@
+id: core.perception.audio_recognition.whisper_stub
+title: Audio Recognition (Whisper / ASR slot)
+modality: [text]
+description: Speech-to-text or audio understanding; plug in your Whisper Comfy nodes.
+tags: [asr, perception, audio]
+workflow_file: whisper_stub.workflow.json
+inject: {}
+inputs:
+  - name: audio_file
+    type: audio_path
+    required: false
+outputs:
+  - name: transcript
+    type: generic

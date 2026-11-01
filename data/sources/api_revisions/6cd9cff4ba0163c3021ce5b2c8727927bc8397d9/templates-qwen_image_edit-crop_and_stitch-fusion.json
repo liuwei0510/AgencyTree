@@ -1,0 +1,42 @@
+{
+  "208": {
+    "inputs": {
+      "images": [
+        "471",
+        0
+      ],
+      "filename_prefix": "ComfyUI"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.76"
+    }
+  },
+  "103": {
+    "inputs": {
+      "image": "comfy_cloud_bottle.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image + Draw Square Mask",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.59"
+    }
+  },
+  "471": {
+    "inputs": {
+      "image": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "5f5b3951-e8b8-4068-9eb5-2c3d75ecf54b",
+    "_meta": {
+      "title": "5f5b3951-e8b8-4068-9eb5-2c3d75ecf54b",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.62"
+    }
+  }
+}

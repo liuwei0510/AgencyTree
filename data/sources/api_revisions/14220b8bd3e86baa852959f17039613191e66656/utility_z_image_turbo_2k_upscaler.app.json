@@ -1,0 +1,60 @@
+{
+  "86": {
+    "inputs": {
+      "image_a": [
+        "77",
+        0
+      ],
+      "image_b": [
+        "87",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare",
+      "cnr_id": "comfy-core",
+      "ver": "0.13.0"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "87",
+        0
+      ],
+      "filename_prefix": "z-image-upscaled"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.64"
+    }
+  },
+  "77": {
+    "inputs": {
+      "image": "fighter_jet.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.13.0"
+    }
+  },
+  "87": {
+    "inputs": {
+      "image": [
+        "77",
+        0
+      ]
+    },
+    "class_type": "dd15cfd3-cd53-428c-b3e2-33ed4ff8fa78",
+    "_meta": {
+      "title": "dd15cfd3-cd53-428c-b3e2-33ed4ff8fa78",
+      "cnr_id": "comfy-core",
+      "ver": "0.14.1"
+    }
+  }
+}

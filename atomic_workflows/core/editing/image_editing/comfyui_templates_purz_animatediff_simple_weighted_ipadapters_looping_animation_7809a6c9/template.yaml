@@ -1,0 +1,117 @@
+id: remote:template:templates_purz_animatediff_simple_weighted_ipadapters_looping_animation
+kind: comfyui_template
+title: AnimateDiff - IPAdapters Looping Animation
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: AnimateDiff - IPAdapters Looping Animation
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+    source_image_3: image_filenames
+  output_types:
+    video: video_path
+  capability: Drag and drop then dream through a stack of images
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_3
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_animatediff_simple_weighted_ipadapters_looping_animation.json
+  sha256: aa7e58e0e1c7e6883d8f2375ce31542d1f8d973c1d58718d491f3a58bba59b65
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_purz_animatediff_simple_weighted_ipadapters_looping_animation
+  title: AnimateDiff - IPAdapters Looping Animation
+  description: Drag and drop then dream through a stack of images
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Image to Video
+  models:
+  - SD1.5
+  requiresCustomNodes:
+  - comfyui-animatediff-evolved
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  - comfyui_ipadapter_plus
+  date: '2026-03-04'
+  openSource: true
+  size: 10737418240
+  usage: 13
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 61
+      nodeType: LoadImage
+      file: animatediff-weighted_ipadapters-input1.png
+      mediaType: image
+    - nodeId: 63
+      nodeType: LoadImage
+      file: animatediff-weighted_ipadapters-input2.png
+      mediaType: image
+    - nodeId: 65
+      nodeType: LoadImage
+      file: animatediff-weighted_ipadapters-input3.png
+      mediaType: image
+  username: PurzBeats
+  thumbnail:
+  - output/templates_purz_animatediff_simple_weighted_ipadapters_looping_animation-1.mp4
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_animatediff_simple_weighted_ipadapters_looping_animation.json
+  sha256: aa7e58e0e1c7e6883d8f2375ce31542d1f8d973c1d58718d491f3a58bba59b65
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates_purz_animatediff_simple_weighted_ipadapters_looping_animation_7809a6c9/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_3
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '61'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '63'
+    input_key: image
+    widget_index: 0
+  source_image_3:
+    node_id: '65'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

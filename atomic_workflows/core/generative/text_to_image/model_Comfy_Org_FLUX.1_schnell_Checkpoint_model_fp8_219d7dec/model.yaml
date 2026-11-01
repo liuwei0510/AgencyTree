@@ -1,0 +1,45 @@
+id: remote:model:219d7dec6c817aa800f0
+kind: comfyui_model
+title: Comfy Org/FLUX.1 [schnell] Checkpoint model (fp8)
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: Comfy Org/FLUX.1 [schnell] Checkpoint model (fp8)
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: flux1-schnell-fp8.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/FLUX1
+    filename: flux1-schnell-fp8.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy Org/FLUX.1 [schnell] Checkpoint model (fp8)
+  type: checkpoint
+  base: FLUX.1
+  save_path: checkpoints/FLUX1
+  description: FLUX.1 [schnell] Checkpoint model (fp8)
+  reference: https://huggingface.co/Comfy-Org/flux1-dev/tree/main
+  filename: flux1-schnell-fp8.safetensors
+  url: https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors
+  size: 17.2GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_Comfy_Org_FLUX.1_schnell_Checkpoint_model_fp8_219d7dec/model.yaml
+validation_errors: []

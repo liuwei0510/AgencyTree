@@ -1,0 +1,24 @@
+{
+  "9": {
+    "inputs": {
+      "images": [
+        "57",
+        0
+      ],
+      "filename_prefix": "Ovis_2.5"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.64"
+    }
+  },
+  "57": {
+    "inputs": {},
+    "class_type": "5a9f8bf0-ed77-40e3-aca8-c7c1a0bf54e1",
+    "_meta": {
+      "title": "Text to Image (Ovis)"
+    }
+  }
+}

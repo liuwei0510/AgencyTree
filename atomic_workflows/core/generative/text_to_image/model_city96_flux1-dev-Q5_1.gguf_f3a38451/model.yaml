@@ -1,0 +1,43 @@
+id: remote.model.f3a3845136f4a33d88d2
+kind: comfyui_model
+title: city96/flux1-dev-Q5_1.gguf
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: city96/flux1-dev-Q5_1.gguf
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: flux1-dev-Q5_1.gguf
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/FLUX1
+    filename: flux1-dev-Q5_1.gguf
+    download_locator: https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q5_1.gguf
+code_usable: true
+status: available
+metadata:
+  name: city96/flux1-dev-Q5_1.gguf
+  type: diffusion_model
+  base: FLUX.1
+  save_path: diffusion_models/FLUX1
+  description: FLUX.1 [Dev] Diffusion model (Q5_1/.gguf)
+  reference: https://huggingface.co/city96/FLUX.1-dev-gguf
+  filename: flux1-dev-Q5_1.gguf
+  url: https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q5_1.gguf
+  size: 9.01GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

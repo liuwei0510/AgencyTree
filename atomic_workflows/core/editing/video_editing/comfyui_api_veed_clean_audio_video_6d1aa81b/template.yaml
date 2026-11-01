@@ -1,0 +1,77 @@
+id: remote:template:api_veed_clean_audio_video
+kind: comfyui_template
+title: 'VEED Clean Audio: Video Speech Cleanup'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'VEED Clean Audio: Video Speech Cleanup'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: 'Clean the speech inside a video with VEED Clean Audio: background noise,
+    music and effects are stripped from the soundtrack, pauses are cleaned completely,
+    and the clip comes back with 48 kHz mono speech, optionally normalized to a target
+    loudness while the picture stays as shot. Video up to 1799 seconds.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_clean_audio_video.json
+  sha256: d7268df36f0ec196ddff2cb5c78f580ed232c7aa74a26855b1a6bdbb5377d11c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_veed_clean_audio_video
+  title: 'VEED Clean Audio: Video Speech Cleanup'
+  description: 'Clean the speech inside a video with VEED Clean Audio: background
+    noise, music and effects are stripped from the soundtrack, pauses are cleaned
+    completely, and the clip comes back with 48 kHz mono speech, optionally normalized
+    to a target loudness while the picture stays as shot. Video up to 1799 seconds.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Audio
+  - Video Edit
+  models:
+  - VEED
+  logos:
+  - provider: VEED
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadVideo
+      file: veed_clean_audio_input_h3_omniref_person_dialogue_plus_noise.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_veed_clean_audio_video.mp4
+      mediaType: video
+  minComfyUIVersion: 0.43.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_clean_audio_video.json
+  sha256: d7268df36f0ec196ddff2cb5c78f580ed232c7aa74a26855b1a6bdbb5377d11c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/video_editing/comfyui_api_veed_clean_audio_video_6d1aa81b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

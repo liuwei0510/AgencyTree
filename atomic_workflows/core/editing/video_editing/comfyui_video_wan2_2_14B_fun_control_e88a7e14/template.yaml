@@ -1,0 +1,110 @@
+id: remote:template:video_wan2_2_14B_fun_control
+kind: comfyui_template
+title: Wan 2.2 14B Fun Control
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan 2.2 14B Fun Control
+  input_types:
+    negative_prompt: string
+    prompt: string
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate videos guided by pose, depth, and edge controls using Wan 2.2
+    Fun Control.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_2_14B_fun_control.json
+  sha256: 3884a15db4c260f3f5fc7594712ed51adbd2511b50dbf23a801061318bd28e57
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2_2_14B_fun_control
+  title: Wan 2.2 14B Fun Control
+  description: Generate videos guided by pose, depth, and edge controls using Wan
+    2.2 Fun Control.
+  mediaType: image
+  mediaSubtype: webp
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/wan2-2-fun-control
+  tags:
+  - Video to Video
+  - Video
+  - ControlNet
+  models:
+  - Wan2.2
+  - Wan
+  date: '2025-08-12'
+  size: 38031935406
+  usage: 59
+  io:
+    inputs:
+    - nodeId: 145
+      nodeType: LoadImage
+      file: video_wan2_2_14B_fun_control_start_image.jpg
+      mediaType: image
+    - nodeId: 158
+      nodeType: LoadVideo
+      file: video_wan2_2_14B_fun_control_start_image_control_video.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.3.50
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_2_14B_fun_control.json
+  sha256: 3884a15db4c260f3f5fc7594712ed51adbd2511b50dbf23a801061318bd28e57
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '91'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '99'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '145'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true

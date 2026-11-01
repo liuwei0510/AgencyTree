@@ -1,0 +1,90 @@
+id: remote:template:template_sirolim_any_aspect_ratio_nb2
+kind: comfyui_template
+title: Any Image → Any Aspect Ratio
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Any Image → Any Aspect Ratio
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload any image and input your desired aspect ratio. Generate an outpainted
+    version of your image to perfectly fit the new dimensions.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_sirolim_any_aspect_ratio_nb2.json
+  sha256: fe3ab867e31e8889c63682280d1bb5d36b0253fd873cf7512369e6fb9c44a1ef
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_sirolim_any_aspect_ratio_nb2
+  title: Any Image → Any Aspect Ratio
+  description: Upload any image and input your desired aspect ratio. Generate an outpainted
+    version of your image to perfectly fit the new dimensions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image
+  - Outpainting
+  - Image Edit
+  models:
+  - Nano Banana 2
+  logos:
+  - provider: Google
+  requiresCustomNodes:
+  - comfyui_essentials
+  - controlaltai-nodes
+  - masquerade-nodes-comfyui
+  date: '2026-03-08'
+  openSource: false
+  size: 0
+  usage: 36
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 130
+      nodeType: LoadImage
+      file: input-aspect-ratio-converter
+      mediaType: image
+  username: sirolim
+  thumbnail:
+  - thumbnail/template_sirolim_any_aspect_ratio_nb2-1.png
+  - thumbnail/template_sirolim_any_aspect_ratio_nb2-2.png
+  minComfyUIVersion: 0.20.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_sirolim_any_aspect_ratio_nb2.json
+  sha256: fe3ab867e31e8889c63682280d1bb5d36b0253fd873cf7512369e6fb9c44a1ef
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_template_sirolim_any_aspect_ratio_nb2_b4564167/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '130'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

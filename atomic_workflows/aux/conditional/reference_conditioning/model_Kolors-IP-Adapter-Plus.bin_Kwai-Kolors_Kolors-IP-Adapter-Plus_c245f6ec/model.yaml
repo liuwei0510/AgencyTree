@@ -1,0 +1,46 @@
+id: remote:model:c245f6ec14e2dcce9af2
+kind: comfyui_model
+title: Kolors-IP-Adapter-Plus.bin (Kwai-Kolors/Kolors-IP-Adapter-Plus)
+tree_branch:
+- aux
+- conditional
+- reference_conditioning
+six_tuple:
+  name: Kolors-IP-Adapter-Plus.bin (Kwai-Kolors/Kolors-IP-Adapter-Plus)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/reference_conditioning
+  parameters:
+  - name: filename
+    value: Kolors-IP-Adapter-Plus.bin
+  - name: base
+    value: Kolors
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: IP-Adapter
+    save_path: ipadapter
+    filename: Kolors-IP-Adapter-Plus.bin
+    download_locator: https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus/resolve/main/ip_adapter_plus_general.bin
+code_usable: true
+status: available
+metadata:
+  name: Kolors-IP-Adapter-Plus.bin (Kwai-Kolors/Kolors-IP-Adapter-Plus)
+  type: IP-Adapter
+  base: Kolors
+  save_path: ipadapter
+  description: You can use this model in the [a/ComfyUI IPAdapter plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus)
+    extension.
+  reference: https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus
+  filename: Kolors-IP-Adapter-Plus.bin
+  url: https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus/resolve/main/ip_adapter_plus_general.bin
+  size: 1.01GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/reference_conditioning/model_Kolors-IP-Adapter-Plus.bin_Kwai-Kolors_Kolors-IP-Adapter-Plus_c245f6ec/model.yaml
+validation_errors: []

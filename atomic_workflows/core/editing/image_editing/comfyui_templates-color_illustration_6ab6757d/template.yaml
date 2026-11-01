@@ -1,0 +1,89 @@
+id: remote:template:templates-color_illustration
+kind: comfyui_template
+title: Add Color to Line Art Illustration
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Add Color to Line Art Illustration
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Input a black and white illustration and generate a colored output.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-color_illustration.json
+  sha256: dd3500123c8aa0820801f7c4b4f5f56672a4ad62b0ba40b87157114ccd25860c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-color_illustration
+  title: Add Color to Line Art Illustration
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Input a black and white illustration and generate a colored output.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Gemini3 Pro Image Preview
+  - Google
+  - Nano Banana Pro
+  openSource: false
+  date: '2025-12-20'
+  searchRank: 8
+  size: 0
+  usage: 12
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: illustration_bw.png
+      mediaType: image
+    outputs:
+    - nodeId: 11
+      nodeType: SaveImage
+      file: templates-color_illustration.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/illustration_bw.png
+  - output/templates-color_illustration.png
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-color_illustration.json
+  sha256: dd3500123c8aa0820801f7c4b4f5f56672a4ad62b0ba40b87157114ccd25860c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-color_illustration_6ab6757d/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

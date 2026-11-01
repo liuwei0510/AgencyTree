@@ -1,0 +1,76 @@
+id: remote.template.template_horizontal_vertical_extension
+kind: comfyui_template
+title: 'Aspect Ratio Extend: Kling O3'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Aspect Ratio Extend: Kling O3'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Extend any video to a custom aspect ratio. Convert vertical videos to
+    horizontal format and vice versa. Includes an application mode for easy use.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_horizontal_vertical_extension.json
+  sha256: 34c5ecaf955a577673e0568d8c2acc4bab44ab000537d1d8576ad7c5164bbd00
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_horizontal_vertical_extension
+  title: 'Aspect Ratio Extend: Kling O3'
+  description: Extend any video to a custom aspect ratio. Convert vertical videos
+    to horizontal format and vice versa. Includes an application mode for easy use.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video
+  - Video Edit
+  - Outpainting
+  models:
+  - Kling O3
+  logos:
+  - provider: Kling
+  requiresCustomNodes:
+  - comfyui_essentials
+  - comfyui_layerstyle
+  - masquerade-nodes-comfyui
+  date: '2026-03-30'
+  openSource: false
+  size: 0
+  usage: 71
+  searchRank: 0
+  username: shane
+  io:
+    inputs:
+    - nodeId: 247
+      nodeType: LoadVideo
+      file: animated_man_framing.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 270
+      nodeType: SaveVideo
+      file: template_horizontal_vertical_extension.mp4
+      mediaType: video
+  thumbnail:
+  - input/animated_man_framing.mp4
+  - output/template_horizontal_vertical_extension.mp4
+  minComfyUIVersion: 0.16.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

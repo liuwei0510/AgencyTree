@@ -1,0 +1,62 @@
+id: remote.template.image_anima_base_v1
+kind: comfyui_template
+title: 'Anima Base v1: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Anima Base v1: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt describing an anime or artistic illustration. Generate
+    a non-photorealistic image focused on anime concepts, characters, or styles.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_anima_base_v1.json
+  sha256: 32a82db5bb078b0f4f9f629e0bffe1ca115e0672ba5049d492cb6b3aad5a10f7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_anima_base_v1
+  tutorialUrl: https://docs.comfy.org/tutorials/image/anima/anima
+  title: 'Anima Base v1: Text to Image'
+  description: Input a text prompt describing an anime or artistic illustration. Generate
+    a non-photorealistic image focused on anime concepts, characters, or styles.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Anime
+  - Text to Image
+  models:
+  - Anima
+  date: '2026-05-23'
+  openSource: true
+  size: 5798205850
+  usage: 760
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 46
+      nodeType: SaveImage
+      file: image_anima_base_v1.png
+      mediaType: image
+  thumbnail:
+  - output/image_anima_base_v1.png
+  minComfyUIVersion: 0.16.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

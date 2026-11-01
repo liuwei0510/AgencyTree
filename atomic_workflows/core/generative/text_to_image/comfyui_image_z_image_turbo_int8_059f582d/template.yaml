@@ -1,0 +1,71 @@
+id: remote:template:image_z_image_turbo_int8
+kind: comfyui_template
+title: 'Z-Image-Turbo Int8: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Z-Image-Turbo Int8: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate photorealistic images using the Z-Image-Turbo int8 model, a
+    distilled 6B-parameter variant optimized for sub-second inference through efficient
+    8-step sampling. The workflow takes a text prompt as input and outputs a single
+    high-quality image. Ideal for rapid creative iteration, realistic concept art,
+    and production-ready visual prototyping.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_turbo_int8.json
+  sha256: e3bbfe93828edda1dd0f753d6c40c0446f5428f8fe003334df2d6dae2129da52
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_z_image_turbo_int8
+  title: 'Z-Image-Turbo Int8: Text to Image'
+  description: Generate photorealistic images using the Z-Image-Turbo int8 model,
+    a distilled 6B-parameter variant optimized for sub-second inference through efficient
+    8-step sampling. The workflow takes a text prompt as input and outputs a single
+    high-quality image. Ideal for rapid creative iteration, realistic concept art,
+    and production-ready visual prototyping.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - Z-Image-Turbo
+  date: '2026-07-04'
+  openSource: true
+  size: 12133282611
+  usage: 157
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_z_image_turbo_int8.png
+      mediaType: image
+  thumbnail:
+  - output/image_z_image_turbo_int8.png
+  minComfyUIVersion: 0.11.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_turbo_int8.json
+  sha256: e3bbfe93828edda1dd0f753d6c40c0446f5428f8fe003334df2d6dae2129da52
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

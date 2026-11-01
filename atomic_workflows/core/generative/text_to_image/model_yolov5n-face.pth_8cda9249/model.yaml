@@ -1,0 +1,46 @@
+id: remote:model:8cda92493e261341ba4f
+kind: comfyui_model
+title: yolov5n-face.pth
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: yolov5n-face.pth
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: yolov5n-face.pth
+  - name: base
+    value: facexlib
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: facexlib
+    save_path: facedetection
+    filename: yolov5n-face.pth
+    download_locator: https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/yolov5n-face.pth
+code_usable: true
+status: available
+metadata:
+  name: yolov5n-face.pth
+  type: facexlib
+  base: facexlib
+  save_path: facedetection
+  description: Face Detection Models. Download the model required for using the 'Facerestore
+    CF (Code Former)' custom node.
+  reference: https://github.com/xinntao/facexlib
+  filename: yolov5n-face.pth
+  url: https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/yolov5n-face.pth
+  size: 7.15MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_yolov5n-face.pth_8cda9249/model.yaml
+validation_errors: []

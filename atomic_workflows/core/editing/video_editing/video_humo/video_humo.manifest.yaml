@@ -1,0 +1,82 @@
+id: core.editing.video_editing.video_humo
+title: video_humo
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/video_humo.json).
+tags:
+- video-editing
+- video-edit
+workflow_file: video_humo.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+  seed:
+    node_id: '64'
+    input_key: seed
+  source_image:
+    node_id: '49'
+    input_key: image
+    widget_index: null
+  audio_file:
+    node_id: '58'
+    input_key: audio
+    widget_index: null
+  fps:
+    node_id: '60'
+    input_key: fps
+    widget_index: null
+  width:
+    node_id: '65'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '65'
+    input_key: height
+    widget_index: null
+  length:
+    node_id: '65'
+    input_key: length
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: audio_file
+  type: audio_path
+  required: true
+  default: null
+- name: fps
+  type: number
+  required: false
+  default: 25
+- name: width
+  type: number
+  required: false
+  default: 640
+- name: height
+  type: number
+  required: false
+  default: 640
+- name: length
+  type: number
+  required: false
+  default: 97
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

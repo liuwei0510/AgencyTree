@@ -1,0 +1,100 @@
+id: remote:template:api_beeble_switchx_image_edit
+kind: comfyui_template
+title: 'Relight: Beeble SwitchX'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Relight: Beeble SwitchX'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your character image and a reference style/lighting image. Generate
+    an edited output with the reference lighting and style applied to your original
+    image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_beeble_switchx_image_edit.json
+  sha256: 34d3465d88ea8536e723d86cb33df6f883143dacd04032f209c55905ee780616
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_beeble_switchx_image_edit
+  title: 'Relight: Beeble SwitchX'
+  description: Upload your character image and a reference style/lighting image. Generate
+    an edited output with the reference lighting and style applied to your original
+    image.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Relight
+  - Image Edit
+  models:
+  - SwitchX
+  logos:
+  - provider: Beeble
+  date: '2026-05-29'
+  openSource: false
+  size: 0
+  usage: 25
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: soft_light_headphones_man.png
+      mediaType: image
+    - nodeId: 17
+      nodeType: LoadImage
+      file: simple_modern_living_space.png
+      mediaType: image
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_beeble_switchx_image_edit.json
+  sha256: 34d3465d88ea8536e723d86cb33df6f883143dacd04032f209c55905ee780616
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_beeble_switchx_image_edit_e0a18d08/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

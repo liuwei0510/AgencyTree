@@ -1,0 +1,89 @@
+id: remote:template:templates-assemble_dieline
+kind: comfyui_template
+title: Generate Brand Packaging from Dieline
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Generate Brand Packaging from Dieline
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a dieline of your product and assemble into a 3D package.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-assemble_dieline.json
+  sha256: 1154778edf1a42cc9a5d8fc726167679ad7a37254e5ced26f2298d3f0f0f49a5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-assemble_dieline
+  title: Generate Brand Packaging from Dieline
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  description: Upload a dieline of your product and assemble into a 3D package.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Google
+  - Google Gemini Image
+  - Nano Banana Pro
+  openSource: false
+  date: '2025-12-15'
+  searchRank: 8
+  size: 0
+  usage: 30
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: dieline.jpg
+      mediaType: image
+    outputs:
+    - nodeId: 6
+      nodeType: SaveImage
+      file: templates-assemble_dieline.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/dieline.jpg
+  - output/templates-assemble_dieline.png
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-assemble_dieline.json
+  sha256: 1154778edf1a42cc9a5d8fc726167679ad7a37254e5ced26f2298d3f0f0f49a5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_templates-assemble_dieline_a9d2d357/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

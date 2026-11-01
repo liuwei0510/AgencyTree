@@ -1,0 +1,27 @@
+comfy:
+  base_url: "http://127.0.0.1:8188"
+  poll_interval_sec: 1.0
+  timeout_sec: 900.0
+
+# Optional: ComfyUI install root on this machine for fast local copy output -> input when
+# chaining workflows. If null, the executor uses HTTP /view + /upload/image instead.
+local_comfy_root: null
+
+atomic_workflows_root: "./atomic_workflows"
+state_root: "./data"
+
+# Use "api" for a direct API, or "command" to send JSON to any existing
+# agent harness. The harness can use its own account/model session without an
+# API key configured here.
+agents:
+  provider: api
+  model: gpt-4o
+  api_key_env: OPENAI_API_KEY
+  timeout_sec: 240
+  max_iterations: 5
+
+openai:
+  model: "gpt-4o"
+  base_url: null
+  # Outer staged loop (ANALYSIS / ARCHITECTURE / ENGINEERING): generate + validate per iteration.
+  max_iterations: 5

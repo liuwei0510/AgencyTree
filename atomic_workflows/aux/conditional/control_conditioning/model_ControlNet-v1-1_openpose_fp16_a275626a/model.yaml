@@ -1,0 +1,45 @@
+id: remote:model:a275626a95b9c73db5bc
+kind: comfyui_model
+title: ControlNet-v1-1 (openpose; fp16)
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: ControlNet-v1-1 (openpose; fp16)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/pose_conditioning
+  parameters:
+  - name: filename
+    value: control_v11p_sd15_openpose_fp16.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/1.5
+    filename: control_v11p_sd15_openpose_fp16.safetensors
+    download_locator: https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: ControlNet-v1-1 (openpose; fp16)
+  type: controlnet
+  base: SD1.5
+  save_path: controlnet/1.5
+  description: Safetensors/FP16 versions of the new ControlNet-v1-1 checkpoints (openpose)
+  reference: https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors
+  filename: control_v11p_sd15_openpose_fp16.safetensors
+  url: https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors
+  size: 722.6MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/pose_conditioning/model_ControlNet-v1-1_openpose_fp16_a275626a/model.yaml
+validation_errors: []

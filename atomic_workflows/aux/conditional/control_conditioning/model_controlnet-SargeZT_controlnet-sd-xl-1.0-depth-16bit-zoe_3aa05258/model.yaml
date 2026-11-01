@@ -1,0 +1,43 @@
+id: remote.model.3aa052582482810b0cb9
+kind: comfyui_model
+title: controlnet-SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: controlnet-SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: depth-zoe-xl-v1.0-controlnet.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL
+    filename: depth-zoe-xl-v1.0-controlnet.safetensors
+    download_locator: https://huggingface.co/SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe/resolve/main/depth-zoe-xl-v1.0-controlnet.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: controlnet-SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL
+  description: ControlNet depth-zoe model for SDXL
+  reference: https://huggingface.co/SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe
+  filename: depth-zoe-xl-v1.0-controlnet.safetensors
+  url: https://huggingface.co/SargeZT/controlnet-sd-xl-1.0-depth-16bit-zoe/resolve/main/depth-zoe-xl-v1.0-controlnet.safetensors
+  size: 5.00GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

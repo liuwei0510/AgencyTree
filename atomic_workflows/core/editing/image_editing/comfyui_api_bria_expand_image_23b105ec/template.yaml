@@ -1,0 +1,92 @@
+id: remote:template:api_bria_expand_image
+kind: comfyui_template
+title: 'Image Outpainting: Bria'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Outpainting: Bria'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Expand an image beyond its original borders using Bria's outpainting
+    API, generating new surrounding content that matches the original lighting, perspective,
+    and texture while leaving the source untouched. Choose from preset aspect ratios,
+    custom dimensions, or manual canvas placement, with optional text prompts to guide
+    the expansion direction or an auto-generated prompt when left blank. Ideal for
+    extending compositions for print layouts, creating panoramic versions of existing
+    photos, and adapting artwork to new formats or social media dimensions.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_expand_image.json
+  sha256: 8cf973db9df877bb3d09ae590d9d1460f95e247450319baf46d29a46d20ce647
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_expand_image
+  title: 'Image Outpainting: Bria'
+  description: Expand an image beyond its original borders using Bria's outpainting
+    API, generating new surrounding content that matches the original lighting, perspective,
+    and texture while leaving the source untouched. Choose from preset aspect ratios,
+    custom dimensions, or manual canvas placement, with optional text prompts to guide
+    the expansion direction or an auto-generated prompt when left blank. Ideal for
+    extending compositions for print layouts, creating panoramic versions of existing
+    photos, and adapting artwork to new formats or social media dimensions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tags:
+  - API
+  - Outpainting
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-08-16'
+  openSource: false
+  size: 0
+  usage: 131
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: red_sports_car_night.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_bria_expand_image-1.png
+  - thumbnail/api_bria_expand_image-2.png
+  minComfyUIVersion: 0.33.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_expand_image.json
+  sha256: 8cf973db9df877bb3d09ae590d9d1460f95e247450319baf46d29a46d20ce647
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_api_bria_expand_image_23b105ec/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

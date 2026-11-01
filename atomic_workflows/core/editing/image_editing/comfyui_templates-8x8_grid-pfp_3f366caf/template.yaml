@@ -1,0 +1,75 @@
+id: remote.template.templates-8x8_grid-pfp
+kind: comfyui_template
+title: Profile Picture Stylized Variations
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Profile Picture Stylized Variations
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your profile picture, enter a theme and generate 64 variations.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-8x8_grid-pfp.json
+  sha256: ce1d15bd2c84abf1ec7f140ef1f06ce994145016ca887d7747639f589792e0a2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-8x8_grid-pfp
+  title: Profile Picture Stylized Variations
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload your profile picture, enter a theme and generate 64 variations.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Nano Banana Pro
+  - Google
+  - Gemini3 Pro Image Preview
+  openSource: false
+  date: '2025-12-18'
+  searchRank: 8
+  size: 0
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 1
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: subject-profile.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-8x8_grid-pfp.png
+  minComfyUIVersion: 0.15.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

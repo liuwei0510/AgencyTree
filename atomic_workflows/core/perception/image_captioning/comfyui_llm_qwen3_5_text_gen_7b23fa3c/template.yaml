@@ -1,0 +1,76 @@
+id: remote:template:llm_qwen3_5_text_gen
+kind: comfyui_template
+title: 'Qwen3.5: Text Generation'
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen3.5: Text Generation'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Use the Qwen3.5 model to analyze an input image and generate descriptive
+    text prompts. This workflow performs image captioning and reverse prompt engineering.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/llm_qwen3_5_text_gen.json
+  sha256: 411560f329b7258de0b359a9b524a6ee43da891fecc6169bfe94c0ea8caa4874
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: llm_qwen3_5_text_gen
+  tutorialUrl: https://docs.comfy.org/tutorials/llm/qwen/qwen3_5
+  title: 'Qwen3.5: Text Generation'
+  description: Use the Qwen3.5 model to analyze an input image and generate descriptive
+    text prompts. This workflow performs image captioning and reverse prompt engineering.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text Generation
+  models:
+  - Qwen3.5
+  date: '2026-03-27'
+  openSource: true
+  size: 9341553869
+  usage: 163
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: man_with_red_hat.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/llm_qwen3_5_text_gen.png
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/llm_qwen3_5_text_gen.json
+  sha256: 411560f329b7258de0b359a9b524a6ee43da891fecc6169bfe94c0ea8caa4874
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_llm_qwen3_5_text_gen_7b23fa3c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

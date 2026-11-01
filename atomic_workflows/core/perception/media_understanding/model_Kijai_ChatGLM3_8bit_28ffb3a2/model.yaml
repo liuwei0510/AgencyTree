@@ -1,0 +1,45 @@
+id: remote:model:28ffb3a2d6a96a814bd8
+kind: comfyui_model
+title: Kijai/ChatGLM3 (8bit)
+tree_branch:
+- core
+- perception
+- media_understanding
+six_tuple:
+  name: Kijai/ChatGLM3 (8bit)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/media_understanding
+  parameters:
+  - name: filename
+    value: chatglm3-8bit.safetensors
+  - name: base
+    value: ChatGLM3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: LLM
+    save_path: LLM
+    filename: chatglm3-8bit.safetensors
+    download_locator: https://huggingface.co/Kijai/ChatGLM3-safetensors/resolve/main/chatglm3-8bit.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Kijai/ChatGLM3 (8bit)
+  type: LLM
+  base: ChatGLM3
+  save_path: LLM
+  description: This is required for Kolors
+  reference: https://huggingface.co/Kijai/ChatGLM3-safetensors/tree/main
+  filename: chatglm3-8bit.safetensors
+  url: https://huggingface.co/Kijai/ChatGLM3-safetensors/resolve/main/chatglm3-8bit.safetensors
+  size: 3.92GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/perception/media_understanding/model_Kijai_ChatGLM3_8bit_28ffb3a2/model.yaml
+validation_errors: []

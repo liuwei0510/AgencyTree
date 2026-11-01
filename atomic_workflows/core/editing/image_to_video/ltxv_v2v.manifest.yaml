@@ -1,0 +1,65 @@
+id: core.editing.image_to_video.ltxv_v2v
+title: Image to Video (I2V slot)
+modality:
+- video
+description: Chain-friendly I2V slot; bind prior_image from upstream SaveImage / LoadImage
+  path.
+tags:
+- i2v
+- video
+- editing
+workflow_file: ltxv_v2v.workflow.json
+inject:
+  motion_prompt:
+    node_id: '6'
+    input_key: text
+  seed:
+    node_id: '10'
+    input_key: seed
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: null
+  model_file:
+    node_id: '4'
+    input_key: ckpt_name
+    widget_index: null
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: null
+inputs:
+- name: prior_image
+  type: image_path
+  required: false
+  description: Filename or subpath produced by upstream atomic workflow (Comfy input
+    folder).
+- name: motion_prompt
+  type: string
+  required: true
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: model_file
+  type: string
+  required: true
+  default: null
+- name: width
+  type: number
+  required: false
+  default: 768
+- name: height
+  type: number
+  required: false
+  default: 432
+outputs:
+- name: video
+  type: video_filenames

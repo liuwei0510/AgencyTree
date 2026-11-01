@@ -1,0 +1,756 @@
+{
+  "n1::3": {
+    "inputs": {
+      "seed": 685468484323813,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "n1::4",
+        0
+      ],
+      "positive": [
+        "n1::6",
+        0
+      ],
+      "negative": [
+        "n1::7",
+        0
+      ],
+      "latent_image": [
+        "n1::5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "n1::4": {
+    "inputs": {
+      "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "n1::5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "n1::6": {
+    "inputs": {
+      "text": "Generate a lively night market in a Jiangnan water town during the Song Dynasty, with vendors trading with customers.",
+      "clip": [
+        "n1::4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "n1::7": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "n1::4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "n1::8": {
+    "inputs": {
+      "samples": [
+        "n1::3",
+        0
+      ],
+      "vae": [
+        "n1::4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "n1::9": {
+    "inputs": {
+      "filename_prefix": "SD1.5",
+      "images": [
+        "n1::8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "n2::3": {
+    "inputs": {
+      "seed": 685468484323813,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "n2::4",
+        0
+      ],
+      "positive": [
+        "n2::6",
+        0
+      ],
+      "negative": [
+        "n2::7",
+        0
+      ],
+      "latent_image": [
+        "n2::5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "n2::4": {
+    "inputs": {
+      "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "n2::5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "n2::6": {
+    "inputs": {
+      "text": "Generate a scene of astronauts repairing equipment in a space station.",
+      "clip": [
+        "n2::4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "n2::7": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "n2::4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "n2::8": {
+    "inputs": {
+      "samples": [
+        "n2::3",
+        0
+      ],
+      "vae": [
+        "n2::4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "n2::9": {
+    "inputs": {
+      "filename_prefix": "SD1.5",
+      "images": [
+        "n2::8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "n3::1": {
+    "inputs": {
+      "upscale_model": [
+        "n3::3",
+        0
+      ],
+      "image": [
+        "n3::__input_source_image",
+        0
+      ]
+    },
+    "class_type": "ImageUpscaleWithModel",
+    "_meta": {
+      "title": "使用模型放大图像"
+    }
+  },
+  "n3::3": {
+    "inputs": {
+      "model_name": "RealESRGAN_x2.pth"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "加载放大模型"
+    }
+  },
+  "n3::4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "n3::1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "n4::136": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "n4::192:8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "n4::192:39": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "n4::192:38": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "双CLIP加载器"
+    }
+  },
+  "n4::192:135": {
+    "inputs": {
+      "conditioning": [
+        "n4::192:6",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "n4::192:8": {
+    "inputs": {
+      "samples": [
+        "n4::192:31",
+        0
+      ],
+      "vae": [
+        "n4::192:39",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "n4::192:124": {
+    "inputs": {
+      "pixels": [
+        "n4::192:42",
+        0
+      ],
+      "vae": [
+        "n4::192:39",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE编码"
+    }
+  },
+  "n4::192:35": {
+    "inputs": {
+      "guidance": 2.5,
+      "conditioning": [
+        "n4::192:177",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "Flux引导"
+    }
+  },
+  "n4::192:37": {
+    "inputs": {
+      "unet_name": "flux1-dev-kontext_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "n4::192:177": {
+    "inputs": {
+      "conditioning": [
+        "n4::192:6",
+        0
+      ],
+      "latent": [
+        "n4::192:124",
+        0
+      ]
+    },
+    "class_type": "ReferenceLatent",
+    "_meta": {
+      "title": "参考Latent"
+    }
+  },
+  "n4::192:146": {
+    "inputs": {
+      "direction": "right",
+      "match_image_size": true,
+      "spacing_width": 0,
+      "spacing_color": "white",
+      "image1": [
+        "n4::__input_source_image",
+        0
+      ],
+      "image2": [
+        "n4::__input_source_image",
+        0
+      ]
+    },
+    "class_type": "ImageStitch",
+    "_meta": {
+      "title": "图像拼接"
+    }
+  },
+  "n4::192:42": {
+    "inputs": {
+      "image": [
+        "n4::192:146",
+        0
+      ]
+    },
+    "class_type": "FluxKontextImageScale",
+    "_meta": {
+      "title": "图像缩放为FluxKontext"
+    }
+  },
+  "n4::192:31": {
+    "inputs": {
+      "seed": 784381637916598,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "n4::192:37",
+        0
+      ],
+      "positive": [
+        "n4::192:35",
+        0
+      ],
+      "negative": [
+        "n4::192:135",
+        0
+      ],
+      "latent_image": [
+        "n4::192:124",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "n4::192:6": {
+    "inputs": {
+      "text": "Replace the space-station background with a Martian colony while preserving the astronauts repairing equipment.",
+      "clip": [
+        "n4::192:38",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "n5::84": {
+    "inputs": {
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "type": "wan",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "n5::85": {
+    "inputs": {
+      "add_noise": "disable",
+      "noise_seed": 0,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 2,
+      "end_at_step": 4,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "n5::103",
+        0
+      ],
+      "positive": [
+        "n5::98",
+        0
+      ],
+      "negative": [
+        "n5::98",
+        1
+      ],
+      "latent_image": [
+        "n5::86",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "K采样器（高级）"
+    }
+  },
+  "n5::86": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": 138073435077572,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 0,
+      "end_at_step": 2,
+      "return_with_leftover_noise": "enable",
+      "model": [
+        "n5::104",
+        0
+      ],
+      "positive": [
+        "n5::98",
+        0
+      ],
+      "negative": [
+        "n5::98",
+        1
+      ],
+      "latent_image": [
+        "n5::98",
+        2
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "K采样器（高级）"
+    }
+  },
+  "n5::87": {
+    "inputs": {
+      "samples": [
+        "n5::85",
+        0
+      ],
+      "vae": [
+        "n5::90",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "n5::89": {
+    "inputs": {
+      "text": "Animate the Martian colony scene into a 2-second high-definition video of astronauts repairing equipment, with their actions playing in fast motion. Preserve the astronauts and Martian colony background.",
+      "clip": [
+        "n5::84",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative Prompt)"
+    }
+  },
+  "n5::90": {
+    "inputs": {
+      "vae_name": "wan_2.1_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "n5::93": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "n5::84",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive Prompt)"
+    }
+  },
+  "n5::94": {
+    "inputs": {
+      "fps": 16,
+      "images": [
+        "n5::94__trim_frames",
+        0
+      ]
+    },
+    "class_type": "CreateVideo",
+    "_meta": {
+      "title": "创建视频"
+    }
+  },
+  "n5::95": {
+    "inputs": {
+      "unet_name": "wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "n5::96": {
+    "inputs": {
+      "unet_name": "wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "n5::98": {
+    "inputs": {
+      "width": 1280,
+      "height": 720,
+      "length": 33,
+      "batch_size": 1,
+      "positive": [
+        "n5::93",
+        0
+      ],
+      "negative": [
+        "n5::89",
+        0
+      ],
+      "vae": [
+        "n5::90",
+        0
+      ],
+      "start_image": [
+        "n5::__input_source_image",
+        0
+      ]
+    },
+    "class_type": "WanImageToVideo",
+    "_meta": {
+      "title": "图像到视频（Wan）"
+    }
+  },
+  "n5::101": {
+    "inputs": {
+      "lora_name": "wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors",
+      "strength_model": 1.0000000000000002,
+      "model": [
+        "n5::95",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "n5::102": {
+    "inputs": {
+      "lora_name": "wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors",
+      "strength_model": 1.0000000000000002,
+      "model": [
+        "n5::96",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "n5::103": {
+    "inputs": {
+      "shift": 5.000000000000001,
+      "model": [
+        "n5::102",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "采样算法（SD3）"
+    }
+  },
+  "n5::104": {
+    "inputs": {
+      "shift": 5.000000000000001,
+      "model": [
+        "n5::101",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "采样算法（SD3）"
+    }
+  },
+  "n5::108": {
+    "inputs": {
+      "filename_prefix": "video/ComfyUI",
+      "format": "auto",
+      "codec": "auto",
+      "video": [
+        "n5::94",
+        0
+      ]
+    },
+    "class_type": "SaveVideo",
+    "_meta": {
+      "title": "保存视频"
+    }
+  },
+  "n5::94__trim_frames": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "image": [
+        "n5::87",
+        0
+      ],
+      "batch_index": 0,
+      "length": 32
+    },
+    "_meta": {
+      "title": "Trim generated video to 32 output frames"
+    }
+  },
+  "n3::__input_source_image": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "image": [
+        "n1::8",
+        0
+      ],
+      "batch_index": 0,
+      "length": 1
+    },
+    "_meta": {
+      "title": "n1.images[0] -> n3.source_image"
+    }
+  },
+  "n4::__input_source_image": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "image": [
+        "n2::8",
+        0
+      ],
+      "batch_index": 0,
+      "length": 1
+    },
+    "_meta": {
+      "title": "n2.images[0] -> n4.source_image"
+    }
+  },
+  "n5::__input_source_image": {
+    "class_type": "ImageFromBatch",
+    "inputs": {
+      "image": [
+        "n4::192:8",
+        0
+      ],
+      "batch_index": 0,
+      "length": 1
+    },
+    "_meta": {
+      "title": "n4.images[0] -> n5.source_image"
+    }
+  }
+}

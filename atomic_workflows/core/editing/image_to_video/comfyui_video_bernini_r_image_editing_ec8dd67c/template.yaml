@@ -1,0 +1,83 @@
+id: remote.template.video_bernini_r_image_editing
+kind: comfyui_template
+title: 'Bernini-R: Image Edit'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Bernini-R: Image Edit'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Generate an edited image with matched lighting and view a side-by-side
+    before/after comparison. Ideal for portrait and product relighting, consistent
+    lighting across photo sets, and e-commerce catalog photography.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_bernini_r_image_editing.json
+  sha256: a2e6a5c0b469adaf1ddbaf9d47e8932b8a98c0f48a293e7271541745f4157194
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_bernini_r_image_editing
+  title: 'Bernini-R: Image Edit'
+  description: Generate an edited image with matched lighting and view a side-by-side
+    before/after comparison. Ideal for portrait and product relighting, consistent
+    lighting across photo sets, and e-commerce catalog photography.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  models:
+  - Bernini-R
+  date: '2026-06-14'
+  openSource: true
+  size: 38762079846
+  usage: 74
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 104
+      nodeType: LoadImage
+      file: example.png
+      mediaType: image
+    - nodeId: 114
+      nodeType: LoadImage
+      file: desert_oasis_backyard.png
+      mediaType: image
+  minComfyUIVersion: 0.25.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '104'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '114'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

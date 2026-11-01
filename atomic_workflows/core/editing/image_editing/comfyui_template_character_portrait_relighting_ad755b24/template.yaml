@@ -1,0 +1,81 @@
+id: remote:template:template_character_portrait_relighting
+kind: comfyui_template
+title: Character Portrait Relighting
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Character Portrait Relighting
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a portrait of your character and create multiple cinematic lighting
+    conditions while maintaining character consistency.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_character_portrait_relighting.json
+  sha256: e9cb0f02451728a470d65c49aa7311fb42ce3cdd34ac2755f85dd8972577e7c6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_character_portrait_relighting
+  title: Character Portrait Relighting
+  description: Upload a portrait of your character and create multiple cinematic lighting
+    conditions while maintaining character consistency.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Relight
+  - Portrait
+  - API
+  models:
+  - Nano Banana Pro
+  logos:
+  - provider: Google
+  date: '2026-04-06'
+  openSource: false
+  size: 0
+  usage: 17
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 124
+      nodeType: LoadImage
+      file: silver_hand.png
+      mediaType: image
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_character_portrait_relighting.json
+  sha256: e9cb0f02451728a470d65c49aa7311fb42ce3cdd34ac2755f85dd8972577e7c6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_editing/comfyui_template_character_portrait_relighting_ad755b24/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '124'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,74 @@
+id: remote:template:api_minimax_h3_max_t2v
+kind: comfyui_template
+title: 'MiniMax H3 Max: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3 Max: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+    transcript: text
+  capability: Generate polished, prompt-faithful video from text using MiniMax H3
+    Max, producing a single finished video clip with no input files required. Ideal
+    for rapid concept exploration, cinematic text-to-video scenes, and high-throughput
+    creative iteration where speed and visual quality matter.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_max_t2v.json
+  sha256: 95785fe66d70ea511a79b95d8d557a60570af16b8f58a4659fb4da9c1ceb1c12
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_minimax_h3_max_t2v
+  title: 'MiniMax H3 Max: Text to Video'
+  description: Generate polished, prompt-faithful video from text using MiniMax H3
+    Max, producing a single finished video clip with no input files required. Ideal
+    for rapid concept exploration, cinematic text-to-video scenes, and high-throughput
+    creative iteration where speed and visual quality matter.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - MiniMax H3
+  logos:
+  - provider: MiniMax
+  date: '2026-09-01'
+  openSource: false
+  size: 0
+  usage: 65
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.34.2
+  io:
+    outputs:
+    - nodeId: 11
+      nodeType: SaveVideo
+      file: api_minimax_h3_max_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_minimax_h3_max_t2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_max_t2v.json
+  sha256: 95785fe66d70ea511a79b95d8d557a60570af16b8f58a4659fb4da9c1ceb1c12
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text
+planning_eligible: true

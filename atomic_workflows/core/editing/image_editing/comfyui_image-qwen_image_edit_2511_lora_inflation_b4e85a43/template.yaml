@@ -1,0 +1,77 @@
+id: remote.template.image-qwen_image_edit_2511_lora_inflation
+kind: comfyui_template
+title: Image Inflation Effect with INFL8 LoRA
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Image Inflation Effect with INFL8 LoRA
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and specify a subject. Generate an inflated version
+    of that subject using the INFL8 LoRA for Qwen Image Edit.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image-qwen_image_edit_2511_lora_inflation.json
+  sha256: 603e2166990a6909acefcd44de387a13b806c10988a244fb29521c161cce5602
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image-qwen_image_edit_2511_lora_inflation
+  title: Image Inflation Effect with INFL8 LoRA
+  description: Upload an image and specify a subject. Generate an inflated version
+    of that subject using the INFL8 LoRA for Qwen Image Edit.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Image Edit
+  models:
+  - Qwen-Image-Edit
+  date: '2026-01-30'
+  openSource: true
+  size: 50787988275
+  usage: 23
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 41
+      nodeType: LoadImage
+      file: inflation_lora_input.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image-qwen_image_edit_2511_lora_inflation.png
+      mediaType: image
+  username: PurzBeats
+  thumbnail:
+  - input/inflation_lora_input.png
+  - output/image-qwen_image_edit_2511_lora_inflation.png
+  minComfyUIVersion: 0.3.60
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '41'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

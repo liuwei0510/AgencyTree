@@ -1,0 +1,21 @@
+id: aux.postprocess.denoise.image_denoise
+title: Image Denoise / Refine (post)
+modality:
+- image
+description: Light img2img pass or external denoiser workflow hook.
+tags:
+- postprocess
+- denoise
+workflow_file: image_denoise.workflow.json
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: null
+inputs:
+- name: source_image
+  type: image_path
+  required: false
+outputs:
+- name: images
+  type: image_filenames

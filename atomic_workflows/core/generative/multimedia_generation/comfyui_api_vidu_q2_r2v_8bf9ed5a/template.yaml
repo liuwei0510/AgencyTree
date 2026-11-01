@@ -1,0 +1,60 @@
+id: remote.template.api_vidu_q2_r2v
+kind: comfyui_template
+title: 'Vidu Q2: Reference to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q2: Reference to Video'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Generate videos with reference-based consistency for up to 3 subjects,
+    maintaining character and style continuity across the video sequence with cinematic
+    camera movements.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_r2v.json
+  sha256: a7371fac2198c8351831147d7a7b29c586d2b3a2c3588b16d0cd8b8b501906ab
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_q2_r2v
+  title: 'Vidu Q2: Reference to Video'
+  description: Generate videos with reference-based consistency for up to 3 subjects,
+    maintaining character and style continuity across the video sequence with cinematic
+    camera movements.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Character Reference
+  - Image to Video
+  - API
+  models:
+  - Vidu Q2
+  - Vidu
+  date: '2026-01-12'
+  openSource: false
+  usage: 24
+  io:
+    inputs:
+    - nodeId: 40
+      nodeType: LoadImage
+      file: api_vidu_q2_r2v_red_haired_girl.jpg
+      mediaType: image
+    - nodeId: 42
+      nodeType: LoadImage
+      file: vintage_robot.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.9.0

@@ -1,0 +1,84 @@
+id: remote:template:3d_hunyuan3d-v2.1
+kind: comfyui_template
+title: 'HY 3D 2.1: Single View to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HY 3D 2.1: Single View to Model'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    mesh: mesh_path
+  capability: Reconstruct a 3D model from a single photo using Hunyuan3D 2.1, converting
+    one input image into a raw white-mesh geometry without textures or materials.
+    Ideal for rapid 3D concepting, blockout prototyping, and asset preparation before
+    texturing or retopology.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_hunyuan3d-v2.1.json
+  sha256: e547eb463412a60357a748c99bf6d2ac4e7e4f69eb26a72d1b7cc8822c733281
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: 3d_hunyuan3d-v2.1
+  title: 'HY 3D 2.1: Single View to Model'
+  mediaType: image
+  mediaSubtype: webp
+  description: Reconstruct a 3D model from a single photo using Hunyuan3D 2.1, converting
+    one input image into a raw white-mesh geometry without textures or materials.
+    Ideal for rapid 3D concepting, blockout prototyping, and asset preparation before
+    texturing or retopology.
+  tags:
+  - Image to 3D
+  - 3D
+  models:
+  - Hunyuan3D
+  - Tencent
+  date: '2025-03-01'
+  tutorialUrl: ''
+  size: 4939212390
+  usage: 154
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: 3d_hunyuan3d-v2.1_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.28
+  openSource: true
+  searchRank: 0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_hunyuan3d-v2.1.json
+  sha256: e547eb463412a60357a748c99bf6d2ac4e7e4f69eb26a72d1b7cc8822c733281
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/three_d/comfyui_3d_hunyuan3d-v2.1_19dba349/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: mesh
+  type: mesh_path
+planning_eligible: true
+contract_errors: []

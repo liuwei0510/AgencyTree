@@ -1,0 +1,85 @@
+id: remote:template:template-Animation_Trajectory_Control_Wan_ATI
+kind: comfyui_template
+title: Animation Trajectory Control
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Animation Trajectory Control
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Draw the movement trajectory you want for the input image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template-Animation_Trajectory_Control_Wan_ATI.json
+  sha256: 1cac7f2e16dd9fa87fd2ef83ce2f56df60e1e321826cf3ef8e85074f1b678d28
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template-Animation_Trajectory_Control_Wan_ATI
+  title: Animation Trajectory Control
+  mediaType: image
+  mediaSubtype: webp
+  description: Draw the movement trajectory you want for the input image.
+  tags:
+  - Image to Video
+  models:
+  - Wan2.1
+  date: '2025-12-11'
+  searchRank: 8
+  size: 31568009626
+  requiresCustomNodes:
+  - ComfyUI-WanVideoWrapper
+  - comfyui_fill-nodes
+  usage: 11
+  io:
+    inputs:
+    - nodeId: 58
+      nodeType: LoadImage
+      file: hk_scene.png
+      mediaType: image
+    outputs:
+    - nodeId: 96
+      nodeType: SaveVideo
+      file: template-Animation_Trajectory_Control_Wan_ATI.mp4
+      mediaType: video
+  username: ComfyUI
+  openSource: true
+  thumbnail:
+  - output/template-Animation_Trajectory_Control_Wan_ATI.mp4
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template-Animation_Trajectory_Control_Wan_ATI.json
+  sha256: 1cac7f2e16dd9fa87fd2ef83ce2f56df60e1e321826cf3ef8e85074f1b678d28
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_template-Animation_Trajectory_Control_Wan_ATI_c2f56ffc/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '58'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

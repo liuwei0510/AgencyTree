@@ -1,0 +1,60 @@
+id: remote.template.api_bytedance_seed_audio1_0_ta2a
+kind: comfyui_template
+title: 'Seed Audio 1.0: Text + Audio to Audio'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seed Audio 1.0: Text + Audio to Audio'
+  input_types:
+  - audio
+  output_types: []
+  capability: Upload a reference audio clip and write a text prompt to clone the voice
+    into a new scene. Generate dialogue, background music, and sound effects with
+    up to 3 reference voices.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seed_audio1_0_ta2a.json
+  sha256: 37743f5aabdb7976fee4d5317d50e0a85b82833e37611f1236992766d1a6b5e2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seed_audio1_0_ta2a
+  title: 'Seed Audio 1.0: Text + Audio to Audio'
+  description: Upload a reference audio clip and write a text prompt to clone the
+    voice into a new scene. Generate dialogue, background music, and sound effects
+    with up to 3 reference voices.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Audio
+  - Audio Editing
+  models:
+  - Seed Audio 1.0
+  logos:
+  - provider: ByteDance
+  date: '2026-07-06'
+  openSource: false
+  size: 0
+  usage: 145
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadAudio
+      file: seed_audio_ref_audio1.mp3
+      mediaType: audio
+  thumbnail:
+  - thumbnail/api_bytedance_seed_audio1_0_ta2a.png
+  minComfyUIVersion: 0.27.1

@@ -1,0 +1,76 @@
+id: remote:template:video_minimax_h3_t2v
+kind: comfyui_template
+title: 'MiniMax H3: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate video with native stereo audio directly from a text prompt
+    using MiniMax H3, an omni-modal model that synthesizes voice, sound effects, and
+    music in a single pass. Output is up to 2K resolution, 24fps, and roughly 15 seconds
+    long, with no file inputs required — just a prompt to one video output. Ideal
+    for rapid concept visualization, social media content creation, and audio-synced
+    storytelling.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_t2v.json
+  sha256: d5a4e095d3fc400faefb74c508f4788a26364870f21442260ae3ed6bbb252393
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_minimax_h3_t2v
+  title: 'MiniMax H3: Text to Video'
+  description: Generate video with native stereo audio directly from a text prompt
+    using MiniMax H3, an omni-modal model that synthesizes voice, sound effects, and
+    music in a single pass. Output is up to 2K resolution, 24fps, and roughly 15 seconds
+    long, with no file inputs required — just a prompt to one video output. Ideal
+    for rapid concept visualization, social media content creation, and audio-synced
+    storytelling.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - Int8
+  - Video
+  models:
+  - MiniMax H3
+  date: '2026-08-02'
+  openSource: true
+  size: 56908316672
+  usage: 3988
+  searchRank: 1000000
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 92
+      nodeType: SaveVideo
+      file: video_minimax_h3_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/video_minimax_h3_t2v.mp4
+  minComfyUIVersion: 0.30.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_t2v.json
+  sha256: d5a4e095d3fc400faefb74c508f4788a26364870f21442260ae3ed6bbb252393
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_video/comfyui_video_minimax_h3_t2v_fc75add1/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,26 @@
+{
+  "nodes": [
+    {
+      "node_id": "n1",
+      "task_id": "t1",
+      "capability_id": "core.generative.text_to_video",
+      "input_types": {
+        "prompt": "text"
+      },
+      "output_types": {
+        "video": "video"
+      },
+      "parameters": {
+        "prompt": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video."
+      },
+      "constraints": {
+        "requirement": "Generate a 2-second video of a dog happily playing with a ball in a park. The result should be a high-quality video.",
+        "duration": 2.0
+      }
+    }
+  ],
+  "edges": [],
+  "ordering": [],
+  "constraints": {},
+  "unresolved": []
+}

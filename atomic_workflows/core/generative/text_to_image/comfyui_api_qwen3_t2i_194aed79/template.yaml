@@ -1,0 +1,77 @@
+id: remote:template:api_qwen3_t2i
+kind: comfyui_template
+title: 'Qwen Image 3.0 Pro: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image 3.0 Pro: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate detailed, production-ready images from text prompts using the
+    Qwen Image 3.0 Pro model, supporting up to 4.5k tokens for complex layouts like
+    posters, infographics, and storyboards. It renders crisp 10px text, realistic
+    textures, and native support for 12 languages and over 100 art styles, with optional
+    1-3 reference images for fusion editing. Ideal for marketing materials, educational
+    diagrams, and UI design mockups.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_qwen3_t2i.json
+  sha256: 71a469cfb0127e16d69a1cec75011673fb5b9763cd9c1a48ca65ae5056d0bcf0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_qwen3_t2i
+  title: 'Qwen Image 3.0 Pro: Text to Image'
+  description: Generate detailed, production-ready images from text prompts using
+    the Qwen Image 3.0 Pro model, supporting up to 4.5k tokens for complex layouts
+    like posters, infographics, and storyboards. It renders crisp 10px text, realistic
+    textures, and native support for 12 languages and over 100 art styles, with optional
+    1-3 reference images for fusion editing. Ideal for marketing materials, educational
+    diagrams, and UI design mockups.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Qwen Image 3.0 Pro
+  logos:
+  - provider: WAN
+  date: '2026-08-06'
+  openSource: false
+  size: 0
+  usage: 89
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 2
+      nodeType: SaveImage
+      file: api_qwen3_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_qwen3_t2i.png
+  minComfyUIVersion: 0.32.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_qwen3_t2i.json
+  sha256: 71a469cfb0127e16d69a1cec75011673fb5b9763cd9c1a48ca65ae5056d0bcf0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_qwen3_t2i_194aed79/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

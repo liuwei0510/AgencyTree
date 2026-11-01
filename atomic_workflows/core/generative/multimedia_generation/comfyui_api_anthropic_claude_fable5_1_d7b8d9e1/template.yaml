@@ -1,0 +1,65 @@
+id: remote.template.api_anthropic_claude_fable5_1
+kind: comfyui_template
+title: 'Claude: Fable 5.1'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Claude: Fable 5.1'
+  input_types:
+  - image
+  output_types: []
+  capability: Run Claude Fable 5.1, Anthropic's frontier coding and agentic research
+    model, directly in your workflow to tackle long-running, multi-step problems with
+    state-of-the-art reasoning. This template provides access to the model's full
+    capabilities, from root-cause software debugging and complex code generation to
+    scientific analysis and knowledge work, with adjustable effort levels to balance
+    cost and performance. Ideal for autonomous coding agents, deep technical investigations,
+    and extended research tasks that require sustained, high-quality output.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_fable5_1.json
+  sha256: 185359e4d0b67edf5f5f784cc7f2c12e58d27b00e8a685bc46a5cc81d2a2aa57
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_anthropic_claude_fable5_1
+  title: 'Claude: Fable 5.1'
+  description: Run Claude Fable 5.1, Anthropic's frontier coding and agentic research
+    model, directly in your workflow to tackle long-running, multi-step problems with
+    state-of-the-art reasoning. This template provides access to the model's full
+    capabilities, from root-cause software debugging and complex code generation to
+    scientific analysis and knowledge work, with adjustable effort levels to balance
+    cost and performance. Ideal for autonomous coding agents, deep technical investigations,
+    and extended research tasks that require sustained, high-quality output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - LLM
+  models:
+  - Claude
+  logos:
+  - provider: Anthropic
+  date: '2026-09-04'
+  openSource: false
+  size: 0
+  usage: 56
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  minComfyUIVersion: 0.34.4

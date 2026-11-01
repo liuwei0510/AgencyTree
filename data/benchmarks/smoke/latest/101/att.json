@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "task_id": "draw",
+      "goal": "Generate a high-quality image of a cat in a snowy forest.",
+      "capability_id": "core.generative.text_to_image",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {},
+      "depends_on": []
+    },
+    {
+      "task_id": "upscale",
+      "goal": "Upscale the generated image by 2x.",
+      "capability_id": "aux.postprocess.upscale",
+      "inputs": {},
+      "input_types": {},
+      "outputs": {
+        "images": "image"
+      },
+      "constraints": {
+        "scale_factor": 2
+      },
+      "depends_on": [
+        "draw"
+      ]
+    }
+  ],
+  "edges": [
+    [
+      "draw",
+      "upscale"
+    ]
+  ],
+  "diagnostics": [],
+  "assumptions": []
+}

@@ -1,0 +1,97 @@
+id: remote:template:video_ltx2_5_dfr_i2v
+kind: comfyui_template
+title: 'LTX-2.5 DFR: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2.5 DFR: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: 'Generate a short video with sound from a single image using LTX-2.5''s
+    DFR (Diffusion Fidelity Rendering) path: a half-resolution pass that carries generated
+    detailing keyframes, a spatial x2 detailing pass with the pixel-spatial IC-LoRA,
+    and an optional temporal x2 pass. Suited to cinematic shots, character beats and
+    talking-image clips that need motion and synchronized audio.'
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_5_dfr_i2v.json
+  sha256: 5d12a924bd666cdae2dda6c35ca536cb7a7b1b759ca8374443ede69f6a6bef4f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_5_dfr_i2v
+  title: 'LTX-2.5 DFR: Image to Video'
+  description: 'Generate a short video with sound from a single image using LTX-2.5''s
+    DFR (Diffusion Fidelity Rendering) path: a half-resolution pass that carries generated
+    detailing keyframes, a spatial x2 detailing pass with the pixel-spatial IC-LoRA,
+    and an optional temporal x2 pass. Suited to cinematic shots, character beats and
+    talking-image clips that need motion and synchronized audio.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Int8
+  - Video
+  models:
+  - LTX-2.5
+  date: '2026-09-19'
+  openSource: true
+  size: 61418032333
+  usage: 238
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2004
+      nodeType: LoadImage
+      file: office_garden_169_outpaint.png
+      mediaType: image
+    outputs:
+    - nodeId: 4852
+      nodeType: SaveVideo
+      file: video_ltx2_5_dfr_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/video_ltx2_5_dfr_i2v.mp4
+  minComfyUIVersion: 0.35.0
+  requiresCustomNodes:
+  - ComfyUI-LTXVideo
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_5_dfr_i2v.json
+  sha256: 5d12a924bd666cdae2dda6c35ca536cb7a7b1b759ca8374443ede69f6a6bef4f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/editing/image_to_video/comfyui_video_ltx2_5_dfr_i2v_53880b46/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2004'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

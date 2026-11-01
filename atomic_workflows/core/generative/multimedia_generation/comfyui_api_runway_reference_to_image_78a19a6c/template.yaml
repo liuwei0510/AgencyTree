@@ -1,0 +1,54 @@
+id: remote.template.api_runway_reference_to_image
+kind: comfyui_template
+title: 'Runway: Reference to Image'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Runway: Reference to Image'
+  input_types:
+  - image
+  output_types: []
+  capability: Generate new images based on reference styles and compositions with
+    Runway's AI.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_runway_reference_to_image.json
+  sha256: 92c21d4c05ed9513bc6a1fd60ba908cbe6d0da11f028315e7bf28e0dd2bc58eb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_runway_reference_to_image
+  title: 'Runway: Reference to Image'
+  description: Generate new images based on reference styles and compositions with
+    Runway's AI.
+  mediaType: image
+  thumbnailVariant: compareSlider
+  mediaSubtype: webp
+  tags:
+  - Image
+  - API
+  - Style Reference
+  models:
+  - Runway
+  date: '2025-03-01'
+  openSource: false
+  size: 0
+  usage: 14
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: api_runway_reference_to_image_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.37

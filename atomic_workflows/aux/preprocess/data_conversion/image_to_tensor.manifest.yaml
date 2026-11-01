@@ -1,0 +1,22 @@
+id: aux.preprocess.data_conversion.image_to_tensor
+title: Image to Tensor (preprocess slot)
+modality:
+- tensor
+description: Normalize / tensorize images for downstream models; replace with your
+  custom nodes.
+tags:
+- preprocess
+- tensor
+workflow_file: image_to_tensor.workflow.json
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: null
+inputs:
+- name: source_image
+  type: image_path
+  required: false
+outputs:
+- name: latent_or_tensor_ref
+  type: generic

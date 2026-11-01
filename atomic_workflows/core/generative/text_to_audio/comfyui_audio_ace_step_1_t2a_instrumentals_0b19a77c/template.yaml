@@ -1,0 +1,69 @@
+id: remote:template:audio_ace_step_1_t2a_instrumentals
+kind: comfyui_template
+title: ACE-Step v1 Text to Instrumentals Music
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: ACE-Step v1 Text to Instrumentals Music
+  input_types:
+    seed: number
+  output_types:
+    audio: audio_path
+  capability: Generate instrumental music from text prompts using ACE-Step v1.
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 257025689259434
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_t2a_instrumentals.json
+  sha256: 1c917d2c3f8a7a8e0910d957023244500ff7fade350233fa2cc94c8017a46fcf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_ace_step_1_t2a_instrumentals
+  title: ACE-Step v1 Text to Instrumentals Music
+  mediaType: audio
+  mediaSubtype: mp3
+  description: Generate instrumental music from text prompts using ACE-Step v1.
+  tags:
+  - Text to Audio
+  - Audio
+  models:
+  - ACE-Step
+  date: '2025-03-01'
+  tutorialUrl: https://docs.comfy.org/tutorials/audio/ace-step/ace-step-v1
+  size: 7698728878
+  usage: 13
+  username: ComfyUI
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_t2a_instrumentals.json
+  sha256: 1c917d2c3f8a7a8e0910d957023244500ff7fade350233fa2cc94c8017a46fcf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_audio_ace_step_1_t2a_instrumentals_0b19a77c/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 257025689259434
+inject:
+  seed:
+    node_id: '52'
+    input_key: seed
+    widget_index: 0
+outputs:
+- name: audio
+  type: audio_path
+contract_errors: []
+planning_eligible: true

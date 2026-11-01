@@ -1,0 +1,65 @@
+id: remote.template.templates-3D_logo_texture_animation
+kind: comfyui_template
+title: Dynamic 3D Logo Animations
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Dynamic 3D Logo Animations
+  input_types:
+  - image
+  output_types: []
+  capability: Upload a vector image of your logo, and prompt your desired texture.
+    Generate a textured 3D first and last frame with automated prompting for the final
+    animation.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-3D_logo_texture_animation.json
+  sha256: 0c9e5c715243cdb1f60b3538b2d9cfe5f749b5b5b42bef0bb5c956ac18c1280e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-3D_logo_texture_animation
+  title: Dynamic 3D Logo Animations
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload a vector image of your logo, and prompt your desired texture.
+    Generate a textured 3D first and last frame with automated prompting for the final
+    animation.
+  tags:
+  - API
+  - Brand Design
+  - FLF2V
+  models:
+  - ByteDance
+  - Seedream
+  - Google Gemini
+  - Nano Banana Pro
+  openSource: false
+  date: '2025-12-15'
+  searchRank: 8
+  size: 0
+  usage: 15
+  logos:
+  - provider:
+    - ByteDance
+    - Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: comfy_logo_c.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-3D_logo_texture_animation.mp4
+  minComfyUIVersion: 0.35.2

@@ -1,0 +1,21 @@
+id: aux.latent_process.encode_decode.vae_encode_decode
+title: VAE Encode then Decode (roundtrip slot)
+modality:
+- image
+description: Useful for latent edits; bind image from upstream.
+tags:
+- latent
+- vae
+workflow_file: vae_encode_decode.workflow.json
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: null
+inputs:
+- name: source_image
+  type: image_path
+  required: false
+outputs:
+- name: images
+  type: image_filenames

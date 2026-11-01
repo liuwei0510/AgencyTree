@@ -1,0 +1,49 @@
+{
+  "17": {
+    "inputs": {
+      "image": "the_lily_veil.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.19.3"
+    }
+  },
+  "18": {
+    "inputs": {
+      "images": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "PreviewImage"
+    }
+  },
+  "19": {
+    "inputs": {
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "5b40ca21-ba1a-41d5-b403-4d2d7acdc195",
+    "_meta": {
+      "title": "5b40ca21-ba1a-41d5-b403-4d2d7acdc195"
+    }
+  },
+  "20": {
+    "inputs": {
+      "mask": [
+        "19",
+        1
+      ]
+    },
+    "class_type": "MaskPreview",
+    "_meta": {
+      "title": "MaskPreview"
+    }
+  }
+}

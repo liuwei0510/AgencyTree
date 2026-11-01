@@ -1,0 +1,86 @@
+id: remote:template:utility_topaz_illustration_upscale
+kind: comfyui_template
+title: 'Image Upscale: Topaz Illustration'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Illustration'
+  input_types:
+    scale_factor: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an illustration to upscale using Topaz. Generate a smooth, stylized
+    image with accurate colors, though some artifacts may appear.
+  parameters: &id001
+  - name: scale_factor
+    type: number
+    required: false
+    default: 4
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_topaz_illustration_upscale.json
+  sha256: 9796299e82daa07a182d4545f6c6a5badedbf4a45aeddd4edd5d0fbc4406b2f7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_topaz_illustration_upscale
+  title: 'Image Upscale: Topaz Illustration'
+  description: Upload an illustration to upscale using Topaz. Generate a smooth, stylized
+    image with accurate colors, though some artifacts may appear.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Topaz
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 28
+  searchRank: 0
+  logos:
+  - provider: Topaz
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: silent_sanctuary.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.30.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_topaz_illustration_upscale.json
+  sha256: 9796299e82daa07a182d4545f6c6a5badedbf4a45aeddd4edd5d0fbc4406b2f7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/postprocess/upscale/comfyui_utility_topaz_illustration_upscale_ac037e75/template.yaml
+validation_errors: []
+inputs: *id001
+inject:
+  scale_factor:
+    node_id: '2'
+    input_key: scale_by
+    widget_index: 1
+  source_image:
+    node_id: '5'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

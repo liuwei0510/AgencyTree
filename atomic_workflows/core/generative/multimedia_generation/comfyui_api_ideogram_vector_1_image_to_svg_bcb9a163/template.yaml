@@ -1,0 +1,63 @@
+id: remote.template.api_ideogram_vector_1_image_to_svg
+kind: comfyui_template
+title: 'Ideogram Vector 1: Image to SVG'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram Vector 1: Image to SVG'
+  input_types:
+  - image
+  output_types: []
+  capability: Trace a bitmap into a fully editable SVG with Ideogram Vector 1 and
+    save it as one vector file. Ideal for turning logos, flat illustration, patterns
+    and line art into clean paths that stay crisp at any size, with a detail mode
+    that either keeps large flat color blocks or finer color regions. Photographs
+    also work, but convert into many small paths, so clean sources with large areas
+    of flat color and transparent backgrounds vectorize best.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_vector_1_image_to_svg.json
+  sha256: d698293c9fcbfae55907154f1ea25234b05b3316611e7a14c5a18ae8d00d2196
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ideogram_vector_1_image_to_svg
+  title: 'Ideogram Vector 1: Image to SVG'
+  description: Trace a bitmap into a fully editable SVG with Ideogram Vector 1 and
+    save it as one vector file. Ideal for turning logos, flat illustration, patterns
+    and line art into clean paths that stay crisp at any size, with a detail mode
+    that either keeps large flat color blocks or finer color regions. Photographs
+    also work, but convert into many small paths, so clean sources with large areas
+    of flat color and transparent backgrounds vectorize best.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Vector
+  models:
+  - Ideogram
+  logos:
+  - provider: Ideogram
+  minComfyUIVersion: 0.42.5
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: kid_onknight_dragon.png
+      mediaType: image

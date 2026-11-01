@@ -1,0 +1,44 @@
+id: remote:model:3f0aea7a6b936d74153e
+kind: comfyui_model
+title: Hyper-SD CFG LoRA (8steps) - SDXL
+tree_branch:
+- aux
+- latent_process
+- sampling_acceleration
+six_tuple:
+  name: Hyper-SD CFG LoRA (8steps) - SDXL
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: Hyper-SDXL-8steps-CFG-lora.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/HyperSD/SDXL
+    filename: Hyper-SDXL-8steps-CFG-lora.safetensors
+    download_locator: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SDXL-8steps-CFG-lora.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Hyper-SD CFG LoRA (8steps) - SDXL
+  type: lora
+  base: SDXL
+  save_path: loras/HyperSD/SDXL
+  description: Hyper-SD CFG LoRA (8steps) - SDXL
+  reference: https://huggingface.co/ByteDance/Hyper-SD
+  filename: Hyper-SDXL-8steps-CFG-lora.safetensors
+  url: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SDXL-8steps-CFG-lora.safetensors
+  size: 787MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

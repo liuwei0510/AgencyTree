@@ -1,0 +1,45 @@
+id: remote:model:40462f9f4b94f296aef3
+kind: comfyui_model
+title: stabilityai/control-lora-canny-rank128.safetensors
+tree_branch:
+- aux
+- conditional
+- canny_conditioning
+six_tuple:
+  name: stabilityai/control-lora-canny-rank128.safetensors
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/canny_conditioning
+  parameters:
+  - name: filename
+    value: control-lora-canny-rank128.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL
+    filename: control-lora-canny-rank128.safetensors
+    download_locator: https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-canny-rank128.safetensors
+code_usable: true
+status: available
+metadata:
+  name: stabilityai/control-lora-canny-rank128.safetensors
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL
+  description: 'Control-LoRA: canny rank128'
+  reference: https://huggingface.co/stabilityai/control-lora
+  filename: control-lora-canny-rank128.safetensors
+  url: https://huggingface.co/stabilityai/control-lora/resolve/main/control-LoRAs-rank128/control-lora-canny-rank128.safetensors
+  size: 395.7MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/canny_conditioning/model_stabilityai_control-lora-canny-rank128.safetensors_40462f9f/model.yaml
+validation_errors: []

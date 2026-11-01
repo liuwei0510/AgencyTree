@@ -1,0 +1,55 @@
+id: remote.template.utility-lineart-video
+kind: comfyui_template
+title: 'Lineart Map: LineArt Preprocessor'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Lineart Map: LineArt Preprocessor'
+  input_types:
+  - video
+  output_types: []
+  capability: Convert a Video to Lineart/Canny for Control Processors
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-lineart-video.json
+  sha256: f996c82f86f075da87b26c21104c9fd457192bc950090f2a00501451f804a322
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-lineart-video
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/preprocessors
+  title: 'Lineart Map: LineArt Preprocessor'
+  description: Convert a Video to Lineart/Canny for Control Processors
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  date: '2026-01-12'
+  openSource: true
+  requiresCustomNodes:
+  - comfyui-videohelpersuite
+  - comfyui_controlnet_aux
+  usage: 12
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: VHS_LoadVideo
+      file: utility-lineart-video-input.mp4
+      mediaType: video
+  username: ComfyUI
+  models:
+  - None
+  size: 5368709120
+  searchRank: 0
+  minComfyUIVersion: 0.0.1

@@ -1,0 +1,56 @@
+id: remote:template:basic_datatype_conversion
+kind: comfyui_template
+title: Built-in Data Type Conversion Example
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Built-in Data Type Conversion Example
+  input_types: {}
+  output_types: {}
+  capability: Demonstrate how to convert between various built-in data types within
+    a workflow. Input any data value and output its converted form.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/basic_datatype_conversion.json
+  sha256: f0147d65333a7dfc4ee28291dc482e640c1aa4c025d99bb6a2ed281b6842fc9d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: basic_datatype_conversion
+  title: Built-in Data Type Conversion Example
+  description: Demonstrate how to convert between various built-in data types within
+    a workflow. Input any data value and output its converted form.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Node Basics
+  models:
+  - None
+  date: '2026-03-24'
+  openSource: true
+  size: 0
+  usage: 7
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.19.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/basic_datatype_conversion.json
+  sha256: f0147d65333a7dfc4ee28291dc482e640c1aa4c025d99bb6a2ed281b6842fc9d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/data_conversion/comfyui_basic_datatype_conversion_b20400b4/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

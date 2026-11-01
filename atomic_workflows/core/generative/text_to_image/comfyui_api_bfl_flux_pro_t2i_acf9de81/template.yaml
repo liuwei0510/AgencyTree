@@ -1,0 +1,77 @@
+id: remote:template:api_bfl_flux_pro_t2i
+kind: comfyui_template
+title: 'Flux.1 [Pro]: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Flux.1 [Pro]: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images with excellent prompt following and visual quality using
+    FLUX.1 Pro.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_pro_t2i.json
+  sha256: 78ef00fa13a5f786622d962e51a484cbccd26ec5e59015e88fb54a1d0e72e2c7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux_pro_t2i
+  title: 'Flux.1 [Pro]: Text to Image'
+  description: Generate images with excellent prompt following and visual quality
+    using FLUX.1 Pro.
+  mediaType: image
+  mediaSubtype: webp
+  tutorialUrl: https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-1-pro-ultra-image
+  tags:
+  - API
+  - Image
+  - Image Edit
+  models:
+  - FLUX
+  - FLUX.1
+  date: '2025-05-01'
+  openSource: false
+  size: 0
+  usage: 15
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: example.png
+      mediaType: image
+    outputs:
+    - nodeId: 12
+      nodeType: SaveImage
+      file: api_bfl_flux_pro_t2i.png
+      mediaType: image
+  username: ComfyUI
+  searchRank: 0
+  logos:
+  - provider: Black Forest Labs
+  thumbnail:
+  - output/api_bfl_flux_pro_t2i.png
+  minComfyUIVersion: 0.3.32
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_pro_t2i.json
+  sha256: 78ef00fa13a5f786622d962e51a484cbccd26ec5e59015e88fb54a1d0e72e2c7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/comfyui_api_bfl_flux_pro_t2i_acf9de81/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

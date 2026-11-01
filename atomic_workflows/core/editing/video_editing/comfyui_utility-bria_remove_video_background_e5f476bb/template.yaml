@@ -1,0 +1,74 @@
+id: remote:template:utility-bria_remove_video_background
+kind: comfyui_template
+title: 'Remove Background: Bria Local'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Remove Background: Bria Local'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video to remove the background. Generate a new video with a
+    transparent or solid color background.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-bria_remove_video_background.json
+  sha256: 270b8075578ad26e9bd0e1c8fa055639aeac78e2c35dfa82c47269f33b042ede
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-bria_remove_video_background
+  title: 'Remove Background: Bria Local'
+  description: Upload a video to remove the background. Generate a new video with
+    a transparent or solid color background.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Remove Background
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-02-16'
+  openSource: false
+  size: 0
+  usage: 9
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 123
+      nodeType: LoadVideo
+      file: prince_and_phoenix.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 124
+      nodeType: SaveVideo
+      file: utility-bria_remove_video_background.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - input/prince_and_phoenix.mp4
+  - output/utility-bria_remove_video_background.mp4
+  minComfyUIVersion: 0.14.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-bria_remove_video_background.json
+  sha256: 270b8075578ad26e9bd0e1c8fa055639aeac78e2c35dfa82c47269f33b042ede
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

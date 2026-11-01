@@ -1,0 +1,45 @@
+id: remote:model:bf65645940dfa10288c7
+kind: comfyui_model
+title: TencentARC/CustomNet V1
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: TencentARC/CustomNet V1
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: customnet_v1.pt
+  - name: base
+    value: CustomNet
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: CustomNet
+    save_path: checkpoints/customnet
+    filename: customnet_v1.pt
+    download_locator: https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_v1.pt
+code_usable: true
+status: available
+metadata:
+  name: TencentARC/CustomNet V1
+  type: CustomNet
+  base: CustomNet
+  save_path: checkpoints/customnet
+  description: CustomNet pretrained model for ComfyUI_CustomNet
+  reference: https://huggingface.co/TencentARC/CustomNet/tree/main
+  filename: customnet_v1.pt
+  url: https://huggingface.co/TencentARC/CustomNet/resolve/main/customnet_v1.pt
+  size: 5.71GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_image/model_TencentARC_CustomNet_V1_bf656459/model.yaml
+validation_errors: []

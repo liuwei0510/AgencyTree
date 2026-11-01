@@ -1,0 +1,44 @@
+id: remote:model:c427a1669d1576c6c5b0
+kind: comfyui_model
+title: 4x-AnimeSharp
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: 4x-AnimeSharp
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: 4x-AnimeSharp.pth
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: 4x-AnimeSharp.pth
+    download_locator: https://huggingface.co/Kim2091/AnimeSharp/resolve/main/4x-AnimeSharp.pth
+code_usable: true
+status: available
+metadata:
+  name: 4x-AnimeSharp
+  type: upscale
+  base: upscale
+  save_path: default
+  description: 4x-AnimeSharp upscaler model
+  reference: https://huggingface.co/Kim2091/AnimeSharp/
+  filename: 4x-AnimeSharp.pth
+  url: https://huggingface.co/Kim2091/AnimeSharp/resolve/main/4x-AnimeSharp.pth
+  size: 67.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

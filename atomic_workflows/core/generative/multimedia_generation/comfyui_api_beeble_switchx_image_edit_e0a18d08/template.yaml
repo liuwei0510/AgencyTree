@@ -1,0 +1,63 @@
+id: remote.template.api_beeble_switchx_image_edit
+kind: comfyui_template
+title: 'Relight: Beeble SwitchX'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Relight: Beeble SwitchX'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Upload your character image and a reference style/lighting image. Generate
+    an edited output with the reference lighting and style applied to your original
+    image.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_beeble_switchx_image_edit.json
+  sha256: 34d3465d88ea8536e723d86cb33df6f883143dacd04032f209c55905ee780616
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_beeble_switchx_image_edit
+  title: 'Relight: Beeble SwitchX'
+  description: Upload your character image and a reference style/lighting image. Generate
+    an edited output with the reference lighting and style applied to your original
+    image.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Relight
+  - Image Edit
+  models:
+  - SwitchX
+  logos:
+  - provider: Beeble
+  date: '2026-05-29'
+  openSource: false
+  size: 0
+  usage: 25
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: soft_light_headphones_man.png
+      mediaType: image
+    - nodeId: 17
+      nodeType: LoadImage
+      file: simple_modern_living_space.png
+      mediaType: image
+  minComfyUIVersion: 0.23.0

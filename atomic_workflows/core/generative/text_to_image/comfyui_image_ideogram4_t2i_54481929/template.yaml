@@ -1,0 +1,60 @@
+id: remote.template.image_ideogram4_t2i
+kind: comfyui_template
+title: 'Ideogram v4: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram v4: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt or structured JSON description. Generate an image
+    with precise layout, color, and style control using Ideogram 4.0.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_ideogram4_t2i.json
+  sha256: 1247a80481ea246c0aaf65c22ada913872b7af8a902c7c85ed208b9295512804
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_ideogram4_t2i
+  title: 'Ideogram v4: Text to Image'
+  description: Input a text prompt or structured JSON description. Generate an image
+    with precise layout, color, and style control using Ideogram 4.0.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  models:
+  - Ideogram
+  date: '2026-06-03'
+  openSource: true
+  size: 26521423053
+  usage: 20
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 158
+      nodeType: SaveImage
+      file: image_ideogram4_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/image_ideogram4_t2i.png
+  minComfyUIVersion: 0.24.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

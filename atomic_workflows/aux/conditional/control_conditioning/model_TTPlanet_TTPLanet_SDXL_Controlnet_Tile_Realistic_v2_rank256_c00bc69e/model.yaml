@@ -1,0 +1,45 @@
+id: remote:model:c00bc69eca5bd24a2c0d
+kind: comfyui_model
+title: TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic v2 (rank256)
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic v2 (rank256)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/tile_conditioning
+  parameters:
+  - name: filename
+    value: TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL
+    filename: TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors
+    download_locator: https://huggingface.co/TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic/resolve/main/TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic v2 (rank256)
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL
+  description: Controlnet SDXL Tile model realistic version.
+  reference: https://huggingface.co/TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic
+  filename: TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors
+  url: https://huggingface.co/TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic/resolve/main/TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors
+  size: 774.4MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/conditional/tile_conditioning/model_TTPlanet_TTPLanet_SDXL_Controlnet_Tile_Realistic_v2_rank256_c00bc69e/model.yaml
+validation_errors: []

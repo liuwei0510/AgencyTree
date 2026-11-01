@@ -1,0 +1,58 @@
+{
+  "18": {
+    "inputs": {
+      "images": [
+        "471",
+        0
+      ],
+      "filename_prefix": "ComfyUI"
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "SaveImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.5.1"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": "templates_rob_image_to_real-input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "LoadImage",
+      "cnr_id": "comfy-core",
+      "ver": "0.5.1"
+    }
+  },
+  "471": {
+    "inputs": {
+      "image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "0e16cc59-a0fd-448a-8cdb-f61a5554ef36",
+    "_meta": {
+      "title": "0e16cc59-a0fd-448a-8cdb-f61a5554ef36",
+      "cnr_id": "comfy-core",
+      "ver": "0.3.62"
+    }
+  },
+  "473": {
+    "inputs": {
+      "image_a": [
+        "14",
+        0
+      ],
+      "image_b": [
+        "471",
+        0
+      ]
+    },
+    "class_type": "ImageCompare",
+    "_meta": {
+      "title": "ImageCompare"
+    }
+  }
+}

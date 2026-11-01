@@ -1,0 +1,65 @@
+id: remote:template:audio_minimax_music_3
+kind: comfyui_template
+title: 'MiniMax Music 3: Text to Music'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax Music 3: Text to Music'
+  input_types: {}
+  output_types: {}
+  capability: Create full-length songs from text prompts with MiniMax Music 3, generating
+    complete 5-minute tracks with stable structure and high-fidelity audio. Input
+    a structured caption describing lyrics, style, mood, and arrangement, and receive
+    a finished song as output. Ideal for music producers prototyping demos, and content
+    creators needing original background tracks.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_minimax_music_3.json
+  sha256: ea8fa5ffcab3cd3c76d615a916d758ec62644af9803e125852fd4925c91d2aad
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_minimax_music_3
+  title: 'MiniMax Music 3: Text to Music'
+  description: Create full-length songs from text prompts with MiniMax Music 3, generating
+    complete 5-minute tracks with stable structure and high-fidelity audio. Input
+    a structured caption describing lyrics, style, mood, and arrangement, and receive
+    a finished song as output. Ideal for music producers prototyping demos, and content
+    creators needing original background tracks.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Audio
+  - Text to Music
+  models:
+  - MiniMax Music 3
+  date: '2026-08-13'
+  openSource: true
+  size: 15354508083
+  usage: 797
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/audio_minimax_music_3.png
+  minComfyUIVersion: 0.33.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_minimax_music_3.json
+  sha256: ea8fa5ffcab3cd3c76d615a916d758ec62644af9803e125852fd4925c91d2aad
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/core/generative/text_to_audio/comfyui_audio_minimax_music_3_ed66b258/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

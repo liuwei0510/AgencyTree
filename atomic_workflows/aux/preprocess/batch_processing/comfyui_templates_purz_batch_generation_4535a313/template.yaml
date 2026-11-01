@@ -1,0 +1,66 @@
+id: remote:template:templates_purz_batch_generation
+kind: comfyui_template
+title: Prompt Multi Batch Generation
+tree_branch:
+- aux
+- preprocess
+- batch_processing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Prompt Multi Batch Generation
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Send multiple prompts simultaneously to generate independent outputs
+    in a single queue. Connect to Blueprint or Partner Nodes for batch processing
+    of any modality. Use for prompt variation comparisons and batch generation.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_batch_generation.json
+  sha256: 95598b461aa1529731cc0500a958eb8ff0602dbd401c01abe66c9552c431b9a2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_purz_batch_generation
+  title: Prompt Multi Batch Generation
+  description: Send multiple prompts simultaneously to generate independent outputs
+    in a single queue. Connect to Blueprint or Partner Nodes for batch processing
+    of any modality. Use for prompt variation comparisons and batch generation.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Batch Generation
+  - Image
+  models:
+  - Z-Image-Turbo
+  date: '2026-03-21'
+  openSource: true
+  size: 20723217203
+  usage: 14
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/templates_purz_batch_generation.mp4
+  requiresCustomNodes:
+  - comfyui_fill-nodes
+  thumbnailVariant: zoomHover
+  minComfyUIVersion: 0.11.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_purz_batch_generation.json
+  sha256: 95598b461aa1529731cc0500a958eb8ff0602dbd401c01abe66c9552c431b9a2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: /Users/liuwei/Library/Mobile Documents/com~apple~CloudDocs/agentictreeforworkflow/atomic_workflows/aux/preprocess/batch_processing/comfyui_templates_purz_batch_generation_4535a313/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []
