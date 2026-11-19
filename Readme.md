@@ -107,3 +107,55 @@ python scripts/smoke_requirements.py
 This samples seven real requirements across all four categories and checks generation, complete API graph assembly, input/mask contracts, duration/resolution, reuse and model evolution. The evolution scenario deprecates the bound RealESRGAN 2x model in a temporary copy of the real ACT and checks replacement with a compatible catalog model, subsequent reuse, and rollback when none remains. Compound requirements use the host's saved ATT plans in `data/benchmarks/smoke_plans.json`, without a separate model API. The [report](data/benchmarks/smoke/latest/report.md), each complete `workflow_api.json`, ATT/AWG/EWC, and before/after evolution exports are retained for inspection. Offline success covers graph contracts and bindings; it does not claim rendered-media quality.
 
 `scripts/refresh_workflow_contracts.py` exposes supported fields already present in local templates before ACT maintenance. Numeric constraints must have writable controls or an explicit fixed implementation contract; video duration can bind to unambiguous frame-count/fps fields. Unsupported quantitative controls fail explicitly.
+
+## Optional ComfyUI runtime
+
+The runtime manager follows the [official ComfyUI manual installation](https://github.com/Comfy-Org/ComfyUI#manual-install).
+It uses an official Git checkout and a separate `.venv`; it does not install anything during planning, ACT maintenance, evolution, or dry runs.
+
+```bash
+python run_agent.py comfy status
+python run_agent.py comfy status --check-updates
+python run_agent.py comfy install
+python run_agent.py comfy start
+# Stop the service before updating. Tracked local edits are preserved by refusing updates.
+python run_agent.py comfy update
+
+# Generate and execute, optionally installing/starting a local runtime first:
+python run_agent.py run "Draw a blue square image" --comfy-policy auto
+# Execute a previously saved asset or exported API graph:
+python run_agent.py execute data/draft.json --comfy-policy auto
+python run_agent.py execute workflow-api.json --dry-run
+```
+
+`comfy_runtime.policy` defaults to `prompt`: unavailable services produce an actionable installation/startup message and no environment changes. `auto` explicitly permits installation and startup; `never` also prevents automatic environment changes. CLI `--comfy-policy` overrides the configured policy. A reachable existing local or remote service is reused. Unreachable remote URLs never trigger local installation.
+
+Configure `comfy_runtime.install_dir` for the installation location. For an existing manual installation, set that path and an absolute `runtime_python` executable. Desktop/portable versions retain their own updater; only manager-installed checkouts with the official origin can be automatically updated. `auto_update: true` updates a stopped managed installation before automatic startup; a running service is reused without updating it. Use `status --check-updates` for an explicit network check. Updates use `git pull --ff-only`, preserve models/custom nodes and reject tracked local edits. Failed dependency installation can be retried with `comfy install`.
+
+The selected Python must satisfy current ComfyUI requirements. Dependencies are installed into the runtime's own virtual environment. Set `torch_packages` to platform-specific PyTorch pip arguments if needed, and `launch_args: [--cpu]` for CPU operation. Startup waits for `/system_stats`; failures point to `agentictree-server.log` in the installation directory. The service remains running for subsequent workflows.
+
+Installing ComfyUI does not install every model weight or third-party node. Before submission, execution checks `/object_info` for missing node classes and unavailable model/enum values. Required weights, custom nodes, API credentials and input media still need to be provided for the selected workflow. Local `LoadImage`/`LoadImageMask` files are uploaded through the existing client; other media should already be present in the service input directory. Editor workflows require explicit API export/conversion for server execution.
+
+### Local and remote service addresses
+
+Both `run` and `execute` use the same connection settings. `comfy.mode: auto` treats a plain loopback HTTP URL as local and other HTTP(S) URLs as remote. Set `mode: remote` explicitly for an SSH tunnel or reverse proxy on localhost. Remote mode never installs, starts or updates local ComfyUI, even when `--comfy-policy auto` is selected; an unavailable remote service reports a connection/authentication error. Remote software updates are performed on the server.
+
+```yaml
+comfy:
+  mode: remote
+  base_url: https://gpu.example.com/comfy
+  timeout_sec: 900
+  poll_interval_sec: 1
+  api_key_env: COMFYUI_API_KEY  # Optional; omit for an unauthenticated server.
+  headers_env: {}             # Optional: {X-API-Key: COMFYUI_PROXY_KEY}
+```
+
+Token values come from environment variables, not committed config files. Health checks, node preflight, uploads and execution all use the same authentication settings. HTTPS certificate verification remains enabled. The URL is the service root, including any proxy prefix, without `/prompt`, embedded credentials or query tokens. The target must expose the standard ComfyUI HTTP API; vendor-specific cloud job APIs need a separate adapter.
+
+```bash
+python run_agent.py comfy status --comfy-url https://gpu.example.com/comfy --comfy-mode remote
+python run_agent.py execute workflow-api.json --comfy-url http://192.168.1.100:8188 --comfy-mode remote
+python run_agent.py run "Draw a blue square image" --comfy-url http://127.0.0.1:8188 --comfy-mode local --comfy-policy auto
+```
+
+Local image/mask inputs are uploaded before workflow submission, preserving any subfolder returned by the service and avoiding overwrites. Existing server input filenames are retained. Output filenames refer to the selected ComfyUI server, not the client filesystem. Model and node checks use that server's catalog; the local model installation does not affect remote execution. Audio/video inputs still need to be present on the server as described above.

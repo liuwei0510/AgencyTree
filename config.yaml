@@ -1,4 +1,7 @@
 comfy:
+  mode: auto  # auto detects loopback; remote also supports localhost SSH tunnels.
+  # api_key_env: COMFYUI_API_KEY  # Optional Bearer token, read from environment.
+  headers_env: {}  # e.g. {X-API-Key: COMFYUI_PROXY_KEY}
   base_url: "http://127.0.0.1:8188"
   poll_interval_sec: 1.0
   timeout_sec: 900.0
@@ -25,3 +28,16 @@ openai:
   base_url: null
   # Outer staged loop (ANALYSIS / ARCHITECTURE / ENGINEERING): generate + validate per iteration.
   max_iterations: 5
+
+# Optional local runtime. prompt/never never install or launch automatically.
+comfy_runtime:
+  policy: prompt
+  install_dir: ~/.local/share/agentictree/ComfyUI
+  auto_update: false
+  startup_timeout_sec: 180
+  # Set absolute interpreter paths to use another Python or an existing install.
+  # python_executable: /path/to/python3
+  # runtime_python: /path/to/ComfyUI/.venv/bin/python
+  # Optional platform-specific PyTorch pip arguments, installed before requirements.
+  torch_packages: []
+  launch_args: []  # For CPU execution use [--cpu].

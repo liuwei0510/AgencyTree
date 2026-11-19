@@ -16,11 +16,12 @@ class ComfyClient:
         base_url: str,
         timeout_sec: float = 120.0,
         poll_interval_sec: float = 1.0,
+        headers: dict[str, str] | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.timeout_sec = timeout_sec
         self.poll_interval_sec = poll_interval_sec
-        self._client = httpx.Client(timeout=timeout_sec)
+        self._client = httpx.Client(timeout=timeout_sec, headers=headers)
 
     def close(self) -> None:
         self._client.close()
@@ -52,12 +53,12 @@ class ComfyClient:
         while time.time() < deadline:
             hist = self.get_history()
             entry = hist.get(prompt_id) if isinstance(hist, dict) else None
-            if entry and entry.get("outputs"):
-                return entry
             if entry:
                 st = entry.get("status") or {}
                 if st.get("status_str") == "error":
                     raise RuntimeError(f"ComfyUI prompt failed: {entry}")
+                if entry.get("outputs") or st.get("completed") is True:
+                    return entry
             time.sleep(self.poll_interval_sec)
         raise TimeoutError(f"Timed out waiting for prompt_id={prompt_id}")
 
@@ -70,7 +71,8 @@ class ComfyClient:
         r.raise_for_status()
         j = r.json()
         name = j.get("name") or file_path.name
-        return str(name)
+        subfolder = str(j.get("subfolder") or "").strip("/")
+        return f"{subfolder}/{name}" if subfolder else str(name)
 
     def relay_output_to_input(self, file_meta: dict[str, Any]) -> str:
         """Download via /view from output (or temp/input), upload to input; returns LoadImage filename."""

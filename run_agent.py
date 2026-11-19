@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import json
 import subprocess
 import sys
+import httpx
 from pathlib import Path
 
 from agentictree.assets import generate_asset
@@ -48,6 +49,18 @@ def main() -> int:
     export.add_argument('asset',type=Path)
     export.add_argument('--output',required=True,type=Path)
     export.add_argument('--api',action='store_true',help='Explicitly convert a single editor workflow to API format when possible')
+    comfy = sub.add_parser('comfy', help='Optional ComfyUI installation and service management')
+    comfy.add_argument('action', choices=('status', 'install', 'update', 'start'))
+    comfy.add_argument('--check-updates', action='store_true')
+    comfy.add_argument('--comfy-url')
+    comfy.add_argument('--comfy-mode', choices=('auto', 'local', 'remote'))
+    execute = sub.add_parser('execute', help='Execute a saved asset or exported API workflow')
+    execute.add_argument('asset', type=Path)
+    execute.add_argument('--comfy-policy', choices=('prompt', 'auto', 'never'))
+    execute.add_argument('--dry-run', action='store_true')
+    execute.add_argument('--comfy-url')
+    execute.add_argument('--comfy-mode', choices=('auto', 'local', 'remote'))
+    execute.add_argument('--output', type=Path)
     for name in ("plan", "run"):
         child = sub.add_parser(name)
         child.add_argument("intent")
@@ -59,6 +72,9 @@ def main() -> int:
         child.add_argument("--inputs", type=Path, help="JSON object of supplied media and literal parameters")
         if name == "run":
             child.add_argument("--dry-run", action="store_true")
+            child.add_argument("--comfy-url")
+            child.add_argument("--comfy-mode", choices=("auto", "local", "remote"))
+            child.add_argument("--comfy-policy", choices=("prompt", "auto", "never"))
     evolve = sub.add_parser("evolve", help="Evolve an immutable saved workflow asset")
     evolve.add_argument("asset", type=Path)
     evolve.add_argument("--old-act", required=True, type=Path)
@@ -68,10 +84,41 @@ def main() -> int:
     evolve.add_argument("--output", type=Path)
     args = parser.parse_args()
     cfg = load_config(args.config)
+    if getattr(args, 'comfy_url', None):
+        cfg.setdefault('comfy', {})['base_url'] = args.comfy_url
+    if getattr(args, 'comfy_mode', None):
+        cfg.setdefault('comfy', {})['mode'] = args.comfy_mode
     state = resolve(cfg.get("state_root", "./data"))
     registry = resolve(cfg.get("atomic_workflows_root", "./atomic_workflows"))
     agent_cfg = cfg.get("agents") or {"provider": "api", **(cfg.get("openai") or {})}
     try:
+        if getattr(args, 'output', None) and args.output.exists():
+            raise ValueError(f'Output exists; choose a new path: {args.output}')
+        if args.command == 'comfy':
+            from agentictree.comfy_runtime import ComfyRuntime
+            runtime = ComfyRuntime(cfg)
+            result = runtime.status(args.check_updates) if args.action == 'status' else getattr(runtime, args.action)()
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 0
+        if args.command == 'execute':
+            from agentictree.compose import compose_workflow
+            from agentictree.graph_validate import validate_api_graph
+            from agentictree.comfy_runtime import execute_workflow
+            saved = read_json(args.asset)
+            if 'execution_plan' in saved:
+                graph, info = compose_workflow(saved)
+                if not info['complete'] or info['format'] != 'api':
+                    raise ValueError('Export/convert a complete API workflow before execution: ' + str(info['issues']))
+            else:
+                graph = saved
+            errors = validate_api_graph(graph)
+            if errors:
+                raise ValueError('; '.join(errors))
+            result = {'execution': [{'status': 'skipped', 'node_count': len(graph)}] if args.dry_run else execute_workflow(graph, cfg, args.comfy_policy)}
+            if args.output:
+                write_json(args.output, result)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 0
         if args.command=='export':
             from agentictree.compose import compose_workflow
             graph,info=compose_workflow(read_json(args.asset))
@@ -152,23 +199,16 @@ def main() -> int:
                     result['execution']=[{'dag_id':'composed','status':'skipped','format':'api',
                                           'node_count':len(result['comfy_workflow'])}]
                 else:
-                    from agentictree.comfy_client import ComfyClient,extract_media_outputs
-                    comfy=cfg.get('comfy') or {}
-                    client=ComfyClient(comfy.get('base_url','http://127.0.0.1:8188'),
-                        timeout_sec=comfy.get('timeout_sec',900),poll_interval_sec=comfy.get('poll_interval_sec',1))
-                    try:
-                        prompt_id=client.queue_prompt(result['comfy_workflow'])
-                        outputs=extract_media_outputs(client.wait_for_prompt(prompt_id))
-                        result['execution']=[{'dag_id':'composed','prompt_id':prompt_id,'status':'completed','outputs':outputs}]
-                    finally:
-                        client.close()
+                    from agentictree.comfy_runtime import execute_workflow
+                    result['execution'] = execute_workflow(result['comfy_workflow'], cfg, args.comfy_policy)
+
         if args.output:
             if args.output.exists():
                 raise ValueError(f"Output exists; choose a new path: {args.output}")
             write_json(args.output, result)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return code
-    except (ValueError, OSError, RuntimeError, subprocess.TimeoutExpired) as error:
+    except (ValueError, OSError, RuntimeError, subprocess.SubprocessError, httpx.HTTPError) as error:
         print(f"Error: {error}", file=sys.stderr)
         return 1
 
