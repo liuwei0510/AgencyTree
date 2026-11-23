@@ -1,6 +1,6 @@
 """Build the install folder and ZIP using the working source tree."""
 from pathlib import Path
-from shutil import copy2, copytree, ignore_patterns
+from shutil import copy2, copytree, ignore_patterns, rmtree
 import json
 from zipfile import ZipFile, ZIP_DEFLATED
 
@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 version = json.loads((ROOT / "package.json").read_text())["version"]
 dist = ROOT / "dist"
 install = dist / f"agencytree-dsh-{version}"
+if install.exists():
+    rmtree(install)
 install.mkdir(parents=True, exist_ok=True)
 for name in ("package.json", "cordis.patch.yml", "README.md", "agent-registration.json"):
     copy2(ROOT / name, install)
