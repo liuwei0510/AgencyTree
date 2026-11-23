@@ -6,8 +6,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
-vendor/*.tgz
-vendor/package-check.json
 .env
 .env.*
 !.env.example

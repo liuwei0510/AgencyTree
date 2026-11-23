@@ -1,0 +1,3 @@
+bdc362dc377fe440ad9feb373ed158b16e08f5ff48de98b2ac354fc9c9440217  software-factory-runtime-sdk-0.4.2.zip
+060e43cb8b5f2c1b05af7665374c1ce06e20912d634684d27a71d6a31f56d5ca  software-factory-runtime-sdk-0.4.2.tgz
+1a66e8d161f2e7464c9d4dcba46b3a2d9fad34409a141d1bccab51d544015b5b  package-check.json

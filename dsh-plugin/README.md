@@ -93,4 +93,4 @@ CPU-only 适合检查少量轻量工作流或做功能验证，不建议作为�
 
 ## 构建与验证
 
-用 `python3 scripts/package.py` 生成可安装目录和 ZIP。测试命令为 `python tests/smoke.py` 和 `node --test tests/bridge.test.js`。插件在 `src/sdk.js` 中提供 Runtime SDK 0.4.2 所需的工具登记桥接，宿主 peer 依赖由 DSH 提供；SDK 的私有发布包不随本仓库分发。登记草稿见 `agent-registration.json`，实际入库由平台维护方操作。
+用 `python3 scripts/package.py` 生成可安装目录和 ZIP。构建会把 `vendor/` 中的 Runtime SDK 0.4.2 压缩包及校验清单一并放入安装包，并核对 SHA-256；宿主 peer 依赖仍由 DSH 提供。测试命令为 `python tests/smoke.py` 和 `node --test tests/bridge.test.js`。登记草稿见 `agent-registration.json`，实际入库由平台维护方操作。
