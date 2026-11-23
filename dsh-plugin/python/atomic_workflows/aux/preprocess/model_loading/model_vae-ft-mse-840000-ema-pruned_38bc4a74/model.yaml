@@ -1,0 +1,45 @@
+id: remote:model:38bc4a74bc85a037ea54
+kind: comfyui_model
+title: vae-ft-mse-840000-ema-pruned
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: vae-ft-mse-840000-ema-pruned
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: vae-ft-mse-840000-ema-pruned.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae/SD1.5
+    filename: vae-ft-mse-840000-ema-pruned.safetensors
+    download_locator: https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: vae-ft-mse-840000-ema-pruned
+  type: VAE
+  base: SD1.5
+  save_path: vae/SD1.5
+  description: vae-ft-mse-840000-ema-pruned
+  reference: https://huggingface.co/stabilityai/sd-vae-ft-mse-original
+  filename: vae-ft-mse-840000-ema-pruned.safetensors
+  url: https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
+  size: 334.6MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/encode_decode/model_vae-ft-mse-840000-ema-pruned_38bc4a74/model.yaml
+validation_errors: []

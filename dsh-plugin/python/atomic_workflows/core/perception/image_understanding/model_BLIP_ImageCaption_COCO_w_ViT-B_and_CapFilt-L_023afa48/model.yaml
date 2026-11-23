@@ -1,0 +1,45 @@
+id: remote:model:023afa48acb35070f941
+kind: comfyui_model
+title: BLIP ImageCaption (COCO) w/ ViT-B and CapFilt-L
+tree_branch:
+- core
+- perception
+- image_understanding
+six_tuple:
+  name: BLIP ImageCaption (COCO) w/ ViT-B and CapFilt-L
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/media_understanding
+  parameters:
+  - name: filename
+    value: model_base_capfilt_large.pth
+  - name: base
+    value: blip_model
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: BLIP_MODEL
+    save_path: blip
+    filename: model_base_capfilt_large.pth
+    download_locator: https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth
+code_usable: true
+status: deprecated
+metadata:
+  name: BLIP ImageCaption (COCO) w/ ViT-B and CapFilt-L
+  type: BLIP_MODEL
+  base: blip_model
+  save_path: blip
+  description: BLIP ImageCaption (COCO) w/ ViT-B and CapFilt-L
+  reference: https://github.com/salesforce/BLIP
+  filename: model_base_capfilt_large.pth
+  url: https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base_capfilt_large.pth
+  size: 2.12GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/media_understanding/model_BLIP_ImageCaption_COCO_w_ViT-B_and_CapFilt-L_023afa48/model.yaml
+validation_errors: []

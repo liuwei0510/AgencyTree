@@ -1,0 +1,50 @@
+id: core.generative.text_to_image.image_z_image_turbo_fun_union_controlnet
+title: image_z_image_turbo_fun_union_controlnet
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_z_image_turbo_fun_union_controlnet.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: image_z_image_turbo_fun_union_controlnet.workflow.json
+inject:
+  prompt:
+    node_id: '70:45'
+    input_key: text
+  seed:
+    node_id: '70:44'
+    input_key: seed
+  width:
+    node_id: '70:41'
+    input_key: width
+  height:
+    node_id: '70:41'
+    input_key: height
+  source_image:
+    node_id: '58'
+    input_key: image
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

@@ -1,0 +1,46 @@
+id: remote:model:0fac6b69ac91bef6531d
+kind: comfyui_model
+title: TAESD3 Encoder
+tree_branch:
+- aux
+- latent_process
+- encode_decode
+six_tuple:
+  name: TAESD3 Encoder
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: taesd3_encoder.pth
+  - name: base
+    value: SD3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: TAESD
+    save_path: vae_approx
+    filename: taesd3_encoder.pth
+    download_locator: https://github.com/madebyollin/taesd/raw/main/taesd3_encoder.pth
+code_usable: true
+status: available
+metadata:
+  name: TAESD3 Encoder
+  type: TAESD
+  base: SD3
+  save_path: vae_approx
+  description: (SD3 Verison) To view the preview in high quality while running samples
+    in ComfyUI, you will need this model.
+  reference: https://github.com/madebyollin/taesd
+  filename: taesd3_encoder.pth
+  url: https://github.com/madebyollin/taesd/raw/main/taesd3_encoder.pth
+  size: 4.94MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/encode_decode/model_TAESD3_Encoder_0fac6b69/model.yaml
+validation_errors: []

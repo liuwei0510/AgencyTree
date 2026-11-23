@@ -1,0 +1,56 @@
+id: remote.template.api_bria_remove_video_background
+kind: comfyui_template
+title: 'Remove Background: Bria Solid Color'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Remove Background: Bria Solid Color'
+  input_types:
+  - video
+  output_types: []
+  capability: Upload a video to remove its background and replace it with your chosen
+    color. Generate a video with the subject isolated and a new solid background.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_remove_video_background.json
+  sha256: 63b8f562a2dd6b48c8400f61e90daceb81bce66d3c12d39c932e5ba21b4553bd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_remove_video_background
+  title: 'Remove Background: Bria Solid Color'
+  description: Upload a video to remove its background and replace it with your chosen
+    color. Generate a video with the subject isolated and a new solid background.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Remove Background
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-06-04'
+  openSource: false
+  size: 0
+  usage: 23
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: spear_warrior.mp4
+      mediaType: video
+  minComfyUIVersion: 0.14.0

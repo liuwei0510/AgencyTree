@@ -1,0 +1,101 @@
+id: remote:template:image_flux2_klein_image_edit_4b_base
+kind: comfyui_template
+title: 'FLUX.2 [Klein] 4B: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX.2 [Klein] 4B: Image Edit'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: A smaller foundation model with exceptional quality-to-size ratio. Ideal
+    for local deployment, fine-tuning on limited hardware, and efficient generation
+    and editing workflows.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_klein_image_edit_4b_base.json
+  sha256: 6b49b938453475b70b6a6d16bbb61aac01f771b13272a7107cff43aeb08fb02b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux2_klein_image_edit_4b_base
+  title: 'FLUX.2 [Klein] 4B: Image Edit'
+  mediaType: image
+  mediaSubtype: webp
+  description: A smaller foundation model with exceptional quality-to-size ratio.
+    Ideal for local deployment, fine-tuning on limited hardware, and efficient generation
+    and editing workflows.
+  tags:
+  - Image
+  - Image Edit
+  models:
+  - FLUX
+  - FLUX.2 Klein
+  date: '2026-01-16'
+  size: 17072495002
+  usage: 325
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-2-klein
+  searchRank: 0
+  openSource: true
+  io:
+    inputs:
+    - nodeId: 76
+      nodeType: LoadImage
+      file: robed_women.png
+      mediaType: image
+    - nodeId: 81
+      nodeType: LoadImage
+      file: pink_tone_chair.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/image_flux2_klein_image_edit_4b_base.png
+  minComfyUIVersion: 0.3.72
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_klein_image_edit_4b_base.json
+  sha256: 6b49b938453475b70b6a6d16bbb61aac01f771b13272a7107cff43aeb08fb02b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_flux2_klein_image_edit_4b_base_cdd2c9a2/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '76'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '81'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

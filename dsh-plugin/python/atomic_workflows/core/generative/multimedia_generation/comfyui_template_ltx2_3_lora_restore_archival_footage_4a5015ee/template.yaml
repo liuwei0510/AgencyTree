@@ -1,0 +1,65 @@
+id: remote:template:template_ltx2_3_lora_restore_archival_footage
+kind: comfyui_template
+title: Restore Archival Footage - LTX 2.3 Dearchive LoRA
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Restore Archival Footage - LTX 2.3 Dearchive LoRA
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload an input video or archival footage and restore it with 1 click.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_lora_restore_archival_footage.json
+  sha256: ca08f7459d751236259dd358f6cd25a585672fd460d68281c22e60c5e976a118
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_ltx2_3_lora_restore_archival_footage
+  title: Restore Archival Footage - LTX 2.3 Dearchive LoRA
+  description: Upload an input video or archival footage and restore it with 1 click.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Edit
+  - LoRA
+  models:
+  - LTX-2.3
+  requiresCustomNodes:
+  - ComfyUI-LTXVideo
+  - comfyui-kjnodes
+  date: '2026-05-21'
+  openSource: true
+  size: 71511205478
+  usage: 15
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 5188
+      nodeType: LoadVideo
+      file: input_dearchive.mp4
+      mediaType: video
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_lora_restore_archival_footage.json
+  sha256: ca08f7459d751236259dd358f6cd25a585672fd460d68281c22e60c5e976a118
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_template_ltx2_3_lora_restore_archival_footage_4a5015ee/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

@@ -1,0 +1,52 @@
+id: remote.template.video_wan_ati
+kind: comfyui_template
+title: Wan2.1 ATI
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan2.1 ATI
+  input_types:
+  - image
+  output_types: []
+  capability: Trajectory-controlled Video Generation.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_ati.json
+  sha256: 89bd421c482470937c0930394161aa3fa48a6ad559777a454d5d8dfcff5e7123
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan_ati
+  title: Wan2.1 ATI
+  description: Trajectory-controlled Video Generation.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/wan-ati
+  tags:
+  - Video
+  - Motion Control
+  models:
+  - Wan2.1
+  - Wan
+  date: '2025-05-21'
+  size: 25393994138
+  usage: 9
+  io:
+    inputs:
+    - nodeId: 240
+      nodeType: LoadImage
+      file: video_wan_ati_input_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.46

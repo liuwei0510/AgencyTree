@@ -1,0 +1,87 @@
+id: remote:template:flux1_dev_uso_reference_image_gen
+kind: comfyui_template
+title: Flux.1 Dev USO Reference Image Generation
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Dev USO Reference Image Generation
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Use reference images to control both style and subject - keep your character's
+    face while changing artistic style, or apply artistic styles to new scenes
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux1_dev_uso_reference_image_gen.json
+  sha256: 671cbe72680e5e1974184176d0953a7ac460749685e1bd7a3b3f1f0b05cf25d4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux1_dev_uso_reference_image_gen
+  title: Flux.1 Dev USO Reference Image Generation
+  description: Use reference images to control both style and subject - keep your
+    character's face while changing artistic style, or apply artistic styles to new
+    scenes
+  thumbnailVariant: hoverDissolve
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image
+  - Style Reference
+  models:
+  - FLUX
+  - FLUX.1
+  date: '2025-09-02'
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-1-uso
+  size: 18575733555
+  usage: 292
+  io:
+    inputs:
+    - nodeId: 47
+      nodeType: LoadImage
+      file: flux1_dev_uso_reference_image_gen_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: flux1_dev_uso_reference_image_gen.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.3.57
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux1_dev_uso_reference_image_gen.json
+  sha256: 671cbe72680e5e1974184176d0953a7ac460749685e1bd7a3b3f1f0b05cf25d4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_flux1_dev_uso_reference_image_gen_07b684ce/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '47'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,57 @@
+id: remote.template.utility_video_segment_sam3
+kind: comfyui_template
+title: 'Video Segmentation: SAM3'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Segmentation: SAM3'
+  input_types:
+  - video
+  output_types: []
+  capability: Use the SAM3 model to segment the main subject or content from a video,
+    isolating specific objects or regions. Input a video and receive a segmented mask
+    output.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_video_segment_sam3.json
+  sha256: 808b8959394375b367ebf6e33f8ee3400a9fe45a188d0bcdcecc88102f4636d1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_video_segment_sam3
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/video-segment-sam3
+  title: 'Video Segmentation: SAM3'
+  description: Use the SAM3 model to segment the main subject or content from a video,
+    isolating specific objects or regions. Input a video and receive a segmented mask
+    output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Element Segmentation
+  models:
+  - SAM3
+  date: '2026-04-27'
+  openSource: true
+  size: 1717986918
+  usage: 153
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 115
+      nodeType: LoadVideo
+      file: drinking_unicorn.mp4
+      mediaType: video
+  thumbnail:
+  - output/utility_video_segment_sam3.mp4
+  minComfyUIVersion: 0.20.0

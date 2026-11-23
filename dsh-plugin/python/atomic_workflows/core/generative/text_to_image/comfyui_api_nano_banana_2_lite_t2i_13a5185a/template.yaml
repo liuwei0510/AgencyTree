@@ -1,0 +1,75 @@
+id: remote:template:api_nano_banana_2_lite_t2i
+kind: comfyui_template
+title: 'Nano Banana 2 Lite: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Nano Banana 2 Lite: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text descriptions using the ultra-fast Gemini 3.1
+    Flash-Lite Image model, designed for rapid creation and iteration with no file
+    inputs required. This workflow produces one or more generated images based on
+    your text prompt, with support for interleaved text and image inputs. Ideal for
+    quick concept visualization, rapid prototyping, and iterative design exploration.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_nano_banana_2_lite_t2i.json
+  sha256: 6ef47244878c80d7964cf378ee704b9235d5c9b83354346c14f5358e5fc89a6b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_nano_banana_2_lite_t2i
+  title: 'Nano Banana 2 Lite: Text to Image'
+  description: Generate images from text descriptions using the ultra-fast Gemini
+    3.1 Flash-Lite Image model, designed for rapid creation and iteration with no
+    file inputs required. This workflow produces one or more generated images based
+    on your text prompt, with support for interleaved text and image inputs. Ideal
+    for quick concept visualization, rapid prototyping, and iterative design exploration.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Nano Banana 2
+  logos:
+  - provider: Google
+  date: '2026-06-30'
+  openSource: false
+  size: 0
+  usage: 16
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 4
+      nodeType: SaveImageAdvanced
+      file: api_nano_banana_2_lite_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_nano_banana_2_lite_t2i.png
+  minComfyUIVersion: 0.27.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_nano_banana_2_lite_t2i.json
+  sha256: 6ef47244878c80d7964cf378ee704b9235d5c9b83354346c14f5358e5fc89a6b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_api_nano_banana_2_lite_t2i_13a5185a/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

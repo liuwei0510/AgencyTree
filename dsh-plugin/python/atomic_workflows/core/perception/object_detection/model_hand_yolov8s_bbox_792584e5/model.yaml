@@ -1,0 +1,44 @@
+id: remote.model.792584e5df53b4dabd6f
+kind: comfyui_model
+title: hand_yolov8s (bbox)
+tree_branch:
+- core
+- perception
+- object_detection
+six_tuple:
+  name: hand_yolov8s (bbox)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/object_detection
+  parameters:
+  - name: filename
+    value: hand_yolov8s.pt
+  - name: base
+    value: Ultralytics
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: Ultralytics
+    save_path: ultralytics/bbox
+    filename: hand_yolov8s.pt
+    download_locator: https://huggingface.co/Bingsu/adetailer/resolve/main/hand_yolov8s.pt
+code_usable: true
+status: available
+metadata:
+  name: hand_yolov8s (bbox)
+  type: Ultralytics
+  base: Ultralytics
+  save_path: ultralytics/bbox
+  description: These are the available models in the UltralyticsDetectorProvider of
+    Impact Pack.
+  reference: https://huggingface.co/Bingsu/adetailer/tree/main
+  filename: hand_yolov8s.pt
+  url: https://huggingface.co/Bingsu/adetailer/resolve/main/hand_yolov8s.pt
+  size: 22.5MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

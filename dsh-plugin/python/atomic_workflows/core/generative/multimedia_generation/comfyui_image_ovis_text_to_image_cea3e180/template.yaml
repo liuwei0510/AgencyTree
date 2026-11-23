@@ -1,0 +1,59 @@
+id: remote:template:image_ovis_text_to_image
+kind: comfyui_template
+title: Ovis-Image Text to Image
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Ovis-Image Text to Image
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Ovis-Image is a 7B text-to-image model specifically optimized for high-quality
+    text rendering in generated images. Designed to operate efficiently under computational
+    constraints, it excels at accurately generating images containing text content.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_ovis_text_to_image.json
+  sha256: 7639afc40f561212097dffdf701989a804fe562d43e7b3bdb2acb97a9f05d385
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_ovis_text_to_image
+  tutorialUrl: https://docs.comfy.org/tutorials/image/ovis/ovis-image
+  title: Ovis-Image Text to Image
+  mediaType: image
+  mediaSubtype: webp
+  description: Ovis-Image is a 7B text-to-image model specifically optimized for high-quality
+    text rendering in generated images. Designed to operate efficiently under computational
+    constraints, it excels at accurately generating images containing text content.
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - Ovis-Image
+  date: '2025-12-02'
+  size: 20228222222
+  usage: 8
+  username: ComfyUI
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_ovis_text_to_image.json
+  sha256: 7639afc40f561212097dffdf701989a804fe562d43e7b3bdb2acb97a9f05d385
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_ovis_text_to_image_cea3e180/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

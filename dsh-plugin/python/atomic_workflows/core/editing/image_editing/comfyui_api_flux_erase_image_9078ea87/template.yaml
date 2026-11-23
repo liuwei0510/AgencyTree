@@ -1,0 +1,89 @@
+id: remote:template:api_flux_erase_image
+kind: comfyui_template
+title: 'Object Removal: Flux'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Object Removal: Flux'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and paint a mask over the object to remove. The workflow
+    erases the masked area and reconstructs the background.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_flux_erase_image.json
+  sha256: afe0426a570cad876f24c111e683431726dd624e1aa337c61af2eda3fd62ec43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_flux_erase_image
+  title: 'Object Removal: Flux'
+  description: Upload an image and paint a mask over the object to remove. The workflow
+    erases the masked area and reconstructs the background.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Inpainting
+  models:
+  - FLUX
+  logos:
+  - provider: Black Forest Labs
+  date: '2026-06-04'
+  openSource: false
+  size: 0
+  usage: 24
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: city_street_young_man.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: api_flux_erase_image.png
+      mediaType: image
+  thumbnail:
+  - input/city_street_young_man.png
+  - output/api_flux_erase_image.png
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_flux_erase_image.json
+  sha256: afe0426a570cad876f24c111e683431726dd624e1aa337c61af2eda3fd62ec43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_flux_erase_image_9078ea87/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

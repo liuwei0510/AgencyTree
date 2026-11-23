@@ -1,0 +1,88 @@
+id: remote:template:video-wan21_scail
+kind: comfyui_template
+title: Wan2.1 SCAIL
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan2.1 SCAIL
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: One-Touch SCAIL Pose Control based on the composition of the Reference
+    Image
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video-wan21_scail.json
+  sha256: 84617433dc60b7e14bac0a89e0d380e837cbcb28b6a9a4bbbe89db46cdb50c23
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video-wan21_scail
+  title: Wan2.1 SCAIL
+  description: One-Touch SCAIL Pose Control based on the composition of the Reference
+    Image
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Motion Control
+  - Video
+  models:
+  - Wan2.1 SCAIL
+  date: '2026-01-19'
+  openSource: true
+  requiresCustomNodes:
+  - ComfyUI-WanAnimatePreprocess
+  - ComfyUI-WanVideoWrapper
+  - comfyui-kjnodes
+  - comfyui-scail-pose
+  - comfyui-videohelpersuite
+  - comfyui_essentials
+  usage: 112
+  io:
+    inputs:
+    - nodeId: 390
+      nodeType: LoadImage
+      file: pirates_dancing.png
+      mediaType: image
+    - nodeId: 408
+      nodeType: LoadVideo
+      file: wan21_scail-input.mp4
+      mediaType: video
+  size: 20401094656
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video-wan21_scail.json
+  sha256: 84617433dc60b7e14bac0a89e0d380e837cbcb28b6a9a4bbbe89db46cdb50c23
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_video-wan21_scail_210cedf4/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '390'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

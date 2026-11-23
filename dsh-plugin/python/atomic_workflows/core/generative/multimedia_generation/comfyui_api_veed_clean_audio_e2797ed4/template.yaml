@@ -1,0 +1,70 @@
+id: remote:template:api_veed_clean_audio
+kind: comfyui_template
+title: 'VEED Clean Audio: Speech Cleanup'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'VEED Clean Audio: Speech Cleanup'
+  input_types: {}
+  output_types: {}
+  capability: 'Remove background noise from a speech recording with VEED Clean Audio:
+    music and effects go with the noise, pauses are cleaned completely, and the voice
+    comes back as 48 kHz mono audio, optionally normalized to a target loudness. Audio
+    up to 1799 seconds.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_clean_audio.json
+  sha256: 3769a8b57e5b65da056045f9766081634d341d2648524f9703627071a5e4a409
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_veed_clean_audio
+  title: 'VEED Clean Audio: Speech Cleanup'
+  description: 'Remove background noise from a speech recording with VEED Clean Audio:
+    music and effects go with the noise, pauses are cleaned completely, and the voice
+    comes back as 48 kHz mono audio, optionally normalized to a target loudness. Audio
+    up to 1799 seconds.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Audio
+  - Audio Editing
+  models:
+  - VEED
+  logos:
+  - provider: VEED
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.43.0
+  io:
+    inputs:
+    - nodeId: 13
+      nodeType: LoadAudio
+      file: veed_clean_audio_noisy_input.wav
+      mediaType: audio
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_clean_audio.json
+  sha256: 3769a8b57e5b65da056045f9766081634d341d2648524f9703627071a5e4a409
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/audio_editing/comfyui_api_veed_clean_audio_e2797ed4/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

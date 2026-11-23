@@ -1,0 +1,59 @@
+id: remote.template.api_bria_image_outpainting
+kind: comfyui_template
+title: 'Bria: Image Outpainting'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Bria: Image Outpainting'
+  input_types:
+  - image
+  output_types: []
+  capability: A professional Bria-powered outpainting template designed for seamless
+    image extension and edge-aware scene expansion
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_image_outpainting.json
+  sha256: 9c0ab272b1f1442d8c70b7c8395f4eb9f1ee5a89b4e1f4a5bcd1ca2c5025dba6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_image_outpainting
+  title: 'Bria: Image Outpainting'
+  description: A professional Bria-powered outpainting template designed for seamless
+    image extension and edge-aware scene expansion
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Outpainting
+  models:
+  - BRIA
+  date: '2026-01-20'
+  openSource: false
+  usage: 51
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: baby_otter.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/api_bria_image_outpainting-1.png
+  - thumbnail/api_bria_image_outpainting-2.png
+  logos:
+  - provider: BRIA
+  size: 0
+  searchRank: 0
+  minComfyUIVersion: 0.10.0

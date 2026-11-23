@@ -1,0 +1,85 @@
+id: remote:template:api_anthropic_claude_opus_5
+kind: comfyui_template
+title: 'Claude: Opus 5'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Claude: Opus 5'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    transcript: text
+  capability: Load an image and enter a prompt to interact with Claude Opus 5, a highly
+    capable and cost-efficient AI model that excels at coding, knowledge work, and
+    problem-solving. Ideal for software engineering tasks, scientific research requiring
+    visual analysis, and everyday productivity with a thoughtful, proactive assistant.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_opus_5.json
+  sha256: b7074cea53844aa15b64b124d32e3c9e9d4c301532c7c975b7b02e6e15ca8892
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_anthropic_claude_opus_5
+  title: 'Claude: Opus 5'
+  description: Load an image and enter a prompt to interact with Claude Opus 5, a
+    highly capable and cost-efficient AI model that excels at coding, knowledge work,
+    and problem-solving. Ideal for software engineering tasks, scientific research
+    requiring visual analysis, and everyday productivity with a thoughtful, proactive
+    assistant.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Claude
+  logos:
+  - provider: Anthropic
+  date: '2026-07-28'
+  openSource: false
+  size: 0
+  usage: 11
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  minComfyUIVersion: 0.28.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_opus_5.json
+  sha256: b7074cea53844aa15b64b124d32e3c9e9d4c301532c7c975b7b02e6e15ca8892
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_anthropic_claude_opus_5_716d9631/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: transcript
+  type: text
+planning_eligible: true
+contract_errors: []

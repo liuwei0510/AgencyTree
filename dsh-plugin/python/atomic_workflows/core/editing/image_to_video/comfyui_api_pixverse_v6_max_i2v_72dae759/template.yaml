@@ -1,0 +1,87 @@
+id: remote:template:api_pixverse_v6_max_i2v
+kind: comfyui_template
+title: 'PixVerse V6 Max: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'PixVerse V6 Max: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Animate a still image with PixVerse V6 Max, keeping the aspect ratio
+    of the input image and generating up to 15 seconds at up to 1080p with an optional
+    native audio track. Ideal for bringing product shots, character art and keyframes
+    to life for social and advertising use.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pixverse_v6_max_i2v.json
+  sha256: ded526c9360bbf414652c7887b1bb848b104cea1f3fa55847d96b407d0608ef6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_pixverse_v6_max_i2v
+  title: 'PixVerse V6 Max: Image to Video'
+  description: Animate a still image with PixVerse V6 Max, keeping the aspect ratio
+    of the input image and generating up to 15 seconds at up to 1080p with an optional
+    native audio track. Ideal for bringing product shots, character art and keyframes
+    to life for social and advertising use.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - PixVerse
+  logos:
+  - provider: Pixverse
+  minComfyUIVersion: 0.42.5
+  date: '2026-10-23'
+  openSource: false
+  size: 0
+  usage: 111
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: pixverse_v6max_i2v_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 4
+      nodeType: SaveVideo
+      file: api_pixverse_v6_max_i2v.mp4
+      mediaType: video
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pixverse_v6_max_i2v.json
+  sha256: ded526c9360bbf414652c7887b1bb848b104cea1f3fa55847d96b407d0608ef6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

@@ -1,0 +1,91 @@
+id: remote:template:utility_nanobanana_pro_illustration_upscale
+kind: comfyui_template
+title: 'Image Upscale: Nano Banana Pro Illustration'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Nano Banana Pro Illustration'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a stylized art or illustration. Generate a creatively upscaled
+    4K image with enhanced detail using the Nano Banana Pro model, ideal for marketing
+    or gaming assets.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_nanobanana_pro_illustration_upscale.json
+  sha256: 5313ad10af2c4c9fd79e866c905fedc9c9a0c2b0004a24cd72d19e0ce74cdcaa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_nanobanana_pro_illustration_upscale
+  title: 'Image Upscale: Nano Banana Pro Illustration'
+  description: Upload a stylized art or illustration. Generate a creatively upscaled
+    4K image with enhanced detail using the Nano Banana Pro model, ideal for marketing
+    or gaming assets.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Gemini3 Pro Image Preview
+  - Google
+  - Nano Banana Pro
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: downhill_run.jpg
+      mediaType: image
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: utility_nanobanana_pro_illustration_upscale.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/downhill_run.jpg
+  - output/utility_nanobanana_pro_illustration_upscale.png
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_nanobanana_pro_illustration_upscale.json
+  sha256: 5313ad10af2c4c9fd79e866c905fedc9c9a0c2b0004a24cd72d19e0ce74cdcaa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

@@ -1,0 +1,80 @@
+id: remote:template:api_ideogram_vector_1_text_to_svg
+kind: comfyui_template
+title: 'Ideogram Vector 1: Text to SVG'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram Vector 1: Text to SVG'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Generate a fully editable SVG from a text prompt with Ideogram Vector
+    1, optionally guided by up to five reference images, and save it as one vector
+    file. Ideal for logos, posters, flat illustration, patterns and line art that
+    stays crisp at any size and opens directly in a vector editor.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_vector_1_text_to_svg.json
+  sha256: 7db1cb10dae7c9e01ac4e40f09a5986ecf81f1217592191b412a110baee181c8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ideogram_vector_1_text_to_svg
+  title: 'Ideogram Vector 1: Text to SVG'
+  description: Generate a fully editable SVG from a text prompt with Ideogram Vector
+    1, optionally guided by up to five reference images, and save it as one vector
+    file. Ideal for logos, posters, flat illustration, patterns and line art that
+    stays crisp at any size and opens directly in a vector editor.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Vector
+  models:
+  - Ideogram
+  logos:
+  - provider: Ideogram
+  minComfyUIVersion: 0.42.5
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 27
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadImage
+      file: academic-svg.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_vector_1_text_to_svg.json
+  sha256: 7db1cb10dae7c9e01ac4e40f09a5986ecf81f1217592191b412a110baee181c8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_ideogram_vector_1_text_to_svg_fcfc220c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

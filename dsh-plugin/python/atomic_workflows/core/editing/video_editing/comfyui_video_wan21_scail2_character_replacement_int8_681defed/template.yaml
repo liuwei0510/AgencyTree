@@ -1,0 +1,89 @@
+id: remote.template.video_wan21_scail2_character_replacement_int8
+kind: comfyui_template
+title: 'SCAIL-2 Int8: Character Replacement'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'SCAIL-2 Int8: Character Replacement'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Animate a reference character using a driving video or replace characters
+    entirely with SCAIL-2 Int8, which delivers higher quality than fp8 while running
+    faster. The workflow accepts one reference image and one driving video, outputting
+    an animated character sequence with replaced identity. Ideal for cross-identity
+    character swaps, animal-driven animation, and multi-character scenes without intermediate
+    pose representations.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan21_scail2_character_replacement_int8.json
+  sha256: 7181c456d9306c1a6872f6865b1a6247ed7800e870210dc552b269c85a7e57c7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan21_scail2_character_replacement_int8
+  title: 'SCAIL-2 Int8: Character Replacement'
+  description: Animate a reference character using a driving video or replace characters
+    entirely with SCAIL-2 Int8, which delivers higher quality than fp8 while running
+    faster. The workflow accepts one reference image and one driving video, outputting
+    an animated character sequence with replaced identity. Ideal for cross-identity
+    character swaps, animal-driven animation, and multi-character scenes without intermediate
+    pose representations.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Character Replacement
+  - Int8
+  models:
+  - SCAIL-2
+  date: '2026-07-13'
+  openSource: true
+  size: 28668906701
+  usage: 597
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 30
+      nodeType: LoadImage
+      file: asian_model_in_white_clothes.png
+      mediaType: image
+    - nodeId: 155
+      nodeType: LoadVideo
+      file: girl_eats_apple.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 271
+      nodeType: SaveVideo
+      file: video_wan21_scail2_character_replacement_int8.mp4
+      mediaType: video
+  thumbnail:
+  - input/girl_eats_apple.mp4
+  - output/video_wan21_scail2_character_replacement_int8.mp4
+  minComfyUIVersion: 0.25.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '30'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

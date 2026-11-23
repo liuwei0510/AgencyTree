@@ -1,0 +1,59 @@
+id: remote.template.video_wan_dancer
+kind: comfyui_template
+title: 'Wan Dancer: Music to Dance'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan Dancer: Music to Dance'
+  input_types:
+  - image
+  - audio
+  output_types: []
+  capability: Generate minute-scale coherent dance videos from music using a hierarchical
+    Wan Dancer framework. Input a music file and reference image to produce high-resolution
+    dance videos with global structure and temporal continuity.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_dancer.json
+  sha256: 19e19377920c9961bfb4aa2cdbf857e1d998913bd70b2f996483308c4ba00647
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan_dancer
+  title: 'Wan Dancer: Music to Dance'
+  description: Generate minute-scale coherent dance videos from music using a hierarchical
+    Wan Dancer framework. Input a music file and reference image to produce high-resolution
+    dance videos with global structure and temporal continuity.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Audio to Video
+  models:
+  - Wan
+  date: '2026-07-14'
+  openSource: true
+  size: 52935471923
+  usage: 28
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 547
+      nodeType: LoadImage
+      file: blue_dancer.png
+      mediaType: image
+    - nodeId: 548
+      nodeType: LoadAudio
+      file: wan_dancer_reference_audio.mp3
+      mediaType: audio
+  minComfyUIVersion: 0.21.0

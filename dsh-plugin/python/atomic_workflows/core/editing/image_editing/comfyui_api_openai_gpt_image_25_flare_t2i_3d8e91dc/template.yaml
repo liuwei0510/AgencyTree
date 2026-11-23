@@ -1,0 +1,63 @@
+id: remote.template.api_openai_gpt_image_25_flare_t2i
+kind: comfyui_template
+title: 'GPT Image 2.5 Flare: Text to Image'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'GPT Image 2.5 Flare: Text to Image'
+  input_types: []
+  output_types:
+  - image
+  capability: GPT Image 2.5 Flare is a fast image generation and editing template
+    optimized for rapid prototyping and creative iteration. It delivers quick previews
+    for concept exploration, mood boards, poster drafts, character sketches and scene
+    mockups. Balances solid visual quality with low latency, ideal for high-volume
+    trial-and-error creative workflows.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt_image_25_flare_t2i.json
+  sha256: 3025ede0b68d567b47c060424d500c01974ee1e7a18d2b807db1457c6738372b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_gpt_image_25_flare_t2i
+  title: 'GPT Image 2.5 Flare: Text to Image'
+  description: GPT Image 2.5 Flare is a fast image generation and editing template
+    optimized for rapid prototyping and creative iteration. It delivers quick previews
+    for concept exploration, mood boards, poster drafts, character sketches and scene
+    mockups. Balances solid visual quality with low latency, ideal for high-volume
+    trial-and-error creative workflows.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - GPT Image 2.5
+  logos:
+  - provider: OpenAI
+  minComfyUIVersion: 0.35.0
+  date: '2026-09-09'
+  openSource: false
+  size: 0
+  usage: 1014
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 269
+      nodeType: SaveImage
+      file: api_openai_gpt_image_25_flare_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_openai_gpt_image_25_flare_t2i.png

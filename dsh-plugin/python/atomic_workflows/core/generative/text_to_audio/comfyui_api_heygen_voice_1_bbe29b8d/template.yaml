@@ -1,0 +1,72 @@
+id: remote:template:api_heygen_voice_1
+kind: comfyui_template
+title: 'HeyGen Voice 1.0: Voice Clone to Speech'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HeyGen Voice 1.0: Voice Clone to Speech'
+  input_types: {}
+  output_types:
+    transcript: text
+  capability: Clone a voice from a short recording with HeyGen Voice 1.0, then speak
+    any script in that voice. Connect one audio clip to Instant Clone and the resulting
+    voice_id feeds straight into text to speech, with no training wait. Use the expressiveness
+    control to stay close to the recording or push more emotion into the delivery.
+    Ideal for narration in your own voice, character dialogue, and multilingual voiceover.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_voice_1.json
+  sha256: 1635bbedea763fb0b112ffaf4af79fcea6dee9a837c7f7a092867ecbb6c6a059
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_heygen_voice_1
+  title: 'HeyGen Voice 1.0: Voice Clone to Speech'
+  description: Clone a voice from a short recording with HeyGen Voice 1.0, then speak
+    any script in that voice. Connect one audio clip to Instant Clone and the resulting
+    voice_id feeds straight into text to speech, with no training wait. Use the expressiveness
+    control to stay close to the recording or push more emotion into the delivery.
+    Ideal for narration in your own voice, character dialogue, and multilingual voiceover.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Speech
+  - Voice Cloning
+  models:
+  - HeyGen
+  logos:
+  - provider: HeyGen
+  date: '2026-10-19'
+  openSource: false
+  size: 0
+  usage: 183
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+  minComfyUIVersion: 0.40.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_voice_1.json
+  sha256: 1635bbedea763fb0b112ffaf4af79fcea6dee9a837c7f7a092867ecbb6c6a059
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: transcript
+  type: text
+planning_eligible: true

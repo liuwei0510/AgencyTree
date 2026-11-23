@@ -1,0 +1,114 @@
+id: remote:template:api_google_gemini_omni_flash_1_1_r2v
+kind: comfyui_template
+title: 'Gemini Omni 1.1 Flash: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Gemini Omni 1.1 Flash: Reference to Video'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    video: video_path
+  capability: 'Generate video that incorporates specific subjects from multiple reference
+    images using Gemini Omni 1.1 Flash''s reference mode: characters, products, and
+    objects from your images appear in the scene while the image itself is never shown
+    as a frame. Bind each image to a role with tags like <IMAGE_REF_0>, combine character
+    references with style references, and direct the scene in plain language with
+    native audio. Ideal for character-driven stories, product placement, and brand-consistent
+    content.'
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_r2v.json
+  sha256: 9c7aea96fbd4671ffd4942d54f11325437d953606bc923bd570c0ad7986f8ef6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_gemini_omni_flash_1_1_r2v
+  title: 'Gemini Omni 1.1 Flash: Reference to Video'
+  description: 'Generate video that incorporates specific subjects from multiple reference
+    images using Gemini Omni 1.1 Flash''s reference mode: characters, products, and
+    objects from your images appear in the scene while the image itself is never shown
+    as a frame. Bind each image to a role with tags like <IMAGE_REF_0>, combine character
+    references with style references, and direct the scene in plain language with
+    native audio. Ideal for character-driven stories, product placement, and brand-consistent
+    content.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Reference to Video
+  models:
+  - Gemini Omni 1.1 Flash
+  logos:
+  - provider: Google
+  minComfyUIVersion: 0.34.2
+  date: '2026-08-27'
+  openSource: false
+  size: 0
+  usage: 86
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: terracotta_eyeshadow_palette.png
+      mediaType: image
+    - nodeId: 15
+      nodeType: LoadImage
+      file: asian_female_model_beige_suit.png
+      mediaType: image
+    outputs:
+    - nodeId: 8
+      nodeType: SaveVideo
+      file: api_google_gemini_omni_flash_1_1_r2v.mp4
+      mediaType: video
+  thumbnail:
+  - thumbnail/api_google_gemini_omni_flash_1_1_r2v_thumbnail.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_r2v.json
+  sha256: 9c7aea96fbd4671ffd4942d54f11325437d953606bc923bd570c0ad7986f8ef6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_google_gemini_omni_flash_1_1_r2v_5c3a521b/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '15'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

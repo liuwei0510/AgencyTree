@@ -1,0 +1,52 @@
+id: core.generative.text_to_image.image_flux2
+title: image_flux2
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_flux2.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: image_flux2.workflow.json
+inject:
+  prompt:
+    node_id: '68:6'
+    input_key: text
+  width:
+    node_id: '68:47'
+    input_key: width
+  height:
+    node_id: '68:47'
+    input_key: height
+  source_image:
+    node_id: '46'
+    input_key: image
+    widget_index: null
+  noise_seed:
+    node_id: '68:25'
+    input_key: noise_seed
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: noise_seed
+  type: number
+  required: false
+  default: 649422536169327
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

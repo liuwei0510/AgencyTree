@@ -1,0 +1,58 @@
+id: remote.template.image_pixeldit_t2i
+kind: comfyui_template
+title: 'PixelDiT: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'PixelDiT: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt and optional negative prompt. Generate a 1024px
+    image using PixelDiT's VAE-free pixel diffusion transformer.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_pixeldit_t2i.json
+  sha256: 5f04072f615e88fe2edf7c84ed655924ccd3c3ab8b70837cb5f16adf744721a1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_pixeldit_t2i
+  title: 'PixelDiT: Text to Image'
+  description: Input a text prompt and optional negative prompt. Generate a 1024px
+    image using PixelDiT's VAE-free pixel diffusion transformer.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  models:
+  - PixelDiT
+  date: '2026-04-29'
+  openSource: true
+  size: 7838315315
+  usage: 63
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 43
+      nodeType: SaveImage
+      file: image_pixeldit_t2i.png
+      mediaType: image
+  minComfyUIVersion: 0.16.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

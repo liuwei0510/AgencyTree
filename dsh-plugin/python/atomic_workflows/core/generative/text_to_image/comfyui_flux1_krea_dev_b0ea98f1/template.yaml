@@ -1,0 +1,67 @@
+id: remote:template:flux1_krea_dev
+kind: comfyui_template
+title: Flux.1 Krea Dev
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Krea Dev
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: A fine-tuned FLUX model pushing photorealism to the max
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux1_krea_dev.json
+  sha256: 04c17afbb7b97bb7de3b9897d94b60f5b29c356d908b8c60148c959fb9509de1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux1_krea_dev
+  title: Flux.1 Krea Dev
+  mediaType: image
+  mediaSubtype: webp
+  description: A fine-tuned FLUX model pushing photorealism to the max
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux1-krea-dev
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - FLUX
+  - FLUX.1 Krea
+  date: '2025-07-31'
+  size: 22226455757
+  usage: 195
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: flux1_krea_dev.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/flux1_krea_dev.png
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux1_krea_dev.json
+  sha256: 04c17afbb7b97bb7de3b9897d94b60f5b29c356d908b8c60148c959fb9509de1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_flux1_krea_dev_b0ea98f1/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

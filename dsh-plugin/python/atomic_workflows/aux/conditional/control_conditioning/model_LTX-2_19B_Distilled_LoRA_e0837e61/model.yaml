@@ -1,0 +1,46 @@
+id: remote:model:e0837e61fdfd7f773ad2
+kind: comfyui_model
+title: LTX-2 19B Distilled LoRA
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-2 19B Distilled LoRA
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: ltx-2-19b-distilled-lora-384.safetensors
+  - name: base
+    value: LTX-2
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras
+    filename: ltx-2-19b-distilled-lora-384.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2/resolve/main/ltx-2-19b-distilled-lora-384.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: LTX-2 19B Distilled LoRA
+  type: lora
+  base: LTX-2
+  save_path: loras
+  description: A LoRA adapter that transforms the standard LTX-2 19B model into a
+    distilled version when loaded.
+  reference: https://huggingface.co/Lightricks/LTX-2
+  filename: ltx-2-19b-distilled-lora-384.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2/resolve/main/ltx-2-19b-distilled-lora-384.safetensors
+  size: 7.67GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/sampling_acceleration/model_LTX-2_19B_Distilled_LoRA_e0837e61/model.yaml
+validation_errors: []

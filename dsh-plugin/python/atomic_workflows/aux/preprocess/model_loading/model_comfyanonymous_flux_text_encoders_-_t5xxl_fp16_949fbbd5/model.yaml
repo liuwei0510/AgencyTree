@@ -1,0 +1,45 @@
+id: remote:model:949fbbd59ebe32762b17
+kind: comfyui_model
+title: comfyanonymous/flux_text_encoders - t5xxl (fp16)
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: comfyanonymous/flux_text_encoders - t5xxl (fp16)
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: t5xxl_fp16.safetensors
+  - name: base
+    value: t5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders/t5
+    filename: t5xxl_fp16.safetensors
+    download_locator: https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: comfyanonymous/flux_text_encoders - t5xxl (fp16)
+  type: clip
+  base: t5
+  save_path: text_encoders/t5
+  description: Text Encoders for FLUX (fp16)
+  reference: https://huggingface.co/comfyanonymous/flux_text_encoders
+  filename: t5xxl_fp16.safetensors
+  url: https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors
+  size: 9.79GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/preprocess/text_encoding/model_comfyanonymous_flux_text_encoders_-_t5xxl_fp16_949fbbd5/model.yaml
+validation_errors: []

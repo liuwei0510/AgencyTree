@@ -1,0 +1,81 @@
+id: remote.template.api_seedance2_5_i2v_1080p
+kind: comfyui_template
+title: 'Seedance2.5 1080P: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance2.5 1080P: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate cinematic 1080P video clips from a single image using Seedance
+    2.5, animating the still into a moving scene with synchronized sound, music, and
+    dialogue for clips up to 30 seconds across any aspect ratio. Ideal for breathing
+    life into product shots, extending concept art into motion, and creating engaging
+    social media content from photographs.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_i2v_1080p.json
+  sha256: e4897f7e505d60c2e780885d2a7b971665167d520c7451c4d32572397550450c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_5_i2v_1080p
+  title: 'Seedance2.5 1080P: Image to Video'
+  description: Generate cinematic 1080P video clips from a single image using Seedance
+    2.5, animating the still into a moving scene with synchronized sound, music, and
+    dialogue for clips up to 30 seconds across any aspect ratio. Ideal for breathing
+    life into product shots, extending concept art into motion, and creating engaging
+    social media content from photographs.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - Seedance 2.5
+  logos:
+  - provider: ByteDance
+  date: '2026-08-17'
+  openSource: false
+  size: 0
+  usage: 1528
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: cosmoscape.png
+      mediaType: image
+    outputs:
+    - nodeId: 7
+      nodeType: SaveVideo
+      file: api_seedance2_5_i2v_1080p.mp4
+      mediaType: video
+  minComfyUIVersion: 0.33.2
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

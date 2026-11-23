@@ -1,0 +1,63 @@
+id: remote:template:api_wan2_7_t2v
+kind: comfyui_template
+title: 'Wan2.7: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan2.7: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate videos from text prompts using Wan 2.7. Supports audio reference
+    to create lip-synced video
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan2_7_t2v.json
+  sha256: 7ed6ef9c52b26274057c9f2c388df8cef2fd15b03cb486d31c70869e4f40765b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan2_7_t2v
+  title: 'Wan2.7: Text to Video'
+  description: Generate videos from text prompts using Wan 2.7. Supports audio reference
+    to create lip-synced video
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Lip Sync
+  - Text to Video
+  - Video
+  models:
+  - Wan2.7
+  date: '2026-04-02'
+  openSource: false
+  size: 0
+  usage: 23
+  searchRank: 0
+  username: ComfyUI
+  logos:
+  - provider: WAN
+  minComfyUIVersion: 0.18.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan2_7_t2v.json
+  sha256: 7ed6ef9c52b26274057c9f2c388df8cef2fd15b03cb486d31c70869e4f40765b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_video/comfyui_api_wan2_7_t2v_b1ce8f1b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,68 @@
+id: remote:template:api_luma_ray3_2_video_edit
+kind: comfyui_template
+title: 'Luma Ray 3.2: Video Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma Ray 3.2: Video Edit'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Edit videos using natural language commands with Luma Ray 3.2, processing
+    one input video and generating an edited output based on your textual instructions.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_ray3_2_video_edit.json
+  sha256: dcc1ea76ef986f80918b8a0b345015631bb023a6336441054f49fdb8fb2088a1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_ray3_2_video_edit
+  title: 'Luma Ray 3.2: Video Edit'
+  description: Edit videos using natural language commands with Luma Ray 3.2, processing
+    one input video and generating an edited output based on your textual instructions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - Luma
+  logos:
+  - provider: Luma
+  date: '2026-06-22'
+  openSource: false
+  size: 0
+  usage: 9
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadVideo
+      file: subway_guitar_busker.mp4
+      mediaType: video
+  minComfyUIVersion: 0.26.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_ray3_2_video_edit.json
+  sha256: dcc1ea76ef986f80918b8a0b345015631bb023a6336441054f49fdb8fb2088a1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_luma_ray3_2_video_edit_4245bb0b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

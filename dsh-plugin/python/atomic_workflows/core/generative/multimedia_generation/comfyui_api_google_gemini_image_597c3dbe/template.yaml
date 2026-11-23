@@ -1,0 +1,54 @@
+id: remote.template.api_google_gemini_image
+kind: comfyui_template
+title: Nano Banana
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Nano Banana
+  input_types:
+  - image
+  output_types: []
+  capability: Nano-banana (Gemini-2.5-Flash Image) - image editing with consistency.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_image.json
+  sha256: 89b4d7228290f27c0ace5290dd80e4b6b586782b5fcf824ae78330308bd654d0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_gemini_image
+  title: Nano Banana
+  description: Nano-banana (Gemini-2.5-Flash Image) - image editing with consistency.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image Edit
+  - Image
+  - API
+  - Text to Image
+  models:
+  - Gemini-2.5-Flash
+  - Nano Banana
+  - Google
+  date: '2025-08-27'
+  openSource: false
+  size: 0
+  usage: 92
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: comfyui_logo.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0

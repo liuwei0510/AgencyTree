@@ -1,0 +1,51 @@
+id: remote.template.api_grok_imagine_image_quality_image_edit
+kind: comfyui_template
+title: 'Grok Imagine Image Quality: Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok Imagine Image Quality: Edit'
+  input_types: []
+  output_types: []
+  capability: Enhance image quality with advanced text rendering and creative control
+    using Grok Imagine Image Quality. Input images or prompts for improved detail
+    and fidelity.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_imagine_image_quality_image_edit.json
+  sha256: 515962e1bcc1c1dbd1c73aadfedc7682dbc26f603c6c90978d1df07bab84ed2e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_imagine_image_quality_image_edit
+  title: 'Grok Imagine Image Quality: Edit'
+  description: Enhance image quality with advanced text rendering and creative control
+    using Grok Imagine Image Quality. Input images or prompts for improved detail
+    and fidelity.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Grok
+  logos:
+  - provider: Grok
+  date: '2026-05-06'
+  openSource: false
+  size: 0
+  usage: 8
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.11.1

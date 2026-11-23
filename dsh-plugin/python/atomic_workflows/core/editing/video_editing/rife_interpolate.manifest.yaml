@@ -1,0 +1,14 @@
+id: core.editing.video_editing.rife_interpolate
+title: Video Frame Interpolation (RIFE-style slot)
+modality: [video]
+description: Upsample FPS or smooth motion; replace workflow with your VFI graph export.
+tags: [video, rife, editing]
+workflow_file: rife_interpolate.workflow.json
+inject: {}
+inputs:
+  - name: source_video
+    type: video_path
+    required: false
+outputs:
+  - name: video
+    type: video_filenames

@@ -1,0 +1,44 @@
+id: remote.model.67831af2481b8e1369d6
+kind: comfyui_model
+title: OpenAI Consistency Decoder
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: OpenAI Consistency Decoder
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/preprocess/model_loading
+  parameters:
+  - name: filename
+    value: decoder.pt
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae/SD1.5/openai_consistency_decoder
+    filename: decoder.pt
+    download_locator: https://openaipublic.azureedge.net/diff-vae/c9cebd3132dd9c42936d803e33424145a748843c8f716c0814838bdc8a2fe7cb/decoder.pt
+code_usable: true
+status: deprecated
+metadata:
+  name: OpenAI Consistency Decoder
+  type: VAE
+  base: SD1.5
+  save_path: vae/SD1.5/openai_consistency_decoder
+  description: OpenAI Consistency Decoder. Improved decoding for stable diffusion
+    vaes.
+  reference: https://github.com/openai/consistencydecoder
+  filename: decoder.pt
+  url: https://openaipublic.azureedge.net/diff-vae/c9cebd3132dd9c42936d803e33424145a748843c8f716c0814838bdc8a2fe7cb/decoder.pt
+  size: 2.49GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

@@ -1,0 +1,44 @@
+id: remote.template.hunyuan_video_text_to_video
+kind: comfyui_template
+title: Hunyuan Video Text to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Hunyuan Video Text to Video
+  input_types: []
+  output_types: []
+  capability: Generate videos from text prompts using Hunyuan model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/hunyuan_video_text_to_video.json
+  sha256: 5b9557d0dc22566ebecf231a8e7a67deddae9ea139a71e47b7339bb1b932e5dd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: hunyuan_video_text_to_video
+  title: Hunyuan Video Text to Video
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate videos from text prompts using Hunyuan model.
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/hunyuan_video/
+  tags:
+  - Text to Video
+  - Video
+  models:
+  - Hunyuan Video
+  - Tencent
+  date: '2025-03-01'
+  size: 35476429865
+  usage: 10
+  username: ComfyUI
+  minComfyUIVersion: 0.3.31

@@ -1,0 +1,65 @@
+id: remote.template.api_bytedance_seedream_5_0_flash_t2i
+kind: comfyui_template
+title: 'Seedream 5.0 Flash: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedream 5.0 Flash: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using Seedream 5.0 Flash,
+    producing detailed 1K, 1.5K, or 2K visuals with cinematic lighting and accurate
+    text rendering, saved as a single image output.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_flash_t2i.json
+  sha256: 9eb1d8c34e6340ec0c148f7dcdf5b0a64751624edd27c85bba17c5a255db822f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedream_5_0_flash_t2i
+  title: 'Seedream 5.0 Flash: Text to Image'
+  description: Generate high-quality images from text prompts using Seedream 5.0 Flash,
+    producing detailed 1K, 1.5K, or 2K visuals with cinematic lighting and accurate
+    text rendering, saved as a single image output.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Seedream 5.0
+  logos:
+  - provider: ByteDance
+  minComfyUIVersion: 0.37.3
+  date: '2026-09-24'
+  openSource: false
+  size: 0
+  usage: 138
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 37
+      nodeType: SaveImageAdvanced
+      file: api_bytedance_seedream_5_0_flash_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_bytedance_seedream_5_0_flash_t2i.png
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

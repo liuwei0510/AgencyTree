@@ -1,0 +1,61 @@
+id: remote.template.image_qwen_image_2_1_t2i
+kind: comfyui_template
+title: 'Qwen Image 2.1: Text to Image'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image 2.1: Text to Image'
+  input_types: []
+  output_types:
+  - image
+  capability: Generate images from text prompts with Qwen Image 2.1, the latest open-weight
+    Qwen-Image model, producing a single 1024×1024 image over 25 sampling steps. Generation
+    and instruction-based editing share one model with native 2K output, professional
+    typography, and alpha-channel support. Ideal for poster and layout design, transparent
+    asset creation, and rapid concept visualization.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_2_1_t2i.json
+  sha256: dc10121ae2fd4173ecf9c2e703e25cf076f5e30a56878fab2592a52d82e38be3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_2_1_t2i
+  title: 'Qwen Image 2.1: Text to Image'
+  description: Generate images from text prompts with Qwen Image 2.1, the latest open-weight
+    Qwen-Image model, producing a single 1024×1024 image over 25 sampling steps. Generation
+    and instruction-based editing share one model with native 2K output, professional
+    typography, and alpha-channel support. Ideal for poster and layout design, transparent
+    asset creation, and rapid concept visualization.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - Qwen Image 2.1
+  minComfyUIVersion: 0.37.2
+  date: '2026-09-20'
+  openSource: true
+  size: 26736171418
+  usage: 3935
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 461
+      nodeType: SaveImageAdvanced
+      file: image_qwen_image_2_1_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/image_qwen_image_2_1_t2i.png

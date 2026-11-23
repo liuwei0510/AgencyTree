@@ -1,0 +1,63 @@
+id: remote.template.api_anthropic_claude_sonnet5
+kind: comfyui_template
+title: 'Claude: Sonnet 5'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Claude: Sonnet 5'
+  input_types:
+  - image
+  output_types: []
+  capability: Leverage Claude Sonnet 5 for high-value autonomous task execution, bridging
+    the gap to flagship performance at a lower cost. Input any text prompt or script
+    to generate precise image descriptions, automated workflow scripts, shot sequence
+    logs, or node logic corrections. Ideal for batch production tasks, debugging ComfyUI
+    node logic, and maintaining consistent output quality across repetitive generation
+    workflows.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude_sonnet5.json
+  sha256: e1d3b6a9c2a34d8fd720eb29cf2845a54f6d38b0febcfee71a2289f5b1ddeaec
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_anthropic_claude_sonnet5
+  title: 'Claude: Sonnet 5'
+  description: Leverage Claude Sonnet 5 for high-value autonomous task execution,
+    bridging the gap to flagship performance at a lower cost. Input any text prompt
+    or script to generate precise image descriptions, automated workflow scripts,
+    shot sequence logs, or node logic corrections. Ideal for batch production tasks,
+    debugging ComfyUI node logic, and maintaining consistent output quality across
+    repetitive generation workflows.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Claude
+  logos:
+  - provider: Anthropic
+  date: '2026-07-22'
+  openSource: false
+  size: 0
+  usage: 1
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  minComfyUIVersion: 0.28.0

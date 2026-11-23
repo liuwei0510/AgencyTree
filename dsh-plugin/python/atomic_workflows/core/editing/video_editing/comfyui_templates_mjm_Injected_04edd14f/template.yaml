@@ -1,0 +1,99 @@
+id: remote.template.templates_mjm_Injected
+kind: comfyui_template
+title: Noise Injected VideoGen
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Noise Injected VideoGen
+  input_types:
+    source_image: image_filenames
+    negative_prompt: string
+  output_types:
+    video: video_path
+  capability: Upload a starting image and a mask video to define the injection area.
+    Generate a dynamic video by injecting noise patterns from a dedicated noise video,
+    with AI auto-generated prompts.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: watermark, face, text, signature, blurry
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_mjm_Injected.json
+  sha256: c4160511e79334dbee755de26e2d8e22aa78227403aa7859ac71899a495920e1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_mjm_Injected
+  title: Noise Injected VideoGen
+  description: Upload a starting image and a mask video to define the injection area.
+    Generate a dynamic video by injecting noise patterns from a dedicated noise video,
+    with AI auto-generated prompts.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Image to Video
+  models:
+  - SD1.5
+  requiresCustomNodes:
+  - QwenVL
+  - comfyui-animatediff-evolved
+  - comfyui-frame-interpolation
+  - comfyui-videohelpersuite
+  date: '2026-03-02'
+  openSource: true
+  size: 10737418240
+  usage: 1
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadImage
+      file: Init.png
+      mediaType: image
+    - nodeId: 126
+      nodeType: VHS_LoadVideo
+      file: Noise_injection.mp4
+      mediaType: video
+    - nodeId: 137
+      nodeType: VHS_LoadVideo
+      file: Mask.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 209
+      nodeType: SaveVideo
+      file: templates_mjm_Injected.mp4
+      mediaType: video
+  username: Julien | MJM
+  thumbnail:
+  - output/templates_mjm_Injected.mp4
+  minComfyUIVersion: 0.3.42
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+  negative_prompt:
+    node_id: '173'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

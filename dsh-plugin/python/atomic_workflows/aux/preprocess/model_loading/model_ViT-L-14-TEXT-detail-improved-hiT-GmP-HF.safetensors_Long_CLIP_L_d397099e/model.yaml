@@ -1,0 +1,43 @@
+id: remote.model.d397099e61ed08368755
+kind: comfyui_model
+title: ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors [Long CLIP L]
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors [Long CLIP L]
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/preprocess/model_loading
+  parameters:
+  - name: filename
+    value: ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
+  - name: base
+    value: clip
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders/long_clip
+    filename: ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
+    download_locator: https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors [Long CLIP L]
+  type: clip
+  base: clip
+  save_path: text_encoders/long_clip
+  description: Greatly improved TEXT + Detail (as CLIP-L for Flux.1)
+  reference: https://huggingface.co/zer0int
+  filename: ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
+  url: https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/resolve/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
+  size: 931MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

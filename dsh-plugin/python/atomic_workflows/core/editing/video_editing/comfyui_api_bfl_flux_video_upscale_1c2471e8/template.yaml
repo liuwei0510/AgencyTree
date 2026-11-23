@@ -1,0 +1,84 @@
+id: remote:template:api_bfl_flux_video_upscale
+kind: comfyui_template
+title: 'Video Upscale: FLUX 3'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: FLUX 3'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upscale video clips to 1080p, 2K, or 4K using FLUX 3 super-resolution,
+    with a precise mode that preserves source fidelity and a creative mode that enhances
+    fine detail. It accepts 1 video input, up to 20 seconds long, and produces 1 upscaled
+    mp4 output with an optional prompt to guide detail enhancement. Ideal for restoring
+    low-resolution footage, preparing clips for large-screen delivery, and adding
+    crispness to AI-generated video.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_video_upscale.json
+  sha256: de08dbd360cca63a5bc1065f9074150065d6528e01a6f27be170d176101b6a6d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux_video_upscale
+  title: 'Video Upscale: FLUX 3'
+  description: Upscale video clips to 1080p, 2K, or 4K using FLUX 3 super-resolution,
+    with a precise mode that preserves source fidelity and a creative mode that enhances
+    fine detail. It accepts 1 video input, up to 20 seconds long, and produces 1 upscaled
+    mp4 output with an optional prompt to guide detail enhancement. Ideal for restoring
+    low-resolution footage, preparing clips for large-screen delivery, and adding
+    crispness to AI-generated video.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Upscale
+  models:
+  - FLUX
+  logos:
+  - provider: Black Forest Labs
+  date: '2026-08-20'
+  openSource: false
+  size: 0
+  usage: 88
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadVideo
+      file: color_spin_flower.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_bfl_flux_video_upscale.mp4
+      mediaType: video
+  thumbnail:
+  - input/color_spin_flower.mp4
+  - output/api_bfl_flux_video_upscale.mp4
+  minComfyUIVersion: 0.33.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_video_upscale.json
+  sha256: de08dbd360cca63a5bc1065f9074150065d6528e01a6f27be170d176101b6a6d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/video_upscaling/comfyui_api_bfl_flux_video_upscale_1c2471e8/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

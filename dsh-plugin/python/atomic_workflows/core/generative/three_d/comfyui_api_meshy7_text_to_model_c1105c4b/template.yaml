@@ -1,0 +1,67 @@
+id: remote:template:api_meshy7_text_to_model
+kind: comfyui_template
+title: 'Meshy 7: Text to 3D'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Meshy 7: Text to 3D'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Generate production-ready 3D models from a text prompt with Meshy 7,
+    a text-to-3D model that sets a new standard for geometry alignment, faithfully
+    matching the input's proportions, part placement, and surface details. Ideal for
+    concept art turnarounds, character and prop modeling from sketches, and any workflow
+    where preserving the original design's intent is critical.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy7_text_to_model.json
+  sha256: c4d73770fba8be645e59dcf3243e3448d3717a81dd77dfd04f6f804367ea3204
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meshy7_text_to_model
+  title: 'Meshy 7: Text to 3D'
+  description: Generate production-ready 3D models from a text prompt with Meshy 7,
+    a text-to-3D model that sets a new standard for geometry alignment, faithfully
+    matching the input's proportions, part placement, and surface details. Ideal for
+    concept art turnarounds, character and prop modeling from sketches, and any workflow
+    where preserving the original design's intent is critical.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - 3D
+  models:
+  - Meshy
+  logos:
+  - provider: Meshy
+  date: '2026-08-24'
+  openSource: false
+  size: 0
+  usage: 19
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.33.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy7_text_to_model.json
+  sha256: c4d73770fba8be645e59dcf3243e3448d3717a81dd77dfd04f6f804367ea3204
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/three_d/comfyui_api_meshy7_text_to_model_c1105c4b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

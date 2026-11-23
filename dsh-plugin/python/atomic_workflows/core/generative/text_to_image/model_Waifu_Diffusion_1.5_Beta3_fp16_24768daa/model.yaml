@@ -1,0 +1,43 @@
+id: remote.model.24768daa5fa7cca3055d
+kind: comfyui_model
+title: Waifu Diffusion 1.5 Beta3 (fp16)
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: Waifu Diffusion 1.5 Beta3 (fp16)
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: wd-illusion-fp16.safetensors
+  - name: base
+    value: SD2.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/SD2.1
+    filename: wd-illusion-fp16.safetensors
+    download_locator: https://huggingface.co/waifu-diffusion/wd-1-5-beta3/resolve/main/wd-illusion-fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Waifu Diffusion 1.5 Beta3 (fp16)
+  type: checkpoint
+  base: SD2.1
+  save_path: checkpoints/SD2.1
+  description: Waifu Diffusion 1.5 Beta3
+  reference: https://huggingface.co/waifu-diffusion/wd-1-5-beta3
+  filename: wd-illusion-fp16.safetensors
+  url: https://huggingface.co/waifu-diffusion/wd-1-5-beta3/resolve/main/wd-illusion-fp16.safetensors
+  size: 2.58GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

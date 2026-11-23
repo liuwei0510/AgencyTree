@@ -1,0 +1,44 @@
+id: remote.model.18e4b844b5d6bf4b8a08
+kind: comfyui_model
+title: CiaraRowles/TemporalNet2
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: CiaraRowles/TemporalNet2
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: temporalnetversion2.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SD1.5
+    filename: temporalnetversion2.safetensors
+    download_locator: https://huggingface.co/CiaraRowles/TemporalNet2/resolve/main/temporalnetversion2.safetensors
+code_usable: true
+status: available
+metadata:
+  name: CiaraRowles/TemporalNet2
+  type: controlnet
+  base: SD1.5
+  save_path: controlnet/SD1.5
+  description: TemporalNet was a ControlNet model designed to enhance the temporal
+    consistency of generated outputs
+  reference: https://huggingface.co/CiaraRowles/TemporalNet2
+  filename: temporalnetversion2.safetensors
+  url: https://huggingface.co/CiaraRowles/TemporalNet2/resolve/main/temporalnetversion2.safetensors
+  size: 5.71GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

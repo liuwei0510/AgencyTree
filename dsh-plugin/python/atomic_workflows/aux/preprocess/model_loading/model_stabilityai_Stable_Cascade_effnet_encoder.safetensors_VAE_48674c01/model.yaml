@@ -1,0 +1,47 @@
+id: remote:model:48674c01f59a7572a779
+kind: comfyui_model
+title: 'stabilityai/Stable Cascade: effnet_encoder.safetensors (VAE)'
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: 'stabilityai/Stable Cascade: effnet_encoder.safetensors (VAE)'
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: effnet_encoder.safetensors
+  - name: base
+    value: Stable Cascade
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae/Stable-Cascade
+    filename: effnet_encoder.safetensors
+    download_locator: https://huggingface.co/stabilityai/stable-cascade/resolve/main/effnet_encoder.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: 'stabilityai/Stable Cascade: effnet_encoder.safetensors (VAE)'
+  type: VAE
+  base: Stable Cascade
+  save_path: vae/Stable-Cascade
+  description: 'Stable Cascade: effnet_encoder.
+
+    VAE encoder for stage_c latent.'
+  reference: https://huggingface.co/stabilityai/stable-cascade
+  filename: effnet_encoder.safetensors
+  url: https://huggingface.co/stabilityai/stable-cascade/resolve/main/effnet_encoder.safetensors
+  size: 81.5MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/encode_decode/model_stabilityai_Stable_Cascade_effnet_encoder.safetensors_VAE_48674c01/model.yaml
+validation_errors: []

@@ -1,0 +1,67 @@
+id: remote:template:api_fishaudio_drama3_directed
+kind: comfyui_template
+title: 'Fish Audio Drama 3: Directed Performance'
+tree_branch:
+- core
+- editing
+- audio_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Fish Audio Drama 3: Directed Performance'
+  input_types: {}
+  output_types: {}
+  capability: 'Direct a single Fish Audio Drama 3 performance from the text: shift
+    the delivery mid-line with [plain-language directions] and wrap words with <whisper>...</whisper>
+    tags.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_drama3_directed.json
+  sha256: 8e7cb4e200d65a51ccd624a13ba911786ba7553efb6750b234a1a03d3476064d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_fishaudio_drama3_directed
+  title: 'Fish Audio Drama 3: Directed Performance'
+  description: 'Direct a single Fish Audio Drama 3 performance from the text: shift
+    the delivery mid-line with [plain-language directions] and wrap words with <whisper>...</whisper>
+    tags.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - TTS
+  models:
+  - Fish Audio
+  logos:
+  - provider: Fish Audio
+  date: '2026-10-13'
+  openSource: false
+  size: 0
+  usage: 149
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadAudio
+      file: fish_audio_example.mp3
+      mediaType: audio
+  minComfyUIVersion: 0.39.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_drama3_directed.json
+  sha256: 8e7cb4e200d65a51ccd624a13ba911786ba7553efb6750b234a1a03d3476064d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/audio_editing/comfyui_api_fishaudio_drama3_directed_c5468231/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

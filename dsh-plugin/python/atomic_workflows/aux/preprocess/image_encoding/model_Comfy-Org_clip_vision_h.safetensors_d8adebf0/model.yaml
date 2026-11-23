@@ -1,0 +1,44 @@
+id: remote:model:d8adebf0b308d7799dbd
+kind: comfyui_model
+title: Comfy-Org/clip_vision_h.safetensors
+tree_branch:
+- aux
+- preprocess
+- image_encoding
+six_tuple:
+  name: Comfy-Org/clip_vision_h.safetensors
+  input_types:
+  - image
+  output_types:
+  - image embedding
+  capability: aux/preprocess/image_encoding
+  parameters:
+  - name: filename
+    value: clip_vision_h.safetensors
+  - name: base
+    value: clip_vision_h
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip_vision
+    save_path: clip_vision
+    filename: clip_vision_h.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy-Org/clip_vision_h.safetensors
+  type: clip_vision
+  base: clip_vision_h
+  save_path: clip_vision
+  description: clip_vision_h model for Wan2.1
+  reference: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged
+  filename: clip_vision_h.safetensors
+  url: https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors
+  size: 1.26GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

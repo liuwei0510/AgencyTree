@@ -1,0 +1,73 @@
+id: remote.template.api_heygen_avatar_video
+kind: comfyui_template
+title: 'HeyGen: Avatar Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HeyGen: Avatar Video'
+  input_types: {}
+  output_types:
+    video: video_path
+    transcript: text
+  capability: Create an AI avatar video from a text prompt or uploaded image using
+    HeyGen's avatar generation technology, outputting a single talking-head video.
+    You can save the avatar ID for reuse in future videos. Ideal for personalized
+    digital presenters, social media content creation, and multilingual video production
+    without recording talent.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_avatar_video.json
+  sha256: ef32cb37495a9e88276c546b57141278e3e34b35591e1cb360b8fd89ec3fe1d0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_heygen_avatar_video
+  title: 'HeyGen: Avatar Video'
+  description: Create an AI avatar video from a text prompt or uploaded image using
+    HeyGen's avatar generation technology, outputting a single talking-head video.
+    You can save the avatar ID for reuse in future videos. Ideal for personalized
+    digital presenters, social media content creation, and multilingual video production
+    without recording talent.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Lip Sync
+  - Video
+  models:
+  - HeyGen
+  logos:
+  - provider: HeyGen
+  date: '2026-07-21'
+  openSource: false
+  size: 0
+  usage: 11
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 21
+      nodeType: SaveVideo
+      file: api_heygen_avatar_video.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_heygen_avatar_video.mp4
+  minComfyUIVersion: 0.28.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text

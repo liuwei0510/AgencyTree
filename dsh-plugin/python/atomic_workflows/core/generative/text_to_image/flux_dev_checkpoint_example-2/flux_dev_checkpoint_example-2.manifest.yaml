@@ -1,0 +1,42 @@
+id: core.generative.text_to_image.flux_dev_checkpoint_example_2
+title: flux_dev_checkpoint_example-2
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/flux_dev_checkpoint_example-2.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: flux_dev_checkpoint_example-2.workflow.json
+inject:
+  prompt:
+    node_id: '41:45'
+    input_key: text
+  seed:
+    node_id: '41:31'
+    input_key: seed
+  width:
+    node_id: '41:27'
+    input_key: width
+  height:
+    node_id: '41:27'
+    input_key: height
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: seed
+  type: int
+  required: false
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

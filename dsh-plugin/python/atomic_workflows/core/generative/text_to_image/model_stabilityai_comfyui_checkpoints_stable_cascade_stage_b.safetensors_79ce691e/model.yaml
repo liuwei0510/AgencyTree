@@ -1,0 +1,45 @@
+id: remote:model:79ce691e609a12c2621e
+kind: comfyui_model
+title: stabilityai/comfyui_checkpoints/stable_cascade_stage_b.safetensors
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: stabilityai/comfyui_checkpoints/stable_cascade_stage_b.safetensors
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: stable_cascade_stage_b.safetensors
+  - name: base
+    value: Stable Cascade
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/Stable-Cascade
+    filename: stable_cascade_stage_b.safetensors
+    download_locator: https://huggingface.co/stabilityai/stable-cascade/resolve/main/comfyui_checkpoints/stable_cascade_stage_b.safetensors
+code_usable: true
+status: available
+metadata:
+  name: stabilityai/comfyui_checkpoints/stable_cascade_stage_b.safetensors
+  type: checkpoint
+  base: Stable Cascade
+  save_path: checkpoints/Stable-Cascade
+  description: Stable Cascade stage_b checkpoints
+  reference: https://huggingface.co/stabilityai/stable-cascade
+  filename: stable_cascade_stage_b.safetensors
+  url: https://huggingface.co/stabilityai/stable-cascade/resolve/main/comfyui_checkpoints/stable_cascade_stage_b.safetensors
+  size: 4.55GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_image/model_stabilityai_comfyui_checkpoints_stable_cascade_stage_b.safetensors_79ce691e/model.yaml
+validation_errors: []

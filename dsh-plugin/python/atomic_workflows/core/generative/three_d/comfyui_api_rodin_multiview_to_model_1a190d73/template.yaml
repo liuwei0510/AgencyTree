@@ -1,0 +1,62 @@
+id: remote.template.api_rodin_multiview_to_model
+kind: comfyui_template
+title: 'Rodin: Multiview to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Rodin: Multiview to Model'
+  input_types:
+  - image
+  - image
+  - image
+  output_types: []
+  capability: Sculpt comprehensive 3D models using Rodin's multi-angle reconstruction.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_rodin_multiview_to_model.json
+  sha256: 1fd3644de3c97b0946d41e3afd1b2ec3362282e23a7f2154e3194eac108ba0ab
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_rodin_multiview_to_model
+  title: 'Rodin: Multiview to Model'
+  description: Sculpt comprehensive 3D models using Rodin's multi-angle reconstruction.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to 3D
+  - 3D
+  - API
+  models:
+  - Rodin
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 13
+  io:
+    inputs:
+    - nodeId: 40
+      nodeType: LoadImage
+      file: api_rodin_multiview_to_model_left.jpg
+      mediaType: image
+    - nodeId: 41
+      nodeType: LoadImage
+      file: api_rodin_multiview_to_model_front.jpg
+      mediaType: image
+    - nodeId: 56
+      nodeType: LoadImage
+      file: api_rodin_multiview_to_model_back.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.23.0

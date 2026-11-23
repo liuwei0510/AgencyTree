@@ -1,0 +1,67 @@
+id: core.generative.text_to_video.text_to_video_wan_4
+title: text_to_video_wan-4
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/text_to_video_wan-4.json).
+tags:
+- text-to-video
+- t2v
+- generative
+workflow_file: text_to_video_wan-4.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+  seed:
+    node_id: '3'
+    input_key: seed
+  width:
+    node_id: '40'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '40'
+    input_key: height
+    widget_index: null
+  length:
+    node_id: '40'
+    input_key: length
+    widget_index: null
+  fps:
+    node_id: '49'
+    input_key: fps
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: seed
+  type: int
+  required: false
+- name: width
+  type: number
+  required: false
+  default: 832
+- name: height
+  type: number
+  required: false
+  default: 480
+- name: length
+  type: number
+  required: false
+  default: 33
+- name: fps
+  type: number
+  required: false
+  default: 16
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

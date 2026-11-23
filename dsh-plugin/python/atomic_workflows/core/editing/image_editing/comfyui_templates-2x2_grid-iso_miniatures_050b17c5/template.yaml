@@ -1,0 +1,85 @@
+id: remote:template:templates-2x2_grid-iso_miniatures
+kind: comfyui_template
+title: Isometric Miniatures from a Selfie
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Isometric Miniatures from a Selfie
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a character or selfie and prompt the outfit/scene. Generate a
+    2x2 grid of isometric figurines of your character.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-2x2_grid-iso_miniatures.json
+  sha256: 2e6692fad98a3e22c8c96eb4ca289b54fc53c1ee70d8c68b850d598979407b7d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-2x2_grid-iso_miniatures
+  title: Isometric Miniatures from a Selfie
+  description: Upload a character or selfie and prompt the outfit/scene. Generate
+    a 2x2 grid of isometric figurines of your character.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Portrait
+  models:
+  - Nano Banana Pro
+  - Gemini3 Pro Image Preview
+  - Google
+  date: '2026-01-19'
+  openSource: false
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 4
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: character_in_red_jacket.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-2x2_grid-iso_miniatures.mp4
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-2x2_grid-iso_miniatures.json
+  sha256: 2e6692fad98a3e22c8c96eb4ca289b54fc53c1ee70d8c68b850d598979407b7d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_templates-2x2_grid-iso_miniatures_050b17c5/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,92 @@
+id: remote:template:api_seedance2_0_r2v_4k
+kind: comfyui_template
+title: 'Seedance2.0 4K: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance2.0 4K: Reference to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate a reference-based video from a single input image using Seedance
+    2.0, producing native 4K output with 10-bit color depth and clean fine detail
+    retention. The workflow takes 1 image and outputs 1 video. Ideal for high-resolution
+    motion graphics, cinematic VFX shots requiring downstream grading, and professional
+    video production where 4K finishing is essential.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_0_r2v_4k.json
+  sha256: f4293475adcba88aca9e2f64780b48ab503db47d2cedbbbd84feea92ee8e43e3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_0_r2v_4k
+  title: 'Seedance2.0 4K: Reference to Video'
+  description: Generate a reference-based video from a single input image using Seedance
+    2.0, producing native 4K output with 10-bit color depth and clean fine detail
+    retention. The workflow takes 1 image and outputs 1 video. Ideal for high-resolution
+    motion graphics, cinematic VFX shots requiring downstream grading, and professional
+    video production where 4K finishing is essential.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  - Reference to Video
+  models:
+  - Seedance 2.0
+  logos:
+  - provider: ByteDance
+  date: '2026-06-30'
+  openSource: false
+  size: 0
+  usage: 70
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: green_rider.png
+      mediaType: image
+    outputs:
+    - nodeId: 4
+      nodeType: SaveVideo
+      file: api_seedance2_0_r2v_4k.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_seedance2_0_r2v_4k.mp4
+  minComfyUIVersion: 0.26.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_0_r2v_4k.json
+  sha256: f4293475adcba88aca9e2f64780b48ab503db47d2cedbbbd84feea92ee8e43e3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

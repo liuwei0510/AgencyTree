@@ -1,0 +1,46 @@
+id: remote:model:a2cece36fc4cbbfd28b1
+kind: comfyui_model
+title: scrfd_10g_bnkps.onnx
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: scrfd_10g_bnkps.onnx
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: scrfd_10g_bnkps.onnx
+  - name: base
+    value: inswapper
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models/antelopev2
+    filename: scrfd_10g_bnkps.onnx
+    download_locator: https://huggingface.co/MonsterMMORPG/tools/resolve/main/scrfd_10g_bnkps.onnx
+code_usable: true
+status: available
+metadata:
+  name: scrfd_10g_bnkps.onnx
+  type: insightface
+  base: inswapper
+  save_path: insightface/models/antelopev2
+  description: Antelopev2 scrfd_10g_bnkps.onnx model for InstantId. (InstantId needs
+    all Antelopev2 models)
+  reference: https://github.com/cubiq/ComfyUI_InstantID#installation
+  filename: scrfd_10g_bnkps.onnx
+  url: https://huggingface.co/MonsterMMORPG/tools/resolve/main/scrfd_10g_bnkps.onnx
+  size: 16.9MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/face_analysis/model_scrfd_10g_bnkps.onnx_a2cece36/model.yaml
+validation_errors: []

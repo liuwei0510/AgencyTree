@@ -1,0 +1,55 @@
+id: remote.template.utility_face_detection_mediapipe
+kind: comfyui_template
+title: 'Face Detection: MediaPipe'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Face Detection: MediaPipe'
+  input_types:
+  - image
+  output_types: []
+  capability: Input an image and detect up to 6 facial landmarks per face, enabling
+    ultrafast multi-face detection
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_face_detection_mediapipe.json
+  sha256: 65350f2e12a9dc1ed09c27e943e12bf5afbd5c7b3565b5c8f68536c39a7b55a3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_face_detection_mediapipe
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/face-detection/mediapipe
+  title: 'Face Detection: MediaPipe'
+  description: Input an image and detect up to 6 facial landmarks per face, enabling
+    ultrafast multi-face detection
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Element Segmentation
+  models:
+  - Mediapipe
+  date: '2026-05-24'
+  openSource: true
+  size: 0
+  usage: 10
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: soft_neon_girl.png
+      mediaType: image
+  includeOnDistributions:
+  - cloud
+  minComfyUIVersion: 0.23.0

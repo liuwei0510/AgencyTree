@@ -1,0 +1,63 @@
+id: remote:template:api_runway_text_to_image
+kind: comfyui_template
+title: 'Runway: Text to Image'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Runway: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using Runway's AI model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_runway_text_to_image.json
+  sha256: 40eebb7188982fa2ca1e7af850c23f4eeabd52e89f775b44e2380bf67007d939
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_runway_text_to_image
+  title: 'Runway: Text to Image'
+  description: Generate high-quality images from text prompts using Runway's AI model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Image
+  - API
+  models:
+  - Runway
+  date: '2025-03-01'
+  openSource: false
+  size: 0
+  usage: 21
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: example.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.37
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_runway_text_to_image.json
+  sha256: 40eebb7188982fa2ca1e7af850c23f4eeabd52e89f775b44e2380bf67007d939
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_api_runway_text_to_image_6f82f922/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

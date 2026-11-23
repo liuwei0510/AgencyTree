@@ -1,0 +1,45 @@
+id: remote:model:e01b04456b90431cb2d2
+kind: comfyui_model
+title: city96/t5-v1_1-xxl-encoder-Q3_K_S.gguf
+tree_branch:
+- aux
+- preprocess
+- text_encoding
+six_tuple:
+  name: city96/t5-v1_1-xxl-encoder-Q3_K_S.gguf
+  input_types:
+  - text
+  output_types:
+  - conditioning
+  capability: aux/preprocess/text_encoding
+  parameters:
+  - name: filename
+    value: t5-v1_1-xxl-encoder-Q3_K_S.gguf
+  - name: base
+    value: t5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders/t5
+    filename: t5-v1_1-xxl-encoder-Q3_K_S.gguf
+    download_locator: https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q3_K_S.gguf
+code_usable: true
+status: available
+metadata:
+  name: city96/t5-v1_1-xxl-encoder-Q3_K_S.gguf
+  type: clip
+  base: t5
+  save_path: text_encoders/t5
+  description: t5xxl Text Encoder GGUF model. (Q3_K_S quantized)
+  reference: https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf
+  filename: t5-v1_1-xxl-encoder-Q3_K_S.gguf
+  url: https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q3_K_S.gguf
+  size: 2.1GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/preprocess/text_encoding/model_city96_t5-v1_1-xxl-encoder-Q3_K_S.gguf_e01b0445/model.yaml
+validation_errors: []

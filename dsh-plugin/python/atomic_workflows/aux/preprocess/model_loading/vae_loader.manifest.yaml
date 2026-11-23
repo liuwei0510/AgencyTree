@@ -1,0 +1,22 @@
+id: aux.preprocess.model_loading.vae_loader
+title: VAE Loader (aux)
+modality:
+- vae
+description: Load standalone VAE for encode/decode stages in a split pipeline.
+tags:
+- preprocess
+- vae
+workflow_file: vae_loader.workflow.json
+inject:
+  model_file:
+    node_id: '1'
+    input_key: vae_name
+    widget_index: null
+inputs:
+- name: model_file
+  type: string
+  required: true
+  default: null
+outputs:
+- name: vae_handle
+  type: generic

@@ -1,0 +1,80 @@
+id: remote.template.templates-6-key-frames
+kind: comfyui_template
+title: Multi-Keyframe Video Stitching
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Multi-Keyframe Video Stitching
+  input_types:
+  - image
+  - image
+  - image
+  - image
+  - image
+  - image
+  output_types: []
+  capability: Creates a smooth video using 6 key frames.It auto fills in the motion
+    between frames and stitches the segments together seamlessly.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-6-key-frames.json
+  sha256: 6eb0aa0a5b1748db27e166c723055685799d858ce1bc008ec85962c6240ec376
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-6-key-frames
+  title: Multi-Keyframe Video Stitching
+  mediaType: image
+  mediaSubtype: webp
+  description: Creates a smooth video using 6 key frames.It auto fills in the motion
+    between frames and stitches the segments together seamlessly.
+  tags:
+  - FLF2V
+  - Image to Video
+  models:
+  - Wan2.2
+  date: '2025-12-03'
+  searchRank: 8
+  size: 0
+  usage: 57
+  io:
+    inputs:
+    - nodeId: 62
+      nodeType: LoadImage
+      file: 6-key-frames-1.jpg
+      mediaType: image
+    - nodeId: 122
+      nodeType: LoadImage
+      file: 6-key-frames-2.png
+      mediaType: image
+    - nodeId: 124
+      nodeType: LoadImage
+      file: 6-key-frames-3.png
+      mediaType: image
+    - nodeId: 126
+      nodeType: LoadImage
+      file: 6-key-frames-4.png
+      mediaType: image
+    - nodeId: 128
+      nodeType: LoadImage
+      file: 6-key-frames-5.png
+      mediaType: image
+    - nodeId: 130
+      nodeType: LoadImage
+      file: 6-key-frames-6.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/templates-6-key-frames.mp4
+  openSource: true
+  minComfyUIVersion: 0.8.0

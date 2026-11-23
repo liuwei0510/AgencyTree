@@ -1,0 +1,43 @@
+id: remote.model.896ec37657c8a5ae9cea
+kind: comfyui_model
+title: animatediff/v3_sd15_sparsectrl_scribble.ckpt
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: animatediff/v3_sd15_sparsectrl_scribble.ckpt
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: v3_sd15_sparsectrl_scribble.ckpt
+  - name: base
+    value: SD1.x
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SD1.5/animatediff
+    filename: v3_sd15_sparsectrl_scribble.ckpt
+    download_locator: https://huggingface.co/guoyww/animatediff/resolve/main/v3_sd15_sparsectrl_scribble.ckpt
+code_usable: true
+status: deprecated
+metadata:
+  name: animatediff/v3_sd15_sparsectrl_scribble.ckpt
+  type: controlnet
+  base: SD1.x
+  save_path: controlnet/SD1.5/animatediff
+  description: AnimateDiff SparseCtrl Scribble ControlNet model
+  reference: https://huggingface.co/guoyww/animatediff
+  filename: v3_sd15_sparsectrl_scribble.ckpt
+  url: https://huggingface.co/guoyww/animatediff/resolve/main/v3_sd15_sparsectrl_scribble.ckpt
+  size: 1.99GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

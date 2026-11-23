@@ -1,0 +1,43 @@
+id: remote.model.8b7db129204fe53feed6
+kind: comfyui_model
+title: CLIPVision model (Kwai-Kolors/Kolors-IP-Adapter-Plus/clip-vit-large)
+tree_branch:
+- aux
+- preprocess
+- image_encoding
+six_tuple:
+  name: CLIPVision model (Kwai-Kolors/Kolors-IP-Adapter-Plus/clip-vit-large)
+  input_types:
+  - image
+  output_types:
+  - image embedding
+  capability: aux/preprocess/image_encoding
+  parameters:
+  - name: filename
+    value: clip-vit-large-patch14-336.bin
+  - name: base
+    value: ViT-L
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip_vision
+    save_path: clip_vision
+    filename: clip-vit-large-patch14-336.bin
+    download_locator: https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus/resolve/main/image_encoder/pytorch_model.bin
+code_usable: true
+status: available
+metadata:
+  name: CLIPVision model (Kwai-Kolors/Kolors-IP-Adapter-Plus/clip-vit-large)
+  type: clip_vision
+  base: ViT-L
+  save_path: clip_vision
+  description: CLIPVision model (needed for IP-Adapter)
+  reference: https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus
+  filename: clip-vit-large-patch14-336.bin
+  url: https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus/resolve/main/image_encoder/pytorch_model.bin
+  size: 1.71GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

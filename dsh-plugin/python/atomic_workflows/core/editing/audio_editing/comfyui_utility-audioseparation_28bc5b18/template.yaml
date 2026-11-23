@@ -1,0 +1,60 @@
+id: remote:template:utility-audioseparation
+kind: comfyui_template
+title: Audio Separation
+tree_branch:
+- core
+- editing
+- audio_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Audio Separation
+  input_types: {}
+  output_types: {}
+  capability: Input Music → Separate Vocals / Bass / Drums / Other
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-audioseparation.json
+  sha256: 2543e51d6f052cb1bf4ad68acd7672c6d1c3fa8b1394d7b47ce971a2ecfc58fd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-audioseparation
+  title: Audio Separation
+  description: Input Music → Separate Vocals / Bass / Drums / Other
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Audio
+  - Audio Editing
+  date: '2026-01-12'
+  openSource: true
+  requiresCustomNodes:
+  - comfyui-videohelpersuite
+  - comfyui_controlnet_aux
+  usage: 22
+  io:
+    inputs:
+    - nodeId: 9
+      nodeType: LoadAudio
+      file: utility-audioseparation-audio-input.mp3
+      mediaType: audio
+  username: ComfyUI
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-audioseparation.json
+  sha256: 2543e51d6f052cb1bf4ad68acd7672c6d1c3fa8b1394d7b47ce971a2ecfc58fd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/audio_editing/comfyui_utility-audioseparation_28bc5b18/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

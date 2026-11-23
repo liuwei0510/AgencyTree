@@ -1,0 +1,68 @@
+id: remote.template.video_kandinsky5_i2v
+kind: comfyui_template
+title: Kandinsky 5.0 Video Lite Image to Video
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Kandinsky 5.0 Video Lite Image to Video
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: A lightweight 2B model that generates videos from English and Russian
+    prompts with high visual quality.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_kandinsky5_i2v.json
+  sha256: a9b6676b1dcb4ea836f02f8b77b252919f74c795eb488c322c77e59a969c665a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_kandinsky5_i2v
+  title: Kandinsky 5.0 Video Lite Image to Video
+  description: A lightweight 2B model that generates videos from English and Russian
+    prompts with high visual quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  models:
+  - Kandinsky
+  date: '2025-12-09'
+  size: 14710262989
+  usage: 14
+  searchRank: 0
+  openSource: true
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: crystal_flower.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

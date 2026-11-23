@@ -1,0 +1,46 @@
+id: remote:model:4a9175f12d750fac716c
+kind: comfyui_model
+title: person_yolov8m (segm)
+tree_branch:
+- core
+- perception
+- object_detection
+six_tuple:
+  name: person_yolov8m (segm)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/object_detection
+  parameters:
+  - name: filename
+    value: person_yolov8m-seg.pt
+  - name: base
+    value: Ultralytics
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: Ultralytics
+    save_path: ultralytics/segm
+    filename: person_yolov8m-seg.pt
+    download_locator: https://huggingface.co/Bingsu/adetailer/resolve/main/person_yolov8m-seg.pt
+code_usable: true
+status: available
+metadata:
+  name: person_yolov8m (segm)
+  type: Ultralytics
+  base: Ultralytics
+  save_path: ultralytics/segm
+  description: These are the available models in the UltralyticsDetectorProvider of
+    Impact Pack.
+  reference: https://huggingface.co/Bingsu/adetailer/tree/main
+  filename: person_yolov8m-seg.pt
+  url: https://huggingface.co/Bingsu/adetailer/resolve/main/person_yolov8m-seg.pt
+  size: 54.8MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/object_detection/model_person_yolov8m_segm_4a9175f1/model.yaml
+validation_errors: []

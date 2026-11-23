@@ -1,0 +1,114 @@
+id: remote:template:api_higgsfield_genjutsu_motion_transfer
+kind: comfyui_template
+title: 'Higgsfield Genjutsu: Motion Transfer'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Higgsfield Genjutsu: Motion Transfer'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    video: video_path
+  capability: 'Recast an existing video with Higgsfield Genjutsu: the source clip
+    keeps its motion, camera movement, timing and audio, while the cast, location
+    and style are rebuilt from 1 to 8 reference images. Describe which reference replaces
+    what in the optional prompt. Output length follows the source clip. Ideal for
+    restyling footage, swapping the cast of a shot, and building scenes a shoot never
+    covered.'
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_higgsfield_genjutsu_motion_transfer.json
+  sha256: dcb205c5c43c6b2f6bc543f75add925c59a8c56f314fb2c83cd774a3b1496cae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_higgsfield_genjutsu_motion_transfer
+  title: 'Higgsfield Genjutsu: Motion Transfer'
+  description: 'Recast an existing video with Higgsfield Genjutsu: the source clip
+    keeps its motion, camera movement, timing and audio, while the cast, location
+    and style are rebuilt from 1 to 8 reference images. Describe which reference replaces
+    what in the optional prompt. Output length follows the source clip. Ideal for
+    restyling footage, swapping the cast of a shot, and building scenes a shoot never
+    covered.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Character Replacement
+  - Motion Control
+  - Video
+  - Video Edit
+  models:
+  - Genjutsu 1.0
+  logos:
+  - provider: Higgsfield
+  date: '2026-10-12'
+  openSource: false
+  size: 0
+  usage: 283
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 13
+      nodeType: LoadVideo
+      file: rooftop_dancer.mp4
+      mediaType: video
+    - nodeId: 14
+      nodeType: LoadImage
+      file: snow_queen_ref.png
+      mediaType: image
+    - nodeId: 15
+      nodeType: LoadImage
+      file: ice_palace_ref.png
+      mediaType: image
+    outputs:
+    - nodeId: 10
+      nodeType: SaveVideo
+      file: api_higgsfield_genjutsu_motion_transfer.mp4
+      mediaType: video
+  minComfyUIVersion: 0.39.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_higgsfield_genjutsu_motion_transfer.json
+  sha256: dcb205c5c43c6b2f6bc543f75add925c59a8c56f314fb2c83cd774a3b1496cae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '15'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

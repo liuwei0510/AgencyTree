@@ -1,0 +1,66 @@
+id: remote.template.api_openrouter_mai_image_26_image_edit
+kind: comfyui_template
+title: 'MAI Image 2.6: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MAI Image 2.6: Image Edit'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Edit images with MAI Image 2.6, Microsoft's flagship model for image
+    editing, combining two reference images into a single refined output. Ideal for
+    multi-reference compositing, product visual restyling, and text-in-image design
+    work.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_mai_image_26_image_edit.json
+  sha256: fb63ad056529a7d7b7d9b4931b449cf4e95ac89564e81af8693d6d3ab7404c2f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_mai_image_26_image_edit
+  title: 'MAI Image 2.6: Image Edit'
+  description: Edit images with MAI Image 2.6, Microsoft's flagship model for image
+    editing, combining two reference images into a single refined output. Ideal for
+    multi-reference compositing, product visual restyling, and text-in-image design
+    work.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Mai Image 2.6
+  logos:
+  - provider: OpenRouter
+  minComfyUIVersion: 0.35.1
+  date: '2026-09-10'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadImage
+      file: product_bottle_black.png
+      mediaType: image
+    - nodeId: 14
+      nodeType: LoadImage
+      file: ref_product_earbuds_blue.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_openrouter_mai_image_26_image_edit.png

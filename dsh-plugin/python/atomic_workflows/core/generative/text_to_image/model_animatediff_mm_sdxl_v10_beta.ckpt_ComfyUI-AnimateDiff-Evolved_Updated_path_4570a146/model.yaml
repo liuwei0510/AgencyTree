@@ -1,0 +1,46 @@
+id: remote:model:4570a146260795a7f37e
+kind: comfyui_model
+title: animatediff/mm_sdxl_v10_beta.ckpt (ComfyUI-AnimateDiff-Evolved) (Updated path)
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: animatediff/mm_sdxl_v10_beta.ckpt (ComfyUI-AnimateDiff-Evolved) (Updated path)
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: mm_sdxl_v10_beta.ckpt
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: animatediff
+    save_path: animatediff_models
+    filename: mm_sdxl_v10_beta.ckpt
+    download_locator: https://huggingface.co/guoyww/animatediff/resolve/main/mm_sdxl_v10_beta.ckpt
+code_usable: true
+status: deprecated
+metadata:
+  name: animatediff/mm_sdxl_v10_beta.ckpt (ComfyUI-AnimateDiff-Evolved) (Updated path)
+  type: animatediff
+  base: SDXL
+  save_path: animatediff_models
+  description: Pressing 'install' directly downloads the model from the Kosinkadink/ComfyUI-AnimateDiff-Evolved
+    extension node.
+  reference: https://huggingface.co/guoyww/animatediff
+  filename: mm_sdxl_v10_beta.ckpt
+  url: https://huggingface.co/guoyww/animatediff/resolve/main/mm_sdxl_v10_beta.ckpt
+  size: 950.1MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_video/model_animatediff_mm_sdxl_v10_beta.ckpt_ComfyUI-AnimateDiff-Evolved_Updated_path_4570a146/model.yaml
+validation_errors: []

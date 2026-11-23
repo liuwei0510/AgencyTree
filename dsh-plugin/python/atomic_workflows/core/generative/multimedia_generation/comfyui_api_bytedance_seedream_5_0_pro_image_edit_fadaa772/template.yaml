@@ -1,0 +1,88 @@
+id: remote:template:api_bytedance_seedream_5_0_pro_image_edit
+kind: comfyui_template
+title: 'Seedream 5.0 Pro: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedream 5.0 Pro: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit images with precision using Seedream 5.0 Pro, targeting specific
+    regions while preserving lighting, depth, and texture. The workflow takes 1 input
+    image and produces 1 output image. Ideal for product photography edits, portrait
+    consistency adjustments, and creating structured layouts with multilingual text.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_pro_image_edit.json
+  sha256: 6e67e05bcbb2346925529fbfc8d27dcb3618df668224ef8afb3dfc97c57aa613
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedream_5_0_pro_image_edit
+  title: 'Seedream 5.0 Pro: Image Edit'
+  description: Edit images with precision using Seedream 5.0 Pro, targeting specific
+    regions while preserving lighting, depth, and texture. The workflow takes 1 input
+    image and produces 1 output image. Ideal for product photography edits, portrait
+    consistency adjustments, and creating structured layouts with multilingual text.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Seedream 5.0 Pro
+  logos:
+  - provider: ByteDance
+  date: '2026-07-08'
+  openSource: false
+  size: 0
+  usage: 2937
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: interior_college.png
+      mediaType: image
+  thumbnail:
+  - input/interior_college.png
+  - output/Seedream5.0_Pro_image_edit.png
+  minComfyUIVersion: 0.31.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_pro_image_edit.json
+  sha256: 6e67e05bcbb2346925529fbfc8d27dcb3618df668224ef8afb3dfc97c57aa613
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_bytedance_seedream_5_0_pro_image_edit_fadaa772/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

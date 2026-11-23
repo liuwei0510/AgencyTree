@@ -1,0 +1,59 @@
+id: remote:template:audio_ace_step1_5_xl_turbo
+kind: comfyui_template
+title: 'ACE-Step 1.5XL Turbo: Text to Music'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'ACE-Step 1.5XL Turbo: Text to Music'
+  input_types: {}
+  output_types: {}
+  capability: Generate high-quality music from text prompts using the distilled 4B
+    ACE-Step model. Produces commercial-ready audio in just 8 inference steps without
+    CFG.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step1_5_xl_turbo.json
+  sha256: 0d56d9efb7975e5c4a6322cbaa250c2e9cf26bf9caab4c700fb1269822904eff
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_ace_step1_5_xl_turbo
+  title: 'ACE-Step 1.5XL Turbo: Text to Music'
+  description: Generate high-quality music from text prompts using the distilled 4B
+    ACE-Step model. Produces commercial-ready audio in just 8 inference steps without
+    CFG.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Music
+  - Text to Music
+  models:
+  - ACE-Step
+  date: '2026-04-10'
+  openSource: true
+  size: 19864223744
+  usage: 262
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.12.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step1_5_xl_turbo.json
+  sha256: 0d56d9efb7975e5c4a6322cbaa250c2e9cf26bf9caab4c700fb1269822904eff
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_audio/comfyui_audio_ace_step1_5_xl_turbo_36146b8b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

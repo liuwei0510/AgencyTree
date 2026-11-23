@@ -1,0 +1,46 @@
+id: remote:model:2dd2e483b9ed5f74b08c
+kind: comfyui_model
+title: LTX-2 19B IC LoRA - Detailer
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-2 19B IC LoRA - Detailer
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltx-2-19b-ic-lora-detailer.safetensors
+  - name: base
+    value: LTX-2
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/LTX-2
+    filename: ltx-2-19b-ic-lora-detailer.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Detailer/resolve/main/ltx-2-19b-ic-lora-detailer.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2 19B IC LoRA - Detailer
+  type: lora
+  base: LTX-2
+  save_path: loras/LTX-2
+  description: LoRA detailer for LTX-2 19B IC. Improves fine details and sharpness
+    in generated outputs.
+  reference: https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Detailer
+  filename: ltx-2-19b-ic-lora-detailer.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2-19b-IC-LoRA-Detailer/resolve/main/ltx-2-19b-ic-lora-detailer.safetensors
+  size: 2.62GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/conditional/control_conditioning/model_LTX-2_19B_IC_LoRA_-_Detailer_2dd2e483/model.yaml
+validation_errors: []

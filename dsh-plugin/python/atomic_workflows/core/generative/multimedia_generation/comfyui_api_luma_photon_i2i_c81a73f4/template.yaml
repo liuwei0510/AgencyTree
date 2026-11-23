@@ -1,0 +1,52 @@
+id: remote.template.api_luma_photon_i2i
+kind: comfyui_template
+title: 'Luma Photon: Image to Image'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma Photon: Image to Image'
+  input_types:
+  - image
+  output_types: []
+  capability: Guide image generation using a combination of images and prompt.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_photon_i2i.json
+  sha256: cf004eb5674d5b0fd0bf0393697aa65dfd3a6a3ba783ad9be37035eb85c9bf6c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_photon_i2i
+  title: 'Luma Photon: Image to Image'
+  description: Guide image generation using a combination of images and prompt.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - API
+  - Image Edit
+  models:
+  - Luma
+  date: '2025-03-01'
+  openSource: false
+  size: 0
+  usage: 14
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: api_luma_photon_i2i_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.32

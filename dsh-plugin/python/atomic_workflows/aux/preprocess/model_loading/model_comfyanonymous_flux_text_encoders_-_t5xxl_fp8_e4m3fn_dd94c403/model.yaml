@@ -1,0 +1,43 @@
+id: remote.model.dd94c403ad603913678c
+kind: comfyui_model
+title: comfyanonymous/flux_text_encoders - t5xxl (fp8_e4m3fn)
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: comfyanonymous/flux_text_encoders - t5xxl (fp8_e4m3fn)
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/preprocess/model_loading
+  parameters:
+  - name: filename
+    value: t5xxl_fp8_e4m3fn.safetensors
+  - name: base
+    value: t5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders/t5
+    filename: t5xxl_fp8_e4m3fn.safetensors
+    download_locator: https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: comfyanonymous/flux_text_encoders - t5xxl (fp8_e4m3fn)
+  type: clip
+  base: t5
+  save_path: text_encoders/t5
+  description: Text Encoders for FLUX (fp8_e4m3fn)
+  reference: https://huggingface.co/comfyanonymous/flux_text_encoders
+  filename: t5xxl_fp8_e4m3fn.safetensors
+  url: https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors
+  size: 4.89GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

@@ -1,0 +1,84 @@
+id: remote.template.api_patina_material_i2m
+kind: comfyui_template
+title: 'Patina: Image to Material'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Patina: Image to Material'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    transcript: text
+  capability: Turn a photo of a surface into a seamless, tiling PBR material with
+    Patina. The source image sets the pattern and Patina redraws it as a tileable
+    material, returning basecolor, normal, roughness, metalness and height maps that
+    line up pixel for pixel. Built for brick, stone, wood, plaster, fabric and ceramic
+    tile; a mask can restrict the redraw to part of the image.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_patina_material_i2m.json
+  sha256: fb1b72c9ddc0fd29dfc0978cee9e4605f321fe9d344016abad9516f0fd51cd01
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_patina_material_i2m
+  title: 'Patina: Image to Material'
+  description: Turn a photo of a surface into a seamless, tiling PBR material with
+    Patina. The source image sets the pattern and Patina redraws it as a tileable
+    material, returning basecolor, normal, roughness, metalness and height maps that
+    line up pixel for pixel. Built for brick, stone, wood, plaster, fabric and ceramic
+    tile; a mask can restrict the redraw to part of the image.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - 3D
+  models:
+  - Patina
+  date: '2026-10-27'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 30
+      nodeType: LoadImage
+      file: patina_brick_wall.jpg
+      mediaType: image
+    outputs:
+    - nodeId: 23
+      nodeType: SaveImage
+      file: api_patina_material_i2m.png
+      mediaType: image
+  thumbnail:
+  - output/api_patina_material_i2m.png
+  minComfyUIVersion: 0.43.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '30'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: transcript
+  type: text

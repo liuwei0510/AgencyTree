@@ -1,0 +1,91 @@
+id: remote:template:utility_image_upscale_supir
+kind: comfyui_template
+title: 'Image Restoration: SUPIR'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Restoration: SUPIR'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Restore and enhance images using SUPIR's generative prior and text guidance.
+    Accepts image and optional text prompts for intelligent restoration with high-quality
+    results.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_image_upscale_supir.json
+  sha256: b7cc0080f92965ad6facd15d9593e7a953b4d37389fa337c779454ac85bf32cf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_image_upscale_supir
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/image-upscale
+  title: 'Image Restoration: SUPIR'
+  description: Restore and enhance images using SUPIR's generative prior and text
+    guidance. Accepts image and optional text prompts for intelligent restoration
+    with high-quality results.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  models:
+  - SUPIR
+  date: '2026-04-20'
+  openSource: true
+  includeOnDistributions:
+  - local
+  size: 19112604467
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 92
+      nodeType: LoadImage
+      file: blurry_city_horses.png
+      mediaType: image
+    outputs:
+    - nodeId: 97
+      nodeType: SaveImage
+      file: utility_image_upscale_supir.png
+      mediaType: image
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  thumbnail:
+  - input/blurry_city_horses.png
+  - output/utility_image_upscale_supir.png
+  minComfyUIVersion: 0.20.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_image_upscale_supir.json
+  sha256: b7cc0080f92965ad6facd15d9593e7a953b4d37389fa337c779454ac85bf32cf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '92'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

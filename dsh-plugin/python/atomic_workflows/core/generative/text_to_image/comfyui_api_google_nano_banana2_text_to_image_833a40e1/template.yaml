@@ -1,0 +1,63 @@
+id: remote.template.api_google_nano_banana2_text_to_image
+kind: comfyui_template
+title: 'Nano Banana 2: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Nano Banana 2: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using the Nano Banana 2 model, producing
+    one image output with no file inputs required. Ideal for rapid prototyping, concept
+    art generation, and creative exploration.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_nano_banana2_text_to_image.json
+  sha256: 5f921b55bd52f24f1781a12f9feaf21653485e5e60e07a571700c6d2ca1ffdfa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_nano_banana2_text_to_image
+  title: 'Nano Banana 2: Text to Image'
+  description: Generate images from text prompts using the Nano Banana 2 model, producing
+    one image output with no file inputs required. Ideal for rapid prototyping, concept
+    art generation, and creative exploration.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Nano Banana 2
+  logos:
+  - provider: Google
+  date: '2026-06-16'
+  openSource: false
+  size: 0
+  usage: 152
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: api_google_nano_banana2_text_to_image.png
+      mediaType: image
+  minComfyUIVersion: 0.20.3
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

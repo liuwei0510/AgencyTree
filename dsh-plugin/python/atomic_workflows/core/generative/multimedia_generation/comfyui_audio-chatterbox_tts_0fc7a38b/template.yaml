@@ -1,0 +1,65 @@
+id: remote:template:audio-chatterbox_tts
+kind: comfyui_template
+title: 'Chatter Box: Voice Cloning with TTS'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Chatter Box: Voice Cloning with TTS'
+  input_types: {}
+  output_types: {}
+  capability: Upload a short voice clip and input text to generate new speech in the
+    cloned voice.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio-chatterbox_tts.json
+  sha256: 637a9558e97fee71df16c3b93470821a5c76bbab2aafd30c7083a5b8c6f9a1fb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio-chatterbox_tts
+  title: 'Chatter Box: Voice Cloning with TTS'
+  description: Upload a short voice clip and input text to generate new speech in
+    the cloned voice.
+  mediaType: audio
+  mediaSubtype: mp3
+  date: '2026-01-22'
+  openSource: true
+  models:
+  - Chatter Box
+  size: 0
+  requiresCustomNodes:
+  - comfyui_fill-chatterbox
+  usage: 97
+  searchRank: 0
+  tags:
+  - Audio
+  - Voice Cloning
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadAudio
+      file: chatterbox_input_target_voice.mp3
+      mediaType: audio
+  username: PurzBeats
+  minComfyUIVersion: 0.3.35
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio-chatterbox_tts.json
+  sha256: 637a9558e97fee71df16c3b93470821a5c76bbab2aafd30c7083a5b8c6f9a1fb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/audio_editing/comfyui_audio-chatterbox_tts_0fc7a38b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

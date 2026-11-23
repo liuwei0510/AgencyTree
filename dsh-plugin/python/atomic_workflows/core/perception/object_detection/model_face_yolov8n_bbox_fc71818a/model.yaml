@@ -1,0 +1,46 @@
+id: remote:model:fc71818aef4f6f4398ce
+kind: comfyui_model
+title: face_yolov8n (bbox)
+tree_branch:
+- core
+- perception
+- object_detection
+six_tuple:
+  name: face_yolov8n (bbox)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/object_detection
+  parameters:
+  - name: filename
+    value: face_yolov8n.pt
+  - name: base
+    value: Ultralytics
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: Ultralytics
+    save_path: ultralytics/bbox
+    filename: face_yolov8n.pt
+    download_locator: https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8n.pt
+code_usable: true
+status: available
+metadata:
+  name: face_yolov8n (bbox)
+  type: Ultralytics
+  base: Ultralytics
+  save_path: ultralytics/bbox
+  description: These are the available models in the UltralyticsDetectorProvider of
+    Impact Pack.
+  reference: https://huggingface.co/Bingsu/adetailer/tree/main
+  filename: face_yolov8n.pt
+  url: https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8n.pt
+  size: 6.23MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/object_detection/model_face_yolov8n_bbox_fc71818a/model.yaml
+validation_errors: []

@@ -1,0 +1,107 @@
+id: remote:template:flux_canny_model_example
+kind: comfyui_template
+title: Flux.1 Canny Model
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Canny Model
+  input_types:
+    source_image: image_filenames
+    seed: number
+    negative_prompt: string
+  output_types:
+    images: image_filenames
+  capability: Generate images guided by edge detection using Flux.1 Canny.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: seed
+    type: number
+    required: false
+    default: 1125476660951871
+  - name: negative_prompt
+    type: string
+    required: false
+    default: A vibrant red ladybug rests on a blooming deep purple rose with lush,
+      velvety petals. The background is a soft pink, filled with subtly blurred roses
+      of the same pink shade, creating a dreamy and romantic atmosphere.
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_canny_model_example.json
+  sha256: 981fa9fad6cd11ef05fcfc07a9279a7b7de2be7e0e692319fa32735a33afdd74
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux_canny_model_example
+  title: Flux.1 Canny Model
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images guided by edge detection using Flux.1 Canny.
+  thumbnailVariant: hoverDissolve
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-1-controlnet
+  tags:
+  - ControlNet
+  - Image
+  models:
+  - FLUX.1
+  - FLUX
+  date: '2025-03-01'
+  size: 34177202258
+  usage: 51
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: flux_canny_model_example_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.0.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_canny_model_example.json
+  sha256: 981fa9fad6cd11ef05fcfc07a9279a7b7de2be7e0e692319fa32735a33afdd74
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_flux_canny_model_example_58ed0be8/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: seed
+  type: number
+  required: false
+  default: 1125476660951871
+- name: negative_prompt
+  type: string
+  required: false
+  default: A vibrant red ladybug rests on a blooming deep purple rose with lush, velvety
+    petals. The background is a soft pink, filled with subtly blurred roses of the
+    same pink shade, creating a dreamy and romantic atmosphere.
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+  negative_prompt:
+    node_id: '23'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

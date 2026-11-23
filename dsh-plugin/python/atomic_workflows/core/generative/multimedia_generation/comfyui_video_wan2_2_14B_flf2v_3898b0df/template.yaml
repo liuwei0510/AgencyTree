@@ -1,0 +1,57 @@
+id: remote.template.video_wan2_2_14B_flf2v
+kind: comfyui_template
+title: Wan 2.2 14B First-Last Frame to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan 2.2 14B First-Last Frame to Video
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Generate smooth video transitions by defining start and end frames.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_2_14B_flf2v.json
+  sha256: 7abeb2711cb6623bd5d5cd0b40ea76b0e86a0a744e2623dbd2109e66f2cf7da2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2_2_14B_flf2v
+  title: Wan 2.2 14B First-Last Frame to Video
+  description: Generate smooth video transitions by defining start and end frames.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/wan2_2
+  tags:
+  - FLF2V
+  - Video
+  models:
+  - Wan2.2
+  - Wan
+  date: '2025-08-02'
+  size: 38031935406
+  usage: 392
+  io:
+    inputs:
+    - nodeId: 62
+      nodeType: LoadImage
+      file: video_wan2_2_14B_flf2v_start_image.png
+      mediaType: image
+    - nodeId: 68
+      nodeType: LoadImage
+      file: video_wan2_2_14B_flf2v_end_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.31

@@ -1,0 +1,80 @@
+id: remote:template:api_kling2_6_i2v
+kind: comfyui_template
+title: 'Kling2.6: Animate Images with Audio'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling2.6: Animate Images with Audio'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform static images into dynamic videos with synchronized dialogue,
+    singing, sound effects, and ambient audio.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling2_6_i2v.json
+  sha256: b8843d2affe3ce39d5ee42d6417d9f78fa953d4e2744f69e828ae3e693f5a3f8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling2_6_i2v
+  title: 'Kling2.6: Animate Images with Audio'
+  description: Transform static images into dynamic videos with synchronized dialogue,
+    singing, sound effects, and ambient audio.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  - API
+  - Audio
+  models:
+  - Kling 2.6
+  - Kling
+  date: '2025-12-22'
+  openSource: false
+  size: 0
+  usage: 15
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: lizard_rapper_in_bar.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.5.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling2_6_i2v.json
+  sha256: b8843d2affe3ce39d5ee42d6417d9f78fa953d4e2744f69e828ae3e693f5a3f8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_kling2_6_i2v_bdf38525/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

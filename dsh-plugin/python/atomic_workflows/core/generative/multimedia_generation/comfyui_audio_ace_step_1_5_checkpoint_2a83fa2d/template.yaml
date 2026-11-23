@@ -1,0 +1,60 @@
+id: remote:template:audio_ace_step_1_5_checkpoint
+kind: comfyui_template
+title: ACE-Step 1.5 Music Generation AIO
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: ACE-Step 1.5 Music Generation AIO
+  input_types: {}
+  output_types: {}
+  capability: Input style tags and lyrics to generate a full song. The workflow uses
+    the ACE-Step 1.5 model to produce commercial-grade music in under 10 seconds on
+    consumer hardware.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_5_checkpoint.json
+  sha256: db2ac3e2ad93e837c9fdc5433d1bfb3c43066c802088df3115fed22f2ae85587
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_ace_step_1_5_checkpoint
+  title: ACE-Step 1.5 Music Generation AIO
+  description: Input style tags and lyrics to generate a full song. The workflow uses
+    the ACE-Step 1.5 model to produce commercial-grade music in under 10 seconds on
+    consumer hardware.
+  mediaType: audio
+  mediaSubtype: mp3
+  tags:
+  - Audio
+  - Music
+  - Text to Audio
+  models:
+  - ACE-Step
+  date: '2026-02-03'
+  openSource: true
+  size: 10737418240
+  usage: 143
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.12.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_5_checkpoint.json
+  sha256: db2ac3e2ad93e837c9fdc5433d1bfb3c43066c802088df3115fed22f2ae85587
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_audio/comfyui_audio_ace_step_1_5_checkpoint_2a83fa2d/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

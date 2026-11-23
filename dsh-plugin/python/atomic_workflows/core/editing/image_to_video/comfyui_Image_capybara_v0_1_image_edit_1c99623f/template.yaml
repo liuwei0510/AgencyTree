@@ -1,0 +1,88 @@
+id: remote:template:Image_capybara_v0_1_image_edit
+kind: comfyui_template
+title: 'Capybara: Image Edit'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Capybara: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image or video and input a text instruction. Generate an edited
+    output using the Capybara model for tasks like style changes, object replacement,
+    or time-of-day adjustments.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/Image_capybara_v0_1_image_edit.json
+  sha256: d921795d7b725141b783298cbc1d5e7c57576fd028894ede48c5aaf2101aa17c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: Image_capybara_v0_1_image_edit
+  title: 'Capybara: Image Edit'
+  description: Upload an image or video and input a text instruction. Generate an
+    edited output using the Capybara model for tasks like style changes, object replacement,
+    or time-of-day adjustments.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  models:
+  - Capybara
+  date: '2026-02-23'
+  openSource: true
+  size: 37044092928
+  usage: 18
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 80
+      nodeType: LoadImage
+      file: wind_woman.png
+      mediaType: image
+    outputs:
+    - nodeId: 102
+      nodeType: SaveImage
+      file: Image_capybara_v0_1_image_edit.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/wind_woman.png
+  - output/Image_capybara_v0_1_image_edit.png
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/Image_capybara_v0_1_image_edit.json
+  sha256: d921795d7b725141b783298cbc1d5e7c57576fd028894ede48c5aaf2101aa17c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_Image_capybara_v0_1_image_edit_1c99623f/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '80'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

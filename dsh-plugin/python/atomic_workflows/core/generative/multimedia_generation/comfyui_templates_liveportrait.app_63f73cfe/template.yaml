@@ -1,0 +1,67 @@
+id: remote.template.templates_liveportrait.app
+kind: comfyui_template
+title: LivePortrait for Facial Expression
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LivePortrait for Facial Expression
+  input_types:
+  - image
+  - video
+  output_types: []
+  capability: Upload a portrait image and a reference expression video. Generate a
+    video of the portrait with the facial expressions from the reference.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_liveportrait.app.json
+  sha256: 4a5cea83eabe75220d9ba7924c60d882fc7247e5cffcb0ecc9051581800eb956
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_liveportrait.app
+  title: LivePortrait for Facial Expression
+  description: Upload a portrait image and a reference expression video. Generate
+    a video of the portrait with the facial expressions from the reference.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video
+  - Lip Sync
+  models:
+  - LivePortrait
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui-liveportraitkj
+  - comfyui-videohelpersuite
+  date: '2026-03-06'
+  openSource: true
+  size: 21474836480
+  usage: 18
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: live_portrait_character.png
+      mediaType: image
+    - nodeId: 44
+      nodeType: VHS_LoadVideo
+      file: live_portrait_expression.mp4
+      mediaType: video
+  username: shane
+  thumbnail:
+  - input/live_portrait_expression.mp4
+  - output/templates_liveportrait.mp4
+  isApp: true
+  minComfyUIVersion: 0.0.1

@@ -1,0 +1,65 @@
+id: remote:template:image_flux2_text_to_image_9b
+kind: comfyui_template
+title: 'FLUX.2 [Klein] 9B: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX.2 [Klein] 9B: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: BFL distilled model. Outstanding quality at sub-second speed. Great
+    for real-time generation while retaining quality. Marketing launch will focus
+    on this model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_text_to_image_9b.json
+  sha256: 5b7fc39f43e481be9935f80afc2937109a58b6f407950e9a055ad1d2be187eae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux2_text_to_image_9b
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-2-klein
+  title: 'FLUX.2 [Klein] 9B: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: BFL distilled model. Outstanding quality at sub-second speed. Great
+    for real-time generation while retaining quality. Marketing launch will focus
+    on this model.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - FLUX
+  - FLUX.2 Klein
+  date: '2026-01-16'
+  size: 19219978650
+  usage: 202
+  openSource: true
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - output/image_flux2_text_to_image_9b.png
+  minComfyUIVersion: 0.3.72
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_text_to_image_9b.json
+  sha256: 5b7fc39f43e481be9935f80afc2937109a58b6f407950e9a055ad1d2be187eae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_flux2_text_to_image_9b_5894a19a/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

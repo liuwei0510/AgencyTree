@@ -1,0 +1,64 @@
+id: remote.template.utility_video_upscale
+kind: comfyui_template
+title: 'Video Upscale: Wan 2.2 Creative'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: Wan 2.2 Creative'
+  input_types:
+  - video
+  output_types:
+  - video
+  capability: Upload a video and upscale it to a higher resolution with Wan 2.2
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_video_upscale.json
+  sha256: f96eb0f07d7fdc4cfec6c316350724b169c0e45e41e011f5aa7bb4b39b663121
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_video_upscale
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/video-upscale
+  title: 'Video Upscale: Wan 2.2 Creative'
+  description: Upload a video and upscale it to a higher resolution with Wan 2.2
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Upscale
+  models:
+  - Wan2.2
+  date: '2026-01-22'
+  openSource: true
+  requiresCustomNodes:
+  - ComfyUI-WanVideoWrapper
+  - comfyui-wanvideowrapper
+  size: 42949672960
+  usage: 269
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 727
+      nodeType: LoadVideo
+      file: input_upscale.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 678
+      nodeType: SaveVideo
+      file: utility_video_upscale.mp4
+      mediaType: video
+  username: sirolim
+  thumbnail:
+  - input/input_upscale.mp4
+  - output/utility_video_upscale.mp4
+  minComfyUIVersion: 0.16.4

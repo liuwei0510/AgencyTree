@@ -1,0 +1,75 @@
+id: remote.template.flux_kontext_dev_basic
+kind: comfyui_template
+title: Flux Kontext Dev Image Edit
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux Kontext Dev Image Edit
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Smart image editing that keeps characters consistent, edits specific
+    parts without affecting others, and preserves original styles.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_kontext_dev_basic.json
+  sha256: 2f8a3545594c8bbd4f1ba37bef732753ce841d1c20bade5505123c3a86e85d0f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux_kontext_dev_basic
+  title: Flux Kontext Dev Image Edit
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  description: Smart image editing that keeps characters consistent, edits specific
+    parts without affecting others, and preserves original styles.
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-1-kontext-dev
+  tags:
+  - Image Edit
+  models:
+  - FLUX.1 Kontext
+  - FLUX
+  date: '2025-06-26'
+  size: 17609365914
+  usage: 239
+  io:
+    inputs:
+    - nodeId: 190
+      nodeType: LoadImage
+      file: flux_kontext_dev_basic_input_image.jpg
+      mediaType: image
+    outputs:
+    - nodeId: 136
+      nodeType: SaveImage
+      file: flux_kontext_dev_basic.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.3.42
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '190'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

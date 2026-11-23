@@ -1,0 +1,72 @@
+id: remote:template:api_pixverse6_t2v
+kind: comfyui_template
+title: 'PixVerse 6.0: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'PixVerse 6.0: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate videos up to 15 seconds at 1080p from text prompts with PixVerse
+    V6, supporting multiple aspect ratios, optional integrated audio, and multi-shot
+    scene direction in a single generation. Ideal for social media ads, product concept
+    testing, and short-form storytelling where narrative continuity and distribution-ready
+    framing matter.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pixverse6_t2v.json
+  sha256: af1a68ebc5de2c5c8798eded03ff209527b95d326291f1140009a695f63eebe9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_pixverse6_t2v
+  title: 'PixVerse 6.0: Text to Video'
+  description: Generate videos up to 15 seconds at 1080p from text prompts with PixVerse
+    V6, supporting multiple aspect ratios, optional integrated audio, and multi-shot
+    scene direction in a single generation. Ideal for social media ads, product concept
+    testing, and short-form storytelling where narrative continuity and distribution-ready
+    framing matter.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - PixVerse
+  logos:
+  - provider: Pixverse
+  date: '2026-08-30'
+  openSource: false
+  size: 0
+  usage: 9
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 14
+      nodeType: SaveVideo
+      file: api_pixverse6_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_pixverse6_t2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pixverse6_t2v.json
+  sha256: af1a68ebc5de2c5c8798eded03ff209527b95d326291f1140009a695f63eebe9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

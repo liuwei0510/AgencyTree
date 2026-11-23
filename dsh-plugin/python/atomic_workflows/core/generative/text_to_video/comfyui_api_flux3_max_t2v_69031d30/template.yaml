@@ -1,0 +1,73 @@
+id: remote:template:api_flux3_max_t2v
+kind: comfyui_template
+title: 'FLUX 3 Max: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX 3 Max: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate a video with synchronized audio from a single text prompt with
+    FLUX 3 Max, which reasons about and expands the prompt before rendering. Outputs
+    one clip of 5 to 20 seconds at 720p or 1080p, at any aspect ratio from 9:16 to
+    21:9, with ambient sound, speech, and effects created alongside the picture and
+    no input files required. Ideal for cinematic concept clips, ad mockups, and social
+    videos that need matching sound design.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_flux3_max_t2v.json
+  sha256: e7d0ed30abe86a4c94dd1ff6ce55a2ab8c5098cb3f8f0c435c1295bfea09cb43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_flux3_max_t2v
+  title: 'FLUX 3 Max: Text to Video'
+  description: Generate a video with synchronized audio from a single text prompt
+    with FLUX 3 Max, which reasons about and expands the prompt before rendering.
+    Outputs one clip of 5 to 20 seconds at 720p or 1080p, at any aspect ratio from
+    9:16 to 21:9, with ambient sound, speech, and effects created alongside the picture
+    and no input files required. Ideal for cinematic concept clips, ad mockups, and
+    social videos that need matching sound design.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - FLUX 3 Video
+  logos:
+  - provider: Black Forest Labs
+  minComfyUIVersion: 0.42.2
+  date: '2026-10-20'
+  openSource: false
+  size: 0
+  usage: 87
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 5
+      nodeType: SaveVideo
+      file: api_flux3_max_t2v.mp4
+      mediaType: video
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_flux3_max_t2v.json
+  sha256: e7d0ed30abe86a4c94dd1ff6ce55a2ab8c5098cb3f8f0c435c1295bfea09cb43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

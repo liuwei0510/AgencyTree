@@ -1,0 +1,46 @@
+id: remote:model:f778e1b33adf0e72e512
+kind: comfyui_model
+title: TAESDXL Encoder
+tree_branch:
+- aux
+- latent_process
+- encode_decode
+six_tuple:
+  name: TAESDXL Encoder
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: taesdxl_encoder.pth
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: TAESD
+    save_path: vae_approx
+    filename: taesdxl_encoder.pth
+    download_locator: https://github.com/madebyollin/taesd/raw/main/taesdxl_encoder.pth
+code_usable: true
+status: available
+metadata:
+  name: TAESDXL Encoder
+  type: TAESD
+  base: SDXL
+  save_path: vae_approx
+  description: (SDXL Verison) To view the preview in high quality while running samples
+    in ComfyUI, you will need this model.
+  reference: https://github.com/madebyollin/taesd
+  filename: taesdxl_encoder.pth
+  url: https://github.com/madebyollin/taesd/raw/main/taesdxl_encoder.pth
+  size: 4.91MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/encode_decode/model_TAESDXL_Encoder_f778e1b3/model.yaml
+validation_errors: []

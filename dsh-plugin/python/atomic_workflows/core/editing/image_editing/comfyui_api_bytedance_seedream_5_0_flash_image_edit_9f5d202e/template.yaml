@@ -1,0 +1,71 @@
+id: remote.template.api_bytedance_seedream_5_0_flash_image_edit
+kind: comfyui_template
+title: 'Seedream 5.0 Flash: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedream 5.0 Flash: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit and generate images with Seedream 5.0 Flash, transforming a single
+    input image into one refined output with cinematic lighting, accurate text rendering,
+    and resolutions up to 2K.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_flash_image_edit.json
+  sha256: 6cd2fa07d34335c071a7d4cd4c324bdde2848a5445411dc7f78fda0fbecca713
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedream_5_0_flash_image_edit
+  title: 'Seedream 5.0 Flash: Image Edit'
+  description: Edit and generate images with Seedream 5.0 Flash, transforming a single
+    input image into one refined output with cinematic lighting, accurate text rendering,
+    and resolutions up to 2K.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Seedream 5.0
+  logos:
+  - provider: ByteDance
+  minComfyUIVersion: 0.37.3
+  date: '2026-09-24'
+  openSource: false
+  size: 0
+  usage: 299
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 16
+      nodeType: LoadImage
+      file: wine_bottle_brand_ref.png
+      mediaType: image
+  thumbnail:
+  - output/api_bytedance_seedream_5_0_flash_image_edit.png
+validation_errors: []
+planning_eligible: false
+inputs: *id001
+inject:
+  source_image:
+    node_id: '16'
+    input_key: image
+    widget_index: 0
+outputs: []

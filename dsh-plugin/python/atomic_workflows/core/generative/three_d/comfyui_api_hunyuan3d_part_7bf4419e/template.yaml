@@ -1,0 +1,59 @@
+id: remote:template:api_hunyuan3d_part
+kind: comfyui_template
+title: 'HY 3D: 3D Parts Decomposition'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HY 3D: 3D Parts Decomposition'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Upload a 3D model to automatically segment it into its constituent parts,
+    generating a fully decomposed 3D asset for reuse and editing.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_hunyuan3d_part.json
+  sha256: 34aa4645979ebfe02056c8f87a65f035de0e5de92450def70ebe63a178eecfa0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_hunyuan3d_part
+  title: 'HY 3D: 3D Parts Decomposition'
+  description: Upload a 3D model to automatically segment it into its constituent
+    parts, generating a fully decomposed 3D asset for reuse and editing.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - API
+  models:
+  - Hunyuan3D
+  logos:
+  - provider: Hunyuan
+  date: '2026-02-13'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.14.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_hunyuan3d_part.json
+  sha256: 34aa4645979ebfe02056c8f87a65f035de0e5de92450def70ebe63a178eecfa0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path
+planning_eligible: true

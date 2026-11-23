@@ -1,0 +1,59 @@
+id: remote.template.image_marigold_v2_depth_estimation
+kind: comfyui_template
+title: 'Depth Estimation: Marigold V2'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Depth Estimation: Marigold V2'
+  input_types:
+  - image
+  output_types: []
+  capability: Estimate scene depth from an input image using Marigold V2, generating
+    a depth map with brighter areas representing closer objects and darker areas representing
+    farther objects.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_marigold_v2_depth_estimation.json
+  sha256: e65a9edf9eed81fd85f73bf08293d7292ea2221e69f87765f691bca26e7c82d8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_marigold_v2_depth_estimation
+  title: 'Depth Estimation: Marigold V2'
+  description: Estimate scene depth from an input image using Marigold V2, generating
+    a depth map with brighter areas representing closer objects and darker areas representing
+    farther objects.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Depth
+  - Int8
+  models:
+  - Marigold v2
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-14'
+  openSource: true
+  size: 22441204122
+  usage: 171
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: ev_suv_gold_desert_pavilion.png
+      mediaType: image
+  thumbnail:
+  - input/ev_suv_gold_desert_pavilion.png
+  - output/image_marigold_v2_depth_estimation.png

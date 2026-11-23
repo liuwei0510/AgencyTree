@@ -1,0 +1,90 @@
+id: remote:template:templates-fashion_shoot_prompt_doodle
+kind: comfyui_template
+title: Selfie + Text Prompt to Studio Photoshoot Doodle
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Selfie + Text Prompt to Studio Photoshoot Doodle
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a selfie and describe your outfit in the prompt. Generate 4 fashion
+    editorial photographs with fun doodle illustrations. Select which image to upscale
+    and add back face details.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-fashion_shoot_prompt_doodle.json
+  sha256: 7b96bfac5b4a408b7d91709395c4a72447e0b507c6ca1d0bb71b814118ce953a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-fashion_shoot_prompt_doodle
+  title: Selfie + Text Prompt to Studio Photoshoot Doodle
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload a selfie and describe your outfit in the prompt. Generate 4
+    fashion editorial photographs with fun doodle illustrations. Select which image
+    to upscale and add back face details.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Google Gemini Image
+  - Nano Banana Pro
+  - Google
+  - Gemini3 Pro Image Preview
+  openSource: false
+  date: '2025-12-15'
+  searchRank: 8
+  size: 0
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 2
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: character-1.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-fashion_shoot_prompt_doodle.png
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-fashion_shoot_prompt_doodle.json
+  sha256: 7b96bfac5b4a408b7d91709395c4a72447e0b507c6ca1d0bb71b814118ce953a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/upscale/comfyui_templates-fashion_shoot_prompt_doodle_04cc0800/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

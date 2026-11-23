@@ -1,0 +1,64 @@
+id: remote.template.api_bria_video_replace_background
+kind: comfyui_template
+title: 'Replace Background: Bria'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Replace Background: Bria'
+  input_types:
+  - video
+  - image
+  output_types: []
+  capability: Upload a video and a background image. Detect the main subject and replace
+    the original background with the provided image. Ideal for content creation, virtual
+    production, and background cleanup in video projects.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_video_replace_background.json
+  sha256: 519aabcba0afbd92d6bc5a368e2ad57ab4f6369e9cbbbd11b08a43374ded65b1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_video_replace_background
+  title: 'Replace Background: Bria'
+  description: Upload a video and a background image. Detect the main subject and
+    replace the original background with the provided image. Ideal for content creation,
+    virtual production, and background cleanup in video projects.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  - Remove Background
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-06-10'
+  openSource: false
+  size: 0
+  usage: 20
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: stained_window_vintage_woman.mp4
+      mediaType: video
+    - nodeId: 8
+      nodeType: LoadImage
+      file: gothic_hall_light_rays.png
+      mediaType: image
+  minComfyUIVersion: 0.24.1

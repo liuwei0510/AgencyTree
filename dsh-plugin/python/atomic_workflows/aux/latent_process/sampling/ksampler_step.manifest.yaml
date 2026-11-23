@@ -1,0 +1,60 @@
+id: aux.latent_process.sampling.ksampler_step
+title: KSampler Step (isolated sampling block)
+modality:
+- latent
+description: Sampling-only subgraph for modular diffusion stacks.
+tags:
+- latent
+- ksampler
+workflow_file: ksampler_step.workflow.json
+inject:
+  seed:
+    node_id: '10'
+    input_key: seed
+  model_file:
+    node_id: '4'
+    input_key: ckpt_name
+    widget_index: null
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: null
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: null
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: null
+inputs:
+- name: seed
+  type: int
+  required: false
+- name: model_file
+  type: string
+  required: true
+  default: null
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+outputs:
+- name: latent
+  type: generic

@@ -1,0 +1,135 @@
+id: remote:template:sd3.5_large_depth
+kind: comfyui_template
+title: SD3.5 Large Depth
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SD3.5 Large Depth
+  input_types:
+    source_image: image_filenames
+    negative_prompt: string
+    seed: number
+    width: number
+    height: number
+  output_types:
+    images: image_filenames
+  capability: Generate images guided by depth information using SD 3.5.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: A cute, plush - like light green baby dragon with large, shiny eyes.
+      It has light yellow horns and wing membranes. Its belly and parts of its wings
+      have a soft, fuzzy texture. The dragon stands against a plain light green background,
+      giving a warm and whimsical feel.
+  - name: seed
+    type: number
+    required: false
+    default: 1020711502084247
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sd3.5_large_depth.json
+  sha256: 9d4758dde12be9b7cc29685446bcf0ec48917519dd530bc843ca4f9d7ab821ef
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: sd3.5_large_depth
+  title: SD3.5 Large Depth
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images guided by depth information using SD 3.5.
+  thumbnailVariant: hoverDissolve
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/sd3/#sd35-controlnets
+  tags:
+  - Image
+  - ControlNet
+  models:
+  - SD3.5
+  - Stability
+  date: '2025-03-01'
+  size: 23590107873
+  usage: 28
+  io:
+    inputs:
+    - nodeId: 45
+      nodeType: LoadImage
+      file: sd3.5_large_depth_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sd3.5_large_depth.json
+  sha256: 9d4758dde12be9b7cc29685446bcf0ec48917519dd530bc843ca4f9d7ab821ef
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_sd3.5_large_depth_06d5a8d2/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: A cute, plush - like light green baby dragon with large, shiny eyes. It
+    has light yellow horns and wing membranes. Its belly and parts of its wings have
+    a soft, fuzzy texture. The dragon stands against a plain light green background,
+    giving a warm and whimsical feel.
+- name: seed
+  type: number
+  required: false
+  default: 1020711502084247
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+inject:
+  source_image:
+    node_id: '45'
+    input_key: image
+    widget_index: 0
+  negative_prompt:
+    node_id: '57'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '56'
+    input_key: seed
+    widget_index: 0
+  width:
+    node_id: '33'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '33'
+    input_key: height
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

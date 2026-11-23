@@ -1,0 +1,73 @@
+id: remote:template:api_openrouter_mai_image_26_t2i
+kind: comfyui_template
+title: 'Mai Image 2.6: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mai Image 2.6: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using Microsoft's MAI
+    Image 2.6, a top-tier model excelling in legible in-image text rendering, photorealistic
+    portraits, and commercial product visuals. Simply enter a prompt to produce 1
+    image output with no file inputs. Ideal for marketing assets, cinematic concept
+    art, and creative projects requiring polished, text-accurate visuals.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_mai_image_26_t2i.json
+  sha256: 57fe3013b2b5b77f409c91084e92ef82be7c19307fcfd10a6bde36d6c51b247a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_mai_image_26_t2i
+  title: 'Mai Image 2.6: Text to Image'
+  description: Generate high-quality images from text prompts using Microsoft's MAI
+    Image 2.6, a top-tier model excelling in legible in-image text rendering, photorealistic
+    portraits, and commercial product visuals. Simply enter a prompt to produce 1
+    image output with no file inputs. Ideal for marketing assets, cinematic concept
+    art, and creative projects requiring polished, text-accurate visuals.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Mai Image 2.6
+  logos:
+  - provider: OpenRouter
+  minComfyUIVersion: 0.35.1
+  date: '2026-09-09'
+  openSource: false
+  size: 0
+  usage: 24
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 4
+      nodeType: SaveImageAdvanced
+      file: Mai_image_2.6.png
+      mediaType: image
+  thumbnail:
+  - output/Mai_image_2.6.png
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_mai_image_26_t2i.json
+  sha256: 57fe3013b2b5b77f409c91084e92ef82be7c19307fcfd10a6bde36d6c51b247a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

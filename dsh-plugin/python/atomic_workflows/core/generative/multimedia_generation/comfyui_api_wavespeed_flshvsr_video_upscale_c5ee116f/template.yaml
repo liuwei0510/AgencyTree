@@ -1,0 +1,71 @@
+id: remote:template:api_wavespeed_flshvsr_video_upscale
+kind: comfyui_template
+title: 'Video Upscale: WaveSpeed FlashVSR'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: WaveSpeed FlashVSR'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video to upscale it to 720p, 1080p, 2K, or 4K. The workflow
+    enhances detail, reduces artifacts, and ensures consistent motion for a high-quality,
+    natural-looking output.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wavespeed_flshvsr_video_upscale.json
+  sha256: 8430d9c18395a2aa4f324796d018ba57867c499ed1c1573f41b2ad86c44246c8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wavespeed_flshvsr_video_upscale
+  title: 'Video Upscale: WaveSpeed FlashVSR'
+  description: Upload a video to upscale it to 720p, 1080p, 2K, or 4K. The workflow
+    enhances detail, reduces artifacts, and ensures consistent motion for a high-quality,
+    natural-looking output.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Upscale
+  models:
+  - FlashVSR
+  - WaveSpeed
+  date: '2026-01-23'
+  openSource: false
+  usage: 37
+  size: 0
+  searchRank: 0
+  logos:
+  - provider: WaveSpeed
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: lighter.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.11.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wavespeed_flshvsr_video_upscale.json
+  sha256: 8430d9c18395a2aa4f324796d018ba57867c499ed1c1573f41b2ad86c44246c8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/video_upscaling/comfyui_api_wavespeed_flshvsr_video_upscale_c5ee116f/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

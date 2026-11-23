@@ -1,0 +1,38 @@
+id: core.generative.three_d.3d_hunyuan3d_multiview_to_model
+title: 3d_hunyuan3d_multiview_to_model
+modality:
+- mesh
+description: ComfyUI API workflow (imported from model_apis/3d_hunyuan3d_multiview_to_model.json).
+tags:
+- three-d
+- 3d
+- generative
+workflow_file: 3d_hunyuan3d_multiview_to_model.workflow.json
+inject:
+  seed:
+    node_id: '3'
+    input_key: seed
+  source_image:
+    node_id: '56'
+    input_key: image
+    widget_index: null
+  source_image_2:
+    node_id: '80'
+    input_key: image
+    widget_index: null
+inputs:
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: mesh
+  type: string
+  description: Exported 3D file

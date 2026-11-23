@@ -1,0 +1,75 @@
+id: remote.template.api_grok_video
+kind: comfyui_template
+title: 'Grok: Video generation'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok: Video generation'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Input text prompts or an initial image frame to generate up to 15-second
+    videos with synchronized audio using the Grok model.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_video.json
+  sha256: c2cb946614576e1de2e4eff4d7361e35d1e7133296cb15b04f7394a52baeec05
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_video
+  title: 'Grok: Video generation'
+  description: Input text prompts or an initial image frame to generate up to 15-second
+    videos with synchronized audio using the Grok model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Image to Video
+  - Text to Video
+  - API
+  models:
+  - Grok
+  date: '2026-01-28'
+  openSource: false
+  usage: 255
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: sci-fi_mech.png
+      mediaType: image
+    outputs:
+    - nodeId: 2
+      nodeType: SaveVideo
+      file: api_grok_video.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/api_grok_video.mp4
+  minComfyUIVersion: 0.11.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

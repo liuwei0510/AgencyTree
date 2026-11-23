@@ -1,0 +1,26 @@
+id: aux.postprocess.upscale.upscale4x
+title: upscale4x
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/upscale4x.json).
+tags:
+- upscale
+- upscale
+- postprocess
+workflow_file: upscale4x.workflow.json
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: null
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs
+fixed_constraints:
+  scale_factor: 4

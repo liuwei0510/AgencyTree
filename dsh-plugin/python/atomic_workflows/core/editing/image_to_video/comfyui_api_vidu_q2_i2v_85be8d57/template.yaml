@@ -1,0 +1,77 @@
+id: remote:template:api_vidu_q2_i2v
+kind: comfyui_template
+title: 'Vidu Q2: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q2: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform static images into dynamic 1080p videos with cinematic camera
+    control, multi-subject consistency
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_i2v.json
+  sha256: 761e61a0214690b61b339cdd9ab58dfc5234b40fd84f62bcddc4ae2458632d99
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_q2_i2v
+  title: 'Vidu Q2: Image to Video'
+  description: Transform static images into dynamic 1080p videos with cinematic camera
+    control, multi-subject consistency
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - API
+  models:
+  - Vidu Q2
+  - Vidu
+  date: '2026-01-12'
+  openSource: false
+  usage: 13
+  io:
+    inputs:
+    - nodeId: 40
+      nodeType: LoadImage
+      file: cozy_bear.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.9.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_i2v.json
+  sha256: 761e61a0214690b61b339cdd9ab58dfc5234b40fd84f62bcddc4ae2458632d99
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_vidu_q2_i2v_85be8d57/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '40'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

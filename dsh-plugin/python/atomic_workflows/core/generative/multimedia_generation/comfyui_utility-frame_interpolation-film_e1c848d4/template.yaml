@@ -1,0 +1,54 @@
+id: remote.template.utility-frame_interpolation-film
+kind: comfyui_template
+title: 'Frame Interpolation: FILM'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Frame Interpolation: FILM'
+  input_types:
+  - video
+  output_types: []
+  capability: Smooth out low frame-rate videos
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-frame_interpolation-film.json
+  sha256: fef05c0e4be4b6dbe2276c2ca0aa1c5f42839487ce007ebf3599dfafffc52a36
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-frame_interpolation-film
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/frame-interpolation
+  title: 'Frame Interpolation: FILM'
+  description: Smooth out low frame-rate videos
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Frame Interpolation
+  date: '2026-01-12'
+  openSource: true
+  requiresCustomNodes:
+  - comfyui-videohelpersuite
+  - comfyui_controlnet_aux
+  usage: 11
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: VHS_LoadVideo
+      file: frame_interpolation-input.mp4
+      mediaType: video
+  username: ComfyUI
+  models:
+  - None
+  size: 5368709120
+  searchRank: 0
+  minComfyUIVersion: 0.0.1

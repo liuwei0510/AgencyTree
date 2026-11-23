@@ -1,0 +1,74 @@
+id: remote.template.templates_rob_wan_ati_motion_control
+kind: comfyui_template
+title: Wan ATI Motion Control
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan ATI Motion Control
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload an input image and use the Animate Path node to draw paths for
+    a viral video effect.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_rob_wan_ati_motion_control.json
+  sha256: b353aa6ea235e399b108e4feb0912548885cc02fda6f316dc0f8b2f017bfbe3f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_rob_wan_ati_motion_control
+  title: Wan ATI Motion Control
+  description: Upload an input image and use the Animate Path node to draw paths for
+    a viral video effect.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Motion Control
+  - Image to Video
+  models:
+  - Wan ATI
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  - comfyui_fill-nodes
+  date: '2026-03-18'
+  openSource: true
+  size: 77202037146
+  usage: 21
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 460
+      nodeType: LoadImage
+      file: white_tiger.png
+      mediaType: image
+  thumbnail:
+  - output/templates_rob_wan_ati_motion_control.mp4
+  minComfyUIVersion: 0.5.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '460'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

@@ -1,0 +1,76 @@
+id: remote:template:image_mage_flow_turbo_t2i_int8
+kind: comfyui_template
+title: 'Mage-Flow Turbo: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mage-Flow Turbo: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using the compact 4B-parameter
+    Mage-Flow Turbo model, producing a single image output without any file inputs.
+    This workflow supports native-resolution generation from 512 to 2048 pixels per
+    side at any aspect ratio, including extreme 4:1 dimensions. Ideal for rapid concept
+    visualization, creative asset generation, and low-latency image prototyping on
+    modest hardware.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_turbo_t2i_int8.json
+  sha256: 3f97e52dd434593e1a7835ad1a2b76da2e6e41c3c0023b2e7861729b1337d40b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_mage_flow_turbo_t2i_int8
+  title: 'Mage-Flow Turbo: Text to Image'
+  description: Generate high-quality images from text prompts using the compact 4B-parameter
+    Mage-Flow Turbo model, producing a single image output without any file inputs.
+    This workflow supports native-resolution generation from 512 to 2048 pixels per
+    side at any aspect ratio, including extreme 4:1 dimensions. Ideal for rapid concept
+    visualization, creative asset generation, and low-latency image prototyping on
+    modest hardware.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  - Turbo
+  models:
+  - Mage-Flow
+  date: '2026-07-28'
+  openSource: true
+  size: 13421772800
+  usage: 14
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 10
+      nodeType: SaveImageAdvanced
+      file: Mage_flow_turbo.png
+      mediaType: image
+  thumbnail:
+  - output/Mage_flow_turbo.png
+  minComfyUIVersion: 0.29.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_turbo_t2i_int8.json
+  sha256: 3f97e52dd434593e1a7835ad1a2b76da2e6e41c3c0023b2e7861729b1337d40b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_mage_flow_turbo_t2i_int8_022d5d9a/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

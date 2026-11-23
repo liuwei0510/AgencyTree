@@ -1,0 +1,45 @@
+id: remote:model:c16b4f4eae5efacb8e3c
+kind: comfyui_model
+title: Hyper-SD LoRA (16steps) - FLUX.1 [Dev]
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: Hyper-SD LoRA (16steps) - FLUX.1 [Dev]
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: Hyper-FLUX.1-dev-16steps-lora.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/HyperSD/FLUX.1
+    filename: Hyper-FLUX.1-dev-16steps-lora.safetensors
+    download_locator: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-FLUX.1-dev-16steps-lora.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Hyper-SD LoRA (16steps) - FLUX.1 [Dev]
+  type: lora
+  base: FLUX.1
+  save_path: loras/HyperSD/FLUX.1
+  description: Hyper-SD LoRA (16steps) - FLUX.1 [Dev]
+  reference: https://huggingface.co/ByteDance/Hyper-SD
+  filename: Hyper-FLUX.1-dev-16steps-lora.safetensors
+  url: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-FLUX.1-dev-16steps-lora.safetensors
+  size: 1.39GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/sampling_acceleration/model_Hyper-SD_LoRA_16steps_-_FLUX.1_Dev_c16b4f4e/model.yaml
+validation_errors: []

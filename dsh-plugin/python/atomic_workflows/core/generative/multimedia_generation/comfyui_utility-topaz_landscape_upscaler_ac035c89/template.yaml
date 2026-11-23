@@ -1,0 +1,56 @@
+id: remote.template.utility-topaz_landscape_upscaler
+kind: comfyui_template
+title: 'Image Upscale: Topaz Reimagine Landscape'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Reimagine Landscape'
+  input_types:
+  - image
+  output_types: []
+  capability: Upload a landscape image to upscale and enhance details. Generate a
+    high-resolution output optimized for natural scenery using Topaz Reimagine.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility-topaz_landscape_upscaler.json
+  sha256: da68b23ab72bdec89dc4afa77efaa491ea21c285071041763624a5e4c33edf34
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility-topaz_landscape_upscaler
+  title: 'Image Upscale: Topaz Reimagine Landscape'
+  description: Upload a landscape image to upscale and enhance details. Generate a
+    high-resolution output optimized for natural scenery using Topaz Reimagine.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Topaz
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 29
+  searchRank: 0
+  logos:
+  - provider: Topaz
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: moonlit_cliff_house.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.71

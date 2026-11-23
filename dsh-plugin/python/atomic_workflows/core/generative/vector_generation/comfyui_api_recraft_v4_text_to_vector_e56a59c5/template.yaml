@@ -1,0 +1,62 @@
+id: remote:template:api_recraft_v4_text_to_vector
+kind: comfyui_template
+title: 'Recraft v4: Text to Vector'
+tree_branch:
+- core
+- generative
+- vector_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Recraft v4: Text to Vector'
+  input_types: {}
+  output_types: {}
+  capability: Input text prompts to generate clean, editable vector SVG graphics.
+    Create logos, icons, or illustrations with structured paths suitable for design
+    tools.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_text_to_vector.json
+  sha256: 0634210acdccbcaa68adf89c54fef84bd63318e6084de8ae4c7287561012b8dc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_v4_text_to_vector
+  title: 'Recraft v4: Text to Vector'
+  description: Input text prompts to generate clean, editable vector SVG graphics.
+    Create logos, icons, or illustrations with structured paths suitable for design
+    tools.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Vector
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  date: '2026-02-17'
+  openSource: false
+  size: 0
+  usage: 30
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.14.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_text_to_vector.json
+  sha256: 0634210acdccbcaa68adf89c54fef84bd63318e6084de8ae4c7287561012b8dc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/vector_generation/comfyui_api_recraft_v4_text_to_vector_e56a59c5/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

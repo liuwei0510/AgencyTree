@@ -1,0 +1,61 @@
+id: remote.template.Image_capybara_v0_1_text_to_image
+kind: comfyui_template
+title: 'Capybara: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Capybara: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt to generate an image. This workflow uses the Capybara
+    unified model for text-to-image synthesis.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/Image_capybara_v0_1_text_to_image.json
+  sha256: d43d5f3516025b0952a120d535d13e8bc71236379d6d3b2f99d2d8a40cc4a3dd
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: Image_capybara_v0_1_text_to_image
+  title: 'Capybara: Text to Image'
+  description: Input a text prompt to generate an image. This workflow uses the Capybara
+    unified model for text-to-image synthesis.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - Capybara
+  date: '2026-02-23'
+  openSource: true
+  size: 36185099469
+  usage: 14
+  searchRank: 0
+  io:
+    outputs:
+    - nodeId: 102
+      nodeType: SaveImage
+      file: Image_capybara_v0_1_text_to_image.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/Image_capybara_v0_1_text_to_image.png
+  minComfyUIVersion: 0.3.71
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

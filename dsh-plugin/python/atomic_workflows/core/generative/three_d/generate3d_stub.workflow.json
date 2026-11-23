@@ -1,0 +1,19 @@
+{
+  "__comment": "Paste ComfyUI API-format workflow for your 3D stack.",
+  "1": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": [
+        "2",
+        1
+      ]
+    }
+  },
+  "2": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "REPLACE_WITH_YOUR_SETUP.safetensors"
+    }
+  }
+}

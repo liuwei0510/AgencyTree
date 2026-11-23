@@ -1,0 +1,55 @@
+id: remote.template.hidream_e1_1
+kind: comfyui_template
+title: HiDream E1.1 Image Editing
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: HiDream E1.1 Image Editing
+  input_types:
+  - image
+  output_types: []
+  capability: Edit images with HiDream E1.1—superior image quality and editing accuracy
+    compared to HiDream-E1-Full.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/hidream_e1_1.json
+  sha256: f1aff2c3c9bfd4a1686c5967f21262d06dff4d3af3d7173871a8900dc93f3d7d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: hidream_e1_1
+  title: HiDream E1.1 Image Editing
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Edit images with HiDream E1.1—superior image quality and editing accuracy
+    compared to HiDream-E1-Full.
+  tutorialUrl: https://docs.comfy.org/tutorials/image/hidream/hidream-e1
+  tags:
+  - Image
+  - Image Edit
+  models:
+  - HiDream
+  date: '2025-07-21'
+  size: 50465865728
+  usage: 53
+  io:
+    inputs:
+    - nodeId: 13
+      nodeType: LoadImage
+      file: hidream_e1_1_input_image.jpg
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.3.45

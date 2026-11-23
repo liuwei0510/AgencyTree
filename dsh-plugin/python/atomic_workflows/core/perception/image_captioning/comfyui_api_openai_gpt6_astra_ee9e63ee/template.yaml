@@ -1,0 +1,65 @@
+id: remote.template.api_openai_gpt6_astra
+kind: comfyui_template
+title: GPT-6 Astra
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: GPT-6 Astra
+  input_types:
+  - image
+  output_types: []
+  capability: Generate polished visual assets and optimize image-analysis prompts
+    with GPT-6 Astra, an AI model that excels at computer vision tasks while adapting
+    to your preferred style and reference images. Input your source visuals and creative
+    direction to receive refined, immediately usable outputs with accurate detail
+    and concise messaging. Ideal for enhancing prompt engineering workflows, preparing
+    image datasets for analysis, and producing presentation-ready visual content that
+    meets professional standards.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt6_astra.json
+  sha256: 16ecfa6d97fe53e25b237fa29d38ab74721dc8c90f34f74372c11443191b60ac
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_gpt6_astra
+  title: GPT-6 Astra
+  description: Generate polished visual assets and optimize image-analysis prompts
+    with GPT-6 Astra, an AI model that excels at computer vision tasks while adapting
+    to your preferred style and reference images. Input your source visuals and creative
+    direction to receive refined, immediately usable outputs with accurate detail
+    and concise messaging. Ideal for enhancing prompt engineering workflows, preparing
+    image datasets for analysis, and producing presentation-ready visual content that
+    meets professional standards.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - LLM
+  models:
+  - ChatGPT
+  logos:
+  - provider: OpenAI
+  minComfyUIVersion: 0.34.4
+  date: '2026-09-05'
+  openSource: false
+  size: 0
+  usage: 55
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image

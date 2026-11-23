@@ -1,0 +1,56 @@
+id: remote.template.audio_ace_step_1_5_split_4b
+kind: comfyui_template
+title: ACE-Step 1.5 Music Generation (4B LLM )
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: ACE-Step 1.5 Music Generation (4B LLM )
+  input_types: {}
+  output_types:
+    audio: audio_path
+  capability: Input a text prompt to generate music. This 4B model version offers
+    stronger audio understanding and composition capabilities compared to smaller
+    variants.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_ace_step_1_5_split_4b.json
+  sha256: 74a865573b713fe9c517f0150ee67bc54ccf5a146bd1c48427edc63665f05462
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_ace_step_1_5_split_4b
+  title: ACE-Step 1.5 Music Generation (4B LLM )
+  description: Input a text prompt to generate music. This 4B model version offers
+    stronger audio understanding and composition capabilities compared to smaller
+    variants.
+  mediaType: audio
+  mediaSubtype: mp3
+  tags:
+  - Audio
+  - Music
+  - Text to Audio
+  models:
+  - ACE-Step
+  date: '2026-02-05'
+  openSource: true
+  size: 14710262989
+  usage: 112
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.25.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: audio
+  type: audio_path

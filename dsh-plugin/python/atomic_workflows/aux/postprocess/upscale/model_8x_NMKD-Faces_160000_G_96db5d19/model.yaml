@@ -1,0 +1,44 @@
+id: remote:model:96db5d199dd5ecdc05ae
+kind: comfyui_model
+title: 8x_NMKD-Faces_160000_G
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: 8x_NMKD-Faces_160000_G
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: 8x_NMKD-Faces_160000_G.pth
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: 8x_NMKD-Faces_160000_G.pth
+    download_locator: https://huggingface.co/gemasai/8x_NMKD-Faces_160000_G/resolve/main/8x_NMKD-Faces_160000_G.pth
+code_usable: true
+status: available
+metadata:
+  name: 8x_NMKD-Faces_160000_G
+  type: upscale
+  base: upscale
+  save_path: default
+  description: 8x_NMKD-Faces_160000_G upscaler model
+  reference: https://huggingface.co/gemasai/8x_NMKD-Faces_160000_G/tree/main
+  filename: 8x_NMKD-Faces_160000_G.pth
+  url: https://huggingface.co/gemasai/8x_NMKD-Faces_160000_G/resolve/main/8x_NMKD-Faces_160000_G.pth
+  size: 67.2MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

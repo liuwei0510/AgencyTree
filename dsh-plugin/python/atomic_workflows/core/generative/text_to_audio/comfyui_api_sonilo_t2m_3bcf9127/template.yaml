@@ -1,0 +1,59 @@
+id: remote:template:api_sonilo_t2m
+kind: comfyui_template
+title: 'Sonilo: Text to Music Generation'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Sonilo: Text to Music Generation'
+  input_types: {}
+  output_types: {}
+  capability: Generate high-quality, production-ready music from text prompts. Input
+    descriptive text to create original soundtracks with streaming playback and precise
+    duration control.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_sonilo_t2m.json
+  sha256: a5b6f8ba53b53deb2ad3a134ccb8a7c1f18a04bc0c220d76e5501702ad57c2c3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_sonilo_t2m
+  title: 'Sonilo: Text to Music Generation'
+  description: Generate high-quality, production-ready music from text prompts. Input
+    descriptive text to create original soundtracks with streaming playback and precise
+    duration control.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Audio
+  - Text to Music
+  models:
+  - Sonilo
+  logos:
+  - provider: Sonilo
+  date: '2026-04-12'
+  openSource: false
+  size: 0
+  usage: 114
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_sonilo_t2m.json
+  sha256: a5b6f8ba53b53deb2ad3a134ccb8a7c1f18a04bc0c220d76e5501702ad57c2c3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false

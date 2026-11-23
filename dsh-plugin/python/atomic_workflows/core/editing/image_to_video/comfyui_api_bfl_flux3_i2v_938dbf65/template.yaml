@@ -1,0 +1,83 @@
+id: remote.template.api_bfl_flux3_i2v
+kind: comfyui_template
+title: 'FLUX 3 Video: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX 3 Video: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate full videos from a single text prompt using FLUX 3, which automatically
+    expands your description into a cohesive scene with synchronized audio, motion,
+    and physics. Outputs one 720p, 24fps MP4 video (5-20 seconds) with support for
+    multi-shot structures and aspect ratios from 9:16 to 21:9. Ideal for product photography,
+    filmic ad campaigns, and dynamic motion graphics.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_i2v.json
+  sha256: 038b8fb9f5d966a2f63f00b95520f7688a697539eb88a8b79c0488455e92e1eb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux3_i2v
+  title: 'FLUX 3 Video: Image to Video'
+  description: Generate full videos from a single text prompt using FLUX 3, which
+    automatically expands your description into a cohesive scene with synchronized
+    audio, motion, and physics. Outputs one 720p, 24fps MP4 video (5-20 seconds) with
+    support for multi-shot structures and aspect ratios from 9:16 to 21:9. Ideal for
+    product photography, filmic ad campaigns, and dynamic motion graphics.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - FLUX 3 Video
+  logos:
+  - provider: Black Forest Labs
+  date: '2026-08-04'
+  openSource: false
+  size: 0
+  usage: 58
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 423
+      nodeType: LoadImage
+      file: space_caravan.png
+      mediaType: image
+    outputs:
+    - nodeId: 422
+      nodeType: SaveVideo
+      file: api_bfl_flux3_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_bfl_flux3_i2v.mp4
+  minComfyUIVersion: 0.30.2
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '423'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

@@ -1,0 +1,77 @@
+id: remote.template.video_capybara_v0_1_image_to_video
+kind: comfyui_template
+title: 'Capybara: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Capybara: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload an image and provide a text instruction. Generate a new video
+    where the input is edited according to your instruction, preserving structure
+    and temporal coherence.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_capybara_v0_1_image_to_video.json
+  sha256: 2e7f6e1e86e6c3ad8ade47d747d80c5a7ddfd792b3aa06050ae095aa83345f42
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_capybara_v0_1_image_to_video
+  title: 'Capybara: Image to Video'
+  description: Upload an image and provide a text instruction. Generate a new video
+    where the input is edited according to your instruction, preserving structure
+    and temporal coherence.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  models:
+  - Capybara
+  date: '2026-02-23'
+  openSource: true
+  size: 37044092928
+  usage: 29
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 126
+      nodeType: LoadImage
+      file: joy_snap.png
+      mediaType: image
+    outputs:
+    - nodeId: 114
+      nodeType: SaveVideo
+      file: video_capybara_v0_1_image_to_video.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/video_capybara_v0_1_image_to_video.mp4
+  minComfyUIVersion: 0.3.71
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '126'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

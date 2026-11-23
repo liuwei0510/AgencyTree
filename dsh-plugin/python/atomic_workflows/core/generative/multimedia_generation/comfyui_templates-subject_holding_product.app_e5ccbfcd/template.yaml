@@ -1,0 +1,65 @@
+id: remote.template.templates-subject_holding_product.app
+kind: comfyui_template
+title: Add Product to Character’s Hand, AI UGC
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Add Product to Character’s Hand, AI UGC
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Upload a photo of your character and your product. Generate an image
+    of that character holding the product.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-subject_holding_product.app.json
+  sha256: d66a2ff96f8e668325dec4d5e7c51f9164e143e8dc48fd95bf653b6017712119
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-subject_holding_product.app
+  title: Add Product to Character’s Hand, AI UGC
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload a photo of your character and your product. Generate an image
+    of that character holding the product.
+  tags:
+  - API
+  - Portrait
+  models:
+  - Gemini3 Pro Image Preview
+  - Google
+  - Nano Banana Pro
+  openSource: false
+  date: '2025-12-18'
+  searchRank: 8
+  size: 0
+  usage: 10
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: subject-elderly-lady-portrait.png
+      mediaType: image
+    - nodeId: 11
+      nodeType: LoadImage
+      file: product-toothbrush.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-subject_holding_product_app.png
+  isApp: true
+  minComfyUIVersion: 0.8.0

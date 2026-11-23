@@ -1,0 +1,45 @@
+id: remote.template.video_wan2.1_alpha_t2v_14B
+kind: comfyui_template
+title: Wan2.1 Alpha T2V
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan2.1 Alpha T2V
+  input_types: []
+  output_types: []
+  capability: Generate text-to-video with alpha channel support for transparent backgrounds
+    and semi-transparent objects.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2.1_alpha_t2v_14B.json
+  sha256: 023cc1e5c7682f9fad979a7f3332c4589e5c82aa275d15d5a6df114faa8a349d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2.1_alpha_t2v_14B
+  title: Wan2.1 Alpha T2V
+  description: Generate text-to-video with alpha channel support for transparent backgrounds
+    and semi-transparent objects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - Video
+  models:
+  - Wan2.1
+  - Wan
+  date: '2025-10-06'
+  size: 22494891213
+  usage: 21
+  username: ComfyUI
+  minComfyUIVersion: 0.3.8

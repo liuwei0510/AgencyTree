@@ -1,0 +1,67 @@
+id: remote:template:api_krea3_t2i
+kind: comfyui_template
+title: 'Krea 3: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Krea 3: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using Krea 3, producing a single finished
+    image per run with no input files required. Ideal for e-commerce product staging,
+    fashion and portrait work, and architectural concept rendering.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_krea3_t2i.json
+  sha256: b1469c35fcab58d84c6cbb3e390e82d79cb2b9efd7b8adf477461eeeb8971d07
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_krea3_t2i
+  title: 'Krea 3: Text to Image'
+  description: Generate images from text prompts using Krea 3, producing a single
+    finished image per run with no input files required. Ideal for e-commerce product
+    staging, fashion and portrait work, and architectural concept rendering.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Krea 3
+  logos:
+  - provider: Krea
+  minComfyUIVersion: 0.41.0
+  date: '2026-10-15'
+  openSource: false
+  size: 0
+  usage: 693
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 7
+      nodeType: SaveImageAdvanced
+      file: api_krea3_t2i.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_krea3_t2i.json
+  sha256: b1469c35fcab58d84c6cbb3e390e82d79cb2b9efd7b8adf477461eeeb8971d07
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

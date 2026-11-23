@@ -1,0 +1,95 @@
+id: remote:template:video_wan_animate2
+kind: comfyui_template
+title: 'Wan Animate 2: Motion Transfer'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan Animate 2: Motion Transfer'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Animate a still character using a driving video with Wan Animate 2,
+    transferring motion directly from video frames without any pose extraction or
+    skeleton preprocessing. The output preserves the reference character's identity
+    while generating a fresh background and camera movement from your text prompt.
+    Ideal for motion transfer, action mimicry, and character animation replacement
+    projects.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_animate2.json
+  sha256: b163bbf2cc2afac9bdc54a14cdb553ce4fea408d794aa35ae1b4d1cd6a39b9bc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan_animate2
+  title: 'Wan Animate 2: Motion Transfer'
+  description: Animate a still character using a driving video with Wan Animate 2,
+    transferring motion directly from video frames without any pose extraction or
+    skeleton preprocessing. The output preserves the reference character's identity
+    while generating a fresh background and camera movement from your text prompt.
+    Ideal for motion transfer, action mimicry, and character animation replacement
+    projects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Motion Control
+  - Int8
+  models:
+  - Wan Animate
+  date: '2026-08-07'
+  openSource: true
+  size: 25662429594
+  usage: 1722
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 189
+      nodeType: LoadImage
+      file: pink_hair_mech_arms_ref.png
+      mediaType: image
+    - nodeId: 240
+      nodeType: LoadVideo
+      file: street_dance_drive.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 292
+      nodeType: SaveVideo
+      file: video_wan_animate2.mp4
+      mediaType: video
+  thumbnail:
+  - output/video_wan_animate2.mp4
+  minComfyUIVersion: 0.36.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_animate2.json
+  sha256: b163bbf2cc2afac9bdc54a14cdb553ce4fea408d794aa35ae1b4d1cd6a39b9bc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '189'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

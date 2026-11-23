@@ -1,0 +1,3 @@
+- insert:
+    - id: agencytree
+      name: '@agencytree/dsh-plugin'

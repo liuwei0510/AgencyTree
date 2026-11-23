@@ -1,0 +1,67 @@
+id: remote:template:api_elevenlabs_text_to_dialogue
+kind: comfyui_template
+title: 'ElevenLabs: Text to Dialogue'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'ElevenLabs: Text to Dialogue'
+  input_types: {}
+  output_types: {}
+  capability: Input text and select a voice profile to generate a high-quality, emotionally
+    expressive audio dialogue.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_elevenlabs_text_to_dialogue.json
+  sha256: 85931aa6207a5af28fe8018079122d894330fb1b1fe3f9c9dc35f5e063fdb03c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_elevenlabs_text_to_dialogue
+  title: 'ElevenLabs: Text to Dialogue'
+  description: Input text and select a voice profile to generate a high-quality, emotionally
+    expressive audio dialogue.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Speech
+  models:
+  - ElevenLabs
+  logos:
+  - provider: ElevenLabs
+  date: '2026-02-23'
+  openSource: false
+  size: 0
+  usage: 8
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 210
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/api_elevenlabs_text_to_dialogue.png
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_elevenlabs_text_to_dialogue.json
+  sha256: 85931aa6207a5af28fe8018079122d894330fb1b1fe3f9c9dc35f5e063fdb03c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_audio/comfyui_api_elevenlabs_text_to_dialogue_4bcda454/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

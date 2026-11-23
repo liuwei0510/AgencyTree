@@ -1,0 +1,45 @@
+id: remote:model:b09495c1c009bdeaa248
+kind: comfyui_model
+title: Hyper-SD CFG LoRA (8steps) - SD3
+tree_branch:
+- aux
+- latent_process
+- sampling_acceleration
+six_tuple:
+  name: Hyper-SD CFG LoRA (8steps) - SD3
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: Hyper-SD3-8steps-CFG-lora.safetensors
+  - name: base
+    value: SD3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/HyperSD/SD3
+    filename: Hyper-SD3-8steps-CFG-lora.safetensors
+    download_locator: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SD3-8steps-CFG-lora.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Hyper-SD CFG LoRA (8steps) - SD3
+  type: lora
+  base: SD3
+  save_path: loras/HyperSD/SD3
+  description: Hyper-SD CFG LoRA (8steps) - SD3
+  reference: https://huggingface.co/ByteDance/Hyper-SD
+  filename: Hyper-SD3-8steps-CFG-lora.safetensors
+  url: https://huggingface.co/ByteDance/Hyper-SD/resolve/main/Hyper-SD3-8steps-CFG-lora.safetensors
+  size: 472MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/sampling_acceleration/model_Hyper-SD_CFG_LoRA_8steps_-_SD3_b09495c1/model.yaml
+validation_errors: []

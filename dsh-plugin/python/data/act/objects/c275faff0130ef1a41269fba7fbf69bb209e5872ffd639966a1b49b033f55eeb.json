@@ -1,0 +1,152 @@
+{
+  "id": "5d4ec020-c06c-424e-af17-d6bfd877cd42",
+  "revision": 0,
+  "last_node_id": 22,
+  "last_link_id": 34,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "SaveVideo",
+      "pos": [
+        530,
+        160
+      ],
+      "size": [
+        540,
+        126
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.27.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/ComfyUI",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 22,
+      "type": "GeminiVideoOmniV2",
+      "pos": [
+        100,
+        160
+      ],
+      "size": [
+        400,
+        300
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model.images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model.videos.video_1",
+          "shape": 7,
+          "type": "VIDEO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.34.0",
+        "Node name for S&R": "GeminiVideoOmniV2"
+      },
+      "widgets_values": [
+        "Omni Flash",
+        "Ratio: 16:9; Duration: 3s; Wes Anderson style, perfectly symmetrical wide shot of a pastel-pink hotel lobby, two bellhops in matching mustard uniforms stand frozen at attention either side of a brass elevator, the elevator doors slide open in unison, a tiny dog wearing a bow tie trots out toward camera, slow dolly-in, flat lighting, ornate wallpaper.",
+        "16:9",
+        "auto",
+        1,
+        0.95,
+        42,
+        "randomize",
+        "randomize"
+      ],
+      "widgets_values_named": {
+        "model": "Omni Flash",
+        "model.prompt": "Ratio: 16:9; Duration: 3s; Wes Anderson style, perfectly symmetrical wide shot of a pastel-pink hotel lobby, two bellhops in matching mustard uniforms stand frozen at attention either side of a brass elevator, the elevator doors slide open in unison, a tiny dog wearing a bow tie trots out toward camera, slow dolly-in, flat lighting, ornate wallpaper.",
+        "model.aspect_ratio": "16:9",
+        "model.task_type": "auto",
+        "model.temperature": 1,
+        "model.top_p": 0.95,
+        "model.seed": 42,
+        "control_after_generate": "randomize"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      33,
+      22,
+      0,
+      2,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.097627965458713,
+      "offset": [
+        348.97382667594155,
+        249.0217650595467
+      ]
+    },
+    "frontendVersion": "1.51.9",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

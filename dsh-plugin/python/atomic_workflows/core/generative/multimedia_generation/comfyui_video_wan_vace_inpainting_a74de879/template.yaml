@@ -1,0 +1,85 @@
+id: remote:template:video_wan_vace_inpainting
+kind: comfyui_template
+title: Wan2.1 VACE Inpainting
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan2.1 VACE Inpainting
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Edit specific regions in videos while preserving surrounding content.
+    Great for object removal or replacement.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_vace_inpainting.json
+  sha256: d868cd24538e3618a0cce02eca3d5de7a9f97699a465880c2ed12741e633f306
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan_vace_inpainting
+  title: Wan2.1 VACE Inpainting
+  description: Edit specific regions in videos while preserving surrounding content.
+    Great for object removal or replacement.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/vace
+  tags:
+  - Inpainting
+  - Video
+  models:
+  - Wan2.1
+  - Wan
+  date: '2025-05-21'
+  size: 57767310131
+  usage: 233
+  io:
+    inputs:
+    - nodeId: 162
+      nodeType: LoadImage
+      file: api_bfl_flux_1_kontext_multiple_images_input_dog.jpg
+      mediaType: image
+    - nodeId: 209
+      nodeType: LoadVideo
+      file: video_wan_vace_inpainting_input_video.mp4
+      mediaType: video
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.20.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_vace_inpainting.json
+  sha256: d868cd24538e3618a0cce02eca3d5de7a9f97699a465880c2ed12741e633f306
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_video_wan_vace_inpainting_a74de879/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '162'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

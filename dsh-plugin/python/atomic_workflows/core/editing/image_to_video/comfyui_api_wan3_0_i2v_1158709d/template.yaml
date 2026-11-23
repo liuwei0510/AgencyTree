@@ -1,0 +1,83 @@
+id: remote.template.api_wan3_0_i2v
+kind: comfyui_template
+title: 'Wan3.0: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan3.0: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Create up to 30 seconds of high-fidelity video from a single image using
+    Wan 3.0, which supports text, image, audio, and document inputs for versatile
+    scene generation. Produces authentic, realistic footage with unique facial details
+    and believable motion in one pass. Ideal for cinematic storytelling, product visualization,
+    and documentary-style scene recreation.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan3_0_i2v.json
+  sha256: f3d375d6618a0a5a266b6cd4888f112d63a8503516094519295196506896d24c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan3_0_i2v
+  title: 'Wan3.0: Image to Video'
+  description: Create up to 30 seconds of high-fidelity video from a single image
+    using Wan 3.0, which supports text, image, audio, and document inputs for versatile
+    scene generation. Produces authentic, realistic footage with unique facial details
+    and believable motion in one pass. Ideal for cinematic storytelling, product visualization,
+    and documentary-style scene recreation.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - Wan3.0
+  logos:
+  - provider: WAN
+  date: '2026-08-24'
+  openSource: false
+  size: 0
+  usage: 504
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadImage
+      file: beetle_rider.png
+      mediaType: image
+    outputs:
+    - nodeId: 8
+      nodeType: SaveVideo
+      file: api_wan3_0_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_wan3_0_i2v.mp4
+  minComfyUIVersion: 0.33.4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '6'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

@@ -1,0 +1,14 @@
+id: aux.conditional.style_struct.conditioning_combine
+title: Conditioning Combine (style + structure)
+modality: [conditioning]
+description: Merge style and structure conditioning (ControlNet/IPAdapter stacks).
+tags: [conditional, controlnet]
+workflow_file: conditioning_combine.workflow.json
+inject: {}
+inputs:
+  - name: base_prompt
+    type: string
+    required: false
+outputs:
+  - name: combined_conditioning
+    type: generic

@@ -1,0 +1,90 @@
+id: remote:template:api_bfl_flux_1_kontext_pro_image
+kind: comfyui_template
+title: Flux.1 Kontext Pro
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Kontext Pro
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit images with Flux.1 Kontext pro image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_1_kontext_pro_image.json
+  sha256: 9526dea98a4928f3dc9f5c0e8e7eebd0304794d6a2c9b7abd191223cbb5938d2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux_1_kontext_pro_image
+  title: Flux.1 Kontext Pro
+  description: Edit images with Flux.1 Kontext pro image.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tutorialUrl: https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext
+  tags:
+  - API
+  - Image
+  - Image Edit
+  models:
+  - FLUX
+  - FLUX.1 Kontext
+  date: '2025-05-29'
+  openSource: false
+  size: 0
+  usage: 71
+  io:
+    inputs:
+    - nodeId: 84
+      nodeType: LoadImage
+      file: api_bfl_flux_1_kontext_pro_image_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 85
+      nodeType: SaveImage
+      file: api_bfl_flux_1_kontext_pro_image.png
+      mediaType: image
+  username: ComfyUI
+  logos:
+  - provider: Black Forest Labs
+  searchRank: 0
+  thumbnail:
+  - input/api_bfl_flux_1_kontext_pro_image_input_image.png
+  - output/api_bfl_flux_1_kontext_pro_image.png
+  minComfyUIVersion: 0.3.40
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_1_kontext_pro_image.json
+  sha256: 9526dea98a4928f3dc9f5c0e8e7eebd0304794d6a2c9b7abd191223cbb5938d2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_bfl_flux_1_kontext_pro_image_a6d98cac/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '84'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,77 @@
+id: remote:template:api_bfl_flux3_t2v
+kind: comfyui_template
+title: 'FLUX 3 Video: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX 3 Video: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate full videos from a single text prompt with FLUX 3, which expands
+    natural language into complete scenes with synchronized audio, no reference images
+    or complex settings needed. Outputs 1 video in 720p at 24fps, 5 to 20 seconds
+    long, supporting any aspect ratio from 9:16 to 21:9 with built-in sound design.
+    Ideal for quick social media clips, ad mockups, and concept films requiring realistic
+    motion and cinematic style.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_t2v.json
+  sha256: 455dfdb217e5ff35144827c314d600d557d48c53331df879ae5ffb72b0160773
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux3_t2v
+  title: 'FLUX 3 Video: Text to Video'
+  description: Generate full videos from a single text prompt with FLUX 3, which expands
+    natural language into complete scenes with synchronized audio, no reference images
+    or complex settings needed. Outputs 1 video in 720p at 24fps, 5 to 20 seconds
+    long, supporting any aspect ratio from 9:16 to 21:9 with built-in sound design.
+    Ideal for quick social media clips, ad mockups, and concept films requiring realistic
+    motion and cinematic style.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - FLUX 3 Video
+  logos:
+  - provider: Black Forest Labs
+  date: '2026-08-04'
+  openSource: false
+  size: 0
+  usage: 34
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - output/api_bfl_flux3_t2v.mp4
+  io:
+    outputs:
+    - nodeId: 6
+      nodeType: SaveVideo
+      file: api_bfl_flux3_t2v.mp4
+      mediaType: video
+  minComfyUIVersion: 0.30.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_t2v.json
+  sha256: 455dfdb217e5ff35144827c314d600d557d48c53331df879ae5ffb72b0160773
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_video/comfyui_api_bfl_flux3_t2v_46e08bdd/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

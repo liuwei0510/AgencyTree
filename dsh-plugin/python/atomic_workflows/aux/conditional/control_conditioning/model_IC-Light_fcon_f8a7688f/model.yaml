@@ -1,0 +1,43 @@
+id: remote.model.f8a7688f4df18febaafa
+kind: comfyui_model
+title: IC-Light/fcon
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: IC-Light/fcon
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: iclight_sd15_fcon.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: IC-Light
+    save_path: diffusion_models/IC-Light
+    filename: iclight_sd15_fcon.safetensors
+    download_locator: https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fcon.safetensors
+code_usable: true
+status: available
+metadata:
+  name: IC-Light/fcon
+  type: IC-Light
+  base: SD1.5
+  save_path: diffusion_models/IC-Light
+  description: Same as iclight_sd15_fc.safetensors, but trained with offset noise
+  reference: https://huggingface.co/lllyasviel/ic-light
+  filename: iclight_sd15_fcon.safetensors
+  url: https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fcon.safetensors
+  size: 1.72GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

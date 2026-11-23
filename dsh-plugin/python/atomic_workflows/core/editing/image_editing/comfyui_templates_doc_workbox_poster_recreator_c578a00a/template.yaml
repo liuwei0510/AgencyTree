@@ -1,0 +1,79 @@
+id: remote.template.templates_doc_workbox_poster_recreator
+kind: comfyui_template
+title: Realistic Poster Redesign With Character Transformation
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Realistic Poster Redesign With Character Transformation
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Transform uploaded images into realistic poster designs. Change character
+    poses, faces, and clothing while maintaining artistic style and color schemes.
+    Outputs a visually impactful poster with artistic typography.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_doc_workbox_poster_recreator.json
+  sha256: 122b416adf773c8560c1099dbfcc14b201d52d2808783b422db6e46e37b752d0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_doc_workbox_poster_recreator
+  title: Realistic Poster Redesign With Character Transformation
+  description: Transform uploaded images into realistic poster designs. Change character
+    poses, faces, and clothing while maintaining artistic style and color schemes.
+    Outputs a visually impactful poster with artistic typography.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Nano Banana Pro
+  logos:
+  - provider: Google
+  date: '2026-03-21'
+  openSource: false
+  size: 0
+  usage: 10
+  searchRank: 0
+  username: Doc_workBox
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: reference_poster.png
+      mediaType: image
+    outputs:
+    - nodeId: 4
+      nodeType: SaveImage
+      file: templates_doc_workbox_poster_recreator.png
+      mediaType: image
+  thumbnail:
+  - output/templates_doc_workbox_poster_recreator.png
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

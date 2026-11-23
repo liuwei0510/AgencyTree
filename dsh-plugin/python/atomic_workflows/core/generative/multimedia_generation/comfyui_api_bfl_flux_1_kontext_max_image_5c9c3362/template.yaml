@@ -1,0 +1,79 @@
+id: remote:template:api_bfl_flux_1_kontext_max_image
+kind: comfyui_template
+title: Flux.1 Kontext Max
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Kontext Max
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit images with Flux.1 Kontext max image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_1_kontext_max_image.json
+  sha256: c7126045a631a41041977c56e8a3b44b0d5047cfc77d11e3d9edf81770a6bbf1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux_1_kontext_max_image
+  title: Flux.1 Kontext Max
+  description: Edit images with Flux.1 Kontext max image.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tutorialUrl: https://docs.comfy.org/tutorials/partner-nodes/black-forest-labs/flux-1-kontext
+  tags:
+  - API
+  - Image Edit
+  - Image
+  models:
+  - FLUX.1 Kontext
+  - FLUX
+  date: '2025-05-29'
+  openSource: false
+  size: 0
+  usage: 14
+  io:
+    inputs:
+    - nodeId: 84
+      nodeType: LoadImage
+      file: api_bfl_flux_1_kontext_max_image_style_ref.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.40
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux_1_kontext_max_image.json
+  sha256: c7126045a631a41041977c56e8a3b44b0d5047cfc77d11e3d9edf81770a6bbf1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_bfl_flux_1_kontext_max_image_5c9c3362/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '84'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,45 @@
+id: remote:model:9bcfb281bc224e1f540d
+kind: comfyui_model
+title: CLIPVision model (IP-Adapter) CLIP-ViT-bigG-14-laion2B-39B-b160k
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: CLIPVision model (IP-Adapter) CLIP-ViT-bigG-14-laion2B-39B-b160k
+  input_types:
+  - image
+  output_types:
+  - image embedding
+  capability: aux/preprocess/image_encoding
+  parameters:
+  - name: filename
+    value: CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+  - name: base
+    value: ViT-G
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip_vision
+    save_path: clip_vision
+    filename: CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+    download_locator: https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: CLIPVision model (IP-Adapter) CLIP-ViT-bigG-14-laion2B-39B-b160k
+  type: clip_vision
+  base: ViT-G
+  save_path: clip_vision
+  description: CLIPVision model (needed for IP-Adapter)
+  reference: https://huggingface.co/h94/IP-Adapter
+  filename: CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+  url: https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors
+  size: 3.69GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/preprocess/image_encoding/model_CLIPVision_model_IP-Adapter_CLIP-ViT-bigG-14-laion2B-39B-b160k_9bcfb281/model.yaml
+validation_errors: []

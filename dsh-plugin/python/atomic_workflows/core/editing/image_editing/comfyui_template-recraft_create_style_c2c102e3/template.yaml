@@ -1,0 +1,83 @@
+id: remote.template.template-recraft_create_style
+kind: comfyui_template
+title: Style Transfer - Recraft Text-to-Image
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Style Transfer - Recraft Text-to-Image
+  input_types:
+  - image
+  - image
+  - image
+  - image
+  - image
+  output_types:
+  - image
+  capability: Upload 1-5 style references and create a style ID to generate consistent,
+    on brand images.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template-recraft_create_style.json
+  sha256: 883c764d2ea63fd85570722b1f53b0490f66dc6ff40cffac6a6ec222d59b317e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template-recraft_create_style
+  title: Style Transfer - Recraft Text-to-Image
+  description: Upload 1-5 style references and create a style ID to generate consistent,
+    on brand images.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Style Transfer
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  date: '2026-02-11'
+  openSource: false
+  size: 0
+  usage: 23
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: input_style_1.png
+      mediaType: image
+    - nodeId: 23
+      nodeType: LoadImage
+      file: input_style_2.png
+      mediaType: image
+    - nodeId: 24
+      nodeType: LoadImage
+      file: input_style_3.png
+      mediaType: image
+    - nodeId: 25
+      nodeType: LoadImage
+      file: input_style_4.png
+      mediaType: image
+    - nodeId: 26
+      nodeType: LoadImage
+      file: input_style_5.png
+      mediaType: image
+    outputs:
+    - nodeId: 37
+      nodeType: SaveImage
+      file: template-recraft_create_style.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/template-recraft_create_style.mp4
+  minComfyUIVersion: 0.12.0

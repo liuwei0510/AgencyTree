@@ -1,0 +1,629 @@
+{
+  "id": "ef49adbe-6e63-45c0-9f29-fa4677f627ac",
+  "revision": 0,
+  "last_node_id": 48,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 40,
+      "type": "TripoRetargetNode",
+      "pos": [
+        -7330,
+        1752
+      ],
+      "size": [
+        330,
+        190
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "original_model_task_id",
+          "type": "RIG_TASK_ID",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_file",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "retarget task_id",
+          "type": "RETARGET_TASK_ID",
+          "links": null
+        },
+        {
+          "name": "GLB",
+          "type": "FILE_3D_GLB",
+          "links": null
+        },
+        {
+          "name": "FBX",
+          "type": "FILE_3D_FBX",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripoRetargetNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3"
+      },
+      "widgets_values": [
+        "preset:idle",
+        "glb",
+        true,
+        false
+      ],
+      "widgets_values_named": {
+        "animation": "preset:idle",
+        "out_format": "glb",
+        "export_with_geometry": true,
+        "animate_in_place": false
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 43,
+      "type": "SaveGLB",
+      "pos": [
+        -6020,
+        1320
+      ],
+      "size": [
+        670,
+        680
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh",
+          "type": "MESH,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_OBJ,FILE_3D_FBX,FILE_3D_STL,FILE_3D_USDZ,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_SPZ,FILE_3D_KSPLAT,FILE_3D_SPLAT_ANY,FILE_3D_POINT_CLOUD_ANY,FILE_3D",
+          "link": 30
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled"
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35
+        },
+        "Light Config": {
+          "intensity": 3,
+          "hdri": {
+            "enabled": false,
+            "hdriPath": "",
+            "showAsBackground": false,
+            "intensity": 1
+          }
+        }
+      },
+      "widgets_values": [
+        "3d/Tripo_3.1",
+        ""
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "3d/Tripo_3.1",
+        "image": ""
+      }
+    },
+    {
+      "id": 44,
+      "type": "LoadImage",
+      "pos": [
+        -6780,
+        1300
+      ],
+      "size": [
+        290,
+        350
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            27
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.34.0"
+      },
+      "widgets_values": [
+        "castle_front_view.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "castle_front_view.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 45,
+      "type": "LoadImage",
+      "pos": [
+        -6780,
+        1730
+      ],
+      "size": [
+        290,
+        350
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            28
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.34.0"
+      },
+      "widgets_values": [
+        "castle_side_view.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "castle_side_view.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 46,
+      "type": "LoadImage",
+      "pos": [
+        -6780,
+        2150
+      ],
+      "size": [
+        290,
+        350
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage",
+        "cnr_id": "comfy-core",
+        "ver": "0.34.0"
+      },
+      "widgets_values": [
+        "castle_back_view.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "castle_back_view.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 47,
+      "type": "TripoMultiviewToModelNode",
+      "pos": [
+        -6410,
+        1300
+      ],
+      "size": [
+        270,
+        410
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 27
+        },
+        {
+          "name": "image_left",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 28
+        },
+        {
+          "name": "image_back",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 29
+        },
+        {
+          "name": "image_right",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_file",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "model task_id",
+          "type": "MODEL_TASK_ID",
+          "links": null
+        },
+        {
+          "name": "GLB",
+          "type": "FILE_3D_GLB",
+          "links": [
+            30
+          ]
+        },
+        {
+          "name": "FBX",
+          "type": "FILE_3D_FBX",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripoMultiviewToModelNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.34.0"
+      },
+      "widgets_values": [
+        "v3.1-20260211",
+        "default",
+        true,
+        true,
+        42,
+        42,
+        "standard",
+        "original_image",
+        -1,
+        false,
+        "standard",
+        false,
+        false
+      ],
+      "widgets_values_named": {
+        "model_version": "v3.1-20260211",
+        "orientation": "default",
+        "texture": true,
+        "pbr": true,
+        "model_seed": 42,
+        "texture_seed": 42,
+        "texture_quality": "standard",
+        "texture_alignment": "original_image",
+        "face_limit": -1,
+        "quad": false,
+        "geometry_quality": "standard",
+        "smart_low_poly": false,
+        "auto_size": false
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 39,
+      "type": "TripoRigNode",
+      "pos": [
+        -7330,
+        2004
+      ],
+      "size": [
+        330,
+        206
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "original_model_task_id",
+          "type": "MODEL_TASK_ID",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_file",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "rig task_id",
+          "type": "RIG_TASK_ID",
+          "links": null
+        },
+        {
+          "name": "GLB",
+          "type": "FILE_3D_GLB",
+          "links": null
+        },
+        {
+          "name": "FBX",
+          "type": "FILE_3D_FBX",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripoRigNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3"
+      },
+      "widgets_values": [
+        "v1.0-20240301",
+        "auto",
+        "tripo",
+        "glb"
+      ],
+      "widgets_values_named": {
+        "model_version": "v1.0-20240301",
+        "rig_type": "auto",
+        "spec": "tripo",
+        "out_format": "glb"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 41,
+      "type": "TripoConversionNode",
+      "pos": [
+        -7330,
+        2272
+      ],
+      "size": [
+        330,
+        466
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "original_model_task_id",
+          "type": "MODEL_TASK_ID,RIG_TASK_ID,RETARGET_TASK_ID,SEGMENT_TASK_ID",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_3d",
+          "type": "FILE_3D",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripoConversionNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3"
+      },
+      "widgets_values": [
+        "GLTF",
+        false,
+        -1,
+        4096,
+        "JPEG",
+        false,
+        false,
+        0,
+        false,
+        1,
+        false,
+        false,
+        false,
+        "",
+        "blender",
+        false,
+        "default",
+        false
+      ],
+      "widgets_values_named": {
+        "format": "GLTF",
+        "quad": false,
+        "face_limit": -1,
+        "texture_size": 4096,
+        "texture_format": "JPEG",
+        "force_symmetry": false,
+        "flatten_bottom": false,
+        "flatten_bottom_threshold": 0,
+        "pivot_to_center_bottom": false,
+        "scale_factor": 1,
+        "with_animation": false,
+        "pack_uv": false,
+        "bake": false,
+        "part_names": "",
+        "fbx_preset": "blender",
+        "export_vertex_colors": false,
+        "export_orientation": "default",
+        "animate_in_place": false
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 48,
+      "type": "TripoTextureNodeV2",
+      "pos": [
+        -7347.170965153654,
+        1369.6024596917282
+      ],
+      "size": [
+        382.29038104266607,
+        294.24678847280313
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model_task_id",
+          "type": "MODEL_TASK_ID,SEGMENT_TASK_ID",
+          "link": null
+        },
+        {
+          "name": "style_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model task_id",
+          "type": "MODEL_TASK_ID",
+          "links": null
+        },
+        {
+          "name": "GLB",
+          "type": "FILE_3D_GLB",
+          "links": null
+        },
+        {
+          "name": "FBX",
+          "type": "FILE_3D_FBX",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TripoTextureNodeV2"
+      },
+      "widgets_values": [
+        true,
+        42,
+        "standard",
+        "original_image",
+        "",
+        "v3.0-20250812",
+        "none",
+        ""
+      ],
+      "widgets_values_named": {
+        "pbr": true,
+        "texture_seed": 42,
+        "texture_quality": "standard",
+        "texture_alignment": "original_image",
+        "texture_prompt": "",
+        "model_version": "v3.0-20250812",
+        "reference": "none",
+        "part_names": ""
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      27,
+      44,
+      0,
+      47,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      45,
+      0,
+      47,
+      1,
+      "IMAGE"
+    ],
+    [
+      29,
+      46,
+      0,
+      47,
+      2,
+      "IMAGE"
+    ],
+    [
+      30,
+      47,
+      2,
+      43,
+      0,
+      "FILE_3D_GLB"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "Tripo Toolset (select and ctrl-b to enable)",
+      "bounding": [
+        -7460,
+        1260,
+        590,
+        1500
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.5151123840606289,
+      "offset": [
+        7590.859689714364,
+        -1224.6057700720262
+      ]
+    },
+    "frontendVersion": "1.55.14",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

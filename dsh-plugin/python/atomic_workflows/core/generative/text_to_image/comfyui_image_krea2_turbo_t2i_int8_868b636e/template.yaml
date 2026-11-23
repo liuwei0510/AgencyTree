@@ -1,0 +1,75 @@
+id: remote:template:image_krea2_turbo_t2i_int8
+kind: comfyui_template
+title: 'Krea-2 Int8: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Krea-2 Int8: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images with the Krea-2 Turbo distilled text-to-image model
+    using the high-performance Int8 Convrot format, which delivers better quality
+    than FP8 while generally running faster across most GPUs. This workflow accepts
+    no file inputs and produces a single image output, with optional style LoRA support
+    for creative customization. Ideal for rapid concept art iteration, batch asset
+    generation for games or marketing, and exploring the speed-quality sweet spot
+    of the Convrot Int8 quantization.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_krea2_turbo_t2i_int8.json
+  sha256: fc0b2495ec995cf8f4ae917b5c00a178891d8aac5c07f233f1af2247dbd68533
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_krea2_turbo_t2i_int8
+  title: 'Krea-2 Int8: Text to Image'
+  description: Generate images with the Krea-2 Turbo distilled text-to-image model
+    using the high-performance Int8 Convrot format, which delivers better quality
+    than FP8 while generally running faster across most GPUs. This workflow accepts
+    no file inputs and produces a single image output, with optional style LoRA support
+    for creative customization. Ideal for rapid concept art iteration, batch asset
+    generation for games or marketing, and exploring the speed-quality sweet spot
+    of the Convrot Int8 quantization.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - Krea 2
+  date: '2026-07-08'
+  openSource: true
+  size: 19112604467
+  usage: 338
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 29
+      nodeType: SaveImage
+      file: image_krea2_turbo_t2i_int8.png
+      mediaType: image
+  thumbnail:
+  - output/image_krea2_turbo_t2i_int8.png
+  minComfyUIVersion: 0.24.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_krea2_turbo_t2i_int8.json
+  sha256: fc0b2495ec995cf8f4ae917b5c00a178891d8aac5c07f233f1af2247dbd68533
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

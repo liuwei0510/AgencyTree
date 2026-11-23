@@ -1,0 +1,96 @@
+id: remote:template:templates_mjm_looped_restyler
+kind: comfyui_template
+title: Looped Restyler
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Looped Restyler
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload a starting image and its prompt to generate a looping video from
+    the first to the last frame.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_mjm_looped_restyler.json
+  sha256: 7a877cdfc9e86a84fd560a907b19b2b1f7b2d3f1d68ab3cb14c9894080354a76
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_mjm_looped_restyler
+  title: Looped Restyler
+  description: Upload a starting image and its prompt to generate a looping video
+    from the first to the last frame.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - FLF2V
+  - Image to Video
+  - Video
+  models:
+  - Google Gemini
+  - Nano Banana
+  - Wan2.2
+  logos:
+  - provider:
+    - Google
+    - WAN
+  date: '2026-03-03'
+  openSource: false
+  size: 38010460570
+  usage: 6
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: looped_restyler_init.png
+      mediaType: image
+    outputs:
+    - nodeId: 80
+      nodeType: SaveVideo
+      file: templates_mjm_looped_restyler.mp4
+      mediaType: video
+  username: Julien | MJM
+  thumbnail:
+  - output/templates_mjm_looped_restyler.mp4
+  minComfyUIVersion: 0.3.53
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_mjm_looped_restyler.json
+  sha256: 7a877cdfc9e86a84fd560a907b19b2b1f7b2d3f1d68ab3cb14c9894080354a76
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_templates_mjm_looped_restyler_266ceedb/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '4'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

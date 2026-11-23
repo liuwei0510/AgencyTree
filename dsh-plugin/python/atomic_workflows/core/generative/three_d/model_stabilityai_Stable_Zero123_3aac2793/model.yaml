@@ -1,0 +1,46 @@
+id: remote:model:3aac27932fcd67968fd5
+kind: comfyui_model
+title: stabilityai/Stable Zero123
+tree_branch:
+- core
+- generative
+- three_d
+six_tuple:
+  name: stabilityai/Stable Zero123
+  input_types:
+  - text or image
+  output_types:
+  - mesh
+  capability: core/generative/three_d
+  parameters:
+  - name: filename
+    value: stable_zero123.ckpt
+  - name: base
+    value: zero123
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: zero123
+    save_path: checkpoints/zero123
+    filename: stable_zero123.ckpt
+    download_locator: https://huggingface.co/stabilityai/stable-zero123/resolve/main/stable_zero123.ckpt
+code_usable: true
+status: available
+metadata:
+  name: stabilityai/Stable Zero123
+  type: zero123
+  base: zero123
+  save_path: checkpoints/zero123
+  description: Stable Zero123 is a model for view-conditioned image generation based
+    on [a/Zero123](https://github.com/cvlab-columbia/zero123).
+  reference: https://huggingface.co/stabilityai/stable-zero123
+  filename: stable_zero123.ckpt
+  url: https://huggingface.co/stabilityai/stable-zero123/resolve/main/stable_zero123.ckpt
+  size: 8.58GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/three_d/model_stabilityai_Stable_Zero123_3aac2793/model.yaml
+validation_errors: []

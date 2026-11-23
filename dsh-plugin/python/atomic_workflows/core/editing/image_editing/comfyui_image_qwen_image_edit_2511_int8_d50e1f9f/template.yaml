@@ -1,0 +1,81 @@
+id: remote:template:image_qwen_image_edit_2511_int8
+kind: comfyui_template
+title: 'Qwen Image Edit 2511 Int8: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen Image Edit 2511 Int8: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit images with Qwen Image Edit 2511 Int8, using a quantized model
+    for faster inference while maintaining high quality. Input one image and receive
+    one edited output. Ideal for character-consistent portrait editing, multi-person
+    group photo fusion, and industrial design modifications.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_edit_2511_int8.json
+  sha256: be7a6c2ad90f5250dfbbcbd81cec595aefb07f19a628ce2768463f1ae023a56d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_edit_2511_int8
+  title: 'Qwen Image Edit 2511 Int8: Image Edit'
+  description: Edit images with Qwen Image Edit 2511 Int8, using a quantized model
+    for faster inference while maintaining high quality. Input one image and receive
+    one edited output. Ideal for character-consistent portrait editing, multi-person
+    group photo fusion, and industrial design modifications.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Int8
+  models:
+  - Qwen Image Edit 2511
+  date: '2026-07-10'
+  openSource: true
+  size: 31031138714
+  usage: 1131
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 41
+      nodeType: LoadImage
+      file: lily_girl_blue.png
+      mediaType: image
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_edit_2511_int8.json
+  sha256: be7a6c2ad90f5250dfbbcbd81cec595aefb07f19a628ce2768463f1ae023a56d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_qwen_image_edit_2511_int8_d50e1f9f/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '41'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

@@ -1,0 +1,45 @@
+id: remote:model:463b5d321287da6b940f
+kind: comfyui_model
+title: det_10g.onnx
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: det_10g.onnx
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: det_10g.onnx
+  - name: base
+    value: inswapper
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models/buffalo_l
+    filename: det_10g.onnx
+    download_locator: https://huggingface.co/public-data/insightface/resolve/main/models/buffalo_l/det_10g.onnx
+code_usable: true
+status: available
+metadata:
+  name: det_10g.onnx
+  type: insightface
+  base: inswapper
+  save_path: insightface/models/buffalo_l
+  description: Buffalo_l det_10g.onnx model for IpAdapterPlus
+  reference: https://github.com/cubiq/ComfyUI_IPAdapter_plus?tab=readme-ov-file#faceid
+  filename: det_10g.onnx
+  url: https://huggingface.co/public-data/insightface/resolve/main/models/buffalo_l/det_10g.onnx
+  size: 16.9MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/face_analysis/model_det_10g.onnx_463b5d32/model.yaml
+validation_errors: []

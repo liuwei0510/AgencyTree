@@ -1,0 +1,71 @@
+id: remote.template.api_ideogram_p_image_t2i
+kind: comfyui_template
+title: 'Ideogram P-Image: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram P-Image: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text descriptions using Ideogram's fast P-Image
+    model, which delivers quality comparable to leading image models at significantly
+    lower cost and latency. One text prompt is accepted and one image is output, with
+    controls for quality level and resolution. Ideal for rapid iteration in design
+    workflows, high-volume content production, and cost-sensitive A/B testing of visual
+    concepts.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_p_image_t2i.json
+  sha256: 2e5428e2e065cd68726267f589ab5fe75290dd40a53806d2fc9935d253702d6c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ideogram_p_image_t2i
+  title: 'Ideogram P-Image: Text to Image'
+  description: Generate images from text descriptions using Ideogram's fast P-Image
+    model, which delivers quality comparable to leading image models at significantly
+    lower cost and latency. One text prompt is accepted and one image is output, with
+    controls for quality level and resolution. Ideal for rapid iteration in design
+    workflows, high-volume content production, and cost-sensitive A/B testing of visual
+    concepts.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Ideogram
+  logos:
+  - provider: Ideogram
+  date: '2026-07-30'
+  openSource: false
+  size: 0
+  usage: 15
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 13
+      nodeType: SaveImageAdvanced
+      file: api_ideogram_p_image_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_ideogram_p_image_t2i.png
+  minComfyUIVersion: 0.29.2
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

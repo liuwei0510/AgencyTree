@@ -1,0 +1,33 @@
+id: aux.latent_process.latent_upscale.latent_upscale_by
+title: Latent Upscale (LatentUpscale / similar)
+modality:
+- latent
+description: Upscale in latent space before final VAE decode.
+tags:
+- latent
+- upscale
+workflow_file: latent_upscale_by.workflow.json
+inject:
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: null
+inputs:
+- name: seed
+  type: int
+  required: false
+- name: width
+  type: number
+  required: false
+  default: 512
+- name: height
+  type: number
+  required: false
+  default: 512
+outputs:
+- name: latent
+  type: generic

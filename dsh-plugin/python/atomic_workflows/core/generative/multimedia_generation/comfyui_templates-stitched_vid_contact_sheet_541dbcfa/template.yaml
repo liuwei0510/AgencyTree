@@ -1,0 +1,82 @@
+id: remote.template.templates-stitched_vid_contact_sheet
+kind: comfyui_template
+title: Character & Outfit to Fashion Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Character & Outfit to Fashion Video
+  input_types:
+  - image
+  - image
+  - image
+  output_types: []
+  capability: Upload your character and clothing items or accessories. Generate a
+    fashion photograph base and use as a reference to 8x grid images, together with
+    Multi-Keyframe Video Stitching.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-stitched_vid_contact_sheet.json
+  sha256: 9588dc63acafb02419df1c53cc3baab9e20d5c13cbb7ba7e1fd5ecb93f355c0e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-stitched_vid_contact_sheet
+  title: Character & Outfit to Fashion Video
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload your character and clothing items or accessories. Generate a
+    fashion photograph base and use as a reference to 8x grid images, together with
+    Multi-Keyframe Video Stitching.
+  tags:
+  - Image to Video
+  - FLF2V
+  - API
+  models:
+  - Google Gemini Image
+  - Nano Banana Pro
+  - Google
+  - Kling
+  - Kling O1
+  - OpenAI
+  openSource: false
+  date: '2025-12-18'
+  searchRank: 8
+  size: 0
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 9
+  logos:
+  - provider:
+    - Google
+    - Kling
+    - OpenAI
+    label: Multi-Provider
+  io:
+    inputs:
+    - nodeId: 16
+      nodeType: LoadImage
+      file: subject_leopard_hair_croc_jacket.png
+      mediaType: image
+    - nodeId: 26
+      nodeType: LoadImage
+      file: cartier-glasses-1.jpg
+      mediaType: image
+    - nodeId: 27
+      nodeType: LoadImage
+      file: outfit_image-2.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-stitched_vid_contact_sheet.mp4
+  minComfyUIVersion: 0.35.2

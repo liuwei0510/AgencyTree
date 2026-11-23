@@ -1,0 +1,138 @@
+id: remote:template:txt_to_image_to_video
+kind: comfyui_template
+title: SVD Text to Image to Video
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SVD Text to Image to Video
+  input_types:
+    seed: number
+    prompt: string
+    negative_prompt: string
+    width: number
+    height: number
+    seed_2: number
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate videos by first creating images from text prompts.
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 237514639057514
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: text, watermark
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 576
+  - name: seed_2
+    type: number
+    required: false
+    default: 144698910769133
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/txt_to_image_to_video.json
+  sha256: add19130f68d3b90879a18f0bcf480bc7724917f814ff7a261f9b6a80b6808b6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: txt_to_image_to_video
+  title: SVD Text to Image to Video
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate videos by first creating images from text prompts.
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/video/#image-to-video
+  tags:
+  - Text to Video
+  - Video
+  models:
+  - SVD
+  - Stability
+  date: '2025-03-01'
+  size: 16492674417
+  usage: 9
+  username: ComfyUI
+  minComfyUIVersion: 0.3.31
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/txt_to_image_to_video.json
+  sha256: add19130f68d3b90879a18f0bcf480bc7724917f814ff7a261f9b6a80b6808b6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_txt_to_image_to_video_31224838/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 237514639057514
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: text, watermark
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 576
+- name: seed_2
+  type: number
+  required: false
+  default: 144698910769133
+inject:
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+  prompt:
+    node_id: '18'
+    input_key: text
+    widget_index: 0
+  negative_prompt:
+    node_id: '19'
+    input_key: text
+    widget_index: 0
+  width:
+    node_id: '22'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '22'
+    input_key: height
+    widget_index: 1
+  seed_2:
+    node_id: '17'
+    input_key: seed
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

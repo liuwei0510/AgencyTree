@@ -1,0 +1,80 @@
+id: remote.template.api_tripo_multiview_to_model
+kind: comfyui_template
+title: 'Tripo: Multiview to Model'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo: Multiview to Model'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    mesh: mesh_path
+  capability: Build 3D models from multiple angles with Tripo's advanced scanner.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_multiview_to_model.json
+  sha256: db2ef3d6e775494126fde2837eab4e4cac89f4f2c7d5f1c82fb5874bbdcd6cd1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_multiview_to_model
+  title: 'Tripo: Multiview to Model'
+  description: Build 3D models from multiple angles with Tripo's advanced scanner.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to 3D
+  - 3D
+  - API
+  models:
+  - Tripo
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 13
+  io:
+    inputs:
+    - nodeId: 7
+      nodeType: LoadImage
+      file: api_tripo_multiview_to_model_front_image.jpg
+      mediaType: image
+    - nodeId: 8
+      nodeType: LoadImage
+      file: api_tripo_multiview_to_model_back_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.35.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '7'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: mesh
+  type: mesh_path

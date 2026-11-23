@@ -1,0 +1,57 @@
+id: remote.template.template_animate_diff_loops
+kind: comfyui_template
+title: Animate Diff High Res Loops
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Animate Diff High Res Loops
+  input_types:
+  - image
+  output_types: []
+  capability: upload one image to get a seamless loop animation
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_animate_diff_loops.json
+  sha256: 7974424899e888032178f90510f9a8ec1ec218d05d83161cbee480f3ad9ad76c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_animate_diff_loops
+  title: Animate Diff High Res Loops
+  description: upload one image to get a seamless loop animation
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  models:
+  - IP Adapter
+  date: '2026-03-30'
+  openSource: true
+  size: 4294967296
+  usage: 7
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 145
+      nodeType: LoadImage
+      file: path_of_the_cube.png
+      mediaType: image
+  requiresCustomNodes:
+  - comfyui-animatediff-evolved
+  - comfyui-videohelpersuite
+  - comfyui_fill-nodes
+  - comfyui_ipadapter_plus
+  includeOnDistributions:
+  - local
+  minComfyUIVersion: 0.3.42

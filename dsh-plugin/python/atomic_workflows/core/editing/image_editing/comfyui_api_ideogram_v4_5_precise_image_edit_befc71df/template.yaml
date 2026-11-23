@@ -1,0 +1,85 @@
+id: remote:template:api_ideogram_v4_5_precise_image_edit
+kind: comfyui_template
+title: Ideogram 4.5 Precise Edit
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Ideogram 4.5 Precise Edit
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Generate a precisely edited image from a text prompt and up to five
+    input images using Ideogram 4.5, where image 1 is the image to edit and images
+    2-5 are optional references. Only what the prompt asks for changes, so untouched
+    pixels stay identical and the output keeps the size of image 1, with a choice
+    of quality tiers. Ideal for product recolours and material swaps, replacing one
+    element of a photo without disturbing its lighting, background, or framing, and
+    touch-ups that must leave the rest of the image alone.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_v4_5_precise_image_edit.json
+  sha256: 1445fea17a1dccbc203cc54724415fbbf93dd45a15091b6b0934a47cee1e998f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ideogram_v4_5_precise_image_edit
+  title: Ideogram 4.5 Precise Edit
+  description: Generate a precisely edited image from a text prompt and up to five
+    input images using Ideogram 4.5, where image 1 is the image to edit and images
+    2-5 are optional references. Only what the prompt asks for changes, so untouched
+    pixels stay identical and the output keeps the size of image 1, with a choice
+    of quality tiers. Ideal for product recolours and material swaps, replacing one
+    element of a photo without disturbing its lighting, background, or framing, and
+    touch-ups that must leave the rest of the image alone.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image Edit
+  - API
+  models:
+  - Ideogram
+  logos:
+  - provider: Ideogram
+  minComfyUIVersion: 0.38.1
+  date: '2026-09-30'
+  openSource: false
+  size: 107374182
+  usage: 158
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: redhair_girl_portrait.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_v4_5_precise_image_edit.json
+  sha256: 1445fea17a1dccbc203cc54724415fbbf93dd45a15091b6b0934a47cee1e998f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

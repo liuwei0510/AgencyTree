@@ -1,0 +1,70 @@
+id: remote.template.templates-2x2_grid-character_bg_product
+kind: comfyui_template
+title: Fashion Editorial Shots
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Fashion Editorial Shots
+  input_types:
+  - image
+  - image
+  - image
+  output_types: []
+  capability: Upload your character, background scene and product. Generate a 2x2
+    grid, select your desired image and upscale
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-2x2_grid-character_bg_product.json
+  sha256: 43782554d92712e989d42c8b09d1d8f100d4ac4a36d49f98bc70b29c272781f9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-2x2_grid-character_bg_product
+  title: Fashion Editorial Shots
+  description: Upload your character, background scene and product. Generate a 2x2
+    grid, select your desired image and upscale
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Nano Banana Pro
+  - Google
+  - Google Gemini Image
+  date: '2026-01-13'
+  openSource: false
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 2
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: snake_on_jacket.jpg
+      mediaType: image
+    - nodeId: 2
+      nodeType: LoadImage
+      file: forest_background.jpg
+      mediaType: image
+    - nodeId: 5
+      nodeType: LoadImage
+      file: brown_moisturizer_bottle.jpg
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-2x2_grid-character_bg_product.png
+  minComfyUIVersion: 0.15.0

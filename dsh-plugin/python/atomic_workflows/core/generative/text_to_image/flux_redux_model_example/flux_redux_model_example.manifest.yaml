@@ -1,0 +1,68 @@
+id: core.generative.text_to_image.flux_redux_model_example
+title: flux_redux_model_example
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/flux_redux_model_example.json).
+tags:
+- text-to-image
+- t2i
+- generative
+workflow_file: flux_redux_model_example.workflow.json
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+  width:
+    node_id: '27'
+    input_key: width
+  height:
+    node_id: '27'
+    input_key: height
+  noise_seed:
+    node_id: '25'
+    input_key: noise_seed
+    widget_index: null
+  width_2:
+    node_id: '30'
+    input_key: width
+    widget_index: null
+  height_2:
+    node_id: '30'
+    input_key: height
+    widget_index: null
+  source_image:
+    node_id: '47'
+    input_key: image
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: width
+  type: int
+  required: false
+  default: 1024
+- name: height
+  type: int
+  required: false
+  default: 1024
+- name: noise_seed
+  type: number
+  required: false
+  default: 1006963725794704
+- name: width_2
+  type: number
+  required: false
+  default: 1024
+- name: height_2
+  type: number
+  required: false
+  default: 1024
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

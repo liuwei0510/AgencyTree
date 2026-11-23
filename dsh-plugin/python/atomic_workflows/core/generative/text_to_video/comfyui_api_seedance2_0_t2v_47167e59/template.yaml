@@ -1,0 +1,70 @@
+id: remote:template:api_seedance2_0_t2v
+kind: comfyui_template
+title: 'Seedance 2.0: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance 2.0: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate cinematic videos from text prompts with synchronized audio,
+    controlled camera motion, and stable visuals. Input text descriptions to output
+    high-quality video sequences.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_0_t2v.json
+  sha256: fee76f2854939f97d3c0d1859dc3227609ecc37064d3bd59b294b40b2642cd98
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_0_t2v
+  title: 'Seedance 2.0: Text to Video'
+  description: Generate cinematic videos from text prompts with synchronized audio,
+    controlled camera motion, and stable visuals. Input text descriptions to output
+    high-quality video sequences.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  - Video
+  models:
+  - Seedance 2.0
+  logos:
+  - provider: ByteDance
+  date: '2026-05-02'
+  openSource: false
+  size: 0
+  usage: 21
+  searchRank: 1000
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 344
+      nodeType: SaveVideo
+      file: api_seedance2_0_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_seedance2_0_t2v.mp4
+  minComfyUIVersion: 0.26.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_0_t2v.json
+  sha256: fee76f2854939f97d3c0d1859dc3227609ecc37064d3bd59b294b40b2642cd98
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

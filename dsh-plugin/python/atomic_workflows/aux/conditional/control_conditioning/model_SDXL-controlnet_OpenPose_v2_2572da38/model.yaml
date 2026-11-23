@@ -1,0 +1,45 @@
+id: remote:model:2572da380259aa8570d6
+kind: comfyui_model
+title: 'SDXL-controlnet: OpenPose (v2)'
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: 'SDXL-controlnet: OpenPose (v2)'
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/pose_conditioning
+  parameters:
+  - name: filename
+    value: OpenPoseXL2.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL
+    filename: OpenPoseXL2.safetensors
+    download_locator: https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: 'SDXL-controlnet: OpenPose (v2)'
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL
+  description: ControlNet openpose model for SDXL
+  reference: https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0
+  filename: OpenPoseXL2.safetensors
+  url: https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/resolve/main/OpenPoseXL2.safetensors
+  size: 5.00GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/conditional/pose_conditioning/model_SDXL-controlnet_OpenPose_v2_2572da38/model.yaml
+validation_errors: []

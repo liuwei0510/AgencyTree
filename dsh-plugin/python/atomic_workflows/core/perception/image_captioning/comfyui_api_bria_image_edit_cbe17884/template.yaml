@@ -1,0 +1,95 @@
+id: remote:template:api_bria_image_edit
+kind: comfyui_template
+title: 'Bria: FIBO 2.0 Image Edit'
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Bria: FIBO 2.0 Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit an image with Bria FIBO 2.0 by describing the change in plain language,
+    with an optional mask to confine it to one region. FIBO 2.0 is one model for both
+    editing and generation, trained on structured VGL captions, so it holds everything
+    you did not ask to change, and it returns that structured prompt so the edit can
+    be rebuilt or refined from JSON.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_image_edit.json
+  sha256: a8a9499ec45df4aeebdb972c8eb625c13480da6f54e1ef92bf5cc71755269dba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_image_edit
+  title: 'Bria: FIBO 2.0 Image Edit'
+  description: Edit an image with Bria FIBO 2.0 by describing the change in plain
+    language, with an optional mask to confine it to one region. FIBO 2.0 is one model
+    for both editing and generation, trained on structured VGL captions, so it holds
+    everything you did not ask to change, and it returns that structured prompt so
+    the edit can be rebuilt or refined from JSON.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Edit
+  models:
+  - BRIA
+  date: '2026-10-21'
+  openSource: false
+  usage: 261
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: sunlit_rooftop_capture.png
+      mediaType: image
+    outputs:
+    - nodeId: 8
+      nodeType: SaveImage
+      file: api_bria_image_edit.png
+      mediaType: image
+  username: ComfyUI
+  logos:
+  - provider: BRIA
+  size: 0
+  searchRank: 0
+  thumbnail:
+  - input/sunlit_rooftop_capture.png
+  - output/api_bria_image_edit.png
+  minComfyUIVersion: 0.42.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_image_edit.json
+  sha256: a8a9499ec45df4aeebdb972c8eb625c13480da6f54e1ef92bf5cc71755269dba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_bria_image_edit_cbe17884/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '5'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

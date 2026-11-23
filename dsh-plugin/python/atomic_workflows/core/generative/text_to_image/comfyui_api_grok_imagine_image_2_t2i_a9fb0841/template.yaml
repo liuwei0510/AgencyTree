@@ -1,0 +1,70 @@
+id: remote.template.api_grok_imagine_image_2_t2i
+kind: comfyui_template
+title: 'Grok Imagine Image 2.0: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok Imagine Image 2.0: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using Grok Imagine Image 2.0, an Aurora-engine
+    model that excels at crisp short-text rendering and 1K or 2K outputs across 14
+    aspect ratios. Enter one text prompt and receive one generated image, with low
+    or medium quality options to control cost. Ideal for poster and cover design,
+    product and brand visuals, and character-driven scenes where consistency matters.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_imagine_image_2_t2i.json
+  sha256: d846c04d48973e5c9622dcaa3e79fc50f3c8b3882ec127e3edfd6a742eb44f5f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_imagine_image_2_t2i
+  title: 'Grok Imagine Image 2.0: Text to Image'
+  description: Generate images from text prompts using Grok Imagine Image 2.0, an
+    Aurora-engine model that excels at crisp short-text rendering and 1K or 2K outputs
+    across 14 aspect ratios. Enter one text prompt and receive one generated image,
+    with low or medium quality options to control cost. Ideal for poster and cover
+    design, product and brand visuals, and character-driven scenes where consistency
+    matters.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Grok Imagine Image 2.0
+  logos:
+  - provider: Grok
+  date: '2026-08-13'
+  openSource: false
+  size: 0
+  usage: 200
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 2
+      nodeType: SaveImageAdvanced
+      file: api_grok_imagine_image_2_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_grok_imagine_image_2_t2i.png
+  minComfyUIVersion: 0.32.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

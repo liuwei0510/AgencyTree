@@ -1,0 +1,96 @@
+id: remote:template:api_kling4_video_edit
+kind: comfyui_template
+title: 'Kling 4.0: Video Edit'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling 4.0: Video Edit'
+  input_types:
+    video_file: video_path
+  output_types:
+    video: video_path
+  capability: 'Edit an existing clip in one pass with Kling 4.0: name the change and
+    list what must survive, and the model rewrites only that part while keeping the
+    subject, costume, shot count, camera work and timing intact. Output inherits the
+    input''s length and aspect ratio, and stereo audio is regenerated to match the
+    new scene. Ideal for swapping environments, wardrobe or style on footage that
+    is already cut.'
+  parameters:
+  - name: video_file
+    type: video_path
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling4_video_edit.json
+  sha256: e0fa66821bf862a5dab80d9f6f2307bc91d687d67a8d72acfc383cdd54450faa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling4_video_edit
+  title: 'Kling 4.0: Video Edit'
+  description: 'Edit an existing clip in one pass with Kling 4.0: name the change
+    and list what must survive, and the model rewrites only that part while keeping
+    the subject, costume, shot count, camera work and timing intact. Output inherits
+    the input''s length and aspect ratio, and stereo audio is regenerated to match
+    the new scene. Ideal for swapping environments, wardrobe or style on footage that
+    is already cut.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Edit
+  - API
+  models:
+  - Kling 4.0
+  logos:
+  - provider: Kling
+  date: '2026-10-27'
+  openSource: false
+  size: 0
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadVideo
+      file: kling4_gown_input.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_kling4_video_edit.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_kling4_video_edit.mp4
+  minComfyUIVersion: 0.42.6
+  thumbnailVariant: compareSlider
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling4_video_edit.json
+  sha256: e0fa66821bf862a5dab80d9f6f2307bc91d687d67a8d72acfc383cdd54450faa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_kling4_video_edit_52414c31/template.yaml
+validation_errors: []
+inputs:
+- name: video_file
+  type: video_path
+  required: true
+  default: null
+inject:
+  video_file:
+    node_id: '1'
+    input_key: file
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

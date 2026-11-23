@@ -1,0 +1,93 @@
+id: remote:template:templates-all_in_one-image_edit_models
+kind: comfyui_template
+title: 1 input and multiple editing model comparison
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 1 input and multiple editing model comparison
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: upload one input image and select multiple editing models. generate
+    side-by-side outputs to directly compare model effects and quality.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-all_in_one-image_edit_models.json
+  sha256: 14064d71bd6cb61b74a47d96218e2f8d083a90e5cd1470adc401cfb9b6dbea34
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-all_in_one-image_edit_models
+  title: 1 input and multiple editing model comparison
+  description: upload one input image and select multiple editing models. generate
+    side-by-side outputs to directly compare model effects and quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - FLUX.2 Dev
+  - FLUX.2 Klein
+  - GPT-Image-1.5
+  - Grok
+  - Nano Banana Pro
+  - Qwen-Image-Edit
+  - Seedream
+  logos:
+  - provider:
+    - Google
+    - WAN
+    - OpenAI
+    - ByteDance
+    - Grok
+    label: Multiple Providers
+  date: '2026-02-18'
+  openSource: false
+  size: 134002979635
+  usage: 17
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: little_bot.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-all_in_one-image_edit_models.mp4
+  minComfyUIVersion: 0.33.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-all_in_one-image_edit_models.json
+  sha256: 14064d71bd6cb61b74a47d96218e2f8d083a90e5cd1470adc401cfb9b6dbea34
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_templates-all_in_one-image_edit_models_efc22ee8/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

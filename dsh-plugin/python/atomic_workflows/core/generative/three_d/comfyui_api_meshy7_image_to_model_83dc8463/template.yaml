@@ -1,0 +1,86 @@
+id: remote:template:api_meshy7_image_to_model
+kind: comfyui_template
+title: 'Meshy 7: Image to 3D'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Meshy 7: Image to 3D'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    mesh: mesh_path
+  capability: Turn a single image into a production-ready 3D model with Meshy 7, generating
+    a textured mesh that faithfully mirrors your reference's geometry, proportions,
+    and surface details. Ideal for character busts that preserve facial expression,
+    complex mechanical assemblies with correctly placed parts, and dense surface relief
+    like engraved coins or ornate props.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy7_image_to_model.json
+  sha256: 795ed5b184a02f683ace07c9232bba02658b01d313dc848558876389bd2de280
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meshy7_image_to_model
+  title: 'Meshy 7: Image to 3D'
+  description: Turn a single image into a production-ready 3D model with Meshy 7,
+    generating a textured mesh that faithfully mirrors your reference's geometry,
+    proportions, and surface details. Ideal for character busts that preserve facial
+    expression, complex mechanical assemblies with correctly placed parts, and dense
+    surface relief like engraved coins or ornate props.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to 3D
+  models:
+  - Meshy
+  logos:
+  - provider: Meshy
+  date: '2026-08-24'
+  openSource: false
+  size: 0
+  usage: 33
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadImage
+      file: marble_robot_bust.png
+      mediaType: image
+  minComfyUIVersion: 0.33.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy7_image_to_model.json
+  sha256: 795ed5b184a02f683ace07c9232bba02658b01d313dc848558876389bd2de280
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/three_d/comfyui_api_meshy7_image_to_model_83dc8463/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

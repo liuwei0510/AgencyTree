@@ -1,0 +1,68 @@
+id: remote:template:image_z_image_turbo
+kind: comfyui_template
+title: 'Z-Image-Turbo: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Z-Image-Turbo: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: An Efficient Image Generation Foundation Model with Single-Stream Diffusion
+    Transformer, supports English & Chinese.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_turbo.json
+  sha256: 0a79debc088c88431f554ec6e3b2e8588c6d2c0a08fffcdbc2f3564197bb5a35
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_z_image_turbo
+  tutorialUrl: https://docs.comfy.org/tutorials/image/z-image/z-image-turbo
+  title: 'Z-Image-Turbo: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: An Efficient Image Generation Foundation Model with Single-Stream Diffusion
+    Transformer, supports English & Chinese.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - Z-Image-Turbo
+  date: '2025-11-27'
+  size: 20830591386
+  usage: 14665
+  searchRank: 0
+  openSource: true
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_z_image_turbo.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_z_image_turbo.png
+  minComfyUIVersion: 0.11.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_turbo.json
+  sha256: 0a79debc088c88431f554ec6e3b2e8588c6d2c0a08fffcdbc2f3564197bb5a35
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_z_image_turbo_e5799f71/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

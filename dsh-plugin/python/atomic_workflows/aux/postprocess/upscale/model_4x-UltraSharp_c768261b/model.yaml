@@ -1,0 +1,45 @@
+id: remote:model:c768261b2426dd9f524b
+kind: comfyui_model
+title: 4x-UltraSharp
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: 4x-UltraSharp
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: 4x-UltraSharp.pth
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: 4x-UltraSharp.pth
+    download_locator: https://huggingface.co/Kim2091/UltraSharp/resolve/main/4x-UltraSharp.pth
+code_usable: true
+status: available
+metadata:
+  name: 4x-UltraSharp
+  type: upscale
+  base: upscale
+  save_path: default
+  description: 4x-UltraSharp upscaler model
+  reference: https://huggingface.co/Kim2091/UltraSharp/
+  filename: 4x-UltraSharp.pth
+  url: https://huggingface.co/Kim2091/UltraSharp/resolve/main/4x-UltraSharp.pth
+  size: 67.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/postprocess/upscale/model_4x-UltraSharp_c768261b/model.yaml
+validation_errors: []

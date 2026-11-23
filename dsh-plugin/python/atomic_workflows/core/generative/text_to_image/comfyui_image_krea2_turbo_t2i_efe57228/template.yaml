@@ -1,0 +1,64 @@
+id: remote:template:image_krea2_turbo_t2i
+kind: comfyui_template
+title: 'Krea-2: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Krea-2: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using Krea 2, a foundation model built
+    for aesthetic quality and creative control. It focuses on rendering expressive
+    and artistic styles. Ideal for concept art exploration, visual brainstorming,
+    and creating stylized imagery for design projects.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_krea2_turbo_t2i.json
+  sha256: 95de06e30cb7648c0ce14da01a692c9cfd13bdac1c786c23d92355cccedfc522
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_krea2_turbo_t2i
+  title: 'Krea-2: Text to Image'
+  description: Generate images from text prompts using Krea 2, a foundation model
+    built for aesthetic quality and creative control. It focuses on rendering expressive
+    and artistic styles. Ideal for concept art exploration, visual brainstorming,
+    and creating stylized imagery for design projects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  models:
+  - Krea 2
+  date: '2026-06-24'
+  openSource: true
+  size: 19112604467
+  usage: 10082
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - output/image_krea2_turbo_t2i.png
+  minComfyUIVersion: 0.24.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_krea2_turbo_t2i.json
+  sha256: 95de06e30cb7648c0ce14da01a692c9cfd13bdac1c786c23d92355cccedfc522
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_krea2_turbo_t2i_efe57228/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

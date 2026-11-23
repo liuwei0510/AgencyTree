@@ -1,0 +1,75 @@
+id: remote:template:api_mirelo_video_to_sfx
+kind: comfyui_template
+title: 'Mirelo SFX 2.0: Video to SFX'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mirelo SFX 2.0: Video to SFX'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: 'Add picture-locked sound effects to a clip with Mirelo sfx-2.0: the
+    model watches the video and times Foley to on-screen action, keeps speech by default,
+    and saves the SFX track, the speech track and the video carrying the new mix.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_mirelo_video_to_sfx.json
+  sha256: 400afd51fed7f40898673d4eebb74a43acedd7db2980f8a0b52b9b30a5415ca8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_mirelo_video_to_sfx
+  title: 'Mirelo SFX 2.0: Video to SFX'
+  description: 'Add picture-locked sound effects to a clip with Mirelo sfx-2.0: the
+    model watches the video and times Foley to on-screen action, keeps speech by default,
+    and saves the SFX track, the speech track and the video carrying the new mix.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Audio
+  - API
+  models:
+  - Mirelo
+  logos:
+  - provider: Mirelo
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 71
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.43.0
+  io:
+    inputs:
+    - nodeId: 7
+      nodeType: LoadVideo
+      file: mage_crash_discovery_video.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 730
+      nodeType: SaveVideo
+      file: api_mirelo_video_to_sfx.mp4
+      mediaType: video
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_mirelo_video_to_sfx.json
+  sha256: 400afd51fed7f40898673d4eebb74a43acedd7db2980f8a0b52b9b30a5415ca8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_mirelo_video_to_sfx_bdd20bc9/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

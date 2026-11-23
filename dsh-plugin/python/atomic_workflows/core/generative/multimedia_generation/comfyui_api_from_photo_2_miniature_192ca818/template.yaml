@@ -1,0 +1,83 @@
+id: remote:template:api_from_photo_2_miniature
+kind: comfyui_template
+title: Photo to Blueprint to Model
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Photo to Blueprint to Model
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Transform real building photos into architectural blueprints and then
+    into detailed physical scale models. A complete architectural visualization pipeline
+    from photo to miniature.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_from_photo_2_miniature.json
+  sha256: cef0fa75348d4151a5e5e2c5342e6c666a1fee268049978a2e60cb53e6c1ded9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_from_photo_2_miniature
+  title: Photo to Blueprint to Model
+  description: Transform real building photos into architectural blueprints and then
+    into detailed physical scale models. A complete architectural visualization pipeline
+    from photo to miniature.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  - Image
+  - 3D
+  models:
+  - Gemini3 Pro Image Preview
+  - Nano Banana Pro
+  - Google
+  date: '2025-11-21'
+  openSource: false
+  size: 0
+  usage: 17
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: api_from_photo_2_miniature_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_from_photo_2_miniature.json
+  sha256: cef0fa75348d4151a5e5e2c5342e6c666a1fee268049978a2e60cb53e6c1ded9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/three_d/comfyui_api_from_photo_2_miniature_192ca818/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,56 @@
+id: remote.template.api_tripo_p1_text_to_model
+kind: comfyui_template
+title: 'Tripo P1: Text to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo P1: Text to Model'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Input a text description of a 3D model. Generate a game-ready 3D model
+    with clean topology and optimized polygon counts
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_p1_text_to_model.json
+  sha256: 4bfb258ead904bf2bb6c005cbfbc24cbd49e10a4514032900cdc2eb247847cb1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_p1_text_to_model
+  title: 'Tripo P1: Text to Model'
+  description: Input a text description of a 3D model. Generate a game-ready 3D model
+    with clean topology and optimized polygon counts
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - 3D
+  - Text to 3D
+  models:
+  - Tripo P1
+  logos:
+  - provider: Tripo
+  date: '2026-05-28'
+  openSource: false
+  size: 0
+  usage: 7
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.23.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path

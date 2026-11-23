@@ -1,0 +1,78 @@
+id: remote.template.api_kling_omni_edit_video
+kind: comfyui_template
+title: 'Kling O1: Video Edit'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling O1: Video Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Edit videos with natural language commands, featuring video reference
+    mode for quick generation of high-quality style transfers, element additions,
+    and background modifications.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_omni_edit_video.json
+  sha256: b8aeafea6dc26683d6976972e6269b0ae1b374d08a91a234f6b5f8a6490ea66a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_omni_edit_video
+  title: 'Kling O1: Video Edit'
+  description: Edit videos with natural language commands, featuring video reference
+    mode for quick generation of high-quality style transfers, element additions,
+    and background modifications.
+  mediaType: image
+  thumbnailVariant: compareSlider
+  mediaSubtype: webp
+  tags:
+  - Video
+  - API
+  - Video Edit
+  - Text to Video
+  - Image to Video
+  models:
+  - Kling
+  date: '2025-12-02'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 87
+  io:
+    inputs:
+    - nodeId: 23
+      nodeType: LoadVideo
+      file: api_kling_omni_edit_video_input_video.mp4
+      mediaType: video
+    - nodeId: 24
+      nodeType: LoadImage
+      file: api_kling_omni_edit_video_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.14.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '24'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

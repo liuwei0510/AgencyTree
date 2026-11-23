@@ -1,0 +1,84 @@
+id: remote:template:api_bfl_flux3_image_edit
+kind: comfyui_template
+title: 'FLUX 3 Image: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX 3 Image: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit or combine up to ten reference images from a text instruction with
+    FLUX 3 Image, referring to them in the prompt as image 1, image 2, and so on.
+    One image is output at any of sixteen aspect ratios and up to 4K, with web and
+    image search grounding on by default. Ideal for character-consistent edits, product
+    and object placement, and multi-reference scene compositing.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_image_edit.json
+  sha256: ccc23c47a9ebc470124c76db2f48c38ea22d3e818179f9f3d9cd8429d440e272
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux3_image_edit
+  title: 'FLUX 3 Image: Image Edit'
+  description: Edit or combine up to ten reference images from a text instruction
+    with FLUX 3 Image, referring to them in the prompt as image 1, image 2, and so
+    on. One image is output at any of sixteen aspect ratios and up to 4K, with web
+    and image search grounding on by default. Ideal for character-consistent edits,
+    product and object placement, and multi-reference scene compositing.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image Edit
+  - API
+  models:
+  - FLUX 3 Image
+  logos:
+  - provider: Black Forest Labs
+  minComfyUIVersion: 0.38.2
+  date: '2026-10-01'
+  openSource: false
+  size: 0
+  usage: 1588
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: fashion_model_green_pilot_coat.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_image_edit.json
+  sha256: ccc23c47a9ebc470124c76db2f48c38ea22d3e818179f9f3d9cd8429d440e272
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_bfl_flux3_image_edit_c98d1aa0/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '4'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

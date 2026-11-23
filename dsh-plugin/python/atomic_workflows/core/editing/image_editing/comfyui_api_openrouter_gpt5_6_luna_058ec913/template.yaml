@@ -1,0 +1,86 @@
+id: remote:template:api_openrouter_gpt5_6_luna
+kind: comfyui_template
+title: GPT-5.6 Luna
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: GPT-5.6 Luna
+  input_types:
+    source_image: image_filenames
+  output_types:
+    transcript: text
+  capability: GPT-5.6 Luna streamlines visual pre-production by analyzing a single
+    reference image and generating structured creative text from a user prompt. It
+    takes 1 input image and produces no explicit visual outputs, focusing instead
+    on rapid, standardized copywriting. Ideal for batch scene description expansion,
+    shot list organization, and high-volume creative ideation.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_gpt5_6_luna.json
+  sha256: f9f0375f5878d415b17c9869490f4cc9dd6099e5c81a9d96f81daaf5c5add463
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_gpt5_6_luna
+  title: GPT-5.6 Luna
+  description: GPT-5.6 Luna streamlines visual pre-production by analyzing a single
+    reference image and generating structured creative text from a user prompt. It
+    takes 1 input image and produces no explicit visual outputs, focusing instead
+    on rapid, standardized copywriting. Ideal for batch scene description expansion,
+    shot list organization, and high-volume creative ideation.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - ChatGPT
+  logos:
+  - provider: OpenRouter
+  date: '2026-07-22'
+  openSource: false
+  size: 0
+  usage: 35
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  minComfyUIVersion: 0.28.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_gpt5_6_luna.json
+  sha256: f9f0375f5878d415b17c9869490f4cc9dd6099e5c81a9d96f81daaf5c5add463
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_openrouter_gpt5_6_luna_058ec913/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: transcript
+  type: text
+contract_errors: []
+planning_eligible: true

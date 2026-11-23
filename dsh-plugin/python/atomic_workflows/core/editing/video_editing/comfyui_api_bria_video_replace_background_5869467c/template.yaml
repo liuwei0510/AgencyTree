@@ -1,0 +1,88 @@
+id: remote:template:api_bria_video_replace_background
+kind: comfyui_template
+title: 'Replace Background: Bria'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Replace Background: Bria'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload a video and a background image. Detect the main subject and replace
+    the original background with the provided image. Ideal for content creation, virtual
+    production, and background cleanup in video projects.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_video_replace_background.json
+  sha256: 519aabcba0afbd92d6bc5a368e2ad57ab4f6369e9cbbbd11b08a43374ded65b1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bria_video_replace_background
+  title: 'Replace Background: Bria'
+  description: Upload a video and a background image. Detect the main subject and
+    replace the original background with the provided image. Ideal for content creation,
+    virtual production, and background cleanup in video projects.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  - Remove Background
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-06-10'
+  openSource: false
+  size: 0
+  usage: 20
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: stained_window_vintage_woman.mp4
+      mediaType: video
+    - nodeId: 8
+      nodeType: LoadImage
+      file: gothic_hall_light_rays.png
+      mediaType: image
+  minComfyUIVersion: 0.24.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bria_video_replace_background.json
+  sha256: 519aabcba0afbd92d6bc5a368e2ad57ab4f6369e9cbbbd11b08a43374ded65b1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_bria_video_replace_background_5869467c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

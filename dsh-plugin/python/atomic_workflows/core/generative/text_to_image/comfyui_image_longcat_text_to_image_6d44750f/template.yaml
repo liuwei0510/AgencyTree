@@ -1,0 +1,65 @@
+id: remote:template:image_longcat_text_to_image
+kind: comfyui_template
+title: 'LongCat Image: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LongCat Image: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate an image from a text prompt. Input your desired scene description
+    in English or Chinese. Output a photorealistic image with accurate text rendering.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_longcat_text_to_image.json
+  sha256: dc76e9457905cb792a4d821e75652dde6ed06b5aec6bf20047906b72ffcfe4c1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_longcat_text_to_image
+  title: 'LongCat Image: Text to Image'
+  description: Generate an image from a text prompt. Input your desired scene description
+    in English or Chinese. Output a photorealistic image with accurate text rendering.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - LongCat
+  date: '2026-03-02'
+  openSource: true
+  size: 22226455757
+  usage: 10
+  searchRank: 0
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_longcat_text_to_image.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_longcat_text_to_image.png
+  minComfyUIVersion: 0.16.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_longcat_text_to_image.json
+  sha256: dc76e9457905cb792a4d821e75652dde6ed06b5aec6bf20047906b72ffcfe4c1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

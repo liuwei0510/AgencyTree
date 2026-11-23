@@ -1,0 +1,79 @@
+id: remote:template:templates-1_click_multiple_character_angles-v1.0
+kind: comfyui_template
+title: 1 Click Multiple Character Angles
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 1 Click Multiple Character Angles
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image of your character and get multiple views of that image
+    from different angles
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-1_click_multiple_character_angles-v1.0.json
+  sha256: 24f14c4ddd8fd2576c0976325522c876d6d2622cd3ef6004a16b3d26ef7d544f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-1_click_multiple_character_angles-v1.0
+  title: 1 Click Multiple Character Angles
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload an image of your character and get multiple views of that image
+    from different angles
+  tags:
+  - Image Edit
+  models:
+  - Qwen-Image-Edit
+  date: '2025-12-08'
+  searchRank: 8
+  size: 31245887078
+  usage: 268
+  io:
+    inputs:
+    - nodeId: 25
+      nodeType: LoadImage
+      file: character_input.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-1_click_multiple_character_angles-v1_0.png
+  openSource: true
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-1_click_multiple_character_angles-v1.0.json
+  sha256: 24f14c4ddd8fd2576c0976325522c876d6d2622cd3ef6004a16b3d26ef7d544f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_templates-1_click_multiple_character_angles-v1.0_e609b62a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '25'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

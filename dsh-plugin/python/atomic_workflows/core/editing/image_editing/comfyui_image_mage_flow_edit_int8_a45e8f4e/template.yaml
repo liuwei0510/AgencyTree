@@ -1,0 +1,85 @@
+id: remote:template:image_mage_flow_edit_int8
+kind: comfyui_template
+title: 'Mage-Flow-Edit: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mage-Flow-Edit: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit images by following natural language instructions with Mage-Flow-Edit,
+    an instruction-based model that handles background replacement, style changes,
+    localized edits, and restoration using up to three reference images. The workflow
+    takes one input image and produces one edited output plus a side-by-side comparison
+    view. Ideal for creative photo retouching, product image styling, and restoring
+    old or damaged photos.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_edit_int8.json
+  sha256: 285cad80da5651c35c2d58eb40373039ab5b2d424f9206a6f62108938f18476e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_mage_flow_edit_int8
+  title: 'Mage-Flow-Edit: Image Edit'
+  description: Edit images by following natural language instructions with Mage-Flow-Edit,
+    an instruction-based model that handles background replacement, style changes,
+    localized edits, and restoration using up to three reference images. The workflow
+    takes one input image and produces one edited output plus a side-by-side comparison
+    view. Ideal for creative photo retouching, product image styling, and restoring
+    old or damaged photos.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Int8
+  models:
+  - Mage-Flow
+  date: '2026-07-27'
+  openSource: true
+  size: 13421772800
+  usage: 13
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 7
+      nodeType: LoadImage
+      file: calm_amid_ruin.png
+      mediaType: image
+  minComfyUIVersion: 0.29.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_edit_int8.json
+  sha256: 285cad80da5651c35c2d58eb40373039ab5b2d424f9206a6f62108938f18476e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_mage_flow_edit_int8_a45e8f4e/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '7'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

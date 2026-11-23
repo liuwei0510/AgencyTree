@@ -1,0 +1,128 @@
+id: remote:template:sd3.5_large_blur
+kind: comfyui_template
+title: SD3.5 Large Blur
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SD3.5 Large Blur
+  input_types:
+    negative_prompt: string
+    source_image: image_filenames
+    width: number
+    height: number
+    seed: number
+  output_types:
+    images: image_filenames
+  capability: Generate images guided by blurred reference images using SD 3.5.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: crystal butterfly above the sea, white, hyper detailed, with diamonds
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  - name: seed
+    type: number
+    required: false
+    default: 268264726798396
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sd3.5_large_blur.json
+  sha256: 958cd6df388d2a6fe9e7a608774ea94ae86575aa960f6171130c854635dd9943
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: sd3.5_large_blur
+  title: SD3.5 Large Blur
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images guided by blurred reference images using SD 3.5.
+  thumbnailVariant: hoverDissolve
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/sd3/#sd35-controlnets
+  tags:
+  - Image
+  - Image Edit
+  models:
+  - SD3.5
+  - Stability
+  date: '2025-03-01'
+  size: 23590107873
+  usage: 9
+  io:
+    inputs:
+    - nodeId: 57
+      nodeType: LoadImage
+      file: sd3.5_large_blur_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.5
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sd3.5_large_blur.json
+  sha256: 958cd6df388d2a6fe9e7a608774ea94ae86575aa960f6171130c854635dd9943
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_sd3.5_large_blur_5cd4cbda/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: crystal butterfly above the sea, white, hyper detailed, with diamonds
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+- name: seed
+  type: number
+  required: false
+  default: 268264726798396
+inject:
+  negative_prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '57'
+    input_key: image
+    widget_index: 0
+  width:
+    node_id: '33'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '33'
+    input_key: height
+    widget_index: 1
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

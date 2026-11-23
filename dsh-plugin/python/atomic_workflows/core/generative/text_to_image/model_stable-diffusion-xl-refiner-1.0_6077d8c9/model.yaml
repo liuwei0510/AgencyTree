@@ -1,0 +1,45 @@
+id: remote:model:6077d8c9a6faa177820d
+kind: comfyui_model
+title: stable-diffusion-xl-refiner-1.0
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: stable-diffusion-xl-refiner-1.0
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: sd_xl_refiner_1.0.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/SDXL
+    filename: sd_xl_refiner_1.0.safetensors
+    download_locator: https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors
+code_usable: true
+status: available
+metadata:
+  name: stable-diffusion-xl-refiner-1.0
+  type: checkpoint
+  base: SDXL
+  save_path: checkpoints/SDXL
+  description: Stable Diffusion XL refiner model
+  reference: https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0
+  filename: sd_xl_refiner_1.0.safetensors
+  url: https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors
+  size: 6.08GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_image/model_stable-diffusion-xl-refiner-1.0_6077d8c9/model.yaml
+validation_errors: []

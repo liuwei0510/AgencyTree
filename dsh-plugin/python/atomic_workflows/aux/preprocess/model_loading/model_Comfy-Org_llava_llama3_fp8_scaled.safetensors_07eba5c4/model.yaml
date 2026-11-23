@@ -1,0 +1,44 @@
+id: remote.model.07eba5c4a353a7a333d4
+kind: comfyui_model
+title: Comfy-Org/llava_llama3_fp8_scaled.safetensors
+tree_branch:
+- aux
+- preprocess
+- model_loading
+six_tuple:
+  name: Comfy-Org/llava_llama3_fp8_scaled.safetensors
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/preprocess/model_loading
+  parameters:
+  - name: filename
+    value: llava_llama3_fp8_scaled.safetensors
+  - name: base
+    value: LLaVA-Llama-3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip
+    save_path: text_encoders
+    filename: llava_llama3_fp8_scaled.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp8_scaled.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: Comfy-Org/llava_llama3_fp8_scaled.safetensors
+  type: clip
+  base: LLaVA-Llama-3
+  save_path: text_encoders
+  description: llava_llama3_fp8_scaled text encoder model. This is required for using
+    Hunyuan Video.
+  reference: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged
+  filename: llava_llama3_fp8_scaled.safetensors
+  url: https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp8_scaled.safetensors
+  size: 9.09GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

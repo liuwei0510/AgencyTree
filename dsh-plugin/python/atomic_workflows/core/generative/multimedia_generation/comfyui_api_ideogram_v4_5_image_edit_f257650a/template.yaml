@@ -1,0 +1,86 @@
+id: remote:template:api_ideogram_v4_5_image_edit
+kind: comfyui_template
+title: 'Ideogram 4.5: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Ideogram 4.5: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Generate edited or combined images from a text prompt and up to five
+    input images using Ideogram 4.5, where image 1 is the image to edit and images
+    2-5 are references for design, material, or colour. Canvas size, quality level,
+    and seed are adjustable, and one image is output. Ideal for product and outfit
+    swaps, applying a reference design or palette to an existing photo, and recomposing
+    a shot into a different aspect ratio.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_v4_5_image_edit.json
+  sha256: 1ca1bfa5001fc998110431cfa31b4b47754b2203ec4080391480a39d13abd02c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_ideogram_v4_5_image_edit
+  title: 'Ideogram 4.5: Image Edit'
+  description: Generate edited or combined images from a text prompt and up to five
+    input images using Ideogram 4.5, where image 1 is the image to edit and images
+    2-5 are references for design, material, or colour. Canvas size, quality level,
+    and seed are adjustable, and one image is output. Ideal for product and outfit
+    swaps, applying a reference design or palette to an existing photo, and recomposing
+    a shot into a different aspect ratio.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Ideogram
+  logos:
+  - provider: Ideogram
+  minComfyUIVersion: 0.38.1
+  date: '2026-09-30'
+  openSource: false
+  size: 0
+  usage: 216
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: interior_orange_sofa.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_ideogram_v4_5_image_edit.json
+  sha256: 1ca1bfa5001fc998110431cfa31b4b47754b2203ec4080391480a39d13abd02c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_ideogram_v4_5_image_edit_f257650a/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

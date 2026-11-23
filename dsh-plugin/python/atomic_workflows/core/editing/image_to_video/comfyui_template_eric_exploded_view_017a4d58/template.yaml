@@ -1,0 +1,96 @@
+id: remote:template:template_eric_exploded_view
+kind: comfyui_template
+title: Exploded View Animation
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Exploded View Animation
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload an image of a device or object to generate start and end frames.
+    The workflow animates the transition to an exploded view and back, outputting
+    a seamless video loop.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_eric_exploded_view.json
+  sha256: 62e5a3514e5fb4ced8bcc4f3bbb6215b4a16bdcbe88647adf43ccd94edb4d267
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_eric_exploded_view
+  title: Exploded View Animation
+  description: Upload an image of a device or object to generate start and end frames.
+    The workflow animates the transition to an exploded view and back, outputting
+    a seamless video loop.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - FLF2V
+  - Video
+  models:
+  - Nano Banana 2
+  - Seedance 1.5 Pro
+  logos:
+  - provider:
+    - ByteDance
+    - Google
+  date: '2026-03-06'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 29
+      nodeType: LoadImage
+      file: template_eric_exploded_view_first_frame.png
+      mediaType: image
+    outputs:
+    - nodeId: 381
+      nodeType: SaveVideo
+      file: template_eric_exploded_view.mp4
+      mediaType: video
+  username: enigmatic_e
+  thumbnail:
+  - output/template_eric_exploded_view.mp4
+  minComfyUIVersion: 0.20.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_eric_exploded_view.json
+  sha256: 62e5a3514e5fb4ced8bcc4f3bbb6215b4a16bdcbe88647adf43ccd94edb4d267
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_template_eric_exploded_view_017a4d58/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '29'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

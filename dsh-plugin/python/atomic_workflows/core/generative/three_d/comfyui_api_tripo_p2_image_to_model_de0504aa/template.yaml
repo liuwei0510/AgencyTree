@@ -1,0 +1,86 @@
+id: remote:template:api_tripo_p2_image_to_model
+kind: comfyui_template
+title: 'Tripo P2: Image to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo P2: Image to Model'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Generate a production-ready 3D model from a single reference image using
+    Tripo P2.0 Preview, which builds native quad topology with clean edge flow suited
+    for rigging and animation. It takes 1 input image, with optional multi-view references
+    for better side and back accuracy. Ideal for game characters and props, hard-surface
+    mechanical assets, and high-volume real-time pipelines.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_p2_image_to_model.json
+  sha256: eba14335d2c164c3da85dbe1713bc84518d6850e9c58d76ec51650a3de04f2a5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_p2_image_to_model
+  title: 'Tripo P2: Image to Model'
+  description: Generate a production-ready 3D model from a single reference image
+    using Tripo P2.0 Preview, which builds native quad topology with clean edge flow
+    suited for rigging and animation. It takes 1 input image, with optional multi-view
+    references for better side and back accuracy. Ideal for game characters and props,
+    hard-surface mechanical assets, and high-volume real-time pipelines.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - 3D
+  - API
+  - Image to 3D
+  models:
+  - Tripo P2
+  logos:
+  - provider: Tripo
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-16'
+  openSource: false
+  size: 0
+  usage: 135
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 16
+      nodeType: LoadImage
+      file: designer_toy_3d.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_p2_image_to_model.json
+  sha256: eba14335d2c164c3da85dbe1713bc84518d6850e9c58d76ec51650a3de04f2a5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_tripo_p2_image_to_model_de0504aa/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '16'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

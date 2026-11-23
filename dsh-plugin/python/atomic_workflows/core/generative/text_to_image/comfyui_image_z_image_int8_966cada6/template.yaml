@@ -1,0 +1,73 @@
+id: remote:template:image_z_image_int8
+kind: comfyui_template
+title: 'Z-Image Int8: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Z-Image Int8: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality, diverse images from text prompts using the Z-Image
+    Int8 model, which leverages an undistilled transformer for precise prompt adherence
+    and broad stylistic coverage. The workflow takes no file inputs and produces 1
+    image output through a standard text-to-image pipeline. Ideal for professional
+    creative projects, LoRA training and model development, and scenarios requiring
+    robust negative control and high compositional diversity.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_int8.json
+  sha256: 1156837cca66ec543e7bc074d343d83425af20ffe8707fae72115db576a718bb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_z_image_int8
+  title: 'Z-Image Int8: Text to Image'
+  description: Generate high-quality, diverse images from text prompts using the Z-Image
+    Int8 model, which leverages an undistilled transformer for precise prompt adherence
+    and broad stylistic coverage. The workflow takes no file inputs and produces 1
+    image output through a standard text-to-image pipeline. Ideal for professional
+    creative projects, LoRA training and model development, and scenarios requiring
+    robust negative control and high compositional diversity.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - Z-Image
+  date: '2026-07-10'
+  openSource: true
+  size: 14602888806
+  usage: 31
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 95
+      nodeType: SaveImageAdvanced
+      file: image_z_image_int8.png
+      mediaType: image
+  minComfyUIVersion: 0.23.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_int8.json
+  sha256: 1156837cca66ec543e7bc074d343d83425af20ffe8707fae72115db576a718bb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_z_image_int8_966cada6/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

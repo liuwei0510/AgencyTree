@@ -1,0 +1,68 @@
+id: remote:template:image_omnigen2_t2i
+kind: comfyui_template
+title: 'OmniGen2: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'OmniGen2: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using OmniGen2's unified
+    7B multimodal model with dual-path architecture.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_omnigen2_t2i.json
+  sha256: 092a3e95ef9485ca410c851d4e2ca022446a06b158fb44b4fa6eb29c10268633
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_omnigen2_t2i
+  title: 'OmniGen2: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate high-quality images from text prompts using OmniGen2's unified
+    7B multimodal model with dual-path architecture.
+  tutorialUrl: https://docs.comfy.org/tutorials/image/omnigen/omnigen2
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - OmniGen
+  date: '2025-06-30'
+  size: 15784004813
+  usage: 15
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_omnigen2_t2i.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/image_omnigen2_t2i.png
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_omnigen2_t2i.json
+  sha256: 092a3e95ef9485ca410c851d4e2ca022446a06b158fb44b4fa6eb29c10268633
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_omnigen2_t2i_8aa13775/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

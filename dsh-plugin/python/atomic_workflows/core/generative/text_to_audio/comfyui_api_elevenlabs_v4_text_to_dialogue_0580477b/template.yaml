@@ -1,0 +1,74 @@
+id: remote:template:api_elevenlabs_v4_text_to_dialogue
+kind: comfyui_template
+title: 'Eleven v4: Text to Dialogue'
+tree_branch:
+- core
+- generative
+- text_to_audio
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Eleven v4: Text to Dialogue'
+  input_types: {}
+  output_types: {}
+  capability: 'Generate a multi-speaker dialogue from text with Eleven v4: give every
+    entry its own line and its own voice, direct the delivery with audio tags such
+    as [quietly] or [laughs], or clone a voice from a sample and let it take a turn.
+    One audio file is output. Ideal for podcasts, game dialogue, and character conversations.
+
+    '
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_elevenlabs_v4_text_to_dialogue.json
+  sha256: 7296e99e0eaad553562ede6ac94b7c8c62eea3677a99d14283050ad8e4d37d09
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_elevenlabs_v4_text_to_dialogue
+  title: 'Eleven v4: Text to Dialogue'
+  description: 'Generate a multi-speaker dialogue from text with Eleven v4: give every
+    entry its own line and its own voice, direct the delivery with audio tags such
+    as [quietly] or [laughs], or clone a voice from a sample and let it take a turn.
+    One audio file is output. Ideal for podcasts, game dialogue, and character conversations.
+
+    '
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Speech
+  - Audio
+  - API
+  models:
+  - ElevenLabs
+  logos:
+  - provider: ElevenLabs
+  minComfyUIVersion: 0.38.2
+  date: '2026-10-02'
+  openSource: false
+  size: 0
+  usage: 30
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 210
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_elevenlabs_v4_text_to_dialogue.json
+  sha256: 7296e99e0eaad553562ede6ac94b7c8c62eea3677a99d14283050ad8e4d37d09
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_audio/comfyui_api_elevenlabs_v4_text_to_dialogue_0580477b/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+planning_eligible: false
+contract_errors:
+- No explicit output interface could be extracted

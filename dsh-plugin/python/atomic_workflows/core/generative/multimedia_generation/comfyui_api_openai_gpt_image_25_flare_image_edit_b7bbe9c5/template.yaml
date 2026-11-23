@@ -1,0 +1,82 @@
+id: remote:template:api_openai_gpt_image_25_flare_image_edit
+kind: comfyui_template
+title: 'GPT Image 2.5 Flare: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'GPT Image 2.5 Flare: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Template for image rework & partial modification. Keep scene, pose,
+    lighting and composition unchanged, only edit outfit, hairstyle or local details.
+    Fast preview and iterative style adjustment powered by GPT-Image-2.5-Flare.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt_image_25_flare_image_edit.json
+  sha256: b720c04daa8908d39e1462fbb905fd8bfe5bba035869f88292b2f93e77569f82
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_gpt_image_25_flare_image_edit
+  title: 'GPT Image 2.5 Flare: Image Edit'
+  description: Template for image rework & partial modification. Keep scene, pose,
+    lighting and composition unchanged, only edit outfit, hairstyle or local details.
+    Fast preview and iterative style adjustment powered by GPT-Image-2.5-Flare.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - GPT Image 2.5
+  logos:
+  - provider: OpenAI
+  minComfyUIVersion: 0.35.0
+  date: '2026-09-09'
+  openSource: false
+  size: 0
+  usage: 876
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 360
+      nodeType: LoadImage
+      file: outfit_swap_base_gpt_image25.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_openai_gpt_image_25_flare_image_edit.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt_image_25_flare_image_edit.json
+  sha256: b720c04daa8908d39e1462fbb905fd8bfe5bba035869f88292b2f93e77569f82
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_openai_gpt_image_25_flare_image_edit_b7bbe9c5/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '360'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

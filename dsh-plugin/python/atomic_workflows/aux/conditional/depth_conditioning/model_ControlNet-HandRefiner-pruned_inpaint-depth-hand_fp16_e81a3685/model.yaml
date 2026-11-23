@@ -1,0 +1,43 @@
+id: remote.model.e81a36852b5d24218f43
+kind: comfyui_model
+title: ControlNet-HandRefiner-pruned (inpaint-depth-hand; fp16)
+tree_branch:
+- aux
+- conditional
+- depth_conditioning
+six_tuple:
+  name: ControlNet-HandRefiner-pruned (inpaint-depth-hand; fp16)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/depth_conditioning
+  parameters:
+  - name: filename
+    value: control_sd15_inpaint_depth_hand_fp16.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/1.5
+    filename: control_sd15_inpaint_depth_hand_fp16.safetensors
+    download_locator: https://huggingface.co/hr16/ControlNet-HandRefiner-pruned/resolve/main/control_sd15_inpaint_depth_hand_fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: ControlNet-HandRefiner-pruned (inpaint-depth-hand; fp16)
+  type: controlnet
+  base: SD1.5
+  save_path: controlnet/1.5
+  description: This inpaint-depth controlnet model is specialized for the hand refiner.
+  reference: https://huggingface.co/hr16/ControlNet-HandRefiner-pruned
+  filename: control_sd15_inpaint_depth_hand_fp16.safetensors
+  url: https://huggingface.co/hr16/ControlNet-HandRefiner-pruned/resolve/main/control_sd15_inpaint_depth_hand_fp16.safetensors
+  size: 722.6MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

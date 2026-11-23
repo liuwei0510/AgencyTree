@@ -1,0 +1,84 @@
+id: remote:template:api_luma_ray3_3_i2v
+kind: comfyui_template
+title: 'Luma Ray 3.2: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma Ray 3.2: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate cinematic-quality videos from text prompts using Luma Ray 3.2,
+    with support for extending previous generations by providing a generation ID.
+    The workflow accepts 1 input image and produces 1 video output, enabling seamless
+    iterative refinement. Ideal for creating short film sequences, marketing content,
+    and professional video production.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_ray3_3_i2v.json
+  sha256: e0fb5652baf92201892e297987961c7b0f95243bdfb9e5a2c9addbfcefe7f915
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_ray3_3_i2v
+  title: 'Luma Ray 3.2: Image to Video'
+  description: Generate cinematic-quality videos from text prompts using Luma Ray
+    3.2, with support for extending previous generations by providing a generation
+    ID. The workflow accepts 1 input image and produces 1 video output, enabling seamless
+    iterative refinement. Ideal for creating short film sequences, marketing content,
+    and professional video production.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - API
+  models:
+  - Luma
+  date: '2026-06-18'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadImage
+      file: cyber_cat.png
+      mediaType: image
+  minComfyUIVersion: 0.26.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_ray3_3_i2v.json
+  sha256: e0fb5652baf92201892e297987961c7b0f95243bdfb9e5a2c9addbfcefe7f915
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_luma_ray3_3_i2v_82009cc6/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

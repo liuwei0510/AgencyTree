@@ -1,0 +1,93 @@
+id: remote:template:template_purz_nb2_single_image_sprite_sheet
+kind: comfyui_template
+title: Single Image to Animated Sprite Sheet
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Single Image to Animated Sprite Sheet
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload a single image to generate an animated sequence. The workflow
+    creates a sprite sheet with multiple frames for use in games or animations.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_purz_nb2_single_image_sprite_sheet.json
+  sha256: 22ae26844a62b90374d4b2402d03119c684ddab0fe91d4b48de97ca4fccd34ea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_purz_nb2_single_image_sprite_sheet
+  title: Single Image to Animated Sprite Sheet
+  description: Upload a single image to generate an animated sequence. The workflow
+    creates a sprite sheet with multiple frames for use in games or animations.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tags:
+  - API
+  - Game
+  models:
+  - Nano Banana 2
+  logos:
+  - provider: Google
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui-rmbg
+  - comfyui-videohelpersuite
+  - comfyui_essentials
+  - was-ns
+  date: '2026-03-08'
+  openSource: false
+  size: 0
+  usage: 22
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: nb2-single_image_sprite_sheet-input
+      mediaType: image
+  username: PurzBeats
+  thumbnail:
+  - input/nb2-single_image_sprite_sheet-input
+  - thumbnail/nb2-single_image_sprite_sheet-output.webp
+  minComfyUIVersion: 0.20.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_purz_nb2_single_image_sprite_sheet.json
+  sha256: 22ae26844a62b90374d4b2402d03119c684ddab0fe91d4b48de97ca4fccd34ea
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_template_purz_nb2_single_image_sprite_sheet_23354460/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

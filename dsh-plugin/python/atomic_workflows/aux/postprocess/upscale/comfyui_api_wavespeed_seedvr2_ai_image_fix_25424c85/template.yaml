@@ -1,0 +1,82 @@
+id: remote.template.api_wavespeed_seedvr2_ai_image_fix
+kind: comfyui_template
+title: 'Image Upscale: WaveSpeed SeedVR2'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: WaveSpeed SeedVR2'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an AI-generated image to restore details and upscale. The workflow
+    preserves colors and sharpness while minimizing artifacts. Output is a high-quality,
+    enlarged version of your input.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wavespeed_seedvr2_ai_image_fix.json
+  sha256: 44b77e80975d04c6962211ae4b373d59c7a4c08da5bfd49d604f582701d6881c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wavespeed_seedvr2_ai_image_fix
+  title: 'Image Upscale: WaveSpeed SeedVR2'
+  description: Upload an AI-generated image to restore details and upscale. The workflow
+    preserves colors and sharpness while minimizing artifacts. Output is a high-quality,
+    enlarged version of your input.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - SeedVR2
+  - WaveSpeed
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 18
+  searchRank: 0
+  logos:
+  - provider: WaveSpeed
+  io:
+    inputs:
+    - nodeId: 9
+      nodeType: LoadImage
+      file: midnight_coastal.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: api_wavespeed_seedvr2_ai_image_fix.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/midnight_coastal.png
+  - output/api_wavespeed_seedvr2_ai_image_fix.png
+  minComfyUIVersion: 0.28.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '9'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

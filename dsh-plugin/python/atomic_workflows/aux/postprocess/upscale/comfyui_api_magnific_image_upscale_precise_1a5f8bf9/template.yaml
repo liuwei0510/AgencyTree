@@ -1,0 +1,89 @@
+id: remote:template:api_magnific_image_upscale_precise
+kind: comfyui_template
+title: 'Image Upscale: Magnific Precise'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Magnific Precise'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image to precisely upscale it using the Magnific model, generating
+    a high-resolution version with enhanced detail.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_magnific_image_upscale_precise.json
+  sha256: f997b8cff996ff9619a1edda26a7468c20035bef6e7950f1befab5d0a6e0ec18
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_magnific_image_upscale_precise
+  title: 'Image Upscale: Magnific Precise'
+  description: Upload an image to precisely upscale it using the Magnific model, generating
+    a high-resolution version with enhanced detail.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Magnific
+  logos:
+  - provider: Magnific
+  date: '2026-02-13'
+  openSource: false
+  size: 0
+  usage: 47
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: young_woman_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: api_magnific_image_upscale_precise.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/young_woman_portrait.png
+  - output/api_magnific_image_upscale_precise.png
+  minComfyUIVersion: 0.11.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_magnific_image_upscale_precise.json
+  sha256: f997b8cff996ff9619a1edda26a7468c20035bef6e7950f1befab5d0a6e0ec18
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/upscale/comfyui_api_magnific_image_upscale_precise_1a5f8bf9/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

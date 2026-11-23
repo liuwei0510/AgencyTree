@@ -1,0 +1,65 @@
+id: remote:template:api_topaz_video_enhance
+kind: comfyui_template
+title: 'Video Upscale: Topaz Astra Fast'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: Topaz Astra Fast'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Enhance videos with Topaz AI. Supports resolution upscaling using Starlight
+    (Astra) Fast model and frame interpolation with apo-8 model.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_video_enhance.json
+  sha256: e93fa38ad7499646d7270d6d327573b5f92ba3dc0c3d39449076e5bbbc70e0d6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_topaz_video_enhance
+  title: 'Video Upscale: Topaz Astra Fast'
+  description: Enhance videos with Topaz AI. Supports resolution upscaling using Starlight
+    (Astra) Fast model and frame interpolation with apo-8 model.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Upscale
+  models:
+  - Topaz
+  date: '2025-11-25'
+  openSource: false
+  size: 0
+  usage: 27
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadVideo
+      file: api_topaz_video_enhance_input_video.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.20.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_video_enhance.json
+  sha256: e93fa38ad7499646d7270d6d327573b5f92ba3dc0c3d39449076e5bbbc70e0d6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/video_upscaling/comfyui_api_topaz_video_enhance_940458b8/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

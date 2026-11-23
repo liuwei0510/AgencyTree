@@ -1,0 +1,72 @@
+id: remote:template:api_grok_video_edit
+kind: comfyui_template
+title: 'Grok: Video Edit'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok: Video Edit'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video to edit. Input your desired modifications. Generate an
+    edited video using the Grok API.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_video_edit.json
+  sha256: 0fcc4a5431dfabd5c2091c61483a275707845e0d348b88931dae05dc5d2fdb48
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_video_edit
+  title: 'Grok: Video Edit'
+  description: Upload a video to edit. Input your desired modifications. Generate
+    an edited video using the Grok API.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - Grok
+  date: '2026-01-28'
+  openSource: false
+  usage: 20
+  size: 0
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadVideo
+      file: futuristic_motorcycle.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 2
+      nodeType: SaveVideo
+      file: api_grok_video_edit.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - input/futuristic_motorcycle.mp4
+  - output/api_grok_video_edit.mp4
+  minComfyUIVersion: 0.11.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_video_edit.json
+  sha256: 0fcc4a5431dfabd5c2091c61483a275707845e0d348b88931dae05dc5d2fdb48
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

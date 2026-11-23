@@ -1,0 +1,50 @@
+id: remote.template.api_bytedance_text_to_video
+kind: comfyui_template
+title: 'Seedance1.0 Pro: Text to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance1.0 Pro: Text to Video'
+  input_types: []
+  output_types: []
+  capability: Generate high-quality videos directly from text prompts using ByteDance's
+    Seedance model. Supports multiple resolutions and aspect ratios with natural motion
+    and cinematic quality.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_text_to_video.json
+  sha256: ae114bd8ca859a7d48cc02e528fb77317b0d4cb27e8b69347b11f6ed1830f6b0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_text_to_video
+  title: 'Seedance1.0 Pro: Text to Video'
+  description: Generate high-quality videos directly from text prompts using ByteDance's
+    Seedance model. Supports multiple resolutions and aspect ratios with natural motion
+    and cinematic quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - API
+  - Text to Video
+  models:
+  - Seedance1.0 Pro
+  - ByteDance
+  date: '2025-10-06'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 7
+  username: ComfyUI
+  minComfyUIVersion: 0.3.58

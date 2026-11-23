@@ -1,0 +1,118 @@
+id: remote:template:video_humo
+kind: comfyui_template
+title: HuMo Video Generation
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: HuMo Video Generation
+  input_types:
+    prompt: string
+    seed: number
+    negative_prompt: string
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate videos based on audio, image, and text, keeping the character's
+    lip sync.
+  parameters:
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: seed
+    type: number
+    required: false
+    default: 1067760026265042
+  - name: negative_prompt
+    type: string
+    required: false
+    default: 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_humo.json
+  sha256: 749558c04cfcede5fa8e72d47ca50e195423d033adbc15dbece457fcf730839d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_humo
+  title: HuMo Video Generation
+  description: Generate videos based on audio, image, and text, keeping the character's
+    lip sync.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Text to Video
+  models:
+  - HuMo
+  date: '2025-09-21'
+  size: 27895812588
+  usage: 18
+  io:
+    inputs:
+    - nodeId: 49
+      nodeType: LoadImage
+      file: video_humo_reference_image.png
+      mediaType: image
+    - nodeId: 58
+      nodeType: LoadAudio
+      file: video_humo_input_audio.wav
+      mediaType: audio
+  username: ComfyUI
+  minComfyUIVersion: 0.3.60
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_humo.json
+  sha256: 749558c04cfcede5fa8e72d47ca50e195423d033adbc15dbece457fcf730839d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_video_humo_5265d579/template.yaml
+validation_errors: []
+inputs:
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: seed
+  type: number
+  required: false
+  default: 1067760026265042
+- name: negative_prompt
+  type: string
+  required: false
+  default: 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '64'
+    input_key: seed
+    widget_index: 0
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '49'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

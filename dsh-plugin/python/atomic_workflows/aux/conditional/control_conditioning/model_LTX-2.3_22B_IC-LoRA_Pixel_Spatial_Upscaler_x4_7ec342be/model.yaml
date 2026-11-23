@@ -1,0 +1,46 @@
+id: remote:model:7ec342bedca98a7372d2
+kind: comfyui_model
+title: LTX-2.3 22B IC-LoRA Pixel Spatial Upscaler x4
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: LTX-2.3 22B IC-LoRA Pixel Spatial Upscaler x4
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: ltx-2.3-22b-ic-lora-pixel-spatial-upscaler-x4-0.9.safetensors
+  - name: base
+    value: LTX-2.3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/ltxv/ltx2
+    filename: ltx-2.3-22b-ic-lora-pixel-spatial-upscaler-x4-0.9.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Pixel-Spatial-Upscaler/resolve/main/ltx-2.3-22b-ic-lora-pixel-spatial-upscaler-x4-0.9.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2.3 22B IC-LoRA Pixel Spatial Upscaler x4
+  type: lora
+  base: LTX-2.3
+  save_path: loras/ltxv/ltx2
+  description: In-Context LoRA (IC LoRA) for generative 4x pixel spatial upscaling
+    of videos.
+  reference: https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Pixel-Spatial-Upscaler
+  filename: ltx-2.3-22b-ic-lora-pixel-spatial-upscaler-x4-0.9.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2.3-22b-IC-LoRA-Pixel-Spatial-Upscaler/resolve/main/ltx-2.3-22b-ic-lora-pixel-spatial-upscaler-x4-0.9.safetensors
+  size: 0.65GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/conditional/control_conditioning/model_LTX-2.3_22B_IC-LoRA_Pixel_Spatial_Upscaler_x4_7ec342be/model.yaml
+validation_errors: []

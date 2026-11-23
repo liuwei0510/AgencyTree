@@ -1,0 +1,79 @@
+id: remote:template:flux_depth_lora_example
+kind: comfyui_template
+title: Flux.1 Depth Lora
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Depth Lora
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Generate images guided by depth information using Flux.1 LoRA.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_depth_lora_example.json
+  sha256: f359947e777d98ab14f419ec8fd919352cee554c4aeb06614c6b7c084608ccc3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux_depth_lora_example
+  title: Flux.1 Depth Lora
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images guided by depth information using Flux.1 LoRA.
+  thumbnailVariant: compareSlider
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-1-controlnet
+  tags:
+  - ControlNet
+  - Image
+  models:
+  - FLUX
+  - FLUX.1
+  date: '2025-03-01'
+  size: 35433480192
+  usage: 20
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: flux_depth_lora_example_input_image.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_depth_lora_example.json
+  sha256: f359947e777d98ab14f419ec8fd919352cee554c4aeb06614c6b7c084608ccc3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_flux_depth_lora_example_ed5502da/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

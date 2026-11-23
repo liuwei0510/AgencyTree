@@ -1,0 +1,67 @@
+id: remote:template:api_krea2_t2i
+kind: comfyui_template
+title: 'Krea2: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Krea2: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt describing your desired scene. Generate four aesthetic,
+    high-quality images that interpret your prompt with creative variety.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_krea2_t2i.json
+  sha256: 47bdf2bd03106e34ed51ae7e72f48def72afc6d13054b2ee084473c282784547
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_krea2_t2i
+  title: 'Krea2: Text to Image'
+  description: Input a text prompt describing your desired scene. Generate four aesthetic,
+    high-quality images that interpret your prompt with creative variety.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Krea 2
+  logos:
+  - provider: Krea
+  date: '2026-05-27'
+  openSource: false
+  size: 0
+  usage: 42
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 2
+      nodeType: SaveImage
+      file: api_krea2_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_krea2_t2i.png
+  minComfyUIVersion: 0.24.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_krea2_t2i.json
+  sha256: 47bdf2bd03106e34ed51ae7e72f48def72afc6d13054b2ee084473c282784547
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

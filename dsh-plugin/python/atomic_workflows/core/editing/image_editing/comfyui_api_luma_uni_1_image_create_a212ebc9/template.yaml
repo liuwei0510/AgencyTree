@@ -1,0 +1,72 @@
+id: remote:template:api_luma_uni_1_image_create
+kind: comfyui_template
+title: 'Luma UNI-1: Image Creation'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma UNI-1: Image Creation'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate brand-new original images using the Luma UNI-1 node with up
+    to 9 reference images for style, character, color, lighting, and composition.
+    Create unique compositions with detailed prompts, adjustable aspect ratios, and
+    seed control.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_uni_1_image_create.json
+  sha256: 52d60a3ec0615a67e62d62dbc468dc41c7afc022d5af395aed47cad005b2c5ce
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_uni_1_image_create
+  title: 'Luma UNI-1: Image Creation'
+  description: Generate brand-new original images using the Luma UNI-1 node with up
+    to 9 reference images for style, character, color, lighting, and composition.
+    Create unique compositions with detailed prompts, adjustable aspect ratios, and
+    seed control.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Style Reference
+  models:
+  - Luma UNI-1
+  logos:
+  - provider: Luma
+  date: '2026-05-05'
+  openSource: false
+  size: 0
+  usage: 15
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 33
+      nodeType: LoadImage
+      file: uni_1_style_ref.png
+      mediaType: image
+  minComfyUIVersion: 0.20.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_uni_1_image_create.json
+  sha256: 52d60a3ec0615a67e62d62dbc468dc41c7afc022d5af395aed47cad005b2c5ce
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_luma_uni_1_image_create_a212ebc9/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,91 @@
+id: remote:template:video_ltx_2_audio_to_video
+kind: comfyui_template
+title: 'LTX-2: Audio to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'LTX-2: Audio to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload an audio file and a starting image frame. Generate a video synchronized
+    to the audio using the LTX-2 model.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx_2_audio_to_video.json
+  sha256: 0554e4be6b48fd37b4c537f5245486015b022c95951d3defa570be3e84914dbf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx_2_audio_to_video
+  title: 'LTX-2: Audio to Video'
+  description: Upload an audio file and a starting image frame. Generate a video synchronized
+    to the audio using the LTX-2 model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Audio to Video
+  - Video
+  models:
+  - LTX-2
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  date: '2026-02-16'
+  openSource: true
+  size: 53794465382
+  usage: 39
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 444
+      nodeType: LoadImage
+      file: ltx2-a2v-input.png
+      mediaType: image
+    - nodeId: 565
+      nodeType: LoadAudio
+      file: ltx2-a2v-input.mp3
+      mediaType: audio
+    outputs:
+    - nodeId: 984
+      nodeType: SaveVideo
+      file: video_ltx_2_audio_to_video.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/video_ltx_2_audio_to_video.mp4
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx_2_audio_to_video.json
+  sha256: 0554e4be6b48fd37b4c537f5245486015b022c95951d3defa570be3e84914dbf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_video_ltx_2_audio_to_video_554d6c2e/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '444'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

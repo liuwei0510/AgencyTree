@@ -1,0 +1,58 @@
+id: remote.template.api_tripo3_1_text_to_model
+kind: comfyui_template
+title: 'Tripo H3.1: Text to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo H3.1: Text to Model'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Generate production-ready 3D hero assets with high-density geometry
+    and PBR materials. Takes text prompts or reference images as input and outputs
+    detailed 3D meshes suitable for close-up renders and game assets.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo3_1_text_to_model.json
+  sha256: 1c9cd5bb99b46e97bbdc9488deb3943b19dcc1803c479d6d4d39de314f5e0a23
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo3_1_text_to_model
+  title: 'Tripo H3.1: Text to Model'
+  description: Generate production-ready 3D hero assets with high-density geometry
+    and PBR materials. Takes text prompts or reference images as input and outputs
+    detailed 3D meshes suitable for close-up renders and game assets.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - API
+  - Text to 3D
+  models:
+  - Tripo
+  logos:
+  - provider: Tripo
+  date: '2026-05-09'
+  openSource: false
+  size: 0
+  usage: 11
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.34.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path

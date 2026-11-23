@@ -1,0 +1,86 @@
+id: remote.template.api_seedance2_5_draft_i2v
+kind: comfyui_template
+title: 'Seedance2.5 Draft: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance2.5 Draft: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+    transcript: text
+  capability: 'Generate draft preview videos from a first frame image using Seedance
+    2.5''s two-phase draft mode: stage one turns your image into a fast, low-cost
+    480p preview plus a reusable draft task ID, and stage two renders the 1080p final
+    from that ID. Ideal for testing motion, camera and scene ideas on a still before
+    committing to a full-quality render.'
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_draft_i2v.json
+  sha256: c957eddfbbdcb5a195e4ddb819b439ea13dc31a417287f867fe67b74a38c4739
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_5_draft_i2v
+  title: 'Seedance2.5 Draft: Image to Video'
+  description: 'Generate draft preview videos from a first frame image using Seedance
+    2.5''s two-phase draft mode: stage one turns your image into a fast, low-cost
+    480p preview plus a reusable draft task ID, and stage two renders the 1080p final
+    from that ID. Ideal for testing motion, camera and scene ideas on a still before
+    committing to a full-quality render.'
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  models:
+  - Seedance 2.5
+  logos:
+  - provider: ByteDance
+  minComfyUIVersion: 0.37.3
+  date: '2026-09-25'
+  openSource: false
+  size: 0
+  usage: 173
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 784
+      nodeType: LoadImage
+      file: friends_enjoying_boba.png
+      mediaType: image
+    outputs:
+    - nodeId: 775
+      nodeType: SaveVideo
+      file: api_seedance2_5_draft_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_seedance2_5_draft_i2v.mp4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '784'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text

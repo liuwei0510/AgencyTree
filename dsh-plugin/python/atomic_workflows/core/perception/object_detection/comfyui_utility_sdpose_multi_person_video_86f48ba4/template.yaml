@@ -1,0 +1,65 @@
+id: remote:template:utility_sdpose_multi_person_video
+kind: comfyui_template
+title: 'Pose Detection: SDPose Multi-Person'
+tree_branch:
+- core
+- perception
+- object_detection
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Pose Detection: SDPose Multi-Person'
+  input_types: {}
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload a video to detect human poses. Supports detection for both single
+    individuals and multiple people within the same scene
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sdpose_multi_person_video.json
+  sha256: c32641b7c777ad683e63ad55bbf853bcd96f4706a89b4f4a706d0795cda48983
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_sdpose_multi_person_video
+  title: 'Pose Detection: SDPose Multi-Person'
+  description: Upload a video to detect human poses. Supports detection for both single
+    individuals and multiple people within the same scene
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Pose Map
+  models:
+  - SDPose-OOD
+  date: '2026-03-31'
+  openSource: true
+  size: 2040109466
+  usage: 11
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 694
+      nodeType: LoadVideo
+      file: man_playing_violin.mp4
+      mediaType: video
+  minComfyUIVersion: 0.19.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_sdpose_multi_person_video.json
+  sha256: c32641b7c777ad683e63ad55bbf853bcd96f4706a89b4f4a706d0795cda48983
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true

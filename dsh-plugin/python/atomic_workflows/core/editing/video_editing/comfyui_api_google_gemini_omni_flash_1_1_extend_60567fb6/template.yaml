@@ -1,0 +1,78 @@
+id: remote:template:api_google_gemini_omni_flash_1_1_extend
+kind: comfyui_template
+title: 'Video Extend: Gemini Omni 1.1 Flash'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Extend: Gemini Omni 1.1 Flash'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Extend an existing video by up to 10 seconds per step, building stories
+    up to 40 seconds total with Gemini Omni 1.1 Flash. The model analyzes the last
+    10 seconds of context, keeping characters, motion, and audio coherent as the scene
+    continues from where it left off. Optionally attach reference images to introduce
+    new characters mid-story. Works on uploaded clips and previously generated videos;
+    describe how the scene should continue in plain language. Ideal for longer narratives,
+    scene branching, and iterative storytelling.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_extend.json
+  sha256: f1d16e4757e2c985a33e5eeb392e9e0d64baa1da4bc3a99de68d4d56f721f642
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_gemini_omni_flash_1_1_extend
+  title: 'Video Extend: Gemini Omni 1.1 Flash'
+  description: Extend an existing video by up to 10 seconds per step, building stories
+    up to 40 seconds total with Gemini Omni 1.1 Flash. The model analyzes the last
+    10 seconds of context, keeping characters, motion, and audio coherent as the scene
+    continues from where it left off. Optionally attach reference images to introduce
+    new characters mid-story. Works on uploaded clips and previously generated videos;
+    describe how the scene should continue in plain language. Ideal for longer narratives,
+    scene branching, and iterative storytelling.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Extend
+  models:
+  - Gemini Omni 1.1 Flash
+  logos:
+  - provider: Google
+  minComfyUIVersion: 0.34.2
+  date: '2026-08-27'
+  openSource: false
+  size: 0
+  usage: 21
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 48
+      nodeType: LoadVideo
+      file: rooster_duel_western.mp4
+      mediaType: video
+  thumbnail:
+  - thumbnail/api_google_gemini_omni_flash_1_1_extend.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini_omni_flash_1_1_extend.json
+  sha256: f1d16e4757e2c985a33e5eeb392e9e0d64baa1da4bc3a99de68d4d56f721f642
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_google_gemini_omni_flash_1_1_extend_60567fb6/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,45 @@
+id: remote:model:f3b9f24dad6d7c3adad8
+kind: comfyui_model
+title: T2I-Adapter XL (depth-midas) FP16
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: T2I-Adapter XL (depth-midas) FP16
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/depth_conditioning
+  parameters:
+  - name: filename
+    value: t2i-adapter-depth-midas-sdxl-1.0.fp16.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: T2I-Adapter
+    save_path: controlnet/SDXL
+    filename: t2i-adapter-depth-midas-sdxl-1.0.fp16.safetensors
+    download_locator: https://huggingface.co/TencentARC/t2i-adapter-depth-midas-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors
+code_usable: true
+status: deprecated
+metadata:
+  name: T2I-Adapter XL (depth-midas) FP16
+  type: T2I-Adapter
+  base: SDXL
+  save_path: controlnet/SDXL
+  description: ControlNet T2I-Adapter XL for depth-midas
+  reference: https://huggingface.co/TencentARC/t2i-adapter-depth-midas-sdxl-1.0
+  filename: t2i-adapter-depth-midas-sdxl-1.0.fp16.safetensors
+  url: https://huggingface.co/TencentARC/t2i-adapter-depth-midas-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors
+  size: 158.1MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/conditional/depth_conditioning/model_T2I-Adapter_XL_depth-midas_FP16_f3b9f24d/model.yaml
+validation_errors: []

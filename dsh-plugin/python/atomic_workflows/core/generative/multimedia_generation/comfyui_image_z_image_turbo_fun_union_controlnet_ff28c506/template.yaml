@@ -1,0 +1,55 @@
+id: remote.template.image_z_image_turbo_fun_union_controlnet
+kind: comfyui_template
+title: Z-Image-Turbo Fun Union ControlNet
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Z-Image-Turbo Fun Union ControlNet
+  input_types:
+  - image
+  output_types: []
+  capability: Multi-control ControlNet supporting Canny, HED, Depth, Pose, and MLSD
+    for Z-Image-Turbo.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_z_image_turbo_fun_union_controlnet.json
+  sha256: a0954bb34cbc0b68f40c3a02307911c481019c06e79f9fcc3d9c2e64d57300a9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_z_image_turbo_fun_union_controlnet
+  tutorialUrl: https://docs.comfy.org/tutorials/image/z-image/z-image-turbo
+  title: Z-Image-Turbo Fun Union ControlNet
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Multi-control ControlNet supporting Canny, HED, Depth, Pose, and MLSD
+    for Z-Image-Turbo.
+  tags:
+  - Image
+  - ControlNet
+  models:
+  - Z-Image-Turbo
+  date: '2025-12-02'
+  size: 23837068493
+  usage: 310
+  io:
+    inputs:
+    - nodeId: 58
+      nodeType: LoadImage
+      file: image_z_image_turbo_fun_union_controlnet_input_image.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.3.57

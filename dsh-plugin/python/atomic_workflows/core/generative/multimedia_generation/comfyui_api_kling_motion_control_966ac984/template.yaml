@@ -1,0 +1,82 @@
+id: remote:template:api_kling_motion_control
+kind: comfyui_template
+title: 'Kling2.6: Motion Control'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling2.6: Motion Control'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Apply precise character actions and expressions from a reference video
+    to your character image with synchronized motion control.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_motion_control.json
+  sha256: 1a7b7d89856b122826d814e5cc557932c1282b75b7d226daf31769811c398c7a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_motion_control
+  title: 'Kling2.6: Motion Control'
+  description: Apply precise character actions and expressions from a reference video
+    to your character image with synchronized motion control.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Motion Control
+  - API
+  models:
+  - Kling 2.6
+  - Kling
+  date: '2026-01-12'
+  openSource: false
+  usage: 48
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadVideo
+      file: street_dancer.mp4
+      mediaType: video
+    - nodeId: 11
+      nodeType: LoadImage
+      file: streetwear_fox.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.7.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_motion_control.json
+  sha256: 1a7b7d89856b122826d814e5cc557932c1282b75b7d226daf31769811c398c7a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_kling_motion_control_966ac984/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '11'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

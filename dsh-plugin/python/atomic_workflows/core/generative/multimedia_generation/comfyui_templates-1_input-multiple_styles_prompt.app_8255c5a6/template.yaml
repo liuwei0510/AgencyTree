@@ -1,0 +1,56 @@
+id: remote.template.templates-1_input-multiple_styles_prompt.app
+kind: comfyui_template
+title: 1 input multiple styles from prompt
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 1 input multiple styles from prompt
+  input_types:
+  - image
+  output_types: []
+  capability: Upload an image and generate 12 stylized variations in under 15 seconds.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-1_input-multiple_styles_prompt.app.json
+  sha256: d70d9cfbbb68708953d04740f55dc57e50bb911f0dbfd83a80d80aae40d57702
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-1_input-multiple_styles_prompt.app
+  title: 1 input multiple styles from prompt
+  description: Upload an image and generate 12 stylized variations in under 15 seconds.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Grok
+  logos:
+  - provider: Grok
+  date: '2026-02-19'
+  openSource: false
+  size: 0
+  usage: 4
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: lightning_man.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-1_input-multiple_styles_prompt_app.mp4
+  isApp: true
+  minComfyUIVersion: 0.11.1

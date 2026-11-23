@@ -1,0 +1,77 @@
+id: core.generative.text_to_video.video_wan2_2_14b_t2v
+title: video_wan2_2_14B_t2v
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/video_wan2_2_14B_t2v.json).
+tags:
+- text-to-video
+- t2v
+- generative
+workflow_file: video_wan2_2_14b_t2v.workflow.json
+inject:
+  prompt:
+    node_id: '72'
+    input_key: text
+  negative_prompt:
+    node_id: '89'
+    input_key: text
+  width:
+    node_id: '74'
+    input_key: width
+    widget_index: null
+  height:
+    node_id: '74'
+    input_key: height
+    widget_index: null
+  length:
+    node_id: '74'
+    input_key: length
+    widget_index: null
+  noise_seed:
+    node_id: '78'
+    input_key: noise_seed
+    widget_index: null
+  noise_seed_2:
+    node_id: '81'
+    input_key: noise_seed
+    widget_index: null
+  fps:
+    node_id: '88'
+    input_key: fps
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: width
+  type: number
+  required: false
+  default: 640
+- name: height
+  type: number
+  required: false
+  default: 640
+- name: length
+  type: number
+  required: false
+  default: 81
+- name: noise_seed
+  type: number
+  required: false
+  default: 0
+- name: noise_seed_2
+  type: number
+  required: false
+  default: 392459563371087
+- name: fps
+  type: number
+  required: false
+  default: 16
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

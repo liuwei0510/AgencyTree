@@ -1,0 +1,72 @@
+id: remote:template:utility_depth_anything3_video_depth_estimation
+kind: comfyui_template
+title: 'Depth Map: Depth Anything 3'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Depth Map: Depth Anything 3'
+  input_types: {}
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload 1 image to generate a depth map for video depth estimation. Output
+    a single depth-processed image ready for use in downstream workflows. Ideal for
+    video generation tasks requiring depth control, 3D scene preprocessing, and animation
+    depth mapping.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_depth_anything3_video_depth_estimation.json
+  sha256: ce147f6d60ba0caededa56751e84449792c944b5a4ef9605fdf2ee8e1d1b52cb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_depth_anything3_video_depth_estimation
+  title: 'Depth Map: Depth Anything 3'
+  description: Upload 1 image to generate a depth map for video depth estimation.
+    Output a single depth-processed image ready for use in downstream workflows. Ideal
+    for video generation tasks requiring depth control, 3D scene preprocessing, and
+    animation depth mapping.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - ControlNet
+  models:
+  - Depth Anything v3
+  date: '2026-06-12'
+  openSource: true
+  size: 1288490189
+  usage: 156
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 87
+      nodeType: LoadVideo
+      file: empty_room_assembly.mp4
+      mediaType: video
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_depth_anything3_video_depth_estimation.json
+  sha256: ce147f6d60ba0caededa56751e84449792c944b5a4ef9605fdf2ee8e1d1b52cb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/perception/depth_estimation/comfyui_utility_depth_anything3_video_depth_estimation_66a62d3a/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

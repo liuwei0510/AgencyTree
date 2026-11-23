@@ -1,0 +1,109 @@
+id: remote:template:templates_product_scene_transformation
+kind: comfyui_template
+title: Product Scene Transformation
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Product Scene Transformation
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload a product video and generate a dynamic product scene transformation
+    using Nano Banana Pro & Wan VACE 2.1
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_product_scene_transformation.json
+  sha256: d7ab6b30b41f0c89cdb3073b812c0a50818c7661b1d876d6762446652d66fff2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_product_scene_transformation
+  title: Product Scene Transformation
+  description: Upload a product video and generate a dynamic product scene transformation
+    using Nano Banana Pro & Wan VACE 2.1
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Style Transfer
+  - Video
+  models:
+  - Kling
+  - Nano Banana Pro
+  - Wan
+  logos:
+  - provider:
+    - Kling
+    - Google
+    - WAN
+  requiresCustomNodes:
+  - comfyui-depthanythingv2
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  - comfyui_essentials
+  date: '2026-02-10'
+  openSource: false
+  size: 48855252992
+  usage: 17
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 108
+      nodeType: LoadImage
+      file: comfy_sofa.png
+      mediaType: image
+    outputs:
+    - nodeId: 126
+      nodeType: SaveVideo
+      file: templates_product_scene_transformation_control_video.mp4
+      mediaType: video
+    - nodeId: 125
+      nodeType: SaveVideo
+      file: templates_product_scene_transformation_output.mp4
+      mediaType: video
+    - nodeId: 134
+      nodeType: SaveImage
+      file: templates_product_scene_transformation_style_reference.png
+      mediaType: image
+  username: sirolim
+  thumbnail:
+  - thumbnail/templates_product_scene_transformation.mp4
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_product_scene_transformation.json
+  sha256: d7ab6b30b41f0c89cdb3073b812c0a50818c7661b1d876d6762446652d66fff2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_templates_product_scene_transformation_8872310f/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '108'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

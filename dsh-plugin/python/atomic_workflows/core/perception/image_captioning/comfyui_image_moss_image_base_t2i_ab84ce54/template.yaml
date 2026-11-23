@@ -1,0 +1,68 @@
+id: remote:template:image_moss_image_base_t2i
+kind: comfyui_template
+title: 'MOSS-Image Base: Text to Image'
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MOSS-Image Base: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate an image from a text prompt with the MOSS-Image base checkpoint,
+    which reads a full scene caption and returns one finished image. The prompt upsampler
+    expands a short request into that caption first. Use it for fine-tuning experiments
+    and comparisons with the instruction-tuned checkpoint.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_moss_image_base_t2i.json
+  sha256: 68327b2873f2eeb12478f808d06486c39bf31f9bdf8cb12fd5cd2bc3a9cc2114
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_moss_image_base_t2i
+  title: 'MOSS-Image Base: Text to Image'
+  description: Generate an image from a text prompt with the MOSS-Image base checkpoint,
+    which reads a full scene caption and returns one finished image. The prompt upsampler
+    expands a short request into that caption first. Use it for fine-tuning experiments
+    and comparisons with the instruction-tuned checkpoint.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  models:
+  - MOSS-Image
+  minComfyUIVersion: 0.41.3
+  date: '2026-10-17'
+  openSource: true
+  size: 22226455757
+  usage: 1600
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_moss_image_t2i_base.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_moss_image_base_t2i.json
+  sha256: 68327b2873f2eeb12478f808d06486c39bf31f9bdf8cb12fd5cd2bc3a9cc2114
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_moss_image_base_t2i_ab84ce54/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

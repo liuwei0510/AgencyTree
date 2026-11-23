@@ -1,0 +1,90 @@
+id: remote:template:utility_interpolation_image_upscale
+kind: comfyui_template
+title: 'Image Upscale: Traditional Interpolation'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Traditional Interpolation'
+  input_types:
+    source_image: image_filenames
+    scale_factor: number
+  output_types:
+    images: image_filenames
+  capability: Upload an image and select an interpolation method. Upscale the image
+    using traditional algorithms for faster processing with minimal detail changes.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: scale_factor
+    type: number
+    required: false
+    default: 2
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_interpolation_image_upscale.json
+  sha256: 9005e93b0d07e4550893f3afed1a43405fcd703ca4b423dd6a8fa7a0ac717e2a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_interpolation_image_upscale
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/image-upscale
+  title: 'Image Upscale: Traditional Interpolation'
+  description: Upload an image and select an interpolation method. Upscale the image
+    using traditional algorithms for faster processing with minimal detail changes.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Upscale
+  models:
+  - None
+  date: '2026-02-01'
+  openSource: true
+  size: 0
+  usage: 23
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: pray.png
+      mediaType: image
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: utility_interpolation_image_upscale.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/pray.png
+  - output/utility_interpolation_image_upscale.png
+  minComfyUIVersion: 0.9.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_interpolation_image_upscale.json
+  sha256: 9005e93b0d07e4550893f3afed1a43405fcd703ca4b423dd6a8fa7a0ac717e2a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: *id001
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+  scale_factor:
+    node_id: '3'
+    input_key: scale_by
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

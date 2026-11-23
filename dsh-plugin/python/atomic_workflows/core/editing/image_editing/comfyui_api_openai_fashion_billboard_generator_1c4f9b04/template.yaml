@@ -1,0 +1,81 @@
+id: remote:template:api_openai_fashion_billboard_generator
+kind: comfyui_template
+title: Fashion Billboard Generator
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Fashion Billboard Generator
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Transform clothing photos into professional mall billboard advertisements
+    featuring realistic fashion models.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_fashion_billboard_generator.json
+  sha256: 01ddda1b902f4da515283edb97df3f829b0cb4d4ee55e5add2c2f83573719291
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_fashion_billboard_generator
+  title: Fashion Billboard Generator
+  description: Transform clothing photos into professional mall billboard advertisements
+    featuring realistic fashion models.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image Edit
+  - Image
+  - API
+  models:
+  - GPT-Image-1.5
+  - OpenAI
+  date: '2025-12-18'
+  openSource: false
+  size: 0
+  usage: 9
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: outfit-streetwear.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/api_openai_fashion_billboard_generator.png
+  minComfyUIVersion: 0.21.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_fashion_billboard_generator.json
+  sha256: 01ddda1b902f4da515283edb97df3f829b0cb4d4ee55e5add2c2f83573719291
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_openai_fashion_billboard_generator_1c4f9b04/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

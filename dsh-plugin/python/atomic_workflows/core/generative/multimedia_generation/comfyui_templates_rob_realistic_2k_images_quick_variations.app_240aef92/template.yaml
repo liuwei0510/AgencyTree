@@ -1,0 +1,60 @@
+id: remote.template.templates_rob_realistic_2k_images_quick_variations.app
+kind: comfyui_template
+title: Generate Realistic Variations
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Generate Realistic Variations
+  input_types:
+  - image
+  output_types: []
+  capability: Upload a reference image, uses Grok to caption and generate variations
+    with a fast 2x upscale for added details.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_rob_realistic_2k_images_quick_variations.app.json
+  sha256: 98646f6165f2db0d3ba09f2168788c34600126420cfc4e8d89954a13e331d06c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_rob_realistic_2k_images_quick_variations.app
+  title: Generate Realistic Variations
+  description: Upload a reference image, uses Grok to caption and generate variations
+    with a fast 2x upscale for added details.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Image Upscale
+  models:
+  - Grok
+  - Z-Image-Turbo
+  logos:
+  - provider: Grok
+  date: '2026-03-09'
+  openSource: false
+  size: 20723217203
+  usage: 33
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 77
+      nodeType: LoadImage
+      file: input_templates_rob_realistic_2k_images_quick_variations.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates_rob_realistic_2k_images_quick_variations_app.mp4
+  isApp: true
+  minComfyUIVersion: 0.11.1

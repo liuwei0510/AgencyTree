@@ -1,0 +1,82 @@
+id: remote:template:api_topaz_image_enhance
+kind: comfyui_template
+title: 'Image Upscale: Topaz Reimagine'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Reimagine'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Professional image enhancement using Topaz's Reimagine model with face
+    enhancement and detail restoration.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_image_enhance.json
+  sha256: 898a16c22e5397ccdb82a1c8f536461b5ed4c640e88e3e46679d9d8b4d71e0b3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_topaz_image_enhance
+  title: 'Image Upscale: Topaz Reimagine'
+  description: Professional image enhancement using Topaz's Reimagine model with face
+    enhancement and detail restoration.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Reimagine
+  - Topaz
+  date: '2025-11-25'
+  openSource: false
+  size: 0
+  usage: 21
+  searchRank: 0
+  logos:
+  - provider: Topaz
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: api_topaz_image_enhance_input_image.webp
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_image_enhance.json
+  sha256: 898a16c22e5397ccdb82a1c8f536461b5ed4c640e88e3e46679d9d8b4d71e0b3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/upscale/comfyui_api_topaz_image_enhance_e0734aaf/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

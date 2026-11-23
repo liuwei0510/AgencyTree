@@ -1,0 +1,85 @@
+id: core.editing.image_to_video.video_ltx2_i2v
+title: video_ltx2_i2v
+modality:
+- video
+description: ComfyUI API workflow (imported from model_apis/video_ltx2_i2v.json).
+tags:
+- image-to-video
+- i2v
+- editing
+workflow_file: video_ltx2_i2v.workflow.json
+inject:
+  prompt:
+    node_id: '92:3'
+    input_key: text
+  negative_prompt:
+    node_id: '92:4'
+    input_key: text
+  source_image:
+    node_id: '98'
+    input_key: image
+    widget_index: null
+  fps:
+    node_id: '92:51'
+    input_key: frame_rate
+    widget_index: null
+  fps_2:
+    node_id: '92:22'
+    input_key: frame_rate
+    widget_index: null
+  noise_seed:
+    node_id: 92:67
+    input_key: noise_seed
+    widget_index: null
+  noise_seed_2:
+    node_id: '92:11'
+    input_key: noise_seed
+    widget_index: null
+  fps_3:
+    node_id: 92:97
+    input_key: fps
+    widget_index: null
+  scale_factor:
+    node_id: 92:90
+    input_key: scale_by
+    widget_index: null
+inputs:
+- name: prompt
+  type: string
+  required: true
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: fps
+  type: number
+  required: false
+  default: 25
+- name: fps_2
+  type: number
+  required: false
+  default: 25
+- name: noise_seed
+  type: number
+  required: false
+  default: 0
+- name: noise_seed_2
+  type: number
+  required: false
+  default: 10
+- name: fps_3
+  type: number
+  required: false
+  default: 25
+- name: scale_factor
+  type: number
+  required: false
+  default: 0.5
+outputs:
+- name: video
+  type: video_path
+  description: ComfyUI SaveVideo outputs

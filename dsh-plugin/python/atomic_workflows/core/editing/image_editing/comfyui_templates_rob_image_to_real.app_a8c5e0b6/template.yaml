@@ -1,0 +1,81 @@
+id: remote.template.templates_rob_image_to_real.app
+kind: comfyui_template
+title: Illustration to Realism
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Illustration to Realism
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Input an illustration and generate a realistic version using Qwen Image
+    Edit 2509 with Anything2Real LoRA.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_rob_image_to_real.app.json
+  sha256: 0e6de70340b1175060dc3ef03da058823ec02bc1ecd379401b8f4c1be6f014b0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_rob_image_to_real.app
+  title: Illustration to Realism
+  description: Input an illustration and generate a realistic version using Qwen Image
+    Edit 2509 with Anything2Real LoRA.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Image Edit
+  - LoRA
+  models:
+  - Qwen-Image-Edit
+  date: '2026-03-09'
+  openSource: true
+  includeOnDistributions:
+  - cloud
+  size: 31568009626
+  usage: 258
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: templates_rob_image_to_real-input.png
+      mediaType: image
+    outputs:
+    - nodeId: 18
+      nodeType: SaveImage
+      file: templates_rob_image_to_real.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/templates_rob_image_to_real-input.png
+  - output/templates_rob_image_to_real.png
+  isApp: true
+  minComfyUIVersion: 0.9.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

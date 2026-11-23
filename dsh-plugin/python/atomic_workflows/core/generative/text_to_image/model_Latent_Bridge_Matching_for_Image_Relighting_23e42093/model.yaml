@@ -1,0 +1,43 @@
+id: remote.model.23e42093718623959c68
+kind: comfyui_model
+title: Latent Bridge Matching for Image Relighting
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: Latent Bridge Matching for Image Relighting
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: LBM_relighting.safetensors
+  - name: base
+    value: LBM
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/LBM
+    filename: LBM_relighting.safetensors
+    download_locator: https://huggingface.co/jasperai/LBM_relighting/resolve/main/model.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Latent Bridge Matching for Image Relighting
+  type: diffusion_model
+  base: LBM
+  save_path: diffusion_models/LBM
+  description: Latent Bridge Matching (LBM) Relighting model
+  reference: https://huggingface.co/jasperai/LBM_relighting
+  filename: LBM_relighting.safetensors
+  url: https://huggingface.co/jasperai/LBM_relighting/resolve/main/model.safetensors
+  size: 5.02GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

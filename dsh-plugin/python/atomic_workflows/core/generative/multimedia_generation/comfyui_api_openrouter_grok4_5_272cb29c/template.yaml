@@ -1,0 +1,61 @@
+id: remote.template.api_openrouter_grok4_5
+kind: comfyui_template
+title: 'Grok: Grok 4.5'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok: Grok 4.5'
+  input_types:
+  - image
+  output_types: []
+  capability: Grok 4.5 is a flagship multimodal model designed for complex engineering
+    and creative tasks, with native visual parsing and high-speed inference. It takes
+    creative briefs and generated images as inputs, producing standardized scene descriptions
+    and iterative visual analysis. Ideal for multi-shot storyboarding, batch image
+    description generation, and feedback-driven creative refinement.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openrouter_grok4_5.json
+  sha256: 5e177be2c2fbacbb9b5355697c2c11fb01c93fb92b35f4df0e703ac63dc012b0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openrouter_grok4_5
+  title: 'Grok: Grok 4.5'
+  description: Grok 4.5 is a flagship multimodal model designed for complex engineering
+    and creative tasks, with native visual parsing and high-speed inference. It takes
+    creative briefs and generated images as inputs, producing standardized scene descriptions
+    and iterative visual analysis. Ideal for multi-shot storyboarding, batch image
+    description generation, and feedback-driven creative refinement.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Grok
+  logos:
+  - provider: OpenRouter
+  date: '2026-07-22'
+  openSource: false
+  size: 0
+  usage: 162
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: blue_poppies_field.png
+      mediaType: image
+  minComfyUIVersion: 0.28.0

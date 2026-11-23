@@ -1,0 +1,84 @@
+id: remote:template:templates-poster_to_2x2_mockups-v2.0
+kind: comfyui_template
+title: Poster Scene Mockups
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Poster Scene Mockups
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a poster/ad design and with a short input about your brand, generate
+    4 mockups in multiple scenes.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-poster_to_2x2_mockups-v2.0.json
+  sha256: f30c521e9f116b7d5a0eff781da398efcc64b25da2780af5d5ce4632c738ef6b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-poster_to_2x2_mockups-v2.0
+  title: Poster Scene Mockups
+  mediaType: image
+  mediaSubtype: webp
+  description: Upload a poster/ad design and with a short input about your brand,
+    generate 4 mockups in multiple scenes.
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Nano Banana Pro
+  - Google
+  date: '2025-12-06'
+  searchRank: 8
+  openSource: false
+  size: 0
+  requiresCustomNodes:
+  - comfyui_essentials
+  usage: 7
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: template_Poster_Scene_Mockups.jpg
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-poster_to_2x2_mockups-v2_0.png
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-poster_to_2x2_mockups-v2.0.json
+  sha256: f30c521e9f116b7d5a0eff781da398efcc64b25da2780af5d5ce4632c738ef6b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_templates-poster_to_2x2_mockups-v2.0_ffd62e22/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

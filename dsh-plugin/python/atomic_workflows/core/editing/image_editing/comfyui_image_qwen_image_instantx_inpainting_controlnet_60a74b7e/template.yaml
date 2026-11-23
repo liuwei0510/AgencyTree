@@ -1,0 +1,97 @@
+id: remote.template.image_qwen_image_instantx_inpainting_controlnet
+kind: comfyui_template
+title: Qwen-Image InstantX Inpainting ControlNet
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen-Image InstantX Inpainting ControlNet
+  input_types:
+    negative_prompt: string
+    source_image: image_filenames
+    prompt: string
+    seed: number
+  output_types:
+    images: image_filenames
+  capability: Professional inpainting and image editing with Qwen-Image InstantX ControlNet.
+    Supports object replacement, text modification, background changes, and outpainting.
+  parameters: &id001
+  - name: negative_prompt
+    type: string
+    required: false
+    default: ' '
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: seed
+    type: number
+    required: false
+    default: 134554158057228
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_instantx_inpainting_controlnet.json
+  sha256: 57724a5c98382a44741b47609aba703b98fff48dd3bde0c68779e6e4eeb92897
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_instantx_inpainting_controlnet
+  title: Qwen-Image InstantX Inpainting ControlNet
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Professional inpainting and image editing with Qwen-Image InstantX
+    ControlNet. Supports object replacement, text modification, background changes,
+    and outpainting.
+  tags:
+  - Image
+  - ControlNet
+  - Inpainting
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image
+  models:
+  - Qwen-Image
+  date: '2025-09-12'
+  size: 36013300777
+  usage: 136
+  io:
+    inputs:
+    - nodeId: 71
+      nodeType: LoadImage
+      file: image_qwen_image_instantx_inpainting_controlnet_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.57
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '71'
+    input_key: image
+    widget_index: 0
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

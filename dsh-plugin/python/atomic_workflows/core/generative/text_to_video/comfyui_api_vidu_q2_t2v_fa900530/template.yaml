@@ -1,0 +1,57 @@
+id: remote:template:api_vidu_q2_t2v
+kind: comfyui_template
+title: 'Vidu Q2: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Vidu Q2: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate high-quality 1080p videos from text prompts with Vidu Q2 model
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_t2v.json
+  sha256: 3a9fec1b40e8c05a12738c3539577de21bf13032f09583b4e5f9294c8faa6d4b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_vidu_q2_t2v
+  title: 'Vidu Q2: Text to Video'
+  description: Generate high-quality 1080p videos from text prompts with Vidu Q2 model
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  - Video
+  models:
+  - Vidu Q2
+  - Vidu
+  date: '2026-01-12'
+  openSource: false
+  usage: 15
+  username: ComfyUI
+  minComfyUIVersion: 0.9.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_vidu_q2_t2v.json
+  sha256: 3a9fec1b40e8c05a12738c3539577de21bf13032f09583b4e5f9294c8faa6d4b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_video/comfyui_api_vidu_q2_t2v_fa900530/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

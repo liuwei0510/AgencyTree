@@ -1,0 +1,76 @@
+id: remote:template:utility_void_video_inpainting
+kind: comfyui_template
+title: 'Video Inpainting: VOID'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Inpainting: VOID'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video and mask the object you want to remove. Generate a clean
+    video with the object and its physical interactions deleted.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_void_video_inpainting.json
+  sha256: 1b751ceab1029143cca674d18c0efa61ae5d9fdfac1558dd71ddfc59f6228412
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_void_video_inpainting
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/void-video-inpainting
+  title: 'Video Inpainting: VOID'
+  description: Upload a video and mask the object you want to remove. Generate a clean
+    video with the object and its physical interactions deleted.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Edit
+  - Inpainting
+  models:
+  - VOID
+  date: '2026-05-14'
+  openSource: true
+  size: 34252364186
+  usage: 123
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: snowboarder.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 38
+      nodeType: SaveVideo
+      file: utility_void_video_inpainting.mp4
+      mediaType: video
+    - nodeId: 48
+      nodeType: SaveVideo
+      file: utility_void_video_inpainting.mp4
+      mediaType: video
+  minComfyUIVersion: 0.21.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_void_video_inpainting.json
+  sha256: 1b751ceab1029143cca674d18c0efa61ae5d9fdfac1558dd71ddfc59f6228412
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_utility_void_video_inpainting_dff0b0c8/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

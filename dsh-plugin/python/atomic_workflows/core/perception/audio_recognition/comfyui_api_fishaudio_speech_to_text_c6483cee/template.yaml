@@ -1,0 +1,72 @@
+id: remote:template:api_fishaudio_speech_to_text
+kind: comfyui_template
+title: 'Fish Audio: Speech to Text'
+tree_branch:
+- core
+- perception
+- audio_recognition
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Fish Audio: Speech to Text'
+  input_types: {}
+  output_types:
+    transcript: text
+  capability: Transcribe audio to text with Fish Audio ASR. Language is detected automatically
+    across 80+ languages, with optional word-level timestamps returned as JSON segments.
+    Use it to create subtitles, transcribe recordings, or generate text prompts from
+    audio clips. A sample audio is pre-loaded so you can test it right away.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_speech_to_text.json
+  sha256: fa929a738c77abca1427eacd18d768ae7b6bee3fa88d09d6d571e723ae33bae4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_fishaudio_speech_to_text
+  title: 'Fish Audio: Speech to Text'
+  description: Transcribe audio to text with Fish Audio ASR. Language is detected
+    automatically across 80+ languages, with optional word-level timestamps returned
+    as JSON segments. Use it to create subtitles, transcribe recordings, or generate
+    text prompts from audio clips. A sample audio is pre-loaded so you can test it
+    right away.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Speech to Text
+  models:
+  - Fish Audio
+  logos:
+  - provider: Fish Audio
+  date: '2026-08-31'
+  openSource: false
+  size: 107374182
+  usage: 9
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 11
+      nodeType: LoadAudio
+      file: fish_audio_example.mp3
+      mediaType: audio
+  minComfyUIVersion: 0.34.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_fishaudio_speech_to_text.json
+  sha256: fa929a738c77abca1427eacd18d768ae7b6bee3fa88d09d6d571e723ae33bae4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/perception/audio_recognition/comfyui_api_fishaudio_speech_to_text_c6483cee/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: transcript
+  type: text
+planning_eligible: true
+contract_errors: []

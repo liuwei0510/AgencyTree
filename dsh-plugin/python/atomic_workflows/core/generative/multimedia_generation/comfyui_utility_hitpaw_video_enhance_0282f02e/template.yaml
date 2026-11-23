@@ -1,0 +1,68 @@
+id: remote:template:utility_hitpaw_video_enhance
+kind: comfyui_template
+title: 'Video Upscale: HitPaw'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: HitPaw'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video to enhance and upscale. Generate a restored output with
+    improved clarity, temporal stability, and optional portrait enhancement.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_hitpaw_video_enhance.json
+  sha256: be901694e0502a5c3b1cb8776ce008d86146e135aefdc60ada263f67520d3f42
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_hitpaw_video_enhance
+  title: 'Video Upscale: HitPaw'
+  description: Upload a video to enhance and upscale. Generate a restored output with
+    improved clarity, temporal stability, and optional portrait enhancement.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Upscale
+  - API
+  models:
+  - HitPaw
+  logos:
+  - provider: HitPaw
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadVideo
+      file: dad_carry_daughter.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.12.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_hitpaw_video_enhance.json
+  sha256: be901694e0502a5c3b1cb8776ce008d86146e135aefdc60ada263f67520d3f42
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/video_upscaling/comfyui_utility_hitpaw_video_enhance_0282f02e/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,94 @@
+id: remote:template:3d_pixal3d_multi_views
+kind: comfyui_template
+title: 'Pixal3D: Multi Views to 3D'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Pixal3D: Multi Views to 3D'
+  input_types:
+    seed: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload your own separate view images, or use one mixed multi-view turnaround
+    sheet. The workflow prepares front, back, left and right views, then reconstructs
+    a textured 3D model with Pixal3D Multi-View.
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 56
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_pixal3d_multi_views.json
+  sha256: d001222e3d3bbde6e21d792fd5aad088df50a85464ceac52bb83e6375e2dd2df
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: 3d_pixal3d_multi_views
+  title: 'Pixal3D: Multi Views to 3D'
+  description: Upload your own separate view images, or use one mixed multi-view turnaround
+    sheet. The workflow prepares front, back, left and right views, then reconstructs
+    a textured 3D model with Pixal3D Multi-View.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - 3D
+  - Image to 3D
+  - Int8
+  models:
+  - Pixal3D
+  minComfyUIVersion: 0.35.0
+  date: '2026-09-09'
+  openSource: true
+  size: 9341553869
+  usage: 242
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 364
+      nodeType: LoadImage
+      file: character_turnaround_4view_sheet.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/3d_pixal3d_multi_views.json
+  sha256: d001222e3d3bbde6e21d792fd5aad088df50a85464ceac52bb83e6375e2dd2df
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_3d_pixal3d_multi_views_b25d9b91/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 56
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+  source_image:
+    node_id: '364'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

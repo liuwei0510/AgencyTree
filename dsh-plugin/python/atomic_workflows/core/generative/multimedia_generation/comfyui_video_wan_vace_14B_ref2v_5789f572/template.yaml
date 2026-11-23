@@ -1,0 +1,120 @@
+id: remote:template:video_wan_vace_14B_ref2v
+kind: comfyui_template
+title: Wan2.1 VACE Reference to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan2.1 VACE Reference to Video
+  input_types:
+    source_image: image_filenames
+    seed: number
+    negative_prompt: string
+    prompt: string
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Create videos that match the style and content of a reference image.
+    Perfect for style-consistent video generation.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: seed
+    type: number
+    required: false
+    default: 552837504311715
+  - name: negative_prompt
+    type: string
+    required: false
+    default: 过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走,
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_vace_14B_ref2v.json
+  sha256: 35a8eaee65eb35b3413c0012230930f3b0452506b5c966f332b84da91efa0c50
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan_vace_14B_ref2v
+  title: Wan2.1 VACE Reference to Video
+  description: Create videos that match the style and content of a reference image.
+    Perfect for style-consistent video generation.
+  mediaType: image
+  mediaSubtype: webp
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/vace
+  tags:
+  - Video
+  - Image to Video
+  models:
+  - Wan2.1
+  - Wan
+  date: '2025-05-21'
+  size: 57756572713
+  usage: 36
+  io:
+    inputs:
+    - nodeId: 73
+      nodeType: LoadImage
+      file: video_wan_vace_14B_ref2v_reference_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan_vace_14B_ref2v.json
+  sha256: 35a8eaee65eb35b3413c0012230930f3b0452506b5c966f332b84da91efa0c50
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_video_wan_vace_14B_ref2v_5789f572/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: seed
+  type: number
+  required: false
+  default: 552837504311715
+- name: negative_prompt
+  type: string
+  required: false
+  default: 过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走,
+- name: prompt
+  type: string
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '73'
+    input_key: image
+    widget_index: 0
+  seed:
+    node_id: '108'
+    input_key: seed
+    widget_index: 0
+  negative_prompt:
+    node_id: '107'
+    input_key: text
+    widget_index: 0
+  prompt:
+    node_id: '105'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,9 @@
+{
+  "__comment": "Low-strength img2img or dedicated denoise nodes.",
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "REPLACE.png"
+    }
+  }
+}

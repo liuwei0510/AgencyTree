@@ -1,0 +1,46 @@
+id: remote:model:56f522492d6d227c04d3
+kind: comfyui_model
+title: stabilityai/stable-diffusion-x4-upscaler
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: stabilityai/stable-diffusion-x4-upscaler
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: x4-upscaler-ema.safetensors
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/upscale
+    filename: x4-upscaler-ema.safetensors
+    download_locator: https://huggingface.co/stabilityai/stable-diffusion-x4-upscaler/resolve/main/x4-upscaler-ema.safetensors
+code_usable: true
+status: available
+metadata:
+  name: stabilityai/stable-diffusion-x4-upscaler
+  type: checkpoint
+  base: upscale
+  save_path: checkpoints/upscale
+  description: This upscaling model is a latent text-guided diffusion model and should
+    be used with SD_4XUpscale_Conditioning and KSampler.
+  reference: https://huggingface.co/stabilityai/stable-diffusion-x4-upscaler
+  filename: x4-upscaler-ema.safetensors
+  url: https://huggingface.co/stabilityai/stable-diffusion-x4-upscaler/resolve/main/x4-upscaler-ema.safetensors
+  size: 3.53GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_image/model_stabilityai_stable-diffusion-x4-upscaler_56f52249/model.yaml
+validation_errors: []

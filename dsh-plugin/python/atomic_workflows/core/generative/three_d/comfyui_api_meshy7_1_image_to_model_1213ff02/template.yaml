@@ -1,0 +1,87 @@
+id: remote:template:api_meshy7_1_image_to_model
+kind: comfyui_template
+title: 'Meshy 7.1: Image to 3D'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Meshy 7.1: Image to 3D'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Generate a 3D model from a single image using Meshy 7.1's Ultra 4K geometry
+    mode, which produces 4096³ meshes so fine surface detail like stitching, wood
+    grain, and scales becomes real geometry rather than texture. Takes one input image.
+    Ideal for high-fidelity asset creation, detailed prop modeling, and product visualization.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy7_1_image_to_model.json
+  sha256: 8aae06125e4eeea66ebf7312b852265dbeed16907a26410625835b57681a8fba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meshy7_1_image_to_model
+  title: 'Meshy 7.1: Image to 3D'
+  description: Generate a 3D model from a single image using Meshy 7.1's Ultra 4K
+    geometry mode, which produces 4096³ meshes so fine surface detail like stitching,
+    wood grain, and scales becomes real geometry rather than texture. Takes one input
+    image. Ideal for high-fidelity asset creation, detailed prop modeling, and product
+    visualization.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image to 3D
+  models:
+  - Meshy
+  logos:
+  - provider: Meshy
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-23'
+  openSource: false
+  size: 0
+  usage: 201
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: LoadImage
+      file: clay_heart_girl.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/api_meshy7_1_image_to_model-1.mp4
+  - thumbnail/api_meshy7_1_image_to_model-2.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy7_1_image_to_model.json
+  sha256: 8aae06125e4eeea66ebf7312b852265dbeed16907a26410625835b57681a8fba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/three_d/comfyui_api_meshy7_1_image_to_model_1213ff02/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '8'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

@@ -1,0 +1,80 @@
+id: remote:template:api_anthropic_claude
+kind: comfyui_template
+title: Anthropic Claude
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Anthropic Claude
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Input your query or image for analysis. Generate a natural language
+    response powered by Anthropic Claude, supporting both text conversation and image
+    understanding.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude.json
+  sha256: 92f293c0d1c3b407d878f33c66660895d9a95811dd6e37ee928dc35adca665d2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_anthropic_claude
+  title: Anthropic Claude
+  description: Input your query or image for analysis. Generate a natural language
+    response powered by Anthropic Claude, supporting both text conversation and image
+    understanding.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Claude
+  logos:
+  - provider: Anthropic
+  date: '2026-05-01'
+  openSource: false
+  size: 0
+  usage: 9
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: ice_cold_pup.png
+      mediaType: image
+  minComfyUIVersion: 0.21.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_anthropic_claude.json
+  sha256: 92f293c0d1c3b407d878f33c66660895d9a95811dd6e37ee928dc35adca665d2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_anthropic_claude_6f5e47f0/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

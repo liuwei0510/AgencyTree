@@ -1,0 +1,85 @@
+id: remote:template:api_bytedance_image_to_video
+kind: comfyui_template
+title: 'Seedance 1.0 Pro: Image to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance 1.0 Pro: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Transform static images into dynamic videos using ByteDance's Seedance
+    model. Analyzes image structure and generates natural motion with consistent visual
+    style and coherent video sequences.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_image_to_video.json
+  sha256: aeb75ba9b3b9a8171b9df441829d4ccdf1c67be9f750f0a63f21cd7e1301c182
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_image_to_video
+  title: 'Seedance 1.0 Pro: Image to Video'
+  description: Transform static images into dynamic videos using ByteDance's Seedance
+    model. Analyzes image structure and generates natural motion with consistent visual
+    style and coherent video sequences.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  - Video
+  models:
+  - Seedance1.0 Pro
+  - ByteDance
+  date: '2025-10-06'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 470
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: api_bytedance_image_to_video_input_image.png
+      mediaType: image
+  logos:
+  - provider: ByteDance
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.3.58
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_image_to_video.json
+  sha256: aeb75ba9b3b9a8171b9df441829d4ccdf1c67be9f750f0a63f21cd7e1301c182
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_bytedance_image_to_video_0490a12b/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

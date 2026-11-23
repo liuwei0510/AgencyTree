@@ -1,0 +1,83 @@
+id: remote.template.template_rob_realistic_2k_images_quick_variations
+kind: comfyui_template
+title: Realistic 2k Images - Quick Variations
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Realistic 2k Images - Quick Variations
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image that you want a variation of. The workflow captions
+    the input image, generates with Grok Image, and upscales with Z-Image to add realistic
+    textures.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_rob_realistic_2k_images_quick_variations.json
+  sha256: 8df57dce6b8c909ae187df56c55e453a3f8965c5d2dbcf9bf76594ad8a10331b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_rob_realistic_2k_images_quick_variations
+  title: Realistic 2k Images - Quick Variations
+  description: Upload an image that you want a variation of. The workflow captions
+    the input image, generates with Grok Image, and upscales with Z-Image to add realistic
+    textures.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  - Text to Image
+  models:
+  - Grok
+  - Z-Image-Turbo
+  logos:
+  - provider: Grok
+  date: '2026-03-08'
+  openSource: false
+  size: 20723217203
+  usage: 60
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 77
+      nodeType: LoadImage
+      file: rapper_on_cliff_with_moon.png
+      mediaType: image
+    outputs:
+    - nodeId: 103
+      nodeType: SaveImage
+      file: template_rob_realistic_2k_images_quick_variations.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - input/rapper_on_cliff_with_moon.png
+  - output/template_rob_realistic_2k_images_quick_variations.png
+  minComfyUIVersion: 0.11.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '77'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

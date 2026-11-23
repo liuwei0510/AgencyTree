@@ -1,0 +1,71 @@
+id: remote:template:utility_gimm_frame_interpolation
+kind: comfyui_template
+title: 'Frame Interpolation: GIMM-VFI'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Frame Interpolation: GIMM-VFI'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate intermediate frames between existing video frames to create
+    smoother motion. Input a video and receive a fluid, higher-frame-rate output without
+    changing the total duration.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_gimm_frame_interpolation.json
+  sha256: 5265de3939b04b067fa26ed32747869f9cd295e4e3110ea47d2d998fac927d7d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_gimm_frame_interpolation
+  title: 'Frame Interpolation: GIMM-VFI'
+  description: Generate intermediate frames between existing video frames to create
+    smoother motion. Input a video and receive a fluid, higher-frame-rate output without
+    changing the total duration.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Frame Interpolation
+  - Video
+  models:
+  - None
+  date: '2026-03-30'
+  openSource: true
+  size: 10737418240
+  usage: 14
+  searchRank: 0
+  username: PurzBeats
+  io:
+    inputs:
+    - nodeId: 8
+      nodeType: VHS_LoadVideo
+      file: gimm-input.mp4
+      mediaType: video
+  requiresCustomNodes:
+  - comfyui-gimm-vfi
+  - comfyui-videohelpersuite
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_gimm_frame_interpolation.json
+  sha256: 5265de3939b04b067fa26ed32747869f9cd295e4e3110ea47d2d998fac927d7d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_utility_gimm_frame_interpolation_956fbf05/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

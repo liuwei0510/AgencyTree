@@ -1,0 +1,45 @@
+id: remote:model:4d423519ddd46aea9cde
+kind: comfyui_model
+title: RAM++
+tree_branch:
+- core
+- perception
+- media_understanding
+six_tuple:
+  name: RAM++
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/media_understanding
+  parameters:
+  - name: filename
+    value: ram_plus_swin_large_14m.pth
+  - name: base
+    value: RAM
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: RAM
+    save_path: rams
+    filename: ram_plus_swin_large_14m.pth
+    download_locator: https://huggingface.co/xinyu1205/recognize-anything-plus-model/resolve/main/ram_plus_swin_large_14m.pth
+code_usable: true
+status: available
+metadata:
+  name: RAM++
+  type: RAM
+  base: RAM
+  save_path: rams
+  description: RAM++ Recognize Anything Model
+  reference: https://huggingface.co/xinyu1205/recognize-anything-plus-model
+  filename: ram_plus_swin_large_14m.pth
+  url: https://huggingface.co/xinyu1205/recognize-anything-plus-model/resolve/main/ram_plus_swin_large_14m.pth
+  size: 3.01GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/media_understanding/model_RAM_4d423519/model.yaml
+validation_errors: []

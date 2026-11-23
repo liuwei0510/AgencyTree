@@ -1,0 +1,60 @@
+id: remote.template.video_wan21_scail2_character_replacement
+kind: comfyui_template
+title: 'SCAIL-2: Character Replacement'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'SCAIL-2: Character Replacement'
+  input_types:
+  - image
+  - video
+  output_types: []
+  capability: Upload 1 reference character image and 1 driving video. Generate an
+    animated video of the character matching the driving video's motion. Ideal for
+    character animation, in-video character replacement, and motion transfer projects.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan21_scail2_character_replacement.json
+  sha256: 5ea3829c1b9775790745c35281171f64a5727bc7b207eea85eefcb16a7359fe7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan21_scail2_character_replacement
+  title: 'SCAIL-2: Character Replacement'
+  description: Upload 1 reference character image and 1 driving video. Generate an
+    animated video of the character matching the driving video's motion. Ideal for
+    character animation, in-video character replacement, and motion transfer projects.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Character Replacement
+  models:
+  - SCAIL-2
+  date: '2026-06-15'
+  openSource: true
+  size: 44775034061
+  usage: 942
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 30
+      nodeType: LoadImage
+      file: reference_streetwear_character.png
+      mediaType: image
+    - nodeId: 155
+      nodeType: LoadVideo
+      file: driving_outdoor_dance.mp4
+      mediaType: video
+  minComfyUIVersion: 0.25.0

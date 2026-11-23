@@ -1,0 +1,55 @@
+id: remote.template.image_qwen_image_instantx_inpainting_controlnet
+kind: comfyui_template
+title: Qwen-Image InstantX Inpainting ControlNet
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen-Image InstantX Inpainting ControlNet
+  input_types:
+  - image
+  output_types: []
+  capability: Professional inpainting and image editing with Qwen-Image InstantX ControlNet.
+    Supports object replacement, text modification, background changes, and outpainting.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_instantx_inpainting_controlnet.json
+  sha256: 57724a5c98382a44741b47609aba703b98fff48dd3bde0c68779e6e4eeb92897
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_instantx_inpainting_controlnet
+  title: Qwen-Image InstantX Inpainting ControlNet
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Professional inpainting and image editing with Qwen-Image InstantX
+    ControlNet. Supports object replacement, text modification, background changes,
+    and outpainting.
+  tags:
+  - Image
+  - ControlNet
+  - Inpainting
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image
+  models:
+  - Qwen-Image
+  date: '2025-09-12'
+  size: 36013300777
+  usage: 136
+  io:
+    inputs:
+    - nodeId: 71
+      nodeType: LoadImage
+      file: image_qwen_image_instantx_inpainting_controlnet_input_image.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.57

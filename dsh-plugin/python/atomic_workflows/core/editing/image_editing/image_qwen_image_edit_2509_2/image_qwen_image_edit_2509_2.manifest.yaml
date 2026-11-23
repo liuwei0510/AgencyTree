@@ -1,0 +1,39 @@
+id: core.editing.image_editing.image_qwen_image_edit_2509_2
+title: image_qwen_image_edit_2509 (2)
+modality:
+- image
+description: ComfyUI API workflow (imported from model_apis/image_qwen_image_edit_2509
+  (2).json).
+tags:
+- image-editing
+- edit
+- inpaint
+workflow_file: image_qwen_image_edit_2509_2.workflow.json
+inject:
+  seed:
+    node_id: '433:3'
+    input_key: seed
+  source_image:
+    node_id: '78'
+    input_key: image
+    widget_index: null
+  negative_prompt:
+    node_id: 433:110
+    input_key: prompt
+    widget_index: null
+inputs:
+- name: seed
+  type: int
+  required: false
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: ''
+outputs:
+- name: images
+  type: image_filenames
+  description: ComfyUI media outputs

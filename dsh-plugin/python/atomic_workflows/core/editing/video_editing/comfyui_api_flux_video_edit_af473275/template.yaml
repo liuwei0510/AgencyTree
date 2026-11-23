@@ -1,0 +1,78 @@
+id: remote:template:api_flux_video_edit
+kind: comfyui_template
+title: Flux Video Edit
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux Video Edit
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Edit and transform images with FLUX using simple text prompts. Change
+    characters, objects, backgrounds, styles, or entire scenes while preserving the
+    key details and overall consistency of the original image.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_flux_video_edit.json
+  sha256: 6c757abcbd3a4fd5e68779effb676c6a7b7d91a064fa6f380551929b5054ee14
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_flux_video_edit
+  title: Flux Video Edit
+  description: Edit and transform images with FLUX using simple text prompts. Change
+    characters, objects, backgrounds, styles, or entire scenes while preserving the
+    key details and overall consistency of the original image.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Edit
+  models:
+  - FLUX
+  logos:
+  - provider: Black Forest Labs
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-14'
+  openSource: false
+  size: 0
+  usage: 75
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadVideo
+      file: subway_musician.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 6
+      nodeType: SaveVideo
+      file: api_flux_video_edit.mp4
+      mediaType: video
+  thumbnail:
+  - input/subway_musician.mp4
+  - output/api_flux_video_edit.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_flux_video_edit.json
+  sha256: 6c757abcbd3a4fd5e68779effb676c6a7b7d91a064fa6f380551929b5054ee14
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_flux_video_edit_af473275/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

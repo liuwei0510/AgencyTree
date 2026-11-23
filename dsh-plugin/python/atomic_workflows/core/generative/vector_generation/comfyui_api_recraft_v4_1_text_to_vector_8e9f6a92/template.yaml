@@ -1,0 +1,63 @@
+id: remote:template:api_recraft_v4_1_text_to_vector
+kind: comfyui_template
+title: 'Recraft 4.1: Text to Vector'
+tree_branch:
+- core
+- generative
+- vector_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Recraft 4.1: Text to Vector'
+  input_types: {}
+  output_types: {}
+  capability: Generate a clean, flat vector logo from a text prompt using Recraft
+    V4.1, producing one scalable SVG output with no file input required. Ideal for
+    branding and logo design, vector illustration projects, and creating consistent
+    flat-color graphics for presentations or merchandise.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_1_text_to_vector.json
+  sha256: 7fc85e7c830dd6055a7ec549f0673700b2f4c3d23307571bd3965f163658c7ad
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_v4_1_text_to_vector
+  title: 'Recraft 4.1: Text to Vector'
+  description: Generate a clean, flat vector logo from a text prompt using Recraft
+    V4.1, producing one scalable SVG output with no file input required. Ideal for
+    branding and logo design, vector illustration projects, and creating consistent
+    flat-color graphics for presentations or merchandise.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Vector
+  - API
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  date: '2026-07-28'
+  openSource: false
+  size: 0
+  usage: 67
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.29.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_v4_1_text_to_vector.json
+  sha256: 7fc85e7c830dd6055a7ec549f0673700b2f4c3d23307571bd3965f163658c7ad
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/vector_generation/comfyui_api_recraft_v4_1_text_to_vector_8e9f6a92/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

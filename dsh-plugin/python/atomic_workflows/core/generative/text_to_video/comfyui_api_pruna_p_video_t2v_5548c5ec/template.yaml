@@ -1,0 +1,71 @@
+id: remote:template:api_pruna_p_video_t2v
+kind: comfyui_template
+title: 'Pruna P-Video 2: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Pruna P-Video 2: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate videos from a single text prompt with Pruna P-Video-2, producing
+    1-20 second clips up to 1080p at 48 fps with native audio, including ambience,
+    sound effects, and lip-synced dialogue from an optional last-frame image. Ideal
+    for narrative shorts, motion posters, ad B-roll, and dialogue shots.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pruna_p_video_t2v.json
+  sha256: 84291fb686232d05130353bee977dd3f8bcb886a22232b5e76edc3dd2bb67492
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_pruna_p_video_t2v
+  title: 'Pruna P-Video 2: Text to Video'
+  description: Generate videos from a single text prompt with Pruna P-Video-2, producing
+    1-20 second clips up to 1080p at 48 fps with native audio, including ambience,
+    sound effects, and lip-synced dialogue from an optional last-frame image. Ideal
+    for narrative shorts, motion posters, ad B-roll, and dialogue shots.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - P-Video-2
+  logos:
+  - provider: Pruna
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-16'
+  openSource: false
+  size: 0
+  usage: 16
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 22
+      nodeType: SaveVideo
+      file: api_pruna_p_video_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_pruna_p_video_t2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_pruna_p_video_t2v.json
+  sha256: 84291fb686232d05130353bee977dd3f8bcb886a22232b5e76edc3dd2bb67492
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

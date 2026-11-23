@@ -1,0 +1,94 @@
+id: remote:template:api_veed_fabric_1_0
+kind: comfyui_template
+title: 'VEED Fabric 1.0: Talking Photo'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'VEED Fabric 1.0: Talking Photo'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Turn a still photo and a speech track into a talking, lip-synced video
+    with VEED Fabric 1.0. The face in the image speaks the audio, the clip keeps the
+    image's aspect ratio and runs as long as the audio, up to 300 seconds at 480p
+    or 720p. Ideal for avatars, mascots and localized spokesperson clips driven by
+    your own voice recording or a TTS node.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_fabric_1_0.json
+  sha256: 9ce53e486e221858a01381df03c4dc4bbe2a7bbf18476abc1dee6223b8ed4200
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_veed_fabric_1_0
+  title: 'VEED Fabric 1.0: Talking Photo'
+  description: Turn a still photo and a speech track into a talking, lip-synced video
+    with VEED Fabric 1.0. The face in the image speaks the audio, the clip keeps the
+    image's aspect ratio and runs as long as the audio, up to 300 seconds at 480p
+    or 720p. Ideal for avatars, mascots and localized spokesperson clips driven by
+    your own voice recording or a TTS node.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  - Lip Sync
+  models:
+  - VEED
+  logos:
+  - provider: VEED
+  date: '2026-10-22'
+  openSource: false
+  size: 0
+  usage: 31
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: black_fashion_portrait.png
+      mediaType: image
+    - nodeId: 5
+      nodeType: LoadAudio
+      file: audio_see_beyond_the_light.mp3
+      mediaType: audio
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_veed_fabric_1_0.mp4
+      mediaType: video
+  minComfyUIVersion: 0.43.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_veed_fabric_1_0.json
+  sha256: 9ce53e486e221858a01381df03c4dc4bbe2a7bbf18476abc1dee6223b8ed4200
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

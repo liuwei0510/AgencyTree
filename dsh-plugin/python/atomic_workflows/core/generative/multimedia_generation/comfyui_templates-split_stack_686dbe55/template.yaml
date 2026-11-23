@@ -1,0 +1,60 @@
+id: remote.template.templates-split_stack
+kind: comfyui_template
+title: Character × 4 Scene Explorer
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Character × 4 Scene Explorer
+  input_types:
+  - image
+  output_types: []
+  capability: Upload a reference image and generate a 1x4 grid. Select desired image
+    and upscale/refine with Nano Banana Pro.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-split_stack.json
+  sha256: 19deaafc6ff8977ce31af171ec7a6a7ffa23ff34d8e6102d3658d3244f22b5f9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-split_stack
+  title: Character × 4 Scene Explorer
+  description: Upload a reference image and generate a 1x4 grid. Select desired image
+    and upscale/refine with Nano Banana Pro.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  - Character Reference
+  models:
+  - Google Gemini Image
+  - Nano Banana Pro
+  date: '2026-01-13'
+  openSource: false
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 12
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: cube_robot.jpg
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-split_stack.mp4
+  minComfyUIVersion: 0.15.0

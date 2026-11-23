@@ -1,0 +1,80 @@
+id: remote.template.templates-qwen_image_edit-crop_and_stitch-fusion
+kind: comfyui_template
+title: Relight Composited Product
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Relight Composited Product
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a composited image of your product, draw a mask in the mask editor
+    and relight your product into the scene.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-qwen_image_edit-crop_and_stitch-fusion.json
+  sha256: 7180bda69cc4d2edbf25b6604c12487e6900ba3fc845f907fa160227115c4dbc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-qwen_image_edit-crop_and_stitch-fusion
+  title: Relight Composited Product
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Upload a composited image of your product, draw a mask in the mask
+    editor and relight your product into the scene.
+  tags:
+  - Image Edit
+  - LoRA
+  - Relight
+  models:
+  - Qwen-Image-Edit
+  date: '2025-12-11'
+  searchRank: 8
+  size: 0
+  usage: 39
+  io:
+    inputs:
+    - nodeId: 103
+      nodeType: LoadImage
+      file: comfy_cloud_bottle.png
+      mediaType: image
+    outputs:
+    - nodeId: 208
+      nodeType: SaveImage
+      file: templates-qwen_image_edit-crop_and_stitch-fusion.png
+      mediaType: image
+  username: hellorob
+  openSource: true
+  thumbnail:
+  - input/comfy_cloud_bottle.png
+  - output/templates-qwen_image_edit-crop_and_stitch-fusion.png
+  requiresCustomNodes:
+  - comfyui-inpaint-cropandstitch
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '103'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

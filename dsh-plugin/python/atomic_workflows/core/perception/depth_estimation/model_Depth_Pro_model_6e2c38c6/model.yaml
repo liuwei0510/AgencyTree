@@ -1,0 +1,43 @@
+id: remote.model.6e2c38c6678d23539647
+kind: comfyui_model
+title: Depth Pro model
+tree_branch:
+- core
+- perception
+- depth_estimation
+six_tuple:
+  name: Depth Pro model
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/depth_estimation
+  parameters:
+  - name: filename
+    value: depth_pro.fp16.safetensors
+  - name: base
+    value: depth-pro
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: depth-pro
+    save_path: depth/ml-depth-pro
+    filename: depth_pro.fp16.safetensors
+    download_locator: https://huggingface.co/spacepxl/ml-depth-pro/resolve/main/depth_pro.fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Depth Pro model
+  type: depth-pro
+  base: depth-pro
+  save_path: depth/ml-depth-pro
+  description: Depth pro model for [a/ComfyUI-Depth-Pro](https://github.com/spacepxl/ComfyUI-Depth-Pro)
+  reference: https://huggingface.co/spacepxl/ml-depth-pro
+  filename: depth_pro.fp16.safetensors
+  url: https://huggingface.co/spacepxl/ml-depth-pro/resolve/main/depth_pro.fp16.safetensors
+  size: 1.9GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

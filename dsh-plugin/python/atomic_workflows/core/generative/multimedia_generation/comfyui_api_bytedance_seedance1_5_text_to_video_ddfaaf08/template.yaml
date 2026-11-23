@@ -1,0 +1,44 @@
+id: remote.template.api_bytedance_seedance1_5_text_to_video
+kind: comfyui_template
+title: 'Seedance1.5 Pro: Text to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance1.5 Pro: Text to Video'
+  input_types: []
+  output_types: []
+  capability: Create complete audio-visual stories from text with synchronized voices,
+    music, and sound effects.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedance1_5_text_to_video.json
+  sha256: da76485f77514d8fbcfdd4fe1cb6cdd49c1caec1dba280e281ef8ace1232d353
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedance1_5_text_to_video
+  title: 'Seedance1.5 Pro: Text to Video'
+  description: Create complete audio-visual stories from text with synchronized voices,
+    music, and sound effects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - Seedance
+  date: '2026-01-19'
+  openSource: false
+  usage: 19
+  username: ComfyUI
+  minComfyUIVersion: 0.3.58

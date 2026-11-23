@@ -1,0 +1,78 @@
+id: remote.template.templates_graphic_design_recomposer
+kind: comfyui_template
+title: Graphic Design Recomposer
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Graphic Design Recomposer
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a graphic design and select your desired aspect ratio. Generates
+    and recomposes the graphic to fit the new aspect ratio.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_graphic_design_recomposer.json
+  sha256: 4461180e74ed12c3679a20ce426cfb40d0fcd877a9347698da7cfc72282bd1ae
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_graphic_design_recomposer
+  title: Graphic Design Recomposer
+  description: Upload a graphic design and select your desired aspect ratio. Generates
+    and recomposes the graphic to fit the new aspect ratio.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Brand Design
+  models:
+  - Nano Banana 2
+  - Nano Banana Pro
+  logos:
+  - provider: Google
+  date: '2026-03-30'
+  openSource: false
+  size: 0
+  usage: 21
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 125
+      nodeType: LoadImage
+      file: latent_space_clud.png
+      mediaType: image
+    outputs:
+    - nodeId: 131
+      nodeType: SaveImage
+      file: templates_graphic_design_recomposer.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/templates_graphic_design_recomposer.mp4
+  minComfyUIVersion: 0.20.3
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '125'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

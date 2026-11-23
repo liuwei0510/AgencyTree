@@ -1,0 +1,189 @@
+id: remote:template:template_contact_sheet-step_3.app
+kind: comfyui_template
+title: 'Step 3: Contact Sheet Workflow'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Step 3: Contact Sheet Workflow'
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+    source_image_3: image_filenames
+    source_image_4: image_filenames
+    source_image_5: image_filenames
+    source_image_6: image_filenames
+    source_image_7: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload 8 images (in order) to be used as keyframes for 7 Kling 3.0 FLF2V
+    videos.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_3
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_4
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_5
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_6
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_7
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_contact_sheet-step_3.app.json
+  sha256: aa596450ae389643cec23d96beaaf7ae9854ca0e364e51c1adec9c85ff4a097b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_contact_sheet-step_3.app
+  title: 'Step 3: Contact Sheet Workflow'
+  description: Upload 8 images (in order) to be used as keyframes for 7 Kling 3.0
+    FLF2V videos.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - FLF2V
+  - Video
+  models:
+  - Gemini-3.1-flash-lite
+  - Kling 3.0
+  logos:
+  - provider:
+    - Google
+    - Kling
+  date: '2026-03-30'
+  openSource: false
+  size: 0
+  usage: 9
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 224
+      nodeType: LoadImage
+      file: contact_sheet_app_input_1.png
+      mediaType: image
+    - nodeId: 226
+      nodeType: LoadImage
+      file: contact_sheet_app_input_2.png
+      mediaType: image
+    - nodeId: 227
+      nodeType: LoadImage
+      file: contact_sheet_app_input_3.png
+      mediaType: image
+    - nodeId: 228
+      nodeType: LoadImage
+      file: contact_sheet_app_input_4.png
+      mediaType: image
+    - nodeId: 232
+      nodeType: LoadImage
+      file: contact_sheet_app_input_5.png
+      mediaType: image
+    - nodeId: 233
+      nodeType: LoadImage
+      file: contact_sheet_app_input_6.png
+      mediaType: image
+    - nodeId: 234
+      nodeType: LoadImage
+      file: contact_sheet_app_input_7.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/template_contact_sheet-step_3.mp4
+  isApp: true
+  minComfyUIVersion: 0.35.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_contact_sheet-step_3.app.json
+  sha256: aa596450ae389643cec23d96beaaf7ae9854ca0e364e51c1adec9c85ff4a097b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_template_contact_sheet-step_3.app_2aa719f4/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_3
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_4
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_5
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_6
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_7
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '224'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '226'
+    input_key: image
+    widget_index: 0
+  source_image_3:
+    node_id: '227'
+    input_key: image
+    widget_index: 0
+  source_image_4:
+    node_id: '228'
+    input_key: image
+    widget_index: 0
+  source_image_5:
+    node_id: '232'
+    input_key: image
+    widget_index: 0
+  source_image_6:
+    node_id: '233'
+    input_key: image
+    widget_index: 0
+  source_image_7:
+    node_id: '234'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

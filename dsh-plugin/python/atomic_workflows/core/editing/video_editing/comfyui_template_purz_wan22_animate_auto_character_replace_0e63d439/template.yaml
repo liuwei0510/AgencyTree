@@ -1,0 +1,96 @@
+id: remote:template:template_purz_wan22_animate_auto_character_replace
+kind: comfyui_template
+title: 'Wan2.2 Animate: Automatic Character Replacement'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan2.2 Animate: Automatic Character Replacement'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload a video and a character image. Automatically replace the character
+    in the video using the Wan2.2 Animate model.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_purz_wan22_animate_auto_character_replace.json
+  sha256: 213f8c2d0fddc25a4ac53f2f0eb63ef35f70b54d0e5eda239de58bf9fdc8638b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_purz_wan22_animate_auto_character_replace
+  title: 'Wan2.2 Animate: Automatic Character Replacement'
+  description: Upload a video and a character image. Automatically replace the character
+    in the video using the Wan2.2 Animate model.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video
+  - Character Replacement
+  - Video Edit
+  models:
+  - wan2.2 Animate
+  requiresCustomNodes:
+  - ComfyUI-WanAnimatePreprocess
+  - ComfyUI-segment-anything-2
+  - comfyui-kjnodes
+  date: '2026-03-08'
+  openSource: true
+  size: 28776280883
+  usage: 851
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: old_man_dancing.jpg
+      mediaType: image
+    - nodeId: 301
+      nodeType: VHS_LoadVideo
+      file: wan22-animate-auto-character_replace-input.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 19
+      nodeType: SaveVideo
+      file: wan22-animate-auto-character_replace-output.mp4
+      mediaType: video
+  username: PurzBeats
+  thumbnail:
+  - input/wan22-animate-auto-character_replace-input.mp4
+  - output/wan22-animate-auto-character_replace-output.mp4
+  minComfyUIVersion: 0.3.60
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_purz_wan22_animate_auto_character_replace.json
+  sha256: 213f8c2d0fddc25a4ac53f2f0eb63ef35f70b54d0e5eda239de58bf9fdc8638b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_template_purz_wan22_animate_auto_character_replace_0e63d439/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

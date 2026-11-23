@@ -1,0 +1,59 @@
+id: remote:template:video_wan2_2_14B_t2v
+kind: comfyui_template
+title: Wan 2.2 14B Text to Video
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan 2.2 14B Text to Video
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate high-quality videos from text prompts with cinematic aesthetic
+    control and dynamic motion generation using Wan 2.2.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_2_14B_t2v.json
+  sha256: 1bf3b5de9d5e1f99dc26fca9f9155e5157534adc4c7438799034975d5516d2cf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan2_2_14B_t2v
+  title: Wan 2.2 14B Text to Video
+  description: Generate high-quality videos from text prompts with cinematic aesthetic
+    control and dynamic motion generation using Wan 2.2.
+  mediaType: image
+  mediaSubtype: webp
+  tutorialUrl: https://docs.comfy.org/tutorials/video/wan/wan2_2
+  tags:
+  - Text to Video
+  - Video
+  models:
+  - Wan2.2
+  - Wan
+  date: '2025-07-29'
+  size: 38031935406
+  usage: 363
+  username: ComfyUI
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan2_2_14B_t2v.json
+  sha256: 1bf3b5de9d5e1f99dc26fca9f9155e5157534adc4c7438799034975d5516d2cf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_video/comfyui_video_wan2_2_14B_t2v_2e49b20c/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

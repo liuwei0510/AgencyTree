@@ -1,0 +1,77 @@
+id: remote:template:image_qwen_image_instantx_controlnet
+kind: comfyui_template
+title: Qwen-Image InstantX Union ControlNet
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen-Image InstantX Union ControlNet
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Generate images with Qwen-Image InstantX ControlNet, supporting canny,
+    soft edge, depth, pose
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_instantx_controlnet.json
+  sha256: 0b58f50219f2f7b6240dae09d9357ca293dbdc667ecafd32d68ca5da7aabd37d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_instantx_controlnet
+  title: Qwen-Image InstantX Union ControlNet
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images with Qwen-Image InstantX ControlNet, supporting canny,
+    soft edge, depth, pose
+  tags:
+  - Image
+  - ControlNet
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image
+  models:
+  - Qwen-Image
+  date: '2025-08-23'
+  size: 35304631173
+  usage: 99
+  io:
+    inputs:
+    - nodeId: 71
+      nodeType: LoadImage
+      file: image_qwen_image_instantx_controlnet_input_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_instantx_controlnet.json
+  sha256: 0b58f50219f2f7b6240dae09d9357ca293dbdc667ecafd32d68ca5da7aabd37d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_qwen_image_instantx_controlnet_8fbb4bd6/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '71'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

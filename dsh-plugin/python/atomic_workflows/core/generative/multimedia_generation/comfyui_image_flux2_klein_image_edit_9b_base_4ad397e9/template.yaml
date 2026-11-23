@@ -1,0 +1,62 @@
+id: remote.template.image_flux2_klein_image_edit_9b_base
+kind: comfyui_template
+title: 'FLUX.2 [Klein] 9B: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX.2 [Klein] 9B: Image Edit'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: BFL undistilled foundation model. Maximum flexibility and control. Great
+    for fine-tuning.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_klein_image_edit_9b_base.json
+  sha256: 99761cb042a0b835f1348e8f487372f3d1bcd1131bfc8c6bfc57a3ccb62fa5a1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux2_klein_image_edit_9b_base
+  title: 'FLUX.2 [Klein] 9B: Image Edit'
+  mediaType: image
+  mediaSubtype: webp
+  description: BFL undistilled foundation model. Maximum flexibility and control.
+    Great for fine-tuning.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - FLUX
+  - FLUX.2 Klein
+  date: '2026-01-16'
+  size: 19327352832
+  usage: 1218
+  openSource: true
+  searchRank: 0
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-2-klein
+  io:
+    inputs:
+    - nodeId: 76
+      nodeType: LoadImage
+      file: car_interior_white.jpeg
+      mediaType: image
+    - nodeId: 81
+      nodeType: LoadImage
+      file: comfy_logo_blue.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/image_flux2_klein_image_edit_9b_base.png
+  minComfyUIVersion: 0.3.72

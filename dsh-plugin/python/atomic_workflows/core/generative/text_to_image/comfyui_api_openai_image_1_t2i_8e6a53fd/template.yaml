@@ -1,0 +1,70 @@
+id: remote:template:api_openai_image_1_t2i
+kind: comfyui_template
+title: 'OpenAI: GPT-Image-1 Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'OpenAI: GPT-Image-1 Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using OpenAI GPT Image 1 API.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_image_1_t2i.json
+  sha256: 672fe73f7babd465718ebbf8bd49972b16887a011f2924ada8e1dcfd0599e341
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_image_1_t2i
+  title: 'OpenAI: GPT-Image-1 Text to Image'
+  description: Generate images from text prompts using OpenAI GPT Image 1 API.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Text to Image
+  models:
+  - GPT-Image-1
+  - OpenAI
+  date: '2025-03-01'
+  tutorialUrl: https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1
+  openSource: false
+  size: 0
+  usage: 15
+  io:
+    outputs:
+    - nodeId: 14
+      nodeType: SaveImage
+      file: api_openai_image_1_t2i.png
+      mediaType: image
+  username: ComfyUI
+  logos:
+  - provider: OpenAI
+  searchRank: 0
+  thumbnail:
+  - output/api_openai_image_1_t2i.png
+  minComfyUIVersion: 0.3.30
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_image_1_t2i.json
+  sha256: 672fe73f7babd465718ebbf8bd49972b16887a011f2924ada8e1dcfd0599e341
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_api_openai_image_1_t2i_8e6a53fd/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

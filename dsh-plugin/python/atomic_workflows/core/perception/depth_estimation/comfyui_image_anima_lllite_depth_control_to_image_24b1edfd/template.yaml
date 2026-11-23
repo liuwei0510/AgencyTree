@@ -1,0 +1,77 @@
+id: remote.template.image_anima_lllite_depth_control_to_image
+kind: comfyui_template
+title: 'Anima Lllite: Depth Control to Image'
+tree_branch:
+- core
+- perception
+- depth_estimation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Anima Lllite: Depth Control to Image'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Generate anime-style illustrations from a depth map using the Anima
+    LLLite model, which applies a lightweight ControlNet correction for precise spatial
+    control. Input 1 image to produce 2 image outputs plus a comparison view. Ideal
+    for 3D scene reconstruction, VFX depth passes, and AR asset preparation.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_anima_lllite_depth_control_to_image.json
+  sha256: 633ada5da0e8d6165ef22bdb99171a9752ae0f5800898626c4113d838ee0050c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_anima_lllite_depth_control_to_image
+  title: 'Anima Lllite: Depth Control to Image'
+  description: Generate anime-style illustrations from a depth map using the Anima
+    LLLite model, which applies a lightweight ControlNet correction for precise spatial
+    control. Input 1 image to produce 2 image outputs plus a comparison view. Ideal
+    for 3D scene reconstruction, VFX depth passes, and AR asset preparation.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Anime
+  models:
+  - Anima
+  date: '2026-07-21'
+  openSource: true
+  size: 7086696038
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 91
+      nodeType: LoadImage
+      file: anima_depth_ref.png
+      mediaType: image
+    outputs:
+    - nodeId: 46
+      nodeType: SaveImage
+      file: image_anima_lllite_depth_control_to_image.png
+      mediaType: image
+  minComfyUIVersion: 0.29.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '91'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

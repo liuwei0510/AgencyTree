@@ -1,0 +1,89 @@
+id: remote:template:api_seedance2_5_r2v
+kind: comfyui_template
+title: 'Seedance 2.5: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance 2.5: Reference to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate reference-driven videos with Seedance 2.5 by supplying up to
+    20 images, 6 video clips, and 6 audio clips to control character consistency,
+    visual style, and motion rhythm in a single 4–30 second output with synchronized
+    sound and lip-synced dialogue. Ideal for e-commerce product showcases, brand advertising,
+    and character-driven short series.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_r2v.json
+  sha256: b171823b879ae673fa6cdd33dc8faf4f54883a06016d02ab4ede12d4d19eb20b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_5_r2v
+  title: 'Seedance 2.5: Reference to Video'
+  description: Generate reference-driven videos with Seedance 2.5 by supplying up
+    to 20 images, 6 video clips, and 6 audio clips to control character consistency,
+    visual style, and motion rhythm in a single 4–30 second output with synchronized
+    sound and lip-synced dialogue. Ideal for e-commerce product showcases, brand advertising,
+    and character-driven short series.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Reference to Video
+  models:
+  - Seedance 2.5
+  logos:
+  - provider: ByteDance
+  date: '2026-08-07'
+  openSource: false
+  size: 0
+  usage: 2854
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: medusa_poster.png
+      mediaType: image
+    outputs:
+    - nodeId: 16
+      nodeType: SaveVideo
+      file: api_seedance2_5_r2v.mp4
+      mediaType: video
+  minComfyUIVersion: 0.33.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_r2v.json
+  sha256: b171823b879ae673fa6cdd33dc8faf4f54883a06016d02ab4ede12d4d19eb20b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

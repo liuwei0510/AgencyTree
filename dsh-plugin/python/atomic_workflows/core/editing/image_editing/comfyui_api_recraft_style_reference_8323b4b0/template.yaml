@@ -1,0 +1,117 @@
+id: remote.template.api_recraft_style_reference
+kind: comfyui_template
+title: Recraft Style Reference Generation
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Recraft Style Reference Generation
+  input_types:
+    source_image: image_filenames
+    source_image_2: image_filenames
+    source_image_3: image_filenames
+    source_image_4: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload multiple images to create a consistent style reference. Generate
+    new images using this reference to maintain visual coherence across outputs.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_3
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_4
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_style_reference.json
+  sha256: 35359c8e2b301ded4ffda98cdc96ec5f1e2f7a9d9822540f884aa624cd9659a9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_style_reference
+  title: Recraft Style Reference Generation
+  description: Upload multiple images to create a consistent style reference. Generate
+    new images using this reference to maintain visual coherence across outputs.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image
+  - Style Reference
+  models:
+  - Recraft
+  logos:
+  - provider: Recraft
+  date: '2026-02-05'
+  openSource: false
+  size: 0
+  usage: 22
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 29
+      nodeType: LoadImage
+      file: recraft_style_ref-1.png
+      mediaType: image
+    - nodeId: 36
+      nodeType: LoadImage
+      file: recraft_style_ref-3.png
+      mediaType: image
+    - nodeId: 38
+      nodeType: LoadImage
+      file: recraft_style_ref-2.png
+      mediaType: image
+    - nodeId: 39
+      nodeType: LoadImage
+      file: recraft_style_ref-4.png
+      mediaType: image
+    outputs:
+    - nodeId: 34
+      nodeType: SaveImage
+      file: api_recraft_style_reference.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/api_recraft_style_reference.png
+  minComfyUIVersion: 0.12.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '36'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '38'
+    input_key: image
+    widget_index: 0
+  source_image_3:
+    node_id: '39'
+    input_key: image
+    widget_index: 0
+  source_image_4:
+    node_id: '29'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

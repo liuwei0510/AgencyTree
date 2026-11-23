@@ -1,0 +1,57 @@
+id: remote.template.video_wanmove_480p_hallucination
+kind: comfyui_template
+title: 'WanMove: Daydream Illusion'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'WanMove: Daydream Illusion'
+  input_types:
+  - image
+  output_types: []
+  capability: Use WanMove to generate dynamic images from trajectories and create
+    video dynamic effects with daydream illusion
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wanmove_480p_hallucination.json
+  sha256: 88ca117977a6f7cdd95d1e41cecc13d3c2d9b83d64e1b767b783b973f0aed043
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wanmove_480p_hallucination
+  title: 'WanMove: Daydream Illusion'
+  description: Use WanMove to generate dynamic images from trajectories and create
+    video dynamic effects with daydream illusion
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Motion Control
+  - Video
+  models:
+  - Wan2.1
+  - Wan
+  date: '2025-12-15'
+  size: 25447681229
+  usage: 10
+  requiresCustomNodes:
+  - comfyui_fill-nodes
+  io:
+    inputs:
+    - nodeId: 238
+      nodeType: LoadImage
+      file: wooden_facade_building.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.5.0

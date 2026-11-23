@@ -1,0 +1,82 @@
+id: remote:template:llm_gemma4_text_gen
+kind: comfyui_template
+title: 'Gemma4: Text Generation'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Gemma4: Text Generation'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Input your text prompt and optionally an image, audio, or video. Generate
+    text output with configurable reasoning, coding, and multilingual support.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/llm_gemma4_text_gen.json
+  sha256: 9f75bc3f21e504ed860fe2974dceb07c3624ceea419c6006ad7bd7fc5bbbaf0a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: llm_gemma4_text_gen
+  tutorialUrl: https://docs.comfy.org/tutorials/llm/gemma4/gemma4
+  title: 'Gemma4: Text Generation'
+  description: Input your text prompt and optionally an image, audio, or video. Generate
+    text output with configurable reasoning, coding, and multilingual support.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text Generation
+  models:
+  - Gemma 4
+  date: '2026-05-01'
+  openSource: true
+  size: 9019431322
+  usage: 76
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: the_lily_veil.png
+      mediaType: image
+    - nodeId: 5
+      nodeType: LoadAudio
+      file: long_demo.mp3
+      mediaType: audio
+    - nodeId: 6
+      nodeType: LoadVideo
+      file: video_wan_vace_inpainting_input_video.mp4
+      mediaType: video
+  minComfyUIVersion: 0.15.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/llm_gemma4_text_gen.json
+  sha256: 9f75bc3f21e504ed860fe2974dceb07c3624ceea419c6006ad7bd7fc5bbbaf0a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_llm_gemma4_text_gen_74289927/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

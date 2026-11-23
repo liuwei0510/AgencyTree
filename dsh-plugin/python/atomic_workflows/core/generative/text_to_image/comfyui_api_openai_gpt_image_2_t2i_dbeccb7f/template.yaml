@@ -1,0 +1,71 @@
+id: remote:template:api_openai_gpt_image_2_t2i
+kind: comfyui_template
+title: 'GPT Image 2: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'GPT Image 2: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Create campaign-ready posters, product shots, and multilingual signage
+    using OpenAI's latest model. Upload an optional reference image, write a detailed
+    prompt, and generate high-quality, photorealistic outputs.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt_image_2_t2i.json
+  sha256: dfe8e616208458644da3611b5db954af50f9496276e3f1de8e31fa15ac85e2fb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_gpt_image_2_t2i
+  title: 'GPT Image 2: Text to Image'
+  description: Create campaign-ready posters, product shots, and multilingual signage
+    using OpenAI's latest model. Upload an optional reference image, write a detailed
+    prompt, and generate high-quality, photorealistic outputs.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - GPT Image 2
+  logos:
+  - provider: OpenAI
+  date: '2026-04-22'
+  openSource: false
+  size: 0
+  usage: 447
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 269
+      nodeType: SaveImage
+      file: api_openai_gpt_image_2_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_openai_gpt_image_2_t2i.png
+  minComfyUIVersion: 0.21.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt_image_2_t2i.json
+  sha256: dfe8e616208458644da3611b5db954af50f9496276e3f1de8e31fa15ac85e2fb
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_api_openai_gpt_image_2_t2i_dbeccb7f/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

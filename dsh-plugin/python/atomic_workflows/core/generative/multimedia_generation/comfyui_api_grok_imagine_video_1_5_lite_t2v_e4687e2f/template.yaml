@@ -1,0 +1,58 @@
+id: remote.template.api_grok_imagine_video_1_5_lite_t2v
+kind: comfyui_template
+title: 'Grok Imagine Video 1.5 Lite: Text to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Grok Imagine Video 1.5 Lite: Text to Video'
+  input_types: []
+  output_types: []
+  capability: 'Generate a video of up to 15 seconds from a text prompt with Grok Imagine
+    Video 1.5 Lite, the distilled and faster version of Imagine Video 1.5, with native
+    audio and 480p, 720p or 1080p output in any of seven aspect ratios. No input files
+    are required and one video is output. Ideal for social clips, ad mockups, and
+    fast iteration where a full-quality render is not worth the wait.
+
+    '
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_imagine_video_1_5_lite_t2v.json
+  sha256: eefd0c9cfc12a69556e18236e20f8d12a0db748ec2404af239b335868af7ab6b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_imagine_video_1_5_lite_t2v
+  title: 'Grok Imagine Video 1.5 Lite: Text to Video'
+  description: 'Generate a video of up to 15 seconds from a text prompt with Grok
+    Imagine Video 1.5 Lite, the distilled and faster version of Imagine Video 1.5,
+    with native audio and 480p, 720p or 1080p output in any of seven aspect ratios.
+    No input files are required and one video is output. Ideal for social clips, ad
+    mockups, and fast iteration where a full-quality render is not worth the wait.
+
+    '
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - API
+  models:
+  - Grok Imagine Video
+  logos:
+  - provider: Grok
+  minComfyUIVersion: 0.38.2
+  date: '2026-10-01'
+  openSource: false
+  size: 0
+  usage: 40
+  searchRank: 0
+  username: ComfyUI

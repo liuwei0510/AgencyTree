@@ -1,0 +1,56 @@
+id: remote.template.utility_topaz_illustration_upscale
+kind: comfyui_template
+title: 'Image Upscale: Topaz Illustration'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Topaz Illustration'
+  input_types:
+  - image
+  output_types: []
+  capability: Upload an illustration to upscale using Topaz. Generate a smooth, stylized
+    image with accurate colors, though some artifacts may appear.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_topaz_illustration_upscale.json
+  sha256: 9796299e82daa07a182d4545f6c6a5badedbf4a45aeddd4edd5d0fbc4406b2f7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_topaz_illustration_upscale
+  title: 'Image Upscale: Topaz Illustration'
+  description: Upload an illustration to upscale using Topaz. Generate a smooth, stylized
+    image with accurate colors, though some artifacts may appear.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Topaz
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 28
+  searchRank: 0
+  logos:
+  - provider: Topaz
+  io:
+    inputs:
+    - nodeId: 5
+      nodeType: LoadImage
+      file: silent_sanctuary.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.30.2

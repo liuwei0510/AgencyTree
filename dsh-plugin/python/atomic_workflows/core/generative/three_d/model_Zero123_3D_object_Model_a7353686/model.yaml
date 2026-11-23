@@ -1,0 +1,45 @@
+id: remote:model:a7353686a10ac857b146
+kind: comfyui_model
+title: Zero123 3D object Model
+tree_branch:
+- core
+- generative
+- three_d
+six_tuple:
+  name: Zero123 3D object Model
+  input_types:
+  - text or image
+  output_types:
+  - mesh
+  capability: core/generative/three_d
+  parameters:
+  - name: filename
+    value: zero123-165000.ckpt
+  - name: base
+    value: zero123
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: zero123
+    save_path: checkpoints/zero123
+    filename: zero123-165000.ckpt
+    download_locator: https://huggingface.co/cvlab/zero123-weights/resolve/main/165000.ckpt
+code_usable: true
+status: available
+metadata:
+  name: Zero123 3D object Model
+  type: zero123
+  base: zero123
+  save_path: checkpoints/zero123
+  description: Zero123 original checkpoints in 165000 steps.
+  reference: https://huggingface.co/cvlab/zero123-weights
+  filename: zero123-165000.ckpt
+  url: https://huggingface.co/cvlab/zero123-weights/resolve/main/165000.ckpt
+  size: 15.5GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/three_d/model_Zero123_3D_object_Model_a7353686/model.yaml
+validation_errors: []

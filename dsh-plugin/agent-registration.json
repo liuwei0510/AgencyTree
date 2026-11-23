@@ -1,0 +1,15 @@
+{
+  "name": "AgencyTree",
+  "description": "基于四层抽象能力树的多媒体 ComfyUI 工作流生成、执行及演化",
+  "plugin_version": "0.1.0",
+  "source": "https://github.com/liuwei0510/AgencyTree/tree/183feb064498303027b0018fba91b1e8c1af9a15",
+  "dsh_tool_ids": [
+    "sf_agencytree_catalog", "sf_agencytree_sync", "sf_agencytree_maintain",
+    "sf_agencytree_plan", "sf_agencytree_export", "sf_agencytree_evolve",
+    "sf_agencytree_run", "sf_agencytree_execute", "sf_agencytree_comfy", "sf_agencytree_benchmark"
+  ],
+  "datasets_json": [
+    { "name": "AgencyTree 220 workflow requirements", "count": 220,
+      "relative_path": "python/data/benchmarks/requirements_220.json" }
+  ]
+}

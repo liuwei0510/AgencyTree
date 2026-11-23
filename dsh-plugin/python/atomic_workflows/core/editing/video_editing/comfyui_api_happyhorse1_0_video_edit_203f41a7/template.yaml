@@ -1,0 +1,93 @@
+id: remote:template:api_happyhorse1_0_video_edit
+kind: comfyui_template
+title: 'HappyHorse: Video Edit'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HappyHorse: Video Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Edit a video using text instructions and optional reference images for
+    style transfer or local replacement. Takes a video and up to 5 reference images
+    as input, outputs an edited video.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_happyhorse1_0_video_edit.json
+  sha256: 9e1bf855081b63b890a9eb415f3da8c056996a2931da27a872ba9c0f9e2a7eb9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_happyhorse1_0_video_edit
+  title: 'HappyHorse: Video Edit'
+  description: Edit a video using text instructions and optional reference images
+    for style transfer or local replacement. Takes a video and up to 5 reference images
+    as input, outputs an edited video.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Edit
+  - API
+  models:
+  - HappyHorse 1.0
+  logos:
+  - provider: HappyHorse
+  date: '2026-04-27'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: urban_man.png
+      mediaType: image
+    - nodeId: 16
+      nodeType: LoadVideo
+      file: woman_by_tram.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 6
+      nodeType: SaveVideo
+      file: api_happyhorse1_0_video_edit.mp4
+      mediaType: video
+  thumbnail:
+  - input/woman_by_tram.mp4
+  - output/api_happyhorse1_0_video_edit.mp4
+  minComfyUIVersion: 0.20.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_happyhorse1_0_video_edit.json
+  sha256: 9e1bf855081b63b890a9eb415f3da8c056996a2931da27a872ba9c0f9e2a7eb9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

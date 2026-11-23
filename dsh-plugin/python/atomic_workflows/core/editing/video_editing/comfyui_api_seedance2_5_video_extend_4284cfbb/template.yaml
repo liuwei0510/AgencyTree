@@ -1,0 +1,72 @@
+id: remote:template:api_seedance2_5_video_extend
+kind: comfyui_template
+title: 'Video Extend: Seedance 2.5'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Extend: Seedance 2.5'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Extend an existing video forward or backward by generating new segments
+    that seamlessly preserve the original characters, scenes, and aspect ratio. The
+    source video must be 1.9–30 seconds long, and you specify the duration of the
+    new clip (4–30 seconds, default 5), with output delivered as MP4 or MOV. Ideal
+    for continuing unfinished footage, creating extended narrative sequences, and
+    building longer edit chains.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_video_extend.json
+  sha256: f03e2d151d7a3786841a99f0188752e1398aa01fc6b84edc6f43b59b6f4a8333
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_seedance2_5_video_extend
+  title: 'Video Extend: Seedance 2.5'
+  description: Extend an existing video forward or backward by generating new segments
+    that seamlessly preserve the original characters, scenes, and aspect ratio. The
+    source video must be 1.9–30 seconds long, and you specify the duration of the
+    new clip (4–30 seconds, default 5), with output delivered as MP4 or MOV. Ideal
+    for continuing unfinished footage, creating extended narrative sequences, and
+    building longer edit chains.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Extend
+  models:
+  - Seedance 2.5
+  logos:
+  - provider: ByteDance
+  date: '2026-08-17'
+  openSource: false
+  size: 0
+  usage: 83
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 35
+      nodeType: LoadVideo
+      file: sloth_bullfight.mp4
+      mediaType: video
+  minComfyUIVersion: 0.33.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_seedance2_5_video_extend.json
+  sha256: f03e2d151d7a3786841a99f0188752e1398aa01fc6b84edc6f43b59b6f4a8333
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

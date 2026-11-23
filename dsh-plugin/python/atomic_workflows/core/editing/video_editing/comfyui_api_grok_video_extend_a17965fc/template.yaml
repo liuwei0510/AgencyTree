@@ -1,0 +1,73 @@
+id: remote:template:api_grok_video_extend
+kind: comfyui_template
+title: 'Video Extend: Grok'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Extend: Grok'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a short video and a text prompt describing the next scene. Generate
+    a seamless video extension using Grok extend.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_video_extend.json
+  sha256: f66f34662ba3ce168bd8aaac2d5fdc4bdc3c63e98b87a624b5c16807690d64f6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_grok_video_extend
+  title: 'Video Extend: Grok'
+  description: Upload a short video and a text prompt describing the next scene. Generate
+    a seamless video extension using Grok extend.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Video
+  - Video Extend
+  models:
+  - Grok
+  logos:
+  - provider: Grok
+  date: '2026-03-24'
+  openSource: false
+  size: 0
+  usage: 16
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadVideo
+      file: deep_space_nexus.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_grok_video_extend.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_grok_video_extend.mp4
+  minComfyUIVersion: 0.18.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_grok_video_extend.json
+  sha256: f66f34662ba3ce168bd8aaac2d5fdc4bdc3c63e98b87a624b5c16807690d64f6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

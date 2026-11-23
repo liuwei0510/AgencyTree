@@ -1,0 +1,92 @@
+id: remote:template:api_heygen_talking_photo
+kind: comfyui_template
+title: 'HeyGen: Talking Photo'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HeyGen: Talking Photo'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate a talking-head video from a single photograph using HeyGen's
+    Avatar IV engine, which produces a fully animated video with lip-synced speech,
+    facial expressions, head movements, and automatic gestures. Ideal for creating
+    digital avatars for presentations, virtual characters for interactive content,
+    and personalized video messages from a single image.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_talking_photo.json
+  sha256: b57f338546335bc40d19f1fd3d89f3105a9f85c7dea37fbf7e6dda9ba608c00b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_heygen_talking_photo
+  title: 'HeyGen: Talking Photo'
+  description: Generate a talking-head video from a single photograph using HeyGen's
+    Avatar IV engine, which produces a fully animated video with lip-synced speech,
+    facial expressions, head movements, and automatic gestures. Ideal for creating
+    digital avatars for presentations, virtual characters for interactive content,
+    and personalized video messages from a single image.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  - Lip Sync
+  models:
+  - HeyGen
+  logos:
+  - provider: HeyGen
+  date: '2026-07-21'
+  openSource: false
+  size: 0
+  usage: 49
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 14
+      nodeType: LoadImage
+      file: yellow_lens_girl.png
+      mediaType: image
+    outputs:
+    - nodeId: 15
+      nodeType: SaveVideo
+      file: api_heygen_talking_photo.mp4
+      mediaType: video
+  thumbnail:
+  - output/api_heygen_talking_photo.mp4
+  minComfyUIVersion: 0.28.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_heygen_talking_photo.json
+  sha256: b57f338546335bc40d19f1fd3d89f3105a9f85c7dea37fbf7e6dda9ba608c00b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '14'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

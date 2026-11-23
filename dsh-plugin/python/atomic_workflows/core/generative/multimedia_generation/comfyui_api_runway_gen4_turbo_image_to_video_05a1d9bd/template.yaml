@@ -1,0 +1,76 @@
+id: remote:template:api_runway_gen4_turbo_image_to_video
+kind: comfyui_template
+title: 'Runway: Gen4 Turbo Image to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Runway: Gen4 Turbo Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Generate dynamic videos from images using Runway Gen4 Turbo.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_runway_gen4_turbo_image_to_video.json
+  sha256: 09546b0692d580ff7cf2b3a281866946180e2ba57ffcd45938a0ba7be19af84d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_runway_gen4_turbo_image_to_video
+  title: 'Runway: Gen4 Turbo Image to Video'
+  description: Generate dynamic videos from images using Runway Gen4 Turbo.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Video
+  - API
+  models:
+  - Runway
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 27
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadImage
+      file: api_runway_gen4_turbo_image_to_video_input_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.37
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_runway_gen4_turbo_image_to_video.json
+  sha256: 09546b0692d580ff7cf2b3a281866946180e2ba57ffcd45938a0ba7be19af84d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_runway_gen4_turbo_image_to_video_05a1d9bd/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '4'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

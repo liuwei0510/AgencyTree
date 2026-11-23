@@ -1,0 +1,84 @@
+id: remote:template:templates-photo_to_product_vid
+kind: comfyui_template
+title: 'Phone Image to Product Video: Shoe'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Phone Image to Product Video: Shoe'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Take a picture with your phone, upload it and generate a studio grade
+    product video.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-photo_to_product_vid.json
+  sha256: 759eb3b3df119072c496cb595ef682e1eb730e8115036b357ba44cad88f18896
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-photo_to_product_vid
+  title: 'Phone Image to Product Video: Shoe'
+  mediaType: image
+  mediaSubtype: webp
+  description: Take a picture with your phone, upload it and generate a studio grade
+    product video.
+  tags:
+  - Image to Video
+  - API
+  models:
+  - Seedream
+  - MiniMax
+  openSource: false
+  date: '2025-12-18'
+  searchRank: 8
+  size: 0
+  usage: 29
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: product_shoe.jpeg
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-photo_to_product_vid.mp4
+  minComfyUIVersion: 0.33.3
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-photo_to_product_vid.json
+  sha256: 759eb3b3df119072c496cb595ef682e1eb730e8115036b357ba44cad88f18896
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_templates-photo_to_product_vid_2ce06a2c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,78 @@
+id: remote:template:api_bytedance_seed
+kind: comfyui_template
+title: 'ByteDance: Seed 2.0'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'ByteDance: Seed 2.0'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Input an image or video for analysis. Receive detailed text output describing
+    visual content, reasoning, and structured information extraction.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seed.json
+  sha256: 8f658318f89faf30c8ebfabb2e55e3b4badf24e84232836c353eaf389a2c3296
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seed
+  title: 'ByteDance: Seed 2.0'
+  description: Input an image or video for analysis. Receive detailed text output
+    describing visual content, reasoning, and structured information extraction.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Seed 2.0
+  logos:
+  - provider: ByteDance
+  date: '2026-05-19'
+  openSource: false
+  size: 0
+  usage: 42
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: angle_3.png
+      mediaType: image
+  minComfyUIVersion: 0.22.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seed.json
+  sha256: 8f658318f89faf30c8ebfabb2e55e3b4badf24e84232836c353eaf389a2c3296
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_bytedance_seed_bc8ebfaf/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

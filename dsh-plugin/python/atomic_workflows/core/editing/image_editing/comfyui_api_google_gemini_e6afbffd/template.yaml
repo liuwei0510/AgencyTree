@@ -1,0 +1,78 @@
+id: remote:template:api_google_gemini
+kind: comfyui_template
+title: Google Gemini
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Google Gemini
+  input_types:
+    source_image: image_filenames
+  output_types:
+    transcript: text
+  capability: Experience Google's multimodal AI with Gemini's reasoning capabilities.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini.json
+  sha256: 64e9dda2023645084ec1318c03b00a372bbdfc1d42e4767ce3f6e2d724bf5433
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_gemini
+  title: Google Gemini
+  description: Experience Google's multimodal AI with Gemini's reasoning capabilities.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text Generation
+  models:
+  - Google
+  - Google Gemini
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 49
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: example.png
+      mediaType: image
+  username: ComfyUI
+  searchRank: 0
+  logos:
+  - provider: Google
+  minComfyUIVersion: 0.28.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_gemini.json
+  sha256: 64e9dda2023645084ec1318c03b00a372bbdfc1d42e4767ce3f6e2d724bf5433
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: transcript
+  type: text
+planning_eligible: true

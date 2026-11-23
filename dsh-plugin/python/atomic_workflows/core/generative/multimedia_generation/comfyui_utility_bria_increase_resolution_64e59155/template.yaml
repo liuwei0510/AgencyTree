@@ -1,0 +1,70 @@
+id: remote.template.utility_bria_increase_resolution
+kind: comfyui_template
+title: 'Image Upscale: Bria Increase Resolution'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Bria Increase Resolution'
+  input_types:
+  - image
+  output_types: []
+  capability: Upscale any image to higher resolutions using Bria's dedicated resolution
+    enhancement API, which preserves original content without adding new details or
+    regenerating the image. The workflow accepts a single input image and produces
+    one enhanced, higher-resolution output, supporting JPEG and PNG files in RGB,
+    RGBA, or CMYK color modes up to a maximum area of 8192x8192 pixels. Built-in content
+    moderation scans both the input image and generated output to ensure safe, policy-compliant
+    processing. Ideal for preparing images for print, enlarging photos for digital
+    display, or increasing resolution of assets for professional design work.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_bria_increase_resolution.json
+  sha256: ca0868f331d8db56ff68fa8381ccfd0bc65d8bfad8917ce6d97ced321e4765d6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_bria_increase_resolution
+  title: 'Image Upscale: Bria Increase Resolution'
+  description: Upscale any image to higher resolutions using Bria's dedicated resolution
+    enhancement API, which preserves original content without adding new details or
+    regenerating the image. The workflow accepts a single input image and produces
+    one enhanced, higher-resolution output, supporting JPEG and PNG files in RGB,
+    RGBA, or CMYK color modes up to a maximum area of 8192x8192 pixels. Built-in content
+    moderation scans both the input image and generated output to ensure safe, policy-compliant
+    processing. Ideal for preparing images for print, enlarging photos for digital
+    display, or increasing resolution of assets for professional design work.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-09-02'
+  openSource: false
+  size: 0
+  usage: 70
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: orange_suit_golden_pour.png
+      mediaType: image
+  minComfyUIVersion: 0.34.0
+  thumbnail:
+  - input/orange_suit_golden_pour.png

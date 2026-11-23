@@ -1,0 +1,103 @@
+id: remote:template:template_seedance2_0_viral_videos_character_swap
+kind: comfyui_template
+title: 'Seedance 2.0: Viral Videos Character Swap'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedance 2.0: Viral Videos Character Swap'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: A one click workflow to recreate an input video with your character.
+    All you need to do is upload the video and your character. This workflow uses
+    Google Gemini LLM to analyze the input video and reverse engineer a prompt. You
+    can prompt for specific details to inject into this analysis. The workflow extracts
+    the first frame of the video and swaps your character into it, sends this into
+    Seedance 2.0 Reference-to-Video and generates
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_seedance2_0_viral_videos_character_swap.json
+  sha256: e6dbeab5ada9fc8cb34572306c1d0baf4e288012db96e8ea9d9dff63518d1b31
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_seedance2_0_viral_videos_character_swap
+  title: 'Seedance 2.0: Viral Videos Character Swap'
+  description: A one click workflow to recreate an input video with your character.
+    All you need to do is upload the video and your character. This workflow uses
+    Google Gemini LLM to analyze the input video and reverse engineer a prompt. You
+    can prompt for specific details to inject into this analysis. The workflow extracts
+    the first frame of the video and swaps your character into it, sends this into
+    Seedance 2.0 Reference-to-Video and generates
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: hoverDissolve
+  tags:
+  - API
+  - Character Replacement
+  - Image to Video
+  models:
+  - GPT Image 2
+  - Google Gemini
+  - Seedance 2.0
+  logos:
+  - provider:
+    - Google
+    - OpenAI
+    - ByteDance
+    label: Multiple providers
+  date: '2026-05-19'
+  openSource: false
+  size: 0
+  usage: 55
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 18
+      nodeType: LoadVideo
+      file: source_ref_video.mp4
+      mediaType: video
+    - nodeId: 29
+      nodeType: LoadImage
+      file: virtual_character_ref.png
+      mediaType: image
+  minComfyUIVersion: 0.26.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_seedance2_0_viral_videos_character_swap.json
+  sha256: e6dbeab5ada9fc8cb34572306c1d0baf4e288012db96e8ea9d9dff63518d1b31
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_template_seedance2_0_viral_videos_character_swap_62cd996c/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '29'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,46 @@
+id: remote:model:262e55d3ea0c31de9cb2
+kind: comfyui_model
+title: LDSR(Latent Diffusion Super Resolution)
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: LDSR(Latent Diffusion Super Resolution)
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: last.ckpt
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: upscale_models/ldsr
+    filename: last.ckpt
+    download_locator: https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1
+code_usable: true
+status: available
+metadata:
+  name: LDSR(Latent Diffusion Super Resolution)
+  type: upscale
+  base: upscale
+  save_path: upscale_models/ldsr
+  description: LDSR upscale model. Through the [a/ComfyUI-Flowty-LDSR](https://github.com/flowtyone/ComfyUI-Flowty-LDSR)
+    extension, the upscale model can be utilized.
+  reference: https://github.com/CompVis/latent-diffusion
+  filename: last.ckpt
+  url: https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1
+  size: 2.04GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/postprocess/upscale/model_LDSR_Latent_Diffusion_Super_Resolution_262e55d3/model.yaml
+validation_errors: []

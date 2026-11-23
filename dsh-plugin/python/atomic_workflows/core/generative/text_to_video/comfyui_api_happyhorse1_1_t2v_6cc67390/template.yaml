@@ -1,0 +1,61 @@
+id: remote:template:api_happyhorse1_1_t2v
+kind: comfyui_template
+title: 'HappyHorse 1.1: Text to Video'
+tree_branch:
+- core
+- generative
+- text_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HappyHorse 1.1: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate a video with synchronized audio from a text prompt using HappyHorse
+    1.1, producing a single video output with dialogue, sound effects, and music baked
+    in. Ideal for short episodic series, e-commerce commercials, and game cutscenes.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_happyhorse1_1_t2v.json
+  sha256: 3a2af8c759eabdae5fa85020a591596c81c0ec83a1e8275edbba16828798b773
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_happyhorse1_1_t2v
+  title: 'HappyHorse 1.1: Text to Video'
+  description: Generate a video with synchronized audio from a text prompt using HappyHorse
+    1.1, producing a single video output with dialogue, sound effects, and music baked
+    in. Ideal for short episodic series, e-commerce commercials, and game cutscenes.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Video
+  models:
+  - HappyHorse 1.1
+  logos:
+  - provider: HappyHorse
+  date: '2026-06-23'
+  openSource: false
+  size: 0
+  usage: 3
+  searchRank: 0
+  username: ComfyUI
+  minComfyUIVersion: 0.26.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_happyhorse1_1_t2v.json
+  sha256: 3a2af8c759eabdae5fa85020a591596c81c0ec83a1e8275edbba16828798b773
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

@@ -1,0 +1,69 @@
+id: remote.template.api_google_nano_banana_create_turnaround_sheet
+kind: comfyui_template
+title: Character Turnaround Sheet Generator
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Character Turnaround Sheet Generator
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Create orthographic multi-view character turnaround sheet from one reference
+    image, keep consistent character features across front, side and back views, for
+    sci-fi mech and armor character design.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_google_nano_banana_create_turnaround_sheet.json
+  sha256: a7abcf0ff389ff4619a6ebe5b3df290c580c11720843a96babcc6692256f15cf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_google_nano_banana_create_turnaround_sheet
+  title: Character Turnaround Sheet Generator
+  description: Create orthographic multi-view character turnaround sheet from one
+    reference image, keep consistent character features across front, side and back
+    views, for sci-fi mech and armor character design.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  models:
+  - Nano Banana
+  logos:
+  - provider: Google
+  minComfyUIVersion: 0.34.0
+  date: '2026-09-09'
+  openSource: false
+  size: 0
+  usage: 103
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadImage
+      file: white_mech_front_ortho.png
+      mediaType: image
+validation_errors: []
+planning_eligible: false
+inputs: *id001
+inject:
+  source_image:
+    node_id: '3'
+    input_key: image
+    widget_index: 0
+outputs: []

@@ -1,0 +1,99 @@
+id: remote.template.image_moss_image_color_depth_control
+kind: comfyui_template
+title: 'MOSS-Image: Color & Depth Control'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MOSS-Image: Color & Depth Control'
+  input_types:
+    prompt: string
+    negative_prompt: string
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: 'Re-pose and re-style a reference photo with MOSS-Image: the graph estimates
+    the reference''s geometry with MoGe 3, then generates a new image that keeps the
+    pose, framing and silhouette while the prompt decides the character, wardrobe,
+    setting and light. A color/depth control adapter LoRA makes the model follow the
+    estimated map, and the color map socket is there for region-painted layouts.'
+  parameters: &id001
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: nsfw, worst quality, bad anatomy, watermark, jpeg artifact
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_moss_image_color_depth_control.json
+  sha256: a35b0ddf6cd919972741bc3da4c4e969ffde5a8e346aacd80f0e79b4ac707645
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_moss_image_color_depth_control
+  title: 'MOSS-Image: Color & Depth Control'
+  description: 'Re-pose and re-style a reference photo with MOSS-Image: the graph
+    estimates the reference''s geometry with MoGe 3, then generates a new image that
+    keeps the pose, framing and silhouette while the prompt decides the character,
+    wardrobe, setting and light. A color/depth control adapter LoRA makes the model
+    follow the estimated map, and the color map socket is there for region-painted
+    layouts.'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Depth
+  models:
+  - MOSS-Image
+  minComfyUIVersion: 0.43.0
+  date: '2026-10-26'
+  openSource: true
+  size: 18253611008
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 55
+      nodeType: LoadImage
+      file: fashion_portrait_red_canyon.png
+      mediaType: image
+    outputs:
+    - nodeId: 85
+      nodeType: SaveImage
+      file: image_moss_image_color_depth_control.png
+      mediaType: image
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  prompt:
+    node_id: '5'
+    input_key: text
+    widget_index: 0
+  negative_prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '55'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,74 @@
+id: remote.template.video_wan21_scail2_character_replacement
+kind: comfyui_template
+title: 'SCAIL-2: Character Replacement'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'SCAIL-2: Character Replacement'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Upload 1 reference character image and 1 driving video. Generate an
+    animated video of the character matching the driving video's motion. Ideal for
+    character animation, in-video character replacement, and motion transfer projects.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wan21_scail2_character_replacement.json
+  sha256: 5ea3829c1b9775790745c35281171f64a5727bc7b207eea85eefcb16a7359fe7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wan21_scail2_character_replacement
+  title: 'SCAIL-2: Character Replacement'
+  description: Upload 1 reference character image and 1 driving video. Generate an
+    animated video of the character matching the driving video's motion. Ideal for
+    character animation, in-video character replacement, and motion transfer projects.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Character Replacement
+  models:
+  - SCAIL-2
+  date: '2026-06-15'
+  openSource: true
+  size: 44775034061
+  usage: 942
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 30
+      nodeType: LoadImage
+      file: reference_streetwear_character.png
+      mediaType: image
+    - nodeId: 155
+      nodeType: LoadVideo
+      file: driving_outdoor_dance.mp4
+      mediaType: video
+  minComfyUIVersion: 0.25.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '30'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path

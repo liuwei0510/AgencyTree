@@ -1,0 +1,45 @@
+id: remote:model:f0173372b588b2e4bd87
+kind: comfyui_model
+title: Comfy-Org/sigclip_vision_384 (patch14_384)
+tree_branch:
+- aux
+- preprocess
+- image_encoding
+six_tuple:
+  name: Comfy-Org/sigclip_vision_384 (patch14_384)
+  input_types:
+  - image
+  output_types:
+  - image embedding
+  capability: aux/preprocess/image_encoding
+  parameters:
+  - name: filename
+    value: sigclip_vision_patch14_384.safetensors
+  - name: base
+    value: sigclip
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: clip_vision
+    save_path: clip_vision
+    filename: sigclip_vision_patch14_384.safetensors
+    download_locator: https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Comfy-Org/sigclip_vision_384 (patch14_384)
+  type: clip_vision
+  base: sigclip
+  save_path: clip_vision
+  description: This clip vision model is required for FLUX.1 Redux.
+  reference: https://huggingface.co/Comfy-Org/sigclip_vision_384/tree/main
+  filename: sigclip_vision_patch14_384.safetensors
+  url: https://huggingface.co/Comfy-Org/sigclip_vision_384/resolve/main/sigclip_vision_patch14_384.safetensors
+  size: 857MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/preprocess/image_encoding/model_Comfy-Org_sigclip_vision_384_patch14_384_f0173372/model.yaml
+validation_errors: []

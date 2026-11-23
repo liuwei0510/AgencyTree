@@ -1,0 +1,81 @@
+id: remote:template:image_mage_flow_edit_turbo_int8
+kind: comfyui_template
+title: 'Mage-Flow-Edit Turbo: Image Edit'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mage-Flow-Edit Turbo: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Edit images using a reference photo and text instructions with the Mage-Flow-Edit
+    Turbo model, a distilled 4B-parameter model that produces results in just 4 steps.
+    It takes 1-3 reference images and a text prompt as input, then outputs an edited
+    image matching your instructions. Ideal for quick style transfers, background
+    replacements, and interactive photo editing sessions.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_edit_turbo_int8.json
+  sha256: c6f7fa33779ce3d077a6434a80a14cee0d93a3409c7d7724b2b47efebeb01261
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_mage_flow_edit_turbo_int8
+  title: 'Mage-Flow-Edit Turbo: Image Edit'
+  description: Edit images using a reference photo and text instructions with the
+    Mage-Flow-Edit Turbo model, a distilled 4B-parameter model that produces results
+    in just 4 steps. It takes 1-3 reference images and a text prompt as input, then
+    outputs an edited image matching your instructions. Ideal for quick style transfers,
+    background replacements, and interactive photo editing sessions.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Int8
+  models:
+  - Mage-Flow
+  date: '2026-07-27'
+  openSource: true
+  size: 13421772800
+  usage: 56
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 7
+      nodeType: LoadImage
+      file: hot_air_balloons_rising.png
+      mediaType: image
+  minComfyUIVersion: 0.29.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_edit_turbo_int8.json
+  sha256: c6f7fa33779ce3d077a6434a80a14cee0d93a3409c7d7724b2b47efebeb01261
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_mage_flow_edit_turbo_int8_e4134046/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '7'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

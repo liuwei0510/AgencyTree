@@ -1,0 +1,45 @@
+id: remote:model:37b566d018b9ddc9e8d0
+kind: comfyui_model
+title: RealESRGAN x2
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: RealESRGAN x2
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: RealESRGAN_x2.pth
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: RealESRGAN_x2.pth
+    download_locator: https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth
+code_usable: true
+status: available
+metadata:
+  name: RealESRGAN x2
+  type: upscale
+  base: upscale
+  save_path: default
+  description: RealESRGAN x2 upscaler model
+  reference: https://huggingface.co/ai-forever/Real-ESRGAN
+  filename: RealESRGAN_x2.pth
+  url: https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth
+  size: 67.1MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/postprocess/upscale/model_RealESRGAN_x2_37b566d0/model.yaml
+validation_errors: []

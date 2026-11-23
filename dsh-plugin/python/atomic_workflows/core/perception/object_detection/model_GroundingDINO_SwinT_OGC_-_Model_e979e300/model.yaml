@@ -1,0 +1,45 @@
+id: remote:model:e979e300fe46943053ae
+kind: comfyui_model
+title: GroundingDINO SwinT OGC - Model
+tree_branch:
+- core
+- perception
+- object_detection
+six_tuple:
+  name: GroundingDINO SwinT OGC - Model
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/object_detection
+  parameters:
+  - name: filename
+    value: groundingdino_swint_ogc.pth
+  - name: base
+    value: DINO
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: GroundingDINO
+    save_path: groundingdino
+    filename: groundingdino_swint_ogc.pth
+    download_locator: https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth
+code_usable: true
+status: available
+metadata:
+  name: GroundingDINO SwinT OGC - Model
+  type: GroundingDINO
+  base: DINO
+  save_path: groundingdino
+  description: GroundingDINO SwinT OGC Model
+  reference: https://huggingface.co/ShilongLiu/GroundingDINO
+  filename: groundingdino_swint_ogc.pth
+  url: https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swint_ogc.pth
+  size: 694.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/object_detection/model_GroundingDINO_SwinT_OGC_-_Model_e979e300/model.yaml
+validation_errors: []

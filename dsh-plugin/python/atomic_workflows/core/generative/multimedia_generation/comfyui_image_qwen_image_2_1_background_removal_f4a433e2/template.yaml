@@ -1,0 +1,84 @@
+id: remote:template:image_qwen_image_2_1_background_removal
+kind: comfyui_template
+title: 'Remove Background: Qwen Image 2.1'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Remove Background: Qwen Image 2.1'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: Remove image backgrounds with Qwen Image 2.1, which natively supports
+    2K output and RGBA transparency for direct transparent results. It takes 1 input
+    image and returns 1 background-free image plus a comparison view showing the before
+    and after. Ideal for e-commerce product photos, profile pictures, and marketing
+    graphics needing clean cutouts.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_2_1_background_removal.json
+  sha256: fabf3e8d8ae61ff9aaf1e7e299b14bd6be6c5700c58bd496c256a4edf1ab02b5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_2_1_background_removal
+  title: 'Remove Background: Qwen Image 2.1'
+  description: Remove image backgrounds with Qwen Image 2.1, which natively supports
+    2K output and RGBA transparency for direct transparent results. It takes 1 input
+    image and returns 1 background-free image plus a comparison view showing the before
+    and after. Ideal for e-commerce product photos, profile pictures, and marketing
+    graphics needing clean cutouts.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Remove Background
+  - Int8
+  models:
+  - Qwen Image 2.1
+  minComfyUIVersion: 0.37.0
+  date: '2026-09-20'
+  openSource: true
+  size: 21367462298
+  usage: 147
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 470
+      nodeType: LoadImage
+      file: angry_broccoli.png
+      mediaType: image
+  thumbnail:
+  - input/angry_broccoli.png
+  - output/Qwen_image_2.1.png
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_2_1_background_removal.json
+  sha256: fabf3e8d8ae61ff9aaf1e7e299b14bd6be6c5700c58bd496c256a4edf1ab02b5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_qwen_image_2_1_background_removal_f4a433e2/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '470'
+    input_key: image
+    widget_index: 0
+outputs: []
+planning_eligible: false

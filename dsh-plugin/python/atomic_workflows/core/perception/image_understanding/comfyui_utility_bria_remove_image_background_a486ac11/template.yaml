@@ -1,0 +1,92 @@
+id: remote:template:utility_bria_remove_image_background
+kind: comfyui_template
+title: 'Remove Background: Bria'
+tree_branch:
+- core
+- perception
+- image_understanding
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Remove Background: Bria'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image to automatically remove its background using the Bria
+    API. The workflow processes the request asynchronously and returns the edited
+    image with a transparent background.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_bria_remove_image_background.json
+  sha256: 270527ba222a74220bc78ced11a6f1b673c782fa15a16f99581090bc490f53b7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_bria_remove_image_background
+  title: 'Remove Background: Bria'
+  description: Upload an image to automatically remove its background using the Bria
+    API. The workflow processes the request asynchronously and returns the edited
+    image with a transparent background.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Remove Background
+  - Image
+  models:
+  - BRIA
+  logos:
+  - provider: BRIA
+  date: '2026-02-16'
+  openSource: false
+  size: 0
+  usage: 49
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 26
+      nodeType: LoadImage
+      file: denim_girl.png
+      mediaType: image
+    outputs:
+    - nodeId: 27
+      nodeType: SaveImage
+      file: utility_bria_remove_image_background.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/denim_girl.png
+  - output/utility_bria_remove_image_background.png
+  minComfyUIVersion: 0.14.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_bria_remove_image_background.json
+  sha256: 270527ba222a74220bc78ced11a6f1b673c782fa15a16f99581090bc490f53b7
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_utility_bria_remove_image_background_a486ac11/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '26'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

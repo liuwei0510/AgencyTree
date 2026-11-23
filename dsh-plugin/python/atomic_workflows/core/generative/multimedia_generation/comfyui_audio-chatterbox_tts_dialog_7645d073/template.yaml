@@ -1,0 +1,72 @@
+id: remote:template:audio-chatterbox_tts_dialog
+kind: comfyui_template
+title: 'Chatter Box: Multi-Speaker Conversation with Cloned Voices'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Chatter Box: Multi-Speaker Conversation with Cloned Voices'
+  input_types: {}
+  output_types:
+    audio: audio_path
+  capability: Upload voice samples and enter a multi-speaker dialog script. Generate
+    a conversation audio file with cloned voices for each speaker.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio-chatterbox_tts_dialog.json
+  sha256: 8204022ab557670822e21ef151fb0732001321e5382646a99bab300ed5187531
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio-chatterbox_tts_dialog
+  title: 'Chatter Box: Multi-Speaker Conversation with Cloned Voices'
+  description: Upload voice samples and enter a multi-speaker dialog script. Generate
+    a conversation audio file with cloned voices for each speaker.
+  mediaType: audio
+  mediaSubtype: mp3
+  date: '2026-01-22'
+  openSource: true
+  requiresCustomNodes:
+  - comfyui_fill-chatterbox
+  models:
+  - Chatter Box
+  size: 0
+  usage: 38
+  searchRank: 0
+  tags:
+  - Audio
+  - Text to Speech
+  - Voice Cloning
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadAudio
+      file: chatterbox_input_target_voice.mp3
+      mediaType: audio
+    - nodeId: 3
+      nodeType: LoadAudio
+      file: chatterbox_input_gettysburg.wav
+      mediaType: audio
+  username: PurzBeats
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio-chatterbox_tts_dialog.json
+  sha256: 8204022ab557670822e21ef151fb0732001321e5382646a99bab300ed5187531
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/audio_editing/comfyui_audio-chatterbox_tts_dialog_7645d073/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: audio
+  type: audio_path
+contract_errors: []
+planning_eligible: true

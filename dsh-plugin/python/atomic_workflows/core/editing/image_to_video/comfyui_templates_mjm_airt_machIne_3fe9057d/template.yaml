@@ -1,0 +1,79 @@
+id: remote.template.templates_mjm_airt_machIne
+kind: comfyui_template
+title: AIrt MAchIne
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: AIrt MAchIne
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload any image to generate a unique, looping AI video. The workflow
+    uses an LLM to create five prompts, produces images and video clips, and stitches
+    them into a final seamless loop.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_mjm_airt_machIne.json
+  sha256: 197743d358a0d008a4ab8169a4a0e5be976867778d30c36fb7261474b7e0554a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_mjm_airt_machIne
+  title: AIrt MAchIne
+  description: Upload any image to generate a unique, looping AI video. The workflow
+    uses an LLM to create five prompts, produces images and video clips, and stitches
+    them into a final seamless loop.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - FLF2V
+  - Text to Image
+  models:
+  - Wan2.2
+  - Z-Image-Turbo
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  date: '2026-03-03'
+  openSource: true
+  size: 60129542144
+  usage: 10
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 94
+      nodeType: LoadImage
+      file: AIrt_MAchIne_init.png
+      mediaType: image
+  username: Julien | MJM
+  thumbnail:
+  - output/templates_mjm_airt_machIne.mp4
+  minComfyUIVersion: 0.8.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '94'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path

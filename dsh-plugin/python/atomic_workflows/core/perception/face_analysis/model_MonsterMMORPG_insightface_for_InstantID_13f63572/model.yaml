@@ -1,0 +1,43 @@
+id: remote.model.13f6357205ddbf49f94f
+kind: comfyui_model
+title: MonsterMMORPG/insightface (for InstantID)
+tree_branch:
+- core
+- perception
+- face_analysis
+six_tuple:
+  name: MonsterMMORPG/insightface (for InstantID)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/face_analysis
+  parameters:
+  - name: filename
+    value: antelopev2.zip
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: insightface
+    save_path: insightface/models
+    filename: antelopev2.zip
+    download_locator: https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip
+code_usable: true
+status: available
+metadata:
+  name: MonsterMMORPG/insightface (for InstantID)
+  type: insightface
+  base: SDXL
+  save_path: insightface/models
+  description: MonsterMMORPG insightface model for cubiq/InstantID
+  reference: https://huggingface.co/MonsterMMORPG/tools/tree/main
+  filename: antelopev2.zip
+  url: https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip
+  size: 360.7MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

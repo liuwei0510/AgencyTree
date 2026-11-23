@@ -1,0 +1,160 @@
+id: remote:template:sdxl_revision_text_prompts
+kind: comfyui_template
+title: SDXL Revision Text Prompts
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: SDXL Revision Text Prompts
+  input_types:
+    negative_prompt: string
+    source_image: image_filenames
+    width: number
+    height: number
+    source_image_2: image_filenames
+    seed: number
+    prompt: string
+  output_types:
+    images: image_filenames
+  capability: Generate images by transferring concepts from reference images using
+    SDXL Revision.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: text, watermark
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  - name: seed
+    type: number
+    required: false
+    default: 900749379955168
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sdxl_revision_text_prompts.json
+  sha256: e78de8deb3adebe57fbf89e11d6c6efc14ec2198312b69278f03e7f26d9257f9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: sdxl_revision_text_prompts
+  title: SDXL Revision Text Prompts
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images by transferring concepts from reference images using
+    SDXL Revision.
+  tutorialUrl: https://comfyanonymous.github.io/ComfyUI_examples/sdxl/#revision
+  tags:
+  - Text to Image
+  - Image
+  models:
+  - SDXL
+  - Stability
+  date: '2025-03-01'
+  size: 10630044058
+  usage: 12
+  io:
+    inputs:
+    - nodeId: 34
+      nodeType: LoadImage
+      file: sdxl_revision_text_prompts_ref_image1.png
+      mediaType: image
+    - nodeId: 38
+      nodeType: LoadImage
+      file: sdxl_revision_text_prompts_ref_image2.png
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/sdxl_revision_text_prompts.json
+  sha256: e78de8deb3adebe57fbf89e11d6c6efc14ec2198312b69278f03e7f26d9257f9
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_sdxl_revision_text_prompts_289b2576/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: text, watermark
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+- name: seed
+  type: number
+  required: false
+  default: 900749379955168
+- name: prompt
+  type: string
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '7'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '34'
+    input_key: image
+    widget_index: 0
+  width:
+    node_id: '5'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '5'
+    input_key: height
+    widget_index: 1
+  source_image_2:
+    node_id: '38'
+    input_key: image
+    widget_index: 0
+  seed:
+    node_id: '3'
+    input_key: seed
+    widget_index: 0
+  prompt:
+    node_id: '6'
+    input_key: text
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

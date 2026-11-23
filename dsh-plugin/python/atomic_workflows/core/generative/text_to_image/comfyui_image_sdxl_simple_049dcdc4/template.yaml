@@ -1,0 +1,140 @@
+id: remote:template:image_sdxl_simple
+kind: comfyui_template
+title: 'SDXL1.0: Text to Image (Simple)'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'SDXL1.0: Text to Image (Simple)'
+  input_types:
+    prompt: string
+    negative_prompt: string
+    seed: number
+    width: number
+    height: number
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using the SDXL 1.0 model,
+    offering a straightforward text-to-image generation workflow. Ideal for quick
+    concept visualization, creative brainstorming, and rapid prototyping of visual
+    ideas.
+  parameters:
+  - name: prompt
+    type: string
+    required: true
+    default: null
+  - name: negative_prompt
+    type: string
+    required: false
+    default: 'color, colored, lowres, blurry, out of focus, deformed, bad anatomy,
+      extra limbs, mutated, watermark, text, logo, signature
+
+      '
+  - name: seed
+    type: number
+    required: false
+    default: 812045847300606
+  - name: width
+    type: number
+    required: false
+    default: 1024
+  - name: height
+    type: number
+    required: false
+    default: 1024
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_sdxl_simple.json
+  sha256: 5b11fa1ca5542b32bdb5f487c2f8988d0c6d1550e7be068fd3d87f90e741a012
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_sdxl_simple
+  title: 'SDXL1.0: Text to Image (Simple)'
+  description: Generate high-quality images from text prompts using the SDXL 1.0 model,
+    offering a straightforward text-to-image generation workflow. Ideal for quick
+    concept visualization, creative brainstorming, and rapid prototyping of visual
+    ideas.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - SDXL
+  date: '2024-02-22'
+  openSource: true
+  size: 6979321856
+  usage: 395
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 7
+      nodeType: SaveImage
+      file: image_sdxl_simple.png
+      mediaType: image
+  minComfyUIVersion: 0.0.1
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_sdxl_simple.json
+  sha256: 5b11fa1ca5542b32bdb5f487c2f8988d0c6d1550e7be068fd3d87f90e741a012
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_sdxl_simple_049dcdc4/template.yaml
+validation_errors: []
+inputs:
+- name: prompt
+  type: string
+  required: true
+  default: null
+- name: negative_prompt
+  type: string
+  required: false
+  default: 'color, colored, lowres, blurry, out of focus, deformed, bad anatomy, extra
+    limbs, mutated, watermark, text, logo, signature
+
+    '
+- name: seed
+  type: number
+  required: false
+  default: 812045847300606
+- name: width
+  type: number
+  required: false
+  default: 1024
+- name: height
+  type: number
+  required: false
+  default: 1024
+inject:
+  prompt:
+    node_id: '10'
+    input_key: text
+    widget_index: 0
+  negative_prompt:
+    node_id: '11'
+    input_key: text
+    widget_index: 0
+  seed:
+    node_id: '12'
+    input_key: seed
+    widget_index: 0
+  width:
+    node_id: '13'
+    input_key: width
+    widget_index: 0
+  height:
+    node_id: '13'
+    input_key: height
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

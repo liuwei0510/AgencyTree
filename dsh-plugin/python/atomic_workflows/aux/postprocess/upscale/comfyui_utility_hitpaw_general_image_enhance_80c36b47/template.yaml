@@ -1,0 +1,91 @@
+id: remote:template:utility_hitpaw_general_image_enhance
+kind: comfyui_template
+title: 'Image Upscale: HitPaw Portrait'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: HitPaw Portrait'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload a low-quality portrait image and adjust the upscaling factor.
+    Generate a high-fidelity, detailed portrait with enhanced skin textures and facial
+    features.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_hitpaw_general_image_enhance.json
+  sha256: d15fc7aa973df271550fec9a0e68d59b7a6003e52f73c6f0d06909fe4c6bc0c4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_hitpaw_general_image_enhance
+  title: 'Image Upscale: HitPaw Portrait'
+  description: Upload a low-quality portrait image and adjust the upscaling factor.
+    Generate a high-fidelity, detailed portrait with enhanced skin textures and facial
+    features.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - HitPaw
+  logos:
+  - provider: HitPaw
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 27
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: sunlit_girl_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: utility_hitpaw_general_image_enhance.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/sunlit_girl_portrait.png
+  - output/utility_hitpaw_general_image_enhance.png
+  minComfyUIVersion: 0.12.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_hitpaw_general_image_enhance.json
+  sha256: d15fc7aa973df271550fec9a0e68d59b7a6003e52f73c6f0d06909fe4c6bc0c4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/upscale/comfyui_utility_hitpaw_general_image_enhance_80c36b47/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

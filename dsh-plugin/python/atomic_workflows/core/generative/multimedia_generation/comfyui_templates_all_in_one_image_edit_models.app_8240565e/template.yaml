@@ -1,0 +1,62 @@
+id: remote.template.templates_all_in_one_image_edit_models.app
+kind: comfyui_template
+title: 1 input and multiple editing model comparison
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 1 input and multiple editing model comparison
+  input_types:
+  - image
+  output_types: []
+  capability: One click generations to test all the leading image editing models.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_all_in_one_image_edit_models.app.json
+  sha256: 2960fddc6d0a1225be97cf5da60ec65caf8a51650bc71a7299987c451d406dd6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_all_in_one_image_edit_models.app
+  title: 1 input and multiple editing model comparison
+  description: One click generations to test all the leading image editing models.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Style Transfer
+  - Image Edit
+  models:
+  - Nano Banana 2
+  - Grok
+  - Qwen-Image-Edit
+  logos:
+  - provider:
+    - ByteDance
+    - Google
+  date: '2026-03-09'
+  openSource: false
+  includeOnDistributions:
+  - cloud
+  size: 142700288410
+  usage: 8
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 183
+      nodeType: LoadImage
+      file: input-illustration_to_real-1.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates_all_in_one_image_edit_models_app.mp4
+  minComfyUIVersion: 0.33.3

@@ -1,0 +1,90 @@
+id: remote:template:utility_nanobanana_pro_ai_image_fix
+kind: comfyui_template
+title: 'Image Upscale: Nano Banana Pro'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Nano Banana Pro'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an AI-generated image to upscale and enhance details. Generate
+    a 4K output with improved sharpness and coherence using Nano Banana Pro.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_nanobanana_pro_ai_image_fix.json
+  sha256: 33d54424f73c0906396d5cce5d7e2cb2d042e16cfb427aab8216f1954770fb59
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_nanobanana_pro_ai_image_fix
+  title: 'Image Upscale: Nano Banana Pro'
+  description: Upload an AI-generated image to upscale and enhance details. Generate
+    a 4K output with improved sharpness and coherence using Nano Banana Pro.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Google
+  - Nano Banana Pro
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 185
+  searchRank: 0
+  logos:
+  - provider: Google
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: hovering_figure.png
+      mediaType: image
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: utility_nanobanana_pro_ai_image_fix.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/hovering_figure.png
+  - output/utility_nanobanana_pro_ai_image_fix.png
+  minComfyUIVersion: 0.3.71
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_nanobanana_pro_ai_image_fix.json
+  sha256: 33d54424f73c0906396d5cce5d7e2cb2d042e16cfb427aab8216f1954770fb59
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/upscale/comfyui_utility_nanobanana_pro_ai_image_fix_0136e84e/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

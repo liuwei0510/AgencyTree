@@ -1,0 +1,47 @@
+id: remote.model.4719a21fe615078cc39f
+kind: comfyui_model
+title: LTX-Video 2B v0.9 Checkpoint
+tree_branch:
+- core
+- generative
+- text_to_video
+six_tuple:
+  name: LTX-Video 2B v0.9 Checkpoint
+  input_types:
+  - text
+  output_types:
+  - video
+  capability: core/generative/text_to_video
+  parameters:
+  - name: filename
+    value: ltx-video-2b-v0.9.safetensors
+  - name: base
+    value: LTX-Video
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/LTXV
+    filename: ltx-video-2b-v0.9.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-Video 2B v0.9 Checkpoint
+  type: checkpoint
+  base: LTX-Video
+  save_path: checkpoints/LTXV
+  description: LTX-Video is the first DiT-based video generation model capable of
+    generating high-quality videos in real-time. It produces 24 FPS videos at a 768x512
+    resolution faster than they can be watched. Trained on a large-scale dataset of
+    diverse videos, the model generates high-resolution videos with realistic and
+    varied content.
+  reference: https://huggingface.co/Lightricks/LTX-Video
+  filename: ltx-video-2b-v0.9.safetensors
+  url: https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.safetensors
+  size: 9.37GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

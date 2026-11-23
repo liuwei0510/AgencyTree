@@ -1,0 +1,75 @@
+id: remote:template:utility_video_frame_interpolation
+kind: comfyui_template
+title: 'Frame Interpolation: FILM or RIFE'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Frame Interpolation: FILM or RIFE'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video and select either RIFE or FILM frame interpolation model
+    to generate smoother, higher frame rate video output.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_video_frame_interpolation.json
+  sha256: 24dbe189d09872be39415cf17e631882544121c76f54807f2e060c4a2f6b7cb5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_video_frame_interpolation
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/frame-interpolation
+  title: 'Frame Interpolation: FILM or RIFE'
+  description: Upload a video and select either RIFE or FILM frame interpolation model
+    to generate smoother, higher frame rate video output.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Frame Interpolation
+  models:
+  - FILM
+  - RIFE
+  date: '2026-04-27'
+  openSource: true
+  size: 107374182
+  usage: 56
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 4
+      nodeType: LoadVideo
+      file: white_armored_warrior.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 7
+      nodeType: SaveVideo
+      file: utility_video_frame_interpolation.mp4
+      mediaType: video
+  thumbnail:
+  - input/white_armored_warrior.mp4
+  - output/utility_video_frame_interpolation.mp4
+  minComfyUIVersion: 0.20.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_video_frame_interpolation.json
+  sha256: 24dbe189d09872be39415cf17e631882544121c76f54807f2e060c4a2f6b7cb5
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_utility_video_frame_interpolation_a75fc401/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

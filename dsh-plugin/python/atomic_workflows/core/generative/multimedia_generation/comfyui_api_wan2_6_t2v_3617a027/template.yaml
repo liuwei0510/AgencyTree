@@ -1,0 +1,50 @@
+id: remote.template.api_wan2_6_t2v
+kind: comfyui_template
+title: 'Wan2.6: Text to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Wan2.6: Text to Video'
+  input_types: []
+  output_types: []
+  capability: Generate high-quality videos from text prompts with enhanced image quality,
+    smoother motion, 1080P resolution support, and improved prompt understanding for
+    natural, professional results.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan2_6_t2v.json
+  sha256: 389efbaeab2442a5103fa148f2c5a9fda1ed6f239fcb8bf0152575cb551c0b68
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan2_6_t2v
+  title: 'Wan2.6: Text to Video'
+  description: Generate high-quality videos from text prompts with enhanced image
+    quality, smoother motion, 1080P resolution support, and improved prompt understanding
+    for natural, professional results.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - Video
+  - API
+  models:
+  - Wan2.6
+  - Wan
+  date: '2025-12-20'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 11
+  username: ComfyUI
+  minComfyUIVersion: 0.3.60

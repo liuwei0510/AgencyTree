@@ -1,0 +1,43 @@
+id: remote.model.f59448176ac3132dd391
+kind: comfyui_model
+title: DMD2 LoRA (4steps/fp16)
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: DMD2 LoRA (4steps/fp16)
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: dmd2_sdxl_4step_lora_fp16.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras/DMD2
+    filename: dmd2_sdxl_4step_lora_fp16.safetensors
+    download_locator: https://huggingface.co/tianweiy/DMD2/resolve/main/dmd2_sdxl_4step_lora_fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: DMD2 LoRA (4steps/fp16)
+  type: lora
+  base: SDXL
+  save_path: loras/DMD2
+  description: DMD2 LoRA (4steps/fp16)
+  reference: https://huggingface.co/tianweiy/DMD2
+  filename: dmd2_sdxl_4step_lora_fp16.safetensors
+  url: https://huggingface.co/tianweiy/DMD2/resolve/main/dmd2_sdxl_4step_lora_fp16.safetensors
+  size: 394MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

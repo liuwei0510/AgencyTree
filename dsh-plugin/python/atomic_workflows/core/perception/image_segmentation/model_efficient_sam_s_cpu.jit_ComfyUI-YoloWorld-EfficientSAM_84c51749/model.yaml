@@ -1,0 +1,45 @@
+id: remote:model:84c51749ad8947721885
+kind: comfyui_model
+title: efficient_sam_s_cpu.jit [ComfyUI-YoloWorld-EfficientSAM]
+tree_branch:
+- core
+- perception
+- image_segmentation
+six_tuple:
+  name: efficient_sam_s_cpu.jit [ComfyUI-YoloWorld-EfficientSAM]
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/image_segmentation
+  parameters:
+  - name: filename
+    value: efficient_sam_s_cpu.jit
+  - name: base
+    value: efficient_sam
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: efficient_sam
+    save_path: yolo_world
+    filename: efficient_sam_s_cpu.jit
+    download_locator: https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_cpu.jit
+code_usable: true
+status: available
+metadata:
+  name: efficient_sam_s_cpu.jit [ComfyUI-YoloWorld-EfficientSAM]
+  type: efficient_sam
+  base: efficient_sam
+  save_path: yolo_world
+  description: Install efficient_sam_s_cpu.jit into ComfyUI-YoloWorld-EfficientSAM
+  reference: https://huggingface.co/camenduru/YoloWorld-EfficientSAM/tree/main
+  filename: efficient_sam_s_cpu.jit
+  url: https://huggingface.co/camenduru/YoloWorld-EfficientSAM/resolve/main/efficient_sam_s_cpu.jit
+  size: 106.0MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/image_segmentation/model_efficient_sam_s_cpu.jit_ComfyUI-YoloWorld-EfficientSAM_84c51749/model.yaml
+validation_errors: []

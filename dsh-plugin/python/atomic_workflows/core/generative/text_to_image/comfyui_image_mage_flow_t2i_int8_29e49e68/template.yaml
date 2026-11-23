@@ -1,0 +1,73 @@
+id: remote:template:image_mage_flow_t2i_int8
+kind: comfyui_template
+title: 'Mage-Flow: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Mage-Flow: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-resolution images from text prompts using Mage-Flow, a
+    compact 4B-parameter diffusion model that outputs a single image at native resolutions
+    from 512 to 2048 pixels per side. Ideal for rapid concept visualization, creative
+    asset generation, and research in controlled image synthesis under limited compute
+    budgets.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_t2i_int8.json
+  sha256: 8243dca3afc00073919ebfa523b0b5b8db7c2f98f4f89ec0d05c85c6212da9c8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_mage_flow_t2i_int8
+  title: 'Mage-Flow: Text to Image'
+  description: Generate high-resolution images from text prompts using Mage-Flow,
+    a compact 4B-parameter diffusion model that outputs a single image at native resolutions
+    from 512 to 2048 pixels per side. Ideal for rapid concept visualization, creative
+    asset generation, and research in controlled image synthesis under limited compute
+    budgets.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Int8
+  models:
+  - Mage-Flow
+  date: '2026-07-28'
+  openSource: true
+  size: 13421772800
+  usage: 20
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 10
+      nodeType: SaveImageAdvanced
+      file: Mage_flow.png
+      mediaType: image
+  thumbnail:
+  - output/Mage_flow.png
+  minComfyUIVersion: 0.29.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_mage_flow_t2i_int8.json
+  sha256: 8243dca3afc00073919ebfa523b0b5b8db7c2f98f4f89ec0d05c85c6212da9c8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_mage_flow_t2i_int8_29e49e68/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

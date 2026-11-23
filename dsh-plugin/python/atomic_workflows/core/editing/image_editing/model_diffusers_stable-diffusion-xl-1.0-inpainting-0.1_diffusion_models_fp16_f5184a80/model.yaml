@@ -1,0 +1,46 @@
+id: remote:model:f5184a800d2f1c4044ee
+kind: comfyui_model
+title: diffusers/stable-diffusion-xl-1.0-inpainting-0.1 (diffusion_models/fp16)
+tree_branch:
+- core
+- editing
+- image_editing
+six_tuple:
+  name: diffusers/stable-diffusion-xl-1.0-inpainting-0.1 (diffusion_models/fp16)
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: core/editing/image_editing
+  parameters:
+  - name: filename
+    value: diffusion_pytorch_model.fp16.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/xl-inpaint-0.1
+    filename: diffusion_pytorch_model.fp16.safetensors
+    download_locator: https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1/resolve/main/unet/diffusion_pytorch_model.fp16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: diffusers/stable-diffusion-xl-1.0-inpainting-0.1 (diffusion_models/fp16)
+  type: diffusion_model
+  base: SDXL
+  save_path: diffusion_models/xl-inpaint-0.1
+  description: Stable Diffusion XL inpainting model 0.1. You need UNETLoader instead
+    of CheckpointLoader.
+  reference: https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1
+  filename: diffusion_pytorch_model.fp16.safetensors
+  url: https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1/resolve/main/unet/diffusion_pytorch_model.fp16.safetensors
+  size: 5.14GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/editing/image_editing/model_diffusers_stable-diffusion-xl-1.0-inpainting-0.1_diffusion_models_fp16_f5184a80/model.yaml
+validation_errors: []

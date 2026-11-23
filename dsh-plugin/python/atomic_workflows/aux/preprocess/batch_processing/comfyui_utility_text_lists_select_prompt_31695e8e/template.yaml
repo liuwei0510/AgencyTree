@@ -1,0 +1,58 @@
+id: remote.template.utility_text_lists_select_prompt
+kind: comfyui_template
+title: Batch Process Text Prompts From List
+tree_branch:
+- aux
+- preprocess
+- batch_processing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Batch Process Text Prompts From List
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Loads and executes a workflow sequentially using prompts from a text
+    list. Iterates through each entry to generate multiple outputs from a single batch
+    operation.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_text_lists_select_prompt.json
+  sha256: 23437743b62b8e974e609f16d3c8bcd9a216b1d18d64b432d5ceffb2e5fcff46
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_text_lists_select_prompt
+  title: Batch Process Text Prompts From List
+  description: Loads and executes a workflow sequentially using prompts from a text
+    list. Iterates through each entry to generate multiple outputs from a single batch
+    operation.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Batch Generation
+  models:
+  - Z-Image-Turbo
+  date: '2026-03-30'
+  openSource: true
+  size: 20723217203
+  usage: 17
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - thumbnail/utility_text_lists_select_prompt.mp4
+  requiresCustomNodes:
+  - FL_PromptSelectorBasic
+  minComfyUIVersion: 0.3.42
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,69 @@
+id: remote.template.api_openai_gpt_image_25_sunburst_t2i
+kind: comfyui_template
+title: 'GPT Image 2.5 Sunburst: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'GPT Image 2.5 Sunburst: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: GPT Image 2.5 Sunburst is a high-fidelity image editing and generation
+    template for creating polished, detail-rich visuals. It preserves subject identity,
+    complex materials, lighting consistency and scene structure across iterations.
+    Suitable for concept refinement, product visuals, character scenes, cinematic
+    backgrounds and finished artwork that requires precision, realism and visual depth.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_gpt_image_25_sunburst_t2i.json
+  sha256: 443077c0342427a13937557f415e2335f650233d469b874689e5d879048786d8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_gpt_image_25_sunburst_t2i
+  title: 'GPT Image 2.5 Sunburst: Text to Image'
+  description: GPT Image 2.5 Sunburst is a high-fidelity image editing and generation
+    template for creating polished, detail-rich visuals. It preserves subject identity,
+    complex materials, lighting consistency and scene structure across iterations.
+    Suitable for concept refinement, product visuals, character scenes, cinematic
+    backgrounds and finished artwork that requires precision, realism and visual depth.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - GPT Image 2.5
+  logos:
+  - provider: OpenAI
+  minComfyUIVersion: 0.35.0
+  date: '2026-09-09'
+  openSource: false
+  size: 0
+  usage: 898
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 269
+      nodeType: SaveImage
+      file: api_openai_gpt_image_25_sunburst_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/api_openai_gpt_image_25_sunburst_t2i.png
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

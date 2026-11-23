@@ -1,0 +1,78 @@
+id: remote.template.image_qwen_image_union_control_lora
+kind: comfyui_template
+title: Qwen-Image Union Control
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Qwen-Image Union Control
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Generate images with precise structural control using Qwen-Image's unified
+    ControlNet LoRA. Supports multiple control types including canny, depth, lineart,
+    softedge, normal, and openpose for diverse creative applications.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image_union_control_lora.json
+  sha256: 82080481a50de8c350cb99c92ca3bdbfe9309b538e2fb7791f56d7842e8228bc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image_union_control_lora
+  title: Qwen-Image Union Control
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Generate images with precise structural control using Qwen-Image's
+    unified ControlNet LoRA. Supports multiple control types including canny, depth,
+    lineart, softedge, normal, and openpose for diverse creative applications.
+  tags:
+  - Text to Image
+  - Image
+  - ControlNet
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image
+  models:
+  - Qwen-Image
+  date: '2025-08-23'
+  size: 32749125632
+  usage: 29
+  io:
+    inputs:
+    - nodeId: 73
+      nodeType: LoadImage
+      file: image_qwen_image_union_control_lora_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: image_qwen_image_union_control_lora.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '73'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

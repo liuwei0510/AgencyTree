@@ -1,0 +1,79 @@
+id: remote.template.api_magnific_image_upscale_creative
+kind: comfyui_template
+title: 'Image Upscale: Magnific Creative'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Magnific Creative'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image and set the magnification level. Generate an upscaled
+    version of your image with support for up to 16x enlargement.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_magnific_image_upscale_creative.json
+  sha256: dd1e462c36329011b06bcb5646a788d6af677fbbad649690d26c4fccc82df33d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_magnific_image_upscale_creative
+  title: 'Image Upscale: Magnific Creative'
+  description: Upload an image and set the magnification level. Generate an upscaled
+    version of your image with support for up to 16x enlargement.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Magnific
+  logos:
+  - provider: Magnific
+  date: '2026-02-13'
+  openSource: false
+  size: 0
+  usage: 252
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: 1950_new_york.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: ComfyUI_00915_.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/1950_new_york.png
+  - output/ComfyUI_00915_.png
+  minComfyUIVersion: 0.11.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

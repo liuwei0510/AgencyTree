@@ -1,0 +1,78 @@
+id: remote:template:templates_ohneis_i2v
+kind: comfyui_template
+title: Image to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Image to Video
+  input_types: {}
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: It shows how to go from a simple prompt to a Wes Anderson-style image
+    using a cinematic image model, then enhance it with Nano Banana to improve textures
+    and details, and finally turn it into a video using the current best video model,
+    Kling 3.0.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_ohneis_i2v.json
+  sha256: 080056a8aa265a4ec4bc376f8d6a99776069ed9bf0e9962b2b86c97de980bd40
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_ohneis_i2v
+  title: Image to Video
+  description: It shows how to go from a simple prompt to a Wes Anderson-style image
+    using a cinematic image model, then enhance it with Nano Banana to improve textures
+    and details, and finally turn it into a video using the current best video model,
+    Kling 3.0.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image to Video
+  - Text to Image
+  - Video
+  models:
+  - Kling 2.6
+  - Nano Banana Pro
+  - Z-Image-Turbo
+  logos:
+  - provider:
+    - Google
+    - Kling
+  date: '2026-03-19'
+  openSource: false
+  size: 20723217203
+  usage: 6
+  searchRank: 0
+  username: ohneis652
+  thumbnail:
+  - thumbnail/templates_ohneis_i2v-1.png
+  - thumbnail/templates_ohneis_i2v-2.png
+  minComfyUIVersion: 0.5.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_ohneis_i2v.json
+  sha256: 080056a8aa265a4ec4bc376f8d6a99776069ed9bf0e9962b2b86c97de980bd40
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_templates_ohneis_i2v_d0ccfa1c/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

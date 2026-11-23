@@ -1,0 +1,92 @@
+id: remote:template:video_minimax_h3_i2v
+kind: comfyui_template
+title: 'MiniMax H3: Image to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3: Image to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Turn a starting image into a short, high-quality video clip with MiniMax
+    H3, a unified multimodal model that generates visuals and synchronized audio in
+    a single pass. The workflow takes 1 input image and produces 1 video output, with
+    optional text or reference media to steer motion, style, or sound. Ideal for rapid
+    concept visualization, character-driven animation tests, and creating shareable
+    social media clips with built-in sound design.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_i2v.json
+  sha256: 390b9541c63e22c5be85889bfa2305ddb2c0553c57b206b4582ca84b424aaefa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_minimax_h3_i2v
+  title: 'MiniMax H3: Image to Video'
+  description: Turn a starting image into a short, high-quality video clip with MiniMax
+    H3, a unified multimodal model that generates visuals and synchronized audio in
+    a single pass. The workflow takes 1 input image and produces 1 video output, with
+    optional text or reference media to steer motion, style, or sound. Ideal for rapid
+    concept visualization, character-driven animation tests, and creating shareable
+    social media clips with built-in sound design.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Int8
+  - Video
+  models:
+  - MiniMax H3
+  date: '2026-08-02'
+  openSource: true
+  size: 44452911514
+  usage: 21095
+  searchRank: 1000000
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 114
+      nodeType: LoadImage
+      file: transparent_rgb_gaming_mouse.png
+      mediaType: image
+    outputs:
+    - nodeId: 92
+      nodeType: SaveVideo
+      file: video_minimax_h3_i2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/video_minimax_h3_i2v.mp4
+  minComfyUIVersion: 0.30.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_minimax_h3_i2v.json
+  sha256: 390b9541c63e22c5be85889bfa2305ddb2c0553c57b206b4582ca84b424aaefa
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '114'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

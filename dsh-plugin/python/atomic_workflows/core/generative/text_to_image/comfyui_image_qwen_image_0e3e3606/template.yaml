@@ -1,0 +1,62 @@
+id: remote.template.image_qwen_image
+kind: comfyui_template
+title: 'Qwen-Image: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Qwen-Image: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images with exceptional multilingual text rendering and editing
+    capabilities using Qwen-Image's 20B MMDiT model.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_qwen_image.json
+  sha256: c6cc3be8bdf8546f78c277b1d4b2a69e0c659cc387307b222df7ffbc40e31974
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_qwen_image
+  title: 'Qwen-Image: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate images with exceptional multilingual text rendering and editing
+    capabilities using Qwen-Image's 20B MMDiT model.
+  tutorialUrl: https://docs.comfy.org/tutorials/image/qwen/qwen-image
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - Qwen-Image
+  date: '2025-08-05'
+  size: 31782757990
+  usage: 17
+  io:
+    outputs:
+    - nodeId: 60
+      nodeType: SaveImage
+      file: image_qwen_image.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/image_qwen_image.png
+  minComfyUIVersion: 0.4.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,64 @@
+id: remote.template.image_joyai_image_edit
+kind: comfyui_template
+title: JoyAI Image Edit
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: JoyAI Image Edit
+  input_types:
+  - image
+  output_types: []
+  capability: Edit images by following natural language instructions with JoyAI-Image-Edit,
+    which leverages multimodal understanding for precise, spatially aware modifications.
+    This workflow takes one reference image and produces one edited image output plus
+    a side-by-side comparison view. Ideal for instruction-guided retouching, region-specific
+    object replacement, and complex scene adjustments requiring relational grounding.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_joyai_image_edit.json
+  sha256: 85644e201e755a6c7225dfeaf286bdfd33a0cf71dccfc5607e86b8f99d6cda1f
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_joyai_image_edit
+  title: JoyAI Image Edit
+  description: Edit images by following natural language instructions with JoyAI-Image-Edit,
+    which leverages multimodal understanding for precise, spatially aware modifications.
+    This workflow takes one reference image and produces one edited image output plus
+    a side-by-side comparison view. Ideal for instruction-guided retouching, region-specific
+    object replacement, and complex scene adjustments requiring relational grounding.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Image Edit
+  - Int8
+  models:
+  - JoyAI Image Edit
+  date: '2026-07-20'
+  openSource: true
+  size: 26736171418
+  usage: 12
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 41
+      nodeType: LoadImage
+      file: perfume_bottle.png.png
+      mediaType: image
+  thumbnail:
+  - input/perfume_bottle.png.png
+  - output/Joy_Image_Edit.png
+  minComfyUIVersion: 0.29.0

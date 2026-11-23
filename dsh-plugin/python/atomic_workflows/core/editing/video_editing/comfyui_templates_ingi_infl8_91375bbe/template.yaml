@@ -1,0 +1,78 @@
+id: remote:template:templates_ingi_infl8
+kind: comfyui_template
+title: Inflation Lora Character Expansion Effect Video
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Inflation Lora Character Expansion Effect Video
+  input_types: {}
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Upload a character image and input your prompt. Generate an animated
+    video where the character expands with an inflation effect.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_ingi_infl8.json
+  sha256: 1d41304b9bf06dc24e2c402c2bc7a08bf9a7902f21c9fb7a87864603eec924fc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates_ingi_infl8
+  title: Inflation Lora Character Expansion Effect Video
+  description: Upload a character image and input your prompt. Generate an animated
+    video where the character expands with an inflation effect.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video
+  - Image to Video
+  models:
+  - wan2.2 Animate
+  requiresCustomNodes:
+  - ComfyUI-WanAnimatePreprocess
+  - ComfyUI-WanVideoWrapper
+  - ComfyUI-segment-anything-2
+  - comfyui-kjnodes
+  - comfyui-videohelpersuite
+  date: '2026-03-09'
+  openSource: true
+  size: 50787988275
+  usage: 8
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: VHS_LoadVideo
+      file: woman_walking.mp4
+      mediaType: video
+  thumbnailVariant: compareSlider
+  username: ingi
+  thumbnail:
+  - input/woman_walking.mp4
+  - output/templates_ingi_infl8.mp4
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates_ingi_infl8.json
+  sha256: 1d41304b9bf06dc24e2c402c2bc7a08bf9a7902f21c9fb7a87864603eec924fc
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_templates_ingi_infl8_91375bbe/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

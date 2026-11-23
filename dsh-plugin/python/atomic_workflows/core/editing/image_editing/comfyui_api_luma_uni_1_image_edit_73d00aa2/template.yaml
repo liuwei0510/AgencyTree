@@ -1,0 +1,78 @@
+id: remote.template.api_luma_uni_1_image_edit
+kind: comfyui_template
+title: 'Luma UNI-1: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Luma UNI-1: Image Edit'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit existing images with Uni-1's Image Edit mode, preserving composition
+    and core elements. Supports targeted adjustments like lighting and color using
+    prompts and reference images.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_luma_uni_1_image_edit.json
+  sha256: ddafc4f93d7a6131e7c725ce20674d4eb4d11f0955e8cd62f35584f482c8c3bf
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_luma_uni_1_image_edit
+  title: 'Luma UNI-1: Image Edit'
+  description: Edit existing images with Uni-1's Image Edit mode, preserving composition
+    and core elements. Supports targeted adjustments like lighting and color using
+    prompts and reference images.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - API
+  models:
+  - Luma UNI-1
+  logos:
+  - provider: Luma
+  date: '2026-05-05'
+  openSource: false
+  size: 0
+  usage: 38
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 33
+      nodeType: LoadImage
+      file: the_leap.png
+      mediaType: image
+    outputs:
+    - nodeId: 34
+      nodeType: SaveImage
+      file: api_luma_uni_1_image_edit.png
+      mediaType: image
+  minComfyUIVersion: 0.20.3
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  source_image:
+    node_id: '33'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

@@ -1,0 +1,90 @@
+id: remote:template:api_bfl_flux3_image_bboxes
+kind: comfyui_template
+title: 'FLUX 3 Image: Bounding Box Edit'
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX 3 Image: Bounding Box Edit'
+  input_types:
+    source_image: image_filenames
+  output_types: {}
+  capability: 'Place objects and text where you want them with FLUX 3 Image by feeding
+    boxes from the Create Bounding Boxes node into the prompt, so each box carries
+    its own description and copy into the render. Boxes are relative to the canvas,
+    so set the output to the same aspect ratio. One image is output, up to 4K. Ideal
+    for poster and layout composition, placing headlines and captions, and controlling
+    where subjects sit in the frame.
+
+    '
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_image_bboxes.json
+  sha256: fdcc6865bdb4cb1c19f2e7e9a7caa0bc0475dbbf326280fd18da97f939273b64
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bfl_flux3_image_bboxes
+  title: 'FLUX 3 Image: Bounding Box Edit'
+  description: 'Place objects and text where you want them with FLUX 3 Image by feeding
+    boxes from the Create Bounding Boxes node into the prompt, so each box carries
+    its own description and copy into the render. Boxes are relative to the canvas,
+    so set the output to the same aspect ratio. One image is output, up to 4K. Ideal
+    for poster and layout composition, placing headlines and captions, and controlling
+    where subjects sit in the frame.
+
+    '
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image Edit
+  - API
+  models:
+  - FLUX 3 Image
+  logos:
+  - provider: Black Forest Labs
+  minComfyUIVersion: 0.38.2
+  date: '2026-10-01'
+  openSource: false
+  size: 0
+  usage: 173
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: giant_flamingo_balloon_ship_harbor.png
+      mediaType: image
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bfl_flux3_image_bboxes.json
+  sha256: fdcc6865bdb4cb1c19f2e7e9a7caa0bc0475dbbf326280fd18da97f939273b64
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_bfl_flux3_image_bboxes_0868c331/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs: []
+contract_errors:
+- No explicit output interface could be extracted
+planning_eligible: false

@@ -1,0 +1,89 @@
+id: remote:template:utility_recraft_creative_image_upscale
+kind: comfyui_template
+title: 'Image Upscale: Recraft Creative'
+tree_branch:
+- aux
+- postprocess
+- upscale
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Image Upscale: Recraft Creative'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload an image to enhance and upscale it. Recraft's AI reconstructs
+    details and improves textures, outputting a higher-quality image with a natural
+    appearance.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_recraft_creative_image_upscale.json
+  sha256: 20aee4953e962ae1380c1c77b494c40622942d7bb9bf5063042c8e14a04c501c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: utility_recraft_creative_image_upscale
+  title: 'Image Upscale: Recraft Creative'
+  description: Upload an image to enhance and upscale it. Recraft's AI reconstructs
+    details and improves textures, outputting a higher-quality image with a natural
+    appearance.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Image Upscale
+  models:
+  - Recraft
+  date: '2026-02-02'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  logos:
+  - provider: Recraft
+  io:
+    inputs:
+    - nodeId: 2
+      nodeType: LoadImage
+      file: butterfly_girl.png
+      mediaType: image
+    outputs:
+    - nodeId: 3
+      nodeType: SaveImage
+      file: utility_recraft_creative_image_upscale.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - input/butterfly_girl.png
+  - output/utility_recraft_creative_image_upscale.png
+  minComfyUIVersion: 0.9.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/utility_recraft_creative_image_upscale.json
+  sha256: 20aee4953e962ae1380c1c77b494c40622942d7bb9bf5063042c8e14a04c501c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '2'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true

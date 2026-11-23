@@ -1,0 +1,63 @@
+id: remote.template.image_netayume_lumina_t2i
+kind: comfyui_template
+title: NetaYume Lumina Text to Image
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: NetaYume Lumina Text to Image
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: High-quality anime-style image generation with enhanced character understanding
+    and detailed textures. Fine-tuned from Neta Lumina on Danbooru dataset.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_netayume_lumina_t2i.json
+  sha256: 22664e62d6388908fa6a5e5c8026b578f699395e534bd7ac7c67915bcba159f1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_netayume_lumina_t2i
+  title: NetaYume Lumina Text to Image
+  mediaType: image
+  mediaSubtype: webp
+  description: High-quality anime-style image generation with enhanced character understanding
+    and detailed textures. Fine-tuned from Neta Lumina on Danbooru dataset.
+  tags:
+  - Anime
+  - Image
+  - Text to Image
+  models:
+  - OmniGen
+  date: '2025-10-10'
+  size: 10630044058
+  usage: 111
+  tutorialUrl: https://docs.comfy.org/tutorials/image/newbie-image/newbie-image-exp-0-1
+  searchRank: 0
+  openSource: true
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_netayume_lumina_t2i.png
+      mediaType: image
+  username: ComfyUI
+  thumbnail:
+  - output/image_netayume_lumina_t2i.png
+  minComfyUIVersion: 0.3.42
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

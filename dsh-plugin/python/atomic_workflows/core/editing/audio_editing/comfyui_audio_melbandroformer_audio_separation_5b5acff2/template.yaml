@@ -1,0 +1,63 @@
+id: remote.template.audio_melbandroformer_audio_separation
+kind: comfyui_template
+title: MelBandRoFormer Audio Separation
+tree_branch:
+- core
+- editing
+- audio_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: MelBandRoFormer Audio Separation
+  input_types: {}
+  output_types:
+    audio: audio_path
+  capability: Load an audio file and separate it into vocal and instrumental stems
+    using the MelBandRoFormer model. Outputs two MP3 files for isolated vocals and
+    background music.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/audio_melbandroformer_audio_separation.json
+  sha256: 8d4863daa6ec66041b77c989c052c65977fb74aca776a5ad51cfe3a5f5e41f26
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: audio_melbandroformer_audio_separation
+  title: MelBandRoFormer Audio Separation
+  description: Load an audio file and separate it into vocal and instrumental stems
+    using the MelBandRoFormer model. Outputs two MP3 files for isolated vocals and
+    background music.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Audio
+  - Audio Editing
+  models:
+  - None
+  date: '2026-03-30'
+  openSource: true
+  size: 429496730
+  usage: 36
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadAudio
+      file: melbandroformer_input.mp3
+      mediaType: audio
+  requiresCustomNodes:
+  - ComfyUI-MelBandRoFormer
+  minComfyUIVersion: 0.25.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: audio
+  type: audio_path

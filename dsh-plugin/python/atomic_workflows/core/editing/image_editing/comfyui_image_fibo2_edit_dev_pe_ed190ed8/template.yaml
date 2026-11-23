@@ -1,0 +1,108 @@
+id: remote:template:image_fibo2_edit_dev_pe
+kind: comfyui_template
+title: 'Fibo 2.0 Dev: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Fibo 2.0 Dev: Image Edit'
+  input_types:
+    seed: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: 'Same graph as the Turbo template loaded with the full non-distilled
+    Fibo 2.0 Dev weights: 50 steps at CFG 5 with Bria''s structured negative, for
+    the cleanest edits when sampling time is not the constraint. The optional prompt
+    enhancer rewrites the instruction into a structured caption; switch it off to
+    sample the raw prompt.'
+  parameters:
+  - name: seed
+    type: number
+    required: false
+    default: 1234
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_fibo2_edit_dev_pe.json
+  sha256: 39982c4e7a90c52564be413417d133ed57c013f49d4e122e0977a0d790665e01
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_fibo2_edit_dev_pe
+  title: 'Fibo 2.0 Dev: Image Edit'
+  description: 'Same graph as the Turbo template loaded with the full non-distilled
+    Fibo 2.0 Dev weights: 50 steps at CFG 5 with Bria''s structured negative, for
+    the cleanest edits when sampling time is not the constraint. The optional prompt
+    enhancer rewrites the instruction into a structured caption; switch it off to
+    sample the raw prompt.'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Int8
+  models:
+  - Fibo 2.0
+  minComfyUIVersion: 0.43.0
+  date: '2026-10-26'
+  openSource: true
+  size: 26971291510
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: red_bowler_hat_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 7
+      nodeType: SaveImage
+      file: image_fibo2_edit_dev_pe.png
+      mediaType: image
+  thumbnail:
+  - input/red_bowler_hat_portrait.png
+  - output/image_fibo2_edit_dev_pe.png
+  includeOnDistributions:
+  - local
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_fibo2_edit_dev_pe.json
+  sha256: 39982c4e7a90c52564be413417d133ed57c013f49d4e122e0977a0d790665e01
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_fibo2_edit_dev_pe_ed190ed8/template.yaml
+validation_errors: []
+inputs:
+- name: seed
+  type: number
+  required: false
+  default: 1234
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  seed:
+    node_id: '5'
+    input_key: seed
+    widget_index: 0
+  source_image:
+    node_id: '10'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

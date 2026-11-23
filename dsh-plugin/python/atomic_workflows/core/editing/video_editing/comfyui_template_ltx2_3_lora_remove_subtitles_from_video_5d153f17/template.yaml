@@ -1,0 +1,64 @@
+id: remote.template.template_ltx2_3_lora_remove_subtitles_from_video
+kind: comfyui_template
+title: Remove Subtitles from Video - LTX 2.3 LoRA
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Remove Subtitles from Video - LTX 2.3 LoRA
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload an input video with subtitles or text occlusions and remove the
+    text elements with one click.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_ltx2_3_lora_remove_subtitles_from_video.json
+  sha256: 7793ecfa8c9a60fc4369e6395aa49f98d7cf3bd253b727bb7b020239a7cb6d87
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_ltx2_3_lora_remove_subtitles_from_video
+  title: Remove Subtitles from Video - LTX 2.3 LoRA
+  description: Upload an input video with subtitles or text occlusions and remove
+    the text elements with one click.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Edit
+  - LoRA
+  models:
+  - LTX-2.3
+  requiresCustomNodes:
+  - ComfyUI-LTXVideo
+  - comfyui-kjnodes
+  date: '2026-05-21'
+  openSource: true
+  includeOnDistributions:
+  - cloud
+  size: 71511205478
+  usage: 15
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 5160
+      nodeType: LoadVideo
+      file: input_subtitles-2.mp4
+      mediaType: video
+  minComfyUIVersion: 0.16.4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: video
+  type: video_path

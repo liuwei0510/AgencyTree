@@ -1,0 +1,94 @@
+id: remote:template:video_ltx2_depth_to_video
+kind: comfyui_template
+title: LTX-2 Depth to Video
+tree_branch:
+- core
+- perception
+- depth_estimation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: LTX-2 Depth to Video
+  input_types:
+    source_image: image_filenames
+    scale_factor: number
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate high-quality videos from depth maps with synchronized audio-video
+    generation using LTX-2. Features precise depth control, spatial awareness, and
+    efficient performance.
+  parameters: &id001
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: scale_factor
+    type: number
+    required: false
+    default: 0.5
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_depth_to_video.json
+  sha256: 46de71f715c2ce14173945febd46bd53c733908c04a5276ebd34367f4f9631a4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_ltx2_depth_to_video
+  title: LTX-2 Depth to Video
+  description: Generate high-quality videos from depth maps with synchronized audio-video
+    generation using LTX-2. Features precise depth control, spatial awareness, and
+    efficient performance.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - ControlNet
+  - Video
+  thumbnailVariant: hoverDissolve
+  models:
+  - LTX-2
+  - Lightricks
+  date: '2026-01-06'
+  size: 38010460570
+  usage: 11
+  searchRank: 0
+  openSource: true
+  io:
+    inputs:
+    - nodeId: 160
+      nodeType: LoadImage
+      file: minimalist_sky_view_lounge.png
+      mediaType: image
+    - nodeId: 183
+      nodeType: LoadVideo
+      file: minimalist_sky_view_lounge.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_ltx2_depth_to_video.json
+  sha256: 46de71f715c2ce14173945febd46bd53c733908c04a5276ebd34367f4f9631a4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/perception/depth_estimation/comfyui_video_ltx2_depth_to_video_b29ff03e/template.yaml
+validation_errors: []
+inputs: *id001
+inject:
+  source_image:
+    node_id: '160'
+    input_key: image
+    widget_index: 0
+  scale_factor:
+    node_id: '146'
+    input_key: scale_by
+    widget_index: 1
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

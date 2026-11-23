@@ -1,0 +1,71 @@
+id: remote:template:flux_dev_full_text_to_image
+kind: comfyui_template
+title: 'Flux.1 Dev: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Flux.1 Dev: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images with Flux Dev full version. Requires larger
+    VRAM and multiple model files, but provides the best prompt following capability
+    and image quality.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_dev_full_text_to_image.json
+  sha256: 46769791b9a71d806585bee99bb56483e07b9e63a7f98c99ec88dcf2f68733ec
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux_dev_full_text_to_image
+  title: 'Flux.1 Dev: Text to Image'
+  mediaType: image
+  mediaSubtype: webp
+  description: Generate high-quality images with Flux Dev full version. Requires larger
+    VRAM and multiple model files, but provides the best prompt following capability
+    and image quality.
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-1-text-to-image
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - FLUX
+  - FLUX.1
+  date: '2025-03-01'
+  size: 34144990003
+  usage: 140
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: flux_dev_full_text_to_image.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/flux_dev_full_text_to_image.png
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_dev_full_text_to_image.json
+  sha256: 46769791b9a71d806585bee99bb56483e07b9e63a7f98c99ec88dcf2f68733ec
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_flux_dev_full_text_to_image_bfaab2cb/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

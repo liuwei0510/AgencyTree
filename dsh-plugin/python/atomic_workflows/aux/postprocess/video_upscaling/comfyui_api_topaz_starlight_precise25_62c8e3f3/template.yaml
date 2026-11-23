@@ -1,0 +1,76 @@
+id: remote:template:api_topaz_starlight_precise25
+kind: comfyui_template
+title: 'Video Upscale: Topaz Starlight Precise 2.5'
+tree_branch:
+- aux
+- postprocess
+- video_upscaling
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Video Upscale: Topaz Starlight Precise 2.5'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload a video to enhance its resolution using the Topaz Starlight Precise
+    2.5 model. This workflow produces sharper 4K output with reduced artifacts compared
+    to previous versions.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_starlight_precise25.json
+  sha256: 0b3071a33f2a62b3095f68cbf19439eecb78d478354d3c6296e7be2372045357
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_topaz_starlight_precise25
+  title: 'Video Upscale: Topaz Starlight Precise 2.5'
+  description: Upload a video to enhance its resolution using the Topaz Starlight
+    Precise 2.5 model. This workflow produces sharper 4K output with reduced artifacts
+    compared to previous versions.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Video Upscale
+  - API
+  models:
+  - Topaz
+  logos:
+  - provider: Topaz
+  date: '2026-03-26'
+  openSource: false
+  size: 0
+  usage: 275
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 3
+      nodeType: LoadVideo
+      file: running_horse.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 4
+      nodeType: SaveVideo
+      file: running_horse.mp4
+      mediaType: video
+  thumbnail:
+  - thumbnail/api_topaz_starlight_precise25.mp4
+  minComfyUIVersion: 0.20.2
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_topaz_starlight_precise25.json
+  sha256: 0b3071a33f2a62b3095f68cbf19439eecb78d478354d3c6296e7be2372045357
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/aux/postprocess/video_upscaling/comfyui_api_topaz_starlight_precise25_62c8e3f3/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

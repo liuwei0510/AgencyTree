@@ -1,0 +1,57 @@
+id: remote.template.api_tripo_multiview_to_model
+kind: comfyui_template
+title: 'Tripo: Multiview to Model'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Tripo: Multiview to Model'
+  input_types:
+  - image
+  - image
+  output_types: []
+  capability: Build 3D models from multiple angles with Tripo's advanced scanner.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_tripo_multiview_to_model.json
+  sha256: db2ef3d6e775494126fde2837eab4e4cac89f4f2c7d5f1c82fb5874bbdcd6cd1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_tripo_multiview_to_model
+  title: 'Tripo: Multiview to Model'
+  description: Build 3D models from multiple angles with Tripo's advanced scanner.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to 3D
+  - 3D
+  - API
+  models:
+  - Tripo
+  date: '2025-03-01'
+  tutorialUrl: ''
+  openSource: false
+  size: 0
+  usage: 13
+  io:
+    inputs:
+    - nodeId: 7
+      nodeType: LoadImage
+      file: api_tripo_multiview_to_model_front_image.jpg
+      mediaType: image
+    - nodeId: 8
+      nodeType: LoadImage
+      file: api_tripo_multiview_to_model_back_image.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.35.1

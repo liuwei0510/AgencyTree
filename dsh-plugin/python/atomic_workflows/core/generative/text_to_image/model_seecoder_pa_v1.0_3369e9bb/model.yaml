@@ -1,0 +1,45 @@
+id: remote:model:3369e9bb90bb63b74e90
+kind: comfyui_model
+title: seecoder pa v1.0
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: seecoder pa v1.0
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: seecoder-pa-v1-0.safetensors
+  - name: base
+    value: SEECODER
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: seecoder
+    save_path: seecoders
+    filename: seecoder-pa-v1-0.safetensors
+    download_locator: https://huggingface.co/shi-labs/prompt-free-diffusion/resolve/main/pretrained/pfd/seecoder/seecoder-pa-v1-0.safetensors
+code_usable: true
+status: available
+metadata:
+  name: seecoder pa v1.0
+  type: seecoder
+  base: SEECODER
+  save_path: seecoders
+  description: SeeCoder model
+  reference: https://huggingface.co/shi-labs/prompt-free-diffusion/tree/main/pretrained/pfd/seecoder
+  filename: seecoder-pa-v1-0.safetensors
+  url: https://huggingface.co/shi-labs/prompt-free-diffusion/resolve/main/pretrained/pfd/seecoder/seecoder-pa-v1-0.safetensors
+  size: 1.19GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_image/model_seecoder_pa_v1.0_3369e9bb/model.yaml
+validation_errors: []

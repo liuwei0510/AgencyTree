@@ -1,0 +1,71 @@
+id: remote:template:video_fastvideo_fasth3_t2v
+kind: comfyui_template
+title: 'FastVideo FastH3: Text to Video'
+tree_branch:
+- core
+- perception
+- media_understanding
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FastVideo FastH3: Text to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate synchronized video and audio directly from text using a distilled
+    eight-step model, producing one video output with no file inputs required. Ideal
+    for rapid text-to-video prototyping, audio-visual content creation, and creative
+    storytelling where fast generation matters more than maximum detail.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_fastvideo_fasth3_t2v.json
+  sha256: e0b55d0ae5c70fe31f24c4480553b5da5f9dc7095ea153822cffa4b6467c2dd8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_fastvideo_fasth3_t2v
+  title: 'FastVideo FastH3: Text to Video'
+  description: Generate synchronized video and audio directly from text using a distilled
+    eight-step model, producing one video output with no file inputs required. Ideal
+    for rapid text-to-video prototyping, audio-visual content creation, and creative
+    storytelling where fast generation matters more than maximum detail.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Video
+  - Int8
+  models:
+  - MiniMax H3
+  minComfyUIVersion: 0.36.0
+  date: '2026-09-15'
+  openSource: true
+  size: 42949672960
+  usage: 696
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 92
+      nodeType: SaveVideo
+      file: video_fastvideo_fasth3_t2v.mp4
+      mediaType: video
+  thumbnail:
+  - output/video_fastvideo_fasth3_t2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_fastvideo_fasth3_t2v.json
+  sha256: e0b55d0ae5c70fe31f24c4480553b5da5f9dc7095ea153822cffa4b6467c2dd8
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_video/comfyui_video_fastvideo_fasth3_t2v_65351ca9/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

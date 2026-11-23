@@ -1,0 +1,65 @@
+id: remote.template.api_bytedance_seedream_5_0_pro_t2i
+kind: comfyui_template
+title: 'Seedream 5.0 Pro: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Seedream 5.0 Pro: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate images from text prompts using Seedream 5.0 Pro, producing
+    one high-quality output. Ideal for creative concept art, marketing visual mockups,
+    and rapid ideation for design projects.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_bytedance_seedream_5_0_pro_t2i.json
+  sha256: e81c6fa91176af2a1c4565bda40e009aa888a6823107ab622576e36347832c58
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_bytedance_seedream_5_0_pro_t2i
+  title: 'Seedream 5.0 Pro: Text to Image'
+  description: Generate images from text prompts using Seedream 5.0 Pro, producing
+    one high-quality output. Ideal for creative concept art, marketing visual mockups,
+    and rapid ideation for design projects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to Image
+  models:
+  - Seedream 5.0 Pro
+  logos:
+  - provider: ByteDance
+  date: '2026-07-08'
+  openSource: false
+  size: 0
+  usage: 2011
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 2
+      nodeType: SaveImageAdvanced
+      file: Seedream5.0_Pro_T2I.png
+      mediaType: image
+  thumbnail:
+  - output/Seedream5.0_Pro_T2I.png
+  minComfyUIVersion: 0.31.0
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

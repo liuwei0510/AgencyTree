@@ -1,0 +1,47 @@
+id: remote:model:80378449a682ff6af8e3
+kind: comfyui_model
+title: FLUX.1 [Schnell] Diffusion model
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: FLUX.1 [Schnell] Diffusion model
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: flux1-schnell.safetensors
+  - name: base
+    value: FLUX.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: diffusion_model
+    save_path: diffusion_models/FLUX1
+    filename: flux1-schnell.safetensors
+    download_locator: https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors
+code_usable: true
+status: available
+metadata:
+  name: FLUX.1 [Schnell] Diffusion model
+  type: diffusion_model
+  base: FLUX.1
+  save_path: diffusion_models/FLUX1
+  description: FLUX.1 [Schnell] Diffusion model (a.k.a. FLUX.1 turbo model)[w/Due
+    to the large size of the model, it is recommended to download it through a browser
+    if possible.]
+  reference: https://huggingface.co/black-forest-labs/FLUX.1-schnell
+  filename: flux1-schnell.safetensors
+  url: https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors
+  size: 23.8GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_image/model_FLUX.1_Schnell_Diffusion_model_80378449/model.yaml
+validation_errors: []

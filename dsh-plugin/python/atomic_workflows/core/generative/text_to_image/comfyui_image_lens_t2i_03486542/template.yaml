@@ -1,0 +1,63 @@
+id: remote.template.image_lens_t2i
+kind: comfyui_template
+title: 'Lens: Text to Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Lens: Text to Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt and select resolution and aspect ratio. Generate
+    a high-quality image using the efficient Lens text-to-image model.
+  parameters: &id001 []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_lens_t2i.json
+  sha256: efe86595276758e672172093fc394531475363a3d669fc6d864c0c3d7003dd00
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_lens_t2i
+  tutorialUrl: https://docs.comfy.org/tutorials/image/lens/lens
+  title: 'Lens: Text to Image'
+  description: Input a text prompt and select resolution and aspect ratio. Generate
+    a high-quality image using the efficient Lens text-to-image model.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  models:
+  - Lens
+  date: '2026-05-26'
+  openSource: true
+  size: 21796959027
+  usage: 37
+  searchRank: 0
+  username: ComfyUI
+  io:
+    outputs:
+    - nodeId: 43
+      nodeType: SaveImage
+      file: image_lens_t2i.png
+      mediaType: image
+  thumbnail:
+  - output/image_lens_t2i.png
+  includeOnDistributions:
+  - local
+  minComfyUIVersion: 0.16.4
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject: {}
+outputs:
+- name: images
+  type: image_filenames

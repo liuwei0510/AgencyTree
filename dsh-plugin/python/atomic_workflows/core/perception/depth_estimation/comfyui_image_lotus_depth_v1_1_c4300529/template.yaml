@@ -1,0 +1,89 @@
+id: remote:template:image_lotus_depth_v1_1
+kind: comfyui_template
+title: 'Depth Estimation: Lotus'
+tree_branch:
+- core
+- perception
+- depth_estimation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Depth Estimation: Lotus'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Run Lotus Depth in ComfyUI for zero-shot, efficient monocular depth
+    estimation with high detail retention.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_lotus_depth_v1_1.json
+  sha256: 23689e2aade528f0dd4761b638e180a79ba53ff12239d4144d0f3a17b215b91d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_lotus_depth_v1_1
+  tutorialUrl: https://docs.comfy.org/tutorials/utility/moge
+  title: 'Depth Estimation: Lotus'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  description: Run Lotus Depth in ComfyUI for zero-shot, efficient monocular depth
+    estimation with high detail retention.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - SD1.5
+  - Stability
+  date: '2025-05-21'
+  size: 2040109466
+  usage: 10
+  io:
+    inputs:
+    - nodeId: 12
+      nodeType: LoadImage
+      file: image_lotus_depth_v1_1_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_lotus_depth_v1_1.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - input/image_lotus_depth_v1_1_input_image.png
+  - output/image_lotus_depth_v1_1.png
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_lotus_depth_v1_1.json
+  sha256: 23689e2aade528f0dd4761b638e180a79ba53ff12239d4144d0f3a17b215b91d
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/perception/depth_estimation/comfyui_image_lotus_depth_v1_1_c4300529/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '12'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+planning_eligible: true
+contract_errors: []

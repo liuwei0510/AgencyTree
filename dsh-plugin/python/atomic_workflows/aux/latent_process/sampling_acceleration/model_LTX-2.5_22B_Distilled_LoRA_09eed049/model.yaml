@@ -1,0 +1,46 @@
+id: remote:model:09eed04975b651f463b0
+kind: comfyui_model
+title: LTX-2.5 22B Distilled LoRA
+tree_branch:
+- aux
+- latent_process
+- sampling_acceleration
+six_tuple:
+  name: LTX-2.5 22B Distilled LoRA
+  input_types:
+  - ComfyUI workflow/model input
+  output_types:
+  - ComfyUI model component
+  capability: aux/latent_process/sampling_acceleration
+  parameters:
+  - name: filename
+    value: ltx-2.5-22b-distilled-lora-450-bf16.safetensors
+  - name: base
+    value: LTX-2.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: lora
+    save_path: loras
+    filename: ltx-2.5-22b-distilled-lora-450-bf16.safetensors
+    download_locator: https://huggingface.co/Lightricks/LTX-2.5/resolve/main/loras/ltx-2.5-22b-distilled-lora-450-bf16.safetensors
+code_usable: true
+status: available
+metadata:
+  name: LTX-2.5 22B Distilled LoRA
+  type: lora
+  base: LTX-2.5
+  save_path: loras
+  description: A LoRA adapter that transforms the standard LTX-2.5 22B model into
+    a distilled version when loaded.
+  reference: https://huggingface.co/Lightricks/LTX-2.5
+  filename: ltx-2.5-22b-distilled-lora-450-bf16.safetensors
+  url: https://huggingface.co/Lightricks/LTX-2.5/resolve/main/loras/ltx-2.5-22b-distilled-lora-450-bf16.safetensors
+  size: 8.90GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/latent_process/sampling_acceleration/model_LTX-2.5_22B_Distilled_LoRA_09eed049/model.yaml
+validation_errors: []

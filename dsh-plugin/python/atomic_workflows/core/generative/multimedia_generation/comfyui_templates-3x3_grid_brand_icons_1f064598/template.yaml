@@ -1,0 +1,59 @@
+id: remote.template.templates-3x3_grid_brand_icons
+kind: comfyui_template
+title: 3x3 Brand Icon Assets Grid
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 3x3 Brand Icon Assets Grid
+  input_types:
+  - image
+  output_types: []
+  capability: Upload a reference image of an icon, enter your brand information in
+    the prompt and generate 9 unique on brand stylized icon assets.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/templates-3x3_grid_brand_icons.json
+  sha256: 3d6a2d4171f8119763cb52a4f9f31d05d572d5a91f581c8586630ebff2bb3968
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: templates-3x3_grid_brand_icons
+  title: 3x3 Brand Icon Assets Grid
+  description: Upload a reference image of an icon, enter your brand information in
+    the prompt and generate 9 unique on brand stylized icon assets.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Brand Design
+  - Image Edit
+  models:
+  - Gemini3 Pro Image Preview
+  - Google
+  - Nano Banana Pro
+  date: '2026-01-13'
+  openSource: false
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  usage: 17
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: input_reference_icon.png
+      mediaType: image
+  username: hellorob
+  thumbnail:
+  - thumbnail/templates-3x3_grid_brand_icons.mp4
+  minComfyUIVersion: 0.15.0

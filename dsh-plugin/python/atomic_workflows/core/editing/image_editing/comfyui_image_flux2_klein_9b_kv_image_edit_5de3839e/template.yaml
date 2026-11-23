@@ -1,0 +1,123 @@
+id: remote:template:image_flux2_klein_9b_kv_image_edit
+kind: comfyui_template
+title: 'FLUX.2 Klein KV: Image Edit'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'FLUX.2 Klein KV: Image Edit'
+  input_types:
+    negative_prompt: string
+    source_image: image_filenames
+    source_image_2: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Upload reference images and a text prompt. Generate multiple edited
+    images using cached image data for faster processing.
+  parameters:
+  - name: negative_prompt
+    type: string
+    required: false
+    default: Have the man in Figure 1 put on the clothes from Figure 2, wear a hat,
+      and carry a bag. Then, change the background environment to an African savannah
+      while keeping the man in the same posture to give a natural outdoor feel.
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  - name: source_image_2
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_klein_9b_kv_image_edit.json
+  sha256: 21b2dabcd2a1dcf9677de7df07fb7557b5f99e834031ec98f544791e6f2f6b32
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux2_klein_9b_kv_image_edit
+  title: 'FLUX.2 Klein KV: Image Edit'
+  description: Upload reference images and a text prompt. Generate multiple edited
+    images using cached image data for faster processing.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image
+  - Image Edit
+  models:
+  - FLUX.2 Klein
+  date: '2026-03-12'
+  openSource: true
+  size: 18790481920
+  usage: 16
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 76
+      nodeType: LoadImage
+      file: man_in_street.png
+      mediaType: image
+    - nodeId: 81
+      nodeType: LoadImage
+      file: safari_outfit.png
+      mediaType: image
+    outputs:
+    - nodeId: 94
+      nodeType: SaveImage
+      file: image_flux2_klein_9b_kv_image_edit.png
+      mediaType: image
+  username: ComfyUI
+  includeOnDistributions:
+  - local
+  thumbnail:
+  - input/man_in_street.png
+  - output/image_flux2_klein_9b_kv_image_edit.png
+  minComfyUIVersion: 0.17.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_klein_9b_kv_image_edit.json
+  sha256: 21b2dabcd2a1dcf9677de7df07fb7557b5f99e834031ec98f544791e6f2f6b32
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_image_flux2_klein_9b_kv_image_edit_5de3839e/template.yaml
+validation_errors: []
+inputs:
+- name: negative_prompt
+  type: string
+  required: false
+  default: Have the man in Figure 1 put on the clothes from Figure 2, wear a hat,
+    and carry a bag. Then, change the background environment to an African savannah
+    while keeping the man in the same posture to give a natural outdoor feel.
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+- name: source_image_2
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  negative_prompt:
+    node_id: '135'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '81'
+    input_key: image
+    widget_index: 0
+  source_image_2:
+    node_id: '76'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

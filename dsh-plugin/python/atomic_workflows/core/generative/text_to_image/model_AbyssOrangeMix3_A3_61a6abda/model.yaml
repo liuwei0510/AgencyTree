@@ -1,0 +1,45 @@
+id: remote:model:61a6abda10669d39bea1
+kind: comfyui_model
+title: AbyssOrangeMix3 A3
+tree_branch:
+- core
+- generative
+- text_to_image
+six_tuple:
+  name: AbyssOrangeMix3 A3
+  input_types:
+  - text
+  output_types:
+  - image
+  capability: core/generative/text_to_image
+  parameters:
+  - name: filename
+    value: AOM3A3_orangemixs.safetensors
+  - name: base
+    value: SD1.5
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: checkpoint
+    save_path: checkpoints/SD1.5
+    filename: AOM3A3_orangemixs.safetensors
+    download_locator: https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A3_orangemixs.safetensors
+code_usable: true
+status: available
+metadata:
+  name: AbyssOrangeMix3 A3
+  type: checkpoint
+  base: SD1.5
+  save_path: checkpoints/SD1.5
+  description: AbyssOrangeMix - A3 (anime style)
+  reference: https://huggingface.co/WarriorMama777/OrangeMixs
+  filename: AOM3A3_orangemixs.safetensors
+  url: https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix3/AOM3A3_orangemixs.safetensors
+  size: 2.13GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/generative/text_to_image/model_AbyssOrangeMix3_A3_61a6abda/model.yaml
+validation_errors: []

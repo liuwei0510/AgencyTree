@@ -1,0 +1,87 @@
+id: remote:template:flux_fill_inpaint_example
+kind: comfyui_template
+title: Flux.1 Inpaint
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Flux.1 Inpaint
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Fill missing parts of images using Flux.1 Fill Inpainting.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_fill_inpaint_example.json
+  sha256: a3fb852ee865af5a1cb55a27de9d877155ae09ca48c38b843688c49292947740
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: flux_fill_inpaint_example
+  title: Flux.1 Inpaint
+  mediaType: image
+  mediaSubtype: webp
+  description: Fill missing parts of images using Flux.1 Fill Inpainting.
+  thumbnailVariant: compareSlider
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-1-fill-dev
+  tags:
+  - Image
+  - Inpainting
+  models:
+  - FLUX
+  - FLUX.1
+  date: '2025-03-01'
+  size: 34144990003
+  usage: 513
+  io:
+    inputs:
+    - nodeId: 17
+      nodeType: LoadImage
+      file: flux_fill_inpaint_example_input_image.png
+      mediaType: image
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: flux_fill_inpaint_example.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - input/flux_fill_inpaint_example_input_image.png
+  - output/flux_fill_inpaint_example.png
+  minComfyUIVersion: 0.3.42
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/flux_fill_inpaint_example.json
+  sha256: a3fb852ee865af5a1cb55a27de9d877155ae09ca48c38b843688c49292947740
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_flux_fill_inpaint_example_bbc2dce3/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '17'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

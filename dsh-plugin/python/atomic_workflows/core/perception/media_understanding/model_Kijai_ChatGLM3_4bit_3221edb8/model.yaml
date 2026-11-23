@@ -1,0 +1,45 @@
+id: remote:model:3221edb89b71f65b0c3a
+kind: comfyui_model
+title: Kijai/ChatGLM3 (4bit)
+tree_branch:
+- core
+- perception
+- media_understanding
+six_tuple:
+  name: Kijai/ChatGLM3 (4bit)
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/media_understanding
+  parameters:
+  - name: filename
+    value: chatglm3-4bit.safetensors
+  - name: base
+    value: ChatGLM3
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: LLM
+    save_path: LLM
+    filename: chatglm3-4bit.safetensors
+    download_locator: https://huggingface.co/Kijai/ChatGLM3-safetensors/resolve/main/chatglm3-4bit.safetensors
+code_usable: true
+status: available
+metadata:
+  name: Kijai/ChatGLM3 (4bit)
+  type: LLM
+  base: ChatGLM3
+  save_path: LLM
+  description: This is required for Kolors
+  reference: https://huggingface.co/Kijai/ChatGLM3-safetensors/tree/main
+  filename: chatglm3-4bit.safetensors
+  url: https://huggingface.co/Kijai/ChatGLM3-safetensors/resolve/main/chatglm3-4bit.safetensors
+  size: 3.92GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/core/perception/media_understanding/model_Kijai_ChatGLM3_4bit_3221edb8/model.yaml
+validation_errors: []

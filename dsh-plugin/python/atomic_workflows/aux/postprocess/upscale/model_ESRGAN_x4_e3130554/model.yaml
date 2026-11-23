@@ -1,0 +1,44 @@
+id: remote:model:e3130554367b7bc3234d
+kind: comfyui_model
+title: ESRGAN x4
+tree_branch:
+- aux
+- postprocess
+- upscale
+six_tuple:
+  name: ESRGAN x4
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: aux/postprocess/upscale
+  parameters:
+  - name: filename
+    value: ESRGAN_4x.pth
+  - name: base
+    value: upscale
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: upscale
+    save_path: default
+    filename: ESRGAN_4x.pth
+    download_locator: https://huggingface.co/Afizi/ESRGAN_4x.pth/resolve/main/ESRGAN_4x.pth
+code_usable: true
+status: available
+metadata:
+  name: ESRGAN x4
+  type: upscale
+  base: upscale
+  save_path: default
+  description: ESRGAN x4 upscaler model
+  reference: https://huggingface.co/Afizi/ESRGAN_4x.pth
+  filename: ESRGAN_4x.pth
+  url: https://huggingface.co/Afizi/ESRGAN_4x.pth/resolve/main/ESRGAN_4x.pth
+  size: 66.9MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

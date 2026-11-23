@@ -1,0 +1,69 @@
+id: remote:template:api_wan_r2v
+kind: comfyui_template
+title: 'WAN2.6: Reference to Video'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'WAN2.6: Reference to Video'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Creating identity-preserved videos with natural movement and cinematic
+    quality.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan_r2v.json
+  sha256: 252acd4d9fcc045cab4222c39797e8a57e5f67d39de39f91632767f311d46c7e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_wan_r2v
+  title: 'WAN2.6: Reference to Video'
+  description: Creating identity-preserved videos with natural movement and cinematic
+    quality.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Character Reference
+  - Video
+  date: '2026-01-03'
+  openSource: false
+  models:
+  - Wan2.6
+  - Wan
+  usage: 10
+  io:
+    inputs:
+    - nodeId: 34
+      nodeType: LoadVideo
+      file: armored_warrior.mp4
+      mediaType: video
+    - nodeId: 35
+      nodeType: LoadVideo
+      file: spear_warrior.mp4
+      mediaType: video
+  username: ComfyUI
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_wan_r2v.json
+  sha256: 252acd4d9fcc045cab4222c39797e8a57e5f67d39de39f91632767f311d46c7e
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_wan_r2v_6ebc7496/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

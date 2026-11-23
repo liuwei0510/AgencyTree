@@ -1,0 +1,62 @@
+id: remote:template:api_hunyuan3d_retopo_uv
+kind: comfyui_template
+title: 'Hunyuan3D: Model Retopology and UV Unwrapping'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Hunyuan3D: Model Retopology and UV Unwrapping'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Input a dense mesh (from AI generation or photogrammetry scans) and
+    create a lightweight model with good topology and unwrapped UV. Great for 3D game
+    asset optimization.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_hunyuan3d_retopo_uv.json
+  sha256: 9ca7f60ea59306da900811e4822694db3041799037f8b066a70a971ef8fd222a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_hunyuan3d_retopo_uv
+  title: 'Hunyuan3D: Model Retopology and UV Unwrapping'
+  description: Input a dense mesh (from AI generation or photogrammetry scans) and
+    create a lightweight model with good topology and unwrapped UV. Great for 3D game
+    asset optimization.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - 3D
+  models:
+  - Hunyuan3D
+  logos:
+  - provider: Hunyuan
+  date: '2026-03-07'
+  openSource: false
+  size: 0
+  usage: 12
+  searchRank: 0
+  username: shane
+  minComfyUIVersion: 0.16.4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_hunyuan3d_retopo_uv.json
+  sha256: 9ca7f60ea59306da900811e4822694db3041799037f8b066a70a971ef8fd222a
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path
+planning_eligible: true

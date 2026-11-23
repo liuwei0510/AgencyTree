@@ -1,0 +1,9 @@
+{
+  "__comment": "VAEEncode -> latent ops -> VAEDecode -> SaveImage",
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "REPLACE.png"
+    }
+  }
+}

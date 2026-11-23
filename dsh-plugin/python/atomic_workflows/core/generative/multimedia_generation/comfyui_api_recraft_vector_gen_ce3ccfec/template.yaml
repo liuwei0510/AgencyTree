@@ -1,0 +1,47 @@
+id: remote.template.api_recraft_vector_gen
+kind: comfyui_template
+title: 'Recraft: Vector Generation'
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Recraft: Vector Generation'
+  input_types: []
+  output_types: []
+  capability: Generate high-quality vector images from text prompts using Recraft's
+    AI vector generator.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_recraft_vector_gen.json
+  sha256: dbc4c49f565993b8fed588e76fe8adac71bb125ab1bf9f834e82625101a7414c
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_recraft_vector_gen
+  title: 'Recraft: Vector Generation'
+  description: Generate high-quality vector images from text prompts using Recraft's
+    AI vector generator.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Image
+  - API
+  - Vector
+  models:
+  - Recraft
+  date: '2025-03-01'
+  openSource: false
+  size: 0
+  usage: 5
+  username: ComfyUI
+  minComfyUIVersion: 0.3.34

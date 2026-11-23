@@ -1,0 +1,68 @@
+id: remote:template:api_meshy_t2_5_smart_topology_t2m
+kind: comfyui_template
+title: 'Meshy T2.5: Text to Model (Smart Topology)'
+tree_branch:
+- core
+- generative
+- three_d
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Meshy T2.5: Text to Model (Smart Topology)'
+  input_types: {}
+  output_types:
+    mesh: mesh_path
+  capability: Generate a game-ready 3D model from a text prompt with Meshy T2.5. Meshy
+    T2.5 builds the mesh at the triangle budget you set instead of generating a dense
+    mesh and retopologizing it afterwards, so the result drops straight into a game
+    engine. No input files required. Ideal for props, environment dressing and low-poly
+    game assets that need a predictable triangle count.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy_t2_5_smart_topology_t2m.json
+  sha256: 600854834a898056d3203dfb1299d363f549cd291d00d4cf487a06945143bdba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_meshy_t2_5_smart_topology_t2m
+  title: 'Meshy T2.5: Text to Model (Smart Topology)'
+  description: Generate a game-ready 3D model from a text prompt with Meshy T2.5.
+    Meshy T2.5 builds the mesh at the triangle budget you set instead of generating
+    a dense mesh and retopologizing it afterwards, so the result drops straight into
+    a game engine. No input files required. Ideal for props, environment dressing
+    and low-poly game assets that need a predictable triangle count.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Text to 3D
+  models:
+  - Meshy
+  logos:
+  - provider: Meshy
+  minComfyUIVersion: 0.42.5
+  date: '2026-10-23'
+  openSource: false
+  size: 0
+  usage: 13
+  searchRank: 0
+  username: ComfyUI
+  thumbnailVariant: compareSlider
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_meshy_t2_5_smart_topology_t2m.json
+  sha256: 600854834a898056d3203dfb1299d363f549cd291d00d4cf487a06945143bdba
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/three_d/comfyui_api_meshy_t2_5_smart_topology_t2m_1dd9c77e/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: mesh
+  type: mesh_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,61 @@
+id: remote.template.template_graphic_color_remixer
+kind: comfyui_template
+title: Graphic Design Recomposer
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Graphic Design Recomposer
+  input_types:
+  - image
+  output_types: []
+  capability: Upload a graphic design and select your desired aspect ratio. Generates
+    and recomposes the graphic to fit the new aspect ratio.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/template_graphic_color_remixer.json
+  sha256: b75d35d2b79a147e412d21a6b0ebfdefa5306d05706e34952a839a0e8b25eda2
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: template_graphic_color_remixer
+  title: Graphic Design Recomposer
+  description: Upload a graphic design and select your desired aspect ratio. Generates
+    and recomposes the graphic to fit the new aspect ratio.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image Edit
+  - Image
+  models:
+  - Nano Banana Pro
+  logos:
+  - provider: Google
+  requiresCustomNodes:
+  - comfyui-kjnodes
+  - comfyui_essentials
+  date: '2026-03-30'
+  openSource: false
+  size: 0
+  usage: 4
+  searchRank: 0
+  username: hellorob
+  io:
+    inputs:
+    - nodeId: 5001
+      nodeType: LoadImage
+      file: input_graphic-1x1.png
+      mediaType: image
+  thumbnail:
+  - thumbnail/template_graphic_color_remixer.png
+  minComfyUIVersion: 0.15.0

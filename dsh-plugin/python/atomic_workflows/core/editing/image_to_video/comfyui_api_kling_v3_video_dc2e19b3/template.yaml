@@ -1,0 +1,86 @@
+id: remote:template:api_kling_v3_video
+kind: comfyui_template
+title: 'Kling 3.0: Video Generation'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling 3.0: Video Generation'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+  capability: Input text or image prompts to generate 15-second video sequences with
+    multi-shot compositions, complex camera movements, and consistent subjects.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_v3_video.json
+  sha256: 2562b2892d2c99e0b5e8379734ca0e2be1eddc5aa51c3ae8280ca31dec3cb758
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_v3_video
+  title: 'Kling 3.0: Video Generation'
+  description: Input text or image prompts to generate 15-second video sequences with
+    multi-shot compositions, complex camera movements, and consistent subjects.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Image to Video
+  - Video
+  models:
+  - Kling 3.0
+  logos:
+  - provider: Kling
+  date: '2026-02-10'
+  openSource: false
+  size: 0
+  usage: 598
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadImage
+      file: boxing.png
+      mediaType: image
+    outputs:
+    - nodeId: 2
+      nodeType: SaveVideo
+      file: api_kling_v3_video.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - output/api_kling_v3_video.mp4
+  minComfyUIVersion: 0.13.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_v3_video.json
+  sha256: 2562b2892d2c99e0b5e8379734ca0e2be1eddc5aa51c3ae8280ca31dec3cb758
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '1'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+planning_eligible: true

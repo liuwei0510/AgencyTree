@@ -1,0 +1,70 @@
+id: remote:template:api_kling_omni_image
+kind: comfyui_template
+title: 'Kling O1: Image'
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Kling O1: Image'
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Generate high-quality images from text prompts using Kling O1, with
+    support for up to 10 reference images to guide style and content. Features flexible
+    aspect ratios and 1K/2K resolution options.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_omni_image.json
+  sha256: 3d90a466c506d4897ada7cb77c6cc74fa54735e053753b242cdb0299acd9ca7b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_kling_omni_image
+  title: 'Kling O1: Image'
+  description: Generate high-quality images from text prompts using Kling O1, with
+    support for up to 10 reference images to guide style and content. Features flexible
+    aspect ratios and 1K/2K resolution options.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Character Reference
+  - Text to Image
+  models:
+  - Kling O1
+  date: '2026-01-05'
+  openSource: false
+  usage: 22
+  io:
+    outputs:
+    - nodeId: 5
+      nodeType: SaveImage
+      file: api_kling_omni_image.png
+      mediaType: image
+  size: 0
+  searchRank: 0
+  username: ComfyUI
+  thumbnail:
+  - output/api_kling_omni_image.png
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_kling_omni_image.json
+  sha256: 3d90a466c506d4897ada7cb77c6cc74fa54735e053753b242cdb0299acd9ca7b
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_api_kling_omni_image_55712f26/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

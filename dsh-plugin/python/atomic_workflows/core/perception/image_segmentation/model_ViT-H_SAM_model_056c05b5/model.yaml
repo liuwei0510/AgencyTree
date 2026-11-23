@@ -1,0 +1,43 @@
+id: remote.model.056c05b5289d621e6920
+kind: comfyui_model
+title: ViT-H SAM model
+tree_branch:
+- core
+- perception
+- image_segmentation
+six_tuple:
+  name: ViT-H SAM model
+  input_types:
+  - image or video
+  output_types:
+  - structured media analysis
+  capability: core/perception/image_segmentation
+  parameters:
+  - name: filename
+    value: sam_vit_h_4b8939.pth
+  - name: base
+    value: SAM
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: sam
+    save_path: sams
+    filename: sam_vit_h_4b8939.pth
+    download_locator: https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+code_usable: true
+status: available
+metadata:
+  name: ViT-H SAM model
+  type: sam
+  base: SAM
+  save_path: sams
+  description: Segmenty Anything SAM model (ViT-H)
+  reference: https://github.com/facebookresearch/segment-anything#model-checkpoints
+  filename: sam_vit_h_4b8939.pth
+  url: https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+  size: 2.56GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200

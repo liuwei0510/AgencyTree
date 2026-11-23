@@ -1,0 +1,109 @@
+id: remote:template:video_wanmove_480p
+kind: comfyui_template
+title: Wan-Move Motion-Control Image to Video
+tree_branch:
+- core
+- generative
+- multimedia_generation
+workflow_file: workflow.editor.json
+six_tuple:
+  name: Wan-Move Motion-Control Image to Video
+  input_types:
+    width: number
+    height: number
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+    video: video_path
+  capability: Generate videos from a single image using Wan-Move, with fine-grained
+    point-level motion control via trajectory guidance.
+  parameters:
+  - name: width
+    type: number
+    required: false
+    default: 832
+  - name: height
+    type: number
+    required: false
+    default: 480
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wanmove_480p.json
+  sha256: 35ae5b6ab1e54a340f66a88e6a8616e3a7e415c565d2bfb485ab6d1310faabb1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_wanmove_480p
+  title: Wan-Move Motion-Control Image to Video
+  description: Generate videos from a single image using Wan-Move, with fine-grained
+    point-level motion control via trajectory guidance.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Image to Video
+  - Motion Control
+  - Video
+  models:
+  - Wan
+  - Wan2.1
+  date: '2025-12-15'
+  size: 25447681229
+  usage: 8
+  io:
+    inputs:
+    - nodeId: 238
+      nodeType: LoadImage
+      file: snowboard_rush.png
+      mediaType: image
+  username: ComfyUI
+  openSource: true
+  searchRank: 0
+  minComfyUIVersion: 0.5.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_wanmove_480p.json
+  sha256: 35ae5b6ab1e54a340f66a88e6a8616e3a7e415c565d2bfb485ab6d1310faabb1
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_video_wanmove_480p_d5e63d30/template.yaml
+validation_errors: []
+inputs:
+- name: width
+  type: number
+  required: false
+  default: 832
+- name: height
+  type: number
+  required: false
+  default: 480
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  width:
+    node_id: '228'
+    input_key: width
+    widget_index: 1
+  height:
+    node_id: '228'
+    input_key: height
+    widget_index: 2
+  source_image:
+    node_id: '238'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+- name: video
+  type: video_path
+planning_eligible: true
+contract_errors: []

@@ -1,0 +1,75 @@
+id: remote.template.image_fibo2_edit_turbo_pe
+kind: comfyui_template
+title: 'Fibo 2.0 Turbo: Image Edit'
+tree_branch:
+- core
+- perception
+- image_captioning
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Fibo 2.0 Turbo: Image Edit'
+  input_types:
+  - image
+  output_types:
+  - image
+  capability: 'Edit an image with local open-weights Fibo 2.0 Edit Turbo (int8) and
+    an optional prompt enhancer: a local vision LLM reads the reference image and
+    rewrites your instruction into the structured caption Fibo 2.0 was trained on
+    before TextEncodeFibo2 samples 4 steps at CFG 1. Switch the enhancer off to feed
+    your raw prompt, and compare the result against the source in the built-in image
+    compare node. Ideal for fast instruction-based retouches that keep identity and
+    composition.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_fibo2_edit_turbo_pe.json
+  sha256: be80b6e4709fec3b9d59930011c5df7295abae1da97265e6cf430d5df74fc936
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_fibo2_edit_turbo_pe
+  title: 'Fibo 2.0 Turbo: Image Edit'
+  description: 'Edit an image with local open-weights Fibo 2.0 Edit Turbo (int8) and
+    an optional prompt enhancer: a local vision LLM reads the reference image and
+    rewrites your instruction into the structured caption Fibo 2.0 was trained on
+    before TextEncodeFibo2 samples 4 steps at CFG 1. Switch the enhancer off to feed
+    your raw prompt, and compare the result against the source in the built-in image
+    compare node. Ideal for fast instruction-based retouches that keep identity and
+    composition.'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Image Edit
+  - Int8
+  models:
+  - Fibo 2.0
+  minComfyUIVersion: 0.43.0
+  date: '2026-10-26'
+  openSource: true
+  size: 26950919782
+  usage: 0
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 10
+      nodeType: LoadImage
+      file: auburn_afro_payphone_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 7
+      nodeType: SaveImage
+      file: image_fibo2_edit_turbo_pe.png
+      mediaType: image
+  thumbnail:
+  - input/auburn_afro_payphone_portrait.png
+  - output/image_fibo2_edit_turbo_pe.png
+  includeOnDistributions:
+  - local

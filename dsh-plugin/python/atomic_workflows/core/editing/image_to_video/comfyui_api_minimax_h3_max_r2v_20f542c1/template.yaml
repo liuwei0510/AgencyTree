@@ -1,0 +1,96 @@
+id: remote:template:api_minimax_h3_max_r2v
+kind: comfyui_template
+title: 'MiniMax H3 Max: Reference to Video'
+tree_branch:
+- core
+- editing
+- image_to_video
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'MiniMax H3 Max: Reference to Video'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    video: video_path
+    transcript: text
+  capability: Generate video from an image reference using MiniMax H3 Max, which animates
+    your still frame while preserving its composition, visual identity, and aspect
+    ratio. The model generates faster than real time with strong prompt adherence
+    and polished cinematic motion. Ideal for bringing character art to life, animating
+    product shots, and creating video from concept images.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_max_r2v.json
+  sha256: 9cc72aca825ff2c174f402dae51c896403c8d64ed0e84b2e6ce6b4390ecb1838
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_minimax_h3_max_r2v
+  title: 'MiniMax H3 Max: Reference to Video'
+  description: Generate video from an image reference using MiniMax H3 Max, which
+    animates your still frame while preserving its composition, visual identity, and
+    aspect ratio. The model generates faster than real time with strong prompt adherence
+    and polished cinematic motion. Ideal for bringing character art to life, animating
+    product shots, and creating video from concept images.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Reference to Video
+  models:
+  - MiniMax H3
+  logos:
+  - provider: MiniMax
+  date: '2026-09-02'
+  openSource: false
+  size: 0
+  usage: 402
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 6
+      nodeType: LoadImage
+      file: burdened_warrior_in_dreamscape.png
+      mediaType: image
+    outputs:
+    - nodeId: 11
+      nodeType: SaveVideo
+      file: api_minimax_h3_max_r2v.mp4
+      mediaType: video
+  minComfyUIVersion: 0.34.2
+  thumbnail:
+  - output/api_minimax_h3_max_r2v.mp4
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_minimax_h3_max_r2v.json
+  sha256: 9cc72aca825ff2c174f402dae51c896403c8d64ed0e84b2e6ce6b4390ecb1838
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_to_video/comfyui_api_minimax_h3_max_r2v_20f542c1/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '6'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: video
+  type: video_path
+- name: transcript
+  type: text
+contract_errors: []
+planning_eligible: true

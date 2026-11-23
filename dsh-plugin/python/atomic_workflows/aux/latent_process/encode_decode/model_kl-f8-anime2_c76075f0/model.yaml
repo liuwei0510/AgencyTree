@@ -1,0 +1,44 @@
+id: remote:model:c76075f088fdd7d13bff
+kind: comfyui_model
+title: kl-f8-anime2
+tree_branch:
+- aux
+- latent_process
+- encode_decode
+six_tuple:
+  name: kl-f8-anime2
+  input_types:
+  - image or latent
+  output_types:
+  - latent or image
+  capability: aux/latent_process/encode_decode
+  parameters:
+  - name: filename
+    value: kl-f8-anime2.ckpt
+  - name: base
+    value: SD2.1
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: VAE
+    save_path: vae/SD2.1
+    filename: kl-f8-anime2.ckpt
+    download_locator: https://huggingface.co/hakurei/waifu-diffusion-v1-4/resolve/main/vae/kl-f8-anime2.ckpt
+code_usable: true
+status: available
+metadata:
+  name: kl-f8-anime2
+  type: VAE
+  base: SD2.1
+  save_path: vae/SD2.1
+  description: kl-f8-anime2 vae model
+  reference: https://huggingface.co/hakurei/waifu-diffusion-v1-4
+  filename: kl-f8-anime2.ckpt
+  url: https://huggingface.co/hakurei/waifu-diffusion-v1-4/resolve/main/vae/kl-f8-anime2.ckpt
+  size: 404.7MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []

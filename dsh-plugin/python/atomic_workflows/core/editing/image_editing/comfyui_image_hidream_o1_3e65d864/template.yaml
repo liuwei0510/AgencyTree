@@ -1,0 +1,87 @@
+id: remote.template.image_hidream_o1
+kind: comfyui_template
+title: 'HiDream O1 Full: Image generation'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'HiDream O1 Full: Image generation'
+  input_types:
+    negative_prompt: string
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Input a text prompt and optionally upload reference images. Generate
+    a high-resolution image up to 2048x2048 with text-to-image, editing, or subject-driven
+    personalization.
+  parameters: &id001
+  - name: negative_prompt
+    type: string
+    required: false
+    default: ''
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_hidream_o1.json
+  sha256: 94430c6b4cf098aa4741947f5e3228c898f5d5fdc64767d5eef133bad9aa03f3
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_hidream_o1
+  tutorialUrl: https://docs.comfy.org/tutorials/image/hidream/hidream-o1
+  title: 'HiDream O1 Full: Image generation'
+  description: Input a text prompt and optionally upload reference images. Generate
+    a high-resolution image up to 2048x2048 with text-to-image, editing, or subject-driven
+    personalization.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - Text to Image
+  - Image Edit
+  models:
+  - HiDream
+  date: '2026-05-14'
+  openSource: true
+  size: 25447681229
+  usage: 37
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 213
+      nodeType: LoadImage
+      file: noir_portrait.png
+      mediaType: image
+    outputs:
+    - nodeId: 227
+      nodeType: SaveImage
+      file: image_hidream_o1.png
+      mediaType: image
+  thumbnail:
+  - output/image_hidream_o1.png
+  minComfyUIVersion: 0.21.1
+validation_errors: []
+planning_eligible: true
+inputs: *id001
+inject:
+  negative_prompt:
+    node_id: '188'
+    input_key: text
+    widget_index: 0
+  source_image:
+    node_id: '213'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames

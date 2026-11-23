@@ -1,0 +1,67 @@
+id: remote:template:image_flux2_text_to_image
+kind: comfyui_template
+title: FLUX.2 Dev Text to Image
+tree_branch:
+- core
+- generative
+- text_to_image
+workflow_file: workflow.editor.json
+six_tuple:
+  name: FLUX.2 Dev Text to Image
+  input_types: {}
+  output_types:
+    images: image_filenames
+  capability: Text-to-image with enhanced lighting, materials, and realistic details.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_text_to_image.json
+  sha256: 1ebd8157ac6033cb9362ef14c36614cd4fa5dfff1417ff2900400f2085f130d6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: image_flux2_text_to_image
+  tutorialUrl: https://docs.comfy.org/tutorials/flux/flux-2-dev
+  title: FLUX.2 Dev Text to Image
+  mediaType: image
+  mediaSubtype: webp
+  description: Text-to-image with enhanced lighting, materials, and realistic details.
+  tags:
+  - Image
+  - Text to Image
+  models:
+  - FLUX
+  - FLUX.2 Dev
+  date: '2025-11-26'
+  size: 71403831296
+  usage: 465
+  io:
+    outputs:
+    - nodeId: 9
+      nodeType: SaveImage
+      file: image_flux2_text_to_image.png
+      mediaType: image
+  openSource: true
+  searchRank: 0
+  thumbnail:
+  - output/image_flux2_text_to_image.png
+  username: ComfyUI
+  minComfyUIVersion: 0.4.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/image_flux2_text_to_image.json
+  sha256: 1ebd8157ac6033cb9362ef14c36614cd4fa5dfff1417ff2900400f2085f130d6
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/generative/text_to_image/comfyui_image_flux2_text_to_image_4ab40344/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

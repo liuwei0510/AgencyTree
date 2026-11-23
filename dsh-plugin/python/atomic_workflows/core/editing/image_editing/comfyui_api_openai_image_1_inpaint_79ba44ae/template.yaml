@@ -1,0 +1,79 @@
+id: remote:template:api_openai_image_1_inpaint
+kind: comfyui_template
+title: 'OpenAI: GPT-Image-1 Inpaint'
+tree_branch:
+- core
+- editing
+- image_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'OpenAI: GPT-Image-1 Inpaint'
+  input_types:
+    source_image: image_filenames
+  output_types:
+    images: image_filenames
+  capability: Edit images using inpainting with OpenAI GPT Image 1 API.
+  parameters:
+  - name: source_image
+    type: image_filenames
+    required: true
+    default: null
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_image_1_inpaint.json
+  sha256: 7928167244b3b2dc4ed58caaeaf0d093cbf2d2a943de8c67dfbb9858b8ecc3b4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_openai_image_1_inpaint
+  title: 'OpenAI: GPT-Image-1 Inpaint'
+  description: Edit images using inpainting with OpenAI GPT Image 1 API.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Inpainting
+  - Image
+  - API
+  models:
+  - GPT-Image-1
+  - OpenAI
+  date: '2025-03-01'
+  tutorialUrl: https://docs.comfy.org/tutorials/partner-nodes/openai/gpt-image-1
+  openSource: false
+  size: 0
+  usage: 47
+  io:
+    inputs:
+    - nodeId: 29
+      nodeType: LoadImage
+      file: api_openai_image_1_input_image_mask.jpg
+      mediaType: image
+  username: ComfyUI
+  minComfyUIVersion: 0.3.30
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_openai_image_1_inpaint.json
+  sha256: 7928167244b3b2dc4ed58caaeaf0d093cbf2d2a943de8c67dfbb9858b8ecc3b4
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/image_editing/comfyui_api_openai_image_1_inpaint_79ba44ae/template.yaml
+validation_errors: []
+inputs:
+- name: source_image
+  type: image_filenames
+  required: true
+  default: null
+inject:
+  source_image:
+    node_id: '29'
+    input_key: image
+    widget_index: 0
+outputs:
+- name: images
+  type: image_filenames
+contract_errors: []
+planning_eligible: true

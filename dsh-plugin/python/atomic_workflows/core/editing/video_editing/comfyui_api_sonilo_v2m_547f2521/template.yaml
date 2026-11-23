@@ -1,0 +1,70 @@
+id: remote:template:api_sonilo_v2m
+kind: comfyui_template
+title: 'Sonilo: Video Soundtrack Generation'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Sonilo: Video Soundtrack Generation'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Generate synchronized soundtracks from video footage. Input a video
+    to produce music that matches its pacing and emotional cues, outputting a perfectly
+    timed audio file.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_sonilo_v2m.json
+  sha256: 99c633e061d1b897d791814789d0eb859c56107fa3c8404dc28c2f09cc13db19
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_sonilo_v2m
+  title: 'Sonilo: Video Soundtrack Generation'
+  description: Generate synchronized soundtracks from video footage. Input a video
+    to produce music that matches its pacing and emotional cues, outputting a perfectly
+    timed audio file.
+  mediaType: image
+  mediaSubtype: webp
+  tags:
+  - API
+  - Audio
+  - Music
+  models:
+  - Sonilo
+  logos:
+  - provider: Sonilo
+  date: '2026-04-12'
+  openSource: false
+  size: 0
+  usage: 97
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 705
+      nodeType: LoadVideo
+      file: leopard_rider.mp4
+      mediaType: video
+  minComfyUIVersion: 0.25.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_sonilo_v2m.json
+  sha256: 99c633e061d1b897d791814789d0eb859c56107fa3c8404dc28c2f09cc13db19
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_api_sonilo_v2m_547f2521/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

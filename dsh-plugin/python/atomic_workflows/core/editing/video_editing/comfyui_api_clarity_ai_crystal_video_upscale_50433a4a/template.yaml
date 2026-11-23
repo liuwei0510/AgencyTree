@@ -1,0 +1,70 @@
+id: remote.template.api_clarity_ai_crystal_video_upscale
+kind: comfyui_template
+title: 'Clarity AI: Crystal Video Upscaler'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Clarity AI: Crystal Video Upscaler'
+  input_types:
+  - video
+  output_types:
+  - video
+  capability: 'Upscale a video with Clarity AI''s Crystal model, running through the
+    Fal proxy: one video in, one upscaled video out. Set scale_factor to multiply
+    the frame size, and the output keeps the source resolution, frame count and audio
+    track. The result is capped at 9 megapixels per frame and 360 megapixel-seconds
+    per clip, so long or oversized clips come back upscaled by less than the factor
+    you asked for. Ideal for restoring generated clips, preparing footage for large
+    screens, and sharpening soft AI video.'
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+    interaction: import the editor workflow into ComfyUI and queue it
+format: editor
+code_usable: true
+status: deprecated
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/api_clarity_ai_crystal_video_upscale.json
+  sha256: 4551c54948a91e114ddcdaacde77a95df502155247377cdaa8011085ebfa6f43
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: api_clarity_ai_crystal_video_upscale
+  title: 'Clarity AI: Crystal Video Upscaler'
+  description: 'Upscale a video with Clarity AI''s Crystal model, running through
+    the Fal proxy: one video in, one upscaled video out. Set scale_factor to multiply
+    the frame size, and the output keeps the source resolution, frame count and audio
+    track. The result is capped at 9 megapixels per frame and 360 megapixel-seconds
+    per clip, so long or oversized clips come back upscaled by less than the factor
+    you asked for. Ideal for restoring generated clips, preparing footage for large
+    screens, and sharpening soft AI video.'
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - API
+  - Video Upscale
+  models:
+  - Crystal Upscaler
+  date: '2026-10-19'
+  openSource: false
+  size: 0
+  usage: 41
+  searchRank: 0
+  username: ComfyUI
+  io:
+    inputs:
+    - nodeId: 1
+      nodeType: LoadVideo
+      file: desert_highway_encounter.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 3
+      nodeType: SaveVideo
+      file: api_clarity_ai_crystal_video_upscale.mp4
+      mediaType: video
+  minComfyUIVersion: 0.40.0

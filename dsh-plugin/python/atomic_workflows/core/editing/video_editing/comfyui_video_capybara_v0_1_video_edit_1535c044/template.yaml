@@ -1,0 +1,75 @@
+id: remote:template:video_capybara_v0_1_video_edit
+kind: comfyui_template
+title: 'Capybara: Video Edit'
+tree_branch:
+- core
+- editing
+- video_editing
+workflow_file: workflow.editor.json
+six_tuple:
+  name: 'Capybara: Video Edit'
+  input_types: {}
+  output_types:
+    video: video_path
+  capability: Upload an image or video and a text instruction to perform generation
+    or editing tasks. Generate a new or edited image or video based on the provided
+    instruction.
+  parameters: []
+  invocation:
+    platform: ComfyUI
+    format: editor
+    workflow_file: workflow.editor.json
+format: editor
+code_usable: true
+status: available
+source:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_capybara_v0_1_video_edit.json
+  sha256: fa61676402eccce5591929cefd02892dded592d3c93a916a51b9dbd3e67c71f0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+metadata:
+  name: video_capybara_v0_1_video_edit
+  title: 'Capybara: Video Edit'
+  description: Upload an image or video and a text instruction to perform generation
+    or editing tasks. Generate a new or edited image or video based on the provided
+    instruction.
+  mediaType: image
+  mediaSubtype: webp
+  thumbnailVariant: compareSlider
+  tags:
+  - Video Edit
+  models:
+  - Capybara
+  date: '2026-02-23'
+  openSource: true
+  size: 37044092928
+  usage: 31
+  searchRank: 0
+  io:
+    inputs:
+    - nodeId: 127
+      nodeType: LoadVideo
+      file: horse_running.mp4
+      mediaType: video
+    outputs:
+    - nodeId: 114
+      nodeType: SaveVideo
+      file: video_capybara_v0_1_video_edit.mp4
+      mediaType: video
+  username: ComfyUI
+  thumbnail:
+  - input/horse_running.mp4
+  - output/video_capybara_v0_1_video_edit.mp4
+  minComfyUIVersion: 0.8.0
+evidence:
+  url: https://raw.githubusercontent.com/Comfy-Org/workflow_templates/6cd9cff4ba0163c3021ce5b2c8727927bc8397d9/templates/video_capybara_v0_1_video_edit.json
+  sha256: fa61676402eccce5591929cefd02892dded592d3c93a916a51b9dbd3e67c71f0
+  revision: 6cd9cff4ba0163c3021ce5b2c8727927bc8397d9
+  manifest: atomic_workflows/core/editing/video_editing/comfyui_video_capybara_v0_1_video_edit_1535c044/template.yaml
+validation_errors: []
+inputs: []
+inject: {}
+outputs:
+- name: video
+  type: video_path
+contract_errors: []
+planning_eligible: true

@@ -1,0 +1,45 @@
+id: remote:model:09cc0a8dd5c4540db84d
+kind: comfyui_model
+title: 'xinsir/ControlNet++: All-in-one ControlNet (ProMax model)'
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: 'xinsir/ControlNet++: All-in-one ControlNet (ProMax model)'
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: diffusion_pytorch_model_promax.safetensors
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: controlnet
+    save_path: controlnet/SDXL/controlnet-union-sdxl-1.0
+    filename: diffusion_pytorch_model_promax.safetensors
+    download_locator: https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors
+code_usable: true
+status: available
+metadata:
+  name: 'xinsir/ControlNet++: All-in-one ControlNet (ProMax model)'
+  type: controlnet
+  base: SDXL
+  save_path: controlnet/SDXL/controlnet-union-sdxl-1.0
+  description: All-in-one ControlNet for image generations and editing! (ProMax model)
+  reference: https://huggingface.co/xinsir/controlnet-union-sdxl-1.0
+  filename: diffusion_pytorch_model_promax.safetensors
+  url: https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors
+  size: 2.50GB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+  manifest: atomic_workflows/aux/conditional/control_conditioning/model_xinsir_ControlNet_All-in-one_ControlNet_ProMax_model_09cc0a8d/model.yaml
+validation_errors: []

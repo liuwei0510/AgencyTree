@@ -1,0 +1,44 @@
+id: remote:model:2e2d0247f18a5ad8ff0c
+kind: comfyui_model
+title: photomaker-v1.bin
+tree_branch:
+- aux
+- conditional
+- control_conditioning
+six_tuple:
+  name: photomaker-v1.bin
+  input_types:
+  - image or text conditioning
+  output_types:
+  - conditioning/model component
+  capability: aux/conditional/control_conditioning
+  parameters:
+  - name: filename
+    value: photomaker-v1.bin
+  - name: base
+    value: SDXL
+  invocation:
+    platform: ComfyUI
+    interface: load from model catalog using a compatible ComfyUI node
+    model_type: photomaker
+    save_path: photomaker
+    filename: photomaker-v1.bin
+    download_locator: https://huggingface.co/TencentARC/PhotoMaker/resolve/main/photomaker-v1.bin
+code_usable: true
+status: available
+metadata:
+  name: photomaker-v1.bin
+  type: photomaker
+  base: SDXL
+  save_path: photomaker
+  description: PhotoMaker model. This model is compatible with SDXL.
+  reference: https://huggingface.co/TencentARC/PhotoMaker
+  filename: photomaker-v1.bin
+  url: https://huggingface.co/TencentARC/PhotoMaker/resolve/main/photomaker-v1.bin
+  size: 934.1MB
+evidence:
+  repository: Comfy-Org/ComfyUI-Manager
+  revision: 8afdee041650a18e7b66b88a06668c7b684d7c6f
+  url: https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/8afdee041650a18e7b66b88a06668c7b684d7c6f/model-list.json
+  sha256: acc1963d0819ed9ccd430bea8ad4b0e1eeed093d3b92bae38fcd61590a104200
+validation_errors: []
